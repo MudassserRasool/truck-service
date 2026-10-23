@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 1.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 3.
 
 **1\. How to use this inventory**
 
@@ -18,12 +18,16 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 
 **Scope:** Every inventory item inherits **Awaiting client decision** from the [scope matrix](Phase%200%20Scope%20and%20Decisions.md). An O or P status means documentation evidence exists, not that the feature is approved for the clone.  
 **Owner:** Documentation author maintains every row. Chapter reviewer roles below are proposed; named assignments await SC-04.  
-**Evidence:** E-IDs resolve in the [Evidence Register](Documentation%20Evidence%20Register.md). No screenshots are attached in this baseline.  
+**Evidence:** E-IDs resolve in the [Evidence Register](Documentation%20Evidence%20Register.md). No screenshot files are attached; Phases 2–3 used unsaved visual inspections alongside text observations.
 **Coverage limit:** This is the known accessible-surface inventory, not a claim that every hidden form/role/option has been discovered. Each detailed phase must extend it.
 
 **Phase 0 baseline totals:** 89 inventory items — 33 Observed, 21 Partly documented, 33 Not explored and 2 Blocked.
 
 **After Phase 1:** The same 89 items comprise 30 Observed, 25 Partly documented, 32 Not explored and 2 Blocked. No full module/use case is marked Documented or approved for the clone. The 2 blocked items are alternate-role access and mutation tests requiring a designated test environment.
+
+**After Phase 2:** 89 items — 25 Observed, 42 Partly documented, 20 Not explored and 2 Blocked. All 17 customer/carrier/vendor rows now have observed field/flow documentation in main-guide sections 12–13, with explicit untested outcomes. No complete application use case or clone scope approval is inferred.
+
+**After Phase 3:** 89 items — 24 Observed, 43 Partly documented, 20 Not explored and 2 Blocked. All 12 quote rows have field/action explanations or owned gaps in main §14. One unsaved measurement example and existing quote-to-shipment navigation were checked; submitted quote/save/share/booking outcomes remain untested.
 
 **Chapter and reviewer key**
 
@@ -62,40 +66,40 @@ Customer example: [open the inspected customer](https://app.quotefactory.com/bro
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| CUS-01 | [Customers list](https://app.quotefactory.com/broker/customers) | O | MASTER | E-08 | Columns, sorting/filtering, credit and rep indicators |
-| CUS-02 | Customers → Add a new customer / sidebar plus | O | MASTER | E-08 | Name matching, duplicate handling, submit result and next form |
-| CUS-03 | Customer → Overview / Edit customer details | O | MASTER | E-09 | All detail fields, save rules, vendor number and contact links |
-| CUS-04 | Customer → Contacts / View all customer contacts | N | MASTER | E-09 | Primary/billing contacts, multiple contacts and validation |
-| CUS-05 | Customer → Manage reps | N | MASTER, ADMIN | E-09 | Assignment, ownership, teams and visibility |
-| CUS-06 | Customer → Manage credit limits / Edit customer billing | N | MASTER, MONEY | E-09 | Credit eligibility, terms, invoice preferences, required POD and overrides |
-| CUS-07 | Customer → Booking & quoting | N | MASTER, QUOTE | E-09 | Customer margins, login, auto-quoting/dispatch and global inheritance |
-| CUS-08 | Customer → Shipments / Quotes tabs | N | MASTER, SHIP, QUOTE | E-09 | Linked histories, columns and actions |
-| CUS-09 | Customer → Addresses tab | N | MASTER | E-09 | Location templates, creation/reuse and shipment-only edits |
-| CUS-10 | Customer → Invoices / Payments tabs | N | MASTER, MONEY | E-09 | Receivables and payment allocation/history |
-| CUS-11 | Customer → Documents / external references / note / Timeline | N | MASTER, ADMIN | E-09 | Attachments, mapping IDs, note audience and audit behavior |
-| CAR-01 | [Carriers / Vendors](https://app.quotefactory.com/broker/vendors/carriers) → Carriers / All | O | MASTER | E-10 | Filters, identifiers, carrier details and duplicate handling |
-| CAR-02 | Create new vendor → Carrier | N | MASTER | E-10 chooser observed | MC/DOT lookup, required fields, onboarding and save result |
-| CAR-03 | Shipment → carrier detail, or Bill → carrier link | N | MASTER | E-13, E-19 | Carrier detail tabs, contacts, equipment, compliance and document access |
-| VEN-01 | Carriers / Vendors → Vendors tab | O | MASTER | E-10 | Service types, list fields and separation from carriers |
-| VEN-02 | Create new vendor → Vendor | N | MASTER | E-10 chooser observed | Full form, type options, billing/contact fields and creation rules |
-| VEN-03 | Quote/shipment → Add another vendor | N | MASTER, QUOTE, SHIP | E-07, E-13 | Service selection, multiple providers and cost/bill effects |
+| CUS-01 | [Customers list](https://app.quotefactory.com/broker/customers) | P | MASTER | E-35 | Main §12.1: list/filters documented; applied search/sort/count and permission rules untested |
+| CUS-02 | Customers → Add a new customer / sidebar plus | P | MASTER | E-35 | Main §12.2: name suggestions and create action; submission/duplicate handling pending |
+| CUS-03 | Customer → Overview / Edit customer details | P | MASTER | E-36 | Main §12.3: identity fields; save/validation/logo/shortcut behavior pending |
+| CUS-04 | Customer → Contacts / View all customer contacts | P | MASTER | E-37 | Main §12.3: contact view/create/edit/cancel fields; primary/reorder/delete/save rules pending |
+| CUS-05 | Customer → Manage reps | P | MASTER, ADMIN | E-38 | Main §12.5: new-shipment-only rep message observed; assignments/commissions/roles untested |
+| CUS-06 | Customer → Manage credit limits / Edit customer billing | P | MASTER, MONEY | E-39–40 | Main §12.4: billing/credit/address/POD fields; enforcement/due-date/save behavior pending |
+| CUS-07 | Customer → Booking & quoting | P | MASTER, QUOTE | E-41 | Main §12.5: portal/automation and per-carrier pricing controls; inheritance/enforcement untested |
+| CUS-08 | Customer → Shipments / Quotes tabs | P | MASTER, SHIP, QUOTE | E-42 | Main §12.5: customer-linked shipment/quote views; detailed actions/counts pending |
+| CUS-09 | Customer → Addresses tab | P | MASTER | E-43 | Main §13: template fields/types/services; existing-card editor and propagation unresolved |
+| CUS-10 | Customer → Invoices / Payments tabs | P | MASTER, MONEY | E-42 | Main §12.5: invoice/payment history and statement controls; accounting actions Phase 6 |
+| CUS-11 | Customer → Documents / external references / note / Timeline | P | MASTER, ADMIN | E-42 | Main §12.5: Documents dialog inspected; external-reference/note/timeline behavior remains open |
+| CAR-01 | [Carriers / Vendors](https://app.quotefactory.com/broker/vendors/carriers) → Carriers / All | P | MASTER | E-44 | Main §12.1: provider list/filter fields; applied filtering and identifiers policy untested |
+| CAR-02 | Create new vendor → Carrier | P | MASTER | E-44 | Main §12.6: MC/DOT input only; lookup/import/create validation pending |
+| CAR-03 | Shipment → carrier detail, or Bill → carrier link | P | MASTER | E-47–48 | Main §12.6: profile/onboarding/docs/history observed; eligibility, contacts editor and packet effects pending |
+| VEN-01 | Carriers / Vendors → Vendors tab | P | MASTER | E-45–46 | Main §12.7: vendor list/detail/type distinctions; tab behavior partly unresolved |
+| VEN-02 | Create new vendor → Vendor | P | MASTER | E-45–46 | Main §12.7: wizard/identity/billing/multiple types/sync preference; saves untested |
+| VEN-03 | Quote/shipment → Add another vendor | P | MASTER, QUOTE, SHIP | E-49 | Main §12.7: shipment type dialog only; actual service/vendor assignment and charges Phase 4/6 |
 
 **4\. Quotes and freight details**
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| QTE-01 | [Quote history](https://app.quotefactory.com/broker/quote-history) | O | QUOTE | E-11 | Search, booked/expired indicators, pagination and record relationships |
-| QTE-02 | [Quote form](https://app.quotefactory.com/broker/quote) → customer/equipment/date | P | QUOTE | E-01 §§2–3, E-07 | Dropdown catalog, required/default values and LTL/TL variants |
-| QTE-03 | Quote → origin/destination, expand location, pickup/delivery services | P | QUOTE | E-01 §6, E-07 | Addresses, location types, service options and dependencies |
-| QTE-04 | Quote → packaging/quantity/dimensions/weight/units | P | QUOTE, TERM | E-01 §6, E-07 | Units, quantity semantics, mixed items, formulas and validation |
-| QTE-05 | Quote → Freight class / NMFC | P | QUOTE, TERM, API | E-01 §6, E-06 | Value meanings, classification source/owner, lookup and reclassification |
-| QTE-06 | Quote → Stackable / Hazmat / Protect from freezing | P | QUOTE, TERM | E-01 §6, E-07 | Conditional fields, service effects and carrier restrictions |
-| QTE-07 | Quote → add item, estimated total length, Linear Feet Visualizer | P | QUOTE, TERM | E-01 §6, E-07 | Multi-unit calculations, floor layout, stacking and overrides |
-| QTE-08 | Quote → Get quotes | P | QUOTE, API | E-01 §§2,4, E-07 | Validation, loading/no rates, partial provider failure and retry |
-| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb) | P | QUOTE | E-01 §4, E-12 | Offer details, filters, guarantees, network/direct rates and stacked offers |
-| QTE-10 | Offer → cost/margin/profit/price | P | QUOTE, TERM | E-01 §5, E-12 | Editable versus locked state, overrides, rounding and guardrails |
-| QTE-11 | Result → Sharing / customer visibility / reference/menu | P | QUOTE | E-01 §2, E-12 | Recipients, public/private access, approval/tender and audit history |
-| QTE-12 | Result → manual quote / Book / View Shipment | P | QUOTE, SHIP | E-01 §§2,4; E-12 confirms booked banner/View Shipment | Inspect manual/eligible offer states; test actual booking and duplicates in test environment |
+| QTE-01 | [Quote history](https://app.quotefactory.com/broker/quote-history) | P | QUOTE | E-60 | Main §14: Search/paging/role tests pending |
+| QTE-02 | [Quote form](https://app.quotefactory.com/broker/quote) → customer/equipment/date | P | QUOTE | E-51 | Main §14: Customer/contact/defaults and all subtype validation pending |
+| QTE-03 | Quote → origin/destination, expand location, pickup/delivery services | P | QUOTE | E-53 | Main §14: Populated expansion, service pricing and destination parity pending |
+| QTE-04 | Quote → packaging/quantity/dimensions/weight/units | P | QUOTE, TERM | E-52, E-54 | Main §14: Mixed groups, conversions and input validation pending |
+| QTE-05 | Quote → Freight class / NMFC | P | QUOTE, TERM, API | E-52, E-54 | Main §14: Est: 70 observed separately from empty class; algorithm, lookup and owner pending |
+| QTE-06 | Quote → Stackable / Hazmat / Protect from freezing | P | QUOTE, TERM | E-51, E-52 | Main §14: Hazmat flag checked unsaved; carrier restrictions/details pending |
+| QTE-07 | Quote → add item, estimated total length, Linear Feet Visualizer | P | QUOTE, TERM | E-54 | Main §14: Two-pallet example verified; stack/override/layout edge cases pending |
+| QTE-08 | Quote → Get quotes | P | QUOTE, API | E-57 | Main §14: Historical partial failures inspected; real submit/loading/retry/no-rate tests pending |
+| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb) | P | QUOTE | E-55, E-59 | Main §14: Guaranteed filter/details observed; volume, source and grouping rules pending |
+| QTE-10 | Offer → cost/margin/profit/price | P | QUOTE, TERM | E-55, E-59, E-61 | Main §14: Pricing states and matching shipment figures observed; saves/precedence/guardrails pending |
+| QTE-11 | Result → Sharing / customer visibility / reference/menu | P | QUOTE | E-56 | Main §14: Visibility versus Not sent and view-only restriction observed; actual sends/access/approval pending |
+| QTE-12 | Result → manual quote / Book / View Shipment | P | QUOTE, SHIP | E-58, E-59, E-61 | Main §14: Manual dialog and existing shipment handoff inspected; Book entry-point discrepancy and creation/duplicates pending |
 
 **5\. Shipments, edits and tracking**
 
@@ -194,6 +198,10 @@ The observations below concern the checked-in Markdown. Existing DOCX/PDF export
 | G-09 | Incorrect Prepaid timing definition corrected using ODFL's billing-party explanation in §8. | Account-specific payer/terms approval. |
 | G-06 | Booked meaning corrected after observing a Booked shipment with Needs a carrier. | Full transition/coverage specification and test environment. |
 
+**Phase 3 progress:** G-02–04 now have detailed quote fields/options/actions, current classification context, a measured UI example and pricing/sharing/manual/handoff evidence in main §14. Remaining submission, policy, provider and role tests are preserved in QTE-01–12 and OQ-01/02/10/17/22–24.
+
+**Phase 2 progress:** Customer identity/contact/billing/credit/rep/quoting forms and all customer tabs were inspected; carrier/provider list and creation entry, carrier overview/documents/history, vendor creation/type/identity/billing/sync forms and saved-location options are documented in main §§12–13. G-01/G-08 now have record-level content; their remaining role, intake, settings/reporting and tested-outcome work stays open. G-03 gains evidence that 04821J also appears beside ArcBest in customer pricing, without assigning it a commodity meaning.
+
 **9\. Operational questions to resolve during detailed documentation**
 
 All items below are **Open**. Named reviewers await SC-04. They supplement the [client scope questions SC-01–12](Phase%200%20Scope%20and%20Decisions.md); they are not assumed business rules.
@@ -216,19 +224,38 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | OQ-14 | Which fields/actions save immediately? Which edits resend documents, and who receives them? | EDT-06, DOC-01–04 | Operations lead | 5–6 |
 | OQ-15 | What is behind unknown/unlabeled document controls, and what are file limits/retention/access rules? | DOC-03/04 | Operations/admin lead | 6, 8 |
 
+**Additional questions from Phase 2**
+
+| ID | Question / investigation | Related inventory | Proposed reviewer | Phase |
+| --- | --- | --- | --- | --- |
+| OQ-16 | What are the actual create/update/autosave, required-field, duplicate and cancel-after-edit rules for master records? | CUS-02–07, CAR-02, VEN-02 | Operations/admin lead | 2, 3, 8; SC-05 test access |
+| OQ-17 | What is the precedence of global/customer/per-carrier/offer pricing, and what do Volume multiplier and carrier-side identifiers mean? | CUS-07, QTE-05/10 | Pricing/integration lead | 3, 7, 8 |
+| OQ-18 | How do saved templates, shipment-only stop edits and explicit template edits affect future/existing records and generated documents? | CUS-09, EDT-03 | Operations lead | 5 |
+| OQ-19 | Does contact position/selection designate a primary contact or change recipients, and which notes/contacts are shared? | CUS-04/11, CAR-03 | Operations/admin lead | 2, 5, 8 |
+| OQ-20 | Which source powers carrier MC/DOT lookup, what is imported/refreshed, and how do approval/packet/authority/insurance interact? | CAR-02/03, API-03 | Carrier operations/integration lead | 2, 7, 8 |
+| OQ-21 | Why did the vendor Shipments click not visibly navigate, and where are vendor payments, type-change history and billing editors saved? | VEN-01/02 | Provider/accounting lead | 2, 6, 8 |
+
+**Additional questions from Phase 3**
+
+| ID | Question | Related inventory | Proposed reviewer | Phase |
+| --- | --- | --- | --- | --- |
+| OQ-22 | Why does a past-date request disable row Book while offer-detail Book lacks a disabled marker, and what is the intended consistent eligibility rule? | QTE-12 | Operations/product owner | 3–5 |
+| OQ-23 | What do XN credit and offer expiry mean, how do they differ from customer credit/pickup cutoff, and who may override them? | QTE-08/09/12, CUS-06 | Accounting/integration lead | 3, 6–8 |
+| OQ-24 | How do visible contacts, Not sent, view-only links and customer portal permissions map to email delivery, approval/tender and booking authority? | QTE-11/12, SYS-04 | Operations/admin lead | 3, 8 |
+
 **10\. Phase tracking and next delivery**
 
 | Phase | Current state | Next output |
 | --- | --- | --- |
 | 0 | Baseline artifacts delivered; scope/reviewer/test-access decisions pending | Client answers entered into decision log |
 | 1 | Delivered in main guide §§1–14; business/role review pending | Overview, navigation, relationships, terminology, arithmetic and exercises delivered |
-| 2 | Next; not started | Expand customers, carriers, vendors and location records in the main guide |
-| 3 | Not started | Quote fields, classification, offers, pricing and booking |
-| 4 | Not started | Shipment lists, coverage and detailed screen guide |
+| 2 | Observed-form documentation delivered in main §§12–13; mutation/role tests pending | Read Phase 2 exercises and provide test access for unresolved save/validation/propagation rules |
+| 3 | Observed documentation delivered in main §14; submission/save/role/booking tests pending | Read §14.12 exercises and resolve owned quote rules |
+| 4 | Next; not started | Shipment lists, coverage and detailed screen guide |
 | 5 | Not started | Editing, status transitions, confirmations and tracking |
 | 6 | Not started | Document and accounting lifecycles |
 | 7 | Not started | Validated third-party capability/access requirements |
 | 8 | Not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 2; first read the Phase 1 exercises in the main guide. Open questions stay visible while independent read-only learning work continues.
+**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 4; first read main-guide §14 and the Phase 3 exercises in §14.12. Open questions stay visible while independent read-only learning work continues.
