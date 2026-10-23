@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 3.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 4.
 
 **1\. How to use this inventory**
 
@@ -18,7 +18,7 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 
 **Scope:** Every inventory item inherits **Awaiting client decision** from the [scope matrix](Phase%200%20Scope%20and%20Decisions.md). An O or P status means documentation evidence exists, not that the feature is approved for the clone.  
 **Owner:** Documentation author maintains every row. Chapter reviewer roles below are proposed; named assignments await SC-04.  
-**Evidence:** E-IDs resolve in the [Evidence Register](Documentation%20Evidence%20Register.md). No screenshot files are attached; Phases 2–3 used unsaved visual inspections alongside text observations.
+**Evidence:** E-IDs resolve in the [Evidence Register](Documentation%20Evidence%20Register.md). No screenshot files are attached; Phases 2–4 used unsaved visual inspections alongside text observations.
 **Coverage limit:** This is the known accessible-surface inventory, not a claim that every hidden form/role/option has been discovered. Each detailed phase must extend it.
 
 **Phase 0 baseline totals:** 89 inventory items — 33 Observed, 21 Partly documented, 33 Not explored and 2 Blocked.
@@ -28,6 +28,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 **After Phase 2:** 89 items — 25 Observed, 42 Partly documented, 20 Not explored and 2 Blocked. All 17 customer/carrier/vendor rows now have observed field/flow documentation in main-guide sections 12–13, with explicit untested outcomes. No complete application use case or clone scope approval is inferred.
 
 **After Phase 3:** 89 items — 24 Observed, 43 Partly documented, 20 Not explored and 2 Blocked. All 12 quote rows have field/action explanations or owned gaps in main §14. One unsaved measurement example and existing quote-to-shipment navigation were checked; submitted quote/save/share/booking outcomes remain untested.
+
+**After Phase 4:** 89 items — 13 Observed, 58 Partly documented, 16 Not explored and 2 Blocked. Main §15 documents shipment lists/queues, direct-entry form, coverage candidates/forms, assigned-carrier/detail regions and document destinations. Existing rows/calculations and view navigation were checked; create/assign/send/status/financial/role outcomes remain untested.
 
 **Chapter and reviewer key**
 
@@ -51,10 +53,10 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 | SYS-01 | [Dashboard](https://app.quotefactory.com/broker/dashboard) | P | SYS | E-04–05, E-28 | Main guide §§2,6,11 explains navigation; counter/date/map-data rules remain open |
 | SYS-02 | Sidebar → Find / Find anything | P | SYS, ADMIN | E-28 | Main guide §§6,11 documents verified BOL search; other entities, failure/permission filtering remain open |
 | SYS-03 | Dashboard → Quote / Requested / Quoted shortcuts | P | SYS, QUOTE | E-05, E-28 | Main guide §6 maps entry targets; exact queue inclusion and request handoff remain open |
-| SYS-04 | Dashboard → Dispatch queue | N | SYS, SHIP | E-05, E-30 | Zero-count click left dashboard unchanged; destination/actions and dispatch rules remain unexplored |
-| SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | P | SYS, SHIP | E-29 | Main guide §§5,6,10 explains Booked versus Needs a carrier; lead/assignment/counter rules remain open |
-| SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | N | SYS, EDIT | E-04 | Queue filters, confirmation form and saved result |
-| SYS-07 | Sidebar → [Confirm deliveries](https://app.quotefactory.com/broker/shipments/delivering/all) | O | SYS, EDIT | E-04; T0 queue navigation | Queue filters, confirmation form, POD and saved result |
+| SYS-04 | Dashboard → Dispatch queue | P | SYS, SHIP | E-63 | Main §15.2: direct dispatch route loaded No active shipments; populated workflow/shortcut behavior pending |
+| SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | P | SYS, SHIP | E-63, E-68–69 | Main §15.2/6–7: coverage workspace/candidates/forms; source/count/posting/assignment tests pending |
+| SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | P | SYS, EDIT | E-63 | Main §15.2: populated Scheduled pickup queue; date rules and confirmation outcomes Phase 5 |
+| SYS-07 | Sidebar → [Confirm deliveries](https://app.quotefactory.com/broker/shipments/delivering/all) | P | SYS, EDIT | E-63 | Main §15.2: populated In transit delivery queue; rules, POD and status outcomes pending |
 | SYS-08 | Sidebar → [Training](https://quotefactory.talentlms.com/) | N | ADMIN | E-04 | External handoff and learning resources relevant to clone scope |
 | SYS-09 | Sidebar → Support | N | ADMIN | E-04 | Help widget, knowledge base and contact boundaries |
 | SYS-10 | Sidebar → [Profile](https://app.quotefactory.com/profile) | N | ADMIN | E-04, E-22 | Profile fields and role/account information without changing credentials |
@@ -107,19 +109,19 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| SHP-01 | [Shipments](https://app.quotefactory.com/broker/shipments) → Active / All | O | SHIP | E-27 | Row fields, list states, sorting, pagination and export menu |
-| SHP-02 | Shipments → View shipment filters | O | SHIP | E-27 | Search/status/equipment/date/address/carrier/customer/rep filters; URL persistence and See shipments behavior |
-| SHP-03 | Sidebar / list → [Create new shipment](https://app.quotefactory.com/broker/shipment/new) | N | SHIP | E-04 link | Direct creation versus quote conversion, fields and initial state |
-| SHP-04 | Cover queue → shipment/leads | N | SHIP | E-04; user cover screenshot | Lead source, carrier offers, selection/assignment and state rules |
-| SHP-05 | Shipment → header, reps and status progression | P | SHIP, EDIT | E-01 §8, E-13 | Status transitions, assigned actors and rep management |
-| SHP-06 | Shipment → carrier/customer/vendor cards | O | SHIP | E-13 | Card fields, detail links, invoice reference and provider relationship |
-| SHP-07 | Shipment → financial summary / Expand itemized view | P | SHIP, MONEY | E-01 §5, E-13 | Target cost versus actual bills, line-item details and totals |
-| SHP-08 | Shipment → stops / appointments / In / Out / ETA | O | SHIP, EDIT | E-13 | Dates/time zones, arrival/departure and confirmation controls |
-| SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-01 §7, E-13 | Driver/truck/trailer, tracking requests, completed/off-route and external event source |
-| SHP-10 | Shipment → add tracking update / Delivered | P | EDIT | E-01 §§7–8, E-13 | Form fields, Notes/PRO, confirmation/POD and transition effects; user's exact Notes form still to identify |
-| SHP-11 | Shipment → freight summary / volume / density / length / map | P | SHIP, TERM, API | E-01 §6, E-13; user volume screenshot | Units, formulas/rounding, layouts, routing and location freshness |
-| SHP-12 | Shipment → note / Timeline | O | SHIP, EDIT | E-13 | Note audience, editing/deletion, actor/time and automatic events |
-| SHP-13 | Shipment → action menu | O | SHIP, EDIT | E-15 | Duplicate, Change customer, Cancel, Simulate location updates; prerequisites and effects not executed |
+| SHP-01 | [Shipments](https://app.quotefactory.com/broker/shipments) → Active / All | P | SHIP | E-62 | Main §15.2–3: Active/All, row meanings, sort/export menus; complete date/icon/paging/export tests pending |
+| SHP-02 | Shipments → View shipment filters | P | SHIP | E-62 | Main §15.3: filter catalog and one known-BOL result verified; range/multi-filter/timezone rules pending |
+| SHP-03 | Sidebar / list → [Create new shipment](https://app.quotefactory.com/broker/shipment/new) | P | SHIP | E-64 | Main §15.4: direct blank form/defaults and final controls; requiredness, numbering, draft/initial state untested |
+| SHP-04 | Cover queue → shipment/leads | P | SHIP | E-68–69 | Main §15.6–7: candidates, history/warning, add-carrier/packet/send branches; actual sourcing/assignment pending |
+| SHP-05 | Shipment → header, reps and status progression | P | SHIP, EDIT | E-65–66 | Main §15.5: status progression and shipment rep/commission dialog; transitions/permissions/payment effects pending |
+| SHP-06 | Shipment → carrier/customer/vendor cards | P | SHIP | E-65, E-67 | Main §15.5–7: customer/assigned-carrier versus candidate/provider relationships; removal/replacement/assignment pending |
+| SHP-07 | Shipment → financial summary / Expand itemized view | P | SHIP, MONEY | E-65 | Main §15.8: expanded Freight cost/price, Margin/Cost+/Profit; autosave/rounding/reconciliation pending |
+| SHP-08 | Shipment → stops / appointments / In / Out / ETA | P | SHIP, EDIT | E-65, E-74 | Main §15.9: stops/contacts/hours/appointments/ETA/In/Out; timestamp discrepancy OQ-25 and Phase 5 outcomes pending |
+| SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-65 | Main §15.9: driver/truck/trailer/tracking controls, completed/off-route distinctions; source/update forms Phase 5/7 |
+| SHP-10 | Shipment → add tracking update / Delivered | P | EDIT | E-65 | Main §15.9: tracking/Delivered action purposes; actual Notes/PRO/confirmation forms and outcomes Phase 5 |
+| SHP-11 | Shipment → freight summary / volume / density / length / map | P | SHIP, TERM, API | E-65, E-74 | Main §15.10: saved two-group freight arithmetic and Mapbox attribution; route/feed/rounding/layout rules pending |
+| SHP-12 | Shipment → note / Timeline | P | SHIP, EDIT | E-65 | Main §15.11: notes and expanded lifecycle/document/tracking Timeline; audience/actor/save/edit rules pending |
+| SHP-13 | Shipment → action menu | P | SHIP, EDIT | E-75, E-15 | Main §15.11: menu variant recorded; duplicate/change/cancel/simulate eligibility/effects pending |
 | EDT-01 | Shipment → [Edit shipment](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/edit) | O | EDIT | E-14 | All field dictionaries and role/status editability matrix |
 | EDT-02 | Edit → equipment / Partial / Tanker endorsement / Team service | O | EDIT, TERM | E-14 | Locked-after-coverage rule, equipment applicability and service effects |
 | EDT-03 | Edit → Locations / reorder / add location / templates | O | EDIT, MASTER | E-14 | Stop order, address/contact changes versus template changes, time windows and references |
@@ -132,13 +134,13 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| DOC-01 | Shipment → Confirmation | P | MONEY | E-01 §7, E-16 | Customer document preview, fields, access and acceptance versus navigation |
-| DOC-02 | Shipment → Rate con | O | MONEY | E-17 | Carrier document, Confirmed/by, Share and Regenerate document; no actions executed |
-| DOC-03 | Shipment → Documents | O | MONEY | E-18 | POD, provider bill, provider-specific and miscellaneous files; upload rules and unclear labels |
+| DOC-01 | Shipment → Confirmation | P | MONEY | E-70 | Main §15.11: customer document preview/navigation distinguished from confirmation action; full fields/access/acceptance Phase 6 |
+| DOC-02 | Shipment → Rate con | P | MONEY | E-71 | Main §15.11: confirmed carrier rate-con and share dialog; signature/send/regen/access tests Phase 6 |
+| DOC-03 | Shipment → Documents | P | MONEY | E-73 | Main §15.11: provider/POD/bill/Misc destinations; unknown add labels/types/file rules Phase 6 |
 | DOC-04 | BOL / POD generation, upload, preview and sharing flows | P | MONEY | E-01 §7, E-18 identifies POD upload link | Exact forms, required attachments, recipients, revisions and storage policy |
 | ACC-01 | [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | O | MONEY | E-20 | Every accounting tab, filter, count and row action |
-| ACC-02 | Shipment → Bill | O | MONEY | E-19 | Upload bill/POD, Expected bill, dispute, balance and Record payment |
-| ACC-03 | Shipment → Invoice | O | MONEY | E-26 | PDF/Regenerate/Remove, Upload POD, In dispute, Send invoice and customer-payment record |
+| ACC-02 | Shipment → Bill | P | MONEY | E-72 | Main §15.11: Expected bill versus upload/dispute/balance/payment controls; lifecycle actions Phase 6 |
+| ACC-03 | Shipment → Invoice | P | MONEY | E-72 | Main §15.11: invoice preview/send/POD/payment entries; lifecycle/sends/settlement Phase 6 |
 | ACC-04 | Bill approval/payments and invoice payment allocation | N | MONEY | E-19–20, E-26 entry controls | Who approves, due dates, terms, actual payment versus record-only and reconciliation |
 | ACC-05 | QuickPay / factoring / disputes / overdue workflows | N | MONEY, ADMIN | E-20, E-25 | Optional workflows, settings, approvals and first-release decision |
 
@@ -198,6 +200,8 @@ The observations below concern the checked-in Markdown. Existing DOCX/PDF export
 | G-09 | Incorrect Prepaid timing definition corrected using ODFL's billing-party explanation in §8. | Account-specific payer/terms approval. |
 | G-06 | Booked meaning corrected after observing a Booked shipment with Needs a carrier. | Full transition/coverage specification and test environment. |
 
+**Phase 4 progress:** Main §15 adds detailed shipment/list/coverage/document-navigation content for G-05/06/10 and a saved two-group measurement example for G-04. Direct dispatch empty-state evidence supersedes the earlier uninspected destination; it does not explain the old shortcut no-op. Menu, timestamp and carrier-packet/rate-con distinctions remain explicit open rules.
+
 **Phase 3 progress:** G-02–04 now have detailed quote fields/options/actions, current classification context, a measured UI example and pricing/sharing/manual/handoff evidence in main §14. Remaining submission, policy, provider and role tests are preserved in QTE-01–12 and OQ-01/02/10/17/22–24.
 
 **Phase 2 progress:** Customer identity/contact/billing/credit/rep/quoting forms and all customer tabs were inspected; carrier/provider list and creation entry, carrier overview/documents/history, vendor creation/type/identity/billing/sync forms and saved-location options are documented in main §§12–13. G-01/G-08 now have record-level content; their remaining role, intake, settings/reporting and tested-outcome work stays open. G-03 gains evidence that 04821J also appears beside ArcBest in customer pricing, without assigning it a commodity meaning.
@@ -243,6 +247,14 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | OQ-23 | What do XN credit and offer expiry mean, how do they differ from customer credit/pickup cutoff, and who may override them? | QTE-08/09/12, CUS-06 | Accounting/integration lead | 3, 6–8 |
 | OQ-24 | How do visible contacts, Not sent, view-only links and customer portal permissions map to email delivery, approval/tender and booking authority? | QTE-11/12, SYS-04 | Operations/admin lead | 3, 8 |
 
+**Additional questions from Phase 4**
+
+| ID | Question | Related inventory | Proposed reviewer | Phase |
+| --- | --- | --- | --- | --- |
+| OQ-25 | Which planned/actual timestamps and timezones drive list pickup time, detail Out time, document window and queue inclusion? Reference displays differ. | SHP-01/02/08, SYS-06/07 | Operations/product lead | 4–5, 8 |
+| OQ-26 | What do coverage Save for later and Cover & request packet persist, when is the carrier committed, which checks are mandatory, and when is rate con sent? | SHP-04/06, CAR-03, DOC-02 | Carrier operations/integration lead | 4–7 |
+| OQ-27 | What state/results do direct Book shipment and Save for later create, which fields/BOL are required, and what prevents duplicate creation? | SHP-03, EDT-07 | Operations/product lead | 4–5 |
+
 **10\. Phase tracking and next delivery**
 
 | Phase | Current state | Next output |
@@ -251,11 +263,11 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 1 | Delivered in main guide §§1–14; business/role review pending | Overview, navigation, relationships, terminology, arithmetic and exercises delivered |
 | 2 | Observed-form documentation delivered in main §§12–13; mutation/role tests pending | Read Phase 2 exercises and provide test access for unresolved save/validation/propagation rules |
 | 3 | Observed documentation delivered in main §14; submission/save/role/booking tests pending | Read §14.12 exercises and resolve owned quote rules |
-| 4 | Next; not started | Shipment lists, coverage and detailed screen guide |
-| 5 | Not started | Editing, status transitions, confirmations and tracking |
+| 4 | Observed documentation delivered in main §15; creation/coverage/status/role/document tests pending | Read §15.13 exercises and resolve OQ-09/12/25–27 |
+| 5 | Next; not started | Editing, status transitions, confirmations and tracking |
 | 6 | Not started | Document and accounting lifecycles |
 | 7 | Not started | Validated third-party capability/access requirements |
 | 8 | Not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 4; first read main-guide §14 and the Phase 3 exercises in §14.12. Open questions stay visible while independent read-only learning work continues.
+**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 5; first read main-guide §15 and the Phase 4 exercises in §15.13. Open questions stay visible while independent read-only learning work continues.

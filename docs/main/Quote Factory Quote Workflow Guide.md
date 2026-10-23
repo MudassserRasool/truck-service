@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 23, 2026 | Phases 1–3 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 23, 2026 | Phases 1–4 observed documentation delivered; save/role tests pending.
 
 **This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -24,16 +24,17 @@ Originally prepared October 9, 2026 | Expanded October 23, 2026 | Phases 1–3 o
 12. [Customers, carriers and vendors — Phase 2](#master-records)
 13. [Saved locations and address templates — Phase 2](#saved-locations)
 14. [Quote creation, classification and pricing — Phase 3](#quote-details)
-15. [Questions still awaiting verification](#open-questions)
-16. [Phase progress and what to do next](#phase-progress)
-17. [Sources and supporting records](#sources)
+15. [Shipment lists, coverage and shipment detail screens — Phase 4](#shipment-operations)
+16. [Questions still awaiting verification](#open-questions)
+17. [Phase progress and what to do next](#phase-progress)
+18. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
 
 **Purpose:** Understand the business first, then follow the app, then learn the detailed rules behind each field and action. The documentation also provides a basis for agreeing what the clone must implement.
 
-**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Later phases will expand shipment details/editing, accounting, integrations, settings and acceptance scenarios in this same document.
+**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Later phases will expand editing, accounting, integrations, settings and acceptance scenarios in this same document.
 
 **Evidence labels used here**
 
@@ -203,13 +204,13 @@ This is the learning sequence. LTL automated-rate workflows and truckload covera
 | Review quotes | Sidebar **Quotes** → [Quote history](https://app.quotefactory.com/broker/quote-history) | Searchable quote records; open a result. | Booked/expired indicators describe that record; do not assume current offer validity. |
 | Review quote requests | Dashboard Quotes → [Requested](https://app.quotefactory.com/broker/quote-history?status=draft) / [Quoted](https://app.quotefactory.com/broker/quote-history?status=pending) | Status-filtered quote-history entry points. | These targets were observed; full inclusion rules remain unverified. |
 | Review unfinished quote work | Dashboard **Quote** queue → [Finish quotes](https://app.quotefactory.com/broker/quote-history/finish) | Advertised queue destination. | Destination not explored; don't infer behavior from the queue label. |
-| Review dispatch work | Dashboard **Dispatch** → [Dispatch queue](https://app.quotefactory.com/broker/shipments/dispatching/all) | Advertised dispatch destination. | In Phase 1, clicking the zero-count shortcut left the dashboard unchanged. Queue contents/actions remain unverified. |
+| Review dispatch work | Dashboard **Dispatch** → [Dispatch queue](https://app.quotefactory.com/broker/shipments/dispatching/all) | Advertised dispatch destination. | In Phase 1, clicking the zero-count shortcut left the dashboard unchanged. Direct destination later showed No active shipments (§15.2); populated dispatch actions remain unverified. |
 | Find loads requiring coverage | Sidebar **Cover** → [Shipments to cover](https://app.quotefactory.com/broker/shipments/covering/all) | Shipment rows with dates, parties, amounts and leads; open a shipment for Cover. | The inspected route applied TL/booked filters. A lead is not proof of an assigned carrier. |
 | Follow pickups | Sidebar **Confirm pickups** → [Pickup queue](https://app.quotefactory.com/broker/shipments/scheduled/all) | Entry point for pickup follow-up. | Detailed confirmation form and transition rules belong to Phase 5. |
 | Follow deliveries | Sidebar **Confirm deliveries** → [Delivery queue](https://app.quotefactory.com/broker/shipments/delivering/all) | Shipment rows requiring delivery follow-up. | Do not click Delivered as a navigation exercise. |
 | Manage customers | Sidebar **Customers** → [Customers](https://app.quotefactory.com/broker/customers) | List with contacts, activity, credit and reps; open customer detail. | Plus opens customer creation; do not submit it during a read-only exercise. |
 | Review all operational records | Sidebar **Shipments** → [Shipments](https://app.quotefactory.com/broker/shipments) | Active/All, filters and shipment links. | Work queues and a filtered list can overlap; they are not separate shipments. |
-| Create without quote results | Plus beside Shipments → [Create new shipment](https://app.quotefactory.com/broker/shipment/new) | Direct-creation entry point. | Destination form/save rules need Phase 4 inspection. |
+| Create without quote results | Plus beside Shipments → [Create new shipment](https://app.quotefactory.com/broker/shipment/new) | Direct-creation entry point. | Blank form/defaults are documented in §15.4; submission/save rules remain untested. |
 | Manage transportation/service providers | Sidebar **Carriers** → [Carriers / Vendors](https://app.quotefactory.com/broker/vendors/carriers) | Carriers, Vendors and All tabs; creation chooser. | Carrier versus Vendor is a business distinction, not an API connection status. |
 | Review accounting work | Sidebar **Bills & Invoices** → [Accounting](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | Bill, POD, invoice, dispute and overdue work queues. | Approve, send and payment controls affect real records. |
 | Review analytics/exports | Sidebar **Reporting** → [Reports](https://app.quotefactory.com/broker/reports) | Lanes and saved export/report entries. | Names such as Monthly Margin or Shipments copy may be account-specific. |
@@ -365,7 +366,7 @@ Density reference: [NMFTA — freight classification and density](https://nmfta.
 | Protect from freezing | Request to protect freight from freezing conditions. | Visible on the LTL quote form; service terms/availability need the actual offer. |
 | Tanker endorsement | Driver qualification related to operating tank vehicles; distinct from simply selecting a tanker equipment type. | Toggle observed. FMCSA identifies N as tank vehicle and X as combined tank/hazmat endorsement. Exact load applicability and app validation remain open. |
 | Team service | In ordinary freight operations, a request for a driving team rather than a solo-driver service. | Toggle observed; team size, eligibility, carrier matching and transit/pricing effect are unverified. |
-| Cover / coverage | Arrange a suitable carrier for the freight movement. | Booked BOL 1047758 still shows Needs a carrier and a Cover link. Exact assignment/acceptance rules follow in Phase 4. |
+| Cover / coverage | Arrange a suitable carrier for the freight movement. | Booked BOL 1047758 still shows Needs a carrier and a Cover link. Coverage forms are documented in §15.6–7; actual assignment/acceptance outcomes remain untested. |
 | Lead | A potential coverage opportunity/contact/offer entry; the queue displays a lead count. | Exact origin and counted object are unverified. A lead is not confirmed coverage. |
 | Tender | Offer of shipment work to a party for acceptance. | Customer tender versus broker booking versus carrier acceptance must be traced separately for this account. |
 | Dispatch | Coordination/release of work for a carrier/driver to perform. | A Dispatch queue exists; its exact actions and automation are not yet established. |
@@ -970,10 +971,240 @@ The booked result returned offers while also showing **6 carriers didn't return 
 
 **Still pending:** Submitted validation, provider requests, all equipment variants, selected-customer/contact behavior, class-source responsibility, global/customer/offer precedence, layout/conversion edge cases, save/visibility/email effects, customer approval, new booking/dispatch and alternate roles. These remain owned open questions; no complete quote workflow or clone scope is signed off.
 
-**Next phase: Phase 4 — Shipment lists, coverage and shipment detail screens.** This will expand the same guide with queues, leads, carrier coverage, shipment regions and the purpose/navigation of Confirmation, Rate con, Bill, Invoice, Documents and map controls. Edit/status-transition rules follow in Phase 5.
+**Continue to Phase 4 in section 15:** Shipment lists, coverage and shipment detail screens, including queues, leads, carrier coverage and the purposes of Confirmation, Rate con, Bill, Invoice, Documents and map controls. Edit/status-transition rules follow in Phase 5.
+
+<a id="shipment-operations"></a>
+**15\. Shipment lists, coverage and shipment detail screens — Phase 4**
+
+**Goal:** Find the day's work, identify the shipment's current operational needs, distinguish a carrier lead from an assigned carrier, and understand every inspected section and related document button.
+
+**Open:** Sidebar **Shipments** → [shipment list](https://app.quotefactory.com/broker/shipments). Evidence E-62–75 records this phase; earlier examples E-13–20/27/29/49/61 remain useful. Live forms were viewed without submitting bookings, assignments, charges, notes, messages, documents or status changes. No payment or commission action was performed.
+
+**15.1 Operational hierarchy and daily use cases**
+
+```text
+Shipment list / focused work queue
+├── Choose Active or All where available
+├── Filter / sort → open one BOL
+└── Shipment detail
+    ├── Header, reps and status progression
+    ├── Customer relationship → customer record / Confirmation / Invoice
+    ├── Transportation provider
+    │   ├── Uncovered: Cover freight → candidates → coverage form
+    │   └── Assigned: carrier detail / Rate con / Bill / driver information
+    ├── Other service vendors → provider-specific costs/documents/bills
+    ├── Cost & price → individual financial lines
+    ├── Ordered stops → contacts / references / hours / appointments / events
+    ├── Freight groups → counts / dimensions / weight / floor-space summary
+    ├── Map / tracking information
+    └── Notes / Timeline / shipment action menu
+```
+
+| Operational question | Open / click path | What to inspect | Stopping point for learning |
+| --- | --- | --- | --- |
+| Which loads need a carrier? | Sidebar Cover → row → Cover freight | Target cost, candidate carriers, quoted costs, eligibility warnings and packet branch. | Before Save for later, posting, carrier removal or Cover & send/request. |
+| What needs pickup follow-up? | Confirm pickups → row | Assigned carrier, pickup date, appointment and events. | Before Picked up, rescheduling or time/status changes. |
+| What needs delivery follow-up? | Confirm deliveries → row | In-transit state, destination, ETA, event history and delivery evidence. | Before Delivered or entering a tracking update. |
+| What is this shipment worth? | Row → financial summary → Expand itemized view | Customer price versus provider target cost and gross profit. | Do not edit financial inputs, even outside Edit shipment. |
+| Which document belongs to whom? | Customer Confirmation / carrier Rate con / Bill / Invoice / Documents | Party, document purpose and related obligation. | View only; do not regenerate, remove, upload or send. |
+| What happened previously? | Shipment → Timeline | Dated lifecycle, document, coverage and tracking entries. | Do not treat event names as proven automatic triggers. |
+
+**15.2 Shipment list and queue dictionary**
+
+| Page | Open this URL / navigation | Observed page / rows | Meaning and limit |
+| --- | --- | --- | --- |
+| Shipments | [Shipments](https://app.quotefactory.com/broker/shipments) | Active / All tabs; Create new shipment, filter button, CSV and sort icons. Active initially selected; All was opened. | General record list. Exact Active exclusion rules and full history/loading/pagination behavior remain unverified. |
+| Coverage | [Shipments to cover](https://app.quotefactory.com/broker/shipments/covering/all) | Booked rows, equipment, leads and sometimes a cost amount. BOL 1047758 displayed 19 leads in this pass. | Focused coverage work; a lead count is not an assigned-carrier count. |
+| Pickup follow-up | [Shipments to confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | Scheduled examples, including BOL 1047665 with VS Transit and a carrier amount. LTL and Auto Transport examples appeared. | Scheduled work does not prove pickup occurred. Actual queue cutoff/overdue/inclusion rules need verification. |
+| Delivery follow-up | [Shipments to deliver](https://app.quotefactory.com/broker/shipments/delivering/all) | In transit examples, including BOL 1046693. | Delivery follow-up list; no proof of final delivery or POD. |
+| Dispatch | [Shipments to dispatch](https://app.quotefactory.com/broker/shipments/dispatching/all) | Direct navigation succeeded; No active shipments. | Empty state observed. Earlier zero-count dashboard shortcut did not navigate; populated dispatch actions remain uninspected. |
+
+Counters, dates and rows can change during exploration. Do not add queue counters together as a shipment total: focused queues and general lists can contain the same record. Queue pages did not expose the complete Active/All/filter toolbar seen on the general list. Do not assume identical controls across pages.
+
+**How to read a row:** Shipment/BOL number and status → pickup date/time → customer and customer price → origin company/city/state → lane distance → destination company/city/state and delivery date/appointment → equipment/weight → carrier/cost or leads. Narrow layouts truncate names; open the row to read the full record.
+
+**Verified comparison:** Filtering All for **1046693** found one row with In transit, customer price **$4,900**, Pathak Express and **$4,200**. Those amounts match the detail screen. The **P** marker on sampled Dry Van rows was explicitly labeled **partial is allowed**. A blue status marker and a small red route-like icon were visible on the reference row; no complete color/icon legend was established. Do not infer an exception's meaning from color alone.
+
+**Date/time discrepancy to preserve:** The reference row shows **Aug 3, 11:00pm**, while the pickup detail shows **Aug 3, 2:00pm EDT** and the customer confirmation preview shows an **11:00 AM–3:00 PM** pickup window. These are different displayed values/contexts. Their source, timezone conversion and planned-versus-actual meaning require operations verification (OQ-25); do not silently normalize them or claim a known cause.
+
+**15.3 Filters, sorting and export**
+
+**Try:** Shipments → **All** → **View shipment filters** → enter `1046693` in **search for...** → **See shipments**. The inspected result contained one reference shipment and the filter showed **See 1 shipment**. Matching rules beyond this known BOL were not tested. Filters are view controls, not edits to a shipment.
+
+| Filter group | Visible choices / inputs | Confirm before implementing |
+| --- | --- | --- |
+| Status | Requested; Booked; Scheduled; In transit; Delivered; Canceled. | Multiple selection semantics, empty selection and inclusion rules. |
+| Equipment | LTL; Dry Van; Flatbed; Refrigerated; Intermodal; Drayage; Dump; Dry Bulk; Power Only; Driveaway; Auto Transport; Tanker; Select truckload shortcut. | Family/subtype mapping; Other and specialty equipment handling; shortcut behavior. This is a shorter list than quote equipment. |
+| Booked date | Date range; Today, Yesterday, This week, Last week, This month, Last month, This year, Last year. | Inclusive boundaries and timezone. |
+| Pickup / Delivery date | Separate ranges; Today, Tomorrow, Yesterday, This week, Next week, Last week, This month, Next month, Last month, This year, Last year. | Planned date versus event date; time zones and overnight loads. |
+| Origin address / Destination | Separate location inputs. | Exact/geographic matching and radius support. |
+| Carrier / Customer | Separate saved-party selectors. | Assigned carrier versus candidate; multi-provider matching. |
+| Rep / Booked by / Covered by | Separate team-or-user selectors. | Different responsibilities; rep is not automatically the person who booked or covered. |
+
+The toolbar sort menu exposes **Created date new to old**, **Pickup date new to old**, and **Pickup date old to new**. Menu labels were inspected without changing the selected sort. The CSV icon opens **Export these shipments to a .CSV file** and an **Export** button. The final Export button was not clicked; columns, limits, filtering scope, file contents and download behavior remain unverified. No pagination contract was established from the loaded examples.
+
+**15.4 Direct shipment creation versus quote conversion**
+
+**Open:** Plus beside Shipments / **Create new shipment** → [Book shipment](https://app.quotefactory.com/broker/shipment/new). This is a direct form; it does not require first opening carrier quote results. Compare the existing quote conversion in §14.10.
+
+| Direct-form area | Observed fields/defaults | Source / intended role | Untested result |
+| --- | --- | --- | --- |
+| Header / customer | Custom BOL blank; customer selector blank. | Staff/reference number and saved customer. | Generated numbering, uniqueness and required customer/contact. |
+| Equipment / providers | Dry Van; Partial; Tanker endorsement; Team service; + add vendor / carrier. | Requested transport and associated providers. | Required assignment and exact defaults by customer/mode. |
+| Locations | Pickup and Delivery; reorder/add location; editable distance in mi. | Ordered visits and routing context. | Distance calculation, stop ordering and required addresses. |
+| Stop inputs | Company, type, address/Address 2/locality, contact name/phone/email, Share BOL, instructions, hours, date, appointment, references and private note. | Movement-specific site requirements; possible template reuse (§13). | Validation, actual recipient selection and template effects. |
+| Stop defaults | Business with dock/forklift; 8 AM–5 PM; pickup Share BOL checked, delivery unchecked in sampled blank form. | Visible initial values. | No sending or universal default policy inferred. |
+| Freight | Description, Contains/unit, Packaging, Quantity, L/W/H in, Total weight lb, Stackable/Hazmat, + add more handling units, length/visualizer and Total value. | Actual goods and physical handling description. | Meaning of Contains versus handling-unit quantity, requiredness and item validation. |
+| Cost & price | Lane history, Freight financial line, Target cost/Price, add line, Margin/Cost+/Profit. | Staff commercial entry; no automatic rate was obtained here. | Price guardrails and financial persistence. |
+| Final controls | Hide contacts from carrier; Book shipment; Save for later. | Visibility preference, booking submission and a separate deferred-work action. | Required fields, saved state, documents, recipients, queue placement and duplicate handling. |
+
+No field was entered and neither final action was clicked. Requiredness cannot be inferred from an enabled-looking button or the title Book shipment. **Save for later** is a separate exposed action; its exact draft/requested state remains unknown. Detailed input/edit rules continue in Phase 5.
+
+**15.5 Shipment detail — read from top to bottom**
+
+**Reference:** [BOL 1046693 — assigned Dry Van, In transit](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4). Compare [BOL 1047758 — uncovered Auto Transport](https://app.quotefactory.com/broker/shipment/6accf55afcc298c7a4311d79) and [BOL 1047829 — uncovered Dry Van with pallet groups](https://app.quotefactory.com/broker/shipment/6ad62c8868813f1637085014). Record-specific URLs can stop working; fall back to Shipments → filter by BOL.
+
+| Region / control | Meaning / inspected content | How to explore and what remains open |
+| --- | --- | --- |
+| BOL header | Shipment's displayed operational reference. URL also has a separate internal record identifier. | Do not treat the internal URL ID, custom BOL, provider quote reference and PRO as the same identifier. |
+| Documents / Edit shipment / action menu | File hub, full editor and shipment-level actions. | Navigation/action dictionary in §15.11. |
+| Reps | Staff assigned to this shipment. | Manage reps opened Reps on BOL 1046693, + add user, Paid/User/Commission/Payout and a mark-commission-paid checkbox. No values changed. Shipment assignment is separate from customer defaults that apply only to new shipments (§12). |
+| Status progression | Reference shows Booked, Scheduled and In transit dates, then Deliver. Uncovered example shows Booked followed by Cover/Pick up/Deliver prompts. | A future action label is not a completed state. Actual transition/rollback/role rules are Phase 5 tests. |
+| Carrier area | Pathak Express, Dry Van, dispatch contact, Rate con and Bill on assigned example. | Carrier dialog shows identity/authority/packet information, View carrier and Remove carrier. See §15.6. |
+| Uncovered area | Equipment, target amount and Cover freight link; Needs a carrier near stops. | Use coverage workspace, not a master-record Add carrier form. No assignment implied by Booked. |
+| Customer area | Customer link/name, selected contact, + invoice reference and Confirmation; Invoice on the reference. | Customer record versus financial/document actions remain distinct. Invoice was absent in sampled uncovered detail, but no general visibility rule is established. |
+| + add vendor | Additional provider/service line. | Nine-type chooser observed in §12; creating a vendor business and assigning it to a shipment are different flows. Multi-provider/removal/rebill effects untested. |
+| Financial area | Target cost, Price, gross Profit; Expand itemized view. | Expanded view contains editable inputs; viewing shipment detail is not an assurance that all controls are read-only. See §15.8. |
+| Locations | Distance and estimated duration; numbered stops and provider/driver/tracking context. | Distinguish facility hours, appointment, ETA and recorded arrival/departure (§15.9). |
+| Freight / summary | Description, grouped pallets/units, dimensions, weight and length; some examples also show cf/pcf/visualizer. | Different data produces different summaries. See §15.10. |
+| Map | Rendered map with Mapbox/OpenStreetMap attribution in inspected examples. Off route on the reference. | Display provider is not proof of geocoding/routing/live-tracking provider or an active driver feed. No API key was accessed. |
+| Notes / Timeline | + note entry, displayed authored notes and expandable event history. | Audience, save/edit/delete and notifications unverified. No note was written. |
+
+**15.6 Assigned carrier versus coverage candidates**
+
+The reference carrier dialog shows carrier identity, USDOT/MC, HQ, **Packet not requested**, **Send request**, **FMCSA Authorized**, safety/insurance information, vehicle/driver counts, **View carrier**, and **Remove carrier**. These are UI claims about the saved carrier/relationship. No independent authority or insurance verification was performed, and no packet was requested.
+
+**Important distinction:** This assigned carrier's **rate confirmation is Confirmed**, while its master-record packet status says **Packet not requested**. Packet approval, internal carrier approval, operating authority, coverage and rate confirmation are distinct indicators. The sample does not establish which checks should be mandatory for a new assignment.
+
+**Coverage click path:** Cover → BOL 1047758 → **Cover freight (Auto Transport)** → [coverage workspace](https://app.quotefactory.com/broker/shipment/6accf55afcc298c7a4311d79/cover/6accf4a99d380197beff74fa).
+
+| Workspace element | Observed content / meaning | Limit |
+| --- | --- | --- |
+| Cover load / equipment / Target cost | Auto Transport and $300 target for this shipment. | Target is a budget/planning figure, not a received carrier bill. |
+| Lane / View lane history details | After loading, History $357. History dialog showed Radius 100 mi, History 6 months, equipment and Average cost for 353 mi $357 / $1.01 per mi. | Window/radius/samples and cost methodology require confirmation. Initial loading briefly said new lane; use settled data rather than a transient message. |
+| Pathfinder | External link labeled Pathfinder. | Destination was not opened; source of candidates, sync direction and integration contract are unknown. Do not include the opaque external shipment token in clone requirements. |
+| Loadboards / Show cost / Post | Show cost checked and Post unchecked in sampled workspace. | No posting executed. Board names, pricing, publication audience, updates and unposting behavior unverified. |
+| Candidate list / Add cost | 19 named candidates matched the sample's displayed 19 leads at that moment. Most showed Add cost. | Supports candidate-list interpretation for this example; generation/source, uniqueness, refresh and offer/response counting remain OQ-09. Add cost is not an accepted carrier price. |
+| Add a carrier | Opens a search/contact/coverage-entry form. | Opening is not carrier assignment or master-record creation. No search selection or save executed. |
+
+**15.7 Candidate and coverage-form branches**
+
+Clicking one existing candidate opened its identity/location, prior lane activity (**Covered 25x**, **Quoted 2x**) and **Don't use this carrier — Not authorized**. Its form included equipment, Freight charge description/cost, + add charge, Track with Trucker Tools checked, Save for later and **Cover & send rate con** disabled. The exact reason for disabling that action was not established; the warning is visible evidence, not a verified sole cause. No candidate was removed or changed.
+
+**Add a carrier** opened another initial form with a carrier searchbox, contact name/phone/email, **Note for rate con and email**, equipment, charge description/cost, + add charge and tracking preference. It displayed **Needs a packet**, checked **Request packet**, and the explanation that receipt and approval of a packet precede sending the rate con. The final action was **Cover & request packet**. No carrier was selected and no final action was clicked; the branch after selection still requires validation.
+
+| Action / value | Operational interpretation to document | Required confirmation |
+| --- | --- | --- |
+| Candidate lane history | Previous work/quotes, distinct from present availability. | Sample scope and whether rejected/canceled work is counted. |
+| Charge cost / additional charges | Proposed provider-side commercial amounts. | Required charges, customer-price effects, save timing and reconciliation. |
+| Track with Trucker Tools | Preference in the coverage form. | When a request starts, driver consent/contact, integration readiness and charges. |
+| Request packet | Onboarding request branch. | Required checks, approver, sender/recipients and failure/retry behavior. |
+| Save for later | Deferred-work action separate from final coverage. | Whether it saves a lead, offer, assignment or another state. |
+| Cover & send rate con | Combined coverage/document-send action named by the UI. | Actual assignment, document recipients, acceptance and queue/status effects. |
+| Cover & request packet | Coverage/packet-request branch named by the UI. | When coverage becomes committed and when rate con is later sent. |
+| Remove coverage lead / Remove carrier | Candidate removal versus assigned-provider removal. | Recovery, permissions, cancellation notice, financial/doc effects and replacement rules. Neither executed. |
+
+Do not use candidate history or the presence of a contact as acceptance. A final workflow needs separate evidence for chosen carrier, agreed charges, eligibility/packet checks, sent/confirmed rate con, dispatch and driver assignment. Those steps may differ for LTL and TL; no universal sequence is inferred from this Auto Transport example.
+
+**15.8 Financial summary and itemized charges**
+
+Reference shipment: target cost **$4,200**, customer price **$4,900**, gross profit **$700**. **Expand itemized view** revealed Freight description, line note control, cost and price inputs, cost/price calculator controls and **+ add item**. It showed **Margin 14.29%**, **Cost+ 17%**, **Profit $700**. The percentages use different denominators and display different precision here: 700/4,900 ≈ 14.2857%; 700/4,200 ≈ 16.6667%.
+
+This is an observed display example, not a universal rounding specification. No input was changed; no autosave boundary was tested. **+ add item** in this financial area adds a commercial line, whereas adding a freight item/handling unit describes physical goods. The carrier bill page separately says **Expected bill** and shows its own amount/balance; target cost does not prove a bill was received, approved or paid.
+
+**15.9 Stops, contacts, driver information and tracking**
+
+| Stop/provider field | Plain meaning / observed example | What to keep separate |
+| --- | --- | --- |
+| Numbered stop / site | Ordered pickup or delivery visit, site type and address. | Customer billing business versus actual collection/delivery premises. |
+| Contact / Hidden from carrier | Site contact details and a carrier-visibility label on inspected stops. | Label does not verify all portal/PDF/email visibility. No phone/email link was activated. |
+| Open–close hours | Facility availability window, e.g. 8 AM–5 PM EDT. | An open window is not a booked appointment. |
+| Add appointment / Appt | Appointment entry or displayed scheduled appointment. Reference delivery showed 5:30am plus unknown. | Meaning of unknown, confirmed status and timezone remain pending. |
+| ETA | Estimated time of arrival control. | Forecast versus commitment versus actual arrival. |
+| In / Out | Arrival/departure controls; reference pickup Out displayed 2:00pm. | Exact event semantics, validation and whether a pickup status changes are Phase 5 work. |
+| Picked up / Delivered | Operational confirmation actions. | They may change shipment state; do not click just to inspect navigation. |
+| Instructions / references | Handling/site instructions; PO, Pickup and Ref values on SANCO pickup. | Different reference types are not interchangeable with BOL or PRO. Actual values omitted. |
+| Driver information | Reference shows driver name/phone, truck and trailer with Update driver information control. | Carrier dispatch contact, actual driver and truck/trailer identifiers are separate data. Form/status effects follow in Phase 5. |
+| Tracking events | Dated/location events and + add tracking update. Prior LTL example linked a PRO and external carrier Track page (§14.10). | Manual entry, provider event and location ping may have different sources. No new event entered. |
+| Tracking completed / Off route | Both labels coexist on BOL 1046693 while its shipment is In transit. | Tracking completion is not proof of delivery. Off-route threshold, freshness and route source remain unverified. |
+
+**15.10 Freight summary and the annotated volume/density example**
+
+Open [BOL 1047829](https://app.quotefactory.com/broker/shipment/6ad62c8868813f1637085014). It is Dry Van, Booked and Needs a carrier. Its two displayed freight groups are **6 pallets at 48 × 40 × 48, 5,910 lb** and **4 pallets at 48 × 40 × 48, 6,843 lb**. Descriptions also contain carton/unit counts and the text All class 55-70; text in a description is not proof of structured class/NMFC values.
+
+| Summary | Derivation / observed output |
+| --- | --- |
+| Count | Group pallet quantities 6 + 4 = 10; header says 10 items to be shipped and pallet summary says 10. There are two displayed freight groups. Do not confuse groups, pallets, cartons and contained units. |
+| Volume | Ten 48×40×48-inch units: 10 × 48 × 40 × 48 / 1,728 = 533.333… cf; app displays 533.3 cf. |
+| Weight | 5,910 + 6,843 = 12,753 lb, matching total display. The group weights are not multiplied by pallet counts again. |
+| Density | 12,753 / 533.333… ≈ 23.911875 pcf; app displays 23.91 pcf. |
+| Length | App displays 20' L and visualizer estimate 20 ft with ten footprints. General floor-layout/stacking/override logic is not established by this example. |
+
+This extends §14.6 with one saved two-group shipment. Other commodities, unit conversions, multiple differing sizes, stacking and precision still need test cases. BOL 1046693 instead shows a single descriptive freight line, weight and 53' L; not every shipment has a visible cf/pcf summary.
+
+**Map dependency answer:** The inspected shipment maps visibly attribute **Mapbox** and **OpenStreetMap**. That supports documenting the rendered-map dependency. It does not establish that a Google Maps key is needed, or identify geocoding, truck routing, mileage, GPS ingestion or tracking APIs. Phase 7 will map those capabilities to confirmed provider accounts and required access. No secrets should appear in this guide.
+
+**15.11 Shipment/document button dictionary and direct links**
+
+Links below use BOL 1046693. On another shipment, use the corresponding button; provider-specific bill/rate-con routes contain a relationship identifier, not just a carrier's master-record ID.
+
+| Button / link | Opens / purpose | Inspected controls and stopping point |
+| --- | --- | --- |
+| Customer name/card | [Customer record](https://app.quotefactory.com/broker/customer/66c366f48a53dbc0fdaed429) | Reusable customer, contacts and billing context (§12). Clicking the broad card is distinct from its Confirmation button. |
+| Carrier name/card | Shipment's assigned-carrier dialog → View carrier → [carrier record](https://app.quotefactory.com/broker/carrier/6a70a2e26de54b07f01bc668) | Relationship/identity, packet/authority and Remove carrier entry. Do not remove or Send request. |
+| Confirmation | [Customer confirmation](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/documents/customer-rate-confirmation) | Opens a document preview. Header Customer confirmation; rendered page is titled Rate Confirmation, with BOL, equipment/weight, customer and trip details. Regenerate document visible. Opening it does not confirm/approve the shipment. |
+| Rate con | [Carrier rate confirmation](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/provider-ratecon/6a70a30b5c5f7028c30b7292) | Provider agreement/document view; Carrier label, Confirmed/by DISPATCH/time, Share, financial area, PDF/download entry and Regenerate document. Observed confirmation indicator is distinct from packet status and shipment delivery. |
+| Rate con → Share | Sharing Carrier Rate Confirmation dialog | Existing dispatch share/time and + add share. Dialog closed without adding a share or sending. Full recipients/access/signature workflow remains Phase 6. |
+| Bill | [Carrier bill](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/bill/6a70a30b5c5f7028c30b7292) | Provider-side amount owed: Upload bill/POD, Expected bill, amount/balance, In dispute and + Record payment. Expected bill is not evidence of an uploaded provider invoice or payment. |
+| Invoice | [Customer invoice](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/invoice) | Customer-side amount charged: invoice PDF/download entries, Regenerate/Remove document, Upload POD, amount/balance, dispute, recipient, Send invoice and + Record customer payment. No action executed. |
+| Documents | [Shipment document index](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/documents) | POD for carrier, Carrier bill, additional document for carrier and Misc shipment document. Some add controls have the accessible label Add unknown to shipment; exact types remain unverified. |
+| PDF/download entry | Existing document preview or download link where exposed. | A signed temporary URL was present; not copied into documentation. No download performed. A customer confirmation preview was visually inspected, but full document/page contents are Phase 6 work. |
+| Edit shipment | [Full shipment editor](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/edit) | Existing shipment modification flow, separate from direct creation. Field/editability/save/resend rules are Phase 5. |
+| Action menu | Shipment-level actions | Duplicate shipment; Change customer; Cancel shipment. Earlier assigned example also exposed Simulate location updates; it was absent in the sampled uncovered menu. No action selected; role/status conditions unknown. |
+| + invoice reference | Customer-facing reference-entry control. | Form/save/document propagation not tested. Distinct from stop references. |
+| + note / Timeline | Notes entry and event history | Reference Timeline expands Created/Booked/Updated/Covered, rate-confirmation sent/confirmed, tracking segment/event entries and dispute/undispute entries. Events existed before this inspection; no cause/actor inferred where not shown. |
+
+**How to read Timeline:** Lifecycle progress, carrier coverage, document sharing/acceptance, tracking and accounting can each produce different event names. The reference displays a Booked event before Covered, with Rate confirmation sent/confirmed later. That is one record's history, not a guarantee that every shipment must follow the same timing. Free-text notes have displayed author/time but their audience is not established. Use fictional examples such as “Receiving entrance is on the east side” only in approved test data, not as a note on a real load.
+
+**15.12 Remaining rules and test cases**
+
+| Area | What is established now | Required follow-up / proposed owner |
+| --- | --- | --- |
+| Lists / queues | Loaded tabs, known-BOL filter, row comparison, menu choices and populated/empty queue examples. | Operations/product: inclusion/counter rules, timezones, pagination, CSV fields, sort effects and alternate roles. |
+| Leads / coverage | Candidate workspace, sample history/warning, add-carrier and packet/send branches. | Carrier operations/integration: sourcing/count/deduplication, availability, approval policy, posting destinations, assignment/removal/replacement and failure recovery. |
+| Direct creation | Blank form, defaults and Book shipment / Save for later entries. | Operations: required inputs, numbering, draft/initial state, quote linkage, documents and duplicate handling in test environment. |
+| Financial / reps | Matching summary, itemized editable controls, commission-paid entry. | Accounting/admin: autosave, permissions, calculation precision, settlement and audit effects. |
+| Stops / tracking | Hours/appointments/ETA/events/driver controls and mixed tracking/status labels. | Operations/integration: event sources, timestamp interpretation, actual updates, off-route rules and freshness. |
+| Documents / privacy | Separate customer/carrier/bill/invoice/index destinations. | Operations/accounting: templates, fields, checkmarks, recipients, access, signatures, revisions, uploads, file policy and sends in Phase 6. |
+| Exceptions / menu | Menu varies by example; no actions run. | Operations/admin: role/status conditions, confirmation dialogs, cancellations, duplication and downstream effects. |
+
+**15.13 Explore Phase 4 yourself and what comes next**
+
+1. Open Shipments → All → filters → search `1046693` → See shipments. Identify BOL/status, customer price, carrier and cost. Open the sort and CSV menus, then dismiss before Export. Reopen filters to clear your search when finished.
+2. Open Cover → BOL 1047758 → Cover freight. Read target cost, candidates and lane history. Open one candidate to inspect its history/warnings; return using Carriers/close. Do not edit costs, toggle posting/tracking/packet controls, remove a lead or submit coverage.
+3. Open [BOL 1046693](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4). Compare customer and carrier cards, expand financial lines and Timeline. Read without editing any input, commission or note.
+4. Open Confirmation, return to the BOL, open Rate con, then Bill and Invoice. Identify which party/obligation each page concerns. Close sharing forms without sending; avoid regenerate/remove/payment controls.
+5. Open [BOL 1047829](https://app.quotefactory.com/broker/shipment/6ad62c8868813f1637085014) and work through §15.10. Compare pallet totals with carton/contained-unit descriptions and the two freight groups.
+6. Open [Create new shipment](https://app.quotefactory.com/broker/shipment/new), compare the sections against an existing shipment and leave without Book shipment or Save for later.
+
+**Delivered:** List/queue navigation, filter/sort/export dictionaries, row meanings, direct-creation entry, detail-screen hierarchy, candidate/assigned-carrier distinctions, coverage/packet branches, financial/stop/freight/map explanations, document/button links, event history, test gaps and exercises.
+
+**Pending:** Actual creation/assignment/updates, fully tested status/role variants, lead/provider sourcing, date rules, file/export contents, external sends/posting, financial outcomes and document acceptance. These are explicit verification gaps, not completed workflow tests or approved clone scope.
+
+**Next: Phase 5 — Edit shipment, scheduling, tracking and exceptions.** It will expand this same guide with field-level editing, locks, appointments/In/Out/ETA, Notes/PRO forms, driver/tracking updates, cancellation and save/resend behavior. Document/accounting lifecycles follow in Phase 6.
 
 <a id="open-questions"></a>
-**15\. What remains unverified**
+**16\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
@@ -991,7 +1222,7 @@ The booked result returned offers while also showing **6 carriers didn't return 
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**16\. Phase progress and what to do next**
+**17\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -999,17 +1230,18 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 1 — Overview/navigation/terminology | Overview sections 1–11: hierarchy, actors, relationships, lifecycle, navigation, glossary, basic arithmetic and exercises. | Operational review and unavailable-role evidence remain open; no field-level module completeness claimed. |
 | 2 — Customers/carriers/vendors | Sections 12–13: record/forms/options dictionaries, histories, relationships and exercises. | Submission, validation, role and propagation tests remain open; no business sign-off implied. |
 | 3 — Quote creation/classification/pricing | Section 14: form/options, calculations, offers, pricing, manual/sharing forms, partial failures and existing shipment handoff. | Submission/save/booking/role tests and documented open rules remain pending. |
-| 4 — Shipment lists/coverage/details | Overview retained. | Detailed queue, coverage, screen and button documentation. **Next phase.** |
-| 5–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full shipment/edit/document/accounting/integration/settings chapters and reviewed end-to-end tests. |
+| 4 — Shipment lists/coverage/details | Section 15: queues, filters/rows, direct creation, coverage forms, detail regions, documents/buttons and exercises. | Assignment/create/status/role/file/provider and timestamp rules remain pending. |
+| 5 — Edit/scheduling/tracking/exceptions | Overview retained. | Field/editability/confirmation/exception and save/resend documentation. **Next phase.** |
+| 6–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
 
-**Your next action:** Follow the Phase 3 exercises in section 14.12. Compare equipment branches, the measurement/class suggestion, sharing versus sending, and the existing quote-to-shipment link. Collect SC-05 test access and ask the pricing/operations lead about OQ-01/02/17/22–24.
+**Your next action:** Follow the Phase 4 exercises in section 15.13. Compare queue/list rows, candidate versus assigned carriers and customer/carrier/financial documents. Collect SC-05 test access and review OQ-09/12/25–27 with operations and the integration/accounting owners.
 
-**Next delivery:** Phase 4 will expand shipment lists, coverage, shipment details and related buttons **inside this same file**. Supporting registers will keep the evidence and open questions. A single final consolidated guide remains the delivery target.
+**Next delivery:** Phase 5 will expand shipment editing, scheduling, tracking updates and exceptions **inside this same file**. Supporting registers will keep the evidence and open questions. A single final consolidated guide remains the delivery target.
 
 <a id="sources"></a>
-**17\. Sources and supporting records**
+**18\. Sources and supporting records**
 
-**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
+**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 
 **Industry/provider references checked October 23, 2026:** FMCSA for broker/carrier, USDOT/MC and CDL endorsement terminology; NMFTA for NMFC/class/density/ClassIT+; Old Dominion for BOL/payment-party terms and PRO tracking; FedEx for basic shipping vocabulary. Direct links appear with the relevant definitions. These sources define terms, not this account's app workflows.
 
