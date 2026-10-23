@@ -2,11 +2,11 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 1.
 
 **1\. How to use this inventory**
 
-Each ID below is a stable documentation/use-case ID. Start with its link or click path, check the evidence, then write the detailed explanation in the named chapter during its assigned phase. Split a broad ID into child IDs when exploration reveals more fields, dialogs or role variants; retain the parent for traceability.
+Each ID below is a stable documentation/use-case ID. Start with its link or click path, check the evidence, then write the detailed explanation in the named section of the main guide during its assigned phase. Chapter codes below refer to sections in that one document, not separate reader-facing files. Split a broad ID into child IDs when exploration reveals more fields, dialogs or role variants; retain the parent for traceability.
 
 **Status key:**
 
@@ -14,14 +14,16 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 - **P — Partly documented:** Existing guide explains part of it; fields/actions/branches remain.
 - **N — Not explored:** Entry point discovered, destination/actions not inspected.
 - **B — Blocked:** Required role, test access or business evidence is not available.
-- **D — Documented:** Detailed instructions, rules and evidence reviewed. No application use case has this status in the baseline.
+- **D — Documented:** Detailed instructions, rules and evidence reviewed. No full application use case has this status yet; Phase 1 is a delivered overview, with detailed behavior/role reviews still open.
 
 **Scope:** Every inventory item inherits **Awaiting client decision** from the [scope matrix](Phase%200%20Scope%20and%20Decisions.md). An O or P status means documentation evidence exists, not that the feature is approved for the clone.  
 **Owner:** Documentation author maintains every row. Chapter reviewer roles below are proposed; named assignments await SC-04.  
 **Evidence:** E-IDs resolve in the [Evidence Register](Documentation%20Evidence%20Register.md). No screenshots are attached in this baseline.  
 **Coverage limit:** This is the known accessible-surface inventory, not a claim that every hidden form/role/option has been discovered. Each detailed phase must extend it.
 
-**Baseline totals:** 89 inventory items — 33 Observed, 21 Partly documented, 33 Not explored and 2 Blocked. None is marked fully Documented or approved for the clone. The 2 blocked items are alternate-role access and mutation tests requiring a designated test environment.
+**Phase 0 baseline totals:** 89 inventory items — 33 Observed, 21 Partly documented, 33 Not explored and 2 Blocked.
+
+**After Phase 1:** The same 89 items comprise 30 Observed, 25 Partly documented, 32 Not explored and 2 Blocked. No full module/use case is marked Documented or approved for the clone. The 2 blocked items are alternate-role access and mutation tests requiring a designated test environment.
 
 **Chapter and reviewer key**
 
@@ -42,11 +44,11 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| SYS-01 | [Dashboard](https://app.quotefactory.com/broker/dashboard) | O | SYS | E-04–05 | Panels, counters, date basis, shortcuts and map behavior |
-| SYS-02 | Sidebar → Find / Find anything | N | SYS, ADMIN | E-04 | Search dialog, searchable entities, results and permission filtering |
-| SYS-03 | Dashboard → Quote / Requested / Quoted shortcuts | O | SYS, QUOTE | E-05 | Queue inclusion and requested-to-quoted handoff |
-| SYS-04 | Dashboard → Dispatch queue | N | SYS, SHIP | E-05 | Who dispatches, prerequisites, list/actions and resulting state |
-| SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | O | SYS, SHIP | E-04; T0 user-selected cover screen | List values, leads, coverage decisions and counter rules |
+| SYS-01 | [Dashboard](https://app.quotefactory.com/broker/dashboard) | P | SYS | E-04–05, E-28 | Main guide §§2,6,11 explains navigation; counter/date/map-data rules remain open |
+| SYS-02 | Sidebar → Find / Find anything | P | SYS, ADMIN | E-28 | Main guide §§6,11 documents verified BOL search; other entities, failure/permission filtering remain open |
+| SYS-03 | Dashboard → Quote / Requested / Quoted shortcuts | P | SYS, QUOTE | E-05, E-28 | Main guide §6 maps entry targets; exact queue inclusion and request handoff remain open |
+| SYS-04 | Dashboard → Dispatch queue | N | SYS, SHIP | E-05, E-30 | Zero-count click left dashboard unchanged; destination/actions and dispatch rules remain unexplored |
+| SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | P | SYS, SHIP | E-29 | Main guide §§5,6,10 explains Booked versus Needs a carrier; lead/assignment/counter rules remain open |
 | SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | N | SYS, EDIT | E-04 | Queue filters, confirmation form and saved result |
 | SYS-07 | Sidebar → [Confirm deliveries](https://app.quotefactory.com/broker/shipments/delivering/all) | O | SYS, EDIT | E-04; T0 queue navigation | Queue filters, confirmation form, POD and saved result |
 | SYS-08 | Sidebar → [Training](https://quotefactory.talentlms.com/) | N | ADMIN | E-04 | External handoff and learning resources relevant to clone scope |
@@ -181,6 +183,17 @@ The observations below concern the checked-in Markdown. Existing DOCX/PDF export
 | G-12 | API Guide overall | Provider names/statuses do not establish per-operation support or clone account access. | Capability matrix, sandbox/production readiness, failure behavior and ownership. | API-01–03; Phase 7 |
 | G-13 | Both guides | No exhaustive coverage/evidence/decision tracking, alternate-role checklist or end-to-end acceptance cases. | This Phase 0 baseline, role access follow-up and reviewed walkthroughs. | SYS-11, FLOW; Phase 0, 8–9 |
 
+**Phase 1 progress against the original gaps:** Source section numbers above refer to the pre-expansion guide inspected in Phase 0. The current main guide has been reorganized into sections 1–14.
+
+| Gap | Phase 1 resolution | What remains |
+| --- | --- | --- |
+| G-01 | Hierarchy, actors, bill-to/consignee/vendor distinctions and lifecycle added in main guide §§2–5. | Real intake/role rules and Phase 2 forms. |
+| G-03 | NMFC/class/ClassIT+ meanings, current-source distinction and observed choices added in §9.2. | Commodity-specific lookup, responsible user and automatic population rules. |
+| G-04 | Volume/density, margin/markup and units examples added in §§8–9. | App calculation tests, rounding and linear-foot layout rules. |
+| G-05 | Customer/carrier confirmations and Bill/Invoice distinguished in §§8–9.4. | Full document/accounting actions and acceptance lifecycle. |
+| G-09 | Incorrect Prepaid timing definition corrected using ODFL's billing-party explanation in §8. | Account-specific payer/terms approval. |
+| G-06 | Booked meaning corrected after observing a Booked shipment with Needs a carrier. | Full transition/coverage specification and test environment. |
+
 **9\. Operational questions to resolve during detailed documentation**
 
 All items below are **Open**. Named reviewers await SC-04. They supplement the [client scope questions SC-01–12](Phase%200%20Scope%20and%20Decisions.md); they are not assumed business rules.
@@ -208,8 +221,8 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | Phase | Current state | Next output |
 | --- | --- | --- |
 | 0 | Baseline artifacts delivered; scope/reviewer/test-access decisions pending | Client answers entered into decision log |
-| 1 | Ready to start | System overview, actor relationships, navigation and terminology |
-| 2 | Not started | Customers, carriers, vendors and location records |
+| 1 | Delivered in main guide §§1–14; business/role review pending | Overview, navigation, relationships, terminology, arithmetic and exercises delivered |
+| 2 | Next; not started | Expand customers, carriers, vendors and location records in the main guide |
 | 3 | Not started | Quote fields, classification, offers, pricing and booking |
 | 4 | Not started | Shipment lists, coverage and detailed screen guide |
 | 5 | Not started | Editing, status transitions, confirmations and tracking |
@@ -218,4 +231,4 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 8 | Not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 1. Open questions stay visible while independent read-only learning work continues.
+**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 2; first read the Phase 1 exercises in the main guide. Open questions stay visible while independent read-only learning work continues.

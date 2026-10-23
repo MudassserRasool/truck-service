@@ -4,7 +4,7 @@
 
 Prepared October 23, 2026 | Based on the existing Markdown guides, the user's ten browser comments, a basic live broker-app exploration, and the official references linked below.
 
-**Status (October 23, 2026):** Phase 0 documentation baseline delivered: [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md), [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md), and [Evidence Register](Documentation%20Evidence%20Register.md). Client scope/reviewer/test-access decisions remain pending. Phase 1 is next; detailed module documentation and full workflow validation remain to be done.
+**Status (October 23, 2026):** Phase 0 documentation baseline delivered: [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md), [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md), and [Evidence Register](Documentation%20Evidence%20Register.md). Phase 1 is delivered in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md): hierarchy, actors, navigation, lifecycle, glossary and exercises. Phase 2 is next. Client scope/reviewer/test-access decisions, detailed module behavior and full workflow validation remain pending.
 
 **In one sentence:** Build a guide that moves from the whole business to each module, then each use case, screen, field, button, calculation, document, and external dependency, with instructions the reader can follow in the app.
 
@@ -360,7 +360,7 @@ Freight-class reference: [NMFTA — NMFC and classification factors](https://nmf
 
 **16\. Recommended document structure and work order**
 
-Keep the current workflow guide as the entry point. As phases are executed, create focused chapters under `docs/main/` and link them from that guide:
+**User-confirmed delivery format:** Maintain one consolidated reader-facing document: [Quote Factory Quote Workflow Guide](Quote%20Factory%20Quote%20Workflow%20Guide.md). Add each phase's completed content directly to it. The labels below describe planned sections, not separate chapter files. Keep scope/coverage/evidence and provider-access files as supporting records:
 
 | Proposed chapter | Primary contents | Phase |
 | --- | --- | --- |
@@ -375,8 +375,8 @@ Keep the current workflow guide as the entry point. As phases are executed, crea
 | End-to-End Walkthroughs | Linked steps, expected outcomes and exercises | 9 |
 | Documentation Coverage and Open Questions | Inventory, evidence, ownership and scope decisions | All |
 
-Continue maintaining third-party requirements in the existing `docs/thrid_party/` location and link to them from relevant workflow chapters. The names above are proposed outputs, not claims that these files already exist.
+Continue maintaining third-party requirements in the existing `docs/thrid_party/` location and link to them from relevant workflow chapters. These labels are planned section topics within the main guide. They are not additional files the reader must assemble. Phase 1 content is already consolidated there.
 
 **Recommended execution order:** Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6 → Phase 7 → Phase 8 → Phase 9. Start logging integration questions during Phase 0 so provider access delays are visible early; finalize the capability requirements after the relevant workflows are understood.
 
-**Progress rule:** After each phase, deliver its chapters, checked inventory rows, evidence and open questions. Do not mark a whole module complete while required dialogs, role variants or external effects are still unverified. This plan completes the initial overview and planning request; executing all phases is the next body of work.
+**Progress rule:** After each phase, deliver its chapters, checked inventory rows, evidence and open questions. Do not mark a whole module complete while required dialogs, role variants or external effects are still unverified. Phase 0 baseline and Phase 1 learning content have been delivered; Phase 2 is next. Preserve unresolved questions and the distinction between a written overview and validated detailed behavior.

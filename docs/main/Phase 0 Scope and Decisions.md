@@ -10,7 +10,7 @@ Prepared October 23, 2026 | Broker app discovery and local-document review.
 
 Read this file → review the [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) → use the [Evidence Register](Documentation%20Evidence%20Register.md) to check what was actually observed → return to the [Documentation Plan](Quote%20Factory%20Documentation%20Plan.md) for the later phases.
 
-**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 is the next learning chapter: business overview, navigation and terminology.
+**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 has since been delivered in the main guide: business overview, navigation and terminology. Phase 2 is next.
 
 **2\. Confirmed instructions and working boundaries**
 
@@ -19,10 +19,11 @@ Read this file → review the [Coverage and Open Questions](Documentation%20Cove
 | D-01 | Document the system from the top-level business down to individual use cases, terminology, fields, buttons and dependencies. | User request in this chat | Confirmed documentation direction |
 | D-02 | Use the existing Markdown guide's plain language, numbered sections and examples; include URLs and click paths. | User request in this chat | Confirmed writing format |
 | D-03 | Work in phases and explain what the user should do next after each delivery. | User request in this chat | Confirmed delivery approach |
-| D-04 | Implement Phase 0 documentation now. | User's instruction to start the first phase | Current delivery |
+| D-04 | Implement Phase 0 documentation. | User's instruction to start the first phase | Baseline delivered |
 | D-05 | Inspect accessible broker screens and read-only controls for evidence. | User asked for exploration through interaction | Current exploration method |
 | D-06 | Keep first-release clone scope distinct from the full documentation inventory. | Planning convention; no client selection supplied | Proposed scope-control method |
 | D-07 | No production records or settings need to be changed to establish this baseline. | Phase 0 discovery does not require submissions | No save, booking, status change, message or payment performed |
+| D-08 | Maintain one main document containing the content delivered across phases. | User clarified the final delivery format in this chat | Confirmed; Phase 1 written directly in the workflow guide |
 
 **Important:** The user has authorized documentation work. That does not tell us which modules the client wants implemented, who holds final approval, or which live records can be used for mutation tests.
 
@@ -116,6 +117,6 @@ For each observation, record evidence ID, date, actor/session context, URL, path
 
 1. Read the [scope matrix and questions in this file](Phase%200%20Scope%20and%20Decisions.md). Take SC-01 through SC-05 to your team lead first: target, release scope, roles, reviewers and test access.
 2. Ask the team lead/client to answer the remaining business/integration questions with names and dates. You can paste the answers into this chat; they will then be reflected in the decision log.
-3. Continue with **Phase 1 — Business overview, navigation and terminology**. It will produce the system hierarchy, a practical navigation guide, the quote-to-accounting story and a plain-language glossary. This read-only work does not depend on every release-scope decision being settled.
+3. Read the delivered **Phase 1** content and exercises in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md). The next phase is **Phase 2 — Customers, carriers, vendors and reusable records**, which will expand that same main file. Independent read-only documentation can continue while scope answers are collected.
 
 No third party was contacted and no approval was requested through the app during Phase 0. This handoff is a review checklist for you, not a sent message to the client.

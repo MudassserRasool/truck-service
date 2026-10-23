@@ -8,6 +8,7 @@ Prepared October 23, 2026 | All live observations below use the visible 10-4 Glo
 
 **T0:** Initial exploration for the documentation plan, earlier in this chat on October 23.  
 **T1:** Phase 0 exploration on October 23.  
+**T2:** Phase 1 exploration and official terminology research on October 23.
 **Local:** Files read directly in this workspace.  
 **Capture:** All entries are summarized text observations; **screenshots not captured**. No raw contacts, documents or credentials are attached.
 
@@ -49,6 +50,9 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-25 | Oct 23 / T1 | [Accounting settings](https://app.quotefactory.com/broker/settings/accounting) | QuickBooks shows Not connected to QuickBooks. Also Cc invoices, customer/vendor payment terms, Factoring (Not factoring), QuickPay (Not providing QuickPay). | Why connection differs from old guide, hidden integration health, accounting behavior or launch requirements. | Accounting/admin lead |
 | E-26 | Oct 23 / T1 | Reference shipment → [Invoice](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/invoice) | Invoice PDF entry, Regenerate document, Remove document, Upload POD, amount/balance, In dispute checkbox, Send invoice and + Record customer payment. | PDF contents, delivery/payment behavior or regeneration/deletion effects. No action executed; temporary signed download URLs intentionally omitted from documentation. | Accounting lead |
 | E-27 | Oct 23 / T1 | [Shipments](https://app.quotefactory.com/broker/shipments) → View shipment filters | Active/All tabs, Create new shipment and filter dialog: search, status, equipment, booked/pickup/delivery dates, origin/destination, carrier/customer, rep/booked-by/covered-by, See shipments. Dialog closed without changing filter values. | List data completeness, actual applied-filter behavior, timezone rules or sort/export menu contents. | Operations lead |
+| E-28 | Oct 23 / T2 | [Dashboard](https://app.quotefactory.com/broker/dashboard) → Find anything → enter `1046693` → matching Shipments result | Dashboard/sidebar and requested/quoted filter-link targets reobserved. Search dialog shows Go to... and Recently visited; searching the reference returns the shipment; selecting it opens BOL 1046693 detail. | Only this known-reference navigation was tested; other entities, no-results, permission filtering and counter rules remain open. | Operations/admin lead |
+| E-29 | Oct 23 / T2 | Sidebar Cover → [coverage queue](https://app.quotefactory.com/broker/shipments/covering/all) → [BOL 1047758](https://app.quotefactory.com/broker/shipment/6accf55afcc298c7a4311d79) | Queue route applied TL/booked filters. Selected shipment displays Booked, Needs a carrier, Cover freight (Auto Transport), target cost and customer price. No provider selected or state changed. | Proves Booked does not universally establish carrier coverage. Does not establish all assignment, lead or transition rules. | Carrier operations lead |
+| E-30 | Oct 23 / T2 | Dashboard → Dispatch with displayed count 0 | Link advertises `/broker/shipments/dispatching/all`; clicking left URL and dashboard unchanged. | No reason established; queue destination contents/actions remain unexplored. Do not infer permissions or a general rule from the zero count. | Operations lead |
 
 **4\. Known conflicts and evidence limits**
 
@@ -58,6 +62,19 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | EC-02 | E-02 | ArcBest row describes Averitt access paths. | Verify ArcBest's own access procedure in Phase 7. |
 | EC-03 | E-02 | Double D row describes driver/employee applications. | Replace with verified carrier integration information in Phase 7. |
 | EC-04 | E-12, E-23 | A quote offer/carrier name is not proof of a direct carrier integration for our clone. | Validate provider, network/direct path and individual operations separately. |
-| EC-05 | E-04–E-27 | Only one broker-session context; no alternate-role or customer-portal login inspected. | Obtain roles/test access under SC-03 and SC-05. |
+| EC-05 | E-04–E-30 | Only one broker-session context; no alternate-role or customer-portal login inspected. | Obtain roles/test access under SC-03 and SC-05. |
+| EC-06 | E-01 original §8 versus E-29 | Original guide implied Booked means carrier selected; inspected Booked shipment still Needs a carrier. | Corrected in main guide §§5,10. Full transition rules remain Phase 4/5 work. |
+| EC-07 | E-01 original §9 versus E-33 | Original guide described Prepaid as payment timing. | Corrected in main guide §8 using billing-party terminology. Account-specific arrangement still requires accounting review. |
 
-**Adding the next entry:** Continue IDs after E-27. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**5\. Official terminology sources checked in Phase 1**
+
+These sources establish industry meanings, not Quote Factory implementation or account policy. E-01 preserves the original guide's pre-expansion section references; the main guide was reorganized during Phase 1.
+
+| ID | Checked | Source and supported definition | App-specific limitation | Proposed reviewer |
+| --- | --- | --- | --- | --- |
+| E-31 | Oct 23 / T2 | [FMCSA — motor carrier and broker](https://www.fmcsa.dot.gov/faq/what-are-definitions-motor-carrier-broker-and-freight-forwarder-authorities); [FMCSA — CDL endorsements](https://www.fmcsa.dot.gov/registration/commercial-drivers-license/drivers). Supports arranging versus transporting and N/X terminology. | Does not establish an app user's role, a carrier's eligibility or the tanker toggle's validation rules. | Operations lead |
+| E-32 | Oct 23 / T2 | [NMFTA — NMFC](https://nmfta.org/standards/classification/nmfc/), [current NMFC resources](https://info.nmfta.org/nmfc-changes), [density explanation](https://nmfta.org/news/shippers-solve-your-freight-classing-woes/). Supports class factors/range, current ClassIT+ reference and weight/volume density. | No commodity's class or code assigned; no automatic app lookup or arithmetic behavior verified. | Pricing lead |
+| E-33 | Oct 23 / T2 | [ODFL — BOL and billing-party terms](https://www.odfl.com/us/en/resources/freight-knowledge/how-to-fill-out-the-od-bol.html), [tracking FAQ](https://www.odfl.com/us/en/resources/freight-knowledge/odfl-blog/odfl-shipping-faq.html). Supports BOL purpose, prepaid/collect/third-party billing distinction and use of PRO for tracking. | Carrier reference material does not prove this account's payer, payment timing, universal PRO format or app integration support. | Accounting/operations lead |
+| E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
+
+**Adding the next entry:** Continue IDs after E-34. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
