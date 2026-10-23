@@ -4,6 +4,17 @@
 
 Prepared October 9, 2026 \| Based on the broker app screens inspected and Quote Factory's public Features page.
 
+**Full-system documentation — updated October 23, 2026**
+
+This file is the original introductory guide. The full-system documentation is being built in phases:
+
+- [Documentation Plan](Quote%20Factory%20Documentation%20Plan.md) — overall hierarchy, writing format and phases 0–9.
+- [Phase 0: Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md) — delivered baseline, proposed scope matrix, client questions and next steps.
+- [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) — known screens/use cases, existing-guide gaps and phase tracking.
+- [Evidence Register](Documentation%20Evidence%20Register.md) — dated observations and their limits.
+
+The original overview below is partly documented material, not an approved clone specification. Its payment-term definitions, customer/carrier document distinctions and other gaps are tracked in the coverage register. DOCX/PDF exports have not been updated with this index.
+
 **In one sentence:** The broker enters a customer's shipment details, compares carrier offers, sets the customer price, and books a carrier when ready. The customer is the shipper; the carrier physically moves the freight.
 
 **1\. The people and companies**

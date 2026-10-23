@@ -4,7 +4,7 @@
 
 Prepared October 23, 2026 | Based on the existing Markdown guides, the user's ten browser comments, a basic live broker-app exploration, and the official references linked below.
 
-**Status:** Planning and initial discovery complete. Detailed module documentation, full workflow validation, and client scope approval remain to be done.
+**Status (October 23, 2026):** Phase 0 documentation baseline delivered: [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md), [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md), and [Evidence Register](Documentation%20Evidence%20Register.md). Client scope/reviewer/test-access decisions remain pending. Phase 1 is next; detailed module documentation and full workflow validation remain to be done.
 
 **In one sentence:** Build a guide that moves from the whole business to each module, then each use case, screen, field, button, calculation, document, and external dependency, with instructions the reader can follow in the app.
 

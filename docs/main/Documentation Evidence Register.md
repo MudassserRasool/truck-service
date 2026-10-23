@@ -1,0 +1,63 @@
+**Quote Factory: Documentation Evidence Register**
+
+**What was inspected, what it establishes, and what remains uncertain**
+
+Prepared October 23, 2026 | All live observations below use the visible 10-4 Global broker session displaying the Stackup Solutions profile. Exact role permissions are unverified.
+
+**1\. How to read this register**
+
+**T0:** Initial exploration for the documentation plan, earlier in this chat on October 23.  
+**T1:** Phase 0 exploration on October 23.  
+**Local:** Files read directly in this workspace.  
+**Capture:** All entries are summarized text observations; **screenshots not captured**. No raw contacts, documents or credentials are attached.
+
+The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) uses these evidence IDs. The same visible control can lead to additional inventory entries without proving their full behavior. Controls that save, send, regenerate, book, cancel or record payments were not executed.
+
+**2\. File evidence**
+
+| ID | Source | Observation | Limitation / follow-up | Proposed reviewer |
+| --- | --- | --- | --- | --- |
+| E-01 | [Workflow Guide](Quote%20Factory%20Quote%20Workflow%20Guide.md), sections 1–11; Local | Existing guide covers actors, quote steps, mode/equipment, offers, pricing, terms, shipment statuses, booking checklist and unknowns. | Narrative overview, not a complete field/button/role specification. See gap register. | Documentation author + operations lead |
+| E-02 | [API Access Guide](../thrid_party/10-4-tms-api-access-guide.md), sections 1–2; Local | Dated October 9; lists 17 carrier names/statuses and other integrations/access instructions. ArcBest row uses Averitt paths; Double D row describes employment forms; QuickBooks is labeled enabled. | Claims require provider/current-account validation. No credentials checked. | Integration lead + account owner |
+| E-03 | [Documentation Plan](Quote%20Factory%20Documentation%20Plan.md); Local | Defines phases 0–9, output templates, initial observations and the ten browser questions. | Proposed documentation work; not client build approval. | Team lead |
+
+**3\. Live-app evidence**
+
+| ID | Date / pass | Open this URL / click path | Visible result | What this does not establish | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-04 | Oct 23 / T0, T1 | [Dashboard](https://app.quotefactory.com/broker/dashboard) → sidebar | Customers, Quotes, Shipments, Carriers, Bills & Invoices, Reporting, Training, Settings, Support, profile; separate Cover / Confirm pickups / Confirm deliveries. | Exact queue rules, role permissions or full portal inventory. | Operations lead |
+| E-05 | Oct 23 / T1 | Dashboard → inspect shortcuts | Quote Requested/Quoted links, shipment Requested/Booked/Scheduled/In transit links, Quote/Dispatch/Cover queues and map with Re-center map. | Meaning of counters, map data freshness or dispatch side effects. | Operations lead |
+| E-06 | Oct 23 / T0 | [Quote](https://app.quotefactory.com/broker/quote) → Freight class | LTL quote inputs include class and optional NMFC; class dropdown lists 50, 55, 60, 65, 70, 77.5, 85, 92.5, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500. | Correct class for a commodity, lookup provider or input validation. No quote submitted. | Pricing lead |
+| E-07 | Oct 23 / T0 | Quote form | Customer, equipment, pickup date, origin/destination/services, packaging, quantity, dimensions, total weight, stackable, hazmat, freezing protection, length/visualizer, add vendor/item and Get quotes. | Full conditional options, calculated values, result timing or API behavior. | Pricing lead |
+| E-08 | Oct 23 / T1 | [Customers](https://app.quotefactory.com/broker/customers) → Add a new customer | Dialog shows Customer name and Add customer; list exposes primary contact, booked/quoted history, credit, rep, filters and Customer login copy control. Dialog closed without submitting. | Later creation steps, login recipient/access or credit rules. | Sales/operations lead |
+| E-09 | Oct 23 / T1 | [Reference customer](https://app.quotefactory.com/broker/customer/66c366f48a53dbc0fdaed429) | Overview, Shipments, Quotes, Addresses, Invoices, Payments tabs; Documents, Manage reps, Edit customer details; overview credit/billing, contacts, Booking & quoting, external references, active shipments, note/timeline. | Unopened tab contents, save behavior, inherited settings or exact permissions. | Sales/accounting lead |
+| E-10 | Oct 23 / T0 | [Carriers](https://app.quotefactory.com/broker/vendors/carriers) → Vendors → Create new vendor | Carriers, Vendors and All tabs. Creation chooser distinguishes Carrier with MC/DOT from Vendor such as crane, insurance or warehouse. Vendor list also showed towing, transloader, lumper. Chooser closed without creation. | Complete provider type list, onboarding or compliance policy. | Carrier operations lead |
+| E-11 | Oct 23 / T1 | [Quote history](https://app.quotefactory.com/broker/quote-history) | Search field; result links, booked/expired icons and shipment references on some rows. | All status definitions or history filtering rules. | Pricing lead |
+| E-12 | Oct 23 / T1 | [Booked quote result](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb) | Customer visibility text, Sharing, reference/menu, booked banner, View Shipment, Carrier/Delivery/Price controls, All/Standard/Guaranteed/Volume, stacked offers, disabled price/margin/profit inputs on sampled cards. | Why individual controls are disabled, customer approval event, provider eligibility or current rate validity. | Pricing lead |
+| E-13 | Oct 23 / T0, T1 | [Reference shipment](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4) | Header, status progression, reps, carrier/customer cards, target cost/price/profit, stops, driver information, tracking controls, freight summary, map with Mapbox/OpenStreetMap attribution, note/timeline. | Backend model, exact status triggers, map routing/geocoding providers or note audience. | Operations lead |
+| E-14 | Oct 23 / T0 | Reference shipment → Edit shipment | Customer/equipment/stops/items/Cost & price, Partial disabled with Locked after coverage; Tanker endorsement and Team service; Hide contacts; Send updated documents → Rate Con checked; Update shipment. | All edit locks, autosave behavior, recipients or amendment/repricing effects. Update not clicked. | Operations lead |
+| E-15 | Oct 23 / T1 | Reference shipment → Open shipment action menu | Duplicate shipment, Change customer, Cancel shipment, Simulate location updates. Menu dismissed with Escape. | Permissions, confirmations or effects of any action. None executed. | Operations/admin lead |
+| E-16 | Oct 23 / T0, T1 | Reference shipment → customer Confirmation link | Link target is `/broker/shipment/6a62746a98cb0feaa1acedd4/documents/customer-rate-confirmation`. | Document contents, sending, signature or acceptance behavior; target not opened in Phase 0. | Operations lead |
+| E-17 | Oct 23 / T1 | Reference shipment → Rate con → [carrier rate confirmation](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/provider-ratecon/6a70a30b5c5f7028c30b7292) | Rate Confirmation page identifies Carrier, has Confirmed/by-dispatch text, Share, financial summary, Regenerate document and Documents links. | Why/how confirmation was recorded, document PDF contents or send/regeneration side effects. No Share or Regenerate action executed. | Carrier operations lead |
+| E-18 | Oct 23 / T1 | Reference shipment → [Documents](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/documents) | POD upload link, carrier-bill link, provider-specific additional document and miscellaneous document controls. Some accessible labels say “Add unknown to shipment.” | Available upload types, file limits, generated-document catalog or why labels say unknown. | Operations lead |
+| E-19 | Oct 23 / T1 | Reference shipment → [Bill](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/bill/6a70a30b5c5f7028c30b7292) | Expected bill, amount/balance, In dispute checkbox, Upload bill, Upload POD, + Record payment; links to carrier and invoice. | Bill approval/payment/dispute effects. No financial control executed. | Accounting lead |
+| E-20 | Oct 23 / T0 | [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | Open/All; Bills to Upload/Approve/Pay, overdue bills, missing POD, Invoices to Send/Factor, outstanding/disputed/overdue invoices and Record customer payment. | Queue rules, payment processing versus recording or accounting sync. | Accounting lead |
+| E-21 | Oct 23 / T1 | [Reports](https://app.quotefactory.com/broker/reports) | Lanes analytics; data exports named Carriers, Customers, LTL Report, LTL Report - QF, Monthly Margin, Shipments, Shipments copy, Shipments copy 2. | Report contents/metric definitions; names may be account-specific. | Reporting lead |
+| E-22 | Oct 23 / T0, T1 | [Settings](https://app.quotefactory.com/broker/settings) | Profile, company, users, teams, carriers, customers, accounting, notifications, external references. | Full forms, access-control rules, or what an unlabeled control does. | Administrator |
+| E-23 | Oct 23 / T1 | [Carrier settings](https://app.quotefactory.com/broker/settings/carriers) | Carrier integrations link with displayed count 12; Carrier T&Cs; Rate confirmations; Tracking displays Trucker Tools; Compliance says None selected; monitoring and ClassIT+ show Not showing links. | Working API connectivity, external separate use, disabled/enabled status from “Not showing links,” or clone account readiness. | Integration lead |
+| E-24 | Oct 23 / T1 | [Customer settings](https://app.quotefactory.com/broker/settings/customers) | Margin defaults/limits, reveal carrier names, customer login/auto-quote/dispatch, credit limits and customer visibility. Displayed default LTL/TL margins 25%; limits shown disabled in this session. | Customer overrides, permitted changes or precise auto-dispatch behavior. | Pricing/admin lead |
+| E-25 | Oct 23 / T1 | [Accounting settings](https://app.quotefactory.com/broker/settings/accounting) | QuickBooks shows Not connected to QuickBooks. Also Cc invoices, customer/vendor payment terms, Factoring (Not factoring), QuickPay (Not providing QuickPay). | Why connection differs from old guide, hidden integration health, accounting behavior or launch requirements. | Accounting/admin lead |
+| E-26 | Oct 23 / T1 | Reference shipment → [Invoice](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/invoice) | Invoice PDF entry, Regenerate document, Remove document, Upload POD, amount/balance, In dispute checkbox, Send invoice and + Record customer payment. | PDF contents, delivery/payment behavior or regeneration/deletion effects. No action executed; temporary signed download URLs intentionally omitted from documentation. | Accounting lead |
+| E-27 | Oct 23 / T1 | [Shipments](https://app.quotefactory.com/broker/shipments) → View shipment filters | Active/All tabs, Create new shipment and filter dialog: search, status, equipment, booked/pickup/delivery dates, origin/destination, carrier/customer, rep/booked-by/covered-by, See shipments. Dialog closed without changing filter values. | List data completeness, actual applied-filter behavior, timezone rules or sort/export menu contents. | Operations lead |
+
+**4\. Known conflicts and evidence limits**
+
+| ID | Evidence | Issue | Required follow-up |
+| --- | --- | --- | --- |
+| EC-01 | E-02 versus E-25 | Older API guide says QuickBooks enabled; live settings says not connected. | Keep both dated observations; ask SC-12. Never mark clone integration ready from either alone. |
+| EC-02 | E-02 | ArcBest row describes Averitt access paths. | Verify ArcBest's own access procedure in Phase 7. |
+| EC-03 | E-02 | Double D row describes driver/employee applications. | Replace with verified carrier integration information in Phase 7. |
+| EC-04 | E-12, E-23 | A quote offer/carrier name is not proof of a direct carrier integration for our clone. | Validate provider, network/direct path and individual operations separately. |
+| EC-05 | E-04–E-27 | Only one broker-session context; no alternate-role or customer-portal login inspected. | Obtain roles/test access under SC-03 and SC-05. |
+
+**Adding the next entry:** Continue IDs after E-27. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
