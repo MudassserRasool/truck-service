@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–7 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 observed documentation delivered; save/role tests pending.
 
 **This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -28,16 +28,17 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–7 o
 16. [Shipment editing, scheduling and tracking — Phase 5](#shipment-editing)
 17. [Documents, bills, invoices and accounting — Phase 6](#documents-accounting)
 18. [Third-party dependencies and API requirements — Phase 7](#third-party-requirements)
-19. [Questions still awaiting verification](#open-questions)
-20. [Phase progress and what to do next](#phase-progress)
-21. [Sources and supporting records](#sources)
+19. [Settings, access, reporting and shared controls — Phase 8](#settings-reporting)
+20. [Questions still awaiting verification](#open-questions)
+21. [Phase progress and what to do next](#phase-progress)
+22. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
 
 **Purpose:** Understand the business first, then follow the app, then learn the detailed rules behind each field and action. The documentation also provides a basis for agreeing what the clone must implement.
 
-**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Later phases will expand editing, accounting, integrations, settings and acceptance scenarios in this same document.
+**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Phases 5–8 expand editing, accounting, integrations and settings in sections 16–19. Phase 9 will connect the end-to-end acceptance scenarios.
 
 **Evidence labels used here**
 
@@ -48,7 +49,7 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–7 o
 | Learning example | Fictional companies, amounts or scenarios used to explain a relationship. |
 | Unverified | A rule, role, integration or side effect still requires inspection or a business answer. |
 
-The inspected session displays the Stackup Solutions profile in the 10-4 Global broker app. Its exact permission role is unverified. Customer/carrier/driver portal behavior has not been inspected through separate logins. Examples and counts can change; a specific record URL may stop working. Use the general module link and click path as a fallback.
+The inspected session displays the Stackup Solutions profile in the 10-4 Global broker app. Its Member role was verified October 26 in Users/Profile (E-99); submitted-action permissions remain untested. Customer/carrier/driver portal behavior has not been inspected through separate logins. Examples and counts can change; a specific record URL may stop working. Use the general module link and click path as a fallback.
 
 **Scope is still pending:** The client has not selected the first-release feature set, named reviewers or designated a mutation-test environment. Learning documentation can proceed while those decisions are collected. No booking, record update, cancellation, document send or payment was performed for this phase. DOCX/PDF exports have not been regenerated.
 
@@ -1524,15 +1525,128 @@ Read Settings → Carriers → Carrier integrations, then compare provider names
 
 **Delivered:** Corrected existing API guide, all17 carrier entries, feature/dependency categories, official-source links, secure account/access worksheet, operation-specific failure/acceptance tests and current-versus-historical readiness distinctions. **Pending:** client supplier/launch decisions, contracts, named account owners, sandbox/production access and runtime validation. A manual/internal alternative must be explicitly approved rather than silently replacing an automatic workflow. **Next: Phase 8 — Settings, access, reporting and remaining modules.**
 
+<a id="settings-reporting"></a>
+**19\. Settings, access, reporting and shared controls — Phase 8**
+
+**Purpose:** Understand the configuration above individual customers and shipments, identify who can see or change it, and trace operational records into reports. Evidence E-99–108 was collected October 26, 2026. The current session identifies its user as **Member**; visible controls do not prove permission to submit changes. Owner/customer/carrier portal variants remain unavailable.
+
+**19.1 Configuration hierarchy and navigation**
+
+Open [Settings](https://app.quotefactory.com/broker/settings). Company-level defaults sit above customer/provider-specific preferences and individual shipment values. The exact precedence and when defaults are copied versus inherited must be tested; do not assume a global change rewrites old shipments.
+
+| Open this URL / click | What is visible | Interpretation and remaining rule |
+| --- | --- | --- |
+| [Profile](https://app.quotefactory.com/profile) | Photo control; Member role; First name, Last name, Email, Phone; disabled USA country selector; initially disabled Save; Change password; Log out. | Personal identity, distinct from brokerage identity. Password/photo/profile saves were not tested. Credential changes should be completed by the account holder. |
+| [Company](https://app.quotefactory.com/broker/account) | Company information/reference, name, billing/legal identity, address, billing contact, phone and logo. No edit/save controls exposed in sampled view. | Do not infer Owner edit controls or automatic document regeneration. Actual contact/account identifiers omitted here. |
+| [Users](https://app.quotefactory.com/broker/users) → own user | Owners and Members groups; selected own user dialog says Member; Owner checkbox disabled and unchecked; contact/company information and Logout. | Role label is verified. Invitation, deactivation, ownership changes and server-side authorization are untested; no access was changed. |
+| [Teams](https://app.quotefactory.com/broker/teams) | “No teams quite yet!” | Empty state, not proof teams are unsupported. No creation flow exposed in this Member session. Team/rep commission and visibility rules require administrator review. |
+| Settings → Notifications | “Choose in-app notification alerts to receive:” and “No sources configured.” | This dialog concerns in-app sources. It does not prove shipment email/SMS notifications are globally disabled. |
+| [External references](https://app.quotefactory.com/broker/settings/external-references) → + Add external reference | Empty list; definition form described below. | Defines cross-system identifiers; does not itself establish a working integration. |
+
+**External-reference field dictionary:** Name combobox identifies the reference type; Code is a separate input. Customers, Vendors/Carriers, Contacts, Addressbook Entries and Shipments are entity checkboxes, initially checked in the new form, each with a URI Template input. Ensure unique values is initially checked; Save is exposed. No definition was saved. Template placeholders, escaping, whether uniqueness is global/per tenant/per entity, case sensitivity, duplicate errors and whether existing records are backfilled need an integration/admin test. Never paste API secrets into reference values or URI templates.
+
+**19.2 Carrier settings and document defaults**
+
+Open [Carrier settings](https://app.quotefactory.com/broker/settings/carriers). Carrier integrations and Tracking/Compliance/monitoring/ClassIT+ are mapped in [§18](#third-party-requirements) and the [API guide](../thrid_party/10-4-tms-api-access-guide.md); configuration visibility is separate from connectivity and readiness.
+
+| Page / control | Observed setting or explanation | What to confirm before cloning |
+| --- | --- | --- |
+| [Carrier T&Cs](https://app.quotefactory.com/broker/settings/carriers/termsandconditions) | Public agreement link; checked disabled Request carrier packets and Require carriers to agree to terms; configured T&Cs and Request change. UI says a packet request is automatically sent when covering with an unapproved carrier. | Client-owned legal text, version, recipient authority, acceptance evidence and the exact definition of unapproved. Request change was not clicked; public agreement URL omitted to avoid redistributing account access. |
+| [Rate confirmations](https://app.quotefactory.com/broker/settings/carriers/ratecons) | Terms & Fees; unchecked disabled Show shipment value on rate con; Rate con email settings. | Do not copy this account's commercial terms as clone policy. Confirm amounts, allowed edits, approvals, revision history and which documents include shipment value. |
+| Rate con email settings | Email address and Phone inputs, USA selector, Save. Blank values default to contact information of the person who covered the load. | Overrides versus per-load sender, reply routing, permissions, delivery/bounce behavior and audit. Dialog closed without Save. |
+| Rate-confirmation change timing | Explicit UI text: changes apply to future shipments only; previously covered shipments must drop carrier before new terms apply. | This is the observed instruction, not a tested amendment process. Never drop a live carrier as an exercise. Confirm safe revision/reacceptance and accounting effects in test records. |
+
+**19.3 Customer defaults, limits and visibility**
+
+Open [Customer settings](https://app.quotefactory.com/broker/settings/customers), then the named card. Customer-specific preferences are described in [§12](#master-records).
+
+| Card / form | Fields and observed state | Meaning / limit of evidence |
+| --- | --- | --- |
+| Margin defaults and limits → Global | LTL and Truckload each have Default gross margin %, Minimum gross margin %, Minimum gross profit $, Maximum gross profit $. Defaults displayed 25%; minimum/maximum inputs blank. LTL Volume boost has a selector. | Starting price rule versus lower/upper boundaries. Blank is an observed blank, not proof of zero/no limit. Enforced behavior, override permissions and volume-boost units remain open. Use §14 pricing arithmetic; margin and markup have different denominators. |
+| Margins and limits → LTL carriers | Per-carrier/rate-source default margin, minimum margin/profit and maximum profit; Volume multiplier heading. Carrier/account identifiers can accompany rows. | More granular pricing configuration. Precedence between global, customer and carrier rules, volume multiplication and recomputation of saved offers need a test. Do not treat account identifiers as NMFC values. |
+| Reveal carrier names → Hide carrier names | Hide LTL Carrier Names unchecked/disabled; help says hiding affects shared LTL quote name/logo but still shows on BOL and shipment details. Hide TL carrier names checked/disabled; help says hide name/USDOT/MC on BOL. | The index summary “Carrier names are visible” is insufficient to describe both modes. Document the mode-specific options. Recipient PDF/portal behavior remains untested. |
+| Customer login | Described as allowing customers to log in, run quotes and track shipments; Login link copy control; Auto-quote / dispatch text. | Link presence does not prove identity, tenant isolation, auto-dispatch triggers or customer permissions. No login link copied/shared and no alternate portal entered. Administrator must provide test access and policy. |
+| Credit limits | Enforce credit limits Disabled. Help: block new bookings when open invoice balances plus active shipments exceed the customer's credit limit; limits configured per customer. Notify on credit increase Disabled; help says email all customer reps when increased. | UI-described intended rule, not a tested ledger calculation. Define active shipment valuation, equality boundary, currency, disputed/factored balances, concurrency and override rights with accounting. |
+| Customer visibility | Disabled checkbox. Help: enabled restricts viewing/running quotes to customer reps; disabled gives users all customer records. | UI-described rule; actual API/export/search access and team inheritance require alternate-role tests. This must not be assumed to define customer-portal access. |
+
+No setting was changed and no Done/Save operation was used to submit edited data. Some configuration forms may save as values change; inspect safely without typing into operational settings until the save model is established.
+
+**19.4 Observed role × action matrix**
+
+Read each cell as evidence, not a proposed permission grant. Owner and external-user columns require accounts supplied by the administrator; named reviewer still awaits SC-04.
+
+| Action / information | Current Member session | Owner / other staff | Customer / carrier / driver |
+| --- | --- | --- | --- |
+| Navigate customer/provider/quote/shipment records | Observed for sampled records | Unverified | Unverified |
+| Open quote, create/edit shipment and tracking forms | Observed controls; submit effects untested | Unverified | Unverified |
+| View broker cost, price and profit | Observed on sampled broker detail/results | Unverified | Unverified; never infer from broker UI |
+| View customer/carrier PDFs | Observed previews and links (§17); recipient access untested | Unverified | Separate document audience/access tests required |
+| Hidden contacts/private notes | Controls/help observed (§§12–16); all recipient views untested | Unverified | Unverified |
+| View accounting and payment forms | Observed; approval/payment/send/sync untested | Unverified | Unverified |
+| Open reports / Download control | Observed filters/columns/control; output untested | Unverified | Unverified |
+| Change role / create team / edit company | Owner checkbox disabled; empty Teams; no company edit exposed | Administrator walkthrough required | Unverified |
+| Change settings / enforce limits | Forms and disabled options observed; no changes submitted | Administrator walkthrough required | Unverified |
+
+For each approved clone role, agree **view/create/edit/delete/export/send/approve/pay/administer**, record scope (own/team/all), financial and contact visibility, and denial behavior through both UI and API. These are requirements to specify, not an inferred Quote Factory backend policy.
+
+**19.5 Reports: analytics versus saved data exports**
+
+Open [Reporting](https://app.quotefactory.com/broker/reports). Names below are observed account configuration, not a guaranteed standard catalog. Each data export opens Filters (carrier report uses singular Filter), Columns and Download with a matching-record count. Name this report was disabled. Column label/reorder/remove controls were visible; no definition was modified. A name such as “LTL Report” does not prove an LTL filter is active.
+
+| Report / open URL | Observed definition on October 26 | Columns / interpretation |
+| --- | --- | --- |
+| [Lanes](https://app.quotefactory.com/broker/reports/lanes) | Analytics map/table; Pickup this week; Origin, Destination, Shipments, Profit, Profit per; View shipment filters. | 25 shipments, $2,195 profit, $87.80 per shipment in sampled total. 2 shipments/$800/$400 in one row supports profit per = profit ÷ count for that sample; exact accounting source/grouping and zero-cost behavior unverified. |
+| [Carriers](https://app.quotefactory.com/broker/report/carrier/66b25694252d3745de9e4a20) | Search, Added date range/presets, Requires 1099 checkbox; Download count 3,815. | 10: Name, USDOT Number, MC Number, Phone, HQ City, HQ State, Compliance Status, Primary Contact, Primary Contact Email, Primary Contact Phone. Tax classification is a filter, not advice about eligibility. |
+| [Customers](https://app.quotefactory.com/broker/report/customer/66b25694252d3745de9e4a1e) | Search and Rep selector; customer-list preview; Download count 136. | 10: Name, Website, Phone, Description, Primary Contact, Primary Contact Email, Primary Contact Phone, Shipments, Last Booked Date labeled Last Shipment Date, Last Note Date. Count/status inclusion and date timezone require review. |
+| [LTL Report](https://app.quotefactory.com/broker/report/shipment/68dbd5da8121319eec786c1b) | No status/equipment checkboxes selected in sampled view; Download 7,873 shipments. | Common 14-column shipment selection below. Its title alone does not restrict records to LTL. |
+| [LTL Report - QF](https://app.quotefactory.com/broker/report/shipment/68dee1505114202e13262523) | LTL selected; Requested, Booked, Scheduled, In transit, Delivered selected; Canceled unselected; Download 949. | 48 selected fields, emphasizing freight/class/accessorial data; full selection below. |
+| [Monthly Margin](https://app.quotefactory.com/broker/report/shipment/66df69b0dbd3ecbbc65414bf) | Deliver this month, October 1–31, 2026; Download 344; no status restriction selected. | 48 selected shipment fields below. It is a filtered export definition, not proof that every row is delivered/paid or that the UI shows a monthly accounting aggregate. |
+| [Shipments](https://app.quotefactory.com/broker/report/shipment/66b25694252d3745de9e4a1c) | No status/equipment checkboxes selected; Download 7,873. | Common 14-column selection. |
+| [Shipments copy](https://app.quotefactory.com/broker/report/shipment/68dbd5d18b0d44a62537f414) | Same observed filters/count as Shipments. | Same observed 14 selected fields; no hidden-definition equality claimed. |
+| [Shipments copy 2](https://app.quotefactory.com/broker/report/shipment/68dee141d871c302ce750811) | Same observed filters/count as Shipments. | Same observed 14 selected fields. |
+
+**Common 14 selected shipment columns, in order:** Equipment; Carrier (field Carrier Name); USDOT; MC Number; Cost; Price; Profit; Margin; Pickup Date; Delivery Date; Origin Postal Code; Destination Postal Code; Total Weight; Mode.
+
+**Monthly Margin 48 selected columns, in order:** BOL; Status; Customer; Primary Rep; Mode; Equipment; Partial; Carrier (Carrier Name); USDOT; MC Number; Carrier Source; Carrier Quote Number; Service Level; Transit Days; PRO Number; Cost; Price; Profit; Margin; Booked Date; Booked By; Covered Date; Covered By; Pickup Date; Delivery Date; Origin Company; Origin Street; Origin Street 2; Origin City; Origin State; Origin Postal Code; Origin Country; Origin Reference Number; Destination Company; Destination Street; Destination Street 2; Destination City; Destination State; Destination Postal Code; Destination Country; Stopoffs Count; Destination Reference Number; Distance In Miles; Total Units; Total Weight; Hazmat; URL; Shipment ID.
+
+**LTL Report - QF 48 selected columns, in order:** BOL; Mode; Status; Distance In Miles; Carrier Name; USDOT; Equipment; Cost; Total Units; Total Weight; Total Length; Origin Appointment Required; Origin Liftgate; Origin Inside; Destination Appointment Required; Destination Liftgate; Destination Inside; Notify Before Delivery; Sort & Segregate; Protect from Freezing; Freight Class 1; NMFC 1; Length 1; Width 1; Height 1; Weight 1; Description 2; Freight Class 2; NMFC 2; Length 2; Width 2; Height 2; Weight 2; Description 3; Freight Class 3; NMFC 3; Length 3; Width 3; Height 3; Weight 3; Origin City; Origin State; Origin Postal Code; Origin Location Type; Destination City; Destination State; Destination Postal Code; Destination Location Type. The absence of Description 1 in this saved selection is an observation, not an instruction to omit it from the clone. Indexed fields do not prove a maximum of three handling units.
+
+**Shipment filter dictionary:** search; Requested/Booked/Scheduled/In transit/Delivered/Canceled; equipment (LTL and truckload equipment types from §14); Booked/Pickup/Delivery date ranges and Today/Yesterday/This week/Last week/This month/Last month/This year/Last year presets. Pickup/delivery also expose Tomorrow/Next week/Next month. Origin address, Destination, Carrier, Customer, Rep, Booked by and Covered by selectors. Lanes exposed Booked through Delivered states and See shipments. Selected relative range “this week” resolved to October 25–31 in this session; timezone, boundary inclusion, week-start policy and persistence remain to confirm.
+
+**Metric/data dictionary:** BOL identifies broker shipment reference; Shipment ID is a separate internal identifier; Mode and Equipment differ; carrier source/quote/account/PRO references differ. Cost, Price, Profit and Margin are explained in §§8/14/15, but exported inclusion of added vendor charges, factoring, credits/taxes and booked-versus-current values needs reconciliation. Date catalog distinguishes original, scheduled and actual pickup/delivery plus booked/covered events. Do not substitute one for another based on a short label. Columns catalog separately exposes invoice/bill totals, due dates, balances, approvals, paid flags, factoring and pushed-to-accounting flags; these are separate states (§17). Per-mile/per-lb metrics need zero/blank distance/weight tests. Carrier Compliance Status is not proof of an approved dispatch decision.
+
+**Download verification pending:** No report was downloaded or edited during this pass. File format, encoding, date/number formatting, blank values, rounding, row grain (shipment/item/stop), streaming/pagination, complete row count, permissions, sensitive fields and repeatability remain an owned reporting test. Reconcile exports to known test records and accounting before approving metrics. Never assume the eight preview rows are the entire export.
+
+**19.6 Shared controls, empty states and external help**
+
+| Control / behavior | What was actually checked | Follow-up |
+| --- | --- | --- |
+| Find … → Go to... | Recently visited mixes customers, shipments, quotes and providers; known BOL navigation E-28. Fictional search QFDOC-NOMATCH-20261026 settles to “No matches found for …”. | Match fields, minimum length, keyboard behavior, pagination and permission filtering across roles remain unverified. Close modal returns to current page. |
+| Lists and filters | Shipment filters/sort appear in URL (E-62); examples use mode/status/pickup sort. Report previews expose a count separate from visible results. | Refresh/back/new-tab/session persistence and all pagination/loading states need controlled tests. Do not document a universal page size. |
+| Loading / empty / failure | Forms/reports can initially appear before fields/results settle. Empty Teams/external references/notification sources and no-match search observed. Quote provider failures documented §14. | Loading is distinct from no data. No network outage or operational failure was deliberately induced; timeout/retry/duplicate-submit UX and accessible errors remain test cases. |
+| Units/time | Freight uses cf, pcf, lb and feet/inches in sampled summaries; appointment/ETA dialogs expose timezone context (§16). | Confirm account/browser/local-stop timezone and daylight-saving handling, currency and conversion/rounding per field; never infer a global UTC rule. |
+| Support | Contact support opens Help Scout Beacon with Search and Ask Us. Ask Us shows Subject, How can we help?, attachment and Send a message; response-time text is informational. | No message/attachment sent. Client chooses support provider, recipients, retention and whether it is in clone scope. |
+| [Training](https://quotefactory.talentlms.com/) | Opens external TalentLMS; existing session reached Learner dashboard with courses TL vs. LTL, LTL 101 The Process Parts 1/2 and LTL Pricing Factors Part 1, plus catalog/progress/discussions/calendar. | Training progress/authentication differs from broker Member role. No course launched, enrollment or message submitted; contents/licensing and SSO contract unverified. |
+
+**19.7 Questions for the team lead/client and a safe learning exercise**
+
+Administrator/access reviewer: define roles, team/customer scope, invitations/removal, authentication and export rights. Pricing reviewer: sign off precedence, volume boost, margin limits and override behavior. Accounting/reporting reviewer: define profit/cost timing, booked/current/paid metrics, relative dates and reconciliation. Operations/legal reviewer: approve carrier terms, packet trigger, amendments and communication ownership. Integration reviewer: own external-reference identifiers and provider environments. These roles are proposed owners, not appointed reviewers.
+
+Ask the client for migration source/volume and record/document history, audit events and retention, backup/restore targets and evidence, expected concurrent users/quotes/shipments/export sizes, response-time targets, tenant isolation, allowed regions and support responsibilities. Nothing in the UI proves Quote Factory's database, backup design or performance guarantees. Record answers under SC-01–12; resolve or explicitly defer them before treating this as an implementation contract.
+
+**Try it yourself, read-only:** Open Settings → Users → your own user and note the role. Open Customer settings → Reveal carrier names and compare LTL/TL help. Open Reporting → Monthly Margin → inspect Filters, then Columns. Return to Reporting → LTL Report and check whether LTL is actually selected. Open Lanes and compare Profit per with Profit ÷ Shipments in one nonzero row. Use Find … with a fictional unmatched string, then close. Do not edit configuration, send messages, download business data to shared storage, or submit operational changes as part of this exercise.
+
+**Delivered:** Accessible settings hierarchy, field dictionaries, observed Member matrix, all nine reporting destinations, selected export schemas, shared empty states and support/training handoffs. **Pending:** administrator/portal variants, setting/save/notification effects, export files and metric reconciliation. **Next: Phase 9 — linked walkthroughs, gap review and acceptance/sign-off.**
+
 <a id="open-questions"></a>
-**19\. What remains unverified**
+**20\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
 | Actors/access | Customer rep dialog states new shipments only; actual assignments/commissions, role permissions and alternate portals remain untested. | 2, 8; SC-03/04/05 |
 | Intake/approval | Who brings in requests, who approves/tenders, who books and how LTL/TL paths differ. | 3–5; SC-06, OQ-10 |
 | Quote rules | Volume eligibility, Xtended Network source, booking entry-point discrepancy and manual-quote save/expiry rules. | 3, 7; QTE-08–12 |
-| Freight classification | Actual NMFC/class selection owner, lookup service and commodity-specific values such as 04821J. | 3, 7; OQ-01 |
+| Freight classification | Actual NMFC/class selection owner, lookup service and commodity-specific values. Generated BOL labels 04821J as Acct (§17); do not treat it as NMFC. | 3, 7; OQ-01 |
 | Measurements | App quantity/weight basis, unit conversion, calculation/rounding and floor-layout rules. | 3, 5; OQ-02 |
 | Coverage/tracking | What a lead counts, acceptance/dispatch process, exact queue rules and event source. | 4–5, 7; OQ-05/09/12 |
 | Edit behavior | Status/role locks, tank/team effects, autosave/save, rerating and updated-document recipients. | 5; OQ-07/08/14 |
@@ -1543,7 +1657,7 @@ Read Settings → Carriers → Carrier integrations, then compare provider names
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**20\. Phase progress and what to do next**
+**21\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -1555,14 +1669,15 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 5 — Edit/scheduling/tracking/exceptions | Section 16: observed documentation delivered. | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
 | 6 — Documents, bills, invoices and accounting | Section 17: observed documentation delivered. | Upload/send/signature/approval/payment/sync and role validation pending. |
 | 7 — Third-party dependency and API requirements | Section 18: observed documentation delivered. | Client provider/account/licensing decisions, access and runtime tests pending. |
-| 8–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
+| 8 — Settings/access/reporting | Section 19: observed settings, Member matrix, report schemas and shared controls. | Alternate roles, settings effects, exports and metric reconciliation pending. |
+| 9 — Walkthroughs and acceptance | Planned next. | Test-environment replay, scope review and sign-off pending. |
 
-**Your next action:** Read section 18 and its exercises; resolve the owned test/access/business questions in the coverage register.
+**Your next action:** Read section 19 and its exercises; resolve the owned test/access/business questions in the coverage register.
 
-**Next delivery:** Phase 8 — Settings, access, reporting and remaining modules, inside this same file. Supporting registers retain evidence and unverified rules.
+**Next delivery:** Phase 9 — End-to-end walkthroughs, gap review and sign-off, inside this same file. Supporting registers retain evidence and unverified rules.
 
 <a id="sources"></a>
-**21\. Sources and supporting records**
+**22\. Sources and supporting records**
 
 **Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. E-76–82 record Phase 5 editor/forms; E-83–92 record Phase 6 documents/accounting and editor follow-up. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 
@@ -1574,4 +1689,4 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 - [Phase 0 Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md) — scope matrix, questions SC-01–12 and pending owners.
 - [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) — screen IDs, guide gaps, operational questions and progress.
 - [Evidence Register](Documentation%20Evidence%20Register.md) — observation/source history.
-- [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md) — dated provider starting inventory; validation/corrections remain Phase 7 work.
+- [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md) — revised Phase 7 provider/dependency requirements, access sources and readiness gaps.

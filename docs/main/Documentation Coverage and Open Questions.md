@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 7.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 8.
 
 **1\. How to use this inventory**
 
@@ -37,6 +37,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 
 **After Phase 7:** 89 items — 5 Observed, 68 Partly documented, 14 Not explored, 2 Blocked and 0 Documented. Main §18 and existing API guide map every dependency category/17carriers to source evidence, access needs and tests; no provider marked ready.
 
+**After Phase 8:** 89 items — 0 Observed, 87 Partly documented, 0 Not explored, 2 Blocked and 0 Documented. All known accessible inventory entries have guide content or explicit owned gaps. Full workflows, alternate roles, submissions, exports and client acceptance remain unvalidated; P does not imply signed-off completeness.
+
 **Chapter and reviewer key**
 
 | Code | Planned chapter | Detailed phase | Proposed reviewer |
@@ -63,9 +65,9 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 | SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | P | SYS, SHIP | E-63, E-68–69 | Main §15.2/6–7: coverage workspace/candidates/forms; source/count/posting/assignment tests pending |
 | SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | P | SYS, EDIT | E-63 | Main §15.2: populated Scheduled pickup queue; date rules and confirmation outcomes Phase 5 |
 | SYS-07 | Sidebar → [Confirm deliveries](https://app.quotefactory.com/broker/shipments/delivering/all) | P | SYS, EDIT | E-63 | Main §15.2: populated In transit delivery queue; rules, POD and status outcomes pending |
-| SYS-08 | Sidebar → [Training](https://quotefactory.talentlms.com/) | N | ADMIN | E-04 | External handoff and learning resources relevant to clone scope |
-| SYS-09 | Sidebar → Support | N | ADMIN | E-04 | Help widget, knowledge base and contact boundaries |
-| SYS-10 | Sidebar → [Profile](https://app.quotefactory.com/profile) | N | ADMIN | E-04, E-22 | Profile fields and role/account information without changing credentials |
+| SYS-08 | Sidebar → [Training](https://quotefactory.talentlms.com/) | P | ADMIN | E-108 | Main §19.6: TalentLMS learner landing observed; course content/licensing/SSO pending |
+| SYS-09 | Sidebar → Support | P | ADMIN | E-107 | Main §19.6: Help Scout Search/Ask Us; no message/attachment |
+| SYS-10 | Sidebar → [Profile](https://app.quotefactory.com/profile) | P | ADMIN | E-99 | Main §19.1: Member/profile fields observed; no account changes |
 | SYS-11 | Customer/other role portals | B | SYS, ADMIN, FLOW | E-09, E-24 expose login controls only | SC-03/05: provide role walkthrough/test access |
 
 **3\. Customers, carriers and vendors**
@@ -154,23 +156,23 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| SET-01 | [Settings index](https://app.quotefactory.com/broker/settings) | O | ADMIN | E-22 | Configuration hierarchy and allowed roles |
-| SET-02 | Settings → [Company](https://app.quotefactory.com/broker/account) | N | ADMIN | E-22 link | Company identity/branding and document effects |
-| SET-03 | Settings → [Users](https://app.quotefactory.com/broker/users) / [Teams](https://app.quotefactory.com/broker/teams) | N | ADMIN | E-22 links | Roles, membership, invitation, visibility and audit rules |
-| SET-04 | Settings → [Carriers](https://app.quotefactory.com/broker/settings/carriers) | O | ADMIN, API | E-23 | Configuration categories; connection status versus link visibility |
-| SET-05 | Carrier settings → [Carrier integrations](https://app.quotefactory.com/broker/carrier-integrations) | N | API | E-23 link; E-02 dated inventory | Provider-by-provider capabilities and access/readiness evidence |
-| SET-06 | Carrier settings → [Carrier T&Cs](https://app.quotefactory.com/broker/settings/carriers/termsandconditions) | N | ADMIN, MONEY | E-23 link | Templates, versioning, recipient acceptance and client-owned terms |
-| SET-07 | Carrier settings → [Rate confirmations](https://app.quotefactory.com/broker/settings/carriers/ratecons) | N | ADMIN, MONEY | E-23 link | Document customization and default versus shipment behavior |
-| SET-08 | Carrier settings → Tracking / Compliance / monitoring / ClassIT+ | O | API, ADMIN | E-23 | Selectable providers, exact status, external separate use and applicable use cases |
-| SET-09 | Settings → [Customers](https://app.quotefactory.com/broker/settings/customers) | O | ADMIN, QUOTE | E-24 | Margin limits, carrier-name visibility, login/auto-quote/dispatch, credit and customer visibility dialogs |
+| SET-01 | [Settings index](https://app.quotefactory.com/broker/settings) | P | ADMIN | E-99–103 | Main §19: settings hierarchy; administrator variants pending |
+| SET-02 | Settings → [Company](https://app.quotefactory.com/broker/account) | P | ADMIN | E-99 | Main §19.1: company identity fields; no edit exposed in sampled Member view |
+| SET-03 | Settings → [Users](https://app.quotefactory.com/broker/users) / [Teams](https://app.quotefactory.com/broker/teams) | P | ADMIN | E-99 | Main §19.1/4: Member verified, Owner control disabled, empty Teams; alternate roles/invites pending |
+| SET-04 | Settings → [Carriers](https://app.quotefactory.com/broker/settings/carriers) | P | ADMIN, API | E-93, E-101 | Main §§18–19: carrier configuration hierarchy and document defaults |
+| SET-05 | Carrier settings → [Carrier integrations](https://app.quotefactory.com/broker/carrier-integrations) | P | API | E-93–98 | Main §18/API guide: 17 providers and operation-specific access gaps; no runtime proof |
+| SET-06 | Carrier settings → [Carrier T&Cs](https://app.quotefactory.com/broker/settings/carriers/termsandconditions) | P | ADMIN, MONEY | E-101 | Main §19.2: packet/agreement help and legal settings; no changes or acceptance |
+| SET-07 | Carrier settings → [Rate confirmations](https://app.quotefactory.com/broker/settings/carriers/ratecons) | P | ADMIN, MONEY | E-101 | Main §19.2: future-shipment rule and contact defaults; amendment effects untested |
+| SET-08 | Carrier settings → Tracking / Compliance / monitoring / ClassIT+ | P | API, ADMIN | E-93–98 | Main §18/API guide: provider/link preferences separated from connectivity; runtime gaps owned |
+| SET-09 | Settings → [Customers](https://app.quotefactory.com/broker/settings/customers) | P | ADMIN, QUOTE | E-102–103 | Main §19.3: margins, mode visibility, credit and customer-access explanations; saves/enforcement untested |
 | SET-10 | Settings → [Accounting](https://app.quotefactory.com/broker/settings/accounting) | P | ADMIN, MONEY, API | E-90–91 | Main §17.6: Oct26 connected QuickBooks mapping state replaces Oct23 UI state; sync transactions/policies pending |
-| SET-11 | Settings → Notifications | N | ADMIN | E-22 | In-app alert types, defaults, recipients and delivery channels |
-| SET-12 | Settings → [External references](https://app.quotefactory.com/broker/settings/external-references) | N | ADMIN, API | E-22 link | Entity mappings, uniqueness, sync identifiers and editing |
-| RPT-01 | [Reporting index](https://app.quotefactory.com/broker/reports) | O | ADMIN | E-21 | Analytics versus export reports; account-specific names |
-| RPT-02 | Reporting → Lanes | N | ADMIN | E-21 link to `/broker/reports/lanes` | Lane metrics, data source, filters and time period |
-| RPT-03 | Reporting → Carriers / Customers exports | N | ADMIN | E-21 | Columns, filtering, download formats and permissions |
-| RPT-04 | Reporting → LTL Report / LTL Report - QF / Monthly Margin | N | ADMIN | E-21 | Definitions, grouped totals, timezone/date basis and export |
-| RPT-05 | Reporting → Shipments / Shipments copy / Shipments copy 2 | N | ADMIN | E-21 | Differences between saved report definitions and editable report behavior |
+| SET-11 | Settings → Notifications | P | ADMIN | E-100 | Main §19.1: no in-app sources configured; outbound delivery not established |
+| SET-12 | Settings → [External references](https://app.quotefactory.com/broker/settings/external-references) | P | ADMIN, API | E-100 | Main §19.1: external reference definition fields; uniqueness/templates/sync untested |
+| RPT-01 | [Reporting index](https://app.quotefactory.com/broker/reports) | P | ADMIN | E-104–106 | Main §19.5: Lanes plus all eight named data exports; account-specific definitions |
+| RPT-02 | Reporting → Lanes | P | ADMIN | E-104 | Main §19.5: lane filters/metrics/sample arithmetic; source/grouping/timezone open |
+| RPT-03 | Reporting → Carriers / Customers exports | P | ADMIN | E-105 | Main §19.5: carrier/customer filters and selected columns; files/permissions pending |
+| RPT-04 | Reporting → LTL Report / LTL Report - QF / Monthly Margin | P | ADMIN | E-106 | Main §19.5: all named definitions, filters and 14/48-column selections; exports/reconciliation pending |
+| RPT-05 | Reporting → Shipments / Shipments copy / Shipments copy 2 | P | ADMIN | E-106 | Main §19.5: all three variants share observed14 selection; hidden equality not claimed |
 | API-01 | [Existing access guide](../thrid_party/10-4-tms-api-access-guide.md) → carrier table | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
 | API-02 | Map / geocoding / routing / tracking dependencies | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
 | API-03 | Accounting, compliance, classification, boards, notifications, storage/signatures, payments and training | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
