@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–5 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–6 observed documentation delivered; save/role tests pending.
 
 **This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -26,9 +26,10 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–5 o
 14. [Quote creation, classification and pricing — Phase 3](#quote-details)
 15. [Shipment lists, coverage and shipment detail screens — Phase 4](#shipment-operations)
 16. [Shipment editing, scheduling and tracking — Phase 5](#shipment-editing)
-17. [Questions still awaiting verification](#open-questions)
-18. [Phase progress and what to do next](#phase-progress)
-19. [Sources and supporting records](#sources)
+17. [Documents, bills, invoices and accounting — Phase 6](#documents-accounting)
+18. [Questions still awaiting verification](#open-questions)
+19. [Phase progress and what to do next](#phase-progress)
+20. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
@@ -398,7 +399,7 @@ Qualification terminology source: [FMCSA — CDL endorsements](https://www.fmcsa
 | External reference | Identifier linking an app record to another system's record. | Customer overview and Settings → External references. Mapping/uniqueness rules await Phase 7/8. |
 | Third-party integration | A software connection to another provider. | Different from a service-vendor record. A warehouse vendor does not automatically require a warehouse API. |
 
-**Unresolved earlier label:** “Blanket (04821J)” appeared in earlier quote details. Phase 2 also observed `04821J` beside ArcBest in customer-specific carrier pricing. Neither observation establishes a commodity NMFC assignment. Verify the identifier's context during Phase 3/7 rather than classifying it from its appearance.
+**Identifier context:** “Blanket (04821J)” appeared in earlier quote details and beside ArcBest in customer pricing. Phase 6 verified **Acct 04821J** on a generated BOL (§17.2, E-88). It is not evidence of an NMFC commodity assignment; the exact account/tariff linkage still needs the owner.
 
 <a id="statuses"></a>
 **10\. Statuses, confirmations and indicators**
@@ -853,7 +854,7 @@ A liftgate is lifting equipment for moving freight between ground and vehicle. I
 
 **Practical selection flow to confirm with the pricing lead:** Identify the commodity and packaging → obtain accurate measurements → consult the applicable current NMFC entry using an authorized source → select the applicable class and enter the item/subitem where required → confirm carrier-specific exceptions. NMFTA identifies ClassIT+ as a classification lookup/calculation resource; its existence does not prove this app calls a ClassIT+ API. Licensing, API access and responsibility for corrections belong in Phase 7 and OQ-01.
 
-The previously discussed **04821J** also appears beside ArcBest in customer pricing (E-41). Its meaning is still unresolved; do not put it in an NMFC code table. Ask the account/pricing owner to identify that label using its full screen context.
+The previously discussed **04821J** appears beside ArcBest in customer pricing (E-41). Phase 6 also verified it is labeled **Acct** on a generated BOL (E-88; §17.2). Do not put it in an NMFC commodity-code table. Its exact pricing/tariff/account linkage still needs the account owner.
 
 **14.6 Volume, density and linear feet — worked app example**
 
@@ -1259,6 +1260,7 @@ The full editor, reusable location-template dialog, appointment, ETA, driver and
 | Stackable / Hazmat | Handling/eligibility flags. | Carrier operations: additional required hazardous details, compatibility, capacity and carrier terms. |
 | + add more | Additional handling unit/group. | Operations: mixed sizes, removal and totals. No group was added to a real shipment. |
 | Estimated total length / visualizer | Entered length and computed floor-space estimate. | Pricing: rotation, stacking, width, overrides and oversize constraints. |
+| Total Width / Total Height | Additional overall dimensions were visible in the scheduled Auto Transport editor during reconnect; units follow overall-dimension context. | Operations: requiredness, vehicle versus packaged-freight meaning and conversion. No changes made. |
 | Total value | Shipment goods-value input. | Accounting/operations: currency, valuation basis and insurance/claim relevance; no automatic insurance coverage inferred. |
 
 **Calculation evidence:** SANCO group 1 displays 320 cf /18.47 pcf and group 2 displays 213.3 cf /32.08 pcf; combined display remains 533.3 cf /23.91 pcf. Combined density uses total weight divided by total volume, not the mean of group densities. On BOL 1046693 the entered length is **53 ft** while the visualizer estimate is **0 ft**, with dimensions absent. Preserve the distinction between an entered value and an insufficient-data estimate; never silently replace 53 with 0.
@@ -1340,8 +1342,125 @@ Read-only exercise: compare the three editor URLs in §16.1 → identify locks a
 
 **Delivery status:** Field dictionary, observed editability matrix, exact Notes/PRO and other inspected dialogs, side-effect checklist, transition evidence map and validation catalog are written. Submitted transitions, every status/role, error/correction paths, save/autosave and outbound effects remain unverified. User authorized independent judgment, but did not identify disposable test records/environment or alternate-role accounts; no such access is invented. **Continue to Phase 6: documents, bills, invoices and accounting.**
 
+<a id="documents-accounting"></a>
+**17\. Documents, bills, invoices and accounting — Phase 6**
+
+**Goal:** Follow each document and financial obligation separately: generation → sharing/sending → acknowledgment; bill entry → approval → payment record; invoice creation → sending → customer payment. Evidence E-83–92 was collected October 26, 2026. No upload, generation, approval, payment, dispute, send, disconnect or configuration change was submitted.
+
+**17.1 Document and money hierarchy**
+
+```text
+Shipment
+├── Movement documents
+│   ├── BOL: shipment/freight and transport information
+│   ├── Labels: identify the physical units/destination
+│   └── POD: delivery evidence supplied/received later
+├── Commercial confirmations
+│   ├── Customer confirmation: customer-facing arrangement
+│   └── Carrier rate confirmation: provider-facing arrangement and agreed amount
+├── Provider payable
+│   └── Expected cost → bill/file + bill details → approval → payment record
+└── Customer receivable
+    └── Price → invoice/file → send → payment record → remaining balance
+        ↕ accounting integration (configured mappings; actual sync unverified)
+```
+
+Generation, delivery of a document, acceptance/signature, physical delivery, payment approval and recording payment are different events. An uploaded POD does not itself prove a recorded invoice payment. A paid customer invoice can coexist with an unapproved carrier bill in the accounting list; the two obligations have separate states.
+
+**17.2 Catalog — where to open each document**
+
+Open [LTL BOL 1047885 → Documents](https://app.quotefactory.com/broker/shipment/6ada321dbf56ad5e17c4f8a4/documents), allow generated thumbnails to finish loading, and compare the uploads below them. Early loading snapshots showed upload slots before generated files appeared; absence during loading is not proof a document is unavailable.
+
+| Document | Purpose / inspected content | Source of fields / generation status | Actions and limits |
+| --- | --- | --- | --- |
+| [BOL](https://app.quotefactory.com/broker/shipment/6ada321dbf56ad5e17c4f8a4/bol) | Straight bill of lading, non-negotiable; BOL/provider/service, pickup/delivery sites and windows, contact/instructions/services, billing party, account/quote reference, freight table and acknowledgment areas. | Existing generated PDF; values correspond to shipment/party/freight context. Creation timing and exact mapping must be tested. | Preview/download entry and Regenerate document. No regeneration/download performed. |
+| [Labels](https://app.quotefactory.com/broker/shipment/6ada321dbf56ad5e17c4f8a4/labels) | Provider/service, FROM/TO, order/BOL, weight, destination routing text and pieces. | Existing generated pages; sample had five PDF-page entries and Half-letter selected. Count/layout rules not established. | Half-letter and 4x6 choices, Download labels and Regenerate document. No size changed or regeneration performed. |
+| Customer Confirmation | Customer-facing commercial record; preview is titled Rate Confirmation. BOL/equipment/weight/customer and trip information observed (§15.11). | Existing customer-rate-confirmation route; exact total/terms and automatic triggers vary and need full template review. | View and regeneration entry; opening it is not acceptance. |
+| Carrier Rate Confirmation | Load & Rate Confirmation, provider/dispatch identity, equipment/weight/mileage, driver/tractor/trailer, trip details/instructions, Terms and Fees, Payment, agreed amount and signature/date areas. | Existing two-page PDF on assigned TL example. Agreed all-in amount $4,200 matches carrier-side amount, while broker UI separately shows customer price/profit. | Confirmed/by indicator, Share, download and Regenerate document. Existing signature marks do not identify the signing technology or establish enforceability. |
+| POD | Proof of delivery attachment; approved-bill example had an uploaded JPG POD alongside its bill PDF. | Provider-associated upload slot; uploader/file metadata shown for existing attachments. | Upload POD / Upload another POD, preview/download and Remove document where present. No upload/removal; accepted type/size/server validation unknown. |
+| Carrier/vendor bill | Provider invoice attachment and payable details. | Provider bill number/date/amount, terms and payment recipient; linked to shipment-provider relationship. | Upload/edit, approval and payment-record controls (§17.4). |
+| Customer invoice | Customer-side receivable with invoice number, amount/balance, recipient and supporting POD. | Existing invoice PDF/number; account-specific bill-to/terms and revision triggers need verification. | Regenerate/remove/POD/send/payment-record controls; never executed. |
+| Additional provider / Misc document | Generic Upload document dialog for provider or shipment. | Accessible label Add unknown to shipment opens a generic upload, with no verified type selector in initial form. | Drag/upload control only inspected; no claim of a complete allowed document-type list. |
+
+**BOL fields inspected visually:** Pickup and delivery hours/address/contact, delivery accessorials/instructions; Bill third party prepaid to; account and quote references; Units, Pkg type, HM, Description (said to contain), Dims, NMFC, Class and Weight; load/trailer/seals; shipper/driver signatures, units received and consignee received-by/signature/date. Blank signature spaces are form fields, not proof of electronic-signature integration or completed receipt. The sample has class 60 and blank NMFC cell; this does not establish that NMFC is optional for every carrier/commodity.
+
+**Identifier clarification:** This generated BOL explicitly labels **04821J as Acct** in the bill-third-party section. That is an account-reference context, not an NMFC commodity number. The same string previously appeared in pricing/Blanket context; its exact tariff/account mapping across those screens still needs the pricing owner, but the BOL label is now verified evidence (E-88).
+
+**Recipient privacy:** A broker page can show cost, price and profit around a PDF without placing all those fields in the PDF. Do not infer customer/carrier access from the broker screen. Test the actual delivered file, public/share page and alternate-role account. Existing rate-con terms were inspected for section structure, not adopted as the clone's approved legal/commercial policy.
+
+**17.3 Accounting queues and row states**
+
+**Open:** Sidebar Bills & Invoices → [accounting workspace](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices). General layout has BOL, Carrier bills, Customer invoices, shipment filters and Record customer payment. Each side has its own linked status/amount. Counters are live and not a financial reconciliation report.
+
+| Tab / queue | Intended work described by its label | Inspection / rules still open |
+| --- | --- | --- |
+| Open / All | Open obligations versus broader record view. | Open loaded mixed bill/invoice states including Paid and Canceled on individual sides; exact row inclusion and pagination unverified. |
+| Bills to Upload | Obtain/enter provider invoice. | Entry/counter and Upload bill rows observed; required attachment/details tested only as forms. |
+| Bills to Approve | Review received bill. | Opened populated queue and existing uploaded bill/POD with Approve to pay. |
+| Bills to Pay / Overdue Bills | Follow payable/due work. | Bills to Pay populated with due-date labels; overdue entry/counter observed. Exact aging boundary, holds and approval prerequisites unverified. |
+| Upload missing POD | Obtain supporting delivery evidence. | Entry/counter and provider upload form observed. Whether POD blocks approval/invoice sending requires policy/testing. |
+| Invoices to Send | Customer invoice dispatch work. | Populated queue opened; some rows still showed Due labels. A due date alone does not prove email was sent. |
+| Invoices to Factor | Factoring work. | Selected queue showed No bills or invoices yet; settings say Not factoring. No populated submission workflow verified. |
+| Outstanding Invoices / Overdue Invoices | Follow unpaid/late customer amounts. | Entries/counters and due/paid row variants observed; aging, partial allocations and credits untested. |
+| Disputed Invoices | Follow disputes. | Selected queue empty in this pass. Actual dispute toggles/workflow not executed. |
+
+To investigate a specific payable/receivable, open its side's link, verify BOL/provider/customer, then compare document, amount, due date, dispute, balance and history. Do not sum both bill and invoice columns as revenue. One shipment may have multiple provider relationships; verify bill cardinality for additional vendors before implementing totals.
+
+**17.4 Provider bill entry, approval and payment records**
+
+**Example awaiting approval:** [BOL 1040882 — provider bill](https://app.quotefactory.com/broker/shipment/671c10fa348d652bfe584dc0/bill/6729131f17f4f198cfb962bb). It has an uploaded bill PDF and POD JPG with uploader/file metadata, bill number, amount $500, due date, balance $500, In dispute, **Approve to pay** and **+ Record payment**. These states were read; no approval or payment was made.
+
+**Bill editor:** The bill-details toggle opens **Edit bill**, not just a read-only expansion. Fields are Bill/invoice number, Mail payment to, Carrier accounting contact, Bill amount, expected-amount hint, Bill date, Days to pay, Due date and Save bill. Existing bill shows 30 days from December 2 to January 1. A blank reference bill-entry form separately shows Upload/Drag bill, empty number/amount, default bill date, 30 days and calculated due date. The date example demonstrates a displayed result, not all holiday/timezone/payment-term rules.
+
+| Step | User input / source | Check before submission | Outcome still to verify |
+| --- | --- | --- | --- |
+| Upload / enter bill | Provider's actual invoice, verified invoice number/date/amount and payment recipient. | Match shipment/provider, avoid duplicate invoice, compare approved charges and document authenticity. | Upload limits, duplicate detection, extraction, audit/storage and initial state. |
+| Save bill | Entered details and attachment. | Correct recipient/address, amount, terms and due date. | Required fields, recalculation, status, finance integration and revision history. |
+| Approve to pay | Reviewer authorization. | Match agreed cost, POD/required supporting files, adjustments and dispute policy. | Approver role, holds, approval record and queue changes. Button existence does not prove that all checks are enforced. |
+| Record payment | Payment date, Amount, Method, Memo. | Evidence the underlying payment exists; correct partial/full amount and recipient. | Actual funds movement versus record-only, overpayment, allocation, balance/audit and sync. |
+
+The provider payment form defaulted to the balance and displayed ACH. Method menu: **ACH, Apple Pay, Credit card, Cash, Cash App, Check, Comchek, Google Pay, PayPal, T-Chek, Venmo, Wire, Zelle**. These are observed labels; no processor integration, payment capability or fee is inferred. Save payment was not clicked.
+
+**17.5 Customer invoice and receipt flow**
+
+Open [reference customer invoice](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/invoice). It shows invoice number/PDF, amount/balance $4,900, recipient, In dispute, Send invoice, POD and regeneration/removal controls. **+ Record customer payment** opens Payment date, Amount, Method, Memo and Save payment. This invoice-level form did not expose a multi-invoice allocation table in its initial state. Do not invent allocation or credit behavior from customer history columns.
+
+**Learning flow:** Confirm bill-to/contact and terms (§12) → confirm shipment price/references/supporting files → review actual invoice PDF → send once to verified recipients → check delivery/send history → record verified customer receipt → reconcile balance/accounting. Draft generation, sending and payment recording are separate checkpoints. No automatic creation/send event, mandatory POD gate, reminder/collection policy, partial allocation or correction was tested.
+
+If changing charges or customer details after invoicing, establish whether the app regenerates a new revision, modifies the existing invoice, sends an amendment, creates a credit or preserves external references. Never delete/recreate a document or payment as an assumed correction method. An In dispute checkbox does not establish approval, refund, collection or accounting behavior until tested.
+
+**17.6 Accounting integration, terms, factoring and QuickPay**
+
+**Current UI, October 26:** Settings → [Accounting](https://app.quotefactory.com/broker/settings/accounting) displays **Syncing Bills & Invoices**. Its QuickBooks dialog shows a connected company identifier, Disconnect, expense-account mapping for bills and service mapping for invoices, with checked/disabled sync checkboxes. Earlier E-25 on October 23 displayed Not connected to QuickBooks; preserve both dates as a change in observed state. Current configuration does not prove a bill/invoice/payment successfully synchronized or that the clone has access. Company/account identifiers are omitted.
+
+Visible company defaults: customer Pay within 30 days; vendor Pay within 30 days of Vendor bill. Customer/provider overrides must be followed independently (§12); do not treat prepaid as proof of cash received before pickup. QuickPay says Not providing QuickPay; its disabled form shows Allow Quickpay, pay within 3 days and 2.5% discount. Factoring says Not factoring; its disabled form contains Enable factoring, factoring company and default-new-customer factoring. Disabled/example values are not approved clone policies or offers to providers.
+
+**Proposed clone mapping — requires accounting/integration review:**
+
+| App record / event | External mapping decision | Failure / reconciliation evidence required |
+| --- | --- | --- |
+| Customer / provider | Customer/Vendor identity, legal/bill-to details and stable external ID. | Duplicate names, deleted/inactive entities, tax/contact updates and cross-company isolation. |
+| Provider bill | Expense account, bill number/date, due date, line amounts and provider/shipment relation. | External ID, validation error, duplicate prevention, correction and retry. |
+| Customer invoice | Service/item, invoice number/customer, amount/terms and supporting references. | Generation versus send versus sync trigger, revisions, void/credit and tax/currency policy. |
+| Payment record | Payment method/date/amount, allocation and external payment/balance semantics. | Direction/ownership of sync, partial/overpayment, duplicate webhook/import and reconciliation. |
+| OAuth connection | Client-owned company/app/scopes, test company, reconnect/disconnect. | Token storage/refresh/revocation, permissions, account mismatch, audit and recovery. |
+
+This table is a decision checklist, not a verified Quote Factory schema or a ready implementation contract. Provider access and official API references continue in Phase 7.
+
+**17.7 Documents, storage, revisions and access checklist**
+
+Existing download links use temporary signed document URLs; keep durable app routes in the guide and regenerate authorized download links through the app. Do not store temporary tokens or raw invoice/POD/contact files in this repository. The visible storage host does not establish region/retention/backups/encryption/access-isolation requirements for the clone.
+
+For each template and attachment, confirm field source, numbering, generator/trigger, allowed file types/size/count, revision history, uploader/approver, audience, expiring-link policy, signature/acceptance method, resend/notification behavior, correction/removal permissions and retention. Test special cases: missing POD, bill amount differing from expected, duplicate bill number, wrong provider, corrupt/oversize file, two uploads, removed file referenced by invoice, failed PDF generation, stale shared revision, email bounce, partial payment, dispute/hold, due-date override and failed/retried sync. None was executed on operational records.
+
+**17.8 Explore and phase status**
+
+Use Bills & Invoices → Bills to Approve → existing bill → inspect documents and details → close editor without Save. Open payment-record form and close without Save payment. Compare carrier bill to its customer invoice. On LTL BOL 1047885, open Documents → BOL and Labels; inspect both label sizes without changing selection. Open Accounting settings → QuickBooks/QuickPay/Factoring and close without changing mappings, preferences or connection.
+
+**Delivered:** Document catalog and inspected fields; generated BOL/labels and carrier confirmation structure; bill editor/approval/payment forms; customer invoice/receipt form; queues; current accounting connection/terms; mapping/reconciliation decisions and validation cases. **Pending:** actual uploads/sends/signatures, approval/payment/revision effects, complete queue rules, finance sync, role/access and owner-approved policies. **Next: Phase 7 — Third-party dependency and API requirements**, including corrections to the existing access guide.
+
 <a id="open-questions"></a>
-**17\. What remains unverified**
+**18\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
@@ -1359,7 +1478,7 @@ Read-only exercise: compare the three editor URLs in §16.1 → identify locks a
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**18\. Phase progress and what to do next**
+**19\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -1369,16 +1488,17 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 3 — Quote creation/classification/pricing | Section 14: form/options, calculations, offers, pricing, manual/sharing forms, partial failures and existing shipment handoff. | Submission/save/booking/role tests and documented open rules remain pending. |
 | 4 — Shipment lists/coverage/details | Section 15: queues, filters/rows, direct creation, coverage forms, detail regions, documents/buttons and exercises. | Assignment/create/status/role/file/provider and timestamp rules remain pending. |
 | 5 — Edit/scheduling/tracking/exceptions | Section 16: observed documentation delivered. | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
-| 6–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
+| 6 — Documents, bills, invoices and accounting | Section 17: observed documentation delivered. | Upload/send/signature/approval/payment/sync and role validation pending. |
+| 7–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
 
-**Your next action:** Read section 16 and its exercises; resolve the owned test/access/business questions in the coverage register.
+**Your next action:** Read section 17 and its exercises; resolve the owned test/access/business questions in the coverage register.
 
-**Next delivery:** Phase 6 — Documents, bills, invoices and accounting, inside this same file. Supporting registers retain evidence and unverified rules.
+**Next delivery:** Phase 7 — Third-party dependency and API requirements, inside this same file. Supporting registers retain evidence and unverified rules.
 
 <a id="sources"></a>
-**19\. Sources and supporting records**
+**20\. Sources and supporting records**
 
-**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
+**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. E-76–82 record Phase 5 editor/forms; E-83–92 record Phase 6 documents/accounting and editor follow-up. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 
 **Industry/provider references checked October 23, 2026:** FMCSA for broker/carrier, USDOT/MC and CDL endorsement terminology; NMFTA for NMFC/class/density/ClassIT+; Old Dominion for BOL/payment-party terms and PRO tracking; FedEx for basic shipping vocabulary. Direct links appear with the relevant definitions. These sources define terms, not this account's app workflows.
 

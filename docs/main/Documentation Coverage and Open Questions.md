@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 5.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 6.
 
 **1\. How to use this inventory**
 
@@ -32,6 +32,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 **After Phase 4:** 89 items — 13 Observed, 58 Partly documented, 16 Not explored and 2 Blocked. Main §15 documents shipment lists/queues, direct-entry form, coverage candidates/forms, assigned-carrier/detail regions and document destinations. Existing rows/calculations and view navigation were checked; create/assign/send/status/financial/role outcomes remain untested.
 
 **After Phase 5:** 89 items — 7 Observed, 64 Partly documented, 16 Not explored, 2 Blocked and 0 Documented. Main §16 documents editor fields, locks, Notes/PRO, appointment/ETA/driver forms, transition evidence and validation cases. Submitted changes and role/state effects remain untested.
+
+**After Phase 6:** 89 items — 5 Observed, 68 Partly documented, 14 Not explored, 2 Blocked and 0 Documented. Main §17 adds document catalog, preview/form/queue/accounting configuration evidence; no operational financial or document action submitted.
 
 **Chapter and reviewer key**
 
@@ -139,12 +141,12 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | DOC-01 | Shipment → Confirmation | P | MONEY | E-70 | Main §15.11: customer document preview/navigation distinguished from confirmation action; full fields/access/acceptance Phase 6 |
 | DOC-02 | Shipment → Rate con | P | MONEY | E-71 | Main §15.11: confirmed carrier rate-con and share dialog; signature/send/regen/access tests Phase 6 |
 | DOC-03 | Shipment → Documents | P | MONEY | E-73 | Main §15.11: provider/POD/bill/Misc destinations; unknown add labels/types/file rules Phase 6 |
-| DOC-04 | BOL / POD generation, upload, preview and sharing flows | P | MONEY | E-01 §7, E-18 identifies POD upload link | Exact forms, required attachments, recipients, revisions and storage policy |
-| ACC-01 | [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | O | MONEY | E-20 | Every accounting tab, filter, count and row action |
+| DOC-04 | BOL / POD generation, upload, preview and sharing flows | P | MONEY | E-87–89 | Main §17.2/7: BOL/labels/POD generic upload and preview fields; generation/sends/revision/file rules pending |
+| ACC-01 | [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | P | MONEY | E-83 | Main §17.3: queue/state dictionary and selected populated/empty examples; aging/all filters/exports pending |
 | ACC-02 | Shipment → Bill | P | MONEY | E-72 | Main §15.11: Expected bill versus upload/dispute/balance/payment controls; lifecycle actions Phase 6 |
 | ACC-03 | Shipment → Invoice | P | MONEY | E-72 | Main §15.11: invoice preview/send/POD/payment entries; lifecycle/sends/settlement Phase 6 |
-| ACC-04 | Bill approval/payments and invoice payment allocation | N | MONEY | E-19–20, E-26 entry controls | Who approves, due dates, terms, actual payment versus record-only and reconciliation |
-| ACC-05 | QuickPay / factoring / disputes / overdue workflows | N | MONEY, ADMIN | E-20, E-25 | Optional workflows, settings, approvals and first-release decision |
+| ACC-04 | Bill approval/payments and invoice payment allocation | P | MONEY | E-84–86 | Main §17.4–5: approval and payment forms; actual approval/payment/allocation/reconciliation pending |
+| ACC-05 | QuickPay / factoring / disputes / overdue workflows | P | MONEY, ADMIN | E-91 | Main §17.6: factoring/QuickPay disabled forms and dispute entry; execution/approval/scope pending |
 
 **7\. Settings, integrations and reporting**
 
@@ -159,7 +161,7 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | SET-07 | Carrier settings → [Rate confirmations](https://app.quotefactory.com/broker/settings/carriers/ratecons) | N | ADMIN, MONEY | E-23 link | Document customization and default versus shipment behavior |
 | SET-08 | Carrier settings → Tracking / Compliance / monitoring / ClassIT+ | O | API, ADMIN | E-23 | Selectable providers, exact status, external separate use and applicable use cases |
 | SET-09 | Settings → [Customers](https://app.quotefactory.com/broker/settings/customers) | O | ADMIN, QUOTE | E-24 | Margin limits, carrier-name visibility, login/auto-quote/dispatch, credit and customer visibility dialogs |
-| SET-10 | Settings → [Accounting](https://app.quotefactory.com/broker/settings/accounting) | O | ADMIN, MONEY, API | E-25 | QuickBooks connection, Cc invoices, customer/vendor terms, factoring and QuickPay dialogs |
+| SET-10 | Settings → [Accounting](https://app.quotefactory.com/broker/settings/accounting) | P | ADMIN, MONEY, API | E-90–91 | Main §17.6: Oct26 connected QuickBooks mapping state replaces Oct23 UI state; sync transactions/policies pending |
 | SET-11 | Settings → Notifications | N | ADMIN | E-22 | In-app alert types, defaults, recipients and delivery channels |
 | SET-12 | Settings → [External references](https://app.quotefactory.com/broker/settings/external-references) | N | ADMIN, API | E-22 link | Entity mappings, uniqueness, sync identifiers and editing |
 | RPT-01 | [Reporting index](https://app.quotefactory.com/broker/reports) | O | ADMIN | E-21 | Analytics versus export reports; account-specific names |
@@ -267,9 +269,9 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 3 | Observed documentation delivered in main §14; submission/save/role/booking tests pending | Read §14.12 exercises and resolve owned quote rules |
 | 4 | Observed documentation delivered in main §15; creation/coverage/status/role/document tests pending | Read §15.13 exercises and resolve OQ-09/12/25–27 |
 | 5 | Observed documentation delivered in main §16; tests/review pending | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
-| 6 | Next; not started | Document and accounting lifecycles |
-| 7 | Not started | Validated third-party capability/access requirements |
+| 6 | Observed documentation delivered in main §17; tests/review pending | Upload/send/signature/approval/payment/sync and role validation pending. |
+| 7 | Next; not started | Validated third-party capability/access requirements |
 | 8 | Not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Read main §16; continue Phase 6 while collecting test access and client decisions. Unverified outcomes remain tracked.
+**Your next action:** Read main §17; continue Phase 7 while collecting test access and client decisions. Unverified outcomes remain tracked.
