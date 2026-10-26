@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 6.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 7.
 
 **1\. How to use this inventory**
 
@@ -34,6 +34,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 **After Phase 5:** 89 items — 7 Observed, 64 Partly documented, 16 Not explored, 2 Blocked and 0 Documented. Main §16 documents editor fields, locks, Notes/PRO, appointment/ETA/driver forms, transition evidence and validation cases. Submitted changes and role/state effects remain untested.
 
 **After Phase 6:** 89 items — 5 Observed, 68 Partly documented, 14 Not explored, 2 Blocked and 0 Documented. Main §17 adds document catalog, preview/form/queue/accounting configuration evidence; no operational financial or document action submitted.
+
+**After Phase 7:** 89 items — 5 Observed, 68 Partly documented, 14 Not explored, 2 Blocked and 0 Documented. Main §18 and existing API guide map every dependency category/17carriers to source evidence, access needs and tests; no provider marked ready.
 
 **Chapter and reviewer key**
 
@@ -169,9 +171,9 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | RPT-03 | Reporting → Carriers / Customers exports | N | ADMIN | E-21 | Columns, filtering, download formats and permissions |
 | RPT-04 | Reporting → LTL Report / LTL Report - QF / Monthly Margin | N | ADMIN | E-21 | Definitions, grouped totals, timezone/date basis and export |
 | RPT-05 | Reporting → Shipments / Shipments copy / Shipments copy 2 | N | ADMIN | E-21 | Differences between saved report definitions and editable report behavior |
-| API-01 | [Existing access guide](../thrid_party/10-4-tms-api-access-guide.md) → carrier table | P | API | E-02 | Each rate/pickup/dispatch/tracking/BOL/document capability, test access and readiness |
-| API-02 | Map / geocoding / routing / tracking dependencies | P | API | E-13, E-23; plan §12 | Separate rendering from addresses, truck route/mileage and tracking data |
-| API-03 | Accounting, compliance, classification, boards, notifications, storage/signatures, payments and training | P | API | E-02, E-18, E-20, E-23–26; plan §12 | Confirm required providers, internal/manual alternatives and feature contracts |
+| API-01 | [Existing access guide](../thrid_party/10-4-tms-api-access-guide.md) → carrier table | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
+| API-02 | Map / geocoding / routing / tracking dependencies | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
+| API-03 | Accounting, compliance, classification, boards, notifications, storage/signatures, payments and training | P | API | E-93–98 | Main §18 and revised API guide: capability/source/access decisions; client selection/entitlement/runtime tests pending |
 
 **8\. Existing-guide gap review**
 
@@ -270,8 +272,8 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 4 | Observed documentation delivered in main §15; creation/coverage/status/role/document tests pending | Read §15.13 exercises and resolve OQ-09/12/25–27 |
 | 5 | Observed documentation delivered in main §16; tests/review pending | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
 | 6 | Observed documentation delivered in main §17; tests/review pending | Upload/send/signature/approval/payment/sync and role validation pending. |
-| 7 | Next; not started | Validated third-party capability/access requirements |
-| 8 | Not started | Settings, permissions, reports and remaining surfaces |
+| 7 | Observed documentation delivered in main §18; tests/review pending | Client provider/account/licensing decisions, access and runtime tests pending. |
+| 8 | Next; not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Read main §17; continue Phase 7 while collecting test access and client decisions. Unverified outcomes remain tracked.
+**Your next action:** Read main §18; continue Phase 8 while collecting test access and client decisions. Unverified outcomes remain tracked.

@@ -1,88 +1,106 @@
-**10-4 TMS: API Access Guide** 
+**10-4 TMS: Third-Party Capabilities and API Access Guide**
 
-**Prepared for:** Josh Kiefer, 10-4 Global Logistics 
+Originally prepared October 9, 2026 | Public references and app evidence reviewed October 26, 2026 | Phase 7 research delivered; client selection, accounts and runtime tests pending.
 
-**Prepared by:** Stackup Solutions 
+**Purpose:** Connect each feature in the [main workflow guide](../main/Quote%20Factory%20Quote%20Workflow%20Guide.md) to the external capability it may require. This is a capability/access inventory, not proof that all providers are needed or ready. Keep passwords, tokens, customer account numbers, OAuth secrets and operational files out of this document and Git.
 
-**Date:** October 9, 2026 
+**Read in order:** 1 — evidence/status; 2 — carrier capabilities; 3 — other dependencies; 4 — onboarding/runbook; 5 — decisions and acceptance tests.
 
-To connect 10-4 TMS to your carriers and tools, we need API access from each provider. This guide lists every integration currently set up in Quote Factory, shows its status, and explains how to get the API access for each one. 
+**1\. What is established and what changed**
 
-**For most carriers you will need:** 
+| Evidence level | Meaning |
+| --- | --- |
+| Public capability | Provider publishes the linked service or access process. It does not prove this client's eligibility, pricing, account or credentials. |
+| App observation | Visible Quote Factory label/form/record at the stated date. It does not establish integration health or access for the clone. |
+| Candidate | A possible supplier or internal/manual implementation, awaiting client selection. |
+| Ready | Requires approved scope/account, current API agreement/docs, provisioned test/production access and passing capability-specific tests. No integration is marked Ready here. |
 
-your 10-4 account number with that carrier 
+**Corrections to the October 9 guide:** ArcBest's Averitt instructions were wrong; use ArcBest's own API-ID reference. Double D's employment applications were unrelated to integration access and are removed. Do not call a provider self-service simply because it has a website login. Current AAA Cooper public guidance describes token generation after login. Sunset Pacific publishes API documentation, so the earlier manual-only description is not a statement of provider capability. QuickBooks showed Not connected on October 23 but a connection/mappings and Syncing Bills & Invoices on October 26. Warp has multiple public API surfaces with different authentication; confirm the selected product before implementation. FedEx Freight's current technology page links to a dedicated Freight developer center.
 
-a login on that carrier's website 
+**Historical Quote Factory status — October 9 only:** The old document listed A. Duie Pyle, AAA Cooper, ArcBest, Averitt, Go2, Magnum, Old Dominion, Roadrunner, Saia, Southeastern, TForce and XPO as Enabled; Pitt Ohio and Warp as Activating; FedEx Freight, Double D and Sunset Pacific as Disabled (Sunset described manual quotes). These are retained as historical claims, not current readiness.
 
-**1\. LTL Carriers** 
+**October 26 app check:** Settings → Carriers → Carrier integrations shows count **12**, a Test quote entry and **17 carrier cards** matching the inventory below. Some cards use colored indicators without a verified textual legend; no credential editor or Test quote was submitted. Existing results contain direct/network offers and per-provider errors (§14). None of this proves a fresh successful direct account call for every carrier. Tracking says Trucker Tools; Compliance None selected; monitoring/ClassIT+ say Not showing links. The latter is not proof a supplier is disabled or unused outside the app. Evidence E-93–98 in the [register](../main/Documentation%20Evidence%20Register.md).
 
-**Status in Quote Factory today**
+**2\. Carrier capability and access map**
 
-| Carrier  | Status in Quote Factory |
-| ----- | ----- |
-| A. Duie Pyle  | ✅Enabled |
-| AAA Cooper Transportation  | ✅Enabled |
-| ArcBest (ABF Freight)  | ✅Enabled |
-| Averitt  | ✅Enabled |
-| Go2 Logistics  | ✅Enabled |
-| Magnum  | ✅Enabled |
-| Old Dominion Freight Line  | ✅Enabled |
-| Roadrunner Freight  | ✅Enabled |
-| Saia  | ✅Enabled |
-| Southeastern Freight Lines  | ✅Enabled |
+**For each selected carrier:** Account owner must confirm bill-to/account association, direct versus network agreement, rate/tender/tracking/document entitlements separately, current API version, test and production environments, authentication, rate limits/costs and support owner. No actual carrier credentials were obtained or tested in this phase.
 
-| Carrier  | Status in Quote Factory |
-| ----- | ----- |
-| TForce Freight  | ✅Enabled |
-| XPO  | ✅Enabled |
-| Pitt Ohio  | ��Activating (not live yet) |
-| Warp  | ��Activating (not live yet) |
-| FedEx Freight  | ⛔Disabled |
-| Double D Express  | ⛔Disabled |
-| Sunset Pacific Transportation  | ⛔Disabled (manual quotes only) |
+| Carrier | Supported public evidence / services | How to begin and what is still needed |
+| --- | --- | --- |
+| **A. Duie Pyle** | Official [MyPyle IT Support](https://mypyle.aduiepyle.com/LTL/IT-Support) describes REST/web services and separate EDI integration. | Establish MyPyle login, then obtain documentation from IT Support. Confirm operation entitlements, API auth, current rating/dispatch/tracking/document contracts and test access. Do not assume generic portal credentials alone enable every API. |
+| **AAA Cooper Transportation** | [Web Services](https://www.aaacooper.com/web-services) documents SOAP/XML services for rate estimate, imaging, tracking, transit, pickup and claims. | Public FAQ says log in, associate appropriate accounts and generate/request Security API Token on that page. Collect authorized account/BusID details and token through secure handoff. Portal token generation was not exercised here. |
+| **ArcBest / ABF** | [ArcBest API Access](https://support.arcb.com/en/articles/2851223-api-access) lists rate/volume quotes, tracking, documents, transit, pickup and BOL. | Sign in to arcb.com → Menu → Resources → APIs, or arcb.com/api, to view API ID; provider lists api@arcb.com for help. Confirm account/service permissions and test process. **Do not use Averitt's dashboard for ArcBest.** |
+| **Averitt** | [Averitt API overview](https://www.averitt.com/technology/api) lists rate quotes, pickup, tracking, eBOL, PRO, transit and documents. | Averitt.com login → API dashboard → request key. Confirm selected services, account association and current guides; support contact is on that official page. |
+| **Go2 Logistics** | [Official technology page](https://go2.us/company/technology/) names API rating, dispatch/tender, trace/update and document/POD retrieval. | Use linked Integration Form; integration team manages setup. Request account-specific documentation, credentials, test environment and operational scope. No self-service-key generator was verified. |
+| **Magnum** | Carrier-hosted [rate-quote guide](https://magnumlog.com/wp-content/uploads/2020/06/Rate-Quote-Doc.pdf) documents a username/password-based rate service. | Start through [Magnum contact](https://magnumlog.com/contact). The published guide is old and references an HTTP endpoint; obtain current secure transport/version and test access. Other operations must be confirmed separately, not inferred from rating. |
+| **Old Dominion** | [Official API catalog](https://www.odfl.com/us/en/resources/shipping-api-integrations.html) lists REST eBOL, document retrieval, pickup, rate and tracking. | Contact API@odfl.com/account rep for account entitlements, current auth and QA onboarding. Use current REST docs. Official [SOAP retirement notice](https://www.odfl.com/us/en/resources/shipping-api-integrations/soap-api-sunset-guide.html) sets March 1, 2027; do not begin a new legacy SOAP implementation. |
+| **Pitt Ohio** | [Technology page](https://pittohio.com/mypittohio/ltl/technology) lists quote, pickup, BOL, tracing, transit and images API integration. | Register website user profile for API connection; coordinate current API guide/auth, account rights and testing with provider. Website functions and API entitlements are separate. |
+| **Roadrunner Freight** | [System Integration](https://freight.rrts.com/Pages/System-Integration.aspx) publishes rating/spot, tracking/images, transit, pickup and eBOL integration resources. | Follow operation-specific links and service desk contact on that page. Exact current credentials/account association and environments need confirmation; old Application ID/API Key instruction was not revalidated. |
+| **Saia** | [Product catalog](https://saiaprodapi.developer.azure-api.net/products) lists BOL, tracking, images, rating/tracing and spot quote. [REST rating documentation](https://api.saia.com/rate-quote/public/api-docs/index) explains subscription keys. | Developer portal → Products → choose product → name subscription → Subscribe → Profile keys. Developer subscription credentials differ from Saia Secure account credentials. Confirm required products, test portal, negotiated pricing/account data and production eligibility. |
+| **Southeastern Freight Lines** | [Web Connect](https://www.sefl.com/seflWebsite/webconnect.jsp) includes tracking, pickup/inquiry, documents, routing/rates, PRO and BOL; authentication varies by service. | Follow current per-operation docs and MySEFL account requirements. [Pickup SOAP guide](https://sedev.sefl.com/SeflPickup/pickupWebService.jsp) describes a developer validation flag without scheduling a pickup; obtain provider approval before using any test mechanism. No call was made. |
+| **TForce Freight** | [Getting Started](https://developer.tforcefreight.com/resources/getting-started) distinguishes End User and Third Party app enrollment/OAuth. | Select correct developer type, complete approval/enrollment, configure app through Profile/Configure My Client, then obtain OAuth configuration. Client ID/secret alone is not sufficient evidence of end-customer consent or enabled account data. Confirm operations/subscription quotas individually. |
+| **XPO** | Official [Rating API guide](https://www.xpo.com/cdn/files/s1/XPO_API_Rating_Guide.pdf) establishes rating operations and references its API Help Center. | Ask XPO/account rep for current API onboarding/auth/test access and operation catalog. Help-center URLs attempted in this pass were unavailable; do not treat an inaccessible guide or the old email instruction as completed enrollment. Rating does not establish pickup/BOL/tracking entitlements. |
+| **FedEx Freight** | [Current Freight technology page](https://www.fedexfreight.com/en-us/support-resources/technology) links to developer.fedexfreight.com and lists EDI support. Older [Freight LTL API docs](https://developer.fedex.com/api/en-bn/catalog/ltl-freight/docs.html) describe freight shipment/rating/pickup and handling-unit tracking. | Begin with the current Freight developer center/provider support and confirm the product/account migration, enabled Freight account and correct test/production credentials. Dedicated developer center timed out in this research pass. Earlier general FedEx project lacked Freight LTL; do not repeat that old project flow as proven current Freight onboarding. |
+| **Double D Express** | [Official homepage](https://www.doubledexpress.com/) links customer pickup/tracking/login services; [Contact Us](https://www.doubledexpress.com/contact-us/) provides carrier-owned contact route. | Ask carrier for TMS/API/EDI integration documentation and service-specific access. No carrier-owned public API/auth contract verified here. **Do not submit employment forms or assume portal capabilities prove API access.** Manual coordination remains a possible fallback to approve. |
+| **Sunset Pacific Transportation** | Official [API specification](https://app.sunsetpacific.com/Account/Documentation) covers login, quotes, tender, tracking and documents; test and production references are published. | Approved account → token authentication per selected docs; confirm current platform/version, account enablement and test access. Provider website also mentions portal/API tendering. Do not confuse Sunset Pacific with the separate Sunset Transportation company/domain. No token requested. |
+| **Warp** | [Developer reference](https://developer.wearewarp.com/docs/freight/) describes an engineering-issued apikey header; [self-service tutorial](https://www.wearewarp.com/freight-api-tutorial) describes a newer Bearer-key LTL-first surface with sandbox and live booking requirements. | Confirm which product/account/API version applies to 10-4 and whether direct/network pricing is desired. Do not mix endpoints/auth between surfaces. Obtain selected sandbox/live keys through approved account owner; no sign-up, card or booking performed. |
 
-**How to get API access for each carrier** 
+**Operational contract per carrier — confirm independently:**
 
-**Group A: you can generate these yourself online.** Log in, request the keys, then send them to us.
+| Capability | Typical input → output to verify | Acceptance evidence |
+| --- | --- | --- |
+| Rating | Lane/date/equipment/freight/class/services/account → cost, breakdown, quote ID, service/transit/expiry and errors. | Known eligible quote; compare negotiated account price, taxes/accessorials and expiry. |
+| Tender / pickup / booking | Selected offer plus stops/contact/hours/freight → provider shipment/pickup/PRO references. | Approved sandbox request and provider acknowledgment, duplicate prevention and cancellation/recovery. Creating eBOL may be separate from scheduling pickup. |
+| Tracking | Provider references → timestamped status/location/ETA, via polling or webhooks where supported. | Event mapping, source/timezone, freshness, ordering, duplicate suppression, failed-delivery cases and manual correction. |
+| Documents | Shipment/PRO/type → BOL/labels/POD/bill or available documents. | Correct shipment/party/file, revisions, permissions and retention. No assumed uniform document set. |
+| Cancellation / amendment | Provider-supported reference and reason/change → acknowledgment or rejection. | Safe test, cutoff/charges, downstream state and retry/reconciliation. Not guaranteed for every operation/carrier. |
 
-| Carrier  | How to get it | What we need from you |
-| ----- | ----- | ----- |
-| **ArcBest (ABF) (Try this)** | Log in at averitt.com → API Dashboard (tools.averitt.com) → request an API key for each service (rate quote, pickup, tracking, BOL, documents). Support: support@averitt.com, 1-877-281-7131 | API ID **We have also submitted our profile, as we get confirmation from then we will further verify the flow of accessing that api** |
-| **Averitt**  | Log in at averitt.com → API Dashboard (tools.averitt.com) → request an API key for each service (rate quote, pickup, tracking, BOL, documents). Support: support@averitt.com, 1-877-281-7131 | API key |
-| **Saia**  | Create an account or sign in at the \[Saia API Developer Portal\](https\://saiaprodapi.developer.azure-api.net/). Open \*\*Products\*\*, choose the needed product (\*\*Rate Quote\*\*, \*\*Bill of Lading\*\*, or \*\*Customer Tracking REST API\*\*), enter a subscription name, and select \*\*Subscribe\*\*. Open \*\*Profile\*\* to access that subscription's primary and secondary keys. The portal may list other products too. The subscription step asks for a name; provide the Saia account number separately for integration setup. | Primary subscription key for each needed product \+ Saia account number |
-| **TForce  Freight**  | Sign up at developer.tforcefreight.com → open your Profile → "Configure My Client". The secret is shown only once, so copy it right away. Support: groundfreightapisupport@tforcefreight.com | Client ID \+ Client Secret |
-| **FedEx Freight**  | Sign in to the \[FedEx Developer Portal\](https\://developer.fedex.com/wirc/browser/en-us/home), join or create an organization, then create a project. In the project, open \*\*API keys\*\*: FedEx creates a test key and secret for the sandbox (\`https\://apis-sandbox.fedex.com\`); the secret is masked after creation, so reveal/copy it and store it securely. The API Keys page lists selected APIs and their production status; choose \*\*Request Production Keys\*\* to start FedEx's production access process, which may require validation depending on the API. In the account we checked, the project contained Ship API, Account Verification API, and Service Availability API, but \*\*Freight LTL was not available\*\* in the catalog or in \*\*Add Product\*\* (23 products were listed). The Freight LTL catalog page says documentation can only be viewed after adding it to a project. Therefore we could not create or verify Freight LTL credentials through this project's flow. Ask the FedEx Freight representative or Developer Portal support how Freight LTL API access is provisioned for this account before relying on the general project-key instructions. | For available project APIs: test API key \+ secret, then production key \+ secret after approval/validation. Freight LTL API credentials remain unverified. |
+**3\. Other dependency categories — complete feature map**
 
-| Carrier  | How to get it | What we need from you |
-| ----- | ----- | ----- |
-| **AAA Cooper** | Register at \[AAA Cooper\](https\://aaacooper.com/pwb/Account/Register.aspx). The form requires a valid email as the user ID, password and security hint, company/contact and full address, phone, whether you are primarily a shipper/receiver/third party, and account numbers for your locations. Accept the Terms of Use and Privacy Policy to submit. AAA Cooper says a representative will contact you to finalize access. After the account is approved, sign in and request access through \*\*Web Services (API)\*\*; the registration page links to \[the Web Services request page\](https\://aaacooper.com/WS/WebServiceRequest.aspx). We have not verified the signed-in API request form or confirmed that it generates a self-service token, so confirm API credential provisioning with AAA Cooper. Support: CustomerCare@aaacooper.com, (334) 793-2284. | AAA Cooper login \+ account number (BusID); API token only after AAA Cooper confirms/provisions it**We cannot properly verify this because we do not have a USA number required for registration, so please try that** |
-| **A. Duie Pyle** | Log in to MyPyle at aduiepyle.com → IT Support → fill out the Rate Quote Web Service request form. Phone: 800-523-5020 | MyPyle  username \+  password \+  account number**We cannot properly verify this because we do not have a USA number required for registration, so please try that** |
-| **Southeastern**  | Uses your MySEFL website login. No separate key is needed. | MySEFL  username \+  password \+  account number**We have also submitted our profile, as we get confirmation from then we will further verify the flow of accessing that api**  |
-| **Roadrunner** | Log in at freight.rrts.com → find your Application ID and API Key in the tools section | Application ID \+ API Key \+  account number**We have also submitted our profile, as we get confirmation from then we will further verify the flow of accessing that api** |
+These are candidate capabilities, not a purchase list. Manual/internal alternatives must be explicitly chosen and accepted; they are not silently substituted for automatic features.
 
-**Group B: email the carrier to request access.**
+| Capability / app trigger | Current evidence / candidate | Data/access needed and official reference | Decision / test still required |
+| --- | --- | --- | --- |
+| Map rendering on shipment detail | Mapbox/OpenStreetMap attribution observed. | Client-owned Mapbox account and appropriately scoped/restricted browser token if retaining Mapbox. [Access tokens](https://docs.mapbox.com/help/dive-deeper/access-tokens/). | Provider choice, usage budget, allowed domains, attribution and map acceptance. Map rendering does not track a driver. |
+| Address search / geocoding | Customer billing dialog explicitly says Google address search; other location inputs do not establish their supplier. | If Google chosen: project/billing, enabled selected service and restricted key/OAuth. [Places usage/auth](https://developers.google.com/maps/documentation/places/web-service/usage-and-billing). | Search versus validation versus coordinates, countries, terms/storage rights, normalization and required fields. |
+| Route / mileage / ETA | Route line and editable distance; provider unverified. | Candidate [Mapbox Directions](https://docs.mapbox.com/api/navigation/directions/) or another approved route supplier. Coordinates and vehicle/time constraints required. | Truck restriction/height/width/weight/hazmat needs, regional coverage, sequence, ETA/timezones and override. Rendering provider need not be routing supplier. |
+| Live tracking | Trucker Tools named in settings and coverage preference; provider carrier events also visible. | [Trucker Tools TMS integration](https://info.truckertools.com/tms-integration) establishes integration options, but not this account's pull/push/consent contract. | Request selected tracking API contract/credentials from client/provider; agree driver consent, phone/device data, start/stop, polling/webhooks, freshness and failure policy. |
+| Accounting | Oct26 QuickBooks connected/mapped UI; actual sync untested. | Client-owned Intuit app/authorized company and separate development access. [Sandbox FAQ](https://static.developer.intuit.com/output_html/qbo/docs/develop/sandboxes/sandbox-faqs.html); [webhook/OAuth guidance](https://static.developer.intuit.com/output_html/qbo/docs/develop/webhooks/configure-webhooks.html). | §17.6 entity/transaction mapping, sync direction, token ownership, duplicates, revisions, payments and reconciliation. Existing Quote Factory authorization is not transferable access for the clone. |
+| Carrier packet/onboarding | Compliance None selected; coverage has Request packet branch; old guide says MyCarrierPackets used separately. | [MyCarrierPackets integration guide](https://mycarrierpackets.com/IntegrationGuide) documents integration credentials/token, invites, packets/monitoring/data/images. | Is separate use still current? Select provider, approval policy, invitation recipient, poll/callback contract, documents/tax-data access and sandbox. No invitation sent. |
+| Carrier monitoring / identity | Carrier411/CarrierOK/Highway link preferences; actual use not established. | [CarrierOK API](https://developers.carrierok.com/docs), [Highway partners](https://highway.com/partners), [Carrier411 restrictions](https://www.carrier411.com/webservices.cfm) and [current interface notice](https://webservices.carrier411.com/). | Choose supplier and entitlement. Carrier411 says custom brokerage systems lack legacy web-services access; current notice says new customers cannot use it and new REST onboarding is being prepared. Obtain written eligibility/current product confirmation before planning this integration. Highway partner listing is not open API access. |
+| NMFC / class lookup | Manual fields and estimated class; no lookup integration established. | [ClassIT+ API docs](https://help.nmfta.org/hc/en-us/sections/34250157579547-ClassIT-API-Documentation) and [license/pricing categories](https://classitplus.nmfta.org/pricing). | API license versus web-user license, allowed use/caching/redistribution, rule versions, commodity responsibility and sandbox. No licensed table is copied into the clone specification. |
+| Load-board posting / rate intelligence | Coverage Loadboards/Post/Show cost and Pathfinder link; exact board/source unknown. | [DAT API integration](https://www.dat.com/api-integration), [Truckstop integrations](https://truckstop.com/product/integrations/) / [post-load API](https://developer.truckstop.com/reference/post-load). | Posting/search/market-rate products separately; account tier, user auth, visibility, post/update/remove, rate data rights and callback. Provider selected by client; do not assume checkbox posts to both. |
+| Pathfinder | Named external coverage link. | Account owner/provider must explain selected service and permitted API/link integration. | Lead/lane source, account ownership and synchronization unverified. No external operational shipment link opened or opaque token retained. |
+| Email / SMS / notifications | Quote sharing, BOL/rate-con/invoice send and tracking-related communication. | Delivery supplier unverified. Client chooses internal mail integration or transactional provider, sender domain and approved test recipients. | Domain verification, templates, unsubscribe/consent where applicable, bounce/delivery, retry/idempotency and privacy. Do not infer a provider from a button. |
+| PDFs / attachments / storage / signatures | Generated/uploaded files; S3-hosted temporary URLs; some existing signature marks. | Internal generator/storage/signature implementation or selected providers; client-owned resources. | PDF templates/fields, object access, signed link lifetime, file scanning/limits, revisions, retention/backups and signature/acceptance requirements. S3 observation does not mandate AWS for the clone. |
+| Payments / factoring / QuickPay | Record forms, factoring and disabled QuickPay configuration (§17). | Processor not established. If actual payment processing is approved, request separate processor/factor account/API contract. | Record-only versus execute money, fees, permissions, allocations, settlement/reversal, test account and ledger reconciliation. Method labels do not prove processor integrations. |
+| Support / training | Help Scout Beacon label in broker UI; TalentLMS training link. | Confirm whether to retain external help/training, replace internally or exclude. | Branding, content ownership, contact destination, access and license. No support message submitted. |
 
-| Carrier  | Who to contact  | What to ask for |
-| ----- | ----- | ----- |
-| **XPO**   | LTLWebAPISupport@xpo.com | API access for rating, pickup, BOL and tracking. Include your XPO Web User ID and say you are a broker. |
-| **Old  Dominion** | API@odfl.com or your ODFL rep. Signup page: odfl.com/WebServiceSignup | API access for rate estimate (REST), pickup, BOL and tracking**Email API@odfl.com with the APIs you need and ask for integration onboarding and QA access. ODFL lists its API services and API contact on the [Shipping API Integrations page](https://www.olddominionfreightlineinc.com/us/en/resources/shipping-api-integrations.html).** |
-| **Pitt Ohio** | Your Pitt Ohio rep, or myPittOhio →  Technology → B2B Integration | Contact APIsupport@pittohio.com to get started. The API connection also requires a Pitt Ohio website user profile |
-| **Magnum**  | Customer\_Service@Magnumlog.com | API username \+ password \+ account number |
-| **Go2  Logistics** | Your Go2 sales rep | API token \+ account number \+ API documentation**Go2 doesn’t appear to offer a self-service API key generator in the customer portal. Its [EDI & API Capabilities page](https://go2.us/company/technology/) says to submit the [Integration Form](https://forms.gle/8DpoqZWqhXEFVamm9); Go2’s integrations team will follow up and manage setup** |
-| **Double D  Express** | Your Double D rep | Choose **Apply** under **DOT Driver Application Form** or **Non-DOT Employee Application Form**. On the next screen, download the PDF using the down arrow. Open it in Adobe Acrobat Reader and fill in the fields. Submit using the form’s button and choose the email option. Or save the completed PDF and email it as an attachment to **kstefaniak@doubledexpress.com**.  |
+**4\. Provider onboarding and secure handoff runbook**
 
-| Carrier  |  | What to ask for |
-| ----- | ----- | ----- |
-| **Sunset  Pacific** | Your Sunset Pacific rep | **We have also submitted our profile, as we get confirmation from then we will further verify the flow of accessing that api**  |
-| **Warp**  | Self sign-up at wearewarp.com/freight-api | Enter your registration details and you will get api keysShare both sandbox and production keys |
+1. **Business owner selects feature/provider:** Name the capability and launch priority; separate direct carrier accounts from an aggregator/network agreement. A warehouse/carrier business record does not automatically need a software API.
+2. **Account owner confirms access:** Client legal entity, authorized account/admin, negotiated contract, products/scopes, permitted data use, developer/partner approval and support contact. Do not sign terms, register accounts or buy subscriptions from this guide without the client's authorized account process.
+3. **Integration owner receives current docs:** Version, retirement schedule, auth, schemas, sandbox/production separation, webhook security or poll limits, quotas/costs, error semantics and recovery. Provider-specific instructions override a generic key recipe.
+4. **Secure provisioning:** Owner stores credentials in approved secret manager/deployment settings, grants appropriate access and confirms expiration/rotation. Record only a secret reference/owner and environment here, never the actual value. Browser/public tokens must have appropriate restrictions; server credentials remain server-side.
+5. **Capability-specific test:** Rate, tender, track, documents and cancellation independently; capture redacted request/result IDs, provider acknowledgment, expected behavior, retries and cleanup. An authenticated request or portal login does not prove all operations work.
+6. **Reconciliation and sign-off:** Compare app/provider/accounting records, confirm external IDs and financial/notification outcomes, then record reviewer/date and readiness per capability.
 
-**2\. Other Integrations**
+**Reusable provider worksheet:**
 
-| Service  | What it does | Status in  Quote Factory | How to get API access |
-| ----- | ----- | ----- | ----- |
-| **QuickBooks Online** | Syncs bills and invoices and  marks them  paid | ✅Enabled  (syncing) | No action needed now. We create the app on Intuit's developer portal. When it's ready, you click **"Connect to QuickBooks"** once to approve it. |
-| **Trucker Tools** | Live load  tracking. The driver gets a  tracking link. | ✅Enabled | Email integrations@truckertools.com and ask for TMS integration credentials (API key \+ secret \+ account IDs). |
-| **MyCarrierPackets** | Carrier  onboarding  and  compliance | ⛔Not  connected to Quote Factory (used  separately) | Email mcp-help@descartes.com and ask for API / integration access for your account. |
-| **DAT / Truckstop  auto-post** | Automatic load board posting | ⛔Not used | Not needed, since you post loads  manually. |
-| **Carrier411,  CarrierOK, Highway, ClassIT+** | Carrier  monitoring and freight class  lookup | ⛔Disabled  | Not needed for now. |
+| Field | Value to obtain |
+| --- | --- |
+| Provider / product / capability / priority | Named service; required or optional decision and reviewer. |
+| Trigger / input / output | Exact app action, allowed payload, returned identifiers/objects and audience. |
+| Ownership / agreement | Client account owner, approval/licensing/cost limits and support path. |
+| Access | Test/production auth type, approved scopes, secret reference, connection owner and expiry. |
+| Transport / behavior | API version or manual process; webhook verification/replay rules or poll cadence; pagination/limits. |
+| Failure / reconciliation | Timeout/no rate/denial, duplicate prevention, retries, dead-letter/manual review, cancellation and record comparison. |
+| Acceptance / readiness | Test evidence per operation, external acknowledgment, reviewer/date, unresolved blocker and next action. |
 
+**5\. Decisions and acceptance cases**
+
+No launch supplier list, named provider owners, sandbox credentials or production operation access has been approved through this research. Questions SC-01–12/OQ remain in the [coverage register](../main/Documentation%20Coverage%20and%20Open%20Questions.md). User authorized continuing independently; this is not evidence of supplier contracts, spend authority or tested connectivity.
+
+**Core acceptance cases for selected dependencies:** Eligible/unsupported lane; partial provider outage with valid offers retained; expired quote/account denial/credit restriction; repeat rate and duplicate tender; provider acceptance versus local booking; timeout after externally accepted tender; cancellation/amendment; delayed/out-of-order/duplicate tracking; missing document/wrong PRO; expired/revoked token; webhook replay/auth failure; sender bounce/duplicate send; accounting duplicate/revision/payment mismatch; and disconnected provider with an explicitly approved manual recovery path.
+
+**Completion boundary:** Capability/access research is documented. Ready-to-launch integrations require owner decisions, current provider approval/accounts and passing tests; unresolved supplier access is a blocker, not an invented API or an implicit exclusion. Phase 8 covers settings/roles/reporting; Phase 9 consolidates acceptance and review status.

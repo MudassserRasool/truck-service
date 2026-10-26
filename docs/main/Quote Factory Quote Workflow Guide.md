@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–6 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–7 observed documentation delivered; save/role tests pending.
 
 **This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -27,9 +27,10 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–6 o
 15. [Shipment lists, coverage and shipment detail screens — Phase 4](#shipment-operations)
 16. [Shipment editing, scheduling and tracking — Phase 5](#shipment-editing)
 17. [Documents, bills, invoices and accounting — Phase 6](#documents-accounting)
-18. [Questions still awaiting verification](#open-questions)
-19. [Phase progress and what to do next](#phase-progress)
-20. [Sources and supporting records](#sources)
+18. [Third-party dependencies and API requirements — Phase 7](#third-party-requirements)
+19. [Questions still awaiting verification](#open-questions)
+20. [Phase progress and what to do next](#phase-progress)
+21. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
@@ -1459,8 +1460,72 @@ Use Bills & Invoices → Bills to Approve → existing bill → inspect document
 
 **Delivered:** Document catalog and inspected fields; generated BOL/labels and carrier confirmation structure; bill editor/approval/payment forms; customer invoice/receipt form; queues; current accounting connection/terms; mapping/reconciliation decisions and validation cases. **Pending:** actual uploads/sends/signatures, approval/payment/revision effects, complete queue rules, finance sync, role/access and owner-approved policies. **Next: Phase 7 — Third-party dependency and API requirements**, including corrections to the existing access guide.
 
+<a id="third-party-requirements"></a>
+**18\. Third-party dependencies and API requirements — Phase 7**
+
+**Purpose:** Understand which feature needs which external capability, which values/providers are visible in Quote Factory, and what access the clone would still need. The detailed carrier/provider instructions are maintained in the existing [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md), revised October 26, 2026. Evidence E-93–98. No account was created, agreement accepted, paid product purchased, credential retrieved or operational API called.
+
+**18.1 Four questions before requesting a key**
+
+1. **What feature?** Rating, tender/pickup, tracking, BOL/document retrieval, map rendering, route/mileage, address search, onboarding, accounting, messages or actual payment processing are separate capabilities.
+2. **Whose account and agreement?** The brokerage/customer's direct carrier agreement may differ from an Xtended Network/aggregator account. A master-record carrier is not an API credential, and a portal account is not automatically API access.
+3. **What access?** Product/version, account eligibility, test versus production, API key/OAuth/integration credentials, permissions, data rights, rate/usage limits and support owner.
+4. **What proof?** Correct capability-specific output plus external acknowledgment, duplicates/retries/correction and reconciliation. A green card or successful login is not a passing integration test.
+
+**18.2 Feature-to-capability map — top to bottom**
+
+| Workflow / trigger | External capability / current evidence | Required decision and information |
+| --- | --- | --- |
+| Enter customer/location | Address lookup/validation/geocoding. Billing editor names Google address search; other inputs' supplier unverified. | Supported countries, selected service/account, billing/restricted access, normalization, coordinates and saved-data rules. |
+| Select freight class/NMFC | Current classification rules or licensed lookup. Manual input and estimated class observed. | Licensed ClassIT+ API versus authorized manual lookup, responsible selector, current rules and data-use rights. Do not copy a proprietary commodity table. |
+| Get quotes | Carrier or network rating API with negotiated account/service entitlements. | Selected launch carriers/network, payer, class/freight/services, quote/expiry/transit/charges and partial failures. |
+| Book/tender/dispatch | Provider shipment/pickup submission and acknowledgment. Existing LTL shows Auto dispatched; coverage has separate TL send/packet branches. | Distinguish local booking, provider acceptance and pickup scheduling; references/PRO, duplicate prevention, amendments and cancellation. |
+| Cover load | Candidate/board/market-data/onboarding services, if automated. Pathfinder and Loadboards shown. | Lead source, contract and current usage, posting visibility/update/remove, response/offer mapping and manual fallback to approve. |
+| Render map | Map renderer. Mapbox/OpenStreetMap attribution observed. | Client-owned selected renderer/account/token, domains/scopes, attribution and usage budget. |
+| Compute distance/ETA | Separate routing/mileage/geocoding capability. Actual supplier unverified. | Vehicle restrictions, coordinates/stops, timezones, route source, regional coverage and editable overrides. A map token alone is not the complete tracking stack. |
+| Track load/driver | Carrier status feed and/or truckload tracking supplier. Trucker Tools label/preference present. | Consent/contact data, start/stop, freshness, source timestamps, polling/webhooks, ordering/replay and manual correction. |
+| Check carrier / request packet | Onboarding/identity/authority/insurance and packet supplier. None selected under Compliance; current packet branch exists. | Required checks and human approver, selected integration, permissions, packet images/tax data and failure/recovery. Supplier links alone are not eligibility policy. |
+| Create/share BOL, labels, rate con, POD, invoice | Internal PDF/storage or selected external services; temporary S3-hosted URLs observed. | Templates, source fields, number/version, signed-link access, upload validation, retention and acceptance/signature requirements. Existing signatures do not identify signing technology. |
+| Send quotes/documents/alerts | Mail/SMS/notification transport; vendor unverified. | Approved sender/domain/recipients, templates, bounce/delivery and retry/idempotency. Never use operational contacts to test arbitrary messages. |
+| Sync bills/invoices/payment records | Accounting integration. Oct26 QuickBooks UI connected/mapped. | Clone-owned authorized app/company access, entity/external-ID mapping, direction, revisions, duplicates and reconciliation. |
+| Pay/factor/QuickPay | Processor/factor only if actual monetary execution is in scope. Current forms/settings do not establish one. | Record-only versus funds movement, authorized financial actor, terms/fees, sandbox and settlement/reversal. Do not infer Apple Pay/ACH integration from method labels. |
+| Support / training | Help Scout Beacon label and external TalentLMS link. | Retain/replace/exclude, account/license/content ownership and contact/access policy. |
+
+**Answer to the map/key question:** Evidence supports Mapbox as the inspected renderer; Google address search appears in a different billing-address form. Rendering, suggestions/geocoding, route/mileage and driver/carrier tracking must each be specified. The [provider guide §3](../thrid_party/10-4-tms-api-access-guide.md) links current token, Places and routing references. Do not request a Google Maps key as a universal solution or assume Mapbox supplies live positions.
+
+**18.3 Carrier inventory, access corrections and current-source limits**
+
+Current carrier integration page has 17 cards and a displayed count12, with a Test quote entry. Historical October9 statuses are dated in the provider guide, not relabeled current. The complete inventory remains A. Duie Pyle, AAA Cooper, ArcBest/ABF, Averitt, Go2, Magnum, Old Dominion, Pitt Ohio, Roadrunner, Saia, Southeastern, TForce, XPO, FedEx Freight, Double D, Sunset Pacific and Warp.
+
+| Important correction / distinction | Current research result | Remaining decision |
+| --- | --- | --- |
+| ArcBest versus Averitt | ArcBest has its own API-ID process; original guide incorrectly reused Averitt's dashboard. | Obtain appropriate ArcBest account/service entitlements; do not request an Averitt key for ABF. |
+| Double D | Carrier-owned pages expose customer services/contact; employment forms are unrelated. | Carrier must provide current integration contract/auth/capabilities; no ready API inferred. |
+| AAA Cooper | Current public Web Services FAQ describes logged-in token generation/account association. | Actual client login, token and service tests not performed. |
+| Sunset Pacific | Carrier publishes quote/tender/tracking/document API documentation. | Confirm current platform and approved account/test process; old manual-only app status is not provider capability. |
+| FedEx Freight | Current Freight technology page links a dedicated Freight developer center; older general FedEx project lacked LTL. | Confirm current product/account migration and Freight provisioning; dedicated center timed out during research. |
+| Warp | Public engineering-reference and self-service surfaces use different auth/endpoints. | Select one current product/version and account contract; do not mix API keys or booking/payment assumptions. |
+| Old Dominion | Official source schedules SOAP retirement March1,2027; REST catalog available. | Confirm current REST onboarding/QA and each operation, not just auth. |
+| Carrier411 | Official pages restrict legacy custom-system/new-customer web-services access and mention upcoming REST onboarding. | Obtain written eligibility/current product confirmation before planning an API dependency. |
+
+All rows link to provider-owned sources in the access guide. Search/support/marketing capability evidence is not an executed schema/authentication test. Costs and launch priorities remain owner decisions; no paid supplier is silently selected.
+
+**18.4 Integration worksheet, failure and privacy requirements**
+
+For each selected capability, fill provider/product/version, app trigger, permitted payload, returned object/external IDs, environment/auth/scopes, client owner, agreement/data rights, quota/cost, transport and webhook/polling behavior. Store only secret references, never secret values. Keep customer/provider identity, quote ID, pickup confirmation, PRO, BOL, invoice/bill and external accounting IDs distinct.
+
+**Acceptance/failure checks:** unsupported or unroutable lane, invalid class/service combination, no rates and partial provider failure, stale quotes, denied account/rate type/credit, timeout after provider accepted a tender, repeated booking, failed cancellation, webhook authentication/replay/duplicates/out-of-order events, location freshness, missing/wrong document, expired key/OAuth consent, disconnected accounting, duplicate bills/invoices, failed sync revision and send bounce. Capture state before/after, provider acknowledgment, audit/history, money/notifications and an approved recovery path.
+
+Proposed implementation controls to review: least-privilege account access, server-side secret storage, tenant/account isolation, restricted public map tokens, redacted logs, authenticated webhooks, safe retry/idempotency and human review of ambiguous external outcomes. These are clone requirements to confirm, not claims about Quote Factory's internal code.
+
+**18.5 Explore and readiness**
+
+Read Settings → Carriers → Carrier integrations, then compare provider names with the detailed access guide. Do not open secret-value editors or submit Test quote against operational accounts. Read Tracking/Compliance/monitoring/link preferences without changing them. Inspect Accounting connection/mapping without Disconnect or account changes. Open official public API guidance for the selected supplier; do not register/pay/sign or send business data as a documentation exercise.
+
+**Delivered:** Corrected existing API guide, all17 carrier entries, feature/dependency categories, official-source links, secure account/access worksheet, operation-specific failure/acceptance tests and current-versus-historical readiness distinctions. **Pending:** client supplier/launch decisions, contracts, named account owners, sandbox/production access and runtime validation. A manual/internal alternative must be explicitly approved rather than silently replacing an automatic workflow. **Next: Phase 8 — Settings, access, reporting and remaining modules.**
+
 <a id="open-questions"></a>
-**18\. What remains unverified**
+**19\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
@@ -1478,7 +1543,7 @@ Use Bills & Invoices → Bills to Approve → existing bill → inspect document
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**19\. Phase progress and what to do next**
+**20\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -1489,14 +1554,15 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 4 — Shipment lists/coverage/details | Section 15: queues, filters/rows, direct creation, coverage forms, detail regions, documents/buttons and exercises. | Assignment/create/status/role/file/provider and timestamp rules remain pending. |
 | 5 — Edit/scheduling/tracking/exceptions | Section 16: observed documentation delivered. | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
 | 6 — Documents, bills, invoices and accounting | Section 17: observed documentation delivered. | Upload/send/signature/approval/payment/sync and role validation pending. |
-| 7–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
+| 7 — Third-party dependency and API requirements | Section 18: observed documentation delivered. | Client provider/account/licensing decisions, access and runtime tests pending. |
+| 8–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
 
-**Your next action:** Read section 17 and its exercises; resolve the owned test/access/business questions in the coverage register.
+**Your next action:** Read section 18 and its exercises; resolve the owned test/access/business questions in the coverage register.
 
-**Next delivery:** Phase 7 — Third-party dependency and API requirements, inside this same file. Supporting registers retain evidence and unverified rules.
+**Next delivery:** Phase 8 — Settings, access, reporting and remaining modules, inside this same file. Supporting registers retain evidence and unverified rules.
 
 <a id="sources"></a>
-**20\. Sources and supporting records**
+**21\. Sources and supporting records**
 
 **Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. E-76–82 record Phase 5 editor/forms; E-83–92 record Phase 6 documents/accounting and editor follow-up. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 

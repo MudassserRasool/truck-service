@@ -14,6 +14,7 @@ Prepared October 23, 2026 | All live observations below use the visible 10-4 Glo
 **T5:** Phase 4 shipment-list/queue, coverage, direct-form, detail and document-navigation inspection on October 23.
 **T6:** Phase 5 editor and scheduling/tracking dialog inspection October 25; written October 26.
 **T7:** Phase 6 accounting/document/configuration inspection October 26. Screenshots viewed but no source files attached.
+**T8:** Phase 7 public primary-source research and carrier-settings inspection October 26. No credentials or API actions.
 **Local:** Files read directly in this workspace.  
 **Capture:** Entries are summarized text observations; **no screenshot files attached**. One address-book screenshot was viewed during T3 to identify the plus control, but not saved. One unsaved LTL visualizer screenshot was also viewed during T4. Shipment-list and customer-confirmation screenshots were viewed during T5 but not saved. No raw contacts, documents, tax IDs or credentials are attached.
 
@@ -120,6 +121,13 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-91 | Oct 26 / T7 | Accounting → QuickPay / Factoring → close | Not providing QuickPay: disabled Allow,3days/2.5%; Not factoring: disabled company/default-new-customer options. Global customer30days/vendor30days from bill shown. | Values are disabled/configuration examples, not approved scope/payment terms or operational workflows. | Accounting lead |
 
 | E-92 | Oct 26 / T7 | Reconnected scheduled Auto Transport editor | Overall Total Width and Total Height inputs visible with overall dimensions/units. | Additional fields added to §16.4; no values changed and vehicle/packaging/units contract untested. | Operations lead |
+
+| E-93 | Oct26 / T8 | Settings → Carriers → Carrier integrations | Count12 and17 named cards/Test quote; colored indicators viewed, no verified textual legend. Tracking Trucker Tools, Compliance None selected and Not showing links preferences. | No credential editor opened, fresh quote/API call or provider health verified. Colors not translated into ready/enabled policy. | Integration lead |
+| E-94 | Oct26 / T8 public | Official ArcBest API Access; Averitt API; AAA Cooper Web Services; MyPyle IT Support; Saia product/rating and TForce enrollment guides | Public carrier capabilities/onboarding steps linked in API guide; corrects ArcBest/Averitt mistake and AAA token claim. | No client account approval, key or capability execution. Product-specific entitlements remain pending. | Integration lead |
+| E-95 | Oct26 / T8 public | Go2 technology; Magnum carrier-hosted rate guide; ODFL catalog; Pitt Ohio technology; Roadrunner System Integration; XPO carrier-hosted rating PDF; Double D official/contact | Public capability/access evidence or explicit lack of verified API contract, all linked in revised guide. | Old Magnum transport/docs need current provider confirmation; XPO help pages inaccessible; Double D portal/employment not API proof. | Integration lead |
+| E-96 | Oct26 / T8 public | Official Mapbox token/Directions, Google Places, Intuit sandbox/webhooks sources | Separate display/address/route/track/accounting capabilities and access references linked in guide. | Provider choice, application ownership, costs/scopes and actual sandbox tests unverified. | Integration lead |
+| E-97 | Oct26 / T8 public | Official MyCarrierPackets integration, Carrier411 restrictions/notices, CarrierOK docs, Highway partners, ClassIT+ docs/pricing, DAT and Truckstop | Candidate onboarding/monitoring/classification/board capabilities with supplier eligibility/licensing limits. | Not proof of current Quote Factory use, client contracts or clone integration entitlement; no access purchased/provisioned. | Integration/client lead |
+| E-98 | Oct26 / T8 public | Sunset Pacific API specification; Warp developer/self-service sources; FedEx Freight technology; ODFL SOAP retirement notice | Distinguishes provider/platform/auth surfaces and current onboarding/retirement concerns; relevant official links in guide. | Dedicated FedEx Freight developer center timed out; no Warp/Sunset registration or live booking; account/version conflicts require provider confirmation. | Integration lead |
 
 **4\. Known conflicts and evidence limits**
 
