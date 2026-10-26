@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 8.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 9 writing/audit; validation pending.
 
 **1\. How to use this inventory**
 
@@ -39,6 +39,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 
 **After Phase 8:** 89 items — 0 Observed, 87 Partly documented, 0 Not explored, 2 Blocked and 0 Documented. All known accessible inventory entries have guide content or explicit owned gaps. Full workflows, alternate roles, submissions, exports and client acceptance remain unvalidated; P does not imply signed-off completeness.
 
+**After Phase 9 writing/audit:** 89 items remain 87 P and 2 B; no D claimed without reviewed rules and required tests. Main §20 maps every inventory ID to seven walkthroughs/exception cases and an owned completion audit (E-109–110). All known items have documentation or an explicit gap; unresolved behavior is not silently excluded.
+
 **Chapter and reviewer key**
 
 | Code | Planned chapter | Detailed phase | Proposed reviewer |
@@ -59,11 +61,11 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
 | SYS-01 | [Dashboard](https://app.quotefactory.com/broker/dashboard) | P | SYS | E-04–05, E-28 | Main guide §§2,6,11 explains navigation; counter/date/map-data rules remain open |
-| SYS-02 | Sidebar → Find / Find anything | P | SYS, ADMIN | E-28 | Main guide §§6,11 documents verified BOL search; other entities, failure/permission filtering remain open |
+| SYS-02 | Sidebar → Find / Find anything | P | SYS, ADMIN | E-28, E-107 | Main §§6,11,19.6: known BOL and no-match search observed; other entities/permission filtering pending |
 | SYS-03 | Dashboard → Quote / Requested / Quoted shortcuts | P | SYS, QUOTE | E-05, E-28 | Main guide §6 maps entry targets; exact queue inclusion and request handoff remain open |
 | SYS-04 | Dashboard → Dispatch queue | P | SYS, SHIP | E-63 | Main §15.2: direct dispatch route loaded No active shipments; populated workflow/shortcut behavior pending |
 | SYS-05 | Sidebar → [Cover](https://app.quotefactory.com/broker/shipments/covering/all) | P | SYS, SHIP | E-63, E-68–69 | Main §15.2/6–7: coverage workspace/candidates/forms; source/count/posting/assignment tests pending |
-| SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | P | SYS, EDIT | E-63 | Main §15.2: populated Scheduled pickup queue; date rules and confirmation outcomes Phase 5 |
+| SYS-06 | Sidebar → [Confirm pickups](https://app.quotefactory.com/broker/shipments/scheduled/all) | P | SYS, EDIT | E-63 | Main §§15.2,16,20 W-02: pickup queue/forms; confirmation/date rules remain untested |
 | SYS-07 | Sidebar → [Confirm deliveries](https://app.quotefactory.com/broker/shipments/delivering/all) | P | SYS, EDIT | E-63 | Main §15.2: populated In transit delivery queue; rules, POD and status outcomes pending |
 | SYS-08 | Sidebar → [Training](https://quotefactory.talentlms.com/) | P | ADMIN | E-108 | Main §19.6: TalentLMS learner landing observed; course content/licensing/SSO pending |
 | SYS-09 | Sidebar → Support | P | ADMIN | E-107 | Main §19.6: Help Scout Search/Ask Us; no message/attachment |
@@ -125,7 +127,7 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | SHP-06 | Shipment → carrier/customer/vendor cards | P | SHIP | E-65, E-67 | Main §15.5–7: customer/assigned-carrier versus candidate/provider relationships; removal/replacement/assignment pending |
 | SHP-07 | Shipment → financial summary / Expand itemized view | P | SHIP, MONEY | E-65 | Main §15.8: expanded Freight cost/price, Margin/Cost+/Profit; autosave/rounding/reconciliation pending |
 | SHP-08 | Shipment → stops / appointments / In / Out / ETA | P | SHIP, EDIT | E-65, E-74 | Main §15.9: stops/contacts/hours/appointments/ETA/In/Out; timestamp discrepancy OQ-25 and Phase 5 outcomes pending |
-| SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-65 | Main §15.9: driver/truck/trailer/tracking controls, completed/off-route distinctions; source/update forms Phase 5/7 |
+| SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-65 | Main §§15.9,16.7–9,18: driver/tracking forms and provider requirements; submitted events/source rules pending |
 | SHP-10 | Shipment → add tracking update / Delivered | P | EDIT | E-78, E-81 | Main §16.7–9: exact Tracking update Notes/PRO, ETA forms; actual transitions/visibility pending |
 | SHP-11 | Shipment → freight summary / volume / density / length / map | P | SHIP, TERM, API | E-65, E-74 | Main §15.10: saved two-group freight arithmetic and Mapbox attribution; route/feed/rounding/layout rules pending |
 | SHP-12 | Shipment → note / Timeline | P | SHIP, EDIT | E-65 | Main §15.11: notes and expanded lifecycle/document/tracking Timeline; audience/actor/save/edit rules pending |
@@ -142,13 +144,13 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| DOC-01 | Shipment → Confirmation | P | MONEY | E-70 | Main §15.11: customer document preview/navigation distinguished from confirmation action; full fields/access/acceptance Phase 6 |
-| DOC-02 | Shipment → Rate con | P | MONEY | E-71 | Main §15.11: confirmed carrier rate-con and share dialog; signature/send/regen/access tests Phase 6 |
-| DOC-03 | Shipment → Documents | P | MONEY | E-73 | Main §15.11: provider/POD/bill/Misc destinations; unknown add labels/types/file rules Phase 6 |
+| DOC-01 | Shipment → Confirmation | P | MONEY | E-70, E-88 | Main §§15.11,17,20: customer confirmation preview/fields/navigation; send/access/acceptance tests pending |
+| DOC-02 | Shipment → Rate con | P | MONEY | E-71, E-89, E-101 | Main §§17,19.2,20: carrier rate-con/fields/settings; signature/send/regenerate/access effects pending |
+| DOC-03 | Shipment → Documents | P | MONEY | E-73, E-87–89, E-109 | Main §17: document index/upload forms/catalog; upload/file limits/revisions/access pending |
 | DOC-04 | BOL / POD generation, upload, preview and sharing flows | P | MONEY | E-87–89 | Main §17.2/7: BOL/labels/POD generic upload and preview fields; generation/sends/revision/file rules pending |
 | ACC-01 | [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices) | P | MONEY | E-83 | Main §17.3: queue/state dictionary and selected populated/empty examples; aging/all filters/exports pending |
-| ACC-02 | Shipment → Bill | P | MONEY | E-72 | Main §15.11: Expected bill versus upload/dispute/balance/payment controls; lifecycle actions Phase 6 |
-| ACC-03 | Shipment → Invoice | P | MONEY | E-72 | Main §15.11: invoice preview/send/POD/payment entries; lifecycle/sends/settlement Phase 6 |
+| ACC-02 | Shipment → Bill | P | MONEY | E-72, E-84–85 | Main §17.4: bill form/approval/payment entries; lifecycle/ledger effects untested |
+| ACC-03 | Shipment → Invoice | P | MONEY | E-72, E-86, E-88 | Main §17.5: invoice preview/send/payment forms; delivery/allocation/settlement pending |
 | ACC-04 | Bill approval/payments and invoice payment allocation | P | MONEY | E-84–86 | Main §17.4–5: approval and payment forms; actual approval/payment/allocation/reconciliation pending |
 | ACC-05 | QuickPay / factoring / disputes / overdue workflows | P | MONEY, ADMIN | E-91 | Main §17.6: factoring/QuickPay disabled forms and dispute entry; execution/approval/scope pending |
 
@@ -279,3 +281,16 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
 **Your next action:** Read main §18; continue Phase 8 while collecting test access and client decisions. Unverified outcomes remain tracked.
+
+**Phase 9 validation handoff (October 26)**
+
+W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs map there. Reviewer roles are proposed, not assigned. The user's authorization to continue and choose appropriate documentation actions does not name a test environment, disposable record IDs, suppressed sends/tenders/sync or reviewers. SYS-11 and EDT-07 remain blocked. Other P rows retain their particular unverified details; no exclusions or passed functional cases inferred.
+
+| Gate | Concrete missing input / evidence | Proposed owner |
+| --- | --- | --- |
+| Workflow submissions | Test URL, disposable customer/shipment/provider IDs, allowed operations, reset and side-effect suppression | Team lead/account administrator; SC-05 |
+| Role/portal behavior | Separate included-role test sessions and expected permissions | Administrator/product owner; SC-03/05 |
+| Business review | Named chapter reviewers, scope selections and answers to operational/pricing/accounting questions | Team lead/client reviewers; SC-01/02/04/06/08/09/11 |
+| Providers and reconciliation | Selected capabilities, licensed access, provider/accounting sandbox and acknowledgments | Integration/account owners; SC-07/12 |
+| Operating targets | Migration inventory, audit/retention, backup/restore, volumes and performance | Product owner/team lead; SC-10 |
+| Final artifacts | Source review, resolved/deferred defects, sign-off and refreshed exports | Documentation author + appointed reviewers |

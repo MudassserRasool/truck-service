@@ -16,6 +16,7 @@ Prepared October 23, 2026 | All live observations below use the visible 10-4 Glo
 **T7:** Phase 6 accounting/document/configuration inspection October 26. Screenshots viewed but no source files attached.
 **T8:** Phase 7 public primary-source research and carrier-settings inspection October 26. No credentials or API actions.
 **T9:** Phase 8 read-only settings, role, reporting, search, support and external training inspection October 26.
+**T10:** Phase 9 existing-record navigation replay and local documentation/formula/traceability audit October 26.
 **Local:** Files read directly in this workspace.  
 **Capture:** Entries are summarized text observations; **no screenshot files attached**. One address-book screenshot was viewed during T3 to identify the plus control, but not saved. One unsaved LTL visualizer screenshot was also viewed during T4. Shipment-list and customer-confirmation screenshots were viewed during T5 but not saved. No raw contacts, documents, tax IDs or credentials are attached.
 
@@ -141,19 +142,22 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-107 | Oct26 / T9 | Find … → fictional unmatched string; Contact support → close | Search settles to No matches found; recently visited records. Support opens Help Scout Search/Ask Us with Subject/message/attachment/Send controls. | No message/upload; only one unmatched search, no permission isolation or outage tests. | Administrator/support lead |
 | E-108 | Oct26 / T9 | Sidebar → Training → TalentLMS dashboard | Existing session opens external Learner home with four named TL/LTL courses, catalog/progress/discussions/calendar. | No course/enrollment/message actions; content/license/SSO and clone scope unknown; learner status differs from broker role. | Training/admin lead |
 
+| E-109 | Oct26 / T10 | Existing booked LTL result → View Shipment button → BOL1047885 → Documents | Member read-only replay reaches linked shipment with target cost867.35, price1045, profit177.65; existing status/tracking events and document index controls visible. | No new quote, booking, update, delivery, file or payment; original View Shipment role is button, not link; full end-to-end behavior untested. | Operations lead |
+| E-110 | Oct26 / T10 local | Main guide/registers/API guide structural, arithmetic and use-case traceability audit | Local links/explicit anchors, sequential headings, table widths, fences and evidence uniqueness checked; 89 inventory IDs mapped to W-01–07/X-01–09; sample density/profit arithmetic checked. | Structural checks do not prove functional acceptance, screenshots, recipient access, provider behavior or business sign-off; SC-03/04/05/07 remain required. | Documentation author + team lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
 | --- | --- | --- | --- |
-| EC-01 | E-02 versus E-25 | Older API guide says QuickBooks enabled; live settings says not connected. | Keep both dated observations; ask SC-12. Never mark clone integration ready from either alone. |
-| EC-02 | E-02 | ArcBest row describes Averitt access paths. | Verify ArcBest's own access procedure in Phase 7. |
-| EC-03 | E-02 | Double D row describes driver/employee applications. | Replace with verified carrier integration information in Phase 7. |
+| EC-01 | E-02 versus E-25 | Older API guide says QuickBooks enabled; live settings says not connected. | Oct26 E-90 now shows connected/syncing and mappings; retain all dated states and ask SC-12 about readiness. No transaction tested. |
+| EC-02 | E-02 | ArcBest row describes Averitt access paths. | Resolved public-source correction in Phase 7/E-94; account entitlement and runtime tests remain open. |
+| EC-03 | E-02 | Double D row describes driver/employee applications. | Corrected in Phase 7/E-95: employment forms removed; direct API access remains provider-confirmation pending. |
 | EC-04 | E-12, E-23 | A quote offer/carrier name is not proof of a direct carrier integration for our clone. | Validate provider, network/direct path and individual operations separately. |
 | EC-05 | E-04–E-30 | Only one broker-session context; no alternate-role or customer-portal login inspected. | Obtain roles/test access under SC-03 and SC-05. |
 | EC-06 | E-01 original §8 versus E-29 | Original guide implied Booked means carrier selected; inspected Booked shipment still Needs a carrier. | Corrected in main guide §§5,10. Full transition rules remain Phase 4/5 work. |
 | EC-07 | E-01 original §9 versus E-33 | Original guide described Prepaid as payment timing. | Corrected in main guide §8 using billing-party terminology. Account-specific arrangement still requires accounting review. |
 | EC-08 | E-25 versus E-46 | Per-vendor Push bills to Quickbooks Online can be checked while company settings show Not connected. | Document preference versus connectivity separately; reconcile under SC-12/Phase 7. |
-| EC-09 | E-41 | 04821J also appears beside ArcBest in customer carrier-pricing settings. | Do not classify the identifier as an NMFC code from appearance; verify its labeled business meaning in Phase 3/7. |
+| EC-09 | E-41 | 04821J also appears beside ArcBest in customer carrier-pricing settings. | E-88 generated BOL explicitly labels Acct04821J; corrected §17. Verify exact account/pricing mapping with account owner, never classify as NMFC. |
 
 **5\. Official terminology sources checked in Phase 1**
 
@@ -167,4 +171,4 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-50. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-110. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.

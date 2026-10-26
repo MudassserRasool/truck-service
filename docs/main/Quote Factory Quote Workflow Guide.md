@@ -2,9 +2,9 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 observed chapters and Phase 9 scenarios delivered; workflow validation and sign-off pending.
 
-**This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
+**This is the one main document.** Phases 1–9 are consolidated here, with explicit test and review gaps. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
 **In one sentence:** Quote Factory helps a freight broker arrange transportation for a customer, price the work, find a carrier, manage pickup and delivery, maintain shipment documents, and handle customer invoices and provider bills.
 
@@ -29,16 +29,17 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 o
 17. [Documents, bills, invoices and accounting — Phase 6](#documents-accounting)
 18. [Third-party dependencies and API requirements — Phase 7](#third-party-requirements)
 19. [Settings, access, reporting and shared controls — Phase 8](#settings-reporting)
-20. [Questions still awaiting verification](#open-questions)
-21. [Phase progress and what to do next](#phase-progress)
-22. [Sources and supporting records](#sources)
+20. [Connected walkthroughs, acceptance and final review — Phase 9](#walkthroughs-acceptance)
+21. [Questions still awaiting verification](#open-questions)
+22. [Phase progress and what to do next](#phase-progress)
+23. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
 
 **Purpose:** Understand the business first, then follow the app, then learn the detailed rules behind each field and action. The documentation also provides a basis for agreeing what the clone must implement.
 
-**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Phases 5–8 expand editing, accounting, integrations and settings in sections 16–19. Phase 9 will connect the end-to-end acceptance scenarios.
+**Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Phases 5–8 expand editing, accounting, integrations and settings in sections 16–19. Section 20 connects seven walkthroughs, exception cases, acceptance traceability and the completion audit.
 
 **Evidence labels used here**
 
@@ -1205,7 +1206,7 @@ Links below use BOL 1046693. On another shipment, use the corresponding button; 
 
 **Pending:** Actual creation/assignment/updates, fully tested status/role variants, lead/provider sourcing, date rules, file/export contents, external sends/posting, financial outcomes and document acceptance. These are explicit verification gaps, not completed workflow tests or approved clone scope.
 
-**Next: Phase 5 — Edit shipment, scheduling, tracking and exceptions.** It will expand this same guide with field-level editing, locks, appointments/In/Out/ETA, Notes/PRO forms, driver/tracking updates, cancellation and save/resend behavior. Document/accounting lifecycles follow in Phase 6.
+**Continue reading:** [§16](#shipment-editing) covers shipment editing, locks, scheduling/tracking forms and untested save/resend outcomes; [§17](#documents-accounting) covers document/accounting lifecycles.
 
 <a id="shipment-editing"></a>
 **16\. Edit shipment, scheduling, tracking and exceptions — Phase 5**
@@ -1459,7 +1460,7 @@ For each template and attachment, confirm field source, numbering, generator/tri
 
 Use Bills & Invoices → Bills to Approve → existing bill → inspect documents and details → close editor without Save. Open payment-record form and close without Save payment. Compare carrier bill to its customer invoice. On LTL BOL 1047885, open Documents → BOL and Labels; inspect both label sizes without changing selection. Open Accounting settings → QuickBooks/QuickPay/Factoring and close without changing mappings, preferences or connection.
 
-**Delivered:** Document catalog and inspected fields; generated BOL/labels and carrier confirmation structure; bill editor/approval/payment forms; customer invoice/receipt form; queues; current accounting connection/terms; mapping/reconciliation decisions and validation cases. **Pending:** actual uploads/sends/signatures, approval/payment/revision effects, complete queue rules, finance sync, role/access and owner-approved policies. **Next: Phase 7 — Third-party dependency and API requirements**, including corrections to the existing access guide.
+**Delivered:** Document catalog and inspected fields; generated BOL/labels and carrier confirmation structure; bill editor/approval/payment forms; customer invoice/receipt form; queues; current accounting connection/terms; mapping/reconciliation decisions and validation cases. **Pending:** actual uploads/sends/signatures, approval/payment/revision effects, complete queue rules, finance sync, role/access and owner-approved policies. **Continue reading:** [§18](#third-party-requirements) covers third-party dependencies and the corrected access guide.
 
 <a id="third-party-requirements"></a>
 **18\. Third-party dependencies and API requirements — Phase 7**
@@ -1523,7 +1524,7 @@ Proposed implementation controls to review: least-privilege account access, serv
 
 Read Settings → Carriers → Carrier integrations, then compare provider names with the detailed access guide. Do not open secret-value editors or submit Test quote against operational accounts. Read Tracking/Compliance/monitoring/link preferences without changing them. Inspect Accounting connection/mapping without Disconnect or account changes. Open official public API guidance for the selected supplier; do not register/pay/sign or send business data as a documentation exercise.
 
-**Delivered:** Corrected existing API guide, all17 carrier entries, feature/dependency categories, official-source links, secure account/access worksheet, operation-specific failure/acceptance tests and current-versus-historical readiness distinctions. **Pending:** client supplier/launch decisions, contracts, named account owners, sandbox/production access and runtime validation. A manual/internal alternative must be explicitly approved rather than silently replacing an automatic workflow. **Next: Phase 8 — Settings, access, reporting and remaining modules.**
+**Delivered:** Corrected existing API guide, all 17 carrier entries, feature/dependency categories, official-source links, secure account/access worksheet, operation-specific failure/acceptance tests and current-versus-historical readiness distinctions. **Pending:** client supplier/launch decisions, contracts, named account owners, sandbox/production access and runtime validation. A manual/internal alternative must be explicitly approved rather than silently replacing an automatic workflow. **Continue reading:** [§19](#settings-reporting) covers settings, access, reporting and shared controls.
 
 <a id="settings-reporting"></a>
 **19\. Settings, access, reporting and shared controls — Phase 8**
@@ -1636,10 +1637,196 @@ Ask the client for migration source/volume and record/document history, audit ev
 
 **Try it yourself, read-only:** Open Settings → Users → your own user and note the role. Open Customer settings → Reveal carrier names and compare LTL/TL help. Open Reporting → Monthly Margin → inspect Filters, then Columns. Return to Reporting → LTL Report and check whether LTL is actually selected. Open Lanes and compare Profit per with Profit ÷ Shipments in one nonzero row. Use Find … with a fictional unmatched string, then close. Do not edit configuration, send messages, download business data to shared storage, or submit operational changes as part of this exercise.
 
-**Delivered:** Accessible settings hierarchy, field dictionaries, observed Member matrix, all nine reporting destinations, selected export schemas, shared empty states and support/training handoffs. **Pending:** administrator/portal variants, setting/save/notification effects, export files and metric reconciliation. **Next: Phase 9 — linked walkthroughs, gap review and acceptance/sign-off.**
+**Delivered:** Accessible settings hierarchy, field dictionaries, observed Member matrix, all nine reporting destinations, selected export schemas, shared empty states and support/training handoffs. **Pending:** administrator/portal variants, setting/save/notification effects, export files and metric reconciliation. **Continue reading:** [§20](#walkthroughs-acceptance) connects walkthroughs, acceptance scenarios, remaining gaps and the sign-off handoff.
+
+<a id="walkthroughs-acceptance"></a>
+**20\. Connected walkthroughs, acceptance scenarios and final review — Phase 9**
+
+**Purpose:** Follow a shipment from business request to operational work and accounting, using the earlier chapters as the field/button reference. This chapter is also a test/review workbook for the clone. **It is not a record of seven passed end-to-end tests.** Existing-record navigation was replayed read-only as the Member user on October 26 (E-109); mutation, external-role and provider tests still require SC-03/04/05/07. All client scope choices remain pending. No signed-off implementation specification is claimed.
+
+**20.1 Choose learning mode or validation mode**
+
+In **learning mode**, open existing authorized records and read forms/previews. Stop before Save, Update, Get quotes, Book, Cover, Send, Approve, Pay, upload, cancellation or configuration changes. Some settings may save immediately on change, so do not type into settings as an experiment. Existing examples show records at different stages; they do not form a single tested transaction chain.
+
+In **validation mode**, the administrator must first identify the environment, disposable records, allowed operations and suppressed external effects. Use reviewer-approved fictional customer/provider/freight data and sandbox recipients. Capture the starting state, exact action/input, saved result, permissions, audit/timeline, generated documents, recipients and provider/accounting acknowledgments. Check retry/duplicate handling. An enabled button or form opening is insufficient evidence that a save, tender, notification or payment succeeded. Actual financial transfers and contract acceptance require the responsible human's action/approval; documentation does not require performing them against live business records.
+
+| Before running a submitted scenario | Evidence required | Proposed owner / current state |
+| --- | --- | --- |
+| Scope and business rules | Included release/use-case IDs, permitted deviations and agreed expected outcomes | Product owner/operations/pricing/accounting; SC-01/02/06/08/09 open |
+| Test environment | Exact URL, disposable record IDs, reset procedure, permissions and suppressed email/SMS/tenders/sync | Administrator; SC-05 open. Broad permission to continue did not supply these facts. |
+| Role accounts | Named broker/admin/customer/provider roles with separate sessions and expected view/edit/export rights | Administrator; SC-03/05 open; only Member broker view inspected |
+| External test access | Selected provider/product/version, sandbox contract, test credentials via secure channel, failure fixtures | Integration/account owners; SC-07 open |
+| Review and evidence | Named reviewer/date, redacted evidence location, observed versus expected result, defect/decision link | Team lead; SC-04 open; reviewer roles below are proposals |
+
+**Test result vocabulary:** Not run; Read-only navigation observed; Passed (submitted action and all expected effects verified); Failed (actual differs); Blocked (required environment/account/rule absent); Excluded (only with dated client decision). Never turn an unexecuted case into Passed because its steps are written.
+
+**20.2 W-01 — New customer to LTL delivery and accounting**
+
+**Actors:** Broker staff, customer/authorized requester, pricing/operations, selected LTL carrier, pickup/delivery parties and accounting. Intake by phone/email/website is not established by the app; operations must confirm SC-06. **Entry:** [Customers](https://app.quotefactory.com/broker/customers), then [Quote](https://app.quotefactory.com/broker/quote). **Use cases:** CUS-01–11; QTE-01–12; SHP-01/02/05–12; DOC-01–04; ACC-01–05; related API/setting cases below.
+
+| Step / exact navigation | Inputs and responsible actor | Expected checkpoint to validate | Learning stop / reference |
+| --- | --- | --- | --- |
+| 1. Customers → Add a new customer | Broker: approved test customer name | Create one customer, handle duplicate suggestions; verify identity and required fields | Open dialog only; §12.2 |
+| 2. Customer → Contacts, billing, Manage reps, Addresses, Booking & quoting | Broker/accounting: contacts, payer/terms, credit, reps, template and agreed pricing | Saved master data, correct inheritance and record visibility; no unintended update to old shipments | Read existing customer only; §§12–13 |
+| 3. Quote → customer/contact → equipment LTL → pickup date | Broker: customer, dates and authorized request | Correct defaults/contact; invalid or unavailable date explained | Field dictionary §14.2 |
+| 4. Origin/destination/services → handling units | Broker/shipper: outer packaged dimensions, quantity, total weight, units, commodity, class/NMFC, services | Verified measurements and class owner/source; correct service eligibility; no guessing a class from account codes | §§9,14.3–5; classification is not merely a density lookup |
+| 5. Get quotes → compare offers/details | Broker: complete request | Each provider success/failure distinct; comparable service, cost, transit/guarantee, expiry and source | Existing results only; §14.6; not a fresh rate/tender |
+| 6. Cost/margin/profit/price → Sharing | Pricing/broker: agreed price/guardrails and recipients | Correct money arithmetic, permitted override, customer audience and shared fields; actual sent/received/access states separate | §14.7–8; no Share/send in learning mode |
+| 7. Required customer approval/tender → Book | Authorized actor per SC-06 | Agreed approval evidence; one external tender and one linked shipment; carrier response/dispatch identity recorded | Exact approval event and Book eligibility unresolved; do not infer from Confirmation PDF |
+| 8. View Shipment → stops/tracking | Operations: pickup/appointment/PRO events | Linked customer/carrier/stops/freight/money retained; correct queue transitions, tracking origin/timezone/freshness | §§15–16; do not click status controls in learning mode |
+| 9. Delivery → Documents → POD | Operations/carrier: actual delivery and POD | Correct delivery evidence/status separate from tracking-completed; authorized upload and document audience | §§16–17; no upload or Delivered action |
+| 10. Bill / Invoice → accounting queues/payments | Accounting: carrier bill, customer invoice, terms and approved ledger entries | Distinct payable/receivable, approvals, balances/dates, customer/provider payment records and permitted sync | §17; entering a payment record is distinct from moving funds |
+
+**Read-only replay:** [Booked LTL result](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb) → **View Shipment button** → [BOL 1047885](https://app.quotefactory.com/broker/shipment/6ada321dbf56ad5e17c4f8a4) → Documents. On October 26 the shipment retained target cost $867.35, price $1,045 and profit $177.65. The existing status history and carrier tracking messages were visible. This verifies navigation and saved displayed values; no quote creation, booking, delivery or settlement was performed. Current labels/results can change. If the specific example is unavailable, use Quote history → an authorized booked result → View Shipment.
+
+**Acceptance result:** Read-only checkpoints observed in E-51–61, E-65, E-78, E-83–89, E-109. Full W-01 validation **Blocked** by test records, approval/booking policy, provider environment and reviewers; no business sign-off.
+
+**20.3 W-02 — Truckload request, direct shipment and carrier coverage**
+
+**Actors:** Requester/customer, broker, carrier/dispatcher/driver and accounting. **Entry:** [Create new shipment](https://app.quotefactory.com/broker/shipment/new), [Cover](https://app.quotefactory.com/broker/shipments/covering/all). **Use cases:** SYS-03–07; CAR-01–03; SHP-01–13; EDT-01–06; DOC-01/02/04; ACC-01–05.
+
+| Step / navigation | Inputs / actor | Expected checkpoint to validate | Reference / learning boundary |
+| --- | --- | --- | --- |
+| 1. Request or Create new shipment | Broker: approved customer, equipment, dates/stops, freight, price/target cost | Valid direct entry, unique BOL/internal ID, correct initial status; no assumption all TL requests start with automated offers | §§14,15.4; open form only |
+| 2. Cover → shipment/leads | Carrier operations: approved source/candidates and offer history | Leads remain prospects until assigned; counts/source/freshness and eligibility explained | §15.6–7; no posting/contact/assignment |
+| 3. Add carrier / select provider and agreed cost | Operations: correct MC/USDOT, contact, equipment and compliance/packet decision | Correct provider identity; explicit approval/exception rule; one assignment; unapproved packet trigger handled | §§12.6,15.7,19.2; no new packet send |
+| 4. Carrier Rate con; customer Confirmation | Broker/carrier/customer: agreed terms and recipient | Different audiences/amounts; actual send, receipt and carrier acceptance evidence separated | §17; view existing documents only |
+| 5. Appointment, driver & tracking, pickup | Operations/carrier: times/zone, driver/truck/trailer, PRO if relevant | Schedule/pickup states and queues change as agreed; tracking data fresh, consent/access correct | §16; open forms, close without Save |
+| 6. Delivery/POD → Bill and Invoice | Operations/accounting: actual delivery/documents and charges | Shipment progress, documents and accounting reconcile independently | §§16–17; no confirmation/payment actions |
+
+**Example lesson:** [Booked/uncovered shipment](https://app.quotefactory.com/broker/shipment/6accf55afcc298c7a4311d79) or an accessible Cover row shows why Booked does not itself prove a carrier is assigned. For assigned carrier detail use [BOL 1046693](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4). Treat record links as examples, not disposable fixtures.
+
+**Acceptance result:** Existing forms/assigned versus candidate relationships observed E-62–76, E-89. Direct creation, covering, rate-con acceptance, packet sending and transitions **Not run / blocked for submitted validation**; operations must confirm the exact dispatch and queue rules.
+
+**20.4 W-03 — Additional service vendor and separate charges**
+
+**Actors:** Broker, service vendor (for example warehouse/crane/lumper), carrier/customer and accounting. A vendor supplies a service; a carrier transports freight. A provider may need more than one business type (§12.7). **Use cases:** VEN-01–03; SHP-06/07; EDT-05; ACC-01–05; SET-10/API-03.
+
+| Step / navigation | Inputs / actor | Expected checkpoint to validate |
+| --- | --- | --- |
+| 1. Carriers → Vendors / Create new vendor → Vendor | Operations: approved test vendor identity/type/billing/remit-to/contact | Correct provider type, required fields, duplicates and saved accounting preferences; not forced into MC/USDOT carrier workflow |
+| 2. Shipment → Add another vendor | Operations: required service type, selected vendor and service scope | Vendor/service record linked separately from transporting carrier; assignment workflow and cost owner confirmed |
+| 3. Financial/itemized view / Cost & price | Pricing/accounting: approved service cost and customer charge | Separate charge lineage; total cost/price/profit reconciled; clarify included-in-freight versus additional charge and tax/markup |
+| 4. Vendor bill / customer invoice | Accounting: actual service bill, terms and agreed customer treatment | Correct provider payable and customer receivable; no double charge or incorrect carrier-bill merge; permitted sync mapping |
+
+Read-only entry points/forms are in §§12.7/15/17. Complete vendor assignment and downstream multi-provider charge behavior were not established. **Acceptance result: Blocked** pending test service record and accounting/operations rule; do not use a fictional successful charge flow as an observed product claim.
+
+**20.5 W-04 — Multiple freight groups and stops**
+
+**Actors:** Broker/shipper, dispatch and pickup/delivery contacts. **Use cases:** CUS-09; QTE-03–07; SHP-08/11; EDT-03/04; DOC-04; API-02.
+
+| Step / navigation | Test inputs to agree | Expected checkpoint to validate |
+| --- | --- | --- |
+| 1. Quote or direct shipment → location/template | Two pickup/delivery stops plus an approved intermediate stop; local hours, contacts and instructions | Stop order/type and service requirements retained; template copy versus live-link behavior explicit |
+| 2. Add item / more handling units | Group A: two units 48×40×48 inches, total 1,000 lb; Group B: one unit 48×48×48 inches, total 600 lb | Group A volume106.6667cf; B64cf; total170.6667cf; combined density1600/170.6667=9.375pcf before display rounding. Confirm total-weight semantics before using this oracle. These are fictional calculations, not submitted app results. |
+| 3. Units, stackable, layout, length | Equivalent approved metric inputs; stackability, rotation and usable vehicle width/height | Physically appropriate layout; total volume/density aggregated correctly; no assumption linear length equals summed item length or decreases just because stackable is checked |
+| 4. Appointments/dates, reorder stop | Valid/invalid date sequence, each stop's zone, daylight-saving boundary fixture | Coherent route and appointments; wrong dates/units explained; multi-stop mileage and contacts preserved |
+| 5. Save → documents/rating/tracking | Same approved request once validated | Correct item/stop counts and units on BOL, rate con, quote and tracking; rerating/extra-stop charges documented; no hidden truncation by export's indexed fields |
+
+**Acceptance result:** One unsaved two-pallet visualizer example E-54 and saved two-group summary E-74 support limited arithmetic; full mixed-unit/multi-stop save and downstream behavior **Not run / blocked**. Do not derive the correct freight class from this example without commodity/NMFC review.
+
+**20.6 W-05 — Edit after coverage and follow downstream consequences**
+
+**Actors:** Operations, pricing, carrier/customer and accounting. **Use cases:** EDT-01–07; SHP-07–13; DOC-01–04; ACC-02–05; SET-07/09/10/11.
+
+| Step / navigation | Inputs / actor | Expected checkpoint to validate |
+| --- | --- | --- |
+| 1. Compare uncovered, covered, scheduled and delivered fixtures → Edit shipment | Same documented role; before-state values and artifact versions | Explicit field/state/role editability matrix; observed Partial lock after coverage is only one rule, not complete authorization |
+| 2. Attempt approved change | Stops/dates/contact/item dimensions, cost/price and allowed equipment requirement | Required validation, consistent units/dates, permissions and controlled save; establish autosave versus Update shipment |
+| 3. Hide contacts / Send updated documents → Rate Con | Reviewer-approved audience, change reason and resend choice | Correct contact visibility, document revision/version, intended recipients, delivery and reacceptance requirements |
+| 4. Update shipment | One permitted test update, then duplicate/retry fixture | One saved revision; rerating or provider amendment only as agreed; queue/tracking/appointment effects and actor/time audited |
+| 5. Compare downstream records | Before/after BOL, customer confirmation, rate con, invoice/bill, reports and provider acknowledgment | No stale contradictory documents/amounts; preserve prior versions and accounting reconciliation according to approved policy |
+
+**Acceptance result:** Editor/dialog states E-76–82/E-92 and rate-con configuration timing E-101 observed. Actual updates/resends/rerating/accounting consequences **Blocked** by designated test environment and rule approval. Do not drop a live carrier to apply new global terms.
+
+**20.7 W-06 — Exceptions, retries and recovery**
+
+**Actors:** Operations, integration support, accounting and administrator. **Use cases:** QTE-08–12; SHP-04/09/10/13; EDT-07; DOC-03/04; ACC-01–05; API-01–03; SYS-02.
+
+| Exception case | Trigger only in approved fixture | Acceptance evidence required / recovery question |
+| --- | --- | --- |
+| X-01 No rates / one carrier fails | Unsupported lane/service; deterministic provider failure | Separate provider failure from zero offers/loading; keep successful offers; error explanation and retry without double request |
+| X-02 Expired quote / old pickup date | Known expired quote and changed-date fixture | Correct expiry/date rule, refresh/rerate path, retained request; no claim a disabled Book cause is known without evidence |
+| X-03 Timeout after tender accepted | Provider sandbox accepts but response delayed/lost | Query acknowledgment before retry; one external booking/one shipment; manual review if outcome ambiguous |
+| X-04 Reassignment / cancellation | Approved covered and uncovered fixtures | Eligibility, confirmation, provider cancellation acknowledgment, cost/fees/terms, status/queue/document history and invoice effects |
+| X-05 Tracking failure or stale/off-route point | Sandbox stale feed, missing position and wrong-order events | Timestamp/source/freshness visible; no false delivered state; manual update provenance and later event reconciliation |
+| X-06 Missing/invalid/duplicate documents | Approved harmless test file with unsupported size/type or duplicate | Allowed types/limits, clear failure, no partial attachment/duplicate send, visibility and retention correct |
+| X-07 Dispute / overdue / payment correction | Approved ledger fixture and reviewer's rule | Dispute does not silently equal unpaid/canceled; due-date/aging basis, approval and correction trail; no actual money movement |
+| X-08 External sync / webhook failure | Expired sandbox access, duplicate/out-of-order callback, mapping rejection | Auth/replay protection, safe retry/idempotency, correct external IDs/revision, visible failure and reconciliation |
+| X-09 No search matches / access denied | Fictional unmatched string; separate restricted-role fixture | No-results distinct from denied/loading; no cross-customer record/financial leak in search/export/direct URL |
+
+**Acceptance result:** Historical partial-rate failures E-57 and no-match search E-107 observed; all failure injection, cancellation/reassignment, dispute/retry and external outcomes **Not run / blocked**. Status/menu controls must not be clicked speculatively on operational records.
+
+**20.8 W-07 — Role, settings, report and portal variations**
+
+**Actors:** Administrator, Member/other staff, customer and any client-selected carrier/driver role. **Use cases:** SYS-01/02/08–11; CUS-05/07/11; all SET/RPT/API cases.
+
+| Step / navigation | Fixture / actor | Expected checkpoint to validate |
+| --- | --- | --- |
+| 1. Record role → assigned customer/team | Separate accounts and included-role permission matrix | View/create/edit/export/send/approve/pay/admin actions enforce own/team/all scope through UI and API |
+| 2. Customer visibility / private notes / Hide contacts / carrier-name hiding | Two customers, different reps/teams and broker/customer/provider sessions | Customer boundary, cost/profit/contact and document audiences match policy; direct URL and export cannot bypass restrictions |
+| 3. Settings precedence/limits | Global, customer, carrier overrides; minimum/equality/maximum values; credit limit boundaries | Effective defaults, required overrides, old-versus-new shipment effects and concurrent booking enforcement; no negative/zero arithmetic ambiguity |
+| 4. Reporting → each named report → Filters/Columns/Download | Known test set across dates/statuses, zero cost/weight, multiple stops/vendors and accounting states | Date basis/timezone, row grain, counts/totals/precision and complete files reconcile; no hidden permission leak; report name alone does not define filter |
+| 5. Training, Support, Profile, users/teams, references/notifications | Approved administrator walkthrough, sandbox recipients and external test account | Correct handoff/SSO, user lifecycle, immutable audit evidence, reference uniqueness/templates and delivery effects; no real credential changes as automated test |
+
+**Acceptance result:** Current Member label/controls and report definitions E-99–108 observed. Owner/customer/carrier/driver variants, export files and submitted settings **Blocked** until access and expected permissions are supplied. A course Learner session is not evidence of broker administrative access.
+
+**20.9 Use-case-to-scenario traceability and unresolved work**
+
+This table covers all **89 inventory IDs** without silently excluding any feature. It identifies where to read and where to test; it is **not** a reviewed acceptance result. Each ID's remaining specifics stay in the [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md), which is the authoritative item-level gap list. Each scenario must be expanded with approved inputs/expected results before execution.
+
+| Inventory IDs | Main field/workflow reference | Acceptance scenario(s) | Reviewer role / current gate |
+| --- | --- | --- | --- |
+| SYS-01–02 | §§6,11,19.6 | W-07, X-09 | Operations/admin; counter/search/role rules open |
+| SYS-03–07 | §§6,15.2,16 | W-01/02/06 | Operations; request/dispatch/queue transitions untested |
+| SYS-08–10 | §19.1/6 | W-07 | Admin/training/support; changes/external contract untested |
+| SYS-11 | §19.4 | W-07 | Admin; alternate portal access blocked |
+| CUS-01–04 | §12.1–3 | W-01/07 | Sales/operations; create/edit/contact/duplicates pending |
+| CUS-05–07 | §12.4–5,19.3–4 | W-01/07 | Pricing/accounting/admin; rep/default/limit effects pending |
+| CUS-08–11 | §§12.5,13,17 | W-01/04/07 | Operations/accounting; linked history/template/document effects pending |
+| CAR-01–03 | §12.1/6,15.7 | W-02/06/07 | Carrier operations; identity/import/compliance/onboarding pending |
+| VEN-01–03 | §12.7,15,17 | W-03 | Operations/accounting; complete additional-vendor flow pending |
+| QTE-01–03 | §14.1–3 | W-01/02/04 | Pricing/operations; subtype/date/location and input requiredness pending |
+| QTE-04–07 | §14.4–5,16.4 | W-01/04 | Pricing; quantity/class/unit/layout rules pending |
+| QTE-08–09 | §14.6 | W-01, X-01/02 | Pricing/integration; live rating/source/eligibility pending |
+| QTE-10–12 | §14.7–9 | W-01/02, X-02/03 | Pricing/operations; save/share/approval/booking pending |
+| SHP-01–04 | §15.2–4/6–7 | W-01/02/06 | Operations; list/paging/direct creation/coverage pending |
+| SHP-05–07 | §15.5/8 | W-01/02/03/05 | Operations/accounting; status/provider/financial changes pending |
+| SHP-08–10 | §15.9,16.6–9 | W-01/02/04/06 | Dispatch; appointment/event/source/transition tests pending |
+| SHP-11–13 | §15.10–11,16 | W-04/05/06 | Operations/integration; map/notes/menu/exception tests pending |
+| EDT-01–02 | §16.1–3 | W-05/07 | Operations/admin; role/status locks and equipment effects pending |
+| EDT-03–04 | §16.4 | W-04/05 | Operations; stop/item save/propagation pending |
+| EDT-05–06 | §16.5/10,17 | W-03/05 | Pricing/accounting; charges/contact/resend effects pending |
+| EDT-07 | §16.10,20.1 | W-01–07, X-01–09 | Administrator; designated mutation-test environment blocked |
+| DOC-01–04 | §17.1–2/7 | W-01/02/04/05, X-06 | Operations/accounting; generation/upload/send/access/signature/revisions pending |
+| ACC-01–05 | §17.3–6 | W-01/02/03/05, X-07/08 | Accounting; queue/approval/payment/dispute/factoring/sync validation pending |
+| SET-01–03 | §19.1/4 | W-07 | Administrator; actual settings/role lifecycle pending |
+| SET-04–08 | §§18,19.2 | W-02/05/07 | Operations/legal/integration; provider/terms/packet/document effects pending |
+| SET-09–12 | §§17.6,19.1/3 | W-01/05/07, X-08 | Pricing/accounting/admin; defaults/visibility/notifications/references pending |
+| RPT-01–05 | §19.5 | W-07 | Reporting/accounting; exports/date/metric/permission reconciliation pending |
+| API-01–03 | §18 and API guide | W-01–07, X-01/03/05/08 | Integration/account owners; supplier selection/entitlement/runtime proof pending |
+
+**20.10 Completion audit and sign-off handoff**
+
+| Requirement from the plan | Current authoritative evidence | Verdict / next owner |
+| --- | --- | --- |
+| One main guide with hierarchy, terminology, fields, actions, URLs and learning exercises | This guide §§1–20, supported by evidence/coverage/scope/API files | Written chapters delivered; no separate phase reader documents required |
+| All accessible known modules entered, unavailable areas owned | 89-row register; 87 P and 2 B after Phase 8; §20.9 maps all IDs | Discovery/documentation coverage present; P is partial pending detailed rules/tests, not full completion |
+| Provider/dependency inventory and access needs | §18 and revised API guide:17 carriers and feature categories, dated official sources | Written requirements/research delivered; account/client selection and runtime proof pending |
+| Seven connected walkthroughs and acceptance scenarios | W-01–07 plus X-01–09 and traceability table | Written scenarios delivered; designated-test-environment replay not performed |
+| Replay documented navigation with the observed role | E-109 existing booked quote → View Shipment button → BOL1047885 → Documents as Member | Narrow read-only replay observed; does not validate new customer/quote/booking/accounting chain |
+| Links, headings, tables, evidence references and formulas | E-110 local structural/arithmetic checks; E-54/74/104 sample UI arithmetic | Local checks only; no submitted validation, screenshots set or full metric reconciliation |
+| Reviewed workflow/rules per in-scope feature and signed-off scope matrix | SC-01–12, OQ register, reviewer roles and explicit gaps | **Pending:** client scope selection/named reviewers, not inferred from broad permission to continue |
+| Alternate roles, document/notification/provider/accounting effects | §19.4, EDT-07, SYS-11, API readiness gaps | **Blocked for validation:** administrator/test/provider evidence required |
+| Revised exports after source review | Markdown is current source; existing DOCX files not regenerated | **Pending after source review**; do not distribute old exports as the current guide |
+| Sequential per-phase commit/push and next branch | Git branches/commit history; final Phase 9 commit details reported after push | Phase branches preserve cumulative work; delivery is not a merge or business approval |
+
+**Decision worksheet:** For each scope-matrix row, the client records Included release 1 / Later / Excluded; exact use-case IDs and deviations; named approver/date; rationale and permitted fallback. For each accepted workflow, the reviewer records the test run/environment/role/fixture, expected-versus-actual result, redacted evidence, defects and approval. The existing [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md) file remains the decision authority. No reviewer signature has been supplied.
+
+**Concrete next handoff:** Team lead supplies SC-04 reviewer names and SC-05 environment/disposable IDs/effect suppression; administrator supplies SC-03 role sessions; product/operations/pricing/accounting decide SC-01/02/06/08/09/11; integration owners resolve SC-07/12; team lead/product owner agree migration/operating targets SC-10. Then run W-01–07 and applicable exception cases, revise the guide from actual results, obtain signed scope/rule approvals and regenerate reviewed exports. Until then, use this as an evidence-backed learning and discovery guide, with validation gaps clearly retained.
 
 <a id="open-questions"></a>
-**20\. What remains unverified**
+**21\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
@@ -1657,7 +1844,7 @@ Ask the client for migration source/volume and record/document history, audit ev
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**21\. Phase progress and what to do next**
+**22\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -1670,16 +1857,16 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 6 — Documents, bills, invoices and accounting | Section 17: observed documentation delivered. | Upload/send/signature/approval/payment/sync and role validation pending. |
 | 7 — Third-party dependency and API requirements | Section 18: observed documentation delivered. | Client provider/account/licensing decisions, access and runtime tests pending. |
 | 8 — Settings/access/reporting | Section 19: observed settings, Member matrix, report schemas and shared controls. | Alternate roles, settings effects, exports and metric reconciliation pending. |
-| 9 — Walkthroughs and acceptance | Planned next. | Test-environment replay, scope review and sign-off pending. |
+| 9 — Walkthroughs and acceptance | Section 20: W-01–07, X-01–09, all 89 use-case mapping and completion audit. | Submitted test-environment replay, named review, scope approval and reviewed exports pending. |
 
-**Your next action:** Read section 19 and its exercises; resolve the owned test/access/business questions in the coverage register.
+**Your next action:** Read section 20, provide the test/reviewer/scope handoff there, then validate the linked workflows and resolve owned gaps.
 
-**Next delivery:** Phase 9 — End-to-end walkthroughs, gap review and sign-off, inside this same file. Supporting registers retain evidence and unverified rules.
+**Next delivery:** Evidence from designated-environment workflow tests, role/provider checks and business review; then revised chapters and reviewed exports. All planned phase chapters are written; validation/sign-off gates remain open.
 
 <a id="sources"></a>
-**22\. Sources and supporting records**
+**23\. Sources and supporting records**
 
-**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. E-76–82 record Phase 5 editor/forms; E-83–92 record Phase 6 documents/accounting and editor follow-up. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
+**Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. E-76–82 record Phase 5 editor/forms; E-83–92 record Phase 6 documents/accounting and editor follow-up; E-93–98 record Phase 7 research; E-99–108 record Phase 8 settings/reporting/shared controls; E-109–110 record Phase 9 replay and local audit. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 
 **Industry/provider references checked October 23, 2026:** FMCSA for broker/carrier, USDOT/MC and CDL endorsement terminology; NMFTA for NMFC/class/density/ClassIT+; Old Dominion for BOL/payment-party terms and PRO tracking; FedEx for basic shipping vocabulary. Direct links appear with the relevant definitions. These sources define terms, not this account's app workflows.
 

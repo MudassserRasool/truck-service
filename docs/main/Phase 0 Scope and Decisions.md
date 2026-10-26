@@ -10,7 +10,7 @@ Prepared October 23, 2026 | Broker app discovery and local-document review.
 
 Read this file → review the [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) → use the [Evidence Register](Documentation%20Evidence%20Register.md) to check what was actually observed → return to the [Documentation Plan](Quote%20Factory%20Documentation%20Plan.md) for the later phases.
 
-**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 has since been delivered in the main guide: business overview, navigation and terminology. Phase 2 observed-form documentation has also been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 observed documentation is delivered in main §17; Phase 7 observed documentation is delivered in main §18; Phase 8 observed documentation is delivered in main §19; Phase 9 is next.
+**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 has since been delivered in the main guide: business overview, navigation and terminology. Phase 2 observed-form documentation has also been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 observed documentation is delivered in main §17; Phase 7 observed documentation is delivered in main §18; Phase 8 observed documentation is delivered in main §19; Phase 9 scenarios/audit are written in main §20; validation/sign-off remain pending.
 
 **2\. Confirmed instructions and working boundaries**
 
@@ -56,7 +56,7 @@ Read this file → review the [Coverage and Open Questions](Documentation%20Cove
 
 **4\. Client/team-lead decision log**
 
-All questions are **Open** as of October 23, 2026. No response is inferred from silence. The “needed before” column identifies dependent work; learning documentation can continue where the answer is unnecessary.
+All SC questions remain **Open** as of October 26, 2026. The user authorized autonomous continuation and appropriate documentation work; no named reviewers, test records/environment, provider access or explicit release-scope selections were supplied. No response is inferred from silence. The “needed before” column identifies dependent work; learning documentation can continue where the answer is unnecessary.
 
 | ID | Exact question to resolve | Proposed answer owner | Needed before |
 | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ All questions are **Open** as of October 23, 2026. No response is inferred from 
 | SC-09 | Which documents must be generated/shared/signed, who receives them, and which edits trigger a resend? | Operations/accounting lead | Document and edit side-effect requirements |
 | SC-10 | Which records/documents/history must migrate? What are the volume, retention and operating targets? | Team lead + client product owner | Data/hosting design and migration estimate |
 | SC-11 | What are the deadline, phase priorities and required acceptance scenarios? | Team lead + client product owner | Delivery commitment |
-| SC-12 | Accounting currently displays “Not connected to QuickBooks”; the older guide says enabled. Is this expected, and is QuickBooks required for the clone? | Accounting lead + account administrator | Accounting integration readiness |
+| SC-12 | Accounting displayed Not connected Oct23 and connected/syncing with mappings Oct26 (E-90). What is the intended setup, required launch sync scope and named account owner for the clone? | Accounting lead + account administrator | Accounting integration readiness |
 
 **Decision record to fill after an answer**
 
@@ -94,7 +94,7 @@ The approved answer should be copied here or linked to an accessible written rec
 
 For each observation, record evidence ID, date, actor/session context, URL, path/action, visible result, limitations, capture reference and proposed reviewer. Keep a single observation narrow enough to verify.
 
-**Current actor context:** The session displays the Stackup Solutions profile in the 10-4 Global broker app. This proves the visible session context, not its exact permission role or administrator privileges.
+**Current actor context:** The session displays the Stackup Solutions profile in the 10-4 Global broker app. Member role was verified October26 (E-99); administrator privileges and submitted-action permissions remain untested.
 
 **Capture policy:** Phase 0 uses summarized DOM/accessibility observations. Screenshots are not attached in this baseline; screenshot reference is explicitly recorded as “Not captured.” Later annotated screenshots should mask unrelated contacts/financial data and preserve the label being explained. Do not save keys, passwords, raw account payloads or unnecessary private details.
 
@@ -117,6 +117,6 @@ For each observation, record evidence ID, date, actor/session context, URL, path
 
 1. Read the [scope matrix and questions in this file](Phase%200%20Scope%20and%20Decisions.md). Take SC-01 through SC-05 to your team lead first: target, release scope, roles, reviewers and test access.
 2. Ask the team lead/client to answer the remaining business/integration questions with names and dates. You can paste the answers into this chat; they will then be reflected in the decision log.
-3. Read the delivered **Phase 1** content and exercises in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md). Phase 2 customer/carrier/vendor/location documentation is now in main §§12–13. Phase 3 quote/classification/pricing documentation is now in main §14. Phase 4 lists/coverage/detail documentation is now in main §15. Phases 5–6 observed content is now in main §§16–17. Phase 7 research is in main §18 and the existing API guide. Phase 8 settings/reporting documentation is in main §19. The next phase is **Phase 9 — End-to-end walkthroughs, gap review and sign-off**. Independent read-only documentation can continue while scope answers are collected.
+3. Read the delivered **Phase 1** content and exercises in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md). Phase 2 customer/carrier/vendor/location documentation is now in main §§12–13. Phase 3 quote/classification/pricing documentation is now in main §14. Phase 4 lists/coverage/detail documentation is now in main §15. Phases 5–6 observed content is now in main §§16–17. Phase 7 research is in main §18 and the existing API guide. Phase 8 settings/reporting documentation is in main §19. Phase 9 walkthroughs and acceptance audit are now in main §20. Next is designated-environment validation, rule/scope review and sign-off, followed by exports. Independent read-only documentation can continue while scope answers are collected.
 
 No third party was contacted and no approval was requested through the app during Phase 0. This handoff is a review checklist for you, not a sent message to the client.
