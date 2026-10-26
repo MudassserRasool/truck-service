@@ -548,7 +548,7 @@ Use existing records you are authorized to view. Record the labels you see, not 
 | Xtended Network row | Separate default/minimum margin and profit fields. | Confirms a separate pricing-configuration row, not the network's provider/routing logic. |
 | Done / close | Dialog controls. | No values changed or submitted. |
 
-The carrier-pricing tab also showed identifiers beside carrier names; `04821J` appeared beside ArcBest. Its exact label/meaning was not established. Do not assume this string is an NMFC commodity code just because it appeared in earlier quote details. Phase 3/7 must determine each identifier's context.
+The carrier-pricing tab also showed identifiers beside carrier names; `04821J` appeared beside ArcBest. Its exact label/meaning was not established. Do not assume this string is an NMFC commodity code just because it appeared in earlier quote details. See [§15.5a](#shipment-quote-details) for Blanket context and §17.2 for the separately observed Acct label; exact account/tariff mapping still needs its owner.
 
 **Representatives:** Header → **Manage reps** → **Reps assigned**. The dialog exposes **+ add user or team**, a User/Commissions layout and draggable assigned-user entries. Its explicit message says: **“Changes will only be applied to new shipments; existing shipments will not be affected.”** This is an observed UI rule for customer rep assignment. It does not establish commission formulas, access permissions or what shipment-level Manage reps does. No assignment was changed.
 
@@ -891,7 +891,7 @@ History displays a search box, date, origin/destination, customer, weight, equip
 | Xtended Network quote | Some offers explicitly carry this source label; other offers for the same carrier do not. | Network operator, contract/account, credit mechanics and direct/network fallback remain unverified. Do not call every offer a direct carrier account rate. |
 | Open stacked quotes | Grouped-offer entry appears on cards with multiple alternatives. | Expand/collapse contents and grouping algorithm not tested; not related to Stackable freight. |
 | Cost / Margin / Profit / quote price | Provider amount, gross margin percentage, price-minus-cost and customer price. | Locked/available controls differ by sampled record; see §14.8. |
-| View quote details | Opens an individual offer dialog. | Detailed differences across all carriers/manual offers remain open. |
+| View quote details | Opens an individual offer dialog; existing shipment carrier/service cards expose a related dialog. | See [shipment dialog field dictionary and expandable Cost](#shipment-quote-details); other carrier/manual/state variants remain open. |
 | Hide quote / Visible to customer | Offer visibility controls. | Never activated; exact saved state, public exposure and audit behavior unknown. |
 | + Ref | Reference-entry control. | Format, persistence, document placement and uniqueness not tested. |
 | Request context menu | Booked sample exposed Duplicate quote request; footer also links Duplicate quote. | Not executed; copied fields, new dates, rates and duplicate prevention unknown. |
@@ -1075,7 +1075,7 @@ No field was entered and neither final action was clicked. Requiredness cannot b
 | Documents / Edit shipment / action menu | File hub, full editor and shipment-level actions. | Navigation/action dictionary in §15.11. |
 | Reps | Staff assigned to this shipment. | Manage reps opened Reps on BOL 1046693, + add user, Paid/User/Commission/Payout and a mark-commission-paid checkbox. No values changed. Shipment assignment is separate from customer defaults that apply only to new shipments (§12). |
 | Status progression | Reference shows Booked, Scheduled and In transit dates, then Deliver. Uncovered example shows Booked followed by Cover/Pick up/Deliver prompts. | A future action label is not a completed state. Actual transition/rollback/role rules are Phase 5 tests. |
-| Carrier area | Pathak Express, Dry Van, dispatch contact, Rate con and Bill on assigned example. | Carrier dialog shows identity/authority/packet information, View carrier and Remove carrier. See §15.6. |
+| Carrier area | Pathak Express, Dry Van, dispatch contact, Rate con and Bill on assigned example. LTL XPO example instead exposes a service/quote card and Auto dispatched text. | Carrier profile/coverage is described in §15.6; [LTL shipment quote dialog](#shipment-quote-details) has its own field/cost/navigation dictionary. |
 | Uncovered area | Equipment, target amount and Cover freight link; Needs a carrier near stops. | Use coverage workspace, not a master-record Add carrier form. No assignment implied by Booked. |
 | Customer area | Customer link/name, selected contact, + invoice reference and Confirmation; Invoice on the reference. | Customer record versus financial/document actions remain distinct. Invoice was absent in sampled uncovered detail, but no general visibility rule is established. |
 | + add vendor | Additional provider/service line. | Nine-type chooser observed in §12; creating a vendor business and assigning it to a shipment are different flows. Multi-provider/removal/rebill effects untested. |
@@ -1084,6 +1084,47 @@ No field was entered and neither final action was clicked. Requiredness cannot b
 | Freight / summary | Description, grouped pallets/units, dimensions, weight and length; some examples also show cf/pcf/visualizer. | Different data produces different summaries. See §15.10. |
 | Map | Rendered map with Mapbox/OpenStreetMap attribution in inspected examples. Off route on the reference. | Display provider is not proof of geocoding/routing/live-tracking provider or an active driver feed. No API key was accessed. |
 | Notes / Timeline | + note entry, displayed authored notes and expandable event history. | Audience, save/edit/delete and notifications unverified. No note was written. |
+
+<a id="shipment-quote-details"></a>
+**15.5a LTL carrier quote details on an existing shipment**
+
+**What this is:** A dialog for the carrier offer linked to the shipment. It connects the booked service, carrier quote reference and cost/customer-price calculation. It is different from the carrier's master profile, a carrier bill, the customer Confirmation PDF and the complete quote-results comparison page. Added after the user's October 26 review; the earlier offer-dialog overview did not describe this shipment entry point or expanded cost lines in sufficient detail (E-111–112).
+
+**Open this example:** [Shipment BOL 1047912](https://app.quotefactory.com/broker/shipment/6adf5b1b243090157452c81b) → click the **XPO / Standard carrier-service card** (accessible name **View quote details**). Click **Cost** or its chevron to expand the charge lines. Close modal returns to the shipment. This exact path was replayed without updating records.
+
+| Field / control | What you see in this example | How to understand it / what is not established |
+| --- | --- | --- |
+| Carrier logo/name | XPO | The provider attached to this offer; distinct from the customer or pickup/delivery business. |
+| Service | Standard | The selected service label. Another offer may say Guaranteed or use provider-specific wording. Standard alone is not a delivery guarantee. |
+| Transit | 2 days | Displayed service transit estimate; calendar/business-day calculation, cutoffs and exclusions need provider terms. |
+| MC number and location | MC-165377; Ann Arbor, MI | Carrier identity context, not the shipment origin or destination. Current authority/eligibility is not verified by displaying an MC number. |
+| Mode | LTL | Less-than-truckload offer context; not the carrier's entire supported-service catalog. |
+| Est. delivery | Wed, Oct 28 | Estimated arrival date for this quote, separate from a scheduled appointment or recorded delivery. |
+| Quote reference | Quote 10000465501301 | Provider quote reference shown for this offer. It differs from broker BOL1047912, internal request/URL ID, pickup confirmation and PRO. |
+| Blanket (identifier) | Blanket (597961807) | Rate/account context displayed beside the quote reference. Exact contract/tariff/account meaning must be confirmed with the pricing/account owner; the modal does not explain it. Do not call this an NMFC code or proof of insurance. E-88 separately established an Acct label for a different carrier identifier on a BOL. |
+| Third Party Prepaid | Billing label | Identifies billing context; does not show that the customer or carrier has already been paid. Exact bill-to arrangement and terms require accounting confirmation (§9). |
+| Phone | Clickable carrier phone link | Contact shortcut (`tel:`), not a call placed by opening the dialog. No call was made. |
+| Cost / chevron | $994.58; expandable | Carrier-offer cost summary, with returned component labels/amounts revealed on expansion. It is not proof of an uploaded/approved carrier bill or final settled cost. |
+| Margin % | 17%, disabled input | Gross margin percentage for this displayed price/cost pair; percentage of customer price, not a 17% markup on carrier cost. |
+| Profit | $203.71, disabled input | Displayed gross spread between Price and Cost; not proof of received cash, net company profit or paid commission. |
+| Price | $1,198.29, disabled input | Customer selling price in this dialog; separate from Cost and from invoice payment status. |
+| View quote results | Link to the original request's comparison page | Click opens [this quote-results record](https://app.quotefactory.com/broker/quote-results/6adf5a5a0ecd35f5fef15adb), showing the booked banner, View Shipment and alternative offers. Viewing alternatives does not replace the booked carrier or rebook the shipment. |
+
+**Expand Cost — inspect all returned components.** The XPO dialog was initially collapsed. Clicking Cost revealed Item Charge **$1,206.28**, Fuel Surcharge **$360.08**, Discount **−$571.78**. The displayed total reconciles as:
+
+```text
+Carrier cost = 1,206.28 + 360.08 − 571.78 = $994.58
+Customer price − carrier cost = 1,198.29 − 994.58 = $203.71 gross profit
+Gross margin = 203.71 ÷ 1,198.29 × 100 ≈ 17.0001%, displayed as 17%
+```
+
+Item Charge is the line labeled as the item/freight charge; Fuel Surcharge is a separate fuel-related cost line; Discount is a negative adjustment in this returned breakdown. These are carrier-offer components, not the broker's profit. Do not assume a universal fuel percentage, discount formula, tax treatment or that every carrier returns the same lines. Additional services/accessorials may require different lines and provider rules; those variants were not established by this one dialog. Use signed component amounts when summing; do not subtract a negative discount twice. Displayed rounded values can differ slightly from unrounded pricing math.
+
+**Your AAA Cooper screenshot is another variant (user-supplied evidence, not independently opened):** Standard /3 days, AAA Cooper Transportation / MC-55889 / Dothan, AL, LTL, Est. Thu Oct29, Quote0280784629, Blanket identifier, Third Party Prepaid, phone and View quote results. Expanded Cost shows **Item Charge $114.84 + Fuel Surcharge $62.82 = Cost $177.66**. Profit **$220** plus Cost gives Price **$397.66**; **220 ÷ 397.66 ×100 ≈55.324%**, matching its Margin. No Discount line is visible in that screenshot; do not assume a hidden discount or identical components to XPO. Its exact shipment URL, click behavior and field disabled states were not supplied/verified.
+
+**State and permission difference:** In the live XPO shipment dialog, Margin, Profit and Price were disabled and no Save/Book control was shown. The earlier individual-offer dialog on a different quote-results record exposed editable pricing and Save/Book (§14.7). This establishes two observed variants, not a universal explanation for the lock. Status, role, source and booking rules must be verified before implementing editability. The shipment also displays **Auto dispatched** outside this dialog; that label alone does not establish the trigger, external acknowledgment or all automatic-dispatch rules.
+
+**Try it yourself:** Open the shipment → XPO/Standard → read identity/service/reference → click Cost → reconcile the signed lines and Price−Cost → click View quote results → compare the booked banner and service alternatives → use View Shipment to return. Do not edit pricing, duplicate, book or change carriers as part of this exercise. **Follow-up owner:** Pricing/integration lead confirms Blanket/account mapping, component sources, rounding, service/date rules and all provider variants; administrator confirms view/edit rights. Existing validation blockers remain unchanged.
 
 **15.6 Assigned carrier versus coverage candidates**
 

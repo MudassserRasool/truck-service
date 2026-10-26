@@ -108,7 +108,7 @@ Customer example: [open the inspected customer](https://app.quotefactory.com/bro
 | QTE-06 | Quote → Stackable / Hazmat / Protect from freezing | P | QUOTE, TERM | E-51, E-52 | Main §14: Hazmat flag checked unsaved; carrier restrictions/details pending |
 | QTE-07 | Quote → add item, estimated total length, Linear Feet Visualizer | P | QUOTE, TERM | E-54 | Main §14: Two-pallet example verified; stack/override/layout edge cases pending |
 | QTE-08 | Quote → Get quotes | P | QUOTE, API | E-57 | Main §14: Historical partial failures inspected; real submit/loading/retry/no-rate tests pending |
-| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb) | P | QUOTE | E-55, E-59 | Main §14: Guaranteed filter/details observed; volume, source and grouping rules pending |
+| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb); shipment → View quote details | P | QUOTE | E-55, E-59, E-111–112 | Main §§14,15.5a: shipment offer fields, expanded signed cost lines, pricing/state variants and results link; provider/date/account/lock rules pending |
 | QTE-10 | Offer → cost/margin/profit/price | P | QUOTE, TERM | E-55, E-59, E-61 | Main §14: Pricing states and matching shipment figures observed; saves/precedence/guardrails pending |
 | QTE-11 | Result → Sharing / customer visibility / reference/menu | P | QUOTE | E-56 | Main §14: Visibility versus Not sent and view-only restriction observed; actual sends/access/approval pending |
 | QTE-12 | Result → manual quote / Book / View Shipment | P | QUOTE, SHIP | E-58, E-59, E-61 | Main §14: Manual dialog and existing shipment handoff inspected; Book entry-point discrepancy and creation/duplicates pending |
@@ -124,7 +124,7 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | SHP-03 | Sidebar / list → [Create new shipment](https://app.quotefactory.com/broker/shipment/new) | P | SHIP | E-64 | Main §15.4: direct blank form/defaults and final controls; requiredness, numbering, draft/initial state untested |
 | SHP-04 | Cover queue → shipment/leads | P | SHIP | E-68–69 | Main §15.6–7: candidates, history/warning, add-carrier/packet/send branches; actual sourcing/assignment pending |
 | SHP-05 | Shipment → header, reps and status progression | P | SHIP, EDIT | E-65–66 | Main §15.5: status progression and shipment rep/commission dialog; transitions/permissions/payment effects pending |
-| SHP-06 | Shipment → carrier/customer/vendor cards | P | SHIP | E-65, E-67 | Main §15.5–7: customer/assigned-carrier versus candidate/provider relationships; removal/replacement/assignment pending |
+| SHP-06 | Shipment → carrier/customer/vendor cards | P | SHIP | E-65, E-67, E-111 | Main §15.5–7 including LTL quote card/modal §15.5a; assigned/candidate/provider relationships; removal/replacement/assignment pending |
 | SHP-07 | Shipment → financial summary / Expand itemized view | P | SHIP, MONEY | E-65 | Main §15.8: expanded Freight cost/price, Margin/Cost+/Profit; autosave/rounding/reconciliation pending |
 | SHP-08 | Shipment → stops / appointments / In / Out / ETA | P | SHIP, EDIT | E-65, E-74 | Main §15.9: stops/contacts/hours/appointments/ETA/In/Out; timestamp discrepancy OQ-25 and Phase 5 outcomes pending |
 | SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-65 | Main §§15.9,16.7–9,18: driver/tracking forms and provider requirements; submitted events/source rules pending |
@@ -294,3 +294,5 @@ W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs
 | Providers and reconciliation | Selected capabilities, licensed access, provider/accounting sandbox and acknowledgments | Integration/account owners; SC-07/12 |
 | Operating targets | Migration inventory, audit/retention, backup/restore, volumes and performance | Product owner/team lead; SC-10 |
 | Final artifacts | Source review, resolved/deferred defects, sign-off and refreshed exports | Documentation author + appointed reviewers |
+
+**October 26 user-review correction:** E-111–112 add the previously insufficiently detailed LTL shipment quote dialog to main §15.5a: exact entry, fields, collapsed/expanded Cost, carrier-dependent components, arithmetic, disabled-price variant and View quote results navigation. Existing QTE-09/SHP-06 entries extended; inventory totals/statuses unchanged. No validation/sign-off blocker waived.
