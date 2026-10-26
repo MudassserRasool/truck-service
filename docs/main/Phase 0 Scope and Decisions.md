@@ -56,7 +56,7 @@ Read this file → review the [Coverage and Open Questions](Documentation%20Cove
 
 **4\. Client/team-lead decision log**
 
-All SC questions remain **Open** as of October 26, 2026. The user authorized autonomous continuation and appropriate documentation work; no named reviewers, test records/environment, provider access or explicit release-scope selections were supplied. No response is inferred from silence. The “needed before” column identifies dependent work; learning documentation can continue where the answer is unnecessary.
+All SC questions remain **Open** as of October 26, 2026. The user authorized autonomous continuation and appropriate documentation work; no named reviewers, test records/environment, provider access or explicit release-scope selections were supplied. On October 26 the user explicitly answered “unavailable” to the request for a test-environment URL, disposable customer/shipment IDs, suppressed sends/bookings/accounting syncs and reviewer names. These inputs are unavailable; this does not approve scope, waive testing or supply role/provider access. The “needed before” column identifies dependent work; learning documentation can continue where the answer is unnecessary.
 
 | ID | Exact question to resolve | Proposed answer owner | Needed before |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ All SC questions remain **Open** as of October 26, 2026. The user authorized aut
 
 | Decision ID | Related SC / inventory IDs | Agreed behavior or release choice | Decided by | Date | Evidence/reference | Documentation affected |
 | --- | --- | --- | --- | --- | --- | --- |
-| Pending | Pending client/team-lead replies | No client build decisions recorded yet | Unassigned | — | — | — |
+| D-01 | SC-04/05; EDT-07 | Test URL, disposable customer/shipment IDs, side-effect suppression details and reviewer names unavailable. Validation/sign-off remain blocked; no release scope approved. | User | October 26, 2026 | Direct reply: “unavailable” | Main §20.1/10; coverage validation handoff |
 
 The approved answer should be copied here or linked to an accessible written record. A developer's recommendation remains a proposal until the business reviewer agrees.
 

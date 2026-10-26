@@ -277,14 +277,14 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 5 | Observed documentation delivered in main §16; tests/review pending | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
 | 6 | Observed documentation delivered in main §17; tests/review pending | Upload/send/signature/approval/payment/sync and role validation pending. |
 | 7 | Observed documentation delivered in main §18; tests/review pending | Client provider/account/licensing decisions, access and runtime tests pending. |
-| 8 | Next; not started | Settings, permissions, reports and remaining surfaces |
-| 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
+| 8 | Observed documentation delivered in main §19; tests/review pending | Alternate roles, setting effects, exports and metric reconciliation |
+| 9 | Walkthroughs/scenarios/audit written in main §20; validation blocked | Designated test environment, access, named review, sign-off and reviewed exports |
 
-**Your next action:** Read main §18; continue Phase 8 while collecting test access and client decisions. Unverified outcomes remain tracked.
+**Your next action:** Read main §20 and resolve the validation handoff when the unavailable inputs become available. All phase chapters are written; unverified outcomes remain tracked.
 
 **Phase 9 validation handoff (October 26)**
 
-W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs map there. Reviewer roles are proposed, not assigned. The user's authorization to continue and choose appropriate documentation actions does not name a test environment, disposable record IDs, suppressed sends/tenders/sync or reviewers. SYS-11 and EDT-07 remain blocked. Other P rows retain their particular unverified details; no exclusions or passed functional cases inferred.
+W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs map there. Reviewer roles are proposed, not assigned. The user explicitly replied “unavailable” on October 26 to the request for a test URL, disposable customer/shipment IDs, suppressed sends/bookings/accounting syncs and reviewer names (D-01). Validation and sign-off remain blocked; no test waiver or scope approval was supplied. SYS-11 and EDT-07 remain blocked. Other P rows retain their particular unverified details; no exclusions or passed functional cases inferred.
 
 | Gate | Concrete missing input / evidence | Proposed owner |
 | --- | --- | --- |
