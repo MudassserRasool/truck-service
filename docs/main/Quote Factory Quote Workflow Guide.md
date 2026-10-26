@@ -340,7 +340,7 @@ Basic shipping vocabulary reference: [FedEx — shipping terms](https://www.fede
 
 NMFTA explains the classification factors and the role of item/class identification. ClassIT+ provides current NMFC search; this does not establish automatic lookup in the inspected app. [NMFTA — NMFC](https://nmfta.org/standards/classification/nmfc/), [NMFTA — current classification resources](https://info.nmfta.org/nmfc-changes).
 
-**Observed class choices:** 50, 55, 60, 65, 70, 77.5, 85, 92.5, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500. These are the dropdown choices observed in the LTL form, not a commodity-to-class lookup table. Do not select class from a memorized density threshold without checking the applicable commodity provision and carrier arrangement.
+**Observed class choices:** 50, 55, 60, 65, 70, 77.5, 85, 92.5, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500. These are the dropdown choices observed in the LTL form, not a commodity-to-class lookup table. The official [density scale and applicability](#density-class-scale) are documented in §14.5a. Do not select class from a memorized density threshold without checking the applicable commodity provision and carrier arrangement.
 
 **Where do the values come from?**
 
@@ -858,6 +858,33 @@ A liftgate is lifting equipment for moving freight between ground and vehicle. I
 **Practical selection flow to confirm with the pricing lead:** Identify the commodity and packaging → obtain accurate measurements → consult the applicable current NMFC entry using an authorized source → select the applicable class and enter the item/subitem where required → confirm carrier-specific exceptions. NMFTA identifies ClassIT+ as a classification lookup/calculation resource; its existence does not prove this app calls a ClassIT+ API. Licensing, API access and responsibility for corrections belong in Phase 7 and OQ-01.
 
 The previously discussed **04821J** appears beside ArcBest in customer pricing (E-41). Phase 6 also verified it is labeled **Acct** on a generated BOL (E-88; §17.2). Do not put it in an NMFC commodity-code table. Its exact pricing/tariff/account linkage still needs the account owner.
+
+<a id="density-class-scale"></a>
+**14.5a NMFTA density-to-class reference**
+
+**Source:** [NMFTA NMFC Procedures — March 26, 2026, Appendix A.1.a, PDF page 8](https://nmfta.org/wp-content/uploads/2026/03/FCDC-Procedures-3.9.26-Final.pdf#page=8); [local PDF](FCDC-Procedures-3.9.26-Final.pdf). Checked October 26 (E-113). The cover date differs from the filename's date.
+
+**Applicability:** This full density scale concerns commodities without unusual/significant handling, stowability or liability characteristics. Confirm the applicable NMFC commodity/packaging provision before assigning class. Other characteristics can change classification; density alone does not identify an NMFC item.
+
+| Density (pcf = lb/ft³) | Freight class |
+| --- | --- |
+| Below 1 | 400 |
+| 1 ≤ density < 2 | 300 |
+| 2 ≤ density < 4 | 250 |
+| 4 ≤ density < 6 | 175 |
+| 6 ≤ density < 8 | 125 |
+| 8 ≤ density < 10 | 100 |
+| 10 ≤ density < 12 | 92.5 |
+| 12 ≤ density < 15 | 85 |
+| 15 ≤ density < 22.5 | 70 |
+| 22.5 ≤ density < 30 | 65 |
+| 30 ≤ density < 35 | 60 |
+| 35 ≤ density < 50 | 55 |
+| 50 or above | 50 |
+
+**Use:** Calculate packaged volume and density (§14.6), retain precision, then match the interval. Lower bounds are inclusive; upper bounds exclusive. Example: **23.91 pcf → class 65** under this scale; exactly **22.5 → 65**, not 70. Do not round across boundaries before lookup. Missing/zero volume cannot produce a valid density.
+
+**App distinction:** The dropdown includes classes absent from this scale. This reference does not establish Quote Factory's Est-class algorithm, automatically select class or waive commodity review.
 
 **14.6 Volume, density and linear feet — worked app example**
 

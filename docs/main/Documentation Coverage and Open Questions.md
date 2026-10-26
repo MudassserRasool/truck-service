@@ -296,3 +296,5 @@ W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs
 | Final artifacts | Source review, resolved/deferred defects, sign-off and refreshed exports | Documentation author + appointed reviewers |
 
 **October 26 user-review correction:** E-111–112 add the previously insufficiently detailed LTL shipment quote dialog to main §15.5a: exact entry, fields, collapsed/expanded Cost, carrier-dependent components, arithmetic, disabled-price variant and View quote results navigation. Existing QTE-09/SHP-06 entries extended; inventory totals/statuses unchanged. No validation/sign-off blocker waived.
+
+**October 26 classification reference:** E-113/main §14.5a adds the official NMFTA density bands, inclusive/exclusive boundaries, conditional example and source/local PDF links for QTE-05. Commodity selection, app estimation and reviewer tests remain pending.
