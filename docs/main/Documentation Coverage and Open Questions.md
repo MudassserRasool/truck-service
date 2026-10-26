@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 4.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 5.
 
 **1\. How to use this inventory**
 
@@ -30,6 +30,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 **After Phase 3:** 89 items — 24 Observed, 43 Partly documented, 20 Not explored and 2 Blocked. All 12 quote rows have field/action explanations or owned gaps in main §14. One unsaved measurement example and existing quote-to-shipment navigation were checked; submitted quote/save/share/booking outcomes remain untested.
 
 **After Phase 4:** 89 items — 13 Observed, 58 Partly documented, 16 Not explored and 2 Blocked. Main §15 documents shipment lists/queues, direct-entry form, coverage candidates/forms, assigned-carrier/detail regions and document destinations. Existing rows/calculations and view navigation were checked; create/assign/send/status/financial/role outcomes remain untested.
+
+**After Phase 5:** 89 items — 7 Observed, 64 Partly documented, 16 Not explored, 2 Blocked and 0 Documented. Main §16 documents editor fields, locks, Notes/PRO, appointment/ETA/driver forms, transition evidence and validation cases. Submitted changes and role/state effects remain untested.
 
 **Chapter and reviewer key**
 
@@ -118,16 +120,16 @@ Reference: [open shipment](https://app.quotefactory.com/broker/shipment/6a62746a
 | SHP-07 | Shipment → financial summary / Expand itemized view | P | SHIP, MONEY | E-65 | Main §15.8: expanded Freight cost/price, Margin/Cost+/Profit; autosave/rounding/reconciliation pending |
 | SHP-08 | Shipment → stops / appointments / In / Out / ETA | P | SHIP, EDIT | E-65, E-74 | Main §15.9: stops/contacts/hours/appointments/ETA/In/Out; timestamp discrepancy OQ-25 and Phase 5 outcomes pending |
 | SHP-09 | Shipment → driver information / tracking controls | P | EDIT, API | E-65 | Main §15.9: driver/truck/trailer/tracking controls, completed/off-route distinctions; source/update forms Phase 5/7 |
-| SHP-10 | Shipment → add tracking update / Delivered | P | EDIT | E-65 | Main §15.9: tracking/Delivered action purposes; actual Notes/PRO/confirmation forms and outcomes Phase 5 |
+| SHP-10 | Shipment → add tracking update / Delivered | P | EDIT | E-78, E-81 | Main §16.7–9: exact Tracking update Notes/PRO, ETA forms; actual transitions/visibility pending |
 | SHP-11 | Shipment → freight summary / volume / density / length / map | P | SHIP, TERM, API | E-65, E-74 | Main §15.10: saved two-group freight arithmetic and Mapbox attribution; route/feed/rounding/layout rules pending |
 | SHP-12 | Shipment → note / Timeline | P | SHIP, EDIT | E-65 | Main §15.11: notes and expanded lifecycle/document/tracking Timeline; audience/actor/save/edit rules pending |
 | SHP-13 | Shipment → action menu | P | SHIP, EDIT | E-75, E-15 | Main §15.11: menu variant recorded; duplicate/change/cancel/simulate eligibility/effects pending |
-| EDT-01 | Shipment → [Edit shipment](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/edit) | O | EDIT | E-14 | All field dictionaries and role/status editability matrix |
-| EDT-02 | Edit → equipment / Partial / Tanker endorsement / Team service | O | EDIT, TERM | E-14 | Locked-after-coverage rule, equipment applicability and service effects |
-| EDT-03 | Edit → Locations / reorder / add location / templates | O | EDIT, MASTER | E-14 | Stop order, address/contact changes versus template changes, time windows and references |
-| EDT-04 | Edit → items / more handling units / length / total value | O | EDIT, TERM | E-14 | Multi-item validation, quantity/weight basis, units and calculations |
-| EDT-05 | Edit → Cost & price / lane history / calculators / add item | O | EDIT, MONEY | E-14 | Line items, margin/Cost+ and lane-history data source |
-| EDT-06 | Edit → Hide contacts / Send updated documents / Update shipment | O | EDIT, MONEY | E-14 | Save/autosave boundaries, document recipients, repricing, carrier amendment and accounting effects |
+| EDT-01 | Shipment → [Edit shipment](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/edit) | P | EDIT | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
+| EDT-02 | Edit → equipment / Partial / Tanker endorsement / Team service | P | EDIT, TERM | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
+| EDT-03 | Edit → Locations / reorder / add location / templates | P | EDIT, MASTER | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
+| EDT-04 | Edit → items / more handling units / length / total value | P | EDIT, TERM | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
+| EDT-05 | Edit → Cost & price / lane history / calculators / add item | P | EDIT, MONEY | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
+| EDT-06 | Edit → Hide contacts / Send updated documents / Update shipment | P | EDIT, MONEY | E-76–82 | Main §16: field rules, UI matrix/forms and downstream tests; submitted saves/status/roles remain unverified |
 | EDT-07 | Mutation scenarios in an approved test environment | B | EDIT, FLOW | SC-05 pending | Required-field failures, role locks, cancellation, status correction, duplicate submissions and retries |
 
 **6\. Documents and accounting**
@@ -264,10 +266,10 @@ All items below are **Open**. Named reviewers await SC-04. They supplement the [
 | 2 | Observed-form documentation delivered in main §§12–13; mutation/role tests pending | Read Phase 2 exercises and provide test access for unresolved save/validation/propagation rules |
 | 3 | Observed documentation delivered in main §14; submission/save/role/booking tests pending | Read §14.12 exercises and resolve owned quote rules |
 | 4 | Observed documentation delivered in main §15; creation/coverage/status/role/document tests pending | Read §15.13 exercises and resolve OQ-09/12/25–27 |
-| 5 | Next; not started | Editing, status transitions, confirmations and tracking |
-| 6 | Not started | Document and accounting lifecycles |
+| 5 | Observed documentation delivered in main §16; tests/review pending | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
+| 6 | Next; not started | Document and accounting lifecycles |
 | 7 | Not started | Validated third-party capability/access requirements |
 | 8 | Not started | Settings, permissions, reports and remaining surfaces |
 | 9 | Not started | Reviewed end-to-end exercises and acceptance scenarios |
 
-**Your next action:** Take SC-01–05 in the [Phase 0 report](Phase%200%20Scope%20and%20Decisions.md) to the team lead first, then collect the other decisions. The next documentation task is Phase 5; first read main-guide §15 and the Phase 4 exercises in §15.13. Open questions stay visible while independent read-only learning work continues.
+**Your next action:** Read main §16; continue Phase 6 while collecting test access and client decisions. Unverified outcomes remain tracked.

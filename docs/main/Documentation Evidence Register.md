@@ -12,6 +12,7 @@ Prepared October 23, 2026 | All live observations below use the visible 10-4 Glo
 **T3:** Phase 2 master-record/form exploration on October 23, continued after the user's “keep going” instruction.
 **T4:** Phase 3 quote-form, results, sharing/manual-offer and existing shipment-link exploration on October 23.
 **T5:** Phase 4 shipment-list/queue, coverage, direct-form, detail and document-navigation inspection on October 23.
+**T6:** Phase 5 editor and scheduling/tracking dialog inspection October 25; written October 26.
 **Local:** Files read directly in this workspace.  
 **Capture:** Entries are summarized text observations; **no screenshot files attached**. One address-book screenshot was viewed during T3 to identify the plus control, but not saved. One unsaved LTL visualizer screenshot was also viewed during T4. Shipment-list and customer-confirmation screenshots were viewed during T5 but not saved. No raw contacts, documents, tax IDs or credentials are attached.
 
@@ -98,6 +99,14 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-73 | Oct 23 / T5 | Reference shipment → Documents | Provider-specific POD and Carrier bill, additional provider document and Misc shipment document; Add unknown accessible labels persist. | No add/upload. Exact additional types, file limits, BOL access and retention unverified. | Operations lead |
 | E-74 | Oct 23 / T5 | User-annotated BOL1047829 → detail | Booked/Dry Van/Needs a carrier; pickup EDT/delivery MST, two groups (6+4 pallets), each48×40×48; weights5910+6843. Totals10pallets/533.3cf/23.91pcf/20ft/12753lb. Descriptions contain carton/unit/class text. | One saved two-group example, not universal item-count/rounding/layout rule or structured class selection. References/contacts not retained. | Operations/pricing lead |
 | E-75 | Oct 23 / T5 | BOL1047829 → action menu → dismiss | Duplicate shipment, Change customer and Cancel shipment. Simulate location updates seen in earlier assigned example is absent here. | No menu action executed; status/role/equipment conditions and consequences unverified. | Operations/admin lead |
+
+| E-76 | Oct 25 / T6 | BOL1047829,1046693 and1047665 → Edit shipment | Uncovered equipment selector/Partial available; covered equipment display/Partial explicitly locked on Dry Van; scheduled Auto Transport equipment display. Shared stop/item/financial fields, Hide contacts, Update; covered/scheduled checked updated Rate Con section. | No field edit or Update. UI matrix is one broker session; role/server policy and every status untested. | Operations lead |
+| E-77 | Oct 25 / T6 | SANCO editor → private note / price calculator / Edit location template | Price calculator Margin/Cost+/Profit; template Edit/Save with team-only private note. Stop close4PM versus saved template3PM. Reference entered length53ft versus insufficient-dimension estimate0ft. | No values changed/saved; no propagation/override/autosave rule inferred. | Pricing/operations lead |
+| E-78 | Oct 25 / T6 | BOL1046693 → + add tracking update → close | Tracking update form: Time/date, Location, Notes, optional PRO # and Confirm Save. | Exact annotated Notes/PRO form identified; no event/PRO save, audience/status/import/correction tested. | Operations lead |
+| E-79 | Oct 25 / T6 | Reference → Update driver information → close | Driver & tracking: name/phone, Tractor #, Trailer #, Save. | No changes, tracking-start/consent or notification observed. Personal/contact values omitted. | Carrier operations lead |
+| E-80 | Oct 25 / T6 | Reference delivery appointment → close | Time, Appointment # or ID, checked updated Rate con, Cancel appt and Save. | No cancel/save/resend. Unknown appointment-status label and requiredness remain open. | Operations lead |
+| E-81 | Oct 25 / T6 | Reference destination ETA → close | ETA dialog with destination, explicit America/Los Angeles, time/date, appointment/open hours, optional Notes and Confirm Save. | No ETA saved. Default clock/source, DST, alerts/status/corrections untested. | Operations/integration lead |
+| E-82 | Oct 25 / T6 | BOL1047758 → Reschedule | Opens full shipment editor retaining old dates; no immediate date change. Scheduled Auto Transport editor also separately inspected. | No new dates/Update. Does not prove submission behavior or every Reschedule entry point. | Operations lead |
 
 **4\. Known conflicts and evidence limits**
 

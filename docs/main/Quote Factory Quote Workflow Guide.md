@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 23, 2026 | Phases 1–4 observed documentation delivered; save/role tests pending.
+Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–5 observed documentation delivered; save/role tests pending.
 
 **This is the one main document.** Each later phase will add its detailed explanations here. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -25,9 +25,10 @@ Originally prepared October 9, 2026 | Expanded October 23, 2026 | Phases 1–4 o
 13. [Saved locations and address templates — Phase 2](#saved-locations)
 14. [Quote creation, classification and pricing — Phase 3](#quote-details)
 15. [Shipment lists, coverage and shipment detail screens — Phase 4](#shipment-operations)
-16. [Questions still awaiting verification](#open-questions)
-17. [Phase progress and what to do next](#phase-progress)
-18. [Sources and supporting records](#sources)
+16. [Shipment editing, scheduling and tracking — Phase 5](#shipment-editing)
+17. [Questions still awaiting verification](#open-questions)
+18. [Phase progress and what to do next](#phase-progress)
+19. [Sources and supporting records](#sources)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
@@ -1203,8 +1204,144 @@ Links below use BOL 1046693. On another shipment, use the corresponding button; 
 
 **Next: Phase 5 — Edit shipment, scheduling, tracking and exceptions.** It will expand this same guide with field-level editing, locks, appointments/In/Out/ETA, Notes/PRO forms, driver/tracking updates, cancellation and save/resend behavior. Document/accounting lifecycles follow in Phase 6.
 
+<a id="shipment-editing"></a>
+**16\. Edit shipment, scheduling, tracking and exceptions — Phase 5**
+
+**Purpose:** Know what a field changes, which controls are locked, and which Save/Update actions may alter operational records or send documents. Forms below were inspected October 25, 2026; no operational value was edited or submitted. This chapter distinguishes visible controls from tested persistence, permissions and external effects. Evidence E-76–82.
+
+**16.1 Open the correct editor**
+
+Shipment → **Edit shipment** opens `/broker/shipment/{shipmentId}/edit`. Compare [uncovered Dry Van BOL 1047829](https://app.quotefactory.com/broker/shipment/6ad62c8868813f1637085014/edit), [covered/in-transit Dry Van BOL 1046693](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4/edit), and [scheduled Auto Transport BOL 1047665](https://app.quotefactory.com/broker/shipment/6abe9d488ee4a147c6dd8077/edit). The uncovered Auto Transport shipment's **Reschedule** button also opened its full editor; it did not immediately change dates.
+
+The full editor, reusable location-template dialog, appointment, ETA, driver and tracking-update dialogs have different submission controls. A Save in one form is not the same operation as Update shipment. Do not assume that leaving the editor discards changes to every nested form or that a checkbox never saves immediately; those boundaries remain untested.
+
+**16.2 Header, equipment and provider field dictionary**
+
+| Field / action | Meaning / visible input | Observed constraint | Downstream effect to verify |
+| --- | --- | --- | --- |
+| Custom BOL | Editable displayed shipment reference; existing number prefilled. | No renumber/delete control used. | Uniqueness, original-reference retention, filenames, carrier messages, accounting IDs and audit entry. |
+| Created/by | Creation timestamp and creator metadata. | Read-only displayed context. | Timezone and identity retention. |
+| Customer/contact | Existing customer and contact displayed in sampled editors. | No ordinary customer selector established here; separate Change customer menu exists. | Reassignment permissions, credit/pricing, documents, invoices and history. |
+| Equipment | Selector on uncovered example; plain equipment label on sampled covered/scheduled examples. | Availability varies across samples. | Carrier eligibility, rating, documents and ability to amend covered freight. |
+| Partial | Partial allowed checkbox in Dry Van examples. | Disabled with Locked after coverage on assigned Dry Van; available on uncovered Dry Van. Not shown in sampled Auto Transport editor. | Rating, available capacity and carrier notice; not a universal role/status rule. |
+| Tanker endorsement / Team service | Independent requested-service/qualification checkboxes. | Present and not marked disabled in sampled covered and uncovered editors. | Carrier/driver validation, pricing, dispatch and printed terms. Neither means a qualified driver/team is assigned. |
+| + add vendor / carrier | Shipment-provider assignment entry. | Separate from creating a provider master record. | Coverage/onboarding, service costs, documents and provider bills; see §15.6–7. |
+| Distance (mi) | Editable lane distance. | Prefilled in each inspected record. | Route recalculation, manual override, per-mile charges and consistency with map. |
+
+**16.3 Stops and reusable templates**
+
+| Stop field / control | Meaning / input source | Rule established by inspection | Verification still required |
+| --- | --- | --- | --- |
+| Reorder locations / + add location | Change visit sequence or add another stop. | Controls present; no reorder/add performed. | Required first/last stop, pickup/delivery typing, item-to-stop links, mileage/date recalculation and provider amendments. |
+| Company name / location type | Site identity and access conditions. | Search/select controls; business with dock/forklift in samples. | Template matching, requiredness and accessorial effects. |
+| Address / + Address 2 / city-state-zip | Particular stop's address and locality. | Prefilled searchable inputs; country flag displayed. | Suggestion provider, country/postal validation and geocoding. |
+| Contact name/phone/email | Site person/department and communication details. | Name/phone text and email token entry; phone-country selector disabled in samples. | Allowed formats, multiple recipients and visibility. |
+| Share BOL | Per-stop communication preference. | Separate checkbox beside contact email. | Exact generation/send trigger, recipient verification and interaction with Hide contacts. |
+| Pickup/Delivery instructions | Operational requirements for that visit. | Optional text; reference pickup contains strap requirements. | Which PDFs/emails/portals receive instructions, text limits and change notices. |
+| Open time / Close time | Facility hours, separate from appointment and actual arrival. | Warning observed when close time is less than four hours after opening; Currently closed also displayed. | Timezone, holiday/overnight handling and whether warnings block submission. |
+| Pickup date / Arrival date | Planned stop date. | Date input/calendar; label differs by stop. | Past-date rules, ordering, cutoffs and notification effects. |
+| Appointment | Existing time or add appointment control. | Separate form detailed in §16.7. | Required ID, confirmed status and rescheduling consequences. |
+| Reference # / +add ref | Typed stop reference, such as PO, Pickup, Ref or Order. | Multiple reference type/value pairs in SANCO example. | Allowed types, lengths, uniqueness and document/provider mapping. |
+| + private note | Stop-specific private-context entry. | Expansion was inspected without entering text. | Audience, inclusion on outbound documents and save boundary. Template private note separately says team only. |
+| Edit location template for [site] | Explicit reusable-template editor. | Opens Edit template with company/type/services/address/contact/email/instructions/hours/private note and Save. | Saving a template versus saving the shipment, propagation and revision history. |
+
+**A real difference, not a propagation rule:** SANCO's shipment stop closed at **4 PM**, while its reusable template showed **3 PM**. Both were visible in one inspection. This demonstrates distinct displayed values; it does not establish when/how they diverged or what saving either would update. Do not overwrite one with the other as a learning exercise.
+
+**16.4 Freight, handling units and calculated fields**
+
+| Field | Meaning / visible behavior | Required test / owner |
+| --- | --- | --- |
+| Description | Human-readable commodity description/history search. | Pricing: commodity defaults, structured versus free text and output placement. Text mentioning class is not proof of a selected class/NMFC. |
+| Contains + unit | Contained quantity/unit distinct from handling-unit count. | Operations: exact unit options and relationship to cartons/pieces/pallets. |
+| Packaging / Quantity | Physical handling-unit type and count. | Pricing: preset dimensions, supported packaging, positive/integer limits and deletion behavior. |
+| L/W/H + in/cm | Per-unit dimensions, with unit controls. | Pricing: conversions, outer packaging, zero/blank/negative inputs and rounding. Quote-unit menu was observed in §14; all editor conversions remain untested. |
+| Total weight + lb/kg | Group total, not necessarily per pallet. | Operations: packaging/tare basis and conversion. SANCO 6+4 groups retain 5,910+6,843 lb totals. |
+| Stackable / Hazmat | Handling/eligibility flags. | Carrier operations: additional required hazardous details, compatibility, capacity and carrier terms. |
+| + add more | Additional handling unit/group. | Operations: mixed sizes, removal and totals. No group was added to a real shipment. |
+| Estimated total length / visualizer | Entered length and computed floor-space estimate. | Pricing: rotation, stacking, width, overrides and oversize constraints. |
+| Total value | Shipment goods-value input. | Accounting/operations: currency, valuation basis and insurance/claim relevance; no automatic insurance coverage inferred. |
+
+**Calculation evidence:** SANCO group 1 displays 320 cf /18.47 pcf and group 2 displays 213.3 cf /32.08 pcf; combined display remains 533.3 cf /23.91 pcf. Combined density uses total weight divided by total volume, not the mean of group densities. On BOL 1046693 the entered length is **53 ft** while the visualizer estimate is **0 ft**, with dimensions absent. Preserve the distinction between an entered value and an insufficient-data estimate; never silently replace 53 with 0.
+
+**16.5 Charges, calculators and update checklist**
+
+Cost & price contains Description, line note, Cost or Target cost, Price, cost/price calculators, + add item and Margin/Cost+/Profit. The **price calculator** exposed Margin %, Cost+ % and Profit inputs; on SANCO it showed about 36.842%, 58.333% and $1,400. The underlying line remained $2,400 cost/$3,800 price. See §14.8 for formulas and §15.8 for differing display precision. A per-mile cost calculator and lane history exist; their mileage/provider/default rules remain unverified.
+
+Before a permitted test update, record the original BOL/status/provider, stop sequence/dates/timezones, dimensions/weights/units, charges and recipients. Change the intended field, compare derived totals, inspect **Hide contacts from carrier** and **Send updated documents**, submit once, then verify saved values, Timeline, actual recipients/document revisions and financial/provider effects. This is a test procedure, not evidence those effects occurred.
+
+Assigned Dry Van and scheduled Auto Transport editors show **Send updated documents → Rate Con checked**. The uncovered SANCO sample did not show that section. Do not assume Update shipment is a private data-only save. No checkbox was changed and Update shipment was never clicked. Global/personal preferences, complete recipient list and exact resend trigger require operations testing.
+
+**16.6 Editability matrix — visible UI, one broker session**
+
+Legend: **Input** = editable-looking control, not proven save permission; **Display** = plain value; **Locked** = explicit disabled control; **Unknown** = no evidence. Exact logged-in role remains unverified. Equipment/status/coverage differ between examples, so a correlation is not a universal rule.
+
+| Field/action | Booked + uncovered Dry Van 1047829 | In transit + covered Dry Van 1046693 | Scheduled + covered Auto Transport 1047665 | Other broker roles / customer / delivered / canceled |
+| --- | --- | --- | --- | --- |
+| Custom BOL | Input | Input | Input | Unknown |
+| Customer/contact | Display | Display | Display | Unknown |
+| Equipment | Selector | Display | Display | Unknown |
+| Partial | Input | Locked after coverage | Not shown | Unknown |
+| Tanker / Team | Input | Input | Input | Unknown |
+| Stops / freight / distance / charges | Inputs | Inputs | Inputs | Unknown |
+| Hide contacts | Checked | Checked | Checked | Unknown |
+| Send updated Rate Con | Not shown | Checked | Checked | Unknown |
+| Update shipment | Present, unexecuted | Present, unexecuted | Present, unexecuted | Unknown |
+
+Role checks must be enforced server-side in the clone; the table is observation evidence, not an approved access policy. No role or hidden status matrix is filled from guesswork.
+
+**16.7 Appointment, ETA and driver dialogs**
+
+| Open from shipment detail | Fields/actions observed | Meaning / pending effect |
+| --- | --- | --- |
+| Appt 5:30am unknown on reference delivery | Appointment time, Appointment # or ID, checked Send updated Rate con, Cancel appt, Save. | Time/ID and document-send preference. Neither Save nor Cancel appt clicked. The meaning of unknown and actual appointment confirmation remain unverified. |
+| ETA on reference destination | Destination, ETA time/date, explicit America/Los Angeles timezone, appointment and open-hours context, optional Notes, Save. | Forecast at destination in an explicit zone. No source/current-time rule inferred from the initial value. Saves/alerts/status effects untested. |
+| Update driver information for Pathak Express | Driver & tracking: driver name/phone, Tractor #, Trailer #, Save. | Driver identity is distinct from dispatch contact; tractor/trailer are separate identifiers. No tracking-start/consent control was established in this dialog state. |
+| Reschedule on uncovered Auto Transport | Navigates to full shipment editor. | Entry to editing, not immediate date change; actual reschedule/update remains untested. |
+
+Facility hours, appointment, ETA and actual In/Out timestamps are four separate concepts. An ETA note does not necessarily become a public shipment note. No In/Out/Picked up/Delivered action was executed; their exact confirmation dialogs and instantaneous-versus-form behavior remain test gaps.
+
+**16.8 The user's Notes and PRO form**
+
+**Exact path:** [BOL 1046693](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4) → **+ add tracking update**. Opens **Tracking update** with **Time**, date/calendar, **Location**, **Notes**, optional **PRO #**, and **Save** (accessible name Confirm Save). This identifies the annotated Notes/PRO use case more precisely than the general + note box.
+
+**What normally belongs in Notes:** A factual movement update with a useful source/context, such as “Carrier dispatch reports pickup complete; awaiting POD” or “Driver reports a two-hour delay at receiving.” These are learning examples, not text entered into the operational record. Include the time/location in their proper fields. Distinguish reported information from verified completion. Do not place unrelated billing notes, credentials or private personal details here.
+
+**PRO #** is the carrier's shipment/tracking reference (§9). Enter a verified carrier reference, not the broker BOL just because it is available. This inspected form permits optional PRO entry, but requiredness for a particular carrier/event and automatic import/correction behavior remain untested. No event or PRO was saved.
+
+| Note location | Purpose / evidence | Audience and persistence |
+| --- | --- | --- |
+| Tracking update Notes | Narrative associated with dated/location movement update. | Unverified; do not assume private or customer-visible. |
+| ETA Notes | Context attached to forecast update. | Unverified; own Save control. |
+| Stop instructions | Requirements for pickup/delivery. | Likely operational content; actual recipient/doc placement must be checked. |
+| Template Private note | Reusable-site internal context; explicit team-only label. | Label observed; role enforcement and inheritance untested. |
+| Shipment + note | General authored note near Timeline. | Save/edit/delete/notifications not established. |
+| Charge note / rate-con-email note | Commercial/service-line or provider-message context. | Distinct form; outbound visibility needs verification. |
+
+**16.9 Transition and correction map**
+
+This is an evidence map, not a tested state machine. Proposed operational actors must be confirmed by the team lead. No correction path, webhook ordering or duplicate handling has been verified.
+
+| From / trigger | Actor / prerequisites known | Observed endpoint/evidence | Required resulting-state/side-effect test |
+| --- | --- | --- | --- |
+| Request/quote → Book | Broker/customer authority and required fields unverified. | Existing quote-to-shipment link (§14.10); direct Book entry (§15.4). | Exactly when Booked occurs, numbering, duplicates and dispatch. |
+| Booked/uncovered → coverage submit | Carrier operations; carrier/cost/packet requirements shown. | Coverage forms and send/request branches (§15.7). | Assignment/coverage state, Scheduled trigger, packet gating, notifications and failure rollback. |
+| Scheduled → Picked up | Operational actor/required data unknown. | Pickup action visible; reference history has pickup event/In transit. | Dialog, event time/PRO, resulting state, contacts, provider/accounting effects and correction. |
+| In transit → tracking update Save | Time/date/location/Notes/optional PRO form observed. | Form only; manual save unexecuted. | New event, PRO update, status mapping, deduplication and out-of-order events. |
+| In transit → Delivered | Actor/requirements/POD policy unknown. | Delivered action visible. | Confirmation form, delivery time/POD, status, queue removal, invoice eligibility and reversal. |
+| Any permitted stage → appointment/ETA/driver Save | Separate forms; permissions unknown. | Form fields in §16.7. | Whether status changes, messages/documents are sent and history is recorded. |
+| Shipment → Cancel shipment / Change customer / Duplicate | Menu entries only. | No execution; menus vary (§15.11). | Required reason, confirmation, copy policy, carrier cancellation, bill/invoice effects and recovery. |
+| Integrated provider event → state/update | Integration actor/source unverified. | Imported-looking event history, no transport contract. | Authentication, event IDs, retries, stale/out-of-order updates, manual override and reconciliation. |
+
+**16.10 Validation catalog and safe exploration**
+
+For each test, capture input, state/role, expected rule approved by the owner, observed result, saved state/history, external effects and cleanup/recovery. Tests remain **not run**: missing/duplicate BOL; blank customer/stops; invalid postal/phone/email; close before open/overnight hours; delivery before pickup; dates across DST/timezones; negative/zero quantity/dimensions/weight/value/cost; mixed units; hazardous details; unauthorized locked-field update; stale simultaneous edit; duplicate Update/Save; removed carrier; failed resend; failed tracking request; canceled/delivered correction.
+
+Read-only exercise: compare the three editor URLs in §16.1 → identify locks and checked resend controls → close without Update. On reference detail, open Tracking update, Driver & tracking, Appointment and ETA one at a time; read fields, then Close modal. Do not use Cancel appt, Record payment, In/Out, Picked up or Delivered to exit a form.
+
+**Delivery status:** Field dictionary, observed editability matrix, exact Notes/PRO and other inspected dialogs, side-effect checklist, transition evidence map and validation catalog are written. Submitted transitions, every status/role, error/correction paths, save/autosave and outbound effects remain unverified. User authorized independent judgment, but did not identify disposable test records/environment or alternate-role accounts; no such access is invented. **Continue to Phase 6: documents, bills, invoices and accounting.**
+
 <a id="open-questions"></a>
-**16\. What remains unverified**
+**17\. What remains unverified**
 
 | Topic | Unanswered question | Detailed phase / register |
 | --- | --- | --- |
@@ -1222,7 +1359,7 @@ Links below use BOL 1046693. On another shipment, use the corresponding button; 
 These are tracked questions, not reasons to invent a behavior or silently exclude it. The original questions about customer approval, cancellation from old dates, commodity codes and quote network/volume rules remain open.
 
 <a id="phase-progress"></a>
-**17\. Phase progress and what to do next**
+**18\. Phase progress and what to do next**
 
 | Phase | What is in this main guide now | Remaining work |
 | --- | --- | --- |
@@ -1231,15 +1368,15 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 | 2 — Customers/carriers/vendors | Sections 12–13: record/forms/options dictionaries, histories, relationships and exercises. | Submission, validation, role and propagation tests remain open; no business sign-off implied. |
 | 3 — Quote creation/classification/pricing | Section 14: form/options, calculations, offers, pricing, manual/sharing forms, partial failures and existing shipment handoff. | Submission/save/booking/role tests and documented open rules remain pending. |
 | 4 — Shipment lists/coverage/details | Section 15: queues, filters/rows, direct creation, coverage forms, detail regions, documents/buttons and exercises. | Assignment/create/status/role/file/provider and timestamp rules remain pending. |
-| 5 — Edit/scheduling/tracking/exceptions | Overview retained. | Field/editability/confirmation/exception and save/resend documentation. **Next phase.** |
+| 5 — Edit/scheduling/tracking/exceptions | Section 16: observed documentation delivered. | Submitted transitions, role matrix, validation, autosave and resend effects pending. |
 | 6–9 — Detailed workflows through final validation | Overview content retained and organized here. | Full document/accounting/integration/settings chapters and reviewed end-to-end tests. |
 
-**Your next action:** Follow the Phase 4 exercises in section 15.13. Compare queue/list rows, candidate versus assigned carriers and customer/carrier/financial documents. Collect SC-05 test access and review OQ-09/12/25–27 with operations and the integration/accounting owners.
+**Your next action:** Read section 16 and its exercises; resolve the owned test/access/business questions in the coverage register.
 
-**Next delivery:** Phase 5 will expand shipment editing, scheduling, tracking updates and exceptions **inside this same file**. Supporting registers will keep the evidence and open questions. A single final consolidated guide remains the delivery target.
+**Next delivery:** Phase 6 — Documents, bills, invoices and accounting, inside this same file. Supporting registers retain evidence and unverified rules.
 
 <a id="sources"></a>
-**18\. Sources and supporting records**
+**19\. Sources and supporting records**
 
 **Live-app basis:** E-04–27 cover earlier broker inspection; E-28–30 record Phase 1 dashboard/search/coverage observations; E-35–49 record Phase 2 forms and navigation. E-50 records the added identifier reference; E-51–61 record Phase 3 form/results/dialog/navigation observations and the unsaved measurement check. E-62–75 record Phase 4 list/queue, coverage, detail, document and saved freight-summary observations. See the [Evidence Register](Documentation%20Evidence%20Register.md) for the dates, exact actions and limits. No backend source or private API behavior was inferred from a UI label.
 

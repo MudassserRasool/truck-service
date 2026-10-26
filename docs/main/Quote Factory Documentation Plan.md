@@ -4,7 +4,7 @@
 
 Prepared October 23, 2026 | Based on the existing Markdown guides, the user's ten browser comments, a basic live broker-app exploration, and the official references linked below.
 
-**Status (October 23, 2026):** Phase 0 documentation baseline delivered: [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md), [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md), and [Evidence Register](Documentation%20Evidence%20Register.md). Phase 1 is delivered in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md): hierarchy, actors, navigation, lifecycle, glossary and exercises. Phase 2 observed-form documentation is delivered in main-guide sections 12–13; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 is next. Client scope/reviewer/test-access decisions, detailed module behavior and full workflow validation remain pending.
+**Status (October 23, 2026):** Phase 0 documentation baseline delivered: [Scope and Decisions](Phase%200%20Scope%20and%20Decisions.md), [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md), and [Evidence Register](Documentation%20Evidence%20Register.md). Phase 1 is delivered in the [main guide](Quote%20Factory%20Quote%20Workflow%20Guide.md): hierarchy, actors, navigation, lifecycle, glossary and exercises. Phase 2 observed-form documentation is delivered in main-guide sections 12–13; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 is next. Client scope/reviewer/test-access decisions, detailed module behavior and full workflow validation remain pending.
 
 **In one sentence:** Build a guide that moves from the whole business to each module, then each use case, screen, field, button, calculation, document, and external dependency, with instructions the reader can follow in the app.
 
@@ -195,7 +195,7 @@ Example record links require account access and can become unavailable. Always i
 
 **8\. Phase 3 — Quote creation, freight classification and pricing**
 
-**Delivery status:** Observed documentation added to main §14, evidence E-51–61 and updated QTE-01–12. One unsaved measurement example and existing request-to-shipment navigation verified. Submission, save, sharing sends, booking/dispatch, all subtype and role tests remain pending; owned gaps are explicit. Phase 4 observed documentation is delivered in main §15; Phase 5 is next.
+**Delivery status:** Observed documentation added to main §14, evidence E-51–61 and updated QTE-01–12. One unsaved measurement example and existing request-to-shipment navigation verified. Submission, save, sharing sends, booking/dispatch, all subtype and role tests remain pending; owned gaps are explicit. Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 is next.
 
 **Goal:** Document the quote workflow from inputs through offers, customer pricing and the booking handoff.
 
@@ -215,7 +215,7 @@ Example record links require account access and can become unavailable. Always i
 
 **9\. Phase 4 — Shipment lists, coverage and shipment detail screens**
 
-**Delivery status:** Observed documentation added to main §15 and evidence E-62–75. List filtering/rows, queue states, coverage/candidate/packet forms, direct creation, detail regions, financial/freight examples and related document navigation inspected. Creation/assignment/posting/send/status/role/file outcomes and date/provider rules remain untested; Phase 5 is next.
+**Delivery status:** Observed documentation added to main §15 and evidence E-62–75. List filtering/rows, queue states, coverage/candidate/packet forms, direct creation, detail regions, financial/freight examples and related document navigation inspected. Creation/assignment/posting/send/status/role/file outcomes and date/provider rules remain untested; Phase 5 observed documentation is delivered in main §16; Phase 6 is next.
 
 **Goal:** Explain daily broker work and every section of a shipment record.
 
@@ -233,6 +233,8 @@ Example record links require account access and can become unavailable. Always i
 **Done when:** A reader can explain every displayed region and reach related records/documents using exact links or click paths.
 
 **10\. Phase 5 — Edit shipment, scheduling, tracking and exceptions**
+
+**Delivery status:** Observed Phase 5 content is in main §16, E-76–82. Save/status/role/outbound validation remains pending.
 
 **Goal:** Explain which changes are allowed and what they affect.
 
@@ -383,4 +385,4 @@ Continue maintaining third-party requirements in the existing `docs/thrid_party/
 
 **Recommended execution order:** Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6 → Phase 7 → Phase 8 → Phase 9. Start logging integration questions during Phase 0 so provider access delays are visible early; finalize the capability requirements after the relevant workflows are understood.
 
-**Progress rule:** After each phase, deliver its chapters, checked inventory rows, evidence and open questions. Do not mark a whole module complete while required dialogs, role variants or external effects are still unverified. Phase 0 baseline, Phase 1 learning content and Phase 2 observed-form documentation have been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 is next. Phase 2 save/validation/role/propagation, Phase 3 submission/share/booking and Phase 4 creation/coverage/status/document/role tests remain pending. Preserve unresolved questions and the distinction between a written overview and validated detailed behavior.
+**Progress rule:** After each phase, deliver its chapters, checked inventory rows, evidence and open questions. Do not mark a whole module complete while required dialogs, role variants or external effects are still unverified. Phase 0 baseline, Phase 1 learning content and Phase 2 observed-form documentation have been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 is next. Phase 2 save/validation/role/propagation, Phase 3 submission/share/booking and Phase 4 creation/coverage/status/document/role tests remain pending. Preserve unresolved questions and the distinction between a written overview and validated detailed behavior.

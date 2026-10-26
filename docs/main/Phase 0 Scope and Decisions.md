@@ -10,7 +10,7 @@ Prepared October 23, 2026 | Broker app discovery and local-document review.
 
 Read this file → review the [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) → use the [Evidence Register](Documentation%20Evidence%20Register.md) to check what was actually observed → return to the [Documentation Plan](Quote%20Factory%20Documentation%20Plan.md) for the later phases.
 
-**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 has since been delivered in the main guide: business overview, navigation and terminology. Phase 2 observed-form documentation has also been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 is next.
+**What “first phase” means:** The agreed plan begins with **Phase 0**. This delivery implements its inventory, scope matrix, guide-gap review, evidence rules and decision log. Phase 1 has since been delivered in the main guide: business overview, navigation and terminology. Phase 2 observed-form documentation has also been delivered; Phase 3 observed documentation is delivered in main §14; Phase 4 observed documentation is delivered in main §15; Phase 5 observed documentation is delivered in main §16; Phase 6 is next.
 
 **2\. Confirmed instructions and working boundaries**
 
