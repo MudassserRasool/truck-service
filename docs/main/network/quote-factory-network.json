@@ -1,0 +1,1524 @@
+{
+  "title": "Quote Factory sanitized browser network observations",
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-31",
+  "collectionMethod": "Quote Factory in-app browser tab CDP Network domain; read-only UI navigation; event metadata only; no endpoint replay and no response-body retrieval",
+  "redaction": {
+    "rawCapturePersisted": false,
+    "excluded": [
+      "authorization and cookies",
+      "request and response bodies",
+      "customer/carrier names",
+      "record identifiers",
+      "addresses and contact data",
+      "signed URLs and query values",
+      "trace/session/account identifiers",
+      "extension-injected requests"
+    ],
+    "paths": "Query strings removed; dynamic record identifiers replaced with :id where observed"
+  },
+  "runs": [
+    {
+      "runId": "QF-2026-10-31-001",
+      "startedAt": "2026-10-31T14:01:56Z",
+      "scope": "Dashboard reload, then Quotes list navigation",
+      "environment": "Logged-in production broker UI; single Member session; user-provided app tab",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "Reload current Dashboard to begin network observation",
+          "route": "/broker/dashboard",
+          "readOnly": true,
+          "capture": "partial; CDP event buffer reported truncated; dashboard run not used for completeness claims"
+        },
+        {
+          "stepId": "S2",
+          "action": "Open Quotes from the left navigation",
+          "route": "/broker/quote-history",
+          "readOnly": true,
+          "capture": "complete for returned request/response event slice; no pagination triggered"
+        }
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://app.quotefactory.com",
+          "method": "GET",
+          "path": "/version",
+          "resourceType": "Fetch",
+          "status": null,
+          "note": "Request observed; response was not present in truncated slice"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://app.quotefactory.com",
+          "method": "POST",
+          "path": "/sentry",
+          "resourceType": "Fetch",
+          "status": 200,
+          "note": "Same-origin application collector; sanitized event/session body deliberately omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/me",
+          "resourceType": "Fetch",
+          "status": null,
+          "note": "Authenticated current-user read observed; headers and identity omitted; response event not captured in truncated slice"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "OPTIONS",
+          "path": "/me",
+          "resourceType": "Other",
+          "status": null,
+          "note": "CORS preflight observed; response event not captured in truncated slice"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/accounts/users",
+          "resourceType": "Fetch",
+          "status": 200,
+          "note": "User/account support data read; payload omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "OPTIONS",
+          "path": "/accounts/users",
+          "resourceType": "Other",
+          "status": 204,
+          "note": "CORS preflight"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-requests",
+          "resourceType": "Fetch",
+          "status": 200,
+          "note": "Quote history list read; payload and record identifiers omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "OPTIONS",
+          "path": "/quote-requests",
+          "resourceType": "Other",
+          "status": 204,
+          "note": "CORS preflight"
+        }
+      ],
+      "thirdParty": [
+        {
+          "service": "Google Fonts",
+          "observedOrigins": [
+            "https://fonts.googleapis.com",
+            "https://fonts.gstatic.com"
+          ],
+          "evidence": "Stylesheet and font resource requests during dashboard reload",
+          "confidence": "network-observed"
+        },
+        {
+          "service": "Help Scout Beacon",
+          "observedOrigins": [
+            "https://beacon-v2.helpscout.net"
+          ],
+          "evidence": "Beacon script request during dashboard reload; support widget also present in UI",
+          "confidence": "network-observed"
+        },
+        {
+          "service": "Sentry SDK / application collector",
+          "observedOrigins": [
+            "https://app.quotefactory.com"
+          ],
+          "evidence": "Sentry JavaScript SDK version marker in request initiator; POST to same-origin /sentry returned 200",
+          "confidence": "SDK-and-route-observed; external delivery destination unknown"
+        },
+        {
+          "service": "Mapbox",
+          "observedOrigins": [],
+          "evidence": "Dashboard visibly renders Mapbox map/logo/attribution; network request inventory was truncated for this step",
+          "confidence": "UI-observed; network origin unconfirmed"
+        },
+        {
+          "service": "TalentLMS",
+          "observedOrigins": [],
+          "evidence": "Training navigation link points to quotefactory.talentlms.com; not opened",
+          "confidence": "link-observed; network contact unconfirmed"
+        }
+      ],
+      "notObservedOrUnknown": [
+        "Dashboard network event slice was truncated; request count and third-party list for that page are incomplete.",
+        "No response bodies, GraphQL schemas, data field shapes, authorization policy or backend-only integrations were inspected.",
+        "The Quote history API may paginate or make additional requests after scrolling/search/filtering; those actions were not exercised.",
+        "No conclusion about an absent request is made from this bounded capture."
+      ]
+    },
+    {
+      "runId": "QF-2026-10-31-002",
+      "startedAt": "2026-10-31T14:02:00Z",
+      "scope": "Quote form open, quote-history list/filter-panel open, one existing quote-result detail read",
+      "environment": "Same logged-in production broker Member tab as run 001",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "Open blank Get quotes form from navigation",
+          "route": "/broker/quote",
+          "readOnly": true,
+          "capture": "request and response event slice complete; GET provider configuration returned 200 with 204 preflight"
+        },
+        {
+          "stepId": "S2",
+          "action": "Return to Quotes list and open the funnel filter panel; no filter values entered",
+          "route": "/broker/quote-history",
+          "readOnly": true,
+          "capture": "no new network events on panel open; filter labels Customer and Rep observed"
+        },
+        {
+          "stepId": "S3",
+          "action": "Open one pre-existing quote result; do not book, edit, share or change offer values",
+          "route": "/broker/quote-results/:id",
+          "readOnly": true,
+          "capture": "request and drained response event slices not truncated; body values omitted"
+        }
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/provider-integrations",
+          "count": 1,
+          "status": 200,
+          "note": "Configuration read; response body omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "OPTIONS",
+          "path": "/provider-integrations",
+          "count": 1,
+          "status": 204,
+          "note": "CORS preflight"
+        },
+        {
+          "stepId": "S2",
+          "origin": "browser UI",
+          "method": "none",
+          "path": "filter panel open",
+          "count": 1,
+          "status": null,
+          "note": "No request observed for opening the panel; no filter values selected or typed"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-requests/:id",
+          "count": 1,
+          "status": 200,
+          "note": "Existing result request read; identifier redacted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/provider-integrations",
+          "count": 1,
+          "status": 200,
+          "note": "Integration configuration read"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/accounts/users",
+          "count": 1,
+          "status": 200,
+          "note": "Account/user lookup"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/contacts",
+          "count": 1,
+          "status": 200,
+          "note": "Contact lookup; identifiers and values omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shares",
+          "count": 1,
+          "status": 200,
+          "note": "Share-state lookup; no sharing action performed"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-configs",
+          "count": 20,
+          "status": 200,
+          "note": "Repeated configuration reads observed; each included an OPTIONS preflight returning 204"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id",
+          "requestEvents": 48,
+          "responseEvents": 12,
+          "responseStatus": 200,
+          "preflightEvents": 48,
+          "preflightStatus": 204,
+          "note": "Some request events had no matching response event in the drained capture; no cause inferred; IDs/data omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id/credit-usage",
+          "count": 1,
+          "status": 200,
+          "note": "Customer credit usage read; values omitted; OPTIONS preflight 204"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/providers/:id/account-provider",
+          "count": 6,
+          "status": 200,
+          "note": "Provider/account configuration reads; IDs omitted; each included OPTIONS preflight returning 204"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/accounts/xn-credit-usage",
+          "count": 1,
+          "status": 200,
+          "note": "Account credit usage read; values omitted; OPTIONS preflight 204"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/users/settings/account",
+          "count": 1,
+          "status": 200,
+          "note": "Account settings read; values omitted; OPTIONS preflight 204"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://quotefactory-assets.s3.amazonaws.com",
+          "method": "GET",
+          "path": "/images/carriers/:logo.png",
+          "count": 14,
+          "status": 200,
+          "note": "Static carrier-logo images; no quote transaction sent directly to these hosts"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://cdn.filestackcontent.com",
+          "method": "GET",
+          "path": "/:opaque-asset",
+          "count": 1,
+          "status": 200,
+          "note": "Image/CDN resource; raw path omitted because it may contain an opaque token"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://ui-avatars.com",
+          "method": "GET",
+          "path": "/api/",
+          "count": 1,
+          "status": 200,
+          "note": "Avatar image resource; query values omitted"
+        }
+      ],
+      "thirdParty": [
+        {
+          "service": "Amazon S3 static asset bucket",
+          "observedOrigins": [
+            "https://quotefactory-assets.s3.amazonaws.com"
+          ],
+          "evidence": "Carrier logo image GETs returned 200",
+          "confidence": "network-observed; static assets only"
+        },
+        {
+          "service": "Filestack CDN",
+          "observedOrigins": [
+            "https://cdn.filestackcontent.com"
+          ],
+          "evidence": "One image resource returned 200; opaque path omitted",
+          "confidence": "network-observed; exact app purpose unknown"
+        },
+        {
+          "service": "UI Avatars",
+          "observedOrigins": [
+            "https://ui-avatars.com"
+          ],
+          "evidence": "One avatar image request returned 200; query values omitted",
+          "confidence": "network-observed"
+        },
+        {
+          "service": "Carrier rating/integration providers",
+          "observedOrigins": [],
+          "evidence": "The UI displayed a pre-existing offer set; browser calls in this capture went to the Quote Factory API, not observed carrier domains",
+          "confidence": "browser-direct calls not seen in this run; server-side provider calls remain unknown"
+        }
+      ],
+      "uiResult": {
+        "quoteForm": "Blank form loaded with default LTL equipment selection, one handling-unit section, two location sections, Protect from freezing option, freight-class/NMFC fields, stackable/hazmat options, and linear-feet visualizer. No customer or shipment data was entered.",
+        "quoteHistoryFilters": "Funnel opens Customer and Rep fields; opening alone produced no network events. No filter was applied.",
+        "quoteResult": "Existing result loaded a read-only view with customer/reference context, quote categories All/Standard/Guaranteed/Volume, offer carrier/service/transit/price, cost/margin/profit controls, and a 47-offer count in this sampled record. The pickup date warning and disabled Book controls were visible in this record. Counts and values are record-specific and excluded from the sanitized network artifact."
+      },
+      "notObservedOrUnknown": [
+        "No quote was submitted and no carrier rating request was initiated during this run; existing offers do not prove when/how they were retrieved.",
+        "The record detail route caused many customer/config/provider lookups; the artifact stores counts with normalized routes only. Request duplication, cache policy and backend fan-out are not inferred.",
+        "No search/filter value was entered, so filter query parameters and server-side behavior remain unknown.",
+        "No request or response bodies, headers, query values, credentials, record IDs, amounts, customer names, addresses or contacts are retained.",
+        "The absence of observed carrier-domain calls cannot rule out server-to-server integration activity."
+      ]
+    },
+    {
+      "runId": "QF-2026-10-31-003",
+      "startedAt": "2026-10-31T14:08:20Z",
+      "scope": "Clean Dashboard route load after resetting the tab's Network event buffer; events drained to hasMore=false",
+      "environment": "Same logged-in production broker Member tab; Network buffer size increased for this capture",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "Return to Dashboard with CDP capture already active",
+          "route": "/broker/dashboard",
+          "readOnly": true,
+          "capture": "request events plus drained responses; truncated=false; hasMore=false"
+        },
+        {
+          "stepId": "S2",
+          "action": "Wait for map resources and API response events",
+          "route": "/broker/dashboard",
+          "readOnly": true,
+          "capture": "drained to cursor; truncated=false; hasMore=false"
+        }
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "elapsedMs": 1773,
+          "note": "Dashboard shipment data read; response body omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/statuses",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "elapsedMs": 3005,
+          "note": "Dashboard shipment status data read"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-requests/statuses",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "elapsedMs": 1756,
+          "note": "Dashboard quote status data read"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/system-messages",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "elapsedMs": 1773,
+          "note": "Dashboard system messages read"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/events",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "elapsedMs": 1749,
+          "note": "Dashboard event data read; body omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/styles/v1/:owner/:style",
+          "count": 1,
+          "status": 200,
+          "elapsedMs": 131,
+          "note": "Map style read; style identifier normalized"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/v4/mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v8.json",
+          "count": 1,
+          "status": 200,
+          "elapsedMs": 188,
+          "note": "Terrain and streets source metadata"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/styles/v1/:owner/:style/:sprite/sprite@2x.json",
+          "count": 1,
+          "status": 200,
+          "elapsedMs": 188,
+          "note": "Map style sprite metadata; identifiers normalized"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/styles/v1/:owner/:style/:sprite/sprite@2x.png",
+          "count": 1,
+          "status": 200,
+          "elapsedMs": 189,
+          "note": "Map style sprite image; identifiers normalized"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/fonts/v1/:owner/:font-stack/:glyph-range.pbf",
+          "count": 6,
+          "status": 200,
+          "elapsedMs": "18–35",
+          "note": "Map label glyph ranges; font-stack and glyph range summarized"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.mapbox.com",
+          "method": "GET",
+          "path": "/map-sessions/v1",
+          "count": 1,
+          "status": 200,
+          "elapsedMs": 649,
+          "note": "Map session request; query values omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://events.mapbox.com",
+          "method": "POST",
+          "path": "/events/v2",
+          "count": 2,
+          "status": 204,
+          "elapsedMs": 512,
+          "note": "Mapbox event/telemetry posts; body omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://app.quotefactory.com",
+          "method": "POST",
+          "path": "/sentry",
+          "count": 3,
+          "status": 200,
+          "elapsedMs": "517, 517, 1371",
+          "note": "Same-origin Sentry SDK collector route; body omitted"
+        }
+      ],
+      "thirdParty": [
+        {
+          "service": "Mapbox",
+          "observedOrigins": [
+            "https://api.mapbox.com",
+            "https://events.mapbox.com"
+          ],
+          "evidence": "Dashboard map style, source metadata, sprite, glyph, map session and telemetry endpoints returned 200/204 as listed above",
+          "confidence": "network-observed"
+        },
+        {
+          "service": "Sentry SDK / application collector",
+          "observedOrigins": [
+            "https://app.quotefactory.com"
+          ],
+          "evidence": "Three POST requests to same-origin /sentry returned 200; SDK identified by request initiator in initial dashboard run",
+          "confidence": "SDK-and-route-observed; forwarding destination unknown"
+        }
+      ],
+      "timingDefinition": "Elapsed milliseconds from CDP requestWillBeSent timestamp to responseReceived timestamp, rounded to nearest millisecond; browser-session observation, not provider SLA",
+      "notObservedOrUnknown": [
+        "Mapbox request query strings and telemetry bodies were not saved; the public token and payload values are intentionally absent.",
+        "Map viewport/tile coverage may trigger additional requests after pan, zoom or page layout changes; those interactions were not made.",
+        "No map API key/account ownership, route/mileage product, geocoding or location search was inferred from the visible basemap.",
+        "Response bodies and backend-only integrations remain uninspected."
+      ]
+    },
+    {
+      "runId": "QF-2026-10-31-004",
+      "scope": "Shipment list filters and Active/All navigation (UI/CDP observations from the same session), one read-only shipment detail load, then its Documents index; identifiers, rows, queries, response bodies and document bytes excluded",
+      "environment": "Same logged-in production broker Member tab; read-only navigation; no shipment/document action performed",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "Open shipment filters with no values selected; inspect controls and resulting lookup requests",
+          "route": "/broker/shipments",
+          "readOnly": true,
+          "capture": "filter UI observed; distinct carrier GET request had no paired response in drained events; distinct customer GET returned 200 after 204 preflight"
+        },
+        {
+          "stepId": "S2",
+          "action": "Switch between Active and All tabs; no filters entered",
+          "route": "/broker/shipments and /broker/shipments/all",
+          "readOnly": true,
+          "capture": "rows rendered after list reads; no record data retained"
+        },
+        {
+          "stepId": "S3",
+          "action": "Open one existing shipment from a visible Active row and wait for detail reads",
+          "route": "/broker/shipment/:id",
+          "readOnly": true,
+          "capture": "returned request/response slice drained with truncated=false and hasMore=false"
+        },
+        {
+          "stepId": "S4",
+          "action": "Open Documents index from that shipment; inspect labels and preview-resource origins without opening or downloading a file",
+          "route": "/broker/shipment/:id/documents",
+          "readOnly": true,
+          "capture": "returned request/response slice drained with truncated=false and hasMore=false"
+        }
+      ],
+      "observedFilterControls": [
+        "search",
+        "Status",
+        "Equipment",
+        "Booked date",
+        "Pickup date",
+        "Delivery date",
+        "Origin address",
+        "Destination",
+        "Carrier",
+        "Customer",
+        "Rep",
+        "Booked by",
+        "Covered by",
+        "preview matching shipment count"
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/distinct/carrier",
+          "count": 1,
+          "status": "response event missing",
+          "preflight": 204,
+          "note": "Filter-panel carrier selector lookup; response was not present in drained event slice; outcome unknown"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/distinct/customerId",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Filter-panel customer selector lookup; values omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/",
+          "count": 2,
+          "status": 200,
+          "preflight": 204,
+          "note": "Active and All tab list reads; each view used a route/sort default, query values omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/providers",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Provider support data read during shipment list navigation; values omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/accounts/users",
+          "count": 3,
+          "status": "200 observed",
+          "preflight": 204,
+          "note": "Repeated team/user support reads; dynamic account data omitted"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/reports/definitions",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Report definitions read during shipment-list navigation"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Shipment detail read; identifier and body omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/contacts",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Contact lookup; values omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/historical-dispatches",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Historical dispatch read; response body omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Related customer read; identifier and body omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id/credit-usage",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Related customer credit-use read; values omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-configs",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Quote configuration read during shipment detail load"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/notes/shipment/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Shipment notes read; note contents omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/events",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Shipment-related events read; response body omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shares",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Share-state read; no sharing action performed"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/terms",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Terms/configuration read; body omitted"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/users/settings/account",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Account settings read; body omitted"
+        },
+        {
+          "stepId": "S4",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Shipment context re-read by the document index"
+        },
+        {
+          "stepId": "S4",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/:id/document",
+          "count": 3,
+          "status": 200,
+          "preflight": 204,
+          "note": "Existing document index/preview metadata reads; body and file contents omitted"
+        },
+        {
+          "stepId": "S3-S4",
+          "origin": "https://app.quotefactory.com",
+          "method": "POST",
+          "path": "/sentry",
+          "count": 6,
+          "status": 200,
+          "note": "Same-origin application telemetry collector; event bodies omitted and external forwarding unknown"
+        },
+        {
+          "stepId": "S4",
+          "origin": "https://cdn.filestackcontent.com",
+          "method": "GET",
+          "path": "/:opaque-preview",
+          "count": 3,
+          "status": 200,
+          "note": "Existing PDF preview assets rendered through Filestack; paths contain opaque tokens/nested object URLs and are intentionally not retained"
+        },
+        {
+          "stepId": "S4",
+          "origin": "https://quotefactory-documents.s3.us-east-2.amazonaws.com",
+          "method": "embedded in preview resource",
+          "path": "/:object-key",
+          "count": 3,
+          "status": "no direct S3 response observed",
+          "note": "Quote Factory document-storage hostname appeared inside the Filestack preview resource; no S3 object key or direct fetch event retained"
+        }
+      ],
+      "uiResult": {
+        "shipmentList": "Active and All are separate routes/sort defaults in this session. Active showed Booked, Scheduled, In transit and Delivered groups; an individual Booked row showed No carrier. All included canceled rows in the earlier bounded sample. Exact rows/counts omitted.",
+        "shipmentDetail": "Header includes BOL, Documents, Edit shipment and action menu; reps, lifecycle progression, provider/cover, customer/confirmation, financial summary, locations/stops/tracking, items, estimated-date notice, map and timeline controls were visible. Labels do not establish permissions or transition behavior.",
+        "documents": "Visible groups Rate Confirmation, POD, Bill and Misc; Add unknown to shipment control. No upload/download/regenerate/send action used.",
+        "filterPanel": "No values selected. Button displayed an account-specific matching-count preview; value omitted. Clicking it closed the panel with no new request observed in that slice; apply/filter semantics remain unknown.",
+        "timeline": "Expanding Timeline displayed at least Created, Booked and Updated labels. No new request appeared in the bounded interaction slice; the page had already read /events. No note or status control was used."
+      },
+      "thirdParty": [
+        {
+          "service": "Filestack CDN",
+          "observedOrigins": [
+            "https://cdn.filestackcontent.com"
+          ],
+          "evidence": "Three existing PDF preview resources returned 200 from the CDN during Documents index load",
+          "confidence": "preview-delivery path observed; upload/signature/retention functions unknown"
+        },
+        {
+          "service": "Amazon S3 Quote Factory document host",
+          "observedOrigins": [
+            "https://quotefactory-documents.s3.us-east-2.amazonaws.com"
+          ],
+          "evidence": "Storage hostname appeared embedded in rendered preview resource; no object key or document bytes retained",
+          "confidence": "hostname and preview path observed; storage policy/ownership unknown"
+        }
+      ],
+      "notObservedOrUnknown": [
+        "No filter value was entered, and status-selection/search semantics, persistence, reset behavior and error states remain unknown.",
+        "The exact account-specific count displayed by the filter preview is intentionally excluded; clicking the preview closed the panel but produced no new request in that event slice.",
+        "Active and All group labels are session observations only; universal status rules and role-specific visibility are unknown.",
+        "The carrier distinct lookup response was missing from returned CDP events; no failure is inferred.",
+        "Document type validity, preview authorization/lifetime, upload constraints, file retention/deletion, signatures, sends and generated-file contents were not tested.",
+        "No response bodies, query values, signed URLs, opaque CDN tokens, object keys, customer/provider names, record IDs, addresses, contacts or document bytes are stored.",
+        "One production Member role only; alternate-role and no-data/error branches not inspected."
+      ],
+      "captureDate": "2026-10-31",
+      "captureTime": "not recorded; individual UI steps were observed during the same browser session"
+    },
+    {
+      "runId": "QF-2026-10-31-005",
+      "captureDate": "2026-10-31",
+      "captureTime": "not recorded; individual UI steps were observed during the same browser session",
+      "scope": "Open one existing shipment Edit screen read-only and map visible controls and supporting GET requests; no values changed and Update shipment was not clicked",
+      "environment": "Same logged-in production broker Member tab",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "From an existing shipment detail, open Edit shipment; wait for the form and supporting reads",
+          "route": "/broker/shipment/:id/edit",
+          "readOnly": true,
+          "capture": "request/response event slice drained with truncated=false and hasMore=false; request/response bodies omitted"
+        }
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Existing shipment edit form data; identifier and values omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/quote-configs",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Quote configuration read for editor"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/users/settings/account",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Account setting read"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Customer context read; identifier/body omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/customers/:id/credit-usage",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Customer credit-use read; values omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/contacts",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Stop/contact lookup; values omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/location-templates/:id",
+          "count": 2,
+          "status": 200,
+          "preflight": 204,
+          "note": "Stop template reads; identifiers and values omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/location-templates",
+          "count": 2,
+          "status": 200,
+          "preflight": 204,
+          "note": "Location template list reads"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/shipments/products",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Shipment product/item configuration read"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/notes/shipment/:id",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Existing shipment notes read; content omitted"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/lane-history/summary",
+          "count": 1,
+          "status": 200,
+          "preflight": 204,
+          "note": "Lane-history summary read by the editor"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://quotefactory-assets.s3.us-east-1.amazonaws.com",
+          "method": "GET",
+          "path": "/images/flags/USA.svg",
+          "count": 1,
+          "status": 200,
+          "note": "Static country-flag asset; no shipment information inferred"
+        },
+        {
+          "stepId": "S1",
+          "origin": "https://app.quotefactory.com",
+          "method": "POST",
+          "path": "/sentry",
+          "count": 3,
+          "status": 200,
+          "note": "Same-origin application telemetry collector; event content and forwarding destination unknown"
+        }
+      ],
+      "uiResult": {
+        "formSections": "Custom BOL; customer context; equipment and service flags; provider entry; ordered locations and distance; stop company/type/address/contact/share/instructions/hours/date/references/private-note controls; additional stops; handling units, dimensions, total weight, stackable/hazmat, visualizer and total value; lane history; cost/price line items and calculators; Hide contacts from carrier; Update shipment; Timeline.",
+        "sampleState": "Auto Transport selected; Tanker endorsement and Team service unchecked; Hide contacts from carrier checked. Existing field values and identities intentionally omitted. This is one sample only, not a universal default.",
+        "actions": "No control was changed; no autocomplete was opened; no field edited; Update shipment not clicked."
+      },
+      "thirdParty": [
+        {
+          "service": "Amazon S3 static application assets",
+          "observedOrigins": [
+            "https://quotefactory-assets.s3.us-east-1.amazonaws.com"
+          ],
+          "evidence": "One country-flag SVG returned 200 while the editor loaded; existing quote guide records carrier-logo assets on the regional/static S3 hostname",
+          "confidence": "static asset origin observed; storage/configuration role beyond assets unknown"
+        }
+      ],
+      "notObservedOrUnknown": [
+        "Field requiredness, validation messages, lock rules, autosave, server-side normalization and Update shipment behavior were not tested.",
+        "The form is prefilled; current values are not evidence of defaults for a new shipment.",
+        "No submit/mutation request was made; no response body or saved-data behavior observed.",
+        "Only one production Member session/sample. Other statuses, equipment, user roles and customer/carrier views may differ.",
+        "No screenshot file was saved; the production viewport contained customer and stop information."
+      ]
+    },
+    {
+      "runId": "QF-2026-10-31-006",
+      "captureDate": "2026-10-31",
+      "captureTime": "not recorded; views inspected sequentially in the same browser session",
+      "scope": "Open Carriers, Vendors and All provider-list tabs without applying filters or opening a provider profile",
+      "environment": "Same logged-in production broker Member tab; list navigation only",
+      "steps": [
+        {
+          "stepId": "S1",
+          "action": "Open Carriers list and wait for data",
+          "route": "/broker/vendors/carriers",
+          "readOnly": true,
+          "capture": "shell briefly showed a no-results message; later list populated; network slice drained without truncation"
+        },
+        {
+          "stepId": "S2",
+          "action": "Select Vendors tab and wait for data",
+          "route": "/broker/vendors/vendors",
+          "readOnly": true,
+          "capture": "shell briefly showed a no-results message; later list populated; network slice drained without truncation"
+        },
+        {
+          "stepId": "S3",
+          "action": "Select All tab and wait for data",
+          "route": "/broker/vendors",
+          "readOnly": true,
+          "capture": "combined list populated; network slice drained without truncation"
+        }
+      ],
+      "requests": [
+        {
+          "stepId": "S1",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/known-vendors",
+          "requestEvents": 5,
+          "responseEvents": 3,
+          "responseStatus": 200,
+          "preflightEvents": 3,
+          "preflightStatus": 204,
+          "note": "Carrier list reads; more request events than paired successful responses in the drained slice, cause unknown"
+        },
+        {
+          "stepId": "S2",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/custom-vendors",
+          "requestEvents": 5,
+          "responseEvents": 3,
+          "responseStatus": 200,
+          "preflightEvents": 3,
+          "preflightStatus": 204,
+          "note": "Service-vendor list reads; values omitted; more request events than paired successful responses, cause unknown"
+        },
+        {
+          "stepId": "S3",
+          "origin": "https://api.quotefactory.com",
+          "method": "GET",
+          "path": "/vendors",
+          "requestEvents": 5,
+          "responseEvents": 3,
+          "responseStatus": 200,
+          "preflightEvents": 3,
+          "preflightStatus": 204,
+          "note": "Combined provider list reads; rows/counts omitted; more request events than paired successful responses, cause unknown"
+        },
+        {
+          "stepId": "S1-S3",
+          "origin": "https://app.quotefactory.com",
+          "method": "POST",
+          "path": "/sentry",
+          "count": 9,
+          "status": 200,
+          "note": "Same-origin SDK telemetry collector; event/session body and external forwarding destination omitted"
+        }
+      ],
+      "uiResult": {
+        "tabs": "Carriers, Vendors and All use distinct routes and distinct list API path patterns.",
+        "loading": "Initial page shells briefly showed No carriers found / No vendors found before list data rendered. These transient messages are not evidence of final empty states.",
+        "privacy": "Account-specific totals and provider row identities/values intentionally omitted."
+      },
+      "notObservedOrUnknown": [
+        "Provider fields, profile pages, filters, sorting, paging, empty/error results and access rules were not opened in this pass.",
+        "Repeated request events may reflect component behavior, cache conditions or other factors; no cause inferred.",
+        "No provider create/edit, eligibility lookup, dispatch, tax or onboarding action was performed.",
+        "Only the logged-in production Member session was observed; no screenshot saved because the lists contain business records."
+      ]
+    }
+  ],
+  "endpointCatalog": [
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/me",
+      "operation": "Current user context",
+      "observedIn": "QF-2026-10-31-001/S1",
+      "status": "request observed; response event missing from truncated capture"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/accounts/users",
+      "operation": "Account/user support data",
+      "observedIn": "QF-2026-10-31-001/S2",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/quote-requests",
+      "operation": "Quote history list data",
+      "observedIn": "QF-2026-10-31-001/S2",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/provider-integrations",
+      "operation": "Provider configuration read",
+      "observedIn": "QF-2026-10-31-002/S1,S3",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/quote-requests/:id",
+      "operation": "Existing quote-result detail read",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/quote-configs",
+      "operation": "Quote offer configuration reads",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "20 reads returned 200; each had 204 preflight"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/customers/:id",
+      "operation": "Customer data reads related to quote result",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "48 request events, 12 matching 200 responses, 48 preflights 204; unmatched requests unresolved"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/customers/:id/credit-usage",
+      "operation": "Customer credit-use read",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/providers/:id/account-provider",
+      "operation": "Provider/account configuration read",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "6 reads returned 200; each had 204 preflight"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/contacts",
+      "operation": "Contact lookup",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shares",
+      "operation": "Share-state lookup",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/accounts/xn-credit-usage",
+      "operation": "Account credit-use read",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/users/settings/account",
+      "operation": "Account settings read",
+      "observedIn": "QF-2026-10-31-002/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/",
+      "operation": "Dashboard shipment summary data",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/statuses",
+      "operation": "Dashboard shipment status summary",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/quote-requests/statuses",
+      "operation": "Dashboard quote status summary",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/system-messages",
+      "operation": "Dashboard system messages",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/events",
+      "operation": "Dashboard event data",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.mapbox.com",
+      "method": "GET",
+      "path": "/styles/v1/:owner/:style",
+      "operation": "Map style",
+      "observedIn": "QF-2026-10-31-003/S1",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.mapbox.com",
+      "method": "GET",
+      "path": "/map-sessions/v1",
+      "operation": "Map session",
+      "observedIn": "QF-2026-10-31-003/S2",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://events.mapbox.com",
+      "method": "POST",
+      "path": "/events/v2",
+      "operation": "Mapbox events/telemetry",
+      "observedIn": "QF-2026-10-31-003/S2",
+      "status": "2 responses 204; bodies omitted"
+    },
+    {
+      "origin": "https://app.quotefactory.com",
+      "method": "POST",
+      "path": "/sentry",
+      "operation": "Application telemetry collector route",
+      "observedIn": "QF-2026-10-31-001/S1",
+      "status": "200 observed; destination semantics unknown"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/",
+      "operation": "Shipment list read",
+      "observedIn": "QF-2026-10-31-004/S2",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/distinct/carrier",
+      "operation": "Carrier filter selector lookup",
+      "observedIn": "QF-2026-10-31-004/S1",
+      "status": "request observed; response event missing"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/distinct/customerId",
+      "operation": "Customer filter selector lookup",
+      "observedIn": "QF-2026-10-31-004/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/:id",
+      "operation": "Shipment detail and document context",
+      "observedIn": "QF-2026-10-31-004/S3,S4",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/historical-dispatches",
+      "operation": "Shipment historical dispatch support data",
+      "observedIn": "QF-2026-10-31-004/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/notes/shipment/:id",
+      "operation": "Shipment notes read",
+      "observedIn": "QF-2026-10-31-004/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/:id/document",
+      "operation": "Shipment document index/preview metadata",
+      "observedIn": "QF-2026-10-31-004/S4",
+      "status": "3 reads returned 200; preflights 204; bodies omitted"
+    },
+    {
+      "origin": "https://cdn.filestackcontent.com",
+      "method": "GET",
+      "path": "/:opaque-preview",
+      "operation": "Existing document preview asset delivery",
+      "observedIn": "QF-2026-10-31-004/S4",
+      "status": "3 observed 200; opaque paths omitted"
+    },
+    {
+      "origin": "https://quotefactory-documents.s3.us-east-2.amazonaws.com",
+      "method": "GET",
+      "path": "/:object-key",
+      "operation": "Document storage host embedded in preview resources",
+      "observedIn": "QF-2026-10-31-004/S4",
+      "status": "hostname observed; object keys and content omitted"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/providers",
+      "operation": "Provider support data read",
+      "observedIn": "QF-2026-10-31-004/S2",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/accounts/users",
+      "operation": "Team/user support data read",
+      "observedIn": "QF-2026-10-31-004/S2",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/reports/definitions",
+      "operation": "Report definition support data read",
+      "observedIn": "QF-2026-10-31-004/S2",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/terms",
+      "operation": "Terms/configuration read on shipment detail",
+      "observedIn": "QF-2026-10-31-004/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/users/settings/account",
+      "operation": "Account settings read on shipment detail",
+      "observedIn": "QF-2026-10-31-004/S3",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/location-templates/:id",
+      "operation": "Location template read by shipment editor",
+      "observedIn": "QF-2026-10-31-005/S1",
+      "status": "2 reads returned 200; preflights 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/location-templates",
+      "operation": "Location template list read by shipment editor",
+      "observedIn": "QF-2026-10-31-005/S1",
+      "status": "2 reads returned 200; preflights 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/shipments/products",
+      "operation": "Shipment product/item configuration read",
+      "observedIn": "QF-2026-10-31-005/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/lane-history/summary",
+      "operation": "Lane-history summary read by editor",
+      "observedIn": "QF-2026-10-31-005/S1",
+      "status": "200 observed; preflight 204"
+    },
+    {
+      "origin": "https://quotefactory-assets.s3.us-east-1.amazonaws.com",
+      "method": "GET",
+      "path": "/images/flags/USA.svg",
+      "operation": "Static flag asset",
+      "observedIn": "QF-2026-10-31-005/S1",
+      "status": "200 observed"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/known-vendors",
+      "operation": "Carrier directory list",
+      "observedIn": "QF-2026-10-31-006",
+      "status": "200 responses observed after 204 preflights; request/response event counts not one-to-one"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/custom-vendors",
+      "operation": "Service vendor directory list",
+      "observedIn": "QF-2026-10-31-006",
+      "status": "200 responses observed after 204 preflights; request/response event counts not one-to-one"
+    },
+    {
+      "origin": "https://api.quotefactory.com",
+      "method": "GET",
+      "path": "/vendors",
+      "operation": "Combined carrier/vendor directory list",
+      "observedIn": "QF-2026-10-31-006",
+      "status": "200 responses observed after 204 preflights; request/response event counts not one-to-one"
+    }
+  ],
+  "coverage": {
+    "workflowsStarted": [
+      "Dashboard initial load",
+      "Dashboard clean CDP reload",
+      "Quote history list read",
+      "Quote form open",
+      "Quote filter panel open without selection",
+      "Existing quote-result detail read",
+      "Shipment list Active/All routes",
+      "Shipment filter panel opened without selections",
+      "Existing shipment detail read",
+      "Shipment Documents index/preview resource read",
+      "Existing shipment Edit screen read without field changes",
+      "Carrier, vendor and combined directory list reads"
+    ],
+    "workflowsNotYetCaptured": [
+      "Quote form submission",
+      "Quote filters/search semantics",
+      "Coverage actions and status transitions",
+      "Document upload/send/signature/retention behavior",
+      "accounting",
+      "reports/settings",
+      "downloads/exports",
+      "Shipment create/edit submissions, validation and saved-data behavior",
+      "Customer, carrier and vendor profile details, filters and mutations"
+    ],
+    "roleCoverage": "One broker Member session only",
+    "externalSideEffects": "None intentionally triggered"
+  }
+}

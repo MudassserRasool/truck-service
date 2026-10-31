@@ -2,7 +2,7 @@
 
 **The screen inventory, existing-guide gaps, and follow-up work for every phase**
 
-Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 9 writing/audit; validation pending.
+Prepared October 23, 2026 | Phase 0 baseline, updated after Phase 9 writing/audit and live CDP shipment detail/document/editor follow-up on October 31; validation pending.
 
 **1\. How to use this inventory**
 
@@ -40,6 +40,8 @@ Each ID below is a stable documentation/use-case ID. Start with its link or clic
 **After Phase 8:** 89 items — 0 Observed, 87 Partly documented, 0 Not explored, 2 Blocked and 0 Documented. All known accessible inventory entries have guide content or explicit owned gaps. Full workflows, alternate roles, submissions, exports and client acceptance remain unvalidated; P does not imply signed-off completeness.
 
 **After Phase 9 writing/audit:** 89 items remain 87 P and 2 B; no D claimed without reviewed rules and required tests. Main §20 maps every inventory ID to seven walkthroughs/exception cases and an owned completion audit (E-109–110). All known items have documentation or an explicit gap; unresolved behavior is not silently excluded.
+
+**Network discovery update (October 31):** Sanitized artifact [quote-factory-network.json](network/quote-factory-network.json) and main guide §§12, 15–18 now include Dashboard/Mapbox, Quotes list/form/existing result, shipment Active/All/filter controls, one shipment detail and Documents index, one read-only Edit shipment form, and Carriers/Vendors/All list reads (E-114–127). Clean bounded captures for dashboard, detail, document, editor and provider lists drained without CDP truncation. Filestack and the Quote Factory S3 document host appeared in preview resources; S3 static assets included carrier logos and a country flag. These observations do not change the 89-feature coverage totals: filter semantics and all submissions remain untested, response bodies were excluded, server-to-server integrations remain outside browser evidence, and no screenshot file was saved from the production data-bearing viewport.
 
 **Chapter and reviewer key**
 
