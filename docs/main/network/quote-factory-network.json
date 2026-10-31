@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "1.0",
+  "updatedAt": "2026-10-31T13:54:19Z",
+  "capturePolicy": {
+    "tool": "Browser Use tab CDP capability",
+    "status": "preflight blocked; no successful live network capture",
+    "boundary": "Browser-observed traffic only; server-to-server integrations invisible",
+    "redaction": "No raw headers, credentials, cookies, tokens, signed URLs or operational payloads retained. Future captured payloads must be sanitized before persistence.",
+    "emptyArraysMeaning": "No evidence captured; NOT proof of no requests/services.",
+    "collectorStatus": "Event normalization, capture paging, sanitization and validation implementation still pending."
+  },
+  "runs": [
+    {
+      "id": "NET-20261031-PREFLIGHT-01",
+      "workflowIds": [
+        "QTE-02",
+        "API-01",
+        "API-02",
+        "API-03"
+      ],
+      "role": "Not reverified in this run; Member observed Oct26",
+      "pageUrl": "https://app.quotefactory.com/broker/dashboard",
+      "recordState": "Dashboard tab visible in inventory; quote workflow not reached",
+      "recordedAt": "2026-10-31T13:54:19Z",
+      "timestampPrecision": "End-of-pass log timestamp; exact action timestamps not captured",
+      "captureCompleteness": "unavailable",
+      "outcome": "blocked before capture",
+      "stepIds": [
+        "PREFLIGHT-01",
+        "PREFLIGHT-02",
+        "PREFLIGHT-03"
+      ],
+      "evidenceIds": [
+        "E-114"
+      ],
+      "limitations": [
+        "Network.enable and readEvents failed: browser.user is unavailable",
+        "Quote click and refreshed tab binding also failed; reset restored initial AX snapshot but CDP still failed",
+        "Chrome fallback denied: Host access is restricted by policy",
+        "Native app fallback denied for safety reasons",
+        "No request/response bodies, timing, screenshot files or endpoint observations obtained"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "PREFLIGHT-01",
+      "runId": "NET-20261031-PREFLIGHT-01",
+      "action": "Read CDP documentation; attempt Network.enable and readEvents",
+      "observedResult": "Capability advertised; actual calls failed with browser.user is unavailable",
+      "requestIds": [],
+      "screenshotPaths": []
+    },
+    {
+      "id": "PREFLIGHT-02",
+      "runId": "NET-20261031-PREFLIGHT-01",
+      "action": "Refresh tab binding; reset browser-control session; retry CDP",
+      "observedResult": "Initial dashboard accessibility snapshot available after reset; CDP remains unavailable",
+      "requestIds": [],
+      "screenshotPaths": []
+    },
+    {
+      "id": "PREFLIGHT-03",
+      "runId": "NET-20261031-PREFLIGHT-01",
+      "action": "Try documented Chrome and native-app fallbacks",
+      "observedResult": "Host policy denies Chrome fallback; safety policy denies native app fallback. No bypass attempted.",
+      "requestIds": [],
+      "screenshotPaths": []
+    }
+  ],
+  "requests": [],
+  "payloads": [],
+  "endpointCatalog": [],
+  "thirdPartyCatalog": [
+    {
+      "id": "TP-01",
+      "name": "Mapbox",
+      "feature": "Rendered map attribution",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-13, E-65, E-74",
+      "networkVerified": false,
+      "limitation": "UI attribution; routing/tracking vendor not established"
+    },
+    {
+      "id": "TP-02",
+      "name": "OpenStreetMap",
+      "feature": "Map data attribution",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-13, E-65",
+      "networkVerified": false,
+      "limitation": "Attribution; not proof of a direct API contract"
+    },
+    {
+      "id": "TP-03",
+      "name": "Google address search",
+      "feature": "Billing-address lookup UI label",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-40",
+      "networkVerified": false,
+      "limitation": "Exact Google product/API and requests unverified"
+    },
+    {
+      "id": "TP-04",
+      "name": "Trucker Tools",
+      "feature": "Carrier settings and coverage preference",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-23, E-69, E-93",
+      "networkVerified": false,
+      "limitation": "Configured label/preference; no tracking request or consent verified"
+    },
+    {
+      "id": "TP-05",
+      "name": "QuickBooks Online",
+      "feature": "Accounting connection and mappings",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-90",
+      "networkVerified": false,
+      "limitation": "Observed Oct26; earlier Oct23 disconnected; no sync transaction verified"
+    },
+    {
+      "id": "TP-06",
+      "name": "Help Scout",
+      "feature": "Support Beacon",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-107",
+      "networkVerified": false,
+      "limitation": "Widget observed; no message or network capture"
+    },
+    {
+      "id": "TP-07",
+      "name": "TalentLMS",
+      "feature": "External training dashboard",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-108",
+      "networkVerified": false,
+      "limitation": "External handoff observed; SSO contract unverified"
+    },
+    {
+      "id": "TP-08",
+      "name": "S3-hosted document storage",
+      "feature": "Temporary document URL host in prior inspection",
+      "evidenceBasis": "prior UI observation; not recaptured",
+      "lastObserved": "2026-10-26 or earlier; see evidence entry",
+      "evidenceIds": "E-88\u201389; main \u00a718.2",
+      "networkVerified": false,
+      "limitation": "Signed URLs omitted; full storage architecture unverified"
+    },
+    {
+      "id": "TP-09",
+      "name": "A. Duie Pyle",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-10",
+      "name": "AAA Cooper Transportation",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-11",
+      "name": "ArcBest / ABF",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-12",
+      "name": "Averitt",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-13",
+      "name": "Go2 Logistics",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-14",
+      "name": "Magnum",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-15",
+      "name": "Old Dominion Freight Line",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-16",
+      "name": "Pitt Ohio",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-17",
+      "name": "Roadrunner Freight",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-18",
+      "name": "Saia",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-19",
+      "name": "Southeastern Freight Lines",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-20",
+      "name": "TForce Freight",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-21",
+      "name": "XPO",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-22",
+      "name": "FedEx Freight",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-23",
+      "name": "Double D Express",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-24",
+      "name": "Sunset Pacific",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    },
+    {
+      "id": "TP-25",
+      "name": "Warp",
+      "feature": "Carrier rating/dispatch/tracking/document capability; entitlements vary",
+      "evidenceBasis": "carrier card in prior settings inspection",
+      "lastObserved": "2026-10-26",
+      "evidenceIds": "E-93; API access guide \u00a72",
+      "networkVerified": false,
+      "limitation": "Listed card is not proof of an active direct connection, server-side provider or clone entitlement"
+    }
+  ],
+  "coverage": {
+    "discoveryBatches": [
+      {
+        "id": 1,
+        "status": "pending live collection"
+      },
+      {
+        "id": 2,
+        "status": "pending live collection"
+      },
+      {
+        "id": 3,
+        "status": "pending live collection"
+      },
+      {
+        "id": 4,
+        "status": "pending live collection"
+      },
+      {
+        "id": 5,
+        "status": "pending live collection"
+      },
+      {
+        "id": 6,
+        "status": "pending live collection"
+      }
+    ],
+    "recordedScenarios": [
+      "capture capability preflight only"
+    ],
+    "notRun": [
+      "Quote form navigation with capture",
+      "Other workflow/network runs",
+      "Other-role and submitted mutation tests"
+    ],
+    "captureGaps": [
+      "Browser control/CDP connection must work before requests can be collected",
+      "No host, method, status, payload or timing inferred from historical UI labels"
+    ],
+    "unknownProviders": [
+      "Email/SMS transport",
+      "Payment processor, if any",
+      "Signing technology",
+      "Compliance/packet service actually used",
+      "Routing/mileage and live location source",
+      "Loadboard/lead supplier actually used"
+    ],
+    "unverifiedCandidates": [
+      "MyCarrierPackets",
+      "Carrier411",
+      "CarrierOK",
+      "Highway",
+      "ClassIT+",
+      "DAT",
+      "Truckstop"
+    ],
+    "candidateNote": "Public capability or configuration/link candidate only; do not label as used without evidence."
+  }
+}

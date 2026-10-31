@@ -150,6 +150,9 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 
 | E-113 | Oct26 / official PDF research | [NMFTA Procedures](https://nmfta.org/wp-content/uploads/2026/03/FCDC-Procedures-3.9.26-Final.pdf), Appendix A.1.a, PDF page8 | Full13-band density scale; table and boundaries added main §14.5a. | Conditional classification reference, not app-algorithm or commodity verification. | Pricing lead |
 
+| E-114 | Oct31 / deep-discovery preflight | Existing dashboard tab → CDP documentation → Network.enable/readEvents; quote navigation; binding/reset; Chrome/native fallbacks | CDP capability advertised; actual calls fail with browser.user unavailable. Reset yields initial dashboard AX state but CDP still fails. Chrome host policy denies access; native Codex app denied for safety. | No successful network capture, fresh quote workflow or saved screenshot. Not an app failure, role denial or evidence of no requests. Recorded in NET-20261031-PREFLIGHT-01. | Browser/tool administrator |
+| E-115 | Oct31 / local evidence reconciliation | Main §18, E-23/40/65/69/74/88–90/93/107–108 and API guide §2 | Seeded JSON catalog with eight map/address/tracking/accounting/support/training/storage observations and17 carrier cards, each with evidence basis and networkVerified false. | Historical UI evidence only; not fresh network detection, direct integration health, exhaustive vendor discovery or server architecture proof. | Integration lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -176,4 +179,4 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-113. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-115. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.

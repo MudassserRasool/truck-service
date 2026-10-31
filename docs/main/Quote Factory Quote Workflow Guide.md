@@ -1594,6 +1594,19 @@ Read Settings → Carriers → Carrier integrations, then compare provider names
 
 **Delivered:** Corrected existing API guide, all 17 carrier entries, feature/dependency categories, official-source links, secure account/access worksheet, operation-specific failure/acceptance tests and current-versus-historical readiness distinctions. **Pending:** client supplier/launch decisions, contracts, named account owners, sandbox/production access and runtime validation. A manual/internal alternative must be explicitly approved rather than silently replacing an automatic workflow. **Continue reading:** [§19](#settings-reporting) covers settings, access, reporting and shared controls.
 
+**18.6 Browser/network discovery — October 31 follow-up**
+
+The deeper pass adds [one consolidated network JSON](network/quote-factory-network.json), with [capture notes](network/README.md). **Current capture status: blocked before recording live requests.** Browser Use advertised CDP, but Network.enable/readEvents failed with “browser.user is unavailable”; quote navigation/binding also failed. Reset restored an initial dashboard accessibility snapshot, while CDP continued failing. Chrome fallback was denied by host policy; native app access was denied for safety. These are capture-tool limits, not Quote Factory errors or proof that the app made no requests (E-114).
+
+| UI/action | Observed request / payload / status / timing | Visible or tool result | What remains unknown |
+| --- | --- | --- | --- |
+| Network capture preflight and attempted Quote navigation | Unavailable; no requests recorded | CDP/binding errors; fallback policy denials | All current endpoints, payloads, statuses, timing and action correlation |
+| Historical service/provider labels | No fresh network evidence | JSON catalogs eight previously observed service categories/providers plus17 carrier cards (E-115) | Actual browser hosts and requests; server-to-server suppliers; direct/network carrier routing; notification/processor/signing vendors |
+
+The catalog explicitly sets networkVerified false and links prior evidence. Mapbox/OpenStreetMap attribution, Google address search, Trucker Tools, QuickBooks, Help Scout, TalentLMS and S3-hosted document URLs have different evidence strengths; none proves the full integration contract. Carrier cards do not prove every carrier is connected directly. MyCarrierPackets, Carrier411, CarrierOK, Highway, ClassIT+, DAT and Truckstop remain candidates/link capabilities unless separately evidenced as used.
+
+**Next capture requirement:** Restore a working Browser Use/CDP session on the authorized app origin. Then observe requests before each workflow action, collect/drain events with completeness flags, sanitize relevant payloads, save screenshots and correlate evidence to the existing use-case IDs. All six deep-discovery batches remain incomplete. Test records and alternate-role/business-review access also remain unavailable as previously recorded.
+
 <a id="settings-reporting"></a>
 **19\. Settings, access, reporting and shared controls — Phase 8**
 
