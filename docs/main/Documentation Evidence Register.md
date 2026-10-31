@@ -150,6 +150,8 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 
 | E-113 | Oct26 / official PDF research | [NMFTA Procedures](https://nmfta.org/wp-content/uploads/2026/03/FCDC-Procedures-3.9.26-Final.pdf), Appendix A.1.a, PDF page8 | Full13-band density scale; table and boundaries added main §14.5a. | Conditional classification reference, not app-algorithm or commodity verification. | Pricing lead |
 
+| E-114 | Oct31 / Deep Phase0 live | Vendors → Create new quote; direct observed quote URL; CDP capability smoke test | Network.enable/readEvents/getResponseBody succeed; loading then blank LTL form, saved screenshot and sanitized JSON run DEEP-00-R001. Browser resource hosts inventoried in main reading guide. | Partial initial event capture; one outstanding request; role not reverified; no sent-frame/child-target/body completeness or business mutation tests. Screenshot API rendering discrepancy resolved with verified browser capture. | Documentation author/integration lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -176,4 +178,4 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-113. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-114. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.

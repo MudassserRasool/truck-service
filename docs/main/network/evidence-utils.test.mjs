@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {safeUrl,shape,summarizeText} from './evidence-utils.mjs';
+const fake='SYNTHETIC_SECRET_123456';
+const samples=[safeUrl(`https://user:${fake}@example.test/1234567890abcdef12345678?access_token=${fake}#${fake}`),safeUrl(`data:text/plain,${fake}`),shape({authorization:fake,nested:{password:fake,email:fake,unknown:fake},items:[{id:fake,weight:100}]}),summarizeText(JSON.stringify({token:fake,message:fake})),summarizeText(fake)];
+assert(!JSON.stringify(samples).includes(fake));
+assert.equal(safeUrl('https://example.test/r?q=private'),'https://example.test/r?[query omitted]');
+assert.equal(shape({cost:10}).properties.cost.type,'number');
+assert.equal(summarizeText('not-json').availability,'omitted');
+assert.equal(shape({['private@example.test']:fake}).properties['[dynamic key omitted]'].type,'string');
+assert.equal(shape([]).items,null);
+console.log('PASS: synthetic secret/query/userinfo/fragment/scalar/dynamic-key redaction and payload omission tests');

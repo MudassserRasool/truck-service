@@ -1,0 +1,4403 @@
+{
+  "schemaVersion": "1.0",
+  "capturePolicy": {
+    "tool": "cua_repl CDP capability",
+    "inspectionDate": "2026-10-31",
+    "timezone": "Asia/Karachi",
+    "scope": "passive browser events; no request replay, traffic modification or operational submits",
+    "privacy": "No headers/cookies/auth values. All query values, fragments, userinfo and payload scalars omitted; identifiers in paths normalized. Binary bodies omitted. Raw events held in memory only.",
+    "capabilities": {
+      "networkEnable": "succeeded",
+      "readEvents": "succeeded",
+      "getResponseBody": {
+        "available": true,
+        "base64Encoded": false,
+        "characterCount": 72
+      },
+      "requestPostData": "not exercised",
+      "childTargets": "not exercised",
+      "webSocketFrames": "received observed; sent frames not included in this smoke test",
+      "screenshots": "getScreenshot verified; screenshot() returned incomplete page rendering and was rejected/replaced"
+    },
+    "limits": [
+      "Initial navigation event page reported truncated=true; capture is partial.",
+      "Parent target collected; cross-origin child target coverage not established.",
+      "Bodies summarized only when present in captured events; version body retrieval tested without retaining content.",
+      "No hidden server-to-provider traffic visible.",
+      "No role label rechecked this run; historical Member role not assumed current."
+    ]
+  },
+  "runs": [
+    {
+      "id": "DEEP-00-R001",
+      "workflowIds": [
+        "SETUP-00",
+        "QTE-02"
+      ],
+      "role": "broker session; exact role not reverified October31",
+      "startedAt": "2026-10-31T14:27:01.724Z",
+      "endedAt": "2026-10-31T14:28:56.646Z",
+      "startUrl": "https://app.quotefactory.com/broker/vendors",
+      "endUrl": "https://app.quotefactory.com/broker/quote",
+      "startingState": "existing vendor list",
+      "outcome": "quote form loaded, no values entered",
+      "captureCompleteness": "partial",
+      "eventCount": 208,
+      "pages": [
+        {
+          "cursor": 19,
+          "hasMore": false,
+          "truncated": false
+        },
+        {
+          "cursor": 26,
+          "hasMore": false,
+          "truncated": false
+        },
+        {
+          "cursor": 26,
+          "hasMore": false,
+          "truncated": false
+        },
+        {
+          "cursor": 175,
+          "hasMore": false,
+          "truncated": true
+        },
+        {
+          "cursor": 319,
+          "hasMore": false,
+          "truncated": false
+        },
+        {
+          "cursor": 374,
+          "hasMore": false,
+          "truncated": false
+        },
+        {
+          "cursor": 553,
+          "hasMore": false,
+          "truncated": false
+        }
+      ],
+      "outstandingRequestIds": [
+        "DEEP-00-R001:parent:145F743033576C4B65C2A7DB73F4BB1B:0"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "S01",
+      "runId": "DEEP-00-R001",
+      "action": "Click Create new quote",
+      "startedAt": "2026-10-31T14:27:01.724Z",
+      "observed": "Vendor list remained visible; no successful navigation established",
+      "requestIds": [],
+      "streamEventIds": [
+        "DEEP-00-R001:event:20",
+        "DEEP-00-R001:event:22",
+        "DEEP-00-R001:event:24"
+      ]
+    },
+    {
+      "id": "S02",
+      "runId": "DEEP-00-R001",
+      "action": "Navigate to observed /broker/quote route",
+      "startedAt": "2026-10-31T14:27:13.997Z",
+      "endedAt": "2026-10-31T14:28:56.646Z",
+      "observed": "Loading quote form followed by blank LTL form; no customer/date selected",
+      "screenshotPaths": [
+        "../screenshots/deep-00-setup-quote-initial-2026-10-31.jpg"
+      ],
+      "evidenceIds": [
+        "E-114"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.111:0",
+        "DEEP-00-R001:parent:60489.112:0",
+        "DEEP-00-R001:parent:60489.113:0",
+        "DEEP-00-R001:parent:60489.114:0",
+        "DEEP-00-R001:parent:60489.115:0",
+        "DEEP-00-R001:parent:145F743033576C4B65C2A7DB73F4BB1B:0",
+        "DEEP-00-R001:parent:60489.171:0",
+        "DEEP-00-R001:parent:60489.172:0",
+        "DEEP-00-R001:parent:60489.173:0",
+        "DEEP-00-R001:parent:60489.174:0",
+        "DEEP-00-R001:parent:0ADFDD7A89229084AD1B7C0C4DF07F2E:0",
+        "DEEP-00-R001:parent:60489.178:0",
+        "DEEP-00-R001:parent:60489.179:0",
+        "DEEP-00-R001:parent:60489.180:0",
+        "DEEP-00-R001:parent:60489.181:0",
+        "DEEP-00-R001:parent:60489.182:0",
+        "DEEP-00-R001:parent:60489.183:0",
+        "DEEP-00-R001:parent:60489.184:0",
+        "DEEP-00-R001:parent:60489.185:0",
+        "DEEP-00-R001:parent:60489.186:0",
+        "DEEP-00-R001:parent:60489.187:0",
+        "DEEP-00-R001:parent:60489.188:0",
+        "DEEP-00-R001:parent:60489.189:0",
+        "DEEP-00-R001:parent:60489.190:0",
+        "DEEP-00-R001:parent:60489.191:0",
+        "DEEP-00-R001:parent:60489.192:0",
+        "DEEP-00-R001:parent:60489.193:0",
+        "DEEP-00-R001:parent:70D3CAC8329BCF83CDE75DA645956B97:0",
+        "DEEP-00-R001:parent:A14405D8D7E9FC0581B95FCE42D037EA:0",
+        "DEEP-00-R001:parent:60489.195:0",
+        "DEEP-00-R001:parent:60489.196:0",
+        "DEEP-00-R001:parent:005B347E85C83C59E6F4C9AE50989DFB:0",
+        "DEEP-00-R001:parent:0FC864E393FC34611BAB1A8B21568AF7:0",
+        "DEEP-00-R001:parent:00C8A723915138366ACA31E944D365A1:0",
+        "DEEP-00-R001:parent:60489.148:0",
+        "DEEP-00-R001:parent:60489.197:0",
+        "DEEP-00-R001:parent:60489.199:0",
+        "DEEP-00-R001:parent:60489.200:0",
+        "DEEP-00-R001:parent:60489.201:0",
+        "DEEP-00-R001:parent:60489.202:0",
+        "DEEP-00-R001:parent:60489.203:0",
+        "DEEP-00-R001:parent:57123869B599A5DAE7331DC96B9F1AB4:0",
+        "DEEP-00-R001:parent:31F4647DD60BE20A82D43AF15822562B:0",
+        "DEEP-00-R001:parent:9007BC7396EC82D3F3F41FAEF9FC2486:0",
+        "DEEP-00-R001:parent:60489.204:0",
+        "DEEP-00-R001:parent:60489.205:0",
+        "DEEP-00-R001:parent:F7C5C6A11D5CE4809655D4F969CDE8B8:0",
+        "DEEP-00-R001:parent:60489.123:0",
+        "DEEP-00-R001:parent:957FB11BE440E014AC5E1B5C6DD862C8:0",
+        "DEEP-00-R001:parent:2A7D52DDFBFCCAEC15C49A428474F713:0",
+        "DEEP-00-R001:parent:48F2E7EEA2DED3B8C72F67696678E972:0",
+        "DEEP-00-R001:parent:B7252BF6864B34B1B93D3EB4591566DD:0",
+        "DEEP-00-R001:parent:60489.206:0",
+        "DEEP-00-R001:parent:60489.207:0",
+        "DEEP-00-R001:parent:60489.208:0",
+        "DEEP-00-R001:parent:60489.209:0",
+        "DEEP-00-R001:parent:60489.210:0",
+        "DEEP-00-R001:parent:60489.211:0",
+        "DEEP-00-R001:parent:60489.212:0",
+        "DEEP-00-R001:parent:8484955C1F2BC2C57129E4A8B29A9097:0",
+        "DEEP-00-R001:parent:14BA7A812BA746D6952D92E1C3F923AF:0",
+        "DEEP-00-R001:parent:2BAFB77B26D38C715874001E556926B0:0",
+        "DEEP-00-R001:parent:60489.213:0"
+      ],
+      "screenshotCapturedAt": "2026-10-31T14:30:34.050789+00:00",
+      "screenshotTiming": "Captured after bounded network window; settled empty quote form. Native browser screenshot used after alternate screenshot API omitted content."
+    }
+  ],
+  "requests": [
+    {
+      "id": "DEEP-00-R001:parent:60489.111:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.111",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?[query omitted]",
+      "resourceType": "Stylesheet",
+      "sequence": 53,
+      "monotonicTimestamp": 134180.72109,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "text/css",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h3",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 34.494,
+        "receiveHeadersStart": 34.298,
+        "requestTime": 134180.731979,
+        "sendEnd": 33.813,
+        "sendStart": 33.813,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.112:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.112",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/init.js",
+      "resourceType": "Script",
+      "sequence": 54,
+      "monotonicTimestamp": 134180.721263,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "text/html",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 331.12,
+        "receiveHeadersStart": 330.665,
+        "requestTime": 134180.745281,
+        "sendEnd": 21.839,
+        "sendStart": 21.265,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 48
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.113:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.113",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/assets/app.bundle.js",
+      "resourceType": "Script",
+      "sequence": 55,
+      "monotonicTimestamp": 134180.721323,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "application/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 711.759,
+        "receiveHeadersStart": 711.253,
+        "requestTime": 134180.761486,
+        "sendEnd": 5.635,
+        "sendStart": 5.16,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 62
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.114:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.114",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/assets/stylesheets/qf-app.css",
+      "resourceType": "Stylesheet",
+      "sequence": 56,
+      "monotonicTimestamp": 134180.721386,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "text/css",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 709.068,
+        "receiveHeadersStart": 708.77,
+        "requestTime": 134180.76423,
+        "sendEnd": 2.98,
+        "sendStart": 2.716,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 38
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.115:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.115",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/assets/stylesheets/application.css",
+      "resourceType": "Stylesheet",
+      "sequence": 57,
+      "monotonicTimestamp": 134180.721433,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "text/css",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1018.446,
+        "receiveHeadersStart": 1018.078,
+        "requestTime": 134180.764434,
+        "sendEnd": 2.777,
+        "sendStart": 2.642,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 37
+    },
+    {
+      "id": "DEEP-00-R001:parent:145F743033576C4B65C2A7DB73F4BB1B:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "145F743033576C4B65C2A7DB73F4BB1B",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[blob resource omitted]",
+      "resourceType": "Script",
+      "sequence": 100,
+      "monotonicTimestamp": 134182.344971,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": null,
+      "completion": "outstanding-at-close",
+      "initiatorType": "other"
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.171:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.171",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/version",
+      "resourceType": "Fetch",
+      "sequence": 102,
+      "monotonicTimestamp": 134182.340291,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 310.99,
+        "receiveHeadersStart": 310.394,
+        "requestTime": 134182.341384,
+        "sendEnd": 0.806,
+        "sendStart": 0.672,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 327
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.172:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.172",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "POST",
+      "url": "https://app.quotefactory.com/sentry",
+      "resourceType": "Fetch",
+      "sequence": 103,
+      "monotonicTimestamp": 134182.342826,
+      "requestPayload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 577
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 333.73,
+        "receiveHeadersStart": 333.067,
+        "requestTime": 134182.344219,
+        "sendEnd": 1.752,
+        "sendStart": 1.427,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 32
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.173:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.173",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[data resource omitted]",
+      "resourceType": "Image",
+      "sequence": 104,
+      "monotonicTimestamp": 134182.346812,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "image/webp",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "data",
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.174:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.174",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/me",
+      "resourceType": "Fetch",
+      "sequence": 112,
+      "monotonicTimestamp": 134182.357836,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 334.461,
+        "receiveHeadersStart": 333.6,
+        "requestTime": 134183.803733,
+        "sendEnd": 1.801,
+        "sendStart": 1.626,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 5212
+    },
+    {
+      "id": "DEEP-00-R001:parent:0ADFDD7A89229084AD1B7C0C4DF07F2E:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "0ADFDD7A89229084AD1B7C0C4DF07F2E",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/me",
+      "resourceType": "Other",
+      "sequence": 113,
+      "monotonicTimestamp": 134182.358902,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": 1124.111,
+        "connectStart": 487.093,
+        "dnsEnd": 486.619,
+        "dnsStart": 0.186,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1441.962,
+        "receiveHeadersStart": 1441.662,
+        "requestTime": 134182.359259,
+        "sendEnd": 1124.433,
+        "sendStart": 1124.279,
+        "sslEnd": 1124.103,
+        "sslStart": 805.18,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.178:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.178",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 116,
+      "monotonicTimestamp": 134182.423456,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 11755
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.179:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.179",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 117,
+      "monotonicTimestamp": 134182.424452,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 10819
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.180:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.180",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/",
+      "resourceType": "Script",
+      "sequence": 119,
+      "monotonicTimestamp": 134182.426825,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": 612.853,
+        "connectStart": 363.755,
+        "dnsEnd": 108.056,
+        "dnsStart": 1.797,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 892.967,
+        "receiveHeadersStart": 892.66,
+        "requestTime": 134182.658077,
+        "sendEnd": 613.224,
+        "sendStart": 613.08,
+        "sslEnd": 612.842,
+        "sslStart": 488.47,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 512
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.181:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.181",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 145,
+      "monotonicTimestamp": 134182.493636,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 12284
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.182:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.182",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 146,
+      "monotonicTimestamp": 134182.493855,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 218831
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.183:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.183",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 147,
+      "monotonicTimestamp": 134182.49401,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 3612
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.184:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.184",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 148,
+      "monotonicTimestamp": 134182.494159,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 125819
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.185:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.185",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 149,
+      "monotonicTimestamp": 134182.495124,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 2257
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.186:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.186",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 165,
+      "monotonicTimestamp": 134182.5184,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 40995
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.187:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.187",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "[chrome-extension resource omitted]",
+      "resourceType": "Script",
+      "sequence": 166,
+      "monotonicTimestamp": 134182.518747,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "text/javascript",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "chrome-extension",
+      "encodedDataLength": 93595
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.188:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.188",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/static/js/vendor.4969c740.js",
+      "resourceType": "Script",
+      "sequence": 192,
+      "monotonicTimestamp": 134183.553758,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 0.922,
+        "receiveHeadersStart": 0.872,
+        "requestTime": 134183.55598,
+        "sendEnd": 0.599,
+        "sendStart": 0.599,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.189:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.189",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/static/js/main.b2a074ce.js",
+      "resourceType": "Script",
+      "sequence": 193,
+      "monotonicTimestamp": 134183.5542,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1.065,
+        "receiveHeadersStart": 1.029,
+        "requestTime": 134183.556444,
+        "sendEnd": 0.836,
+        "sendStart": 0.836,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.190:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.190",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/static/js/hsds-icons.eec97a67.chunk.js",
+      "resourceType": "Script",
+      "sequence": 200,
+      "monotonicTimestamp": 134183.565187,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1.344,
+        "receiveHeadersStart": 1.293,
+        "requestTime": 134183.566351,
+        "sendEnd": 1.037,
+        "sendStart": 1.037,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.191:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.191",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/static/js/hsds-icon.9dff00d8.chunk.js",
+      "resourceType": "Script",
+      "sequence": 201,
+      "monotonicTimestamp": 134183.565526,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1.611,
+        "receiveHeadersStart": 1.578,
+        "requestTime": 134183.566599,
+        "sendEnd": 0.827,
+        "sendStart": 0.827,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.192:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.192",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://beacon-v2.helpscout.net/static/js/full-beacon-init.844bcc45.chunk.js",
+      "resourceType": "Script",
+      "sequence": 202,
+      "monotonicTimestamp": 134183.565714,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/javascript",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 0.443,
+        "receiveHeadersStart": 0.413,
+        "requestTime": 134183.567308,
+        "sendEnd": 0.144,
+        "sendStart": 0.144,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.193:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.193",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://d3hb14vkzrxvla.cloudfront.net/v1/:opaqueId",
+      "resourceType": "XHR",
+      "sequence": 212,
+      "monotonicTimestamp": 134183.594727,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 720.401,
+        "receiveHeadersStart": 720.216,
+        "requestTime": 134192.91958,
+        "sendEnd": 1.768,
+        "sendStart": 1.605,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 10541
+    },
+    {
+      "id": "DEEP-00-R001:parent:70D3CAC8329BCF83CDE75DA645956B97:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "70D3CAC8329BCF83CDE75DA645956B97",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://d3hb14vkzrxvla.cloudfront.net/v1/:opaqueId",
+      "resourceType": "Other",
+      "sequence": 213,
+      "monotonicTimestamp": 134183.59616,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": 8825.887,
+        "connectStart": 115.611,
+        "dnsEnd": 115.244,
+        "dnsStart": 0.19,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 9321.118,
+        "receiveHeadersStart": 9320.996,
+        "requestTime": 134183.596486,
+        "sendEnd": 8826.401,
+        "sendStart": 8826.164,
+        "sslEnd": 8825.873,
+        "sslStart": 262.552,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:A14405D8D7E9FC0581B95FCE42D037EA:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "A14405D8D7E9FC0581B95FCE42D037EA",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/users/accounts",
+      "resourceType": "Other",
+      "sequence": 223,
+      "monotonicTimestamp": 134185.446006,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 319.196,
+        "receiveHeadersStart": 318.966,
+        "requestTime": 134185.446525,
+        "sendEnd": 1.961,
+        "sendStart": 1.789,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.195:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.195",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/users/accounts",
+      "resourceType": "Fetch",
+      "sequence": 225,
+      "monotonicTimestamp": 134185.445053,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 330.345,
+        "receiveHeadersStart": 330.129,
+        "requestTime": 134185.767797,
+        "sendEnd": 2.41,
+        "sendStart": 2.182,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 3310
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.196:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.196",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/domain-values",
+      "resourceType": "Fetch",
+      "sequence": 226,
+      "monotonicTimestamp": 134185.445939,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 325.701,
+        "receiveHeadersStart": 325.359,
+        "requestTime": 134185.770385,
+        "sendEnd": 0.983,
+        "sendStart": 0.834,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 89
+    },
+    {
+      "id": "DEEP-00-R001:parent:005B347E85C83C59E6F4C9AE50989DFB:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "005B347E85C83C59E6F4C9AE50989DFB",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/domain-values",
+      "resourceType": "Other",
+      "sequence": 227,
+      "monotonicTimestamp": 134185.44814,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 319.454,
+        "receiveHeadersStart": 319.27,
+        "requestTime": 134185.44866,
+        "sendEnd": 0.538,
+        "sendStart": 0.301,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:0FC864E393FC34611BAB1A8B21568AF7:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "0FC864E393FC34611BAB1A8B21568AF7",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/accounts/users",
+      "resourceType": "Other",
+      "sequence": 248,
+      "monotonicTimestamp": 134186.858386,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 329.888,
+        "receiveHeadersStart": 329.709,
+        "requestTime": 134186.858432,
+        "sendEnd": 2.72,
+        "sendStart": 2.223,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:00C8A723915138366ACA31E944D365A1:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "00C8A723915138366ACA31E944D365A1",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/customers",
+      "resourceType": "Other",
+      "sequence": 249,
+      "monotonicTimestamp": 134186.859322,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 323.253,
+        "receiveHeadersStart": 323.037,
+        "requestTime": 134186.861573,
+        "sendEnd": 3.419,
+        "sendStart": 3.254,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.148:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.148",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk3wotYKNnBQ.woff2",
+      "resourceType": "Font",
+      "sequence": 251,
+      "monotonicTimestamp": 134186.849357,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "font/woff2",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h3",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 0.533,
+        "receiveHeadersStart": 0.492,
+        "requestTime": 134186.850323,
+        "sendEnd": 0.206,
+        "sendStart": 0.206,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.197:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.197",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://cdn.filestackcontent.com/9R7zEH8vR9iBG1miE6f3",
+      "resourceType": "Image",
+      "sequence": 252,
+      "monotonicTimestamp": 134186.855488,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "other",
+      "mimeType": "image/png",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1.128,
+        "receiveHeadersStart": 1.038,
+        "requestTime": 134186.856603,
+        "sendEnd": 0.356,
+        "sendStart": 0.356,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.199:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.199",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://ui-avatars.com/api/?[query omitted]",
+      "resourceType": "Image",
+      "sequence": 253,
+      "monotonicTimestamp": 134186.855736,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "other",
+      "mimeType": "image/svg+xml",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 0.909,
+        "receiveHeadersStart": 0.844,
+        "requestTime": 134186.85685,
+        "sendEnd": 0.219,
+        "sendStart": 0.219,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.200:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.200",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/accounts/users",
+      "resourceType": "Fetch",
+      "sequence": 254,
+      "monotonicTimestamp": 134186.857128,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2924.099,
+        "receiveHeadersStart": 2923.528,
+        "requestTime": 134187.191237,
+        "sendEnd": 2.432,
+        "sendStart": 2.278,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 89
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.201:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.201",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/customers",
+      "resourceType": "Fetch",
+      "sequence": 255,
+      "monotonicTimestamp": 134186.857844,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 6389.33,
+        "receiveHeadersStart": 6388.96,
+        "requestTime": 134187.188759,
+        "sendEnd": 2.04,
+        "sendStart": 1.564,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 100007
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.202:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.202",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/provider-integrations",
+      "resourceType": "Fetch",
+      "sequence": 256,
+      "monotonicTimestamp": 134186.858527,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 14985.49,
+        "receiveHeadersStart": 14985.231,
+        "requestTime": 134187.187951,
+        "sendEnd": 5.351,
+        "sendStart": 5.153,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 12549
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.203:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.203",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/integrations",
+      "resourceType": "Fetch",
+      "sequence": 257,
+      "monotonicTimestamp": 134186.860691,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 331.051,
+        "receiveHeadersStart": 330.841,
+        "requestTime": 134187.186495,
+        "sendEnd": 3.08,
+        "sendStart": 2.914,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 156403
+    },
+    {
+      "id": "DEEP-00-R001:parent:57123869B599A5DAE7331DC96B9F1AB4:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "57123869B599A5DAE7331DC96B9F1AB4",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/provider-integrations",
+      "resourceType": "Other",
+      "sequence": 263,
+      "monotonicTimestamp": 134186.863748,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 321.089,
+        "receiveHeadersStart": 320.828,
+        "requestTime": 134186.863408,
+        "sendEnd": 1.81,
+        "sendStart": 1.695,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:31F4647DD60BE20A82D43AF15822562B:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "31F4647DD60BE20A82D43AF15822562B",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/integrations",
+      "resourceType": "Other",
+      "sequence": 264,
+      "monotonicTimestamp": 134186.864594,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 317.981,
+        "receiveHeadersStart": 317.764,
+        "requestTime": 134186.865349,
+        "sendEnd": 0.439,
+        "sendStart": 0.308,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:9007BC7396EC82D3F3F41FAEF9FC2486:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "9007BC7396EC82D3F3F41FAEF9FC2486",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/system-messages?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 275,
+      "monotonicTimestamp": 134186.878346,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 319.222,
+        "receiveHeadersStart": 319.03,
+        "requestTime": 134186.878946,
+        "sendEnd": 2.517,
+        "sendStart": 2.139,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.204:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.204",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/system-messages?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 276,
+      "monotonicTimestamp": 134186.877507,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 29350.094,
+        "receiveHeadersStart": 29349.399,
+        "requestTime": 134187.199838,
+        "sendEnd": 0.786,
+        "sendStart": 0.625,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 87
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.205:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.205",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://api.quotefactory.com/provider-integrations",
+      "resourceType": "Fetch",
+      "sequence": 277,
+      "monotonicTimestamp": 134186.878139,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 44856.14,
+        "receiveHeadersStart": 44855.808,
+        "requestTime": 134187.500191,
+        "sendEnd": 14682.694,
+        "sendStart": 14682.465,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 12821
+    },
+    {
+      "id": "DEEP-00-R001:parent:F7C5C6A11D5CE4809655D4F969CDE8B8:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "F7C5C6A11D5CE4809655D4F969CDE8B8",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/provider-integrations",
+      "resourceType": "Other",
+      "sequence": 278,
+      "monotonicTimestamp": 134186.880749,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 616.506,
+        "receiveHeadersStart": 616.272,
+        "requestTime": 134186.881729,
+        "sendEnd": 0.628,
+        "sendStart": 0.452,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.123:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.123",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://fonts.gstatic.com/s/mulish/v18/1Pttg83HX_SGhgqk2jovaqRFB_ie.woff2",
+      "resourceType": "Font",
+      "sequence": 398,
+      "monotonicTimestamp": 134205.285612,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "parser",
+      "mimeType": "font/woff2",
+      "fromDiskCache": true,
+      "fromServiceWorker": false,
+      "protocol": "h3",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1.536,
+        "receiveHeadersStart": 1.498,
+        "requestTime": 134205.286412,
+        "sendEnd": 0.151,
+        "sendStart": 0.151,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:957FB11BE440E014AC5E1B5C6DD862C8:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "957FB11BE440E014AC5E1B5C6DD862C8",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 459,
+      "monotonicTimestamp": 134232.375682,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2338.292,
+        "receiveHeadersStart": 2338.164,
+        "requestTime": 134232.376082,
+        "sendEnd": 0.996,
+        "sendStart": 0.82,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:2A7D52DDFBFCCAEC15C49A428474F713:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "2A7D52DDFBFCCAEC15C49A428474F713",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 460,
+      "monotonicTimestamp": 134232.37641,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2336.703,
+        "receiveHeadersStart": 2336.476,
+        "requestTime": 134232.376707,
+        "sendEnd": 1.058,
+        "sendStart": 0.96,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:48F2E7EEA2DED3B8C72F67696678E972:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "48F2E7EEA2DED3B8C72F67696678E972",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 461,
+      "monotonicTimestamp": 134232.37695,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2336.42,
+        "receiveHeadersStart": 2336.272,
+        "requestTime": 134232.377197,
+        "sendEnd": 1.398,
+        "sendStart": 1.286,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:B7252BF6864B34B1B93D3EB4591566DD:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "B7252BF6864B34B1B93D3EB4591566DD",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 463,
+      "monotonicTimestamp": 134232.377971,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2335.9,
+        "receiveHeadersStart": 2335.766,
+        "requestTime": 134232.377882,
+        "sendEnd": 3.17,
+        "sendStart": 3.062,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.206:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.206",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 465,
+      "monotonicTimestamp": 134232.374823,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 646.02,
+        "receiveHeadersStart": 645.664,
+        "requestTime": 134234.721751,
+        "sendEnd": 1.784,
+        "sendStart": 1.686,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 58
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.207:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.207",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 466,
+      "monotonicTimestamp": 134232.375358,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 649.219,
+        "receiveHeadersStart": 648.868,
+        "requestTime": 134234.71901,
+        "sendEnd": 3.279,
+        "sendStart": 3.137,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 61
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.208:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.208",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 467,
+      "monotonicTimestamp": 134232.375827,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 331.638,
+        "receiveHeadersStart": 331.384,
+        "requestTime": 134234.720972,
+        "sendEnd": 1.703,
+        "sendStart": 1.489,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 408
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.209:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.209",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 468,
+      "monotonicTimestamp": 134232.376307,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 331.673,
+        "receiveHeadersStart": 331.522,
+        "requestTime": 134234.721147,
+        "sendEnd": 1.529,
+        "sendStart": 1.395,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 62
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.210:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.210",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/quote-requests?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 469,
+      "monotonicTimestamp": 134232.376772,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 647.037,
+        "receiveHeadersStart": 646.891,
+        "requestTime": 134234.721609,
+        "sendEnd": 1.723,
+        "sendStart": 1.622,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 58
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.211:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.211",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/providers?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 470,
+      "monotonicTimestamp": 134232.377236,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 647.525,
+        "receiveHeadersStart": 647.38,
+        "requestTime": 134234.721297,
+        "sendEnd": 1.605,
+        "sendStart": 1.493,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 58
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.212:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.212",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "HEAD",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Fetch",
+      "sequence": 471,
+      "monotonicTimestamp": 134232.377738,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 647.009,
+        "receiveHeadersStart": 646.838,
+        "requestTime": 134234.721453,
+        "sendEnd": 1.668,
+        "sendStart": 1.564,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 61
+    },
+    {
+      "id": "DEEP-00-R001:parent:8484955C1F2BC2C57129E4A8B29A9097:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "8484955C1F2BC2C57129E4A8B29A9097",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/quote-requests?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 473,
+      "monotonicTimestamp": 134232.380376,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2334.763,
+        "receiveHeadersStart": 2334.639,
+        "requestTime": 134232.379459,
+        "sendEnd": 1.786,
+        "sendStart": 1.696,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:14BA7A812BA746D6952D92E1C3F923AF:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "14BA7A812BA746D6952D92E1C3F923AF",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/providers?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 475,
+      "monotonicTimestamp": 134232.380828,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2333.52,
+        "receiveHeadersStart": 2333.399,
+        "requestTime": 134232.38041,
+        "sendEnd": 1.181,
+        "sendStart": 1.088,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:2BAFB77B26D38C715874001E556926B0:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "2BAFB77B26D38C715874001E556926B0",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "OPTIONS",
+      "url": "https://api.quotefactory.com/shipments?[query omitted]",
+      "resourceType": "Other",
+      "sequence": 476,
+      "monotonicTimestamp": 134232.381124,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 204,
+      "completion": "finished",
+      "initiatorType": "preflight",
+      "mimeType": "",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": -1,
+        "connectStart": -1,
+        "dnsEnd": -1,
+        "dnsStart": -1,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 2332.721,
+        "receiveHeadersStart": 2332.602,
+        "requestTime": 134232.381353,
+        "sendEnd": 0.553,
+        "sendStart": 0.466,
+        "sslEnd": -1,
+        "sslStart": -1,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 0
+    },
+    {
+      "id": "DEEP-00-R001:parent:60489.213:0",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.213",
+      "target": "parent",
+      "redirectLeg": 0,
+      "method": "GET",
+      "url": "https://app.quotefactory.com/version",
+      "resourceType": "Fetch",
+      "sequence": 539,
+      "monotonicTimestamp": 134246.846023,
+      "requestPayload": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "status": 200,
+      "completion": "finished",
+      "initiatorType": "script",
+      "mimeType": "application/json",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "protocol": "h2",
+      "timing": {
+        "connectEnd": 1117.067,
+        "connectStart": 491.64,
+        "dnsEnd": 491.081,
+        "dnsStart": 0.697,
+        "proxyEnd": -1,
+        "proxyStart": -1,
+        "pushEnd": 0,
+        "pushStart": 0,
+        "receiveHeadersEnd": 1817.903,
+        "receiveHeadersStart": 1817.455,
+        "requestTime": 134246.847624,
+        "sendEnd": 1117.539,
+        "sendStart": 1117.34,
+        "sslEnd": 1117.058,
+        "sslStart": 803.627,
+        "workerFetchStart": -1,
+        "workerReady": -1,
+        "workerRespondWithSettled": -1,
+        "workerStart": -1
+      },
+      "encodedDataLength": 514
+    }
+  ],
+  "payloads": [
+    {
+      "requestId": "DEEP-00-R001:parent:60489.111:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.112:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.113:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.114:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.115:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:145F743033576C4B65C2A7DB73F4BB1B:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.171:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "Retrieval succeeded; content intentionally omitted in setup test"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.172:0",
+      "request": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 577
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.173:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.174:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:0ADFDD7A89229084AD1B7C0C4DF07F2E:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.178:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.179:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.180:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.181:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.182:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.183:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.184:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.185:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.186:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.187:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.188:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.189:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.190:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.191:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.192:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.193:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:70D3CAC8329BCF83CDE75DA645956B97:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:A14405D8D7E9FC0581B95FCE42D037EA:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.195:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.196:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:005B347E85C83C59E6F4C9AE50989DFB:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:0FC864E393FC34611BAB1A8B21568AF7:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:00C8A723915138366ACA31E944D365A1:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.148:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.197:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.199:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.200:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.201:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.202:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.203:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:57123869B599A5DAE7331DC96B9F1AB4:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:31F4647DD60BE20A82D43AF15822562B:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:9007BC7396EC82D3F3F41FAEF9FC2486:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.204:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.205:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:F7C5C6A11D5CE4809655D4F969CDE8B8:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.123:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:957FB11BE440E014AC5E1B5C6DD862C8:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:2A7D52DDFBFCCAEC15C49A428474F713:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:48F2E7EEA2DED3B8C72F67696678E972:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:B7252BF6864B34B1B93D3EB4591566DD:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.206:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.207:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.208:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.209:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.210:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.211:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.212:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:8484955C1F2BC2C57129E4A8B29A9097:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:14BA7A812BA746D6952D92E1C3F923AF:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:2BAFB77B26D38C715874001E556926B0:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    },
+    {
+      "requestId": "DEEP-00-R001:parent:60489.213:0",
+      "request": {
+        "availability": "not-present-in-event",
+        "reason": "request body not supplied in event"
+      },
+      "response": {
+        "availability": "not-collected",
+        "reason": "body retrieval not attempted; not an empty response"
+      }
+    }
+  ],
+  "streamEvents": [
+    {
+      "id": "DEEP-00-R001:event:20",
+      "sequence": 20,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S01",
+      "browserRequestId": "60489.85",
+      "monotonicTimestamp": 134149.492442,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:22",
+      "sequence": 22,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S01",
+      "browserRequestId": "60489.85",
+      "monotonicTimestamp": 134158.332797,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:24",
+      "sequence": 24,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S01",
+      "browserRequestId": "60489.85",
+      "monotonicTimestamp": 134166.644739,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:224",
+      "sequence": 224,
+      "method": "Network.webSocketCreated",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "url": "wss://ws.quotefactory.com/ws/?[query omitted]",
+      "payload": {
+        "availability": "not-applicable"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:310",
+      "sequence": 310,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134187.931087,
+      "opcode": 1,
+      "payload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 105
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:313",
+      "sequence": 313,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134188.275196,
+      "opcode": 1,
+      "payload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 32
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:371",
+      "sequence": 371,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134194.941519,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:377",
+      "sequence": 377,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134197.410583,
+      "opcode": 1,
+      "payload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 752
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:393",
+      "sequence": 393,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134203.256052,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:414",
+      "sequence": 414,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134210.978095,
+      "opcode": 1,
+      "payload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 752
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:415",
+      "sequence": 415,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134211.572877,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:438",
+      "sequence": 438,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134219.886196,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:451",
+      "sequence": 451,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134228.202473,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:535",
+      "sequence": 535,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134236.516447,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:537",
+      "sequence": 537,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134244.829698,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:545",
+      "sequence": 545,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134253.143368,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:547",
+      "sequence": 547,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134261.465968,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:549",
+      "sequence": 549,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134269.780315,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:551",
+      "sequence": 551,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134277.801609,
+      "opcode": 1,
+      "payload": {
+        "availability": "omitted",
+        "reason": "non-JSON text; no raw content retained",
+        "characterCount": 752
+      }
+    },
+    {
+      "id": "DEEP-00-R001:event:552",
+      "sequence": 552,
+      "method": "Network.webSocketFrameReceived",
+      "runId": "DEEP-00-R001",
+      "stepId": "S02",
+      "browserRequestId": "60489.194",
+      "monotonicTimestamp": 134278.093262,
+      "opcode": 1,
+      "payload": {
+        "availability": "summarized",
+        "shape": {
+          "type": "number"
+        },
+        "reason": "all scalar values omitted"
+      }
+    }
+  ],
+  "endpointCatalog": [
+    {
+      "method": "GET",
+      "urlPattern": "https://fonts.googleapis.com/css2?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.111:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://app.quotefactory.com/init.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.112:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://app.quotefactory.com/assets/app.bundle.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.113:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://app.quotefactory.com/assets/stylesheets/qf-app.css",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.114:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://app.quotefactory.com/assets/stylesheets/application.css",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.115:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "[blob resource omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:145F743033576C4B65C2A7DB73F4BB1B:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://app.quotefactory.com/version",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.171:0",
+        "DEEP-00-R001:parent:60489.213:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "POST",
+      "urlPattern": "https://app.quotefactory.com/sentry",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.172:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "[data resource omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.173:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/me",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.174:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/me",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:0ADFDD7A89229084AD1B7C0C4DF07F2E:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "[chrome-extension resource omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.178:0",
+        "DEEP-00-R001:parent:60489.179:0",
+        "DEEP-00-R001:parent:60489.181:0",
+        "DEEP-00-R001:parent:60489.182:0",
+        "DEEP-00-R001:parent:60489.183:0",
+        "DEEP-00-R001:parent:60489.184:0",
+        "DEEP-00-R001:parent:60489.185:0",
+        "DEEP-00-R001:parent:60489.186:0",
+        "DEEP-00-R001:parent:60489.187:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.180:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/static/js/vendor.4969c740.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.188:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/static/js/main.b2a074ce.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.189:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/static/js/hsds-icons.eec97a67.chunk.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.190:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/static/js/hsds-icon.9dff00d8.chunk.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.191:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://beacon-v2.helpscout.net/static/js/full-beacon-init.844bcc45.chunk.js",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.192:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://d3hb14vkzrxvla.cloudfront.net/v1/:opaqueId",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.193:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://d3hb14vkzrxvla.cloudfront.net/v1/:opaqueId",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:70D3CAC8329BCF83CDE75DA645956B97:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/users/accounts",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:A14405D8D7E9FC0581B95FCE42D037EA:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/users/accounts",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.195:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/domain-values",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.196:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/domain-values",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:005B347E85C83C59E6F4C9AE50989DFB:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/accounts/users",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:0FC864E393FC34611BAB1A8B21568AF7:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/customers",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:00C8A723915138366ACA31E944D365A1:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk3wotYKNnBQ.woff2",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.148:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://cdn.filestackcontent.com/9R7zEH8vR9iBG1miE6f3",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.197:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://ui-avatars.com/api/?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.199:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/accounts/users",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.200:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/customers",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.201:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/provider-integrations",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.202:0",
+        "DEEP-00-R001:parent:60489.205:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/integrations",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.203:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/provider-integrations",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:57123869B599A5DAE7331DC96B9F1AB4:0",
+        "DEEP-00-R001:parent:F7C5C6A11D5CE4809655D4F969CDE8B8:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/integrations",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:31F4647DD60BE20A82D43AF15822562B:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/system-messages?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:9007BC7396EC82D3F3F41FAEF9FC2486:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://api.quotefactory.com/system-messages?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.204:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "GET",
+      "urlPattern": "https://fonts.gstatic.com/s/mulish/v18/1Pttg83HX_SGhgqk2jovaqRFB_ie.woff2",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.123:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/shipments?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:957FB11BE440E014AC5E1B5C6DD862C8:0",
+        "DEEP-00-R001:parent:2A7D52DDFBFCCAEC15C49A428474F713:0",
+        "DEEP-00-R001:parent:48F2E7EEA2DED3B8C72F67696678E972:0",
+        "DEEP-00-R001:parent:B7252BF6864B34B1B93D3EB4591566DD:0",
+        "DEEP-00-R001:parent:2BAFB77B26D38C715874001E556926B0:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "HEAD",
+      "urlPattern": "https://api.quotefactory.com/shipments?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.206:0",
+        "DEEP-00-R001:parent:60489.207:0",
+        "DEEP-00-R001:parent:60489.208:0",
+        "DEEP-00-R001:parent:60489.209:0",
+        "DEEP-00-R001:parent:60489.212:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "HEAD",
+      "urlPattern": "https://api.quotefactory.com/quote-requests?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.210:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "HEAD",
+      "urlPattern": "https://api.quotefactory.com/providers?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:60489.211:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/quote-requests?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:8484955C1F2BC2C57129E4A8B29A9097:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    },
+    {
+      "method": "OPTIONS",
+      "urlPattern": "https://api.quotefactory.com/providers?[query omitted]",
+      "runIds": [
+        "DEEP-00-R001"
+      ],
+      "requestIds": [
+        "DEEP-00-R001:parent:14BA7A812BA746D6952D92E1C3F923AF:0"
+      ],
+      "classification": "browser-observed endpoint/resource; backend dependencies not established"
+    }
+  ],
+  "coverage": {
+    "phase": "Deep Phase0 setup only",
+    "recorded": [
+      "passive network capability check",
+      "safe quote navigation smoke test",
+      "blank-form screenshot"
+    ],
+    "notRun": [
+      "quote submissions",
+      "record saves",
+      "bookings",
+      "sends",
+      "uploads",
+      "cancellation",
+      "payments",
+      "settings changes",
+      "alternate-role tests"
+    ],
+    "captureGaps": [
+      "evicted initial events",
+      "sent WebSocket frames not collected in smoke-test filter",
+      "no child-target enumeration",
+      "most response bodies uncollected"
+    ],
+    "nextPhase": "Deep Phase1 Quotes"
+  }
+}

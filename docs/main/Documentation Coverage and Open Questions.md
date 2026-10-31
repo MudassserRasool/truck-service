@@ -298,3 +298,18 @@ W-01–07 and X-01–09 in main §20 are the acceptance workbook; all89 item IDs
 **October 26 user-review correction:** E-111–112 add the previously insufficiently detailed LTL shipment quote dialog to main §15.5a: exact entry, fields, collapsed/expanded Cost, carrier-dependent components, arithmetic, disabled-price variant and View quote results navigation. Existing QTE-09/SHP-06 entries extended; inventory totals/statuses unchanged. No validation/sign-off blocker waived.
 
 **October 26 classification reference:** E-113/main §14.5a adds the official NMFTA density bands, inclusive/exclusive boundaries, conditional example and source/local PDF links for QTE-05. Commodity selection, app estimation and reviewer tests remain pending.
+
+**Deep Phase 0 setup — October 31, 2026**
+
+E-114 establishes evidence tooling only. Prior89 inventory statuses remain unchanged; a setup smoke test is not module completion. Capture run DEEP-00-R001 is partial due to initial event truncation. No commit or push performed.
+
+| Requested category | Refresh status after Deep0 | Next coverage |
+| --- | --- | --- |
+| Pages/navigation/roles | Blank quote route replayed; current role unverified | Deep1–5; alternate roles remain blocked |
+| Workflows/alternatives/cancellation | Setup navigation only | Deep1–5; no operational cancellation |
+| Fields/defaults/validation/errors | Blank LTL form observed; no submission | Deep1 field/branch inspection |
+| Rules/calculations/permissions/persistence | Existing evidence retained; no new saved-state proof | Deep1–6; mutation/access gates retained |
+| Loading/empty/success/failure states | Loading and blank form observed; capture truncation recorded | Each batch adds safe encountered states |
+| Screenshots | One verified viewport image linked in main guide | Every subsequent workflow batch |
+| Integrations/notifications/imports/exports | Browser hosts/resources observed; backend use unproven | Deep3–6 |
+| Dates/evidence/unknowns | Run/step IDs, timestamps and limitations recorded | All batches and Deep7 audit |

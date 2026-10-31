@@ -54,6 +54,29 @@ The inspected session displays the Stackup Solutions profile in the 10-4 Global 
 
 **Scope is still pending:** The client has not selected the first-release feature set, named reviewers or designated a mutation-test environment. Learning documentation can proceed while those decisions are collected. No booking, record update, cancellation, document send or payment was performed for this phase. DOCX/PDF exports have not been regenerated.
 
+**Deep discovery refresh — Phase 0, October 31, 2026**
+
+This refresh adds live screenshots and passive CDP network evidence to the earlier chapters. It is a new evidence pass, not a claim that the original validation gates are resolved. No commits/pushes or operational submissions are part of this refresh.
+
+**Evidence setup:** E-114 / run `DEEP-00-R001`, steps S01–S02. [Consolidated sanitized network evidence](network/quote-factory-network.json). Browser Network.enable, cursor-based readEvents and one Network.getResponseBody operation succeeded. The latter was tested against `/version`; content was intentionally omitted. Received WebSocket frames were observed and structurally summarized without scalar values. The current profile is a broker session; its exact role has not been reverified on October 31.
+
+| UI action | Observed network / response | Visible result | Limits |
+| --- | --- | --- | --- |
+| S01: vendor list → Create new quote | Three received WebSocket events in the first window; no HTTP request start recorded there. | Vendor list remained visible; successful navigation not established. | Do not assume the action was client-only or successful. |
+| S02: navigate to the already-observed `/broker/quote` route | Available event pages include Quote Factory app/API resources, `/me`, `/version`, `/sentry`, external resources and received WebSocket events. Available HTTP response statuses include 200/204. | Loading quote form, then empty LTL quote form; customer/date/locations/freight inputs not entered. | Initial page reported truncated=true; whole run is **partial**. 63 request records, 20 received WebSocket events; one request outstanding at close. HTTP success does not prove a business operation. |
+
+**Screenshot:** Settled blank form, no private customer/contact/record values present. Captured after the bounded network window. Only the viewport is shown; it does not prove complete lower-form coverage. An alternate screenshot API returned an incomplete rendering and was rejected; the saved browser capture below was visually verified.
+
+![Deep Phase 0: blank LTL quote form, October 31, 2026](screenshots/deep-00-setup-quote-initial-2026-10-31.jpg)
+
+**Browser-observed service/resource hosts:** `beacon-v2.helpscout.net` (Help Scout resource), `cdn.filestackcontent.com` (Filestack resource), `d3hb14vkzrxvla.cloudfront.net` (CloudFront delivery host), `fonts.googleapis.com` / `fonts.gstatic.com` (font resources), and `ui-avatars.com` (avatar resource). These observations establish browser resource use in this run, not server-to-provider integration contracts, storage ownership or business capability. Requests to `app.quotefactory.com/sentry` alone do not establish an external Sentry account/provider configuration.
+
+**Capture boundaries:** All request/response headers omitted; query values/fragments/userinfo stripped; record/opaque URL identifiers normalized. Payload examples retain structural field names/types only, with sensitive fields redacted and all scalar values omitted. Non-JSON text and binary document bodies are not retained. Raw CDP events stay in temporary session memory. Missing/uncollected bodies are explicitly distinguished from empty responses. No child-target coverage or sent-WebSocket-frame capture was established by this smoke test; next runs must add those event filters and drain pages promptly. Redirect/failure/interruption behavior still needs capture-specific validation; no live failures were injected.
+
+**Setup checks:** Synthetic redaction tests and JSON identity/timestamp/relationship/screenshot-path validation pass using the utilities in `network/`. These checks validate evidence structure, not application business rules. Truncation remains a recorded limitation, not something the validator hides.
+
+**Next: Deep Phase 1 — Quotes.** Inspect each quote field, branch, dialog and safe existing-result handoff with paired screenshots and network runs. Submit/save/send/booking/role tests remain unavailable under D-01.
+
 <a id="system-hierarchy"></a>
 **2\. System hierarchy — the whole app from top to bottom**
 
