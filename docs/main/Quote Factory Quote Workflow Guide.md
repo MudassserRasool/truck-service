@@ -765,6 +765,192 @@ Delivered: customer/provider discovery paths, visible creation steps, identity/c
 
 Pending verification: actual create/update/duplicate/required-field results, role-based editing, save/autosave behavior, primary/reordered contact effects, full carrier lookup/import, vendor-tab behavior, address-card editing, historical record/document propagation, recipient visibility and real provider assignment. These are concrete test gaps, not assumed behavior. Detailed pricing, shipment assignment/editing and accounting outcomes continue in Phases 3–8; SC-05 test access is still pending.
 
+<a id="deep-quotes-refresh"></a>
+**Deep Phase 1 — Quotes refresh (October 31–November 1, 2026; safe discovery delivered, validation gaps remain)**
+
+Run `DEEP-01-R001`, E-115, QTE-02. Open Quote → equipment selector. The menu exposes 70 options; the exact ordered list is retained under this run in the [network evidence](network/quote-factory-network.json). The screenshot shows only the first visible options, not the entire scrollable list. Choose Dry Van on the blank, unsaved form: Partial, Tanker endorsement and Team service appear unchecked, + add location appears, and the freight row becomes a past-commodity search/weight entry. The LTL packaging/dimensions/class/NMFC row is absent in this sampled Dry Van branch. Common length hint is 50.5 feet. No customer/date selected, quote submitted or server persistence verified. This is branch-specific UI evidence, not a complete equipment rules matrix.
+
+![Equipment selector, first visible options](screenshots/deep-01-equipment-options-2026-10-31.jpg)
+
+![Dry Van quote branch, unsaved](screenshots/deep-01-dry-van-form-2026-10-31.jpg)
+
+| Step | UI action | Observed network | Visible result / limits |
+| --- | --- | --- | --- |
+| S01 | Open equipment menu | Received WebSocket events; no HTTP request start observed in captured window | Menu opens. No inference that the action is entirely client-side. |
+| S02 | Select Dry Van | Received/sent WebSocket events; no HTTP request start observed in captured window | Form branch changes. Frame structures retained without scalar values; background traffic not assigned business meaning. |
+
+Across both steps, 11 WebSocket events were observed. All subscribed event pages were drained without reported eviction; overall coverage remains partial because child-target coverage is unestablished. Current exact role unverified. Remaining Deep1 work: all subtype branches, expanded locations/services, freight options/calculations, safe existing results/offers/manual/sharing/expiry/handoff, screenshots and paired network runs. No completed-phase or functional-validation claim yet.
+
+**Deep1 equipment branch index — E-116 / DEEP-01-R002**
+
+All70 choices were selected through the live UI on the blank unsaved form. Each step retains a screenshot, initial visible form text and HTML input attributes in the network JSON. HTML attributes can include hidden inputs: presence in that array is not evidence a field is visible, required by business logic or authorized to save. Immediate snapshots can include brief transition remnants; the screenshots were taken afterward. LTL/Dry Van/Flatbed/Refrigerated representative views were visually checked. Other screenshots are evidence captures, not a complete visual acceptance review. Common dimension hints are displayed hints, not a guarantee of usable capacity or an eligibility rule. No subtype was submitted to rating.
+
+| Equipment | Named checkboxes in captured form | Displayed common hint | Run step / screenshot |
+| --- | --- | --- | --- |
+| LTL | Protect from freezing, Stackable, Hazmat | No numeric common-length hint captured | [EQ-01](screenshots/deep-01-equipment-01-2026-10-31.jpg) |
+| Dry Van | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-02](screenshots/deep-01-equipment-02-2026-10-31.jpg) |
+| Dry Van 53 | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-03](screenshots/deep-01-equipment-03-2026-10-31.jpg) |
+| Dry Van 48 | Partial, Tanker endorsement, Team service | 46.3' L | [EQ-04](screenshots/deep-01-equipment-04-2026-10-31.jpg) |
+| Straight Truck | Partial, Tanker endorsement, Team service | 24' L | [EQ-05](screenshots/deep-01-equipment-05-2026-10-31.jpg) |
+| Cargo Van | Partial, Tanker endorsement, Team service | 9.2' L | [EQ-06](screenshots/deep-01-equipment-06-2026-10-31.jpg) |
+| Dry Van or Refrigerated | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-07](screenshots/deep-01-equipment-07-2026-10-31.jpg) |
+| Curtainside | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-08](screenshots/deep-01-equipment-08-2026-10-31.jpg) |
+| Vented Van | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-09](screenshots/deep-01-equipment-09-2026-10-31.jpg) |
+| Flatbed | Partial, Tarps, Tanker endorsement, Team service | 48' L x 7.5' W x 8' H | [EQ-10](screenshots/deep-01-equipment-10-2026-10-31.jpg) |
+| Flatbed 53 | Partial, Tarps, Tanker endorsement, Team service | 48' L x 7.5' W x 8' H | [EQ-11](screenshots/deep-01-equipment-11-2026-10-31.jpg) |
+| Flatbed 48 | Partial, Tarps, Tanker endorsement, Team service | 46.2' L x 7.5' W x 8' H | [EQ-12](screenshots/deep-01-equipment-12-2026-10-31.jpg) |
+| Step Deck | Partial, Tarps, Tanker endorsement, Team service | 49.5' L x 7.5' W x 8' H | [EQ-13](screenshots/deep-01-equipment-13-2026-10-31.jpg) |
+| Flatbed or Step Deck | Partial, Tarps, Tanker endorsement, Team service | 48' L x 7.5' W x 8' H | [EQ-14](screenshots/deep-01-equipment-14-2026-10-31.jpg) |
+| Double Drop | Partial, Tarps, Tanker endorsement, Team service | 49.5' L x 7.5' W x 8' H | [EQ-15](screenshots/deep-01-equipment-15-2026-10-31.jpg) |
+| Removable Gooseneck | Partial, Tarps, Tanker endorsement, Team service | 49.5' L x 7.5' W x 8' H | [EQ-16](screenshots/deep-01-equipment-16-2026-10-31.jpg) |
+| Conestoga | Partial, Tarps, Tanker endorsement, Team service | 49.5' L x 8' W x 8' H | [EQ-17](screenshots/deep-01-equipment-17-2026-10-31.jpg) |
+| Stakebed | Partial, Tarps, Tanker endorsement, Team service | 46.2' L x 7.5' W x 8' H | [EQ-18](screenshots/deep-01-equipment-18-2026-10-31.jpg) |
+| Step Deck Conestoga | Partial, Tarps, Tanker endorsement, Team service | 49.5' L x 7.5' W x 8' H | [EQ-19](screenshots/deep-01-equipment-19-2026-10-31.jpg) |
+| Flatbed Hot Shot | Partial, Tarps, Tanker endorsement, Team service | 38' L x 7.5' W x 7.5' H | [EQ-20](screenshots/deep-01-equipment-20-2026-10-31.jpg) |
+| Landoll Flatbed | Partial, Tarps, Tanker endorsement, Team service | 46.2' L x 7.5' W x 8' H | [EQ-21](screenshots/deep-01-equipment-21-2026-10-31.jpg) |
+| Multi-Axle Heavy Haul | Partial, Tarps, Tanker endorsement, Team service | 40' L x 8.5' W x 8' H | [EQ-22](screenshots/deep-01-equipment-22-2026-10-31.jpg) |
+| Refrigerated | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-23](screenshots/deep-01-equipment-23-2026-10-31.jpg) |
+| Refrigerated 53 | Partial, Tanker endorsement, Team service | 50.5' L | [EQ-24](screenshots/deep-01-equipment-24-2026-10-31.jpg) |
+| Refrigerated 48 | Partial, Tanker endorsement, Team service | 46.3' L | [EQ-25](screenshots/deep-01-equipment-25-2026-10-31.jpg) |
+| Refrigerated Straight Truck | Partial, Tanker endorsement, Team service | 24' L | [EQ-26](screenshots/deep-01-equipment-26-2026-10-31.jpg) |
+| Refrigerated Cargo Van | Partial, Tanker endorsement, Team service | 9.2' L | [EQ-27](screenshots/deep-01-equipment-27-2026-10-31.jpg) |
+| Intermodal | Tanker endorsement, Team service | 39.4' L | [EQ-28](screenshots/deep-01-equipment-28-2026-10-31.jpg) |
+| Intermodal 20 | Tanker endorsement, Team service | 19.3' L | [EQ-29](screenshots/deep-01-equipment-29-2026-10-31.jpg) |
+| Intermodal 20 High Cube | Tanker endorsement, Team service | 19.3' L | [EQ-30](screenshots/deep-01-equipment-30-2026-10-31.jpg) |
+| Intermodal 40 | Tanker endorsement, Team service | 39.4' L | [EQ-31](screenshots/deep-01-equipment-31-2026-10-31.jpg) |
+| Intermodal 40 High Cube | Tanker endorsement, Team service | 39.4' L | [EQ-32](screenshots/deep-01-equipment-32-2026-10-31.jpg) |
+| Intermodal 40 Refrigerated | Tanker endorsement, Team service | 39.4' L | [EQ-33](screenshots/deep-01-equipment-33-2026-10-31.jpg) |
+| Intermodal 53 | Tanker endorsement, Team service | 50.5' L | [EQ-34](screenshots/deep-01-equipment-34-2026-10-31.jpg) |
+| Drayage | Tanker endorsement, Team service | 39.4' L | [EQ-35](screenshots/deep-01-equipment-35-2026-10-31.jpg) |
+| Drayage 20 | Tanker endorsement, Team service | 19.3' L | [EQ-36](screenshots/deep-01-equipment-36-2026-10-31.jpg) |
+| Drayage 20 High Cube | Tanker endorsement, Team service | 19.3' L | [EQ-37](screenshots/deep-01-equipment-37-2026-10-31.jpg) |
+| Drayage 20 Refrigerated | Tanker endorsement, Team service | 19.3' L | [EQ-38](screenshots/deep-01-equipment-38-2026-10-31.jpg) |
+| Drayage 40 | Tanker endorsement, Team service | 39.4' L | [EQ-39](screenshots/deep-01-equipment-39-2026-10-31.jpg) |
+| Drayage 40 High Cube | Tanker endorsement, Team service | 39.4' L | [EQ-40](screenshots/deep-01-equipment-40-2026-10-31.jpg) |
+| Drayage 40 Refrigerated | Tanker endorsement, Team service | 39.4' L | [EQ-41](screenshots/deep-01-equipment-41-2026-10-31.jpg) |
+| Dump | Tanker endorsement, Team service | 30' L | [EQ-42](screenshots/deep-01-equipment-42-2026-10-31.jpg) |
+| Bottom Dump | Tanker endorsement, Team service | 36' L | [EQ-43](screenshots/deep-01-equipment-43-2026-10-31.jpg) |
+| End Dump | Tanker endorsement, Team service | 24' L | [EQ-44](screenshots/deep-01-equipment-44-2026-10-31.jpg) |
+| Side Dump | Tanker endorsement, Team service | 40' L | [EQ-45](screenshots/deep-01-equipment-45-2026-10-31.jpg) |
+| Dry Bulk | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-46](screenshots/deep-01-equipment-46-2026-10-31.jpg) |
+| Hopper Bottom | Tanker endorsement, Team service | 43' L | [EQ-47](screenshots/deep-01-equipment-47-2026-10-31.jpg) |
+| Power Only | Tanker endorsement, Team service | 50.5' L x 7.5' W x 8' H | [EQ-48](screenshots/deep-01-equipment-48-2026-10-31.jpg) |
+| Power Only Load Out | Tanker endorsement, Team service | 50.5' L x 7.5' W x 8' H | [EQ-49](screenshots/deep-01-equipment-49-2026-10-31.jpg) |
+| Power Only Tow Away | Tanker endorsement, Team service | 50.5' L x 7.5' W x 8' H | [EQ-50](screenshots/deep-01-equipment-50-2026-10-31.jpg) |
+| Driveaway | No named checkbox captured | No numeric common-length hint captured | [EQ-51](screenshots/deep-01-equipment-51-2026-10-31.jpg) |
+| 2-way Deck | No named checkbox captured | No numeric common-length hint captured | [EQ-52](screenshots/deep-01-equipment-52-2026-10-31.jpg) |
+| 3-way Deck | No named checkbox captured | No numeric common-length hint captured | [EQ-53](screenshots/deep-01-equipment-53-2026-10-31.jpg) |
+| 4-way Deck | No named checkbox captured | No numeric common-length hint captured | [EQ-54](screenshots/deep-01-equipment-54-2026-10-31.jpg) |
+| Boom | No named checkbox captured | No numeric common-length hint captured | [EQ-55](screenshots/deep-01-equipment-55-2026-10-31.jpg) |
+| Box Truck | No named checkbox captured | No numeric common-length hint captured | [EQ-56](screenshots/deep-01-equipment-56-2026-10-31.jpg) |
+| Heavy Duty | No named checkbox captured | No numeric common-length hint captured | [EQ-57](screenshots/deep-01-equipment-57-2026-10-31.jpg) |
+| Non-CDL | No named checkbox captured | No numeric common-length hint captured | [EQ-58](screenshots/deep-01-equipment-58-2026-10-31.jpg) |
+| Single | No named checkbox captured | No numeric common-length hint captured | [EQ-59](screenshots/deep-01-equipment-59-2026-10-31.jpg) |
+| Tractor-trailer | No named checkbox captured | No numeric common-length hint captured | [EQ-60](screenshots/deep-01-equipment-60-2026-10-31.jpg) |
+| Utility | No named checkbox captured | No numeric common-length hint captured | [EQ-61](screenshots/deep-01-equipment-61-2026-10-31.jpg) |
+| Vocational | No named checkbox captured | No numeric common-length hint captured | [EQ-62](screenshots/deep-01-equipment-62-2026-10-31.jpg) |
+| Auto Transport | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-63](screenshots/deep-01-equipment-63-2026-10-31.jpg) |
+| Open Auto Transport | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-64](screenshots/deep-01-equipment-64-2026-10-31.jpg) |
+| Enclosed Auto Transport | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-65](screenshots/deep-01-equipment-65-2026-10-31.jpg) |
+| Tanker | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-66](screenshots/deep-01-equipment-66-2026-10-31.jpg) |
+| Tanker Aluminum | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-67](screenshots/deep-01-equipment-67-2026-10-31.jpg) |
+| Tanker Intermodal | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-68](screenshots/deep-01-equipment-68-2026-10-31.jpg) |
+| Tanker Steel | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-69](screenshots/deep-01-equipment-69-2026-10-31.jpg) |
+| Other | Tanker endorsement, Team service | No numeric common-length hint captured | [EQ-70](screenshots/deep-01-equipment-70-2026-10-31.jpg) |
+
+**Deep1 location/freight/date checks — E-117 / DEEP-01-R003**
+
+The unsaved form exposed pickup services Liftgate pickup, Inside pickup, Single shipment, Sort & segregate; delivery services Appointment required, Liftgate delivery, Inside delivery, Notify before delivery, Sort & segregate. The origin location-type menu had26 options and packaging27 options (complete lists in run step details). Freight class had18 values from50 to500 including77.5/92.5. No class or customer was selected. Expanding a blank origin only changed Expand to Collapse location; populated-address fields were not established by that action.
+
+| Check | Observed result | Evidence screenshot / limit |
+| --- | --- | --- |
+| Two fictional pallets, 48×40×48in, quantity2, total1000lb | 106.7cf,9.38pcf,4ft; Est100 separate from blank class | [Measurement](screenshots/deep-01-pallet-calculations-2026-10-31.jpg); supports this one total-weight/quantity example, not all inputs |
+| Dimension units in→cm | Numeric48/40/48 retained; aggregate volume6.5cf and density153.63pcf observed | [Unit switch](screenshots/deep-01-centimeter-conversion-2026-10-31.jpg); reinterprets numbers rather than preserves physical dimensions; immediate row/aggregate updates may settle at different times |
+| Weight units lb→kg | Numeric1000 retained; density338.70pcf, while aggregate label still1,000lb | [Weight discrepancy](screenshots/deep-01-kilogram-units-2026-10-31.jpg); label/calculation discrepancy requiring review, not approved clone behavior |
+| Hazmat checked | No extra hazmat fields appeared in sampled LTL form | [Hazmat](screenshots/deep-01-hazmat-2026-10-31.jpg); no provider eligibility validated |
+| + add item | A second blank group appeared with its own in/lb units | [Multiple groups](screenshots/deep-01-multiple-items-2026-10-31.jpg); mixed-group save/validation untested |
+| Add another vendor | Nine unchecked vendor types; Add vendor disabled until selection | [Chooser](screenshots/deep-01-vendor-type-chooser-2026-10-31.jpg); no vendor added |
+| Pickup calendar | October2026 dates disabled; November weekends and Nov26 disabled, weekdays otherwise generally available | [October](screenshots/deep-01-pickup-calendar-2026-10-31.jpg), [November](screenshots/deep-01-november-calendar-2026-10-31.jpg); dated account observation, not universal holiday/timezone/lead-time policy |
+
+Volume arithmetic for the fictional example is2×48×40×48÷1728=106.6667cf; density1000÷106.6667=9.375pcf. Rounded values match this screen. Neither Est100 nor the later Est50 unit-switch result establishes commodity-specific NMFC correctness or the full estimation algorithm. Submitted error messages, class lookup, save behavior and customer-specific defaults remain unverified.
+
+Further screenshots: [pickup services](screenshots/deep-01-pickup-services-2026-10-31.jpg), [delivery services](screenshots/deep-01-delivery-services-2026-10-31.jpg), [location types](screenshots/deep-01-location-types-2026-10-31.jpg), [packaging](screenshots/deep-01-packaging-options-2026-10-31.jpg), [class](screenshots/deep-01-class-options-2026-10-31.jpg), [blank expansion](screenshots/deep-01-expanded-origin-2026-10-31.jpg). Capture pages in these runs reported no eviction; all runs retain partial overall scope because child-target completeness is unestablished. Streaming events are observed alongside UI steps, not automatically attributed to business mutations. The raw frame contents and scalar payload values are omitted.
+
+**Deep1 existing results and offers — E-118–119, November 1, 2026**
+
+Run `DEEP-01-R004` opens an existing booked request, then its Guaranteed filter, ArcBest offer dialog, Sharing and historical failure explanations. No price, visibility, recipient, booking or delivery form was submitted. Result filters can issue automatic `quotesFilter` writes, as documented in E-120/123 below. Network load capture reported eviction; smaller later steps do not repair that missing initial history. Exact current role remains unverified.
+
+| UI action | Observed result and network evidence | Limitation |
+| --- | --- | --- |
+| Open existing booked request | Loading then booked banner/offers. App/API resources and request patterns include `/me`, `/quote-requests`, `/providers`, `/shipments`, alongside WebSocket frames; exact methods/status/timing available per request in JSON |148 captured request records/78 stream events across run; reported eviction and outstanding requests. These are observed records, not a complete count of actions or successful backend operations. |
+| Guaranteed11 | Offer cards for ArcBest, Old Dominion and Saia; All37, Standard26, Volume0 also exposed | Counts describe this saved request, not provider capability. No new quote obtained. |
+| ArcBest guaranteed offer | Cost1127.56, margin17%, profit230.95, price1358.51; Book disabled | Offer-dialog Margin/Profit/Price textboxes reported enabled, while list pricing inputs were disabled. Neither proves save authorization; no input changed. |
+| Click Cost | No visible itemized disclosure appeared in this sampled dialog | Do not generalize the itemized XPO/AAA behavior from earlier examples to all offers. |
+| Sharing | Visible to10 contacts; each marked Not sent. Stop sharing, Add contact, Email quotes and view-only Copy link controls; view-only cannot book | Visibility differs from delivery. No contact names/emails/share tokens or raw screenshot retained, no Stop sharing/email/copy action. |
+| Six carriers did not return results | Historical invalid/blocked account, unsupported accessorial/service combination, no rate, timeout504, denied rate type and invalid vendor authentication messages | Sanitized messages in JSON retain provider/error meaning, replace account IDs/emails. These are application messages, not newly injected failures or direct browser calls to those providers. |
+
+![Guaranteed offer comparison, customer and route header excluded](screenshots/deep-01-guaranteed-offers-2026-11-01.jpg)
+
+![Offer pricing crop, account/quote/contact identifiers excluded](screenshots/deep-01-booked-offer-pricing-2026-11-01.jpg)
+
+The failure dialog reports a historical Magnum URL on `cloud.magnumlog.com:8081` with an Axis2 `lessThanLoadQuoteWSPWsdl` path and504 timeout. This is **application-reported historical provider detail**; it is not evidence this browser called that endpoint or that it is the current approved integration contract. Exact browser-facing endpoint patterns remain in the consolidated network catalog. Private server-provider traffic stays unobserved.
+
+Screenshots use verified browser-supported crops to exclude private header/identifier regions; they intentionally omit other parts of the page. The sharing/failure dialogs lack retained screenshots because their raw views include private contact/account values; capture/privacy gaps remain explicit. Controls that appeared briefly during close/open transitions were re-read before interpreting the settled result. One close-to-warning-control attempt timed out outside a closed step; it is not recorded as a successful operation or complete action capture.
+
+**Instrumentation verification:** `capture-recorder.test.mjs` exercises synthetic redirects, repeated endpoints, loading failures, missing starts and cursor paging/eviction reporting; `evidence-utils.test.mjs` checks redaction; `validate-evidence.mjs` checks evidence relationships and screenshot paths. These do not validate Quote Factory behavior. No live failures were injected.
+
+**Deep1 expiry, manual offers, history and handoff — E-120–123, November 1, 2026**
+
+**Explore it:** Open [Quote history](https://app.quotefactory.com/broker/quote-history); at the sampled narrow viewport, open **Main Menu → Quotes** first. Search a reference or use Customer/Rep filters. A fictional unmatched search settles to **No quote requests for “…”** with **Reset filters**. Immediately after typing, older rows remained briefly; use the settled result. Open an existing result to inspect offers. A booked result has **View** in its booked banner; that opens the existing shipment, where **Documents** and **Edit shipment** are separate paths. This replay creates no new booking. See the existing example in §14.9 and the shipment chapter below.
+
+The past-date example displayed **Pickup date has passed. Choose a new date**, All58/Standard38/Guaranteed20/Volume0 and disabled list Book controls. R005 closed while results were still loading; R006 establishes the later settled result. An HTTP200 seen in a capture window does not establish that the screen finished loading or that an operation succeeded. The request-menu exposes **Duplicate quote request**; duplication was not invoked. Changing the pickup date and repricing remain untested.
+
+**Manual offer:** On the existing past-date result, click **+ Add manual quote**. The inspected unsaved dialog shows Transit days3, Delivery dateOct25 with **This date falls on a weekend**, blank Equipment, unchecked Tanker endorsement, Lane history, a Freight line with optional note and separate cost/price calculators, **+ add item**, Margin/Cost+/Profit and expiryOct22. These dates/defaults belong to this existing request, not a universal new-quote default. Initially cost/price are blank and **Save quote** is disabled. In the fictional unsaved example, entering cost100 and price125 enables Save and displays profit25, margin20%, Cost+25%. Save was not pressed. Closing and reopening clears those amounts and disables Save again. That verifies dialog reset, not database rollback, requiredness, authorization or the saved manual-offer contract.
+
+| Calculation | Observed example | Interpretation / limit |
+| --- | --- | --- |
+| Profit = price − cost | 125 − 100 =25 | This unsaved line only; taxes/multiple charges/currency/rounding not established |
+| Margin% = profit ÷ price ×100 | 25 ÷125 ×100 =20% | Uses selling price as denominator |
+| Cost+% = profit ÷ cost ×100 | 25 ÷100 ×100 =25% | Markup uses cost; zero/negative cases untested |
+
+![Unsaved manual-offer defaults and weekend warning](screenshots/deep-01-manual-offer-form-2026-11-01.jpg)
+
+![Fictional manual-offer pricing, not saved](screenshots/deep-01-manual-pricing-math-2026-11-01.jpg)
+
+![Quote history unmatched search and filter controls](screenshots/deep-01-history-empty-2026-11-01.jpg)
+
+**Result views and retention:** R008 initially had no offer rows because Volume0 remained selected after returning to the booked request. Selecting All37 restored rows. Carrier, Delivery and Price controls changed sampled offer ordering; a complete sort-key/tie/direction contract is unverified. Standard26 exposes the populated Standard view. Once rows settled, the first ArcBest **Open stacked quotes** control expanded alternatives inline, including Xtended Network and Guaranteed offers; no modal appeared. The Xtended Network label does not identify its backend supplier. Multiple stack controls require choosing the intended carrier card. Screenshot crops exclude customer/header identifiers and some columns.
+
+![Expanded first ArcBest quote stack, private header excluded](screenshots/deep-01-stacked-offers-2026-11-01.jpg)
+
+| UI action → run/step | Observed request / structural payload → response | Visible result / limits |
+| --- | --- | --- |
+| Volume filter → R005/VOLUME | `PUT /quote-requests/:recordId`, `{quotesFilter:string}` →200; OPTIONS204; header timing about1,510ms for PUT | Empty Volume0 view. Automatic filter write; no explicit Save pressed. Response body not verified. |
+| Past-date navigation → R005/PAST → R006/SETTLED | Quote-request/provider/app bootstrap requests; partial capture, four requests outstanding at R005 close | Loading in R005; later R006 settled result. No complete load duration or request-success inference. |
+| Open/type/discard manual offer → R006/MANUAL, MANUAL-MATH, DISCARD | No quote-creation HTTP request observed during these windows; three run HTTP records are version polling200; streaming metadata retained | Unsaved arithmetic and reset only. Partial capture cannot prove every action is client-only. |
+| History/search → R007/HISTORY, SEARCH | `GET /quote-requests?[query omitted]` →200 in each step; observed header timing about730ms then276ms; search query values omitted | Populated-history entry then settled unmatched state; bodies uncollected, filtering/pagination contract unknown. Concurrent telemetry is not a search API. |
+| All/Standard and sorting → R008/SORT, STANDARD | `PUT /quote-requests/:recordId`, `{quotesFilter:string}` →200 in each window; quote-config/provider reads also occur | View retention and automatic filter-write requests observed; exact database state, role visibility and sort storage untested. |
+| Booked banner View → R008/HANDOFF | `GET /shipments/:recordId` →200; related quote info/notes/events/shares/terms; `PUT /users/settings/account` with `{recentlyVisited:object}` →200; `POST /integrations/event` with `{eventType:string,args:{dotNumber:number},context:object}` →200 | Existing shipment details reached. These automatic requests do not prove a new booking, notification, carrier-provider call or successful downstream integration. |
+
+Run prefixes above are `DEEP-01-`. Exact request identities, timing/cache metadata, outstanding records, WebSocket summaries and normalized endpoint patterns are in the [consolidated network evidence](network/quote-factory-network.json). R005 reported event loss; R006–008 reported none, but remain partial because target/body completeness is unestablished. R008 closed with four outstanding requests. This is observed traffic, not an approved public API contract. No endpoints were replayed. Current exact role was not reverified.
+
+**Deep1 safe-discovery delivery and remaining validation**
+
+| Use cases | Added paired evidence | Still unknown / unavailable |
+| --- | --- | --- |
+| QTE-01 history | E-122/R007; search/empty screenshot, responsive navigation | Pagination, all filters, search semantics and role isolation |
+| QTE-02 equipment/customer/date | E-115–117/R001–003;70 branches, calendars | Customer-specific defaults, every field’s validation/requiredness and full visual QA |
+| QTE-03 locations/services | E-117/R003; menus and blank expansion | Populated-location behavior, address matching and service pricing |
+| QTE-04–07 freight/class/flags/items/length | E-116–117/R002–003; fictional arithmetic and unit discrepancy | Mixed-group/layout/stacking edge cases, validated NMFC source and estimation algorithm |
+| QTE-08 rating submission | E-119 historical errors; existing results only | Fresh Get quotes submission, retry/no-rate and backend provider contracts |
+| QTE-09–10 offers/pricing | E-118,120–123/R004–008; filters, stack, offer/manual arithmetic | Price saves, minimum/maximum enforcement, volume eligibility and provider-specific components |
+| QTE-11 sharing | E-118/R004; Not sent/audience/view-only controls | Sends, recipient access, permission enforcement and acknowledgments |
+| QTE-12 manual/booking/handoff | E-121,123/R006,R008; unsaved manual form/reset and existing shipment navigation | New manual save, duplication, booking, cancellation and operational persistence |
+
+All original QTE inventory statuses remain **partial**. The safe discovery batch is delivered with explicit gaps; full functional acceptance and 100% reproduction are not established. Test records, alternate roles and reviewers remain unavailable under D-01. No operational form submissions, sends, bookings or financial actions were performed; automatic view/history/integration-event requests are explicitly recorded above. Private sharing/failure and shipment-header screenshots remain omitted.
+
+**Capture audit:** Redaction, redirect/repeated-request/failure/missing-start handling, paging/eviction, interrupted-run recovery, absent bodies and run isolation have synthetic checks. The recorder now checkpoints step starts and can mark interrupted steps without inventing success. Its run-isolation fix was added after R008; earlier late completions crossing run boundaries may be missing. Historical captures are not retroactively reconstructed. JSON references, local screenshot links and diff checks are validated before delivery. Synthetic checks verify evidence tooling, not Quote Factory business behavior. Next: **Deep Phase2 — Shipments**.
+
 <a id="quote-details"></a>
 **14\. Quote creation, freight classification and pricing — Phase 3**
 

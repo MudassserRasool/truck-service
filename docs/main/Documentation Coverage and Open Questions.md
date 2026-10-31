@@ -100,18 +100,18 @@ Customer example: [open the inspected customer](https://app.quotefactory.com/bro
 
 | ID | Screen / control and how to open it | Status | Chapter | Evidence | Next detail to document |
 | --- | --- | --- | --- | --- | --- |
-| QTE-01 | [Quote history](https://app.quotefactory.com/broker/quote-history) | P | QUOTE | E-60 | Main §14: Search/paging/role tests pending |
-| QTE-02 | [Quote form](https://app.quotefactory.com/broker/quote) → customer/equipment/date | P | QUOTE | E-51 | Main §14: Customer/contact/defaults and all subtype validation pending |
-| QTE-03 | Quote → origin/destination, expand location, pickup/delivery services | P | QUOTE | E-53 | Main §14: Populated expansion, service pricing and destination parity pending |
-| QTE-04 | Quote → packaging/quantity/dimensions/weight/units | P | QUOTE, TERM | E-52, E-54 | Main §14: Mixed groups, conversions and input validation pending |
-| QTE-05 | Quote → Freight class / NMFC | P | QUOTE, TERM, API | E-52, E-54 | Main §14: Est: 70 observed separately from empty class; algorithm, lookup and owner pending |
-| QTE-06 | Quote → Stackable / Hazmat / Protect from freezing | P | QUOTE, TERM | E-51, E-52 | Main §14: Hazmat flag checked unsaved; carrier restrictions/details pending |
-| QTE-07 | Quote → add item, estimated total length, Linear Feet Visualizer | P | QUOTE, TERM | E-54 | Main §14: Two-pallet example verified; stack/override/layout edge cases pending |
-| QTE-08 | Quote → Get quotes | P | QUOTE, API | E-57 | Main §14: Historical partial failures inspected; real submit/loading/retry/no-rate tests pending |
-| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb); shipment → View quote details | P | QUOTE | E-55, E-59, E-111–112 | Main §§14,15.5a: shipment offer fields, expanded signed cost lines, pricing/state variants and results link; provider/date/account/lock rules pending |
-| QTE-10 | Offer → cost/margin/profit/price | P | QUOTE, TERM | E-55, E-59, E-61 | Main §14: Pricing states and matching shipment figures observed; saves/precedence/guardrails pending |
-| QTE-11 | Result → Sharing / customer visibility / reference/menu | P | QUOTE | E-56 | Main §14: Visibility versus Not sent and view-only restriction observed; actual sends/access/approval pending |
-| QTE-12 | Result → manual quote / Book / View Shipment | P | QUOTE, SHIP | E-58, E-59, E-61 | Main §14: Manual dialog and existing shipment handoff inspected; Book entry-point discrepancy and creation/duplicates pending |
+| QTE-01 | [Quote history](https://app.quotefactory.com/broker/quote-history) | P | QUOTE | E-60, E-122 | Main §14: Search/paging/role tests pending |
+| QTE-02 | [Quote form](https://app.quotefactory.com/broker/quote) → customer/equipment/date | P | QUOTE | E-51, E-115–117 | Main §14: Customer/contact/defaults and all subtype validation pending |
+| QTE-03 | Quote → origin/destination, expand location, pickup/delivery services | P | QUOTE | E-53, E-117 | Main §14: Populated expansion, service pricing and destination parity pending |
+| QTE-04 | Quote → packaging/quantity/dimensions/weight/units | P | QUOTE, TERM | E-52, E-54, E-117 | Main §14: Mixed groups, conversions and input validation pending |
+| QTE-05 | Quote → Freight class / NMFC | P | QUOTE, TERM, API | E-52, E-54, E-117 | Main §14: Est: 70 observed separately from empty class; algorithm, lookup and owner pending |
+| QTE-06 | Quote → Stackable / Hazmat / Protect from freezing | P | QUOTE, TERM | E-51, E-52, E-117 | Main §14: Hazmat flag checked unsaved; carrier restrictions/details pending |
+| QTE-07 | Quote → add item, estimated total length, Linear Feet Visualizer | P | QUOTE, TERM | E-54, E-117 | Main §14: Two-pallet example verified; stack/override/layout edge cases pending |
+| QTE-08 | Quote → Get quotes | P | QUOTE, API | E-57, E-119 | Main §14: Historical partial failures inspected; real submit/loading/retry/no-rate tests pending |
+| QTE-09 | History → [booked result example](https://app.quotefactory.com/broker/quote-results/6ada31e36fac98ba0aa91bcb); shipment → View quote details | P | QUOTE | E-55, E-59, E-111–112, E-118–123 | Main §§14,15.5a: shipment offer fields, expanded signed cost lines, pricing/state variants and results link; provider/date/account/lock rules pending |
+| QTE-10 | Offer → cost/margin/profit/price | P | QUOTE, TERM | E-55, E-59, E-61, E-118, E-121 | Main §14: Pricing states and matching shipment figures observed; saves/precedence/guardrails pending |
+| QTE-11 | Result → Sharing / customer visibility / reference/menu | P | QUOTE | E-56, E-118 | Main §14: Visibility versus Not sent and view-only restriction observed; actual sends/access/approval pending |
+| QTE-12 | Result → manual quote / Book / View Shipment | P | QUOTE, SHIP | E-58, E-59, E-61, E-121, E-123 | Main §14: Manual dialog and existing shipment handoff inspected; Book entry-point discrepancy and creation/duplicates pending |
 
 **5\. Shipments, edits and tracking**
 
@@ -313,3 +313,24 @@ E-114 establishes evidence tooling only. Prior89 inventory statuses remain uncha
 | Screenshots | One verified viewport image linked in main guide | Every subsequent workflow batch |
 | Integrations/notifications/imports/exports | Browser hosts/resources observed; backend use unproven | Deep3–6 |
 | Dates/evidence/unknowns | Run/step IDs, timestamps and limitations recorded | All batches and Deep7 audit |
+
+**Deep1 progress, October 31:** QTE-02 equipment menu/Dry Van branch refreshed in E-115/DEEP-01-R001 with screenshots and sanitized sent/received WebSocket evidence. Deep1 remains in progress; no inventory item promoted to fully documented. Remaining quote branches and paired captures are still required.
+
+**Deep1 additional progress:** E-116 covers70 equipment branches; E-117 covers service/location/packaging/class catalogs, measurements, unit-switch discrepancy, hazmat/multi-item/vendor/calendar views. Main guide links step-specific screenshots. No full QTE completion or downstream/save validation inferred.
+
+**Deep1 November1 progress:** E-118–119/DEEP-01-R004 refresh existing results/Guaranteed filter, offer dialog, Sharing and historical provider errors. Two safe offer crops added. Capture evictions, private-dialog screenshot omissions, current role, unsent audience and disabled-book cause remain explicit gaps; remaining quote branches/audit still required before phase commit/push.
+
+**Deep1 safe-discovery delivery, November1:** E-120–123 completes the remaining safe manual/expiry/history/result-view/existing-handoff refresh in main [Deep1](Quote%20Factory%20Quote%20Workflow%20Guide.md#deep-quotes-refresh). QTE rows remain P. Automatic quotesFilter/recentlyVisited writes and a shipment-view integration-event request are documented; “no explicit submission” does not mean no writes. No disposable records, alternate roles or reviewers became available.
+
+| Requested category | Deep1 delivered evidence | Remaining gap |
+| --- | --- | --- |
+| Pages/navigation/roles | History, blank quote, existing results and shipment handoff; responsive Main Menu path | Current exact role/alternate roles and all page variants |
+| Workflows/alternatives/cancellation | Equipment branches, filters, inline stack, manual dialog discard, existing View handoff | Creation/booking/duplication/cancellation not executed |
+| Fields/defaults/validation/errors |70 equipment views; catalogs/calendars, weekend warning and historical provider failures | Submit validation, all customer defaults and error contracts |
+| Rules/calculations/permissions/persistence | Fictional measurements/pricing, unit discrepancy, UI locks, reset and automatic metadata writes | Enforcement/database/recipient permissions; NMFC/class and unit policy |
+| UI states | Loading, populated, Volume0/search empty, disabled/enabled Save and existing failure explanations | Fresh submit success/failure/rollback and outages |
+| Screenshots | Paired branch/form/math/result/empty-state images linked in guide | Private dialog/header omissions;70-file visual QA is representative only |
+| Integrations/notifications/imports/exports | Browser API/WebSocket/resource patterns, app-reported historical provider failures | Backend provider calls, sends, imports/exports and contract reconciliation |
+| Dates/evidence/unknowns | R001–008, E-115–123, normalized catalog and explicit capture limits | Old capture evictions/late completions cannot be reconstructed |
+
+Next: Deep2 shipment discovery on a new branch after the Deep1 commit/push and remote-SHA verification.
