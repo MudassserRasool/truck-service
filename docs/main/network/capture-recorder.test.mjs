@@ -24,7 +24,7 @@ try {
  const active=new CaptureRecorder(stub,file);
  await active.start('A',['TEST'],'https://example.test/a','synthetic');await active.begin('OPEN','synthetic open');
  active.process(event('Network.requestWillBeSent',{requestId:'inflight',request:{method:'GET',url:'https://example.test/pending'},type:'Fetch'},1));await active.persist();
- const recovered=new CaptureRecorder(null,file);assert.equal(await recovered.recoverInterrupted(),1);
+ const recovered=new CaptureRecorder(null,file);assert.equal(await recovered.recoverInterrupted('B'),0);assert.equal(await recovered.recoverInterrupted('A'),1);
  const saved=JSON.parse(await fs.readFile(file,'utf8'));assert.equal(saved.steps[0].status,'interrupted');assert.equal(saved.runs[0].outstandingRequestIds.length,1);
  await active.recoverInterrupted();
  // New runs must not attach late events to stale objects from a previous run.

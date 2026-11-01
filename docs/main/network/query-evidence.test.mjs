@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {summarizeQuery,enrichObservedQueries} from './query-evidence.mjs';
+const sample=summarizeQuery('https://example.test/shipments?status=booked&tag=a&tag=b&filter='+encodeURIComponent(JSON.stringify({customerId:'PRIVATE_ID',where:{status:{$in:['booked','scheduled']}}}))+'&token=FAKE_SECRET');
+const text=JSON.stringify(sample);
+assert(!text.includes('PRIVATE_ID'));assert(!text.includes('FAKE_SECRET'));assert(!text.includes('booked'));
+assert.equal(sample.shape.properties.tag.type,'array');assert.equal(sample.shape.properties.filter.properties.where.type,'object');
+assert.equal(summarizeQuery('https://example.test/path').availability,'not-present');
+const recorder={run:{id:'A',pages:[{baseline:true,cursor:1}]},data:{requests:[{runId:'A',sequence:2,browserRequestId:'r'},{runId:'B',sequence:3,browserRequestId:'r'}]},persist:async()=>{}};
+const pages=[{cursor:2,hasMore:true,truncated:true,events:[{method:'Network.requestWillBeSent',sequence:2,params:{requestId:'r',request:{url:'https://example.test/a?token=FAKE_SECRET'}}}]},{cursor:3,hasMore:false,truncated:false,events:[{method:'Network.requestWillBeSent',sequence:3,params:{requestId:'r',request:{url:'https://example.test/b?token=FAKE_SECRET'}}}]}];
+const result=await enrichObservedQueries({readEvents:async()=>pages.shift()},recorder);
+assert.equal(result.matched,1);assert.equal(result.unmatched,1);assert.equal(result.eventLossReported,true);
+assert.equal(recorder.data.requests[1].querySummary,undefined);assert(!JSON.stringify(recorder).includes('FAKE_SECRET'));
+console.log('PASS: query JSON/repeated-key structure, scalar/token omission, run/start attribution and bounded event-loss reporting. No live traffic injected.');

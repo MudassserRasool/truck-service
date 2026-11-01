@@ -2,6 +2,7 @@
 // never issues HTTP requests, replays traffic or modifies application state.
 import fs from 'node:fs/promises';
 import {safeUrl,summarizeText} from './evidence-utils.mjs';
+import {summarizeQuery} from './query-evidence.mjs';
 export const eventMethods=['Network.requestWillBeSent','Network.responseReceived','Network.loadingFinished','Network.loadingFailed','Network.webSocketCreated','Network.webSocketFrameSent','Network.webSocketFrameReceived','Network.webSocketClosed','Network.webSocketFrameError','Target.attachedToTarget','Target.detachedFromTarget'];
 export class CaptureRecorder {
  constructor(cdp,file){this.cdp=cdp;this.file=file;this.targets=new Map();this.current=new Map();}
@@ -13,7 +14,7 @@ export class CaptureRecorder {
  if(e.method==='Network.requestWillBeSent'){
   let prior=this.current.get(key);if(p.redirectResponse&&prior){prior.redirectResponse={url:safeUrl(p.redirectResponse.url),status:p.redirectResponse.status};prior.completion='redirected';}
   let leg=this.data.requests.filter(r=>r.runId===this.run.id&&r.target===target&&r.browserRequestId===p.requestId).length;
-  const r={id:this.run.id+':'+key+':'+leg,runId:this.run.id,stepId:this.step.id,browserRequestId:p.requestId,target,redirectLeg:leg,method:p.request.method,url:safeUrl(p.request.url),resourceType:p.type,sequence:e.sequence,monotonicTimestamp:p.timestamp,initiatorType:p.initiator?.type,completion:'outstanding-at-close',requestPayload:p.request.hasPostData?summarizeText(p.request.postData):{availability:'not-present-in-event',reason:'no post data supplied in event'}};
+  const r={id:this.run.id+':'+key+':'+leg,runId:this.run.id,stepId:this.step.id,browserRequestId:p.requestId,target,redirectLeg:leg,method:p.request.method,url:safeUrl(p.request.url),querySummary:summarizeQuery(p.request.url),resourceType:p.type,sequence:e.sequence,monotonicTimestamp:p.timestamp,initiatorType:p.initiator?.type,completion:'outstanding-at-close',requestPayload:p.request.hasPostData?summarizeText(p.request.postData):{availability:'not-present-in-event',reason:'no post data supplied in event'}};
   this.data.requests.push(r);this.step.requestIds.push(r.id);this.current.set(key,r);
  } else if(e.method==='Network.responseReceived'){
   const r=this.ensure(p,e),q=p.response;Object.assign(r,{url:safeUrl(q.url),status:q.status,mimeType:q.mimeType,protocol:q.protocol,fromDiskCache:q.fromDiskCache,fromServiceWorker:q.fromServiceWorker});
@@ -26,10 +27,10 @@ export class CaptureRecorder {
  } else if(e.method.startsWith('Target.')){this.run.childTargetEvents??=[];this.run.childTargetEvents.push({sequence:e.sequence,method:e.method,target:this.target({sessionId:p.sessionId})});}
  }
  async drain(){let page;do{page=await this.cdp.readEvents({afterSequence:this.cursor,methods:eventMethods,limit:1000});this.cursor=page.cursor;this.run.pages.push({cursor:page.cursor,hasMore:page.hasMore,truncated:page.truncated});if(page.truncated)this.run.eventLossReported=true;for(const e of page.events)this.process(e);}while(page.hasMore);}
- async end(observed,{screenshots=[],evidenceIds=[],details={}}={}){await this.drain();Object.assign(this.step,{endedAt:new Date().toISOString(),observed,screenshotPaths:screenshots,evidenceIds,details});this.run.endedAt=this.step.endedAt;this.run.outstandingRequestIds=this.data.requests.filter(r=>r.runId===this.run.id&&r.completion==='outstanding-at-close').map(r=>r.id);this.step=null;await this.persist();}
- async recoverInterrupted(){
+ async end(observed,{screenshots=[],evidenceIds=[],details={}}={}){await this.drain();Object.assign(this.step,{endedAt:new Date().toISOString(),observed,screenshotPaths:screenshots,evidenceIds,details});this.run.endedAt=this.step.endedAt;this.run.outcome=observed;this.run.outstandingRequestIds=this.data.requests.filter(r=>r.runId===this.run.id&&r.completion==='outstanding-at-close').map(r=>r.id);this.step=null;await this.persist();}
+ async recoverInterrupted(runId){
   this.data=JSON.parse(await fs.readFile(this.file,'utf8'));const now=new Date().toISOString();let recovered=0;
-  for(const s of this.data.steps.filter(s=>!s.endedAt)){Object.assign(s,{endedAt:now,status:'interrupted',observed:'Capture interrupted before a settled result was recorded; no successful action inferred'});const r=this.data.runs.find(r=>r.id===s.runId);if(r){Object.assign(r,{endedAt:now,interrupted:true,captureCompleteness:'partial'});r.outstandingRequestIds=this.data.requests.filter(q=>q.runId===r.id&&q.completion==='outstanding-at-close').map(q=>q.id);}recovered++;}
+  for(const s of this.data.steps.filter(s=>!s.endedAt&&(!runId||s.runId===runId))){Object.assign(s,{endedAt:now,interruptionRecordedAt:now,endBoundary:'Administrative closure on recovery; actual observation end unrecorded',status:'interrupted',observed:'Capture interrupted before a settled result was recorded; no successful action inferred'});const r=this.data.runs.find(r=>r.id===s.runId);if(r){Object.assign(r,{lastCompletedObservationAt:r.endedAt,endedAt:now,endBoundary:'Administrative closure on recovery; paused interval not captured',interrupted:true,captureCompleteness:'partial',outcome:'Capture interrupted before settled result; no success inferred'});r.outstandingRequestIds=this.data.requests.filter(q=>q.runId===r.id&&q.completion==='outstanding-at-close').map(q=>q.id);}recovered++;}
   if(recovered)await fs.writeFile(this.file,JSON.stringify(this.data,null,2)+'\n');this.step=null;return recovered;
  }
  async persist(){

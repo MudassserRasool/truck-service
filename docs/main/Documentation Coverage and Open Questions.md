@@ -334,3 +334,30 @@ E-114 establishes evidence tooling only. Prior89 inventory statuses remain uncha
 | Dates/evidence/unknowns | R001–008, E-115–123, normalized catalog and explicit capture limits | Old capture evictions/late completions cannot be reconstructed |
 
 Next: Deep2 shipment discovery on a new branch after the Deep1 commit/push and remote-SHA verification.
+
+**Deep2 in progress, November1:** E-124–131/R001–002 adds delivered LTL detail/editor, structural shipment response, Timeline filter-write audit, direct-entry defaults/stops/catalogs/scratch math/calculators and15 linked screenshots. See [Deep2](Quote%20Factory%20Quote%20Workflow%20Guide.md#deep-shipment-refresh). All SHP/EDT statuses remain P/B; lists/coverage/other states/equipment branches and phase audit are pending. Original operational validation remains unavailable.
+
+| ID | New or extended question | Cases | Proposed owner | Refresh phase |
+| --- | --- | --- | --- | --- |
+| OQ-28 | Is quotesFilter stored per request or per user, who sees it, and should filter navigation create shipment Timeline audit events? | QTE-09, SHP-12 | Product/operations lead | Deep2/5/7 |
+| OQ-29 | Which delivered-state prices may change, which minimum-profit rules apply, and what rounding/enforcement follows the above-price cost warning? | SHP-07, EDT-05/07 | Pricing/accounting lead | Deep2/5/7 |
+| OQ-30 | What controls initial Share BOL checked/Hide contacts unchecked versus checked populated-editor variants, and which recipients/documents change? | SHP-03/08, EDT-06, QTE-11 | Operations/admin lead | Deep2/3/5 |
+
+OQ-25 also covers the new tracking-form Oct31 default versus Timeline Nov1 dates; timezone source remains unverified. Menu visibility/HTML requiredness do not establish submit permission or backend validation.
+
+**Deep2 further progress:** E-132–135 adds the70-choice direct-entry index, actual LTL handoff, Active/All empty states, filter catalogs/date/bulk/sort/reset behavior and structural query evidence. Direct LTL manual booking is explicitly gated; Other is free text. Original SHP/EDT P/B statuses stay unchanged. Canceled detail/queues/coverage/remaining state variants and phase audit continue.
+
+| ID | Scope/behavior question | Cases | Proposed owner | Phase |
+| --- | --- | --- | --- | --- |
+| OQ-31 | Should the clone preserve the direct-LTL coming-soon gate and quote handoff, or is new manual-LTL functionality required? | SHP-03, QTE-02 | Product/client lead | Deep2/7 |
+| OQ-32 | How should custom Other equipment names return to standard choices, validate and persist; which temperature/dimension rules apply by type? | SHP-03, EDT-02/04 | Product/operations lead | Deep2/7 |
+| OQ-33 | Should Reset filters retain search, and what does the Dry Van+11 bulk-selection chip count represent? | SHP-01/02 | Product lead | Deep2/7 |
+
+**Deep2 continuation, November1 — E-136–144:** Canceled/Uncancel entry, Cover/pickup/delivery queues, uncovered/assigned editing, staged carrier selection, DAT error, Lane History, driver/ETA/appointment and Hazmat/Tarps branches now have dated evidence. No operational submissions; D-01 remains.
+
+| ID | Unresolved question / decision | Owner | Evidence / next validation |
+| --- | --- | --- | --- |
+| OQ-34 | Which packet/approval rule changes Cover & request packet to Cover & send rate con? Which vendor supplies packets, and what sends occur at each stage? | Carrier operations/integration lead | E-138; designated disposable carrier/shipment and suppressed outbound environment required. |
+| OQ-35 | What is the scope/age/cause of DAT authorization failure, which DAT products are licensed, and who supplies Lane History? | Integration/client lead | E-138; provider contract/account review, no credentials in docs. |
+| OQ-36 | What are backend rules for canceled editing/Uncancel, coverage changes, driver/ETA/In/Out/Picked up/Delivered, and checked document updates? | Operations/admin lead | E-136/140–142; alternate roles/test records unavailable. |
+| OQ-37 | Which hazmat class labels/rules must the clone support, how are required fields enforced, and what do stacking/tarp choices affect? | Operations/product lead | E-143–144; UI catalog and HTML constraints observed, compliance and save effects untested. |

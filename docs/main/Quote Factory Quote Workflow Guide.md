@@ -1214,6 +1214,244 @@ The booked result returned offers while also showing **6 carriers didn't return 
 
 **Continue to Phase 4 in section 15:** Shipment lists, coverage and shipment detail screens, including queues, leads, carrier coverage and the purposes of Confirmation, Rate con, Bill, Invoice, Documents and map controls. Edit/status-transition rules follow in Phase 5.
 
+<a id="deep-shipment-refresh"></a>
+**Deep Phase2 — Shipments refresh (safe discovery delivered; operational validation partial, November 1, 2026)**
+
+**Delivery context:** Deep1 was committed/pushed on `codex/docs-deep-01-quotes-evidence`, commit `0d64f94cafedeca507d1f3d45308e480166f8624`; `git ls-remote` matched local HEAD before `codex/docs-deep-02-shipments` was created. This section is new work on that shipment branch. It supplements the older dated chapters below; the safe-discovery scope and unresolved operational validation are distinguished below.
+
+**Existing shipment detail → editor, E-124–127 / DEEP-02-R001**
+
+Open the [existing booked-quote shipment](https://app.quotefactory.com/broker/shipment/6ada321dbf56ad5e17c4f8a4), or follow its quote banner **View**. The November1 view now includes **Delivered Oct28** after Quoted/Booked/Scheduled/In transit; the October26 replay was earlier in the lifecycle. Booking shown on the request is not the current shipment stage. **Auto dispatched** appears on the provider card. The current record exposes **Pay bill**, customer **Confirmation** and **Record payment/Invoice** paths; button wording can differ between accessible/native views. No payment was recorded.
+
+| Surface / action | Current observed behavior | Permission, save and evidence limit |
+| --- | --- | --- |
+| Open shipment action menu | View quotes, Duplicate quote, Change customer, Cancel shipment | Entries visible, no disabled marker; duplicate/change/cancel not invoked. Cancel might act immediately. Server authority and reversal are unknown. |
+| Manage reps | Add user; Paid/User/Commission/Payout columns and a mark-paid checkbox | Assigned identity omitted. No assignment/commission/payment changed; accessible text did not expose a numeric payout in this window. |
+| Expand itemized view | Freight cost867.35, price1045, profit177.65; summary Margin17%, Cost+20% | Description/cost HTML `readOnly=true`; price `readOnly=false`; all three `required=true` and not disabled. This is visible HTML, not a save/role contract. |
+| Price calculator | Menu: Margin17%, Cost+20.482%, Profit177.65 | Summary and popover have different precision; no edits or universal rounding policy inferred. |
+| + add tracking update | Dialog with Time, Date, Location, Notes, enabled Save; no PRO field in this LTL variant | Blank Location/Notes; HTML required flags false. No Save. Displayed Oct31/2:26PM while client inspection date is Nov1; timezone source is unverified. |
+| PRO | Activates a prefilled inline textbox; Track is a separate external ArcBest link | Reference omitted/unchanged. Escape did not dismiss the inline editor; no separate Save exposed. Blur/enter persistence untested. Track was not opened. |
+| Timeline → latest filter event | Old `volume` → New `all`, with time/actor and related quote link | Confirms recorded filter-update audit history, beyond transient view retention. Actor/private IDs omitted. Does not prove the filter is per-user or shared. |
+| Timeline other event types | Tracking, PRO added, pickup request sent/completed, POD/unknown/bill document uploads, invoice sent, receivable/bill updated/pushed, creation/booking | Historical labels only; external receipt/accounting reconciliation not independently verified. |
+| Linear Feet Visualizer | Five48×48 footprints arranged2+2+1, estimated12ft | No drag/rotation. One saved-layout observation, not a universal packing algorithm. |
+| Edit shipment | Carrier/equipment displayed rather than a selector; Custom BOL, distance, stops, freight and price inputs; Update shipment present | Delivered status did not make every control read-only. Hide contacts and Send updated documents were not exposed in this sampled LTL editor. No Update pressed. |
+
+Stored freight example: five48×48×48in pallets give `5×48×48×48÷1728 =320cf`; `10310÷320 =32.21875pcf`, displayed32.22. UI separately shows23pieces within the visible group. Contains, pallet quantity and headline “items” must not be treated as interchangeable counts without business review. The entered/estimated length distinction remains important.
+
+![Delivered-shipment financial panel, private headers/stops excluded](screenshots/deep-02-delivered-financials-2026-11-01.jpg)
+
+![Existing five-pallet layout and summary, identifying stops outside viewport](screenshots/deep-02-freight-visualizer-2026-11-01.jpg)
+
+The existing-detail/editor/tracking/audit views contain private contacts, addresses, tracking references or actor context. Their full screenshots are omitted. The native and clipped screenshot APIs returned different layouts, and clipped tracking capture omitted the actual modal; those rejected captures were not retained. Keep this image gap explicit rather than substituting an unrelated view.
+
+**Direct entry: Main Menu → Create new shipment, E-128–131 / DEEP-02-R002**
+
+Open [Book shipment](https://app.quotefactory.com/broker/shipment/new). This starts independently from quote results. The current blank session defaults to Dry Van; customer, Custom BOL, distance, freight and prices are blank. Partial/Tanker/Team are unchecked initially. **Book shipment** and **Save for later** are enabled even with blank required fields. Neither was pressed; creation/numbering/draft/validation contracts remain unverified.
+
+| Area | Field/action dictionary and current defaults | What to confirm |
+| --- | --- | --- |
+| Equipment | Dry Van; Partial label “Partial allowed”; Tanker endorsement; Team service; add vendor/carrier | Checked flags are unsaved requirements, not proof of carrier qualification. DOM actions did not reliably toggle Tanker/Team; native clicks verified selected states. No extra card fields appeared. |
+| Pickup/delivery | Company; location type; Address/Address2; city/province/postal; contact name/phone/email; Share BOL; instructions; open/close; date; appointment; reference types/values; private note | Blank pickup type Business with dock/forklift,8AM–5PM, Share BOL checked. Phone US flag does not establish stop country. Actual recipient/document behavior unknown. |
+| Location types |26 options, listed in JSON; same observed catalog as quote form | Type does not alone establish accessorial pricing/eligibility. |
+| Appointment | Separate dialog with blank Appointment time and Appointment # or ID; Save/Close | Stop date is separate. No Save/requiredness/timezone/invalid-date validation tested. |
+| Stop private note | Optional textarea plus confirmation/check control; separate from pickup instructions | No text or confirmation; “private” label is not tested access enforcement. |
+| Reorder locations | Two blank rows with drag handles and Duplicate/Remove controls | No move/duplicate/remove. No explicit modal save shown; parent-form persistence unknown. |
+| + add location | Appends a third blank Delivery stop with its own Remove control | No booking. Per-stop sequencing/route pricing/validation remain unverified. |
+| Handling unit | Description/history; Contains count/unit; Packaging; Quantity; L/W/H; in/cm; Total weight lb/kg; Stackable/Hazmat; pickup/delivery association selectors in observed three-stop state; + add more | Packaging count differs from contained count. Source/validation/allocation rules remain unknown. Dry Van has no class/NMFC inputs in this observed branch. |
+| Overall freight | Entered length/ft, visualizer/estimate, total value; calculated pallet/volume/density/weight summaries appear after measurements | Partial checked exposes “Total length needed for partial quote” before submit; computed estimate does not fill entered length automatically. |
+| Cost & price | Freight description/note, Target cost, Price, calculators, + add item, Margin/Cost+/Profit, lane history | Formula and warning evidence below; no financial record saved. |
+| Footer | Hide contacts from carrier unchecked; Book shipment; Save for later | Defaults differ from older populated-editor examples; customer/global precedence and outbound effects unknown. |
+
+**Contains menu22 values:** Bags, Bales, Boxes, Bundles, Carpets, Cartons, Cases, Coils, Crates, Cylinders, Drums, Gallons, Kegs, Pails, Pieces, Pipes, Racks, Reels, Rolls, Sacks, Totes, Tubes. **Packaging27 values:** Pallet(48x40), Pallet(48x48), Pallet(60x48), Pallet, Bag, Bale, Box, Bundle, Carpet, Carton, Case, Coil, Crate, Cylinder, Drum, Gallon, Keg, Pail, Piece, Pipe, Rack, Reel, Roll, Sack, Skid, Tote, Tube. A plural contained unit is not a substitute for the outer packaging choice.
+
+**Preset/math:** Choosing Pallet(48x40) fills length48/width40; height and quantity remain blank. Entering fictional quantity2, height48 and total1000lb displays106.7cf,9.38pcf, estimate4ft. Entered length stays blank and the partial-length warning remains. Volume/density appeared after measurement entry; the earlier blank-state absence is not a mode-wide absence.
+
+**Per-mile pricing and warning:** With fictional manual distance100mi/cost100/price125, Cost per mile shows1.00. Setting the rate to2 updates target cost200 while price stays125. UI displays profit−75, Margin−60%, Cost+−37% and **Target cost is above price.** Exact markup is−37.5%; the displayed integer is a dated example, not an approved signed-rounding policy. Book remains enabled but was not pressed, so no claim that a negative-profit booking would pass. Manual distance is not proof of a routing-provider result.
+
+![Blank direct-entry defaults](screenshots/deep-02-new-shipment-dry-van-2026-11-01.jpg)
+
+![Unsaved requirement switches selected](screenshots/deep-02-new-shipment-requirements-2026-11-01.jpg)
+
+![Blank pickup fields and default Share BOL/hours](screenshots/deep-02-new-pickup-fields-2026-11-01.jpg)
+
+![Blank appointment dialog](screenshots/deep-02-new-appointment-2026-11-01.jpg)
+
+![Expanded private stop-note field](screenshots/deep-02-new-private-stop-note-2026-11-01.jpg)
+
+![Reorder locations entry, no drag or removal](screenshots/deep-02-new-reorder-locations-2026-11-01.jpg)
+
+![Handling unit in three-stop scratch form](screenshots/deep-02-new-handling-unit-2026-11-01.jpg)
+
+![Fictional pallet calculation and separate entered-length warning](screenshots/deep-02-new-pallet-example-2026-11-01.jpg)
+
+![Fictional per-mile cost calculator](screenshots/deep-02-new-cost-per-mile-2026-11-01.jpg)
+
+![Fictional above-price cost warning and footer controls](screenshots/deep-02-new-pricing-warning-2026-11-01.jpg)
+
+Catalog screenshots show only their visible scroll windows: [location types](screenshots/deep-02-new-location-types-2026-11-01.jpg), [contained units](screenshots/deep-02-new-contained-unit-types-2026-11-01.jpg), [packaging](screenshots/deep-02-new-packaging-types-2026-11-01.jpg). Exact lists are recorded in the relevant run steps; images are not proof all options fit onscreen.
+
+| Action → run | Browser-facing network → payload/body evidence → result | Limits |
+| --- | --- | --- |
+| Detail/reps/editor → R001 |46 request records/132 stream events; account-user, quote-config, shipment, customer, contacts, provider notes, location-template, product-history, shipment notes and credit-usage reads; automatic recentlyVisited PUT200 | No event loss reported, zero outstanding at close; parent/body scope still partial. Reads concurrent with a step are not all caused exclusively by it. |
+| Delivered editor shipment GET → R001/EDIT | `GET /shipments/:recordId` →200, finished; `Network.getResponseBody` succeeds; only redacted structural summary retained | Shape includes status/mode/equipmentOptions, vendorSlots, locs, handlingUnits, quote, documents, dispatches, tracking, coverageLeads and financial relationship fields; capped50 properties/nesting truncation explicit. Presence of isTest/isDraft fields does not make the record disposable. No public API/schema guarantee. |
+| Blank form/scratch interactions → R002 |19 request records/183 stream events; UI probes, polling/reads and Sentry telemetry; no shipment-create request observed in captured windows | Event loss reported and one outstanding request; absence does not establish every interaction is client-only. No Book/Save for later/appointment Save/private-note confirmation submitted. |
+
+Exact run/step/request IDs, observed statuses/timings and body availability are in the [network JSON](network/quote-factory-network.json). Screenshots here are actual UI captures; fictional input values are explicitly identified. Current exact role and server permissions remain unverified.
+
+<a id="deep-shipment-equipment"></a>
+**Direct-entry equipment index — E-132–133, November1**
+
+R003 records scratch-form reload/reset, the70-option catalog and LTL. Work paused after that closed inspection step. R004 starts from a new baseline after resume and records the remaining69 choices. No continuous capture is claimed across the pause. Each table row links its actual viewport image; visible HTML attributes and rendered text are in the corresponding EQ step in the network JSON. Viewports do not show the entire form. Representative visual review covers LTL, heavy-haul/flatbed, refrigerated and Other; all70 have recorded fields/screenshots, but individual full-image visual QA remains incomplete.
+
+**LTL is a product gate here:** The direct form shows **LTL direct booking coming soon**, disables Book shipment and applies pointer-events:none/opacity0.3 to downstream fields. Some descendant HTML inputs still have `disabled=false`; inspect the composed interaction gate, not only the input attribute. **Get LTL quotes** is a link to `/broker/quote`. R005 follows it to a blank LTL Get quotes form with Protect from freezing. No customer/rate request/booking was submitted. This placeholder is not an implemented manual-LTL creation flow; clone scope must address it explicitly.
+
+**Other is structurally different:** Choosing Other replaces the equipment selector with **Equipment type name**, placeholder **Other name...**, prefilled Other. Its HTML name is `vendorSlots.0.equipmentType`, which is a form binding observation, not a database/public API guarantee. Reload restored the standard Dry Van selector in the blank scratch form. Returning without reload, custom-name validation and saved behavior remain untested.
+
+Equipment flags listed below were unchecked in these fresh blank views. Common handling-unit Stackable/Hazmat and stop Share BOL are separate controls. Two °F boxes and Total Width/Height are visible field differences; temperature defaults/range direction, dimensional limits and downstream validation remain unverified. Other than the direct LTL gate, Book was enabled in the sampled blank selections; that does not establish eligible inputs or provider support.
+
+| Equipment | Equipment-card flags | Additional field/gate evidence | Screenshot |
+| --- | --- | --- | --- |
+| LTL | Tanker endorsement, Team service | Direct booking coming soon; disabled Book; Get LTL quotes | [View](screenshots/deep-02-equipment-01-2026-11-01.jpg) |
+| Dry Van | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-02-2026-11-01.jpg) |
+| Dry Van 53 | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-03-2026-11-01.jpg) |
+| Dry Van 48 | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-04-2026-11-01.jpg) |
+| Straight Truck | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-05-2026-11-01.jpg) |
+| Cargo Van | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-06-2026-11-01.jpg) |
+| Dry Van or Refrigerated | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-07-2026-11-01.jpg) |
+| Curtainside | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-08-2026-11-01.jpg) |
+| Vented Van | Partial allowed, Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-09-2026-11-01.jpg) |
+| Flatbed | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-10-2026-11-01.jpg) |
+| Flatbed 53 | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-11-2026-11-01.jpg) |
+| Flatbed 48 | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-12-2026-11-01.jpg) |
+| Step Deck | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-13-2026-11-01.jpg) |
+| Flatbed or Step Deck | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-14-2026-11-01.jpg) |
+| Double Drop | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-15-2026-11-01.jpg) |
+| Removable Gooseneck | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-16-2026-11-01.jpg) |
+| Conestoga | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-17-2026-11-01.jpg) |
+| Stakebed | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-18-2026-11-01.jpg) |
+| Step Deck Conestoga | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-19-2026-11-01.jpg) |
+| Flatbed Hot Shot | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-20-2026-11-01.jpg) |
+| Landoll Flatbed | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-21-2026-11-01.jpg) |
+| Multi-Axle Heavy Haul | Partial allowed, Tarps, Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-22-2026-11-01.jpg) |
+| Refrigerated | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-23-2026-11-01.jpg) |
+| Refrigerated 53 | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-24-2026-11-01.jpg) |
+| Refrigerated 48 | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-25-2026-11-01.jpg) |
+| Refrigerated Straight Truck | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-26-2026-11-01.jpg) |
+| Refrigerated Cargo Van | Partial allowed, Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-27-2026-11-01.jpg) |
+| Intermodal | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-28-2026-11-01.jpg) |
+| Intermodal 20 | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-29-2026-11-01.jpg) |
+| Intermodal 20 High Cube | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-30-2026-11-01.jpg) |
+| Intermodal 40 | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-31-2026-11-01.jpg) |
+| Intermodal 40 High Cube | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-32-2026-11-01.jpg) |
+| Intermodal 40 Refrigerated | Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-33-2026-11-01.jpg) |
+| Intermodal 53 | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-34-2026-11-01.jpg) |
+| Drayage | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-35-2026-11-01.jpg) |
+| Drayage 20 | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-36-2026-11-01.jpg) |
+| Drayage 20 High Cube | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-37-2026-11-01.jpg) |
+| Drayage 20 Refrigerated | Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-38-2026-11-01.jpg) |
+| Drayage 40 | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-39-2026-11-01.jpg) |
+| Drayage 40 High Cube | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-40-2026-11-01.jpg) |
+| Drayage 40 Refrigerated | Tanker endorsement, Team service | Two °F inputs | [View](screenshots/deep-02-equipment-41-2026-11-01.jpg) |
+| Dump | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-42-2026-11-01.jpg) |
+| Bottom Dump | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-43-2026-11-01.jpg) |
+| End Dump | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-44-2026-11-01.jpg) |
+| Side Dump | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-45-2026-11-01.jpg) |
+| Dry Bulk | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-46-2026-11-01.jpg) |
+| Hopper Bottom | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-47-2026-11-01.jpg) |
+| Power Only | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-48-2026-11-01.jpg) |
+| Power Only Load Out | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-49-2026-11-01.jpg) |
+| Power Only Tow Away | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-50-2026-11-01.jpg) |
+| Driveaway | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-51-2026-11-01.jpg) |
+| 2-way Deck | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-52-2026-11-01.jpg) |
+| 3-way Deck | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-53-2026-11-01.jpg) |
+| 4-way Deck | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-54-2026-11-01.jpg) |
+| Boom | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-55-2026-11-01.jpg) |
+| Box Truck | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-56-2026-11-01.jpg) |
+| Heavy Duty | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-57-2026-11-01.jpg) |
+| Non-CDL | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-58-2026-11-01.jpg) |
+| Single | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-59-2026-11-01.jpg) |
+| Tractor-trailer | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-60-2026-11-01.jpg) |
+| Utility | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-61-2026-11-01.jpg) |
+| Vocational | None of these equipment flags | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-62-2026-11-01.jpg) |
+| Auto Transport | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-63-2026-11-01.jpg) |
+| Open Auto Transport | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-64-2026-11-01.jpg) |
+| Enclosed Auto Transport | Tanker endorsement, Team service | Total Width / Height | [View](screenshots/deep-02-equipment-65-2026-11-01.jpg) |
+| Tanker | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-66-2026-11-01.jpg) |
+| Tanker Aluminum | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-67-2026-11-01.jpg) |
+| Tanker Intermodal | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-68-2026-11-01.jpg) |
+| Tanker Steel | Tanker endorsement, Team service | Shared handling-unit/stops form | [View](screenshots/deep-02-equipment-69-2026-11-01.jpg) |
+| Other | Tanker endorsement, Team service | Total Width / Height; Free-text Equipment type name replaces selector | [View](screenshots/deep-02-equipment-70-2026-11-01.jpg) |
+
+`DEEP-02-R003`: 70 request records, 50 stream events, eviction reported, 1 outstanding at close; `DEEP-02-R004`: 5 request records, 82 stream events, eviction not reported, 0 outstanding at close. All capture scopes remain partial for targets/bodies. R004 records a separate OTHER-GATE follow-up after its standard selector disappeared; the original timeout is not a failed equipment selection. No rejected/stale screenshots are substituted for the inspected branch.
+
+![Direct LTL booking restriction](screenshots/deep-02-equipment-01-2026-11-01.jpg)
+
+![Supported handoff to blank LTL quote form](screenshots/deep-02-ltl-quote-handoff-2026-11-01.jpg)
+
+**Shipment list controls and empty states — E-134–135 / R006**
+
+Open [Shipments](https://app.quotefactory.com/broker/shipments) → Active (initial selection) or All → **View shipment filters**. Initial header-only rendering later fills with rows; it is not an empty-state result. The settled filter dialog includes:
+
+| Filter | Observed choices / behavior |
+| --- | --- |
+| Search | Free search; a fictional unmatched reference settled to See0 shipments before applying. Debounced old/no-count UI was transient. |
+| Status | Requested, Booked, Scheduled, In transit, Delivered, Canceled; all initially unchecked in this sample. |
+| Equipment families | LTL, Dry Van, Flatbed, Refrigerated, Intermodal, Drayage, Dump, Dry Bulk, Power Only, Driveaway, Auto Transport, Tanker. **Select truckload** checks11 non-LTL families. These broad filters differ from the70 direct-entry equipment choices. |
+| Booked date | From/to plus Today, Yesterday, This week, Last week, This month, Last month, This year, Last year. |
+| Pickup / delivery date | From/to plus Today, Tomorrow, Yesterday, This week, Next week, Last week, This month, Next month, Last month, This year, Last year. |
+| Parties / users | Origin, Destination, Carrier, Customer, Rep, Booked by, Covered by. Search/matching and cross-filter rules remain unverified. |
+| Apply | **See N shipments** applies the draft filter. Canceled alone produced count269 with17 currently rendered links; neither number proves full pagination coverage. |
+| Sort icon | Created date new to old; Pickup date new to old; Pickup date old to new. The latter changed URL sort pickupOn:DESC→ASC; no row-order/tie proof in the zero-result example. |
+
+The fictional search in Active shows **No active shipments found → Switch to all shipments**. Switching to All retains the search and shows **No shipments found → Reset filters**. Reset removed equipment/booked-date/sort criteria **while retaining the search**; clearing search required the filter form. This is observed scope, with intended policy/defect unresolved. A selected-equipment chip read “Dry Van+11” while11 non-LTL checkboxes were checked; use actual controls rather than that chip to count.
+
+Booked Today sets both dates to2026-11-01; pickup/delivery stay blank. HTML date bounds0001-01-01 through275760-09-13 are browser constraints, not business limits. The November1 filter and October31 tracking default do not establish a universal timezone. Query evidence preserves decoded field names/types and omits scalar values; this remains an observed interface rather than a guaranteed contract.
+
+Screenshots: [Active empty](screenshots/deep-02-shipments-active-empty-2026-11-01.jpg), [All empty](screenshots/deep-02-shipments-all-empty-2026-11-01.jpg), [truckload filter](screenshots/deep-02-shipments-truckload-filter-2026-11-01.jpg), [Booked Today](screenshots/deep-02-shipments-booked-today-2026-11-01.jpg), [sort menu](screenshots/deep-02-shipments-sort-menu-2026-11-01.jpg), [Reset retains search](screenshots/deep-02-reset-retains-search-2026-11-01.jpg), [equipment catalog viewport](screenshots/deep-02-equipment-options-2026-11-01.jpg).
+
+**Deep2 continuation — canceled records, operational queues and coverage (November1; E-136–144)**
+
+These observations add R007–011 in the [network evidence](network/quote-factory-network.json). The role remains the existing broker session; alternate roles and a disposable test environment are unavailable. Counts, defaults and state comparisons below belong to these dated examples.
+
+**Explore the daily queues:** Main Menu → **Cover**, **Confirm pickups**, or **Confirm deliveries**. Open an existing row to inspect its detail. Leave operational buttons unpressed while learning on production records.
+
+| Navigation / route | Directly observed | Meaning and limit |
+| --- | --- | --- |
+| Cover → `/broker/shipments/covering/all` | Booked rows with customer price, pickup/delivery dates, route and lead count; no Active/All tabs. Sample Auto Transport detail still **Needs a carrier**. | Booking a shipment and selecting a carrier are separate stages. A lead count does not establish assignment, agreed cost or availability. Complete queue inclusion/paging rules remain unknown. |
+| Confirm pickups → `/broker/shipments/scheduled/all` | 15 rendered shipment links with 15 Scheduled labels. Sample detail has assigned carrier, Rate con, Bill, driver, appointment, ETA, In, Out and Picked up controls. | A work queue for pickup confirmation in this example; no pickup was confirmed. Counts and status eligibility are not universal rules. |
+| Confirm deliveries → `/broker/shipments/delivering/all` | 7 rendered links with 7 In transit labels. Sample has existing departure/tracking entries, delivery appointment, ETA/In/Out and Delivered. | Historical entries do not demonstrate live tracking freshness. No delivery/arrival/departure action was used. |
+| Shipments → filter Canceled → existing row | Canceled before a carrier was selected; Documents/Menu/Reps remain; **Edit shipment absent**. Menu: Duplicate shipment, Change customer, **Uncancel shipment**. | The record demonstrates an exception/recovery entry point. Cancellation, restoration and permission rules were not executed or inferred from the missing edit link. |
+
+The canceled example's expanded description is readonly; cost/price inputs are not readonly and have HTML required attributes. Its zero cost/price and “Invoice paid in full” label do not establish a payment or refund. No financial input was changed.
+
+**Uncovered versus assigned editing:** In the uncovered Auto Transport example, **Reschedule** navigates to the full shipment editor. Equipment selection is exposed, Tanker/Team are unchecked, Hide contacts is checked, and there is no Send updated documents section. In the Scheduled assigned Auto Transport example, the equipment selector was absent, Tanker/Team remained unchecked, Hide contacts was checked, and **Send updated documents → Rate Con** was checked. **Update shipment** was never pressed. Treat these as observed record variants; status/equipment/customer/role causes and backend enforcement remain unresolved.
+
+**Coverage walkthrough:** Cover queue → existing uncovered shipment → **Cover freight (Auto Transport)** opens `/broker/shipment/:shipmentId/cover/:slotId`. The inspected modal shows target cost275, Lane History318, 17 lead candidates, Show cost checked, Post unchecked, load-board status and **Add a carrier**. Target cost is a planning value; the empty carrier charge input only displays275 as a placeholder.
+
+1. **Lane History** opens radius/history controls. Default100mi/6months; radius choices10/25/50/100/150/200/250mi; periods1/3/6/9months/1year. The Auto Transport summary says average cost318 for306mi and1.04/mi. Endpoint values175/450 have no verified statistical labels. Matching, weighting, date/status scope and data supplier remain unknown; no historical value was applied.
+2. **Loadboard error details** opens **DAT Errors → Authorization failed**. This is an existing app-reported failure. Its trigger/age, direct server call, credentials, licensed products and current connectivity are unverified. No posting was attempted.
+3. **Add a carrier** opens a staged form: carrier search; contact name/phone/email; optional note for rate con/email; equipment; charge description/amount; add charge; summary; tracking and packet options. **Track with Trucker Tools** is checked. Initially **Request packet** is checked, with help stating that the rate con follows packet receipt and approval. Actions are **Save for later** and **Cover & request packet**.
+4. One visible existing-carrier result was selected. The packet checkbox/help disappeared and the final action became **Cover & send rate con**. The eligibility/approval reason is unknown. Contacts remained empty. No final action or Save for later was used; returning to detail still showed Needs a carrier. This verifies visible staging, without asserting a database rollback or a successful assignment.
+
+The initial final-action control was visually dim (opacity0.1) while HTML `disabled=false`, with pointer events enabled. Appearance and HTML enabled state do not establish submission eligibility. The form's summary rounds margin to52.2% for575 price/275 target/300 profit; that target remains separate from an entered/agreed carrier charge.
+
+![Existing DAT authorization error](screenshots/deep-02-dat-authorization-error-2026-11-01.jpg)
+
+Coverage screenshots: [blank charge/contact fields](screenshots/deep-02-coverage-blank-fields-2026-11-01.jpg), [tracking/packet help and final actions](screenshots/deep-02-coverage-packet-footer-2026-11-01.jpg), [lane-history entry](screenshots/deep-02-cover-load-header-2026-11-01.jpg). These omit private populated records. R008's unfinished Lane History observation was administratively marked interrupted on recovery; its end time is not an observed completion. R009 supplies the fresh settled observation; the paused interval has no continuous capture.
+
+**Driver, ETA and appointment forms:** Scheduled assigned detail → **Update driver information** opens Driver name, Driver phone/country, Tractor # and Trailer #, with Save/Close. No values were changed. The recorded metadata collection includes page-level textboxes as well as the modal; the four field labels above are the modal's observed fields. **ETA** opens stop city, time/date, timezone label, opening hours, optional Notes and Confirm Save. The sampled pickup shows America/Detroit, November1 and2:57AM, with opening hours8AM–5PM; the clock/default policy is unverified. **Add appointment** opens Appointment time, Appointment # or ID (placeholder12345), **Send updated Rate con checked**, and Save. Saving could therefore have document effects; it was not tested. Close modal leaves these forms without saving. In/Out/Picked up/Delivered were inventoried but left unpressed because their first-click side effects are unknown.
+
+**Hazmat and Tarps conditional branches:** Main Menu → Create new shipment → keep blank Dry Van → check **Item1 Hazmat**. The normal description becomes “Proper shipping name and hazmat quantity.” Additional fields are UN #, Hazmat class, Packing group, and a shipment Hazmat contact section with Emergency phone, Emergency contact company and Contract #. HTML requires UN, hazmat class, emergency phone and emergency contact company; packing group/contract are optional at this layer. A red indicator appears beside Hazmat class, but exact error text and submission enforcement were not established.
+
+Packing group offers I/II/III. The observed hazmat-class menu contains: 1.1,1.2,1.3;1.4B/C/D/E/F/G/S (Explosive);1.5 Blasting Agent;1.6 Insensitive Detonating Substance;2.1 Flammable Gas;2.2 Non-Flammable Gas;2.3 Poisonous Gas;3/3.1/3.2/3.3 Flammable Liquid;4.1 Flammable Solid;4.2 Spontaneously Combustable Material;4.3 Dangerous When Wet;5.1 Oxidizer;5.2 Organic Peroxide;6.1 Toxic Substances;6.2 Poisonous Material;7 Radioactive Material;8 Corrosive Material;9 Miscellaneous Hazardous Material;9.1 Miscellaneous Dangerous Goods;9.2 Environmentally Hazardous Substance. These reproduce app labels, including spelling; they are not an authoritative regulatory classification. Full literal options are in R011/BLANK-HAZMAT. **Hazmat class and freight class/NMFC are distinct fields/concepts.**
+
+![Blank hazardous-material and emergency-contact fields](screenshots/deep-02-new-hazmat-fields-2026-11-01.jpg)
+
+Stackable can be checked alongside Hazmat; zero/blank dimensions did not establish any stacking calculation. Switching the scratch equipment to Flatbed retained these item flags. Flatbed **Tarps** toggled to selected by native AX after a DOM checkbox action failed; no additional tarp fields appeared. Tarp size/fees/qualification remain unknown. Reloading settled to blank Dry Van with Hazmat/Stackable unchecked. No shipment/draft was created; reset proves only the visible form state.
+
+**Deep2 boundary:** Accessible list, blank/equipment, delivered, canceled, uncovered, scheduled/assigned and in-transit examples are documented. Saves, booking/coverage/reassignment, cancellation/restoration, arrival/departure, document sends, tracking activation and financial effects remain untested under D-01. All70 equipment branches were inspected at their initial states; combinations of flags/commodities/stops and every backend validation are not exhaustively proven. Local link/JSON/recorder checks pass; 98 screenshots passed an OCR email-pattern scan (not a complete privacy or visual correctness proof). Representative visual QA remains explicitly limited. Deep3 documents/accounting follows the separate Deep2 Git delivery.
+
+
 <a id="shipment-operations"></a>
 **15\. Shipment lists, coverage and shipment detail screens — Phase 4**
 
