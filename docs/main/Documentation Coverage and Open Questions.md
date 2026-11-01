@@ -361,3 +361,21 @@ OQ-25 also covers the new tracking-form Oct31 default versus Timeline Nov1 dates
 | OQ-35 | What is the scope/age/cause of DAT authorization failure, which DAT products are licensed, and who supplies Lane History? | Integration/client lead | E-138; provider contract/account review, no credentials in docs. |
 | OQ-36 | What are backend rules for canceled editing/Uncancel, coverage changes, driver/ETA/In/Out/Picked up/Delivered, and checked document updates? | Operations/admin lead | E-136/140–142; alternate roles/test records unavailable. |
 | OQ-37 | Which hazmat class labels/rules must the clone support, how are required fields enforced, and what do stacking/tarp choices affect? | Operations/product lead | E-143–144; UI catalog and HTML constraints observed, compliance and save effects untested. |
+
+**Deep3, November1 — E-145–158:** Fresh document wrappers, signed-link metadata, POD accept hints, existing share list, invoice and bill forms,12 accounting tabs, factoring empty state and three payment-entry variants are documented in main §17/Deep3. Two privacy-safe screenshots are linked. No operational submits; PDF body content retains earlier dated evidence and cache-body failures stay explicit.
+
+| ID | Open question | Owner / evidence |
+| --- | --- | --- |
+| OQ-38 | Why does staged customer payment show no unpaid invoices for the same displayed customer name as an invoice with balance4900? Establish identity, payer and draft/sent/ledger inclusion before implementing allocation. | Accounting lead; E-149/154; disposable environment unavailable. |
+| OQ-39 | Why are method/default/HTML required flags different between invoice, provider and workspace payment forms; what are allocation/overpayment/reversal and sync rules? | Accounting/integration lead; E-150/153/157; no save tests. |
+| OQ-40 | Confirm Filestack's role/account, accepted server types/sizes/scanning, immediate-versus-confirmed upload, signed-link access/expiry and revision/retention policy. | Integration/security owner; E-145/147/158; token body not retrieved. |
+
+| ID | Open question | Owner / evidence |
+| --- | --- | --- |
+| OQ-41 | Why does the TL Labels preview fail while the Documents index exposes its entry/download? Establish file existence, rendering, equipment applicability and Try again behavior; HTTP success alone is insufficient. | Product/integration lead; E-159/R003. |
+
+**Deep3 closure additions:** E-159 records a real label-preview failure despite no captured HTTP failure; E-160 adds existing paid-bill payment history and Delete payment entry without use. Three safe screenshots cover factoring empty, blank global payment and label failure. Existing PDF content and other queues retain their dated evidence; this refresh does not revalidate every template/role or external effect.
+
+| ID | Open question | Owner / evidence |
+| --- | --- | --- |
+| OQ-42 | What does Delete payment reverse in the app and external ledger, who may use it, and how do imported payment records get matched to bills? Resolve the observed undefined reference label separately. | Accounting/admin/integration lead; E-160; no deletion or sync executed. |

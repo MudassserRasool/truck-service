@@ -41,6 +41,8 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 o
 
 **Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Phases 5–8 expand editing, accounting, integrations and settings in sections 16–19. Section 20 connects seven walkthroughs, exception cases, acceptance traceability and the completion audit.
 
+**Deep refresh navigation:** [Quotes](#deep-quotes-refresh) → [Shipments](#deep-shipment-refresh) → [Documents/accounting](#deep-documents-accounting). These newer observations supplement the dated original chapters; operational/role validation remains partial.
+
 **Evidence labels used here**
 
 | Label | Meaning |
@@ -1977,6 +1979,55 @@ Use Bills & Invoices → Bills to Approve → existing bill → inspect document
 
 **Delivered:** Document catalog and inspected fields; generated BOL/labels and carrier confirmation structure; bill editor/approval/payment forms; customer invoice/receipt form; queues; current accounting connection/terms; mapping/reconciliation decisions and validation cases. **Pending:** actual uploads/sends/signatures, approval/payment/revision effects, complete queue rules, finance sync, role/access and owner-approved policies. **Continue reading:** [§18](#third-party-requirements) covers third-party dependencies and the corrected access guide.
 
+<a id="deep-documents-accounting"></a>
+**Deep Phase3 — Documents/accounting refresh (November1; E-145–158)**
+
+**Scope and navigation:** This refresh on `codex/docs-deep-03-documents-accounting` supplements §17's dated PDF/content inspection. Open [the reference TL shipment](https://app.quotefactory.com/broker/shipment/6a62746a98cb0feaa1acedd4) → Documents, or [Bills & Invoices](https://app.quotefactory.com/broker/accounting/shipments/bills-invoices). R001–002 in the [network JSON](network/quote-factory-network.json) record the UI steps, requests and explicit body gaps. No file was chosen/uploaded, no document regenerated/removed/sent, and no approval/payment/dispute was saved.
+
+| Path / action | Fresh observation | Boundary / behavior still unknown |
+| --- | --- | --- |
+| Shipment → Documents | Groups BOL, Labels, Customer Confirmation, Customer Invoice; carrier Rate Confirmation/POD/bill; provider and shipment Misc entries. Generated download links point to signed S3 objects. | Initial upload-only view precedes generated thumbnails. Signed queries/credentials are omitted from artifacts; access/expiry/retention guarantees require review. |
+| BOL thumbnail | Wrapper has Documents/back-to-shipment/customer, carrier/equipment/route/dates, page indicator, PDF filename/download and Regenerate document. | Embedded PDF body was not reverified in DOM; earlier visual content evidence remains dated. Unlabeled toolbar control left unpressed. |
+| Add pod to shipment | Modal: Upload POD / Drag POD here and Close modal. One file input accepts PDF, JPEG, BMP, AVIF, GIF, PNG, TIFF, WebP, HEIC, HEIF; multiple=false, HTML required=false. | Input hints do not prove server acceptance/size/scanning/deduplication. File selection may initiate upload; no file was selected. A mismatched crop was rejected. |
+| Carrier Rate Confirmation | Settled Confirmed label; Share, itemized view, PDF and Regenerate controls. Share opens existing recipient/time list plus +add share. | No +add share/send. Confirmation/age does not independently prove signer identity, signature vendor, enforceability or external receipt. Thumbnail hitbox failed; its observed href worked via normal browser navigation. |
+| Customer Invoice | Itemized view, PDF, Regenerate/Remove document, Upload POD, dispute checkbox, Send invoice, balance4900 and Record customer payment. | No send/dispute/remove/regenerate action. Broker balance does not itself prove delivery, external ledger agreement or funds movement. |
+| Bills & Invoices | Twelve tabs, distinct carrier-bill and customer-invoice sides, Record customer payment. Populated rows mix Due, Need to approve, Paid and Canceled on individual sides. | Queue membership, totals, aging, pagination, holds and role rules remain unverified. A single row can have different payable and receivable states. |
+| Invoices to Factor | Settled **No bills or invoices yet** after a transient blank/loading state. | Empty queue is a dated result, not proof factoring is unsupported or permitted for another role/account. |
+| Bills to Approve → first visible bill |13 rendered bill links; inspected bill has uploaded bill/POD, balance500, dispute, Approve to pay and Record payment. | No approval, dispute, removal or payment. Full private documents/header screenshots omitted. |
+| Bill header → Toggle details | Opens `/bill/:providerSlotId/edit`: reference, Mail payment to, Carrier accounting contact, Bill amount/expected amount, Bill date, Days to pay, Due date, Save bill. | Existing bill date2024-12-02 and due2025-01-01 differ by30 days; no term/date edit or recalculation test. Required/readonly metadata is in R002/BILL-EDITOR. |
+
+**Bill reference versus edit target:** The header has a distinct copy target and labeled Toggle details controls. An initial text-filter click hit the copy target and showed **Copied to clipboard**; the labeled toggle then opened Edit bill. That copied a reference without changing bill data. Back returned from the editor without saving. Avoid treating a header-text click as an editing instruction.
+
+**Three payment entry points have different forms/defaults:** These are observations of record-entry screens; no processor or actual transfer is established.
+
+| Entry | Fields / initial state | Save boundary |
+| --- | --- | --- |
+| Invoice → +Record customer payment | Payment dateNovember1; Amount4900 prefilled; Method initially blank; Memo. Visible amount/method inputs have required attributes. | Save payment left unpressed; allocation/overpayment/receipts/reversal/sync unknown. |
+| Provider bill → +Record payment | Payment dateNovember1 with Due by Jan1 context; Amount500 prefilled; **Method ACH**; Memo. | Save payment left unpressed. The provider default differs from the invoice's blank method. |
+| Workspace → +Record customer payment | **Customer**, blank Amount (placeholder0.00), Payment dateNovember1, **Reference no.** (placeholder invoice number), Payment method; prompt “Select customer to see list of open invoices.” Customer HTML required; initial visible amount/method not required. | **Apply payment disabled** initially. This form exposes a customer/invoice-allocation path beyond the invoice-level form. Backend requiredness and enablement remain unknown. |
+
+Both customer-payment menus expose13 labels: ACH, Apple Pay, Credit card, Cash, Cash App, Check, Comchek, Google Pay, PayPal, T-Chek, Venmo, Wire, Zelle. These labels do not establish13 payment integrations. No method was selected and no money was entered into the global form.
+
+Selecting one existing customer in the global staged form exposes Select all invoices/Due date, then **No unpaid invoices found**; Apply payment stays disabled. The customer's displayed name matches the earlier reference invoice with balance4900, but record identity, draft/sent inclusion, payer and ledger criteria have not been established. **Do not interpret this empty list as proof that the reference invoice is paid.** No invoice checkbox, allocation or Apply payment was used; Close modal leaves the form.
+
+![Factoring accounting queue, settled empty state](screenshots/deep-03-accounting-factor-empty-2026-11-01.jpg)
+
+![Blank workspace customer-payment form and disabled Apply payment](screenshots/deep-03-workspace-payment-blank-2026-11-01.jpg)
+
+**Network and integration evidence:** Browser metadata includes `GET /shipments/:id/document`, `/shares`, `/terms`, `/shipments/accounting/counts`, filtered `/shipments/`, provider/contact reads, automatic account-settings PUT and integration-event POST. These automatic writes mean view discovery is not a guarantee of no server-side effects; no explicit operational submit was performed. Opening POD also causes a first-party **`/utils/filestack/token/uploader`** read: this names Filestack in the uploader path, while a direct successful Filestack upload remains unverified. The token response was deliberately not retrieved. S3 object links establish document-host references, not the clone's required storage supplier.
+
+Cached-body retrieval for three already-observed document/count/list GETs returned **unavailable**; JSON records that result, not empty bodies or fabricated schemas. Request metadata/query types remain partial and are not public API guarantees. R001 reports buffer loss and9 outstanding requests; R002 has no reported loss and2 outstanding. Child-target/body completeness is unproven. One read-only finishing/cached-body tool call occurred after the pause request before pause was applied; this deviation was reported, and no continuous paused capture is claimed.
+
+**Fresh label exception, E-159 / R003:** Opening the previously observed TL Labels link first renders only Documents/Close while core requests are pending. It later settles to **Preview not available → Try again**. No HTTP400+ or failed request was observed in the captured scope. Successful HTTP reads therefore did not establish a usable preview. No retry/regeneration was invoked; cause and equipment applicability remain unknown. The earlier LTL Half-letter/4x6 evidence stays specific to its dated example.
+
+![TL label preview failure after loading](screenshots/deep-03-label-preview-unavailable-2026-11-01.jpg)
+
+**Paid-bill/payment history, E-160 / R003:** Accounting → All rendered8 Paid bill links in the inspected viewport. The first opens a bill with an existing **Open payment** control. Its modal says a payment was applied to one bill and displays Status, Bill/Due, BOL, Method, Paid and Balance; this example shows check/imported and zero balance. **Delete payment**, Done and Close modal are present. No deletion/reversal was attempted; the imported label does not establish an import UI, source system or successful QuickBooks synchronization. A bill toggle's accessible label contains “undefined” in this record; the underlying missing-data cause remains unknown. Populated financial screenshots are omitted.
+
+**Still to validate:** Actual PDF outputs/recipient views after changes; every upload's server limits; regeneration/revision/removal; permissions/share creation/expiry; invoice delivery; dispute/approval/hold gates; allocation/credits/partial and excess payments; reversals, reminders, audit and accounting synchronization. D-01's unavailable test environment/records/alternate roles remains. No functional acceptance or accounting reconciliation is claimed.
+
+**Deep3 safe-discovery receipt:** E-145–160 and three linked screenshots supplement the existing §17 catalog. New data includes upload hints, failure/loading states, share/approval/payment entry points, field/default differences, allocation uncertainty and a payment-deletion entry. Operational, role, recipient, server validation and provider/accounting effects remain open. Next after this branch audit/push: Deep4 reusable customer/carrier/vendor records.
+
 <a id="third-party-requirements"></a>
 **18\. Third-party dependencies and API requirements — Phase 7**
 
@@ -2392,3 +2443,4 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 - [Coverage and Open Questions](Documentation%20Coverage%20and%20Open%20Questions.md) — screen IDs, guide gaps, operational questions and progress.
 - [Evidence Register](Documentation%20Evidence%20Register.md) — observation/source history.
 - [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md) — revised Phase 7 provider/dependency requirements, access sources and readiness gaps.
+
