@@ -333,6 +333,10 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-220 | Nov3 / Deep6 | Consolidated requests through R001 | Host inventory/count/run snapshot; Google Places assets and Filestack transformed previews corroborated. | Partial captures; nested URL references/UI labels not direct hosts; no hidden-service inventory claim. | Integration lead |
 | E-221 | Nov3 / Deep6 | Official public references | Mapbox tokens, Google autocomplete, Filestack transformations, S3 presigned URLs, Beacon developer docs checked; linked in third-party guide. | Public capability only; legacy Filestack policy URL inaccessible; no app-policy claim. | Integration lead |
 
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-222 | Nov3 / Deep7 | Local artifact/requirement audit | Eight-category matrix;89 inventory rows87P/2B;198 linked screenshots;35runs/320steps/3497requests/227catalog entries; synthetic tooling checks and reference audits. | Artifact and safe-discovery delivery only; missing historical boundary, partial captures/body coverage, private-image and D-01 operational/role/client acceptance gaps preserved. | Team lead/business reviewers |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -359,6 +363,6 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-221. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-222. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.

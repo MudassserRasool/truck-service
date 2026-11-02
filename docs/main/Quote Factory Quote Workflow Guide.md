@@ -2,7 +2,7 @@
 
 **Main system guide — business overview, navigation, workflows and terminology**
 
-Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 observed chapters and Phase 9 scenarios delivered; workflow validation and sign-off pending.
+Originally prepared October 9, 2026 | Deep discovery refreshed through November3, 2026 | Chapters and safe discovery delivered; operational validation and client sign-off pending.
 
 **This is the one main document.** Phases 1–9 are consolidated here, with explicit test and review gaps. The plan, inventory, evidence and scope files support this guide; you do not need to assemble separate phase chapters to read the final system documentation.
 
@@ -41,7 +41,7 @@ Originally prepared October 9, 2026 | Expanded October 26, 2026 | Phases 1–8 o
 
 **Current coverage:** Phase 0 established the discovery inventory and open decisions. Phase 1 adds the business hierarchy, actors, record relationships, navigation, lifecycle, glossary and read-only exercises. Phase 2 expands customer/carrier/vendor records and saved-location forms in sections 12–13. Phase 3 expands quote inputs, offers, pricing, sharing and the shipment handoff in section 14. Phase 4 expands shipment lists, coverage and detail screens in section 15. Phases 5–8 expand editing, accounting, integrations and settings in sections 16–19. Section 20 connects seven walkthroughs, exception cases, acceptance traceability and the completion audit.
 
-**Deep refresh navigation:** [Quotes](#deep-quotes-refresh) → [Shipments](#deep-shipment-refresh) → [Documents/accounting](#deep-documents-accounting). These newer observations supplement the dated original chapters; operational/role validation remains partial.
+**Deep refresh navigation:** [Quotes](#deep-quotes-refresh) → [Shipments](#deep-shipment-refresh) → [Documents/accounting](#deep-documents-accounting) → [Reusable records](#deep-reusable-records) → [Administration/reporting](#deep-admin-reporting) → [Supplier reconciliation](#deep-supplier-reconciliation) → [Final audit](#deep-final-audit). These newer observations supplement the dated original chapters; operational/role validation remains partial.
 
 **Evidence labels used here**
 
@@ -985,6 +985,8 @@ The past-date example displayed **Pickup date has passed. Choose a new date**, A
 ![Fictional manual-offer pricing, not saved](screenshots/deep-01-manual-pricing-math-2026-11-01.jpg)
 
 ![Quote history unmatched search and filter controls](screenshots/deep-01-history-empty-2026-11-01.jpg)
+
+![Volume filter empty offer area, November1](screenshots/deep-01-volume-empty-2026-11-01.jpg)
 
 **Result views and retention:** R008 initially had no offer rows because Volume0 remained selected after returning to the booked request. Selecting All37 restored rows. Carrier, Delivery and Price controls changed sampled offer ordering; a complete sort-key/tie/direction contract is unverified. Standard26 exposes the populated Standard view. Once rows settled, the first ArcBest **Open stacked quotes** control expanded alternatives inline, including Xtended Network and Guaranteed offers; no modal appeared. The Xtended Network label does not identify its backend supplier. Multiple stack controls require choosing the intended carrier card. Screenshot crops exclude customer/header identifiers and some columns.
 
@@ -2502,6 +2504,28 @@ This table covers all **89 inventory IDs** without silently excluding any featur
 | RPT-01–05 | §19.5 | W-07 | Reporting/accounting; exports/date/metric/permission reconciliation pending |
 | API-01–03 | §18 and API guide | W-01–07, X-01/03/05/08 | Integration/account owners; supplier selection/entitlement/runtime proof pending |
 
+<a id="deep-final-audit"></a>
+**Deep7 — Final discovery coverage audit, November3, 2026 (E-222)**
+
+**Verdict:** Deep1–6's accessible safe-discovery evidence is consolidated in this main document; Deep7 audits its traceability and remaining limits. This is a discovery delivery with explicit gaps, **not a 100% accurate implementation contract, exhaustive hidden-screen inventory or passed operational acceptance suite**. The original89 use-case rows remain87 Partly documented and2 Blocked; no row is promoted to Documented based only on a form opening, HTTP200 or artifact check. The historical Phase1–9 chapter labels and newer Deep1–7 refresh sequence are distinct.
+
+| Requested category | Current guide/evidence to inspect | Coverage verdict and remaining boundary |
+| --- | --- | --- |
+| Every page, navigation path, user role | §§2–6,11–19;89-row register; Deep1–6; current Member E-201 | Known accessible pages/entry points documented. Alternate roles, portals, hidden routes and denied-action matrices unavailable; no exhaustive-role claim. |
+| Workflows, alternatives and cancellation | §§14–17; W-01–07/X-01–09; Deep1–4 forms/state examples | Safe entry points, return/Close/Cancel alternatives and existing-state relationships documented. No submitted cancellation/reassignment/booking or successful end-to-end transaction chain. |
+| Fields, defaults, validation and errors | §§12–19; equipment/handling/service catalogs; E-115–218 | Visible labels/options/defaults/constraints and sampled unsaved arithmetic/errors documented. Server validation, duplicate/race/retry errors and every conditional/role variant untested. HTML required=false is not proof optional at submission. |
+| Business rules, calculations, permissions and saved data | §§8–10,14–19; measured examples; E-120/123/127/138/178/201/203–218 | Observed arithmetic, descriptions, locks, existing data and automatic writes distinguished. Default precedence, all rounding/layout rules, authorization and operational persistence remain open. |
+| Loading, empty, success and failure | Deep result/queue/report/template/accounting states; E-119/134–160/188–189/198/213–217 | Loading distinguished from settled empty; undefined-route400 and app-reported/provider/preview failures recorded. Existing success labels do not prove a newly submitted success. No deliberate outage injected. |
+| Screenshots linked to relevant sections |198 retained files under screenshots, all linked from this guide after E-222 orphan-link repair | Safe screenshot set and text/network references delivered. Private existing-record views omitted; not every page/state has an image. Earlier representative visual review/OCR is bounded, not exhaustive privacy certification. |
+| Integrations, notifications, imports and exports | §§17–19; Deep6; third-party guide; endpoint catalog | Direct browser hosts separated from UI/asset/document references and public capability. Report schemas/download entries and upload forms documented; no bulk-import workflow established. Imported payment label is not an import UI. Actual files, delivery, supplier/financial effects and hidden services unverified. |
+| Direct observation, inspection date and unknowns | E-01–221 register; run/step timestamps; Deep refresh notes; SC/OQ/D-01 | Current refresh dates coexist with older explicitly dated observations. Unknowns and interruption/loss/body limits remain visible; no invented recovery time or unexecuted effect. |
+
+**Network artifact audit snapshot:**35 runs,320 steps,3,497 request records,3,497 payload availability entries and227 method/URL catalog entries. The catalog now links workflow IDs, evidence IDs, run/step references, observed status counts and payload-summary request IDs. Detailed timings remain on request records where captured (3,081 records); these are individual observed browser timings, not performance guarantees. There are3,402 finished,5 failed and90 outstanding-at-close request records. Only2 response bodies have structural summaries,4 retrievals are marked unavailable and3,491 were not collected. Missing status is not success, and omitted body is not an empty response. Observable stream events are retained without claiming all sent frames/child sessions were captured. Original DEEP-00-R001/S01 still has no recorded end boundary; administrative interruption recovery elsewhere is explicit.
+
+**Artifact checks, E-222:** Synthetic recorder/redaction/query tests pass for repeated endpoints, redirects, failures, missing starts/bodies, cursor paging/eviction, interruption recovery and run isolation. These are tooling tests, not live application scenario passes. Local Markdown targets/anchors, screenshot references, evidence relationships, endpoint references, host counts, timestamps and bounded credential-pattern checks are audited separately. No raw operational dataset or binary document body was added; public-source research does not import licensed NMFC tables. Existing DOCX/PDF exports remain older snapshots and are not current deliverables; this Markdown source is authoritative.
+
+**What remains after discovery:** D-01 test environment/disposable records/side-effect suppression/alternate roles/reviewers remain unavailable. Client must decide SC-01–12 and approve rules/providers before implementation acceptance. Then execute W-01–07 and relevant exceptions with expected/actual state, audit/document/recipient/provider/accounting proof and cleanup. No live operational mutation, credential extraction, endpoint replay, external message or payment was needed for this audit. The remaining unknowns are retained as work, not silently excluded features. Use the main guide as the learning/discovery source and §20.10 as the acceptance handoff.
+
 **20.10 Completion audit and sign-off handoff**
 
 | Requirement from the plan | Current authoritative evidence | Verdict / next owner |
@@ -2511,7 +2535,7 @@ This table covers all **89 inventory IDs** without silently excluding any featur
 | Provider/dependency inventory and access needs | §18 and revised API guide:17 carriers and feature categories, dated official sources | Written requirements/research delivered; account/client selection and runtime proof pending |
 | Seven connected walkthroughs and acceptance scenarios | W-01–07 plus X-01–09 and traceability table | Written scenarios delivered; designated-test-environment replay not performed |
 | Replay documented navigation with the observed role | E-109 existing booked quote → View Shipment button → BOL1047885 → Documents as Member | Narrow read-only replay observed; does not validate new customer/quote/booking/accounting chain |
-| Links, headings, tables, evidence references and formulas | E-110 local structural/arithmetic checks; E-54/74/104 sample UI arithmetic | Local checks only; no submitted validation, screenshots set or full metric reconciliation |
+| Links, headings, tables, evidence references and formulas | E-110 local structural/arithmetic checks; E-54/74/104 sample UI arithmetic | Local checks only; no submitted validation or full metric reconciliation; newer Deep screenshots supplement the original pass |
 | Reviewed workflow/rules per in-scope feature and signed-off scope matrix | SC-01–12, OQ register, reviewer roles and explicit gaps | **Pending:** client scope selection/named reviewers, not inferred from broad permission to continue |
 | Alternate roles, document/notification/provider/accounting effects | §19.4, EDT-07, SYS-11, API readiness gaps | **Blocked for validation:** administrator/test/provider evidence required |
 | Revised exports after source review | Markdown is current source; existing DOCX files not regenerated | **Pending after source review**; do not distribute old exports as the current guide |
