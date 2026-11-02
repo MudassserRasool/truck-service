@@ -2160,7 +2160,52 @@ Read Settings → Carriers → Carrier integrations, then compare provider names
 <a id="settings-reporting"></a>
 **19\. Settings, access, reporting and shared controls — Phase 8**
 
-**Purpose:** Understand the configuration above individual customers and shipments, identify who can see or change it, and trace operational records into reports. Evidence E-99–108 was collected October 26, 2026. The current session identifies its user as **Member**; visible controls do not prove permission to submit changes. Owner/customer/carrier portal variants remain unavailable.
+**Purpose:** Understand the configuration above individual customers and shipments, identify who can see or change it, and trace operational records into reports. Evidence E-99–108 was collected October 26, 2026. The October26 session identified its user as **Member**; visible controls do not prove permission to submit changes. Owner/customer/carrier portal variants remain unavailable.
+
+<a id="deep-admin-reporting"></a>
+**Deep Phase5 — Administration/reporting refresh (in progress, November3)**
+
+Phase4 remote `cb3730a7eacfab4990c3a8d82d4e18611ee6af25` was verified before creating `codex/docs-deep-05-admin-reporting`. New evidence E-196–197/R001 supplements this chapter; no configuration, user access or credentials were changed.
+
+Open [Settings](https://app.quotefactory.com/broker/settings). The live hierarchy is Profile (`/profile`), Company (`/broker/account`), Users (`/broker/users`), Teams (`/broker/teams`), Carriers, Customers, Accounting, Notifications and External references. This view shows7 users,0 teams and App version8aeb1b27; these are dated observations. Notifications is a button labeled Manage in-app alerts, while External references describes associating external entities with Quote Factory entities. Neither was changed.
+
+Users → Manage people settles to Owners/Members groups with an Owner label. No roster values are retained, no role/invite control was activated, and no current-user permission policy or alternate-role capability is inferred from group visibility. Private roster screenshots are omitted. Remaining settings sections, notifications/external-reference dialogs and reporting views continue before Phase5 audit/push.
+
+**Notifications/external references, E-198–199 / R002:** Settings → Notifications opens “Choose in-app notification alerts to receive” and **No sources configured**, with Close. This is the observed account state, not proof that the platform lacks email/SMS/event notifications. No preference was changed. External references (`/broker/settings/external-references`) shows **Nothing added yet**, +Add and +Add external reference. The latter opens Name, Code, Customers/Vendors-Carriers/Contacts/Addressbook Entries/Shipments (all checked), one URI Template per entity and **Ensure unique values checked**, plus Save/Close. No definition, URI or value was entered/saved; uniqueness/interpolation/escaping/access and persistence remain unverified. These are mappings, not independently demonstrated external integrations.
+
+![No in-app notification sources configured](screenshots/deep-05-notification-sources-empty-2026-11-03.jpg)
+
+**Teams/profile, E-200–201:** Teams (`/broker/teams`) settles to No teams quite yet. Own profile now explicitly labels **Member** on November3, with initially disabled Save, Change password and Log out. No profile/password/logout/team action was used. This refresh establishes the current role label; backend action permissions and Owner/customer/carrier portal variations remain unknown. Private identity/contact fields are omitted from screenshots and retained field metadata contains names/types/constraints only.
+
+**Current Member permission evidence — E-196–201:** The role label is directly observed on the profile. The following table describes what this session could view; it is not the clone's approved authorization policy.
+
+| Surface | Direct evidence in this Member session | Permission/outcome still unverified |
+| --- | --- | --- |
+| Settings navigation | Company/users/teams/carrier/customer/accounting/reference destinations visible | Permission to change each destination or access it under another role |
+| Users | Owners/Members roster groups visible | Invite/deactivate/ownership/team assignment and field-level access |
+| Teams | No teams quite yet | Owner-only creation, membership and team-based data boundaries |
+| Profile | Own fields visible, initial Save disabled, password/logout entries | Which edits enable Save; successful persistence/session effects; other users' profile editing |
+| Notifications | No sources configured | Who can configure sources, which channels/events exist, delivery and opt-out enforcement |
+| External references | Blank definition form opens; five entity choices and unique-values checked | Create/update/delete, unique-value enforcement, URI interpolation/escaping and tenant visibility |
+
+**Client decisions needed before clone authorization work:** Identify each role's allowed read/create/edit/delete/send/export/financial/administrative actions; specify ownership/team/tenant restrictions; distinguish customer and carrier portal permissions from broker permissions; define denied-action feedback and audit retention. Validate approved rules server-side as well as in the UI. This is a proposed verification requirement, without claiming the reference app enforces any particular policy. Use designated test accounts and records for those checks; D-01 currently leaves them unavailable.
+
+**Company/customer defaults, E-202–206 / R003, November3:** Open [Company](https://app.quotefactory.com/broker/account): the Member view exposes no textbox or edit/save control. No Owner comparison was available; private billing/contact values are omitted. Open [Customer settings](https://app.quotefactory.com/broker/settings/customers): LTL and TL starting gross margins both show **25%**. Margin defaults and limits → Global separates default margin, minimum gross margin, minimum gross profit and maximum gross profit for LTL/Truckload, with an LTL Volume boost entry and LTL carriers tab. Other sampled numeric limits are blank; blank does not establish zero or unlimited. No Done or setting change was used; inheritance, autosave and enforcement remain unknown.
+
+| Click from Customer settings | Directly observed description/state | Verification boundary |
+| --- | --- | --- |
+| Reveal carrier names | Menu says names visible. Modal describes hiding LTL name/logo on shared quotes, while still showing them on BOL/shipment details; TL option describes hiding name/USDOT/MC on BOL. | Underlying checkbox representations were disabled; TL representation appeared checked while the menu said visible. Do not infer final rendered document behavior or invert the `showTLCarrierName` binding from this alone. No changes. |
+| Credit limits | Enforce credit limits Disabled. Description blocks new bookings when all open invoices plus active shipments exceed the customer's limit, configured per customer. Notify on credit increase Disabled; description emails all customer reps. | Description only; balance inclusion, currencies, threshold equality, concurrent bookings, sends and actual enforcement untested. |
+| Customer visibility | Menu Disabled. Help says enabled restricts viewing/running quotes to customer reps; disabled gives users access to all customer records. | No toggle or second-role/tenant test; team treatment and backend denial remain unknown. |
+| Customer login | Describes customers logging in, running quotes and tracking; Login link copy entry visible, plus Auto-quote/dispatch. | No link copied or opened, no access granted; control state and portal behavior not established. |
+
+**Carrier/accounting/reporting refresh, E-207–214 / R003:** Open [Carrier settings](https://app.quotefactory.com/broker/settings/carriers). The first loading view said Tracking None selected; the settled view says **Trucker Tools**, and its dialog lists MacroPoint and Trucker Tools **Connected**. Treat the settled label as account configuration, not proof of a successful tracking request. Compliance lists MyCarrierPortal **Setting up** and RMIS by Truckstop, while the menu says None selected. Carrier integrations shows0; Carrier411, CarrierOK, Highway and ClassIT+ say Not showing links. These labels do not prove absence/presence of downstream API calls. No connect/setup/toggle was used.
+
+Open [Rate confirmations](https://app.quotefactory.com/broker/settings/carriers/ratecons). Reply-to and contact phone default to the person who covered the load. Click Rate con email settings to inspect Email address, Phone and Save; blank means use that person's contact information. Terms & Fees and a disabled shipment-value checkbox are visible. Notice: changes apply to future shipments only; previously-covered shipments must drop the carrier before new terms apply. No terms/email edit, carrier drop or send was performed; this is the displayed rule, without persistence verification.
+
+Open [Accounting settings](https://app.quotefactory.com/broker/settings/accounting). Settled labels are QuickBooks **Syncing Bills & Invoices**, customer terms30days, vendor terms30days of Vendor bill, Not factoring and Not providing QuickPay; Cc invoices is an entry to copy invoices to an email address. This refresh preserves the older dated connection states below. No sync, connection or financial action was triggered.
+
+Open [Reporting](https://app.quotefactory.com/broker/reports). Saved catalog loads after the page shell: Carriers, Customers, LTL Report, LTL Report - QF, Monthly Margin, Shipments and two Shipments copies, alongside Lanes analytics. Open [Lanes](https://app.quotefactory.com/broker/reports/lanes): Pickup this week, **No matching lane data**, totals0/$0, Origin/Destination/Shipments/Profit/Profit per headers and Reset filters. Click View shipment filters: Booked/Scheduled/In transit/Delivered; equipment choices LTL, Dry Van, Flatbed, Refrigerated, Intermodal, Drayage, Dump, Dry Bulk, Power Only, Driveaway, Auto Transport, Tanker; booked/pickup/delivery date ranges and presets; origin/destination, carrier/customer, rep, booked by and covered by; See shipments. No export, filter submit/reset or definition save was used. Empty results do not establish missing historical data or aggregation formulas. Saved-report replay remains in progress: E-215 later stayed at the Data exports shell without links and the Shipments link timed out. The earlier populated catalog remains dated evidence; no cause is inferred.
 
 **19.1 Configuration hierarchy and navigation**
 

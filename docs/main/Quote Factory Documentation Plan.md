@@ -432,3 +432,13 @@ Deep0 established CDP event/body retrieval, a verified blank-form screenshot, sa
 **Deep4 R006, November3:** E-180–187 adds Credit/aging, Reps scope message, customer Documents, settled Shipments/Quotes/Invoices/Payments empty states and nested billing address form. No credit/assignment/file/export/send/payment/address mutation. Provider linked-work/document views and artifact audit remain before phase push.
 
 **Deep4 discovery delivery, November3:** E-161–195/R001–007 covers current customer/provider forms and linked views, including undefined-route failure and identity-ready replay. Existing template/populated financial variants retain earlier dated evidence. Main guide, evidence/coverage registers, provider guide and sanitized JSON are consolidated; private image gaps and D-01 remain. Audit/push `codex/docs-deep-04-records-completion`, verify remote SHA, then Deep5 administration/reporting on a fresh branch.
+
+**Deep4 Git receipt / Deep5 start, November3:** Pushed `codex/docs-deep-04-records-completion` at `cb3730a7eacfab4990c3a8d82d4e18611ee6af25`; `git ls-remote` matched local HEAD before creating fresh `codex/docs-deep-05-admin-reporting`. Local reference/link/JSON/credential-pattern/whitespace checks passed; these are artifact checks, not functional acceptance. Deep5 administration/reporting is next; Deep6 supplier reconciliation and Deep7 final coverage audit remain active.
+
+**Deep5 R001, November3:** E-196–197 adds live Settings hierarchy/version/counts and Owners/Members roster structure without access changes. Current-user grants/alternate roles remain unknown; remaining settings/dialogs/reports continue before phase audit/push.
+
+**Deep5 R002, November3:** E-198–201 and a safe notification screenshot add Notifications, External references form, Teams and fresh Member profile evidence. Remaining company/global customer/carrier/accounting settings and reporting still precede phase audit/push.
+
+**Deep5 permission matrix:** Current Member observations E-196–201 are now mapped to visible surfaces versus unverified action grants and concrete client authorization decisions. This closes a documentation interpretation gap, not a permission-validation gate. Live company/global settings and reporting inspection remain next.
+
+**Deep5 checkpoint, November3:** E-196–215 and R001–003 cover administration/customer defaults/carrier configuration/accounting labels and reporting catalog/Lanes. Artifact validation passes; saved report replay stalled at the Data exports shell. Continue report details and remaining safe settings inspection before declaring Deep5 complete and creating Deep6. This checkpoint stays on `codex/docs-deep-05-admin-reporting`.

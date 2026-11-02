@@ -285,6 +285,42 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-194 | Nov3 / Deep4 | R007 Vendor Payments/Documents entry | Payment schema/No payments; no Documents button exposed. | No payment/global-role-support inference. | Operations/accounting lead |
 | E-195 | Nov3 / Deep4 | R007 Vendor nested billing address | Google search/company/country/street/line2/city-state-zip/Save address. | No input/search/save/provider traffic proof. | Operations/accounting lead |
 
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-196 | Nov3 / Deep5 | R001 Settings | Profile/company/users7/teams0/carrier/customer/accounting/notifications/external-reference hierarchy; app version8aeb1b27. | Dated counts/version; no configuration/credential/access changes. | Admin lead |
+| E-197 | Nov3 / Deep5 | R001 Users | Settled Owners/Members and Owner label. | No roster retained, role/invite activated or current-role/action-policy proof; screenshot omitted. | Admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-198 | Nov3 / Deep5 | R002 Notifications | No sources configured; safe screenshot. | No preference changes; no global absence of email/SMS/events inferred. | Admin/integration lead |
+| E-199 | Nov3 / Deep5 | R002 External references | Empty list; Name/Code/five checked entities/URI templates/unique checked/Save form. | No definition/save; uniqueness/template/access/server contract unverified. | Admin/integration lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-200 | Nov3 / Deep5 | R002 Teams | No teams quite yet. | One session; no creation/assignment/Owner policy established. | Admin lead |
+| E-201 | Nov3 / Deep5 | R002 own Profile | Member; initial disabled Save, Change password/Log out; field constraints. | No edits/password/logout; action grants/alternate roles unverified, private image omitted. | Admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-202 | Nov3 / Deep5 | R003 Company | Member view has no textbox/edit/save. | Private values omitted; no Owner comparison. | Admin lead |
+| E-203 | Nov3 / Deep5 | R003 Customer defaults | LTL/TL25%; separate minimum margin/profit and maximum profit; blank sampled limits. | No changes; inheritance/enforcement/autosave unknown. | Pricing lead |
+| E-204 | Nov3 / Deep5 | R003 Carrier visibility | Distinct shared LTL quote and TL BOL hiding descriptions. | Disabled checkbox representation/menu ambiguity; no document enforcement proof. | Operations lead |
+| E-205 | Nov3 / Deep5 | R003 Credit limits | Booking-block and rep-email descriptions; both Disabled. | No enforcement or sends tested. | Accounting lead |
+| E-206 | Nov3 / Deep5 | R003 Customer visibility | Rep-only view/quote description versus all-user access when disabled. | No access change or alternate role test. | Admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-207 | Nov3 / Deep5 | R003 Carrier settings | Integration0, provider-link labels, initial tracking loading state. | E-208 supersedes initial tracking None selected. | Integration lead |
+| E-208 | Nov3 / Deep5 | R003 Tracking | Settled Trucker Tools; dialog Connected plus MacroPoint option. | No tracking request or provider setup tested. | Integration lead |
+| E-209 | Nov3 / Deep5 | R003 Compliance | MyCarrierPortal Setting up; RMIS by Truckstop. | No connection/setup; menu None selected. | Integration lead |
+| E-210 | Nov3 / Deep5 | R003 Rate con settings | Contact defaults and future-shipment-only terms notice. | No edits/drop/send; persistence untested. | Operations lead |
+| E-211 | Nov3 / Deep5 | R003 Rate con email | Email/Phone/Save; blank defaults to person who covered. | No entry/save. | Operations lead |
+| E-212 | Nov3 / Deep5 | R003 Accounting settings | QuickBooks Syncing Bills & Invoices; terms30days; factoring/QuickPay off labels. | No sync or financial effect tested. | Accounting lead |
+| E-213 | Nov3 / Deep5 | R003 Reports index | Eight saved exports plus Lanes after loading. | No export/save. | Reporting lead |
+| E-214 | Nov3 / Deep5 | R003 Lanes | Pickup-this-week empty state, zero totals and filter fields. | No submit/reset/aggregation validation. | Reporting lead |
+
+| E-215 | Nov3 / Deep5 | R003 Saved-report replay | Data exports shell remained without links; Shipments click timed out. | Earlier E-213 populated; loading/failure cause unresolved, no export or guessed URL. | Reporting lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -311,6 +347,6 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-195. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-215. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.
