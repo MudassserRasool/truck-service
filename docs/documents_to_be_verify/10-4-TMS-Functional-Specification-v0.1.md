@@ -5,8 +5,7 @@
 Functional Specification 
 
 
-
-The full reference: every screen, field, button, rule, e-mail and document of the new 10-4 TMS. Each requirement has an ID that the Summary refers to. 
+Draft functional reference for the proposed 10-4 TMS. Requirement IDs identify review items; observed Quote Factory behavior, proposed clone behavior and unresolved questions must be distinguished. This file is not an approved or fully verified build specification.
 
 PREPARED FOR 
 
@@ -18,230 +17,68 @@ Stackup Solutions
 
 VERSION 
 
-0.1 — draft for review 
+0.1 — source validation reviewed (November 2, 2026); approval pending
 
 DATE October 29, 2026 
 
-## Contents 
-
-##### 0. About this document and how to review it 
-
-Purpose 
-
-How the document is organised 
-
-Requirement IDs 
-
-How to review 
-
-Questions and items we need from you Review rounds and sign-off 
-
-##### 1. Overview 
-
-- 1.1 Why 10-4 is building its own TMS 
-
-1.2 Goals 
-
-- 1.3 What is included 
-
-1.4 Not included in the first version 
-
-- 1.5 Users 
-
-- 1.6 Glossary 
-
-- 1.7 Planned for later, by area 
-
-##### 2. Users and Roles 
-
-- 2.1 The kinds of user 
-
-2.2 Rules that always apply 
-
-- 2.3 Permission matrix 
-
-Who can do what 
-
-##### 3. End-to-End Workflows 
-
-How to read this section 
-
-Workflow 1: LTL quote, book and auto-dispatch 
-
-Workflow 2: Truckload (including Auto Transport): book, cover, rate confirmation, carrier e-sign Workflow 3: Pickup, in transit, delivery and POD Workflow 4: Carrier bill, approve, QuickBooks, paid Workflow 5: Customer invoice, send, QuickBooks, payment, aging Workflow 6: Carrier replacement and TONU Workflow 7: Customer portal (customer quotes, books, tracks) Workflow 8: Account setup and onboarding Workflow 9: E-mails and notifications across the lifecycle Who can do what (workflow view) 
-
-##### 4.1 Navigation, Dashboard and Search 
-
-4.1.1 Application frame and left navigation 
-
-Task queues and counters The "+" add menu Profile menu and footer 
-
-4.1.2 Dashboard 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 1 of 277 
-
-4.1.3 Find ("Find anything…") and global search Who can do what 
-
-##### 4.2 Shipments 
-
-##### Part A. Shipments list and work queues 
-
-Shipments list Work queues 
-
-##### Part B. Create, edit and duplicate a shipment 
-
-Form header Customer Equipment Locations Items to be shipped Cost & price Other form blocks, saving and errors Edit and duplicate 
-
-##### Part C. Shipment detail page 
-
-##### Part D. Actions menu and lifecycle 
-
-Who can do what 
-
-##### 4.3 Carrier Cover and Rate Confirmation 
-
-Cover drawer (choosing the carrier) Carrier leads Cover form What happens when you cover Removing or replacing a carrier, and TONU Rate confirmation page (broker) Carrier confirmation page (carrier, secure link) Who can do what 
-
-##### 4.4 Tracking, Pickup and Delivery 
-
-Locations section on the shipment page Appointments Recording events on a stop Tracking updates, log, edit, delete and undo Late and at-risk warnings Driver details Automatic tracking through Trucker Tools Queues: Confirm pickups and Confirm deliveries Proof of delivery (POD) LTL loads What customers see Who can do what 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 2 of 277 
-
-##### 4.5 Billing and payments 
-
-Bills & Invoices (work area) Carrier bill page Bills & Invoices: invoice side Bulk "Send invoices" Customer invoice page Sending an invoice Payments Customer Invoices page and statements Credit, aging and disputes Late invoices board Who can do what 
-
-##### 4.6 LTL quoting 
-
-4.6.1 The "Get quotes" form 
-
-4.6.2 Quote results 4.6.3 Booking a quote 4.6.4 Truckload quotes and booking (short) 
-
-4.6.5 Quote history and "Shipments to quote" 
-
-4.6.6 LTL carrier accounts ("Carrier integrations") Who can do what 
-
-##### 4.7 Customers 
-
-Customers list Customer page Other customer functions 
-
-Rules for who sees a customer 
-
-Who can do what 
-
-##### 4.8 Carriers and vendors 
-
-Carriers and vendors list 
-
-Adding a carrier Carrier profile Factoring company directory Adding a vendor Vendor profile Who can do what 
-
-##### 4.9 Reports, Lanes and Commissions 
-
-Reporting hub 
-
-Report builder (shipment, customer and carrier reports) Lanes Commissions report Who can do what 
-
-##### 4.10 Settings, Users, Account, Profile and Sign-in 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 3 of 277 
-
-4.10.1 Settings home and shared page frame 
-
-4.10.2 Carriers settings Load boards 
-
-4.10.3 Customers settings 
-
-4.10.4 Accounting settings 
-
-4.10.5 External references 
-
-4.10.6 Notifications 4.10.7 Data page 
-
-4.10.8 Users 4.10.9 Teams 4.10.10 Company profile 4.10.11 Your profile 4.10.12 Sign-in, sign-out, invite and password pages Who can do what 
-
-##### 4.11 Customer portal and secure links 
-
-4.11.1 The customer portal 
-
-4.11.2 Secure links Who can do what 
-
-##### 4.12 Notifications and Live Updates 
-
-Sidebar badges and counters 
-
-Live updates 
-
-Share status marks Messages Notification settings Who can do what 
-
-##### 5. E-mails 
-
-How e-mail works in the system 
-
-Catalogue at a glance BOL and labels Carrier e-mails Customer e-mails Carrier packet Users and sign-in E-mails that are not sent by the system Who can do what 
-
-##### 6. Documents 
-
-Rules for all generated documents Bill of Lading (BOL) Shipping labels Customer rate confirmation Carrier rate confirmation 
-
-Customer invoice 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 4 of 277 
-
-Customer statement Shipment Documents page Who receives what Who can do what 
-
-##### 7. Integrations 
-
-Trucker Tools (truckload tracking) LTL carriers (direct integrations) QuickBooks Online (accounting) Government carrier lookup (FMCSA) Maps, distance and addresses E-mail sending File storage Load boards (DAT, Truckstop) MyCarrierPackets (carrier onboarding) Not included and why Who can do what 
-
-##### 8. Data Migration from Quote Factory 
-
-Approval and method What comes over, and what does not The Import from Quote Factory screen (Owner only) Checking the result Switching over QuickBooks link-up Rollback What 10-4 must decide or approve Who can do what 
-
-##### Appendix B. Statuses and Option Lists 
-
-B.1 Shipment statuses B.2 Quote and quote-request statuses B.3 Carrier assignment and rate confirmation B.4 Tracking B.5 Carrier bills B.6 Customer invoices B.7 Payments B.8 Carriers and vendors B.9 LTL carrier accounts B.10 Equipment types (70, in 13 groups) B.11 Stops and freight B.12 Services (pickup, delivery and additional) B.13 Carrier charge types B.14 Reference number types (41) B.15 Documents B.16 Roles 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 5 of 277 
-
-B.17 Queues and list tabs 
-
-##### Appendix C. Report columns 
-
-C.1 Shipment report (189 columns) 
-
-C.2 Customer report (68 columns) 
-
-C.3 Carrier report (31 columns) 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 6 of 277 
-
-## 0. About this document and how to review it 
+## Contents
+
+- [0. About this document and validation authority](#0-about-this-document-and-how-to-review-it)
+- [1. Overview and proposed scope](#1-overview)
+- [2. Users and roles](#2-users-and-roles)
+- [3. End-to-end workflows](#3-end-to-end-workflows)
+- [4.1 Navigation, dashboard and search](#41-navigation-dashboard-and-search)
+- [4.2 Shipments](#42-shipments)
+- [4.3 Carrier cover and rate confirmation](#43-carrier-cover-and-rate-confirmation)
+- [4.4 Tracking, pickup and delivery](#44-tracking-pickup-and-delivery)
+- [4.5 Billing and payments](#45-billing-and-payments)
+- [4.6 LTL quoting](#46-ltl-quoting)
+- [4.7 Customers](#47-customers)
+- [4.8 Carriers and vendors](#48-carriers-and-vendors)
+- [4.9 Reports, lanes and commissions](#49-reports-lanes-and-commissions)
+- [4.10 Settings, users, account, profile and sign-in](#410-settings-users-account-profile-and-signin)
+- [4.11 Customer portal and secure links](#411-customer-portal-and-secure-links)
+- [4.12 Notifications and live updates](#412-notifications-and-live-updates)
+- [5. Emails](#5-e-mails)
+- [6. Documents](#6-documents)
+- [7. Integrations — source reconstruction](#7-integrations--reconstructed-from-the-main-source)
+- [8. Data migration — decisions and validation](#8-data-migration-from-quote-factory--proposed-scope-and-validation)
+- [Appendix B. Statuses and option lists](#appendix-b-statuses-and-option-lists--evidence-qualified-reference)
+- [Appendix C. Report catalogs and saved selections](#appendix-c-report-column-catalogs-and-observed-saved-selections)
+- [Validation record and remaining acceptance work](#validation-record-and-remaining-acceptance-work)
+
+## 0. About this document and how to review it
 
 |Document|10-4TMS—Functional Specification|
 |---|---|
 |Prepared for|10-4Global Logistics|
 |Prepared by|Stackup Solutions|
 |Version|0.1 (first draft for review)|
-|Status|Draft—waiting for client review|
+|Status|Source-validation review complete; retained proposals, release scope, operational tests and client sign-off pending|
 
 
+### Validation basis and authority — November 2, 2026
+
+The source of truth is [`docs/main`](../main/), especially the current Markdown [Quote Factory Quote Workflow Guide](../main/Quote%20Factory%20Quote%20Workflow%20Guide.md). Its newer dated Deep refresh observations supplement the earlier chapters. The [Scope and Decisions](../main/Phase%200%20Scope%20and%20Decisions.md), [Evidence Register](../main/Documentation%20Evidence%20Register.md) and [Coverage and Open Questions](../main/Documentation%20Coverage%20and%20Open%20Questions.md) control scope and evidence limitations. Existing DOCX exports are not a newer authority: the guide explicitly says they have not been regenerated. The third-party access guide is supporting provider research, subordinate to the main folder for app behavior and scope.
+
+**Evidence meanings in this specification:**
+
+- **Observed:** the cited source establishes a screen, label, control, dated state or particular calculation. It does not prove a successful submission or backend rule.
+- **UI-described:** help text describes intended behavior, but the behavior has not been exercised.
+- **Proposed / unverified:** a draft requirement retained for review, without sufficient source evidence or client approval. Exact messages, limits, timings, permissions and automatic effects in such passages are proposals, not verified Quote Factory facts.
+- **Conflict corrected:** this specification has been brought into line with the main source. A dated example is not a universal default or go-live choice.
+
+**Approval boundary:** Main guide §§1, 19.4, 20.10 and Scope SC-01–12 say release selections, named reviewers, alternate-role access, provider readiness and mutation testing remain unresolved. All “included,” “first version,” “later,” “not included,” “Owner only” and “proposed Off at launch, approval pending” choices below are **proposed scope**, unless supported by a specific recorded client decision. Their presence here does not approve them. User authorization to validate this file is not approval of those product decisions.
+
+**Network evidence boundary:** [Consolidated network evidence](../main/network/quote-factory-network.json) retains sanitized browser-facing request patterns and structural field types, omits scalar values/headers and binary bodies, and marks all recorded runs partial. HTTP 200, a field name, an existing Timeline event or a visible enabled button does not establish complete business validation, recipient delivery, funds movement or a server-to-provider contract. Automatic `quotesFilter`, `recentlyVisited` and integration-event requests can occur during viewing; viewing is not universally free of writes (Deep1 E-120–123 and Deep2 E-124–127).
+
+**Input completeness defect:** The supplied file stopped midway through DOC-015 at the end of its former printed page 277. Its contents promised sections 7–8 and Appendices B–C that were absent, and DOC-015 itself was cut off. References to their original INT/MIG IDs and complete option/report catalogs are not evidence that those missing requirements existed or were verified. Missing content must be reconstructed only from the main sources and marked accordingly; the unavailable companion “10-4 TMS — Summary” cannot be treated as an approval or source.
+
+**Audit status:** The source-validation pass covers all848 original requirement IDs across sections0–6. Section evidence tables identify observed subsets and retained proposals; none implies a passed unexecuted action. Missing sections7–8 and Appendices B–C have been reconstructed and labeled from available evidence, including the targeted app catalogs. Printed page numbers were removed because they no longer describe this Markdown file. Business approval and operational acceptance remain open.
 
 ### Purpose 
 
-This document describes everything the new 10-4 TMS will do: every screen, button, field, rule, e-mail, document and outside connection. It is written so that 10-4 can check, before sign-off, that nothing is missing and that everything works the way the team needs. 
+This document describes proposed screens, fields, actions, business rules, communications, documents and integrations for review. Completeness and intended behavior must be checked against the main sources and approved scope. Unverified details must not be used as established Quote Factory behavior or signed-off implementation requirements.
 
 If something you use today is not described here, or is described differently from how you want it, please tell us. That is exactly what this review is for. 
 
@@ -261,12 +98,7 @@ If something you use today is not described here, or is described differently fr
 |Appendix C|Every column available in the report builders|
 
 
-
-Each module starts with a short "In short" summary. A shorter companion document, 10-4 TMS — Summary, lists every capability in one line each with its ID; this specification holds the full detail behind those IDs. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 7 of 277 
+Each module includes a short overview, evidence review and draft detail. A companion Summary is referenced by the original draft but was not supplied; this review does not rely on it. Requirement IDs are preserved for traceability.
 
 ### Requirement IDs 
 
@@ -283,7 +115,6 @@ Every requirement has a short ID, for example SHP-014 · Duplicate a shipment. T
 |BIL/INV/PAY|Carrier bills,customer invoices,payments|NTF|Notifications|
 |EML|E-mails|DOC|Documents|
 |INT|Integrations|MIG|Data migration|
-
 
 
 Please quote the ID when you comment. It lets us find and change the exact item quickly. 
@@ -310,18 +141,13 @@ Question: something is unclear.
 
 ### Questions and items we need from you 
 
-The few decisions only 10-4 can make, and the items we need from 10-4, are listed in section 9 of 10-4 TMS — Summary. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 8 of 277 
+Open decisions are recorded in the main-folder Scope and Decisions (SC-01–12) and Coverage and Open Questions (OQ register), linked above. The companion Summary was not supplied in this folder and cannot resolve these questions.
 
 ### Review rounds and sign-off 
 
 |Version|Date|What changed|Reviewed by|
 |---|---|---|---|
-|0.1||First draft||
-
+|0.1|November 2, 2026|Source validation, contradiction corrections, evidence/proposal boundaries, missing sections/options and verified report catalogs|Client review pending|
 
 
 ##### Sign-off (final version) 
@@ -332,26 +158,17 @@ Page 8 of 277
 |Stackup Solutions||||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 9 of 277 
-
 ## 1. Overview 
 
-In short: 10-4 TMS is 10-4 Global's own Transportation Management System. It replaces Quote Factory for day-to-day brokerage work: quoting, booking, covering loads with carriers, tracking, documents, carrier bills, customer invoices, reports and the customer portal. The team finds the same screens, buttons and words they use today, so they can switch without retraining. 
+In short: 10-4 TMS is 10-4 Global's own Transportation Management System. It replaces Quote Factory for day-to-day brokerage work: quoting, booking, covering loads with carriers, tracking, documents, carrier bills, customer invoices, reports and the customer portal. The intended degree of visual and workflow matching, allowed deviations and training needs remain client decisions (SC-01/02).
 
 ### 1.1 Why 10−4 is building its own TMS 
 
-Cost: Quote Factory's price went from $200 to $500 per month and is expected to reach about $1,000. 
-
-- Support: help is slower (the chat was removed; support is by e-mail only). 
-
-- Control: Quote Factory cannot be connected to 10-4's own tools and will not build what 10-4 needs (for example an assistant that checks extra carrier charges). 
-
-- Search and reports: the team wants back the free keyword search across shipments, and more columns in reports. 
+The main source explains Quote Factory's brokerage workflow and the proposed clone discovery work. It does not establish the stated $200 → $500 → approximately $1,000 pricing history, loss of chat support, inability to integrate client tools, or approved business rationale. Those commercial claims require client evidence before inclusion. Main §19.6 actually records Contact support opening Help Scout Beacon with Search and Ask Us on October 26; no message was sent. Search and report improvement requests also require client confirmation as scope decisions.
 
 ### 1.2 Goals 
+
+**Proposed goals; approval pending (main §§1, 18, 20.10; SC-01/02/07/10).** Direct carrier integrations, provider selection, full historical migration and future partner products are not established launch commitments.
 
 1. Run all of 10-4's brokerage work in one system that 10-4 owns. 
 
@@ -376,11 +193,6 @@ Cost: Quote Factory's price went from $200 to $500 per month and is expected to 
 |Carrier bills,customer invoices,payments,statements,aging|4.5|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 10 of 277 
-
 |Area|Section|
 |---|---|
 |LTL quoting,booking and automatic pickup requests|4.6|
@@ -396,8 +208,9 @@ Page 10 of 277
 |Moving data from Quote Factory|8|
 
 
-
 ### 1.4 Not included in the first version 
+
+**Proposed exclusions, not approved scope.** Main Scope §3 leaves every module awaiting client decision. A disconnected account or an untested workflow does not establish that 10-4 does not use a service outside Quote Factory.
 
 |Item|Why|
 |---|---|
@@ -413,11 +226,6 @@ Page 10 of 277
 |A lighter version for partner brokerages|Later phase;the system is designed so it can be added.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 11 of 277 
-
 |Item|Why|
 |---|---|
 |Boat Haul division|Later;the system is designed so it can be added.|
@@ -425,7 +233,6 @@ Page 11 of 277
 |Training courses(Quote Factory's TalentLMS)|Low priority;later.|
 |Commission runs(approve and pay commission|The first version gives the Commissions report(download);the run|
 |statements)|workflow can be added later.|
-
 
 
 Smaller items planned for later are listed by area in section 1.7. 
@@ -457,11 +264,6 @@ Details in section 2.
 |BOL(Bill of Lading)|The shipping document signed at pickup and delivery.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 12 of 277 
-
 |Term|Meaning|
 |---|---|
 |POD(Proof of<br>Delivery)|The BOL signed at delivery.|
@@ -476,15 +278,14 @@ Page 12 of 277
 |Factoring company|A company a carrier sells its invoices to; 10-4then pays it.|
 |Remittance|The note a customer sends with a payment,saying which invoices it pays.|
 |Rep|A10-4sales person assigned to a customer;may earn a commission.|
-|Secure link|A link e-mailed to someone outside10-4 (carrier or customer)that opens one page without an<br>account.Valid42days;each new send renews it(LNK-001to LNK-003).|
-|QuickBooks Online|10-4's accounting system;bills and invoices are sent to it automatically,and a reported payment<br>marks them paid(INT-025to INT-035).|
+|Secure link|A shared link intended for a particular document or action. Recipient access, expiry, renewal and revocation remain unverified; the proposed 42-day rule is not established by the main source (main §§17.7, 18.2; OQ-40).|
+|QuickBooks Online|Accounting integration shown connected/mapped on October26, after an October23 disconnected observation. Sync triggers, directions, payment matching and reconciliation remain unverified (main §§17.6, 18.2; SC-12).|
 |Trucker Tools|The tracking service that follows the driver's phone or ELD.|
-
 
 
 ### 1.7 Planned for later, by area 
 
-These items are not in the first version. They can be added after go-live. Some items appear under more than one area. 
+These are proposed deferrals awaiting SC-02 scope approval. They are not verified statements about the current app or approved launch exclusions. Some items appear under more than one area. Current-app evidence and conflicts are noted in the relevant modules.
 
 #### 2. Users and Roles 
 
@@ -503,10 +304,6 @@ Extra rights for team managers.
 Booking a house (manual) LTL quote. 
 
 Driver chat messages in TMS. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 13 of 277 
 
 - Refused or partial delivery, damage and claims handling. 
 
@@ -562,10 +359,6 @@ Page 13 of 277
 
 - Tracking invitation box on the carrier page ("Track with Trucker Tools" and the text asking the driver to send tracking updates), shown when the tracking connection is not set up. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 14 of 277 
-
 - View-only link row in the share window (shows the rate confirmation without sending an e-mail). Recording a phone confirmation when a carrier never signs. 
 
 #### 4.4 Tracking, Pickup and Delivery 
@@ -582,11 +375,11 @@ Page 14 of 277
 
 #### 4.5 Billing and payments 
 
-- Automatic booking hold: stop new bookings for a customer when an invoice is 31 days overdue, with an account option and an Owner re-enable. (Credit figures are always shown; blocking a booking above the available credit is the Owner setting "Enforce credit limits", off at go-live; see PAY-022, SET-020.) 
+- Automatic booking hold: stop new bookings for a customer when an invoice is 31 days overdue, with an account option and an Owner re-enable. (Credit figures are always shown; blocking a booking above the available credit is the Owner setting "Enforce credit limits", proposed Off at launch, approval pending; see PAY-022, SET-020.)
 
 - Weekly past-due payment requests by e-mail to customers (schedule by day, hour and time zone). 
 
-- Pay carriers faster ("QuickPay" discounts) and factoring of 10-4's own invoices (sending invoices to a factoring company, "imminent" payments, notices of assignment). 10-4 does not use these today, so the work area has no "Invoices to Factor" tab. The carrier remit-to factoring choice (BIL-013) is included. 
+- Pay carriers faster ("QuickPay" discounts) and factoring of 10-4's own invoices (sending invoices to a factoring company, "imminent" payments, notices of assignment). The source shows Not factoring/Not providing QuickPay and an existing empty Invoices to Factor tab. Outside-app use and release scope require confirmation. The carrier remit-to factoring choice (BIL-013) is included.
 
 - Late fees on customer invoices. 
 
@@ -611,10 +404,6 @@ Page 14 of 277
 - Address-validation chips on the quote form (location type and liftgate warnings). 
 
 - Per-customer visibility limits on quote requests. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 15 of 277 
 
 #### 4.7 Customers 
 
@@ -664,11 +453,7 @@ Page 15 of 277
 
 - Editing the carrier agreement inside the system. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 16 of 277 
-
-- Customer visibility limits taking effect in customer lists, Find and quoting (ROL-019); the switch is saved now but has no effect. 
+- Any proposed deferral of customer-visibility enforcement requires explicit approval. Current UI help describes rep-based restriction when enabled; actual enforcement is unverified (ROL-019).
 
 - QuickPay for carriers (the setting is saved, SET-029). 
 
@@ -710,15 +495,15 @@ Notice of assignment e-mail for factored invoices (10-4 does not factor).
 
 Barcodes on the BOL and labels. 
 
-Printing an account number and a quote number on the BOL. 
+Account and quote references already appear on the inspected LTL BOL (main §17.2). Their inclusion must not be described as an absent current-app feature; clone template scope still needs approval.
 
 #### 7. Integrations 
 
-- MyCarrierPackets connection for carrier onboarding (INT-049). 
+- MyCarrierPackets connection for carrier onboarding (section 7 packet-provider decision).
 
-- Booking a manual (house) LTL quote (INT-024). 
+- Booking a manual (house) LTL quote (section 7 manual-LTL decision).
 
-- Direct accounts for carriers that came only through Xtended Network, if 10-4 opens them (INT-022). 
+- Direct accounts for carriers that came only through Xtended Network, if 10-4 opens them (section 7 direct-account decision).
 
 - Training for new hires (built-in course or link to 10-4's own training). 
 
@@ -726,31 +511,26 @@ Printing an account number and a quote number on the BOL.
 
 - Load-board posting (DAT, Truckstop, Central Dispatch) from 10-4 TMS. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 17 of 277 
-
 #### 8. Data Migration from Quote Factory 
 
 - Pulling later changes automatically on a schedule (imports are started by an Owner). 
 
 - Importing old e-mail logs and old secure-link pages. 
 
-- Importing notes, load history, carrier leads, packet links, invoice send records and earlier carrier assignments, if 10-4 asks for them (MIG-041). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 18 of 277 
+- Importing notes, load history, carrier leads, packet links, invoice send records and earlier carrier assignments, if 10-4 asks for them (section 8 migration-scope decision).
 
 ## 2. Users and Roles 
 
 In short: two kinds of staff user, Owner and Member, plus two outside kinds: customers (customer portal) and carriers (secure links). This section says who they are, how they join and sign in, and what each can do. Screens for sign-in, invites, users and teams are in section 4.10. 
 
-### 2.1 The kinds of user 
+### 2.1 The kinds of user
+
+**Section evidence review:** Main §§1, 12.5–6, 19.1/4 and E-99 establish Owners/Members groups, the sampled Member identity, a disabled unchecked Owner checkbox, customer-login settings and carrier packet/rate-con entry points. No separate Owner, customer, carrier or driver session was tested. Except for those observations, ROL-001–025 and all permission matrices are **proposed / unverified**. In particular there is no evidence for exclusive role counts, full Owner privileges, invite expiry, login/reset token lifetimes, session revocation, password policy, manager powers, accounting feature flags or exact rejection messages. These need SC-03/05 access and a reviewed permission contract. The source's visible Member controls must not be converted into universal grants or denials.
+
 
 ##### ROL-001 Two staff roles 
 
-Every staff person has exactly one role: Owner or Member. It shows as a chip on the profile ("Owner" in orange, "Member" in grey) and as the "Owner" pill in the Users list. There is no third staff role. 
+The observed Users page groups Owners and Members. The sampled profile/user dialog identifies Member, with the Owner checkbox disabled and unchecked (main §19.1; E-99). The exhaustive role catalog, role cardinality, chip colors and any other role variants are unverified.
 
 ##### ROL-002 Owner 
 
@@ -770,7 +550,7 @@ An Owner can do everything a Member can do, and also:
 
 - change commissions on a shipment (amounts, "paid" status) and download the Commissions report, 
 
-- edit or delete the base reports, and share reports with users and teams, 
+- edit permitted base-report columns; administer non-base reports and their sharing (proposed rights, not verified; RPT-010–013),
 
 - add and edit LTL carrier accounts, 
 
@@ -785,10 +565,6 @@ A Member works shipments, quotes, customers, carriers, bills and invoices daily 
 ##### ROL-004 Customer portal user 
 
 A contact of one customer company, signed in with a one-time e-mailed link (no password, ROL-011). They land on the quote form and see only their own company's quotes, shipments and invoices. Customers never see Find, queues, Customers, Carriers, Settings, Bills & Invoices or Reporting. See section 4.11. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 19 of 277 
 
 ##### ROL-005 Carrier through a secure link 
 
@@ -830,15 +606,11 @@ The system checks the user's role on every action, not only by hiding buttons. A
 
 5. After "Agree & join" the person lands on the Dashboard with the role the Owner chose. 
 
-A person who already has a login sees "Continue" instead of the sign-up form. Screens and messages: ACT014 to ACT-021. 
+A person who already has a login sees "Continue" instead of the sign-up form. Screens and messages: ACT-014 to ACT-021.
 
 ##### ROL-010 Staff sign-in 
 
 Staff sign in with e-mail and password on the "Log in" page, then land on the page they were trying to reach, or the Dashboard. A wrong e-mail or password always gives the same message, "Wrong email or password.", so it never reveals whether an e-mail exists. After too many wrong attempts: "Too many attempts. Try again in a minute." 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 20 of 277 
 
 ##### ROL-011 Customer sign-in 
 
@@ -880,17 +652,13 @@ Teams are named groups of staff (for example a regional sales team). Only Owners
 
 - limiting who can see a saved report (section 4.9). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 21 of 277 
-
 ##### ROL-018 Team manager 
 
 On a team, an Owner can mark a member as "Manager". Managers show with an orange "Manager" strip on their card. In the first version a manager has the same permissions as any other Member. 
 
 ##### ROL-019 Customer visibility 
 
-Settings > Customers > "Customer visibility" holds the account switch "Limit customer visibility" (off today); Owners can change it and the choice is saved. In the first version the switch changes nothing: every Owner and Member can open every customer. Limiting customers to their assigned reps (people, or members of a rep team) is planned for later. 
+Settings → Customers → Customer visibility exposes a disabled checkbox in the sampled Member session. Help says enabling the setting restricts viewing/running quotes to customer reps; disabled gives users all customer records (main §19.3). This contradicts the claim that the switch merely saves without effect. Actual enforcement, team inheritance, lists/search/API/export coverage, edit permission and the launch value remain unverified. Do not implement a no-op switch or defer enforcement without explicit client approval (SC-02/03; OQ-11).
 
 ##### ROL-020 Margin and profit limits for Members 
 
@@ -928,15 +696,11 @@ Settings pages open, but switches and fields are read-only (grey), and Owner-onl
 
 Commission and rep-change entries in a shipment timeline are visible to Owners only. Members never receive them. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 22 of 277 
-
 ### 2.3 Permission matrix 
 
 ##### ROL-025 Permission matrix 
 
-This is the home of who-can-do-what; the system enforces it (ROL-008). 
+This is a proposed permission contract for client review, not a verified matrix of current Quote Factory permissions. The observed evidence matrix is main §19.4. Server enforcement described in ROL-008 is a proposed acceptance requirement, not a passed test.
 
 Legend: Yes = allowed. Read = can see, cannot change. Own = only the customer's own records. No = not available. Link = only through the matching secure link. 
 
@@ -957,7 +721,6 @@ Legend: Yes = allowed. Read = can see, cannot change. Own = only the customer's 
 |Data import|Yes|No|No|No|
 
 
-
 #### Shipments and quotes 
 
 |Capability|Owner|Member|Customer|Carrier|
@@ -968,11 +731,6 @@ Legend: Yes = allowed. Read = can see, cannot change. Own = only the customer's 
 |Change customer on a<br>shipment|Yes|Yes(unless"Enforce credit limits"<br>is on and the customer has a<br>credit limit,SHP-071)|No|No|
 |See cost,margin,profit|Yes|Yes|No(price only)|No|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 23 of 277 
 
 |Capability|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -987,7 +745,6 @@ Page 23 of 277
 |Book from a quote|Yes|Yes|Own,if the<br>customer allows<br>booking|No|
 |Documents(BOL,labels,|Yes|Yes|Own(BOL,labels,|Link(rate|
 |POD,confirmations)|||POD)|confirmation)|
-
 
 
 #### Customers and carriers 
@@ -1006,17 +763,11 @@ Page 23 of 277
 |Carrier payment terms,tax and legal entity,<br>"Requires1099"|Yes|No|No|No|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 24 of 277 
-
 |Capability|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
 |Request a carrier packet|Yes|Yes|No|No|
 |Complete a carrier packet|No|No|No|Link|
 |LTL carrier accounts(add,edit,switch on or off)|Yes|Read|No|No|
-
 
 
 #### Billing 
@@ -1029,7 +780,6 @@ Page 24 of 277
 |Create,send,dispute a customer invoice|Yes|Yes|No|No|
 |Record a customer payment|Yes|Yes(unless restricted,ROL-021)|No|No|
 |View and download own invoices|Yes|Yes|Own|No|
-
 
 
 #### Reports, lanes, commissions 
@@ -1046,7 +796,6 @@ Page 24 of 277
 |"Data"page:download all shipments as a CSV file<br>(Settings/Data)|Yes|Yes|No(customers have their own"Data"<br>lanes page)|No|
 
 
-
 #### Settings (detail in section 4.10) 
 
 |Capability|Owner|Member|Customer|Carrier|
@@ -1054,11 +803,6 @@ Page 24 of 277
 |Carriers settings:terms,rate confirmation e-mail,Terms&Fees,<br>packet request,monitoring links|Edit|Read|No|No|
 |Customers settings:margins,carrier-name hiding,customer login,<br>credit limits,visibility|Edit|Read|No|No|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 25 of 277 
 
 |Capability|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -1071,20 +815,22 @@ Page 25 of 277
 |posting loads from the system is not in the first version)|(Owners)|shown|||
 
 
+### Who can do what
 
-### Who can do what 
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 See the matrix above. Owner: all settings, users, teams, approvals, credit, commissions and report administration. Member: daily work; read-only on settings. Customer: own company only, through the portal. Carrier: one secure link at a time, no account. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 26 of 277 
 
 ## 3. End-to-End Workflows 
 
 In short: The nine main business stories of 10-4 TMS, from quote to payment: who does what, what the system does by itself, and what happens when something goes wrong. Screens, fields and rules are in the modules (section 4 and sections 5 to 8); each step names where its detail lives. 
 
-### How to read this section 
+### How to read this section
+
+**Workflow validation status:** Main §§5, 14–20 document observed entry points and seven learning/acceptance walkthroughs, not successful new-record end-to-end execution. WF-001–044 and the nine step tables below remain **proposed / unverified wherever they describe submissions, automatic transitions, sends, signatures, bookkeeping, payment allocation, backend permissions or exact errors**. Existing booked/delivered records show historical states only. Each claimed side effect requires designated-environment replay and the corresponding external acknowledgment. Main §20.10 and D-01 explicitly retain these gates. No production action is authorized merely by this draft's steps.
+
+Specific corrections: 25% is a sampled default, not a fixed quote margin; main §14/Deep1 leaves pricing precedence/enforcement open. Main §15/Deep2 separates booked from covered loads and records staged packet-versus-rate-con buttons without testing the outcomes. Main §17/Deep3 leaves invoice creation/send/POD gating, approval, allocation and sync rules unverified. Separate portal/signature sessions are unavailable. Migration inclusions/exclusions require SC-10 rather than the missing original MIG requirements.
+
 
 - Workflows: 1 LTL quote, book and auto-dispatch; 2 Truckload; 3 Pickup, in transit, delivery and POD; 4 Carrier bill; 5 Customer invoice; 6 Carrier replacement and TONU; 7 Customer portal; 8 Account setup and onboarding; 9 E-mails and notifications. 
 
@@ -1113,11 +859,6 @@ Rep or customer (portal) enters the shipment; all LTL carrier accounts rate it a
 |3|Rep|Tunes margin,profit,price;hides a row;adds a house quote.Members cannot go below the<br>minimum margin or profit(SHP-077,SHP-078).Cost is staff-only.|4.6|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 27 of 277 
-
 |#|Who|What happens|Detail|
 |---|---|---|---|
 |4|Rep|"Share quotes", "Email these quotes"or"Copy link" (view-only).Secure link e-mailed(subject<br>"Quotes for<origin city,ST> -> <destination city,ST>";LNK-001).Customer never sees cost<br>or margin.|4.6, 5|
@@ -1126,7 +867,6 @@ Page 27 of 277
 |7|Rep or<br>Customer|Book shipment(customer: "Book for $X").Shipment Booked;quote request completed;BOL,<br>labels and invoice draft created;BOL and labels e-mailed to each stop with"Share BOL"on.|5, 6|
 |8|System|"Auto dispatch"on:pickup request sent("Auto dispatching...");on acceptance the carrier's<br>pickup number is stored and the shipment becomes Scheduled(SHP-075).|4.6|
 |9|System|Carrier feed events show on the shipment(reps can add them,Workflow3).Track opens the<br>carrier's page with the PRO,pickup or BOL number.|4.4|
-
 
 
 ##### WF-001 LTL booking creates everything in one step 
@@ -1149,17 +889,13 @@ The shipment stays Booked until the carrier accepts the pickup request, then bec
 
 ##### WF-003 Who can book, and when booking is blocked 
 
-Booking is blocked with a visible reason when: booking is switched off for the customer ("Booking disabled"); the quote expired or expires before pickup; the pickup date passed ("Pickup date has passed"); the price changed ("Some things have changed that could affect the price" with Update price, or "Quote is no longer available" with Get new quotes); or a Member's margin or profit is outside limits. With a credit limit, the book page shows "Credit available $X" or "No credit". Blocking for insufficient credit ("Insufficient credit to book this quote") applies only when "Enforce credit limits" is on (PAY-022, SET-020); it is off at go-live. 
+Booking is blocked with a visible reason when: booking is switched off for the customer ("Booking disabled"); the quote expired or expires before pickup; the pickup date passed ("Pickup date has passed"); the price changed ("Some things have changed that could affect the price" with Update price, or "Quote is no longer available" with Get new quotes); or a Member's margin or profit is outside limits. With a credit limit, the book page shows "Credit available $X" or "No credit". Blocking for insufficient credit ("Insufficient credit to book this quote") applies only when "Enforce credit limits" is on (PAY-022, SET-020); it is proposed Off at launch, approval pending.
 
 ###### WF-004 
 
 ##### Re-quote and stale pages 
 
 Changing a request's criteria replaces the old prices. An old share link shows "These are old quotes" with See latest quotes. If two people edit the same request, the second sees "Previous changes detected" with Reload quote request. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 28 of 277 
 
 ##### WF-005 Save for later 
 
@@ -1190,15 +926,9 @@ The rep books the shipment (a truckload can also start as a quote request with m
 |7|System|"Track"on:tracking record at cover(pill"Awaiting rate con");after signing the driver phone goes<br>to the tracking service,which texts the driver a link.Pill: "Awaiting tracking start",then"Tracking<br>active"or"Tracking via ELD".|4.4|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 29 of 277 
-
 |#<br>Who|What happens|Detail|
 |---|---|---|
 |8<br>Rep|Optional edits after signing.|WF-<br>009|
-
 
 
 ##### WF-008 Carrier approval at cover 
@@ -1219,7 +949,7 @@ Approval rules: CAR-007, CAR-015.
 
 - Changing price, stops, equipment or pickup number returns the assignment to "not sent"; the rep sends it again. 
 
-- The check box "Send updated Rate con" is off by default. 
+- The sampled assigned shipment and appointment editors show Send updated Rate con checked (main §16.5/7; Deep2 E-140/142). The original universal Off default was incorrect; other contexts/default causes and actual sends remain unverified.
 
 - The carrier sees "Something's changed" with the differences and Confirm changes; if the page was open during the change: "This load was updated. Please review the new details." 
 
@@ -1239,10 +969,6 @@ The packet request e-mails a secure-link wizard (company information, documents,
 
 Same steps. Items are vehicles with VIN, length and weight. Vehicle condition reports and photos are not part of the first version. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 30 of 277 
-
 ### Workflow 3: Pickup, in transit, delivery and POD 
 
 The rep (or tracking service) records pickup; the load is In transit; the rep records delivery and uploads the POD, which makes the bill and invoice actionable. Who: Rep, Carrier driver (through tracking), Customer (sees progress). Detail: 4.4, 4.2 (queues), 6, 7. 
@@ -1255,7 +981,6 @@ The rep (or tracking service) records pickup; the load is In transit; the rep re
 |4|Rep|Confirm deliveries queue(In transit,delivery date passed).Delivered on the last stop<br>("Shipment delivered";Complete if a stop is both).Shipment Delivered;bill and invoice<br>become ready.|4.2,<br>4.4|
 |5|Rep|"Upload POD"from the banner,last stop,Documents page,or bill or invoice page.If required,<br>the invoice can now be sent.|4.4, 6|
 |6|Customer|Sees ETA,arrived,picked up,delivered per stop;downloads the POD(Workflow7).|4.11|
-
 
 
 ##### WF-013 What is automatic and what is manual 
@@ -1278,10 +1003,6 @@ The tracking pill explains the state (for example "Awaiting rate con", "Driver n
 
 The load stays in Confirm pickups; the rep can change the pickup date (WF-009) or drop the carrier (Workflow 6). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 31 of 277 
-
 ##### WF-017 POD rules 
 
 Customers can require a POD for truckload, LTL or both. 
@@ -1294,7 +1015,7 @@ Customers can require a POD for truckload, LTL or both.
 
 ### Workflow 4: Carrier bill, approve, QuickBooks, paid 
 
-Carrier invoices arrive at 10-4's accounting mailbox; staff upload and enter the bill, compare it with the expected cost, approve it, and the system pushes it to QuickBooks. QuickBooks reports payment (or staff record it). Who: Rep or accounting user; Owner when approvals are Owner-only. Detail: 4.5, 4.8 (terms), 6, 7 (QuickBooks, INT-025 to INT-035, BIL-031). 
+Carrier invoices arrive at 10-4's accounting mailbox; staff upload and enter the bill, compare it with the expected cost, approve it, and the system pushes it to QuickBooks. QuickBooks reports payment (or staff record it). Who: Rep or accounting user; Owner when approvals are Owner-only. Detail: 4.5, 4.8 (terms), 6, 7 (QuickBooks, section 7 accounting review (sync behavior unverified), BIL-031).
 
 |#|Who|What happens|Detail|
 |---|---|---|---|
@@ -1306,7 +1027,6 @@ Carrier invoices arrive at 10-4's accounting mailbox; staff upload and enter the
 |6|Owner/<br>accounting|Pays in QuickBooks(system then shows"PAID in full on"and the green"Paid"card,WF-<br>024),or +Record payment(date,amount up to the balance,method chosen by the user,<br>memo;removable,bill returns to unpaid).|4.5|
 
 
-
 ##### WF-018 Bill amounts and variance 
 
 The bill keeps the amount billed and the amount expected; the difference drives the variance banner and the approve button text. The amount pushed to QuickBooks is the amount billed. 
@@ -1314,10 +1034,6 @@ The bill keeps the amount billed and the amount expected; the difference drives 
 ##### WF-019 Approval is not blocked by a missing POD 
 
 A missing POD changes the card to "Upload POD" so staff see it first; it does not stop approval. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 32 of 277 
 
 ##### WF-020 Owner restrictions 
 
@@ -1351,16 +1067,10 @@ Staff send the invoice after pickup (and POD if required); the system e-mails it
 |4|Customer|Pays outside the system(ACH,check,wire);QuickBooks-reported payments mark it paid(WF-<br>024).|4.5|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 33 of 277 
-
 |#<br>Who|What happens|Detail|
 |---|---|---|
 |5<br>Accounting|+Record customer payment:customer,Amount,Payment date,Reference no.,Method(user-<br>chosen),tick open invoices,Apply $X to selected.Applied in order;remainder stays as credit;<br>zero-balance invoices show"PAID in full"and credit is freed.A payment can be removed or<br>removed and deleted(invoice returns to outstanding).|4.5|
 |6<br>Accounting|Chases late invoices:aging buckets on the customer Invoices tab,Late invoices board,Send<br>statement(records"Last sent by").In dispute moves an invoice to Disputed and out of<br>undisputed overdue totals.|4.5,<br>4.7|
-
 
 
 ##### WF-025 Invoice send rules 
@@ -1391,15 +1101,11 @@ Send statement builds a PDF of the customer's open sent invoices and e-mails it 
 
 ##### WF-029 Booking hold 
 
-An Owner can switch a customer's booking off ("Booking disabled"); portal and quote pages show it and Book is disabled. Credit figures are always shown; blocking for lack of credit follows "Enforce credit limits" (PAY022, SET-020; off at go-live). The automatic hold at 31 days past due and weekly past-due statements are planned for later. 
+An Owner can switch a customer's booking off ("Booking disabled"); portal and quote pages show it and Book is disabled. Credit figures are always shown; blocking for lack of credit follows "Enforce credit limits" (PAY022, SET-020; proposed Off at launch, approval pending). The automatic hold at 31 days past due and weekly past-due statements are planned for later.
 
 ##### WF-030 Invoice tabs 
 
 POD, Send, Outstanding, Disputed, Overdue. Meanings: Appendix B.6. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 34 of 277 
 
 ### Workflow 6: Carrier replacement and TONU 
 
@@ -1411,7 +1117,6 @@ A rep drops a failed carrier; the load returns to Booked and is covered again. A
 |2|System|TONU above zero:a separate TONU record("Truck ordered not used"charge)and pending bill<br>for the dropped carrier;customer amount joins the customer price lines.|4.5|
 |3|Rep|Covers with a new carrier(Workflow2steps2-7);dropped leads show a red"Previously<br>dropped"mark.|4.3|
 |4|Accounting|Processes both carrier bills(Workflow4twice),then one customer invoice with the customer<br>TONU line if any(Workflow5).|4.5|
-
 
 
 ###### WF-031 
@@ -1446,10 +1151,6 @@ The signed version stays in the shipment history ("Download previous version").
 
 A customer with a branded login link signs in with a one-time e-mail link, requests LTL quotes, books, follows shipments, downloads documents and sees what they owe. Who: Customer contact, Rep (turns access on, 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 35 of 277 
-
 ##### shares quotes, handles requests). Detail: 4.11, 4.6, 4.7, 4.5, 5. Sign-in link: POR-005. 
 
 |#|Who|What happens|Detail|
@@ -1459,7 +1160,6 @@ Page 35 of 277
 |3|Customer|Requests LTL quotes(Workflow1).Auto-quoting off: "Preparing quotes",request waits in the<br>staff Quote queue.Books("Book for $X")as Workflow1steps6-9;auto-dispatch follows the<br>customer's setting.|4.6|
 |4|Customer|Truckload:+ in the Shipments title bar,Shipment:a request(no cost,no carrier),Requested,in<br>the staff Finish booking queue;a rep books and covers it(Workflow2).No truckload quotes.|4.11|
 |5|Customer|Tracks shipments(status,per-stop ETA,arrived,picked up,delivered,LTL PRO number,Track<br>link;live);downloads BOL,labels,POD,sent invoices;sees a statement.|4.11,<br>4.12|
-
 
 
 ##### WF-035 What the customer never sees 
@@ -1488,22 +1188,17 @@ Quote e-mail links let a customer open quotes and book without signing in; simil
 
 How a new account becomes ready for work, and how customers, carriers and vendors are added day to day. Who: Owner (setup), Rep (customers, carriers). Detail: 4.10, 4.7, 4.8, 4.6 (carrier accounts), 7, 8. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 36 of 277 
-
 #### A. First-time setup (Owner; detail 4.10) 
 
 |#|Action|Result|
 |---|---|---|
 |1|Company profile and logo(Account page).|Logo and name on the login page,<br>quote e-mails,documents.|
 |2|Invite users:e-mail,Invite;Owner can toggle Owner,Resend or cancel.|Invitee presses"Agree&join",sets<br>a password and joins as Member<br>(or Owner).|
-|3|Settings>Customers:default margins,customer login, "Reveal carrier names",<br>credit limits("Enforce credit limits",off at go-live),booking hold.|Defaults for every customer.|
+|3|Settings>Customers:default margins,customer login, "Reveal carrier names",<br>credit limits("Enforce credit limits",proposed Off at launch, approval pending),booking hold.|Defaults for every customer.|
 |4|Settings>Carriers:Terms and Fees text,carrier agreement text or link,rate<br>confirmation reply-to e-mail and phone, "Send packet requests", "Use terms<br>and conditions",tracking connection.|Used by rate confirmations and<br>carrier pages.|
 |5|Settings>Accounting:connect QuickBooks,expense account and invoice<br>service item,payment terms(default30days),invoice Cc addresses<br>(restrictions on bills and payments are set up with Stackup,ROL-021).|Bills and invoices push to<br>QuickBooks.|
 |6|LTL carrier accounts: 10-4's account number and credentials,activate.|"activating"then"activated";rating<br>starts.|
 |7|Teams if used;report access.||
-
 
 
 #### B. Add a customer (Rep; Owner-only settings marked) 
@@ -1519,16 +1214,10 @@ Steps (detail 4.7): +, add a customer, type the name (3 or more characters runs 
 |3|Carrier confirms company information(or"This is not me"),<br>uploads authority,insurance certificate,W-9,enters<br>insurance details.|Packet completed;rep sees documents and<br>insurance expiry.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 37 of 277 
-
 |#<br>Action|Result|
 |---|---|
 |4<br>Owner sets Approved(or"Don't use this carrier").|Held rate confirmations released(WF-008);carrier|
 ||leaves"Approve&review carriers" (CAR-007,CAR-<br>015).|
-
 
 
 #### D. Add another vendor (Rep) 
@@ -1547,7 +1236,7 @@ Owners do setup and approvals (settings, users, carrier approval, LTL carrier ac
 
 ##### WF-041 Importing existing data 
 
-Existing customers, carriers, contacts and shipments (with bills, invoices, payments, documents) are loaded during migration (section 8) before go-live. Notes, load history, carrier leads, packet links, invoice send records and earlier carrier assignments are not imported (MIG-006, MIG-041). Decision for 10-4 (see the Summary, section 9): MIG-041. 
+Migration is a proposed workstream, not a verified import facility or approved inclusion/exclusion list. Main §19.7/20.10, Scope SC-10 and the Documentation Plan require a source inventory, volumes, documents/history, balances, retention, access and cutover decisions. No working Owner import screen, extraction API, repeat-import behavior or completed import is established. Notes, history, assignments, email/share evidence and payments must not be silently excluded or promised; see section 8 for the decision and validation checklist.
 
 ### Workflow 9: E-mails and notifications across the lifecycle 
 
@@ -1563,11 +1252,6 @@ A small number of e-mails, each with a secure link; staff also see live counters
 |Terms changed after<br>signing|Updated rate confirmation|Carrier dispatcher|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 38 of 277 
-
 |Moment|E-mail|To|
 |---|---|---|
 |Invoice sent|Invoice with PDF and POD|Billing contacts and Cc|
@@ -1577,7 +1261,6 @@ Page 38 of 277
 |Customer sign-in|One-time sign-in link(15minutes)|Customer contact|
 |Staff forgot password|Password reset link|Staff user|
 |E-mail address check|E-mail verification link|The user|
-
 
 
 Not sent by the system: a booking confirmation to the customer (only the BOL e-mail goes out), the driver's tracking text (the tracking service sends it), notices of assignment, QuickPay requests, credit-request e-mails (a mail link opens the user's own mail program), weekly past-due statements (planned), and incoming carrier invoices (they reach the accounting mailbox). 
@@ -1602,18 +1285,15 @@ Staff see each share's state (pending, sent, unopened, opened) and failures ("Fa
 
 E-mails come from 10-4's own sender domain. The rate confirmation reply-to is set in Settings > Carriers; otherwise replies go to the rep who covered the load. 
 
-### Who can do what (workflow view) 
+### Who can do what (workflow view)
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
 |Quote,book,cover,track,upload|Yes|Yes|Quote and book LTL only;|No|
 |documents|||track own shipments||
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 39 of 277 
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -1626,12 +1306,10 @@ Page 39 of 277
 |Fill carrier packet(no login)|n/a|n/a|n/a|Yes,through the<br>secure link|
 
 
+## 4.1 Navigation, Dashboard and Search
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§6, 11, 19.6 and Deep1/2 support broker navigation, responsive Main Menu, known-BOL search, mixed Recently visited, a settled no-match result and sampled queues. NAV-001–016, DSH-001–013 and SRC-001–009 are **proposed / unverified beyond those observations**. No source establishes the dashboard dot algorithm, 50-entry activity cap, 250-load map cap, one-hour session refresh, all error screens, keyboard shortcuts, 3-character/500ms search contract, 6-word matching, 10/20 result caps, complete match-field list or cross-role equality of results. These exact numbers and rules require validation. Source §19.6 expressly leaves search fields, minimum length, keyboard behavior, pagination and permission filtering open. Map rendering is separate from routing/tracking (§18). Navigation exclusions await SC-02.
 
-Page 40 of 277 
-
-## 4.1 Navigation, Dashboard and Search 
 
 In short: the frame around every screen: the left navigation with task counters, the Dashboard staff see first, and "Find anything…", the search that jumps to any customer, contact or shipment. Customers see a smaller navigation and never see the Dashboard or Find (section 4.11). 
 
@@ -1662,11 +1340,6 @@ Desktop or laptop: always visible, a little narrower on small laptops (long labe
 |7|"Shipments"|Always|Shipments list|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 41 of 277 
-
 |#|Item|Shows|Goes to|
 |---|---|---|---|
 |8|"Carriers"|Always|Carriers&vendors list|
@@ -1674,7 +1347,6 @@ Page 41 of 277
 |10|"Reporting"|Always|Reports|
 |11|"Settings" (gear icon,small<br>text)|Always|Settings|
 |12|User block(round photo or<br>initials,full name,arrow)|Always|Your profile(NAV-013)|
-
 
 
 Items 5 to 8 each have a circled "+" at their right edge (NAV-008 to NAV-012). Dividers separate the top block, the queues, the modules and the footer. 
@@ -1698,11 +1370,6 @@ The queue block lists work needing someone today. Each row has a label and a sma
 |"Confirm pickups" ("Confirm pickup"<br>when the number is1)|Scheduled shipments whose pickup date is before<br>today|The list of pickups to<br>confirm|
 |"Confirm deliveries" ("Confirm<br>delivery"when the number is1)|In-transit shipments whose delivery date has passed|The list of deliveries to<br>confirm|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 42 of 277 
 
 - Screen readers read each row as, for example, "Cover 53 outstanding tasks" ("1 outstanding task" for one). 
 
@@ -1743,10 +1410,6 @@ Opens the window "What do you want to add?" with two dashed tiles:
 ##### NAV-012 "Quote" button 
 
 The blue "Quote" button starts an LTL quote from any page. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 43 of 277 
 
 ### Profile menu and footer 
 
@@ -1792,10 +1455,6 @@ The staff home page (after sign-in, and via the company logo): quotes and shipme
 
 No title row. A map fills the page; tiles float over it. Top: "Quotes" group (left, one third) and "Shipments" group (right). Bottom right: counters "Quote", "Dispatch", "Cover". Bottom left: map filter buttons. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 44 of 277 
-
 ##### DSH-002 "Quotes" group 
 
 Rounded card "Quotes" with two tiles; the card opens Quote history. Each tile is a row of dots, one per open quote request. 
@@ -1804,7 +1463,6 @@ Rounded card "Quotes" with two tiles; the card opens Quote history. Each tile is
 |---|---|---|
 |"Requested"|Draft requests(customer asked,no quote sent yet)|Quote history filtered to"Requested"|
 |"Quoted"|Requests that have a quote waiting|Quote history filtered to"Quoted"|
-
 
 
 The Quote history page shows the filter as a removable chip, "Status: Requested" or "Status: Quoted". Click on one dot opens that quote request. 
@@ -1819,7 +1477,6 @@ Rounded card "Shipments" with four tiles; the card opens the Shipments list. One
 |"Booked"|Booked|Shipments list filtered to Booked|
 |"Scheduled"|Scheduled|Shipments list filtered to Scheduled|
 |"In transit"|In transit|Shipments list filtered to In transit|
-
 
 
 One dot opens that shipment. Other statuses (delivered, canceled) are not shown (statuses: SHP-075). 
@@ -1839,12 +1496,7 @@ Three white cards (label left, number right):
 |"Cover"|Booked Truckload shipments that need a carrier|The list of Truckload shipments to cover|
 
 
-
 A card at 0 is greyed out and cannot be clicked. Numbers equal the navigation badges (NAV-005). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 45 of 277 
 
 ##### DSH-006 Live updates 
 
@@ -1891,12 +1543,7 @@ Bottom left: a round map icon button and up to three pills (hidden at 0):
 |"{n}Delivering"|Shipments in transit|
 
 
-
 Clicking a pill shows only that group on the map: it turns white with dark text and the others dim. Clicking it again shows everything. Nothing reloads. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 46 of 277 
 
 ##### DSH-011 "Re-center map" 
 
@@ -1935,11 +1582,6 @@ Up to three groups, each with a grey heading, shown only if they have results. T
 |"Shipments"|See SRC-005|Newest<br>pickup<br>date first|20|The standard shipment row:BOL,<br>pickup date,customer,route<br>(origin to destination),delivery<br>date,carrier and status|The shipment<br>page|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 47 of 277 
-
 ##### SRC-005 Keyword search on shipments 
 
 With several words, every word must be found in any of the fields below (words may match different fields; at most 6 words used). Matching ignores case and matches part of a word. 
@@ -1975,8 +1617,10 @@ With several words, every word must be found in any of the fields below (words m
 |Search failed|"Search failed.Try again."|
 
 
-
 ##### SRC-008 Recently visited 
+
+**Observed subset:** Main §19.6 records mixed recently visited records; Deep1 E-123 records automatic `PUT /users/settings/account` with a `recentlyVisited` object. The five-per-kind cap, complete ordering and storage/retention rules below are proposed, not established by structural network evidence.
+
 
 When the box is empty and the user has visited records before, the window shows a heading "Recently visited" and a list of the last records the user opened, newest first, mixed together (no group headings). The system remembers up to 5 of each kind. Each row is one button with an icon and: 
 
@@ -1990,34 +1634,43 @@ When the box is empty and the user has visited records before, the window shows 
 |Carrier|Carrier icon|Carrier name|Carrier page|
 
 
-
 A record is added each time its page is opened. Users and teams are not listed. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 48 of 277 
 
 ##### SRC-009 Other pickers 
 
 Some forms reuse the box with another placeholder: "Find shipment..." (pick a shipment to link) and "Find customer..." (pick a customer). 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 - Owner and Member: full navigation, Dashboard and Find, with identical counters and results. Find shows every customer to every staff user (ROL-019). 
 
 - Customer: shorter navigation; no Dashboard, queues or Find; sent to the Quote form from the home page. Carrier: no navigation (secure links only). 
 
-10-4 TMS — Functional Specification · v0.1 
+## 4.2 Shipments
 
-Page 49 of 277 
+**Evidence review — partial:** Main §§15–16, Deep2 E-124–144 and network runs `DEEP-02-R001`–`R011` establish sampled list/filter/form/detail variants. Every requiredness, limit, default, save/cancel/send outcome, permission or transition not specifically established is **proposed / unverified**; enabled controls and HTML constraints do not prove backend acceptance.
 
-## 4.2 Shipments 
+| Requirements reviewed | Source-supported portion | Unverified / correction |
+| --- | --- | --- |
+| SHP-001–008 | Active/All, row fields, sampled BOL/amount comparison, Partial allowed marker, three sort labels; §15.2–3/Deep2 | Active inclusion, invoice-paid removal, grouping/defaults, full color/alert catalog, lead min/max, sort/tie rules. Alert names are not verified provider enums. |
+| SHP-009–014 | Filter/preset menus; Select truckload checks 11 non-LTL families; Apply count and unmatched states; Deep2 E-133–135 | Full matching, geography, week/timezone boundaries, session/scroll storage, 1,000-row cap, paging, CSV contents/file names/timing. Reset retained search. |
+| SHP-015–022 | Booked in Cover, Scheduled in pickup, In transit in delivery; empty Dispatch; §15.2/Deep2 E-136–142 | Portal/Finish booking, exact date cutoffs/counters, export, submission effects. Rendered count need not equal total. |
+| SHP-023–026 | Custom BOL/customer fields, edit metadata/customer display, Change customer entry; §§15.4/16.2 | Numbering/uniqueness, contact defaults, hold/credit enforcement, creation restrictions and exact errors. |
+| SHP-027–029 | 70 equipment choices, Other text, LTL gate, flag/temperature/dimension branches, nine vendor types; Deep2 E-128/132/143–144 | Equipment maxima/validation, universal locks, vendor assignment/removal/cardinality/charge generation. |
+| SHP-030–037 | Initial stops, third Delivery, reorder controls, catalogs/template entry/appointment; §§13/16.3/7/Deep2 E-128–130 | Route source, 180/31-day limits, clock/holiday enforcement, inheritance/template writes, full reference catalog, sequencing/save effects. |
+| SHP-038–042, SHP-079 | Packaging/contains/units, sampled math, partial-length warning, Dry Van hazmat fields/menu; Deep2 E-129–130/143 | Trade-show class/NMFC assignment, NMFC regex, customs trigger, VIN/one-vehicle policy, required dimensions/value and server validation. |
+| SHP-043–046, SHP-077–078 | Calculators and specific arithmetic; negative-profit warning with Book enabled; §§14.8/15.8/16.5/Deep2 E-131 | Precedence, minimum-profit clamp, Owner bypass/Member denial, universal rounding/zero rules, 147-charge catalog and lane-history algorithm/supplier. |
+| SHP-047–053 | Blank Hide contacts unchecked versus populated checked; assigned Rate Con checked; delivered editor/duplicate entry; §16.5–6/Deep2 | Recipient enforcement, draft/duplicate copy policy, atomicity/idempotency, stale-save/error contract and sends. |
+| SHP-054–064, SHP-068 | Detail sections, historical statuses, party/document paths, itemized controls, maps and dated measurements; §15.5–11 | Full visibility/state/amount rules, invoice creation, invoice-reference schema, vendor removal and save/send effects. |
+| SHP-065–067 | Authored notes, Timeline, old/new filter event; §15.11/Deep2 E-125–127 | Autosave/format/edit/delete/undo, 75-event cap, audiences and complete actor/event schema. |
+| SHP-069–076 | Varying menus, canceled Uncancel/no Edit, Reps headers, status labels; §§15.11/16.9/Deep2 E-136/140 | Cancel/TONU/uncancel financial/tracking effects, commissions, state machine and external-user views. |
 
-In short: This part of 10-4 TMS is where every load lives. Reps list and filter shipments, work the daily queues (cover, confirm pickups, confirm deliveries, dispatch, finish booking), book a new truckload or auto transport shipment, edit or duplicate it, and run it from one detail page. The detail page shows who hauls the load, what it costs and earns, every stop, the items, notes, and a full history of changes. Owners and Members use all of it. Customers and carriers see a reduced view of the same shipment. 
+No complete submitted shipment workflow or role/status matrix is proved.
 
-10-4 TMS — Functional Specification · v0.1 
 
-Page 50 of 277 
+In short: This part of 10-4 TMS is where every load lives. Reps list and filter shipments, work the daily queues (cover, confirm pickups, confirm deliveries, dispatch, finish booking), book a new truckload or auto transport shipment, edit or duplicate it, and run it from one detail page. The detail page shows who hauls the load, what it costs and earns, every stop, the items, notes, and a full history of changes. Owners and Members use all of it. Customers and carriers see a reduced view of the same shipment.
 
 ## Part A. Shipments list and work queues 
 
@@ -2035,7 +1688,6 @@ Tabs "Active" and "All". Changing tabs keeps the current filters but resets the 
 |All|Every shipment,including Canceled.|One flat list,no group headers.|Pickup<br>date,new<br>to old|
 
 
-
 ##### SHP-002 Header controls 
 
 |Control|What it does|
@@ -2047,14 +1699,9 @@ Tabs "Active" and "All". Changing tabs keeps the current filters but resets the 
 |Sort button(sort<br>icon)|Opens a small panel with three sort options(SHP-008).The arrow icon shows the current direction.|
 
 
-
 ##### SHP-003 Shipment row 
 
 Each row is a white card; clicking it opens the shipment detail page. Accessible name "View shipment" followed by the BOL number. On narrow screens the row folds into a two-line card. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 51 of 277 
 
 |Column|What it shows|
 |---|---|
@@ -2065,7 +1712,6 @@ Page 51 of 277
 |Delivery|Same date format as Pickup.Line2:the delivered time,or"Appt@time"when the last stop has an<br>appointment.Dimmed until the load is picked up.|
 |Equipment and<br>weight|Equipment name("LTL"for LTL loads)and weight,for example"42,000lb".A solid dark"P"badge<br>before the equipment means the load is partial.A dashed"P"badge means a partial is allowed.|
 |Carrier or leads<br>(Owners and<br>Members only)|See SHP-005.|
-
 
 
 ##### SHP-004 Status dot colors 
@@ -2080,7 +1726,6 @@ Page 51 of 277
 |Canceled|Light pink|
 
 
-
 A Canceled row is shown at 50 percent brightness (full on hover). A Requested row has a dashed bottom border. 
 
 Customers see "Scheduled" for a load that is Booked in the broker's view. 
@@ -2088,10 +1733,6 @@ Customers see "Scheduled" for a load that is Booked in the broker's view.
 ##### SHP-005 Carrier and cost block on each row 
 
 The right side of the row (Owners and Members only) shows one of: 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 52 of 277 
 
 - Carrier assigned: the carrier name; a blue hourglass before the name while the rate confirmation is waiting to be signed; under it the carrier cost, for example "$475.00". A red "carrier hidden" icon follows the cost when the load has an unused carrier charge (a dropped carrier that was paid TONU). 
 
@@ -2115,7 +1756,6 @@ The icon under the BOL number comes from the load's live tracking. An invisible 
 |Past Appointment Time|Clock,red|
 
 
-
 Stop-level tracking is in section 4.4. 
 
 ##### SHP-007 Attention highlight (Active tab only) 
@@ -2132,15 +1772,9 @@ Three options; the selected one is highlighted blue.
 |2|Pickup date|new to old|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 53 of 277 
-
 |Option|Label|Second text|
 |---|---|---|
 |3|Pickup date|old to new|
-
 
 
 The choice is remembered for each view (SHP-011). The "Confirm deliveries" queue has no Sort button; it is always sorted by delivery date, oldest first. 
@@ -2167,11 +1801,6 @@ At the top is the search field with the placeholder "search for...", focused on 
 |12|Covered by|Same as Booked by.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 54 of 277 
-
 - Weeks start on Sunday. A preset covers the whole day from midnight to the end of the day. 
 
 - The footer shows an outlined blue button "See N shipments" with the number of matches (for example "See 118 shipments"; "See 1 shipment" for one; "See shipments" while the count is unknown). Clicking it closes the window. 
@@ -2189,7 +1818,6 @@ Each filter set shows as a blue chip in the search box with an "x" to clear just
 |Covered by|"Covered by"and the name|
 |Customer,Carrier,Rep|The selected name|
 |Status,Equipment|The first value,then"+N"for the rest,for example"Booked+2"or"Dry Van+1"|
-
 
 
 ##### SHP-011 Filters and sort are remembered 
@@ -2210,10 +1838,6 @@ The Export button opens a small panel with the text "Export these shipments to a
 
 - The button shows a loading state while the file is prepared. "Download will start soon" shows for 1.5 seconds; if the file cannot be made, "Download failed". 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 55 of 277 
-
 - File name: the account name, the word "Shipments", then date and time, for example `10-4 Global Shipments 2026-10-09-141530.csv` . 
 
 - Columns (the default set; an Owner can change it, section 4.9): Equipment, Carrier Name, USDOT, MC Number, Cost, Price, Profit, Margin, Pickup Date, Delivery Date, Origin Postal Code, Destination Postal Code, Total Weight, Mode. 
@@ -2231,7 +1855,6 @@ Page 55 of 277
 |Active tab with rows that are all<br>filtered out|A dashed"+shipment"link that opens the new shipment form.|
 |Queue with nothing in it|A"document missing"icon and the text"No active shipments."|
 |The list cannot be loaded|A visible error message with a way to try again,instead of an empty list.|
-
 
 
 ##### SHP-015 What customers see on the list 
@@ -2252,11 +1875,7 @@ Same rows as the Shipments list (SHP-003); the Quote queue lists quote requests 
 
 - Rows are flat (no group headers) and have no attention stripe. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 56 of 277 
-
-The count badge always equals the number of rows. Queue rows show only for Owners and Members. 
+Badge totals and currently rendered rows must be distinguished; complete equality/pagination and alternate-role access are unverified. Deep2 records matching totals larger than currently rendered links.
 
 |Queue|Page title|What lands in it|Default sort|
 |---|---|---|---|
@@ -2267,7 +1886,6 @@ The count badge always equals the number of rows. Queue rows show only for Owner
 |Confirm|Shipments to|Scheduled shipments(carrier assigned)whose pickup date is|Pickup date,old|
 |pickups|confirm pickups|before today.|to new|
 |Confirm<br>deliveries|Shipments to<br>deliver|In transit shipments whose delivery date has passed and that are<br>not yet marked delivered.|Delivery date,<br>old to new,fixed|
-
 
 
 ##### SHP-017 Cover queue ("Shipments to cover") 
@@ -2292,10 +1910,6 @@ Rows are like the Cover queue but show "LTL" as equipment. The rep opens the loa
 
 Truckload shipment requests sent by customers from the portal (section 4.11) that a rep has not booked yet, in status Requested with a dashed grey dot. Opening a Requested shipment always opens its edit page, where 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 57 of 277 
-
 the rep checks the details, adds cost and price, and clicks "Book shipment". Requests with a pickup date in the past are not listed. Shipments saved for later by a rep (SHP-049) are not in this queue; they appear in the Active list under Requested. 
 
 ##### SHP-022 Sidebar counters 
@@ -2310,10 +1924,6 @@ Under "Find anything…" in the left menu is a block of queue rows, each with an
 
 - Counts refresh after any shipment action and when the page is opened. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 58 of 277 
-
 ## Part B. Create, edit and duplicate a shipment 
 
 One form serves all three jobs. It is reached from the "+" next to "Shipments", from the "+ shipment" buttons on the dashboard and on customer pages (the customer is then pre-selected), from the pencil on the detail page, from "Reschedule", and from "Duplicate shipment" in the "…" menu. 
@@ -2324,7 +1934,6 @@ One form serves all three jobs. It is reached from the "+" next to "Shipments", 
 |Duplicate|Book shipment|Book shipment|Yes|
 |Edit a Requested shipment|Edit shipment|Book shipment|Yes|
 |Edit a Booked,Scheduled,In transit or Delivered shipment|Edit shipment|Update shipment|No|
-
 
 
 The form always creates truckload-style shipments (mode "TL", including Auto Transport and every other non-LTL equipment type). LTL shipments are created from an LTL quote (section 4.6) and can then be edited with this form, which shows the LTL-only fields noted below. 
@@ -2345,14 +1954,9 @@ Sections in order: header, Customer, Equipment (with "+ add vendor / carrier"), 
 |Right column<br>(edit,wide<br>screens)|Notes and the Timeline(SHP-065,SHP-066).|
 
 
-
 ##### SHP-024 Custom BOL number 
 
 A small field "Custom BOL" with the placeholder "#" sits in the header. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 59 of 277 
 
 - The system assigns its own BOL number as soon as the shipment is saved, including shipments saved for later. 
 
@@ -2373,7 +1977,6 @@ Page 59 of 277
 |Credit<br>badge|Small badge next to the<br>customer|—|—|Always shown when the customer has a<br>credit state.Details in section4.7.|
 
 
-
 On edit, customer and contact are plain text once the shipment is past Requested. To move a booked shipment to another customer, use "Change customer" (SHP-071). 
 
 A customer user (portal) cannot change the customer; the form uses their own. 
@@ -2382,15 +1985,14 @@ A customer user (portal) cannot change the customer; the form uses their own.
 
 When a customer's "Booking" switch is off (section 4.7), a card "Booking disabled" appears with the text "Customer has a booking hold" and a link to the customer page. "Booking is disabled." is added to the tooltip 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 60 of 277 
-
-of the "Book shipment" button, and the button is disabled. "Save for later" still works. Credit-limit blocking ("Enforce credit limits", off at go-live) is defined in PAY-022 and SET-020 (card texts: CUS-028, CUS-029); when it applies, a card shows the credit usage with "Request credit", "No credit", "Limit not set", "Edit Credit Limit" or "Add credit note" depending on the user and state. 
+of the "Book shipment" button, and the button is disabled. "Save for later" still works. Credit-limit blocking ("Enforce credit limits", proposed Off at launch, approval pending) is defined in PAY-022 and SET-020 (card texts: CUS-028, CUS-029); when it applies, a card shows the credit usage with "Request credit", "No credit", "Limit not set", "Edit Credit Limit" or "Add credit note" depending on the user and state.
 
 ### Equipment 
 
 ##### SHP-027 Equipment 
+
+**Direct-entry LTL gate:** Selecting LTL on the new-shipment form shows “LTL direct booking coming soon” and “Get LTL quotes,” with booking gated; the link opens the quote form (Deep2 E-132/134). Presence among the 70 options does not prove manual LTL booking. Changing this requires OQ-31/SC-02 approval.
+
 
 The section heading is "Equipment". 
 
@@ -2401,35 +2003,23 @@ The section heading is "Equipment".
 |Partial|Switch with the text"Partial<br>allowed"|No|Off|Refrigerated,Dry Van and Flatbed groups.<br>Disabled with a lock and the text"Locked after<br>coverage"once a carrier is assigned.|
 
 
+Equipment catalog: 70 visible choices verified in main §14.3, Deep1 E-116 and Deep2 E-132. Reading groups are not verified backend enums. The unsupported numeric maximum-dimension table has been removed. Common hints and HTML bounds are not validated capacity/business limits.
 
-Equipment types (70). Types with a size have a maximum item length × width × height in inches. An item larger than that is an error on the field; the system never silently changes the number. 
-
-|Group|Types(max L×W×H in inches where defined)|
+|Reading group|Observed equipment labels|
 |---|---|
-|LTL|LTL(630 × 100 × 103)|
-|Dry Van|Dry Van(630 × 102 × 108),Dry Van53 (630 × 102 × 108),Dry Van48 (570 × 102 × 108),Straight Truck(420<br>× 96 × 144),Cargo Van(148 × 66 × 110),Dry Van or Refrigerated(630 × 102 × 108),Curtainside(630 × 102<br>× 108),Vented Van(630 × 102 × 108)|
-|Flatbed|Flatbed,Flatbed53,Flatbed48,Step Deck,Flatbed or Step Deck,Double Drop,Removable Gooseneck,<br>Conestoga(width100,height162),Stakebed,Step Deck Conestoga(width100,height162),Flatbed Hot<br>Shot,Landoll Flatbed(570 × 102 × 108),Multi-Axle Heavy Haul|
-|Refrigerated|Refrigerated(630 × 98 × 103.5),Refrigerated53 (630 × 98 × 103.5),Refrigerated48 (570 × 98 × 103.5),<br>Refrigerated Straight Truck(420 × 96 × 144),Refrigerated Cargo Van(148 × 66 × 110)|
-|Intermodal|Intermodal(473 × 93 × 92.5),Intermodal20 (232 × 93 × 92.5),Intermodal20High Cube(232 × 93 ×<br>104.5),Intermodal40 (473 × 93 × 92.5),Intermodal40High Cube(473 × 93 × 104.5),Intermodal40<br>Refrigerated(473 × 93 × 104.5),Intermodal53 (630 × 102 × 108)|
-|Drayage|Drayage(473 × 93 × 92.5),Drayage20 (232 × 93 × 92.5),Drayage20High Cube(232 × 93 × 104.5),<br>Drayage20Refrigerated(232 × 93 × 104.5),Drayage40 (473 × 93 × 92.5),Drayage40High Cube(473 ×<br>93 × 104.5),Drayage40Refrigerated(473 × 93 × 104.5)|
-
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 61 of 277 
-
-|Group|Types(max L×W×H in inches where defined)|
-|---|---|
-|Dump|Dump,Bottom Dump,End Dump,Side Dump|
-|Dry Bulk|Dry Bulk,Hopper Bottom|
-|Power Only|Power Only,Power Only Load Out,Power Only Tow Away|
-|Driveaway|Driveaway, 2-way Deck, 3-way Deck, 4-way Deck,Boom,Box Truck,Heavy Duty,Non-CDL,Single,<br>Tractor-trailer,Utility,Vocational|
-|Auto<br>Transport|Auto Transport,Open Auto Transport,Enclosed Auto Transport|
-|Tanker|Tanker,Tanker Aluminum,Tanker Intermodal,Tanker Steel|
+|LTL|LTL|
+|Dry Van|Dry Van; Dry Van 53; Dry Van 48; Straight Truck; Cargo Van; Dry Van or Refrigerated; Curtainside; Vented Van|
+|Flatbed|Flatbed; Flatbed 53; Flatbed 48; Step Deck; Flatbed or Step Deck; Double Drop; Removable Gooseneck; Conestoga; Stakebed; Step Deck Conestoga; Flatbed Hot Shot; Landoll Flatbed; Multi-Axle Heavy Haul|
+|Refrigerated|Refrigerated; Refrigerated 53; Refrigerated 48; Refrigerated Straight Truck; Refrigerated Cargo Van|
+|Intermodal|Intermodal; Intermodal 20; Intermodal 20 High Cube; Intermodal 40; Intermodal 40 High Cube; Intermodal 40 Refrigerated; Intermodal 53|
+|Drayage|Drayage; Drayage 20; Drayage 20 High Cube; Drayage 20 Refrigerated; Drayage 40; Drayage 40 High Cube; Drayage 40 Refrigerated|
+|Dump|Dump; Bottom Dump; End Dump; Side Dump|
+|Dry Bulk|Dry Bulk; Hopper Bottom|
+|Power Only|Power Only; Power Only Load Out; Power Only Tow Away|
+|Driveaway / other vehicle labels|Driveaway; 2-way Deck; 3-way Deck; 4-way Deck; Boom; Box Truck; Heavy Duty; Non-CDL; Single; Tractor-trailer; Utility; Vocational|
+|Auto Transport|Auto Transport; Open Auto Transport; Enclosed Auto Transport|
+|Tanker|Tanker; Tanker Aluminum; Tanker Intermodal; Tanker Steel|
 |Other|Other|
-
-
 
 ##### SHP-028 Additional services 
 
@@ -2440,7 +2030,6 @@ Switches under the equipment list, not shown for the Driveaway group. They stay 
 |Tanker endorsement|Any truckload equipment|Off|
 |Team service|Any equipment group|Off|
 |Tarps|Flatbed group only|Off|
-
 
 
 ##### SHP-029 "+ add vendor / carrier" 
@@ -2459,15 +2048,9 @@ A dashed button "+ add vendor / carrier" (accessible name "Add another vendor") 
 |Transloader|Transloading|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 62 of 277 
-
 |Vendor type|First cost line description it adds|
 |---|---|
 |Warehouse|Storage|
-
 
 
 - Each ticked type adds a vendor card under the equipment card (type icon, type name, trash button) and one starter line in Cost & price with cost $0.00 and price $0.00 (blank for a Steamship line). The company itself is picked later on the detail page (SHP-059). 
@@ -2500,11 +2083,6 @@ Each stop is a card with a numbered circle and the title "Pickup" (first stop), 
 |2|Location type|Pick list, 26types(SHP-<br>032)|Yes|Business with<br>dock/forklift||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 63 of 277 
-
 |#<br>3|Field<br>Show name<br>and Booth#|Input<br>Two text fields|Required<br>Yes(both)|Default<br>Empty|Rules and messages<br>Only when the location type is<br>Convention/trade show.|
 |---|---|---|---|---|---|
 |4|Address|Text with street suggestions|Yes|Empty|Choosing a suggestion fills<br>street,city,state,ZIP,country<br>and time zone.|
@@ -2519,11 +2097,6 @@ Page 63 of 277
 |13|Close time|Time field|Yes|5:00PM|Empty: "Close time is<br>required".|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 64 of 277 
-
 |#|Field|Input|Required|Default|Rules and messages|
 |---|---|---|---|---|---|
 |14|Pickup date<br>(first stop)|Date field with a calendar<br>button(accessible name<br>"Open arrival date calendar<br>for location N").<br>"mm/dd/yyyy"when empty,<br>"Fri,Oct2"when filled.<br>Label"Pickup date".|Yes|Empty(new,<br>duplicate),saved<br>date(edit)|See SHP-035.|
@@ -2531,7 +2104,6 @@ Page 64 of 277
 |16|Appointment|Button,see SHP-034|No|"add appointment"|Truckload stops only.|
 |17|Reference#|Rows of kind and value,see<br>SHP-033|No|Stop1: "PO"and<br>"Pickup".Other<br>stops: "Order".||
 |18|"+private<br>note"|Link opening a three-line<br>text box(placeholder<br>"optional").Enter without<br>Shift or Escape closes it;a<br>green check saves it.|No|Empty|Owners and Members only.<br>Once filled,a note icon with<br>the tooltip"Private note"<br>shows the text in a grey bar<br>with a pencil to edit.Carriers<br>and customers never see it.|
-
 
 
 ##### SHP-032 Address book, location types 
@@ -2542,17 +2114,13 @@ Page 64 of 277
 
 - A stop linked to an address book entry shows a small address book icon in the field: grey when the card matches the entry, orange when it differs. Hovering the orange icon shows "What's changed?" and a comma list of the differences. Clicking it opens the address book entry window (section 4.7). 
 
-- Saving a booking does not create address book entries; it only updates the "last used" date of linked entries. 
+- Booking-time template creation and last-used updates are unverified (main §§13.5/16.3; OQ-18); do not assume either creation or non-creation.
 
 Location types (26): Airport; Business with dock/forklift; Business without dock/forklift; Camp; Church building; Construction site; Container freight station; Convention/trade show; Country club; Fair/amusement park; Farm; Government site; Grocery warehouse; Hospital; Hotel; Limited access; Military installation; Mine site; Native American reservation; Nursing home; Pier; Prison; Residential; School; Self-storage; Utility site. 
 
 ##### SHP-033 Reference numbers on a stop 
 
 Each reference row has a kind pick list and a value field (placeholder "optional" on the first row, "12345" on later rows). A link "+add ref" adds a row with kind "Ref"; the trash button on rows after the first removes a row. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 65 of 277 
 
 Rows with an empty value are dropped on save. The first stop always keeps a "Pickup" row unless the rep deletes it. 
 
@@ -2570,10 +2138,12 @@ The "Appointment" button shows "add appointment" when empty and "#12345 @ 9:00 A
 |"Save"|Blue button|—|Saves the appointment.|
 
 
-
 On the form the appointment is saved with the shipment; on the detail page it is saved right away (section 4.4). 
 
 ##### SHP-035 Hours and date rules 
+
+**Numeric limits unverified:** The proposed 180-day TL, 31-day LTL, two-hour and one-hour rules below lack source proof. §16.3 observes a four-hour warning; Deep1 E-117 records one calendar with past dates/weekends/November 26 disabled. Universal holiday/cutoff policy, post-booking exemptions and timezones remain open.
+
 
 - Pickup date: a truckload pickup can be up to 180 days ahead; later shows "Pickup date must be less than 180 days in the future". A truckload pickup may be in the past (a load that already moved), with the notice in SHP-036. LTL pickups: up to 31 days ahead, no past dates ("Pickup date must not be in the past"), weekends and holidays blocked ("This date is unavailable"). 
 
@@ -2594,11 +2164,6 @@ Yellow notes with a bold "Note:" or "Reminder:" label. They never block saving.
 |Closes next day(time)|Close time is earlier than open time|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 66 of 277 
-
 |Text|When|
 |---|---|
 |Currently closed.|Truckload;the close time has passed for the stop's date and<br>time zone|
@@ -2610,12 +2175,13 @@ Page 66 of 277
 |This date is a holiday for some carriers|LTL date is a holiday|
 
 
-
 ##### SHP-037 Add and remove stops 
 
 A dashed button "+ add location" (accessible name "Add another location") adds a stop after the last one, dated one day after the latest stop date, with the reference row "Order". Truckload only. When the load already has a pickup and a delivery, the new stop offers "Duplicate previous location" (a copy of the previous stop) and "New blank" (an empty stop). The new stop becomes the "Delivery" and the previous last stop becomes a "Stop". The trash button removes a stop when there are more than two. Shipments with more than two stops, a trade show stop or a hazmat item are supported. 
 
 ### Items to be shipped 
+
+**Classification boundary:** Main §14.5a is a density-reference aid conditional on commodity provisions. No source validates automatic trade-show class 125/NMFC 154630 assignment. That passage below is proposed/unverified and must not classify actual freight. App hazmat labels likewise are observed UI, not an authoritative compliance policy.
 
 ##### SHP-038 Items section 
 
@@ -2627,11 +2193,7 @@ With more than two stops, each item also shows "Picking up at" and "Delivering t
 
 The card header shows a bold summary ("4 totes", "2 pallets"), a red hazmat icon when Hazmat is on, and the item's total weight ("10,044 lb") on the right. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 67 of 277 
-
-SHP-039 Item card fields 
+##### SHP-039 Item card fields
 
 |Field|Input|Required|Default|Rules and messages|
 |---|---|---|---|---|
@@ -2647,12 +2209,10 @@ SHP-039 Item card fields
 |Hazmat|Check box"Hazmat"|No|Off|Opens the hazmat row(SHP-040).|
 
 
+##### SHP-040 Hazmat item
 
-10-4 TMS — Functional Specification · v0.1 
+**Branch-specific:** Dry Van direct entry exposes these fields and HTML-required UN/class/emergency contacts (Deep2 E-143). Checking Hazmat on blank LTL quotes revealed no extra fields (Deep1 E-117). Do not apply this row universally. Four-digit validation, Contains enforcement and actual server/compliance acceptance are untested.
 
-Page 68 of 277 
-
-##### SHP-040 Hazmat item 
 
 Ticking Hazmat adds a row with a red top border under the item: 
 
@@ -2662,7 +2222,6 @@ Ticking Hazmat adds a row with a red top border under the item:
 |Hazmat<br>class|Pick list<br>(filterable)|Yes|Classes: 1.1 -Explosive; 1.2 -Explosive; 1.3 -Explosive; 1.4B-Explosive; 1.4C-<br>Explosive; 1.4D-Explosive; 1.4E-Explosive; 1.4F-Explosive; 1.4G-Explosive; 1.4S-<br>Explosive; 1.5 -Blasting Agent; 1.6 -Insensitive Detonating Substance; 2.1 -<br>Flammable Gas; 2.2 -Non-Flammable Gas; 2.3 -Poisonous Gas; 3 -Flammable<br>Liquid; 3.1 -Flammable Liquid; 3.2 -Flammable Liquid; 3.3 -Flammable Liquid; 4.1 -<br>Flammable Solid; 4.2 -Spontaneously Combustable Material; 4.3 -Dangerous When<br>Wet; 5.1 -Oxidizer; 5.2 -Organic Peroxide; 6.1 -Toxic Substances; 6.2 -Poisonous<br>Material; 7 -Radioactive Material; 8 -Corrosive Material; 9 -Miscellaneous<br>Hazardous Material; 9.1 -Miscellaneous Dangerous Goods; 9.2 -Environmentally<br>Hazardous Substance|
 |Packing|Pick list:I,|No||
 |group|II,III|||
-
 
 
 The form also shows a section "Hazmat contact" with "Emergency phone" (required, U.S. phone), "Emergency contact company" (required) and "Contract #". Contains quantity and unit become required for the item. 
@@ -2678,7 +2237,6 @@ When the route crosses a border (for example a stop in Canada or Mexico), the fo
 |Phone|Phone field,U.S.format|Yes|Must be a full number.|
 
 
-
 This is separate from the "Customs broker" vendor type (SHP-029), which only adds charges to the load. 
 
 ##### SHP-041 Auto Transport and vehicle items 
@@ -2691,10 +2249,6 @@ Auto Transport loads (equipment Auto Transport, Open Auto Transport, Enclosed Au
 
 - For Auto Transport (and Flatbed, Power Only, Other) the total-size row shows "Total dimensions" with Length, Width and Height; width and height are required. Inches are usual for vehicles, for example 232" L × 82" W × 79" H. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 69 of 277 
-
 A "VIN" reference can also be entered on a stop (SHP-033). 
 
 ##### SHP-042 Total length, totals and total value 
@@ -2704,12 +2258,11 @@ A "VIN" reference can also be entered on a stop (SHP-033).
 |Element|Behaviour|
 |---|---|
 |Total length|Number with a length icon(tooltip"Total length",or"Total dimensions"for Flatbed,Power Only,Auto<br>Transport and Other),unit"ft"or"in",placeholder"L".Maximum is the equipment's length.Required when<br>"Partial allowed"is on;the orange message"Total length needed for partial quote"shows beside it.|
-|"Common:<br>N'L"hint|Under Total length,a common trailer length for the equipment,for example"Common: 53'L".|
+|"Common:<br>N'L"hint|Under Total length,a common trailer length for the equipment,for example "Common: 50.5' L" in the blank Dry Van quote branch (Deep1 E-115); hints vary by selection.|
 |"Est:"chip|"Est: 8",the estimated linear feet from the item sizes.Tooltip: "Linear feet estimate is based on the<br>dimensions you entered.If the shipment takes up more space in the trailer,the carrier may charge more.<br>Click to use estimate."Clicking copies it into Total length.|
 |Linear feet<br>visualizer|An icon button"Linear Feet Visualizer"opens a side panel drawing each item along the trailer,with<br>"Estimated total length"and the foot count.|
 |Totals|Package name and count("Totes4"), "Volume200cf", "Density50.22pcf", "Weight10,044lb".Only non-<br>zero values show.For LTL volume quotes: "Enter total length for volume quotes".|
 |Total value|Currency field"Total value",placeholder"$".Required only if the account turns on"value required for<br>truckload" (off for10-4).Hints on blur:for round values of $25,000,$50,000,$100,000,$150,000,<br>$200,000or $250,000, "Is the total value EXACTLY $25,000.00?" (with the typed amount);for a value<br>under $101, "Total value seems low.Are you sure it's correct?".|
-
 
 
 ### Cost & price 
@@ -2725,11 +2278,6 @@ Column headers: "Description", then "Target cost" and "Price". The cost column i
 |Description|Pick list that also accepts free text,<br>placeholder"Description...".Row1of the<br>freight group is fixed read-only text<br>"Freight"with no trash.A pencil icon opens<br>a small note box;the note shows as<br>"Description-note".|Yes|See the charge list below.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 70 of 277 
-
 |Field|Input|Required|Rules|
 |---|---|---|---|
 |Target cost<br>/Cost|Currency,placeholder"$0.00".A calculator<br>icon opens the cost calculator(SHP-044).|Yes on the first<br>row;on other<br>rows required<br>when the price is<br>empty|When the cost is exactly $0.00,a trash<br>icon with the tooltip"Hide from rate<br>con"appears:clicking it clears the cost<br>so the line stays on the customer<br>invoice but is left off the carrier rate<br>confirmation.|
@@ -2738,16 +2286,11 @@ Page 70 of 277
 |Trash on a<br>line|Tooltip"Remove line item"|—|Not on the first row of a group.|
 
 
-
 A group with more than one line shows a subtotal of cost and price; with several vendors a grand total row shows too. The shipment's money total is the sum of the lines. 
 
 A cost or price for a vendor whose bill has a balance shows a small payment icon with "Payment $x / Balance $y". 
 
 Charge descriptions (147): Access fee, Accessorial, Additional fee, Adjustment, Advance, After-hours delivery, After-hours pickup, All risk insurance, Animal control, Appointment, Attempted delivery, Attempted pickup, Below minimum, Blind shipment, BOL correction, Bonded fee, California compliance, Canceled, Cargo insurance, Chains, Charge, Chassis, Chassis split, Construction site delivery, Construction site pickup, Container return, Container rejected, Convenience fee, Coordination, Country club delivery, Country club pickup, Country club, Courtesy credit, Crane, Credit card fee, Credit, Cross dock, Cubic capacity minimum, Currency conversion, Customs clearance, Damage, Deadhead, Decking, Deficit weight, Delivery fee, Demurrage, Detention delivery, Detention pickup, Detention, Discount, Driver, Driver 2, Driver 3, Driver 4, Driver assist, Driver unload, Drop trailer, Dry run, Duties & taxes, Escort, Excessive length, Extra delivery, Extra pickup, Extreme length, Freight, Fuel advance, Fuel, Full value coverage, Gate fee, Government site delivery, Government site pickup, Handling, Hazmat, High cost delivery, High value, Holiday delivery, Holiday pickup, Inside delivery, Inside pickup, Inspection, Insurance, Invoice correction, Labor, Late delivery, Late fee, Layover, Liftgate delivery, Liftgate pickup, Liftgate, Limited access delivery, Limited access pickup, Limited access, Linear foot rule surcharge, Linehaul, Lumpers, Mileage adjustment, Multi-stop, No scale tickets, Notify before delivery, Overheight, Overlength, Oversize, Overweight, Overwidth, Pallet exchange, Permits, Port congestion, Pre-pull, Prison delivery, Prison pickup, Protect from freeze, Quick pay, Re-palletizing, Reclass & reweigh, Reclass, Reconsignment, Redelivery, Rerouting, Residential delivery, Residential pickup, Residential, Restocking, Return, Reweigh, Reworking, Scale tickets, School delivery, School pickup, Sort & segregate, Stopoff, Storage, Tarps, Tanker wash, Team drivers, Temperature control, Terminal fee, Tolls, Towing, Tracking non-compliance, Trade show, Trailer wash, Translating, Transloading, Truck ordered not used, Weekend delivery, Yard pull, Yard storage. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 71 of 277 
 
 ##### SHP-044 Calculators 
 
@@ -2776,14 +2319,19 @@ Under the lines, a strip shows three figures for the whole shipment:
 |Profit|price−cost|Dollars,for example"$700.00". "$-"when empty.|
 
 
-
 ##### SHP-077 Margin rule 
+
+**Unverified extension:** §§8/14.8 verify ordinary gross-margin arithmetic in examples. They do not establish the minimum-profit clamp, global/customer/carrier precedence, role/draft exemptions or zero/zero rule below. Pricing review is pending (OQ-17/29).
+
 
 When the system suggests a price from a cost and a margin: price = the larger of (cost ÷ (1 − margin)) and (cost + the minimum profit). The minimum profit comes from the customer's settings (or the account's). A margin of 0/0 shows "$0.00". 
 
 ###### SHP-078 
 
 ##### Margin and profit limits 
+
+**Observed warning, not proven blocking:** Deep2 E-131 shows cost 200, price 125, profit −75 and Target cost is above price, with Book enabled. No submission was made. Neither universally disabled buttons nor successful negative-profit booking is established.
+
 
 Each customer (or the account) can have a minimum and maximum margin and a minimum and maximum profit per load (section 4.7). 
 
@@ -2798,11 +2346,6 @@ Each customer (or the account) can have a minimum and maximum margin and a minim
 |Margin above100<br>percent|Margin is too high.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 72 of 277 
-
 |Condition|Message|
 |---|---|
 |Margin warning|Above target margin:N% /Below target margin:N% (without the number when no limit is set)|
@@ -2810,7 +2353,6 @@ Page 72 of 277
 |Margin error(Member)|Margin must be below:N% /Margin must be above:N% (Margin is too high/Margin is too low<br>when no limit is set)|
 |Profit warning(Owner)|Above target profit:$X/Below target profit:$X|
 |Profit error(Member)|Profit must be below:$X/Profit must be above:$X(Profit is too high/Profit is too low)|
-
 
 
 ##### SHP-046 Lane history price hint (truckload) 
@@ -2826,7 +2368,6 @@ A small line with a route icon sits next to the "Cost & price" heading.
 |History found|Blue"History"and a dollar figure,for example"History $716".|
 
 
-
 The figure is the average cost per mile that 10-4's own covered truckload shipments paid on that lane, times the distance (or the average cost when the distance is unknown), rounded to whole dollars. History covers loads that started within 100 miles of the origin, ended near the destination, and ran in the last 6 months on the same lane and direction. Clicking it opens a "lane history" window (sections 4.3 and 4.9) with Origin, Destination, Equipment, Radius "100 mi", History "6 months", and the line "Average cost for N mi" with "$X / $Y per mi", or "This is a new lane for you". The button's accessible name is "View lane history details". No outside load board rate is shown in the first version. 
 
 ### Other form blocks, saving and errors 
@@ -2839,22 +2380,20 @@ A card with an eye icon: "Hide contacts from carrier", with a switch "Hide conta
 
 ##### Send updated documents (edit only) 
 
-On edit, a card "Send updated documents" (a pulsing refresh icon) appears when there is something to send, with up to two switches. 
+**Conflict corrected:** Main §16.5–6 and Deep2 E-140 show Rate Con checked in assigned Dry Van/Scheduled Auto Transport editors; uncovered and sampled delivered LTL editors do not expose the section. The former universal Off default was incorrect. Variant causes, actual recipients and sends remain open (OQ-30/36).
 
-10-4 TMS — Functional Specification · v0.1 
 
-Page 73 of 277 
+On edit, a card "Send updated documents" (a pulsing refresh icon) appears when there is something to send, with up to two switches.
 
 |Switch|Shown when|Default|What happens on save|
 |---|---|---|---|
-|Rate Con|A carrier with a contact is|Off|The updated rate confirmation is sent to the|
+|Rate Con|A carrier with a contact is|Checked in sampled assigned TL editors; absent in uncovered example|Proposed send effect: updated rate confirmation to the|
 ||assigned and not waiting for<br>approval(truckload)||carrier contact(hover shows"Carrier<br>contact(s)"with name and email).|
 |BOL(with the number of<br>recipients,for example"2|At least one stop has Share BOL<br>on with a contact name and|On|The updated BOL is emailed to those contacts<br>(hover shows"Location contacts").|
 |BOL")|emails|||
 
 
-
-The card shows who will receive each document, so a routine edit never emails anyone unexpectedly. Documents: section 6; emails: section 5. 
+Recipient previews and actual sends must be verified for each state/role. The source has not tested all recipients, defaults or automatic send effects. Documents: section 6; emails: section 5.
 
 ###### SHP-049 
 
@@ -2886,11 +2425,6 @@ The card shows who will receive each document, so a routine edit never emails an
 |Pickup too far ahead|Pickup date must be less than180days in the future|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 74 of 277 
-
 |Where|Message|
 |---|---|
 |Date unavailable(LTL)|This date is unavailable|
@@ -2902,7 +2436,6 @@ Page 74 of 277
 |Stops|Origin or destination is missing. /Each carrier must have an origin and destination.|
 |Items|At least one item is needed to book|
 |Margin or profit limit(Member)|See SHP-078|
-
 
 
 ##### SHP-051 Errors on save and the stale-edit warning 
@@ -2927,18 +2460,12 @@ A red banner shows at the top of the form when saving fails.
 |Custom BOL|Editable|Editable|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 75 of 277 
-
 |Item|Requested|Booked,Scheduled,In transit,Delivered|
 |---|---|---|
 |Hide contacts,Send|Editable|Editable|
 |updated documents|||
 |Save for later|Yes|No|
 |Date limits|Enforced|Not enforced;date order still is|
-
 
 
 - Editing the cost and price of a shipment with a signed carrier rate confirmation sends it back to the carrier for re-confirmation (section 4.3). 
@@ -2949,6 +2476,9 @@ Editing a delivered shipment is allowed (for example to fix a reference or an am
 
 ##### SHP-053 Duplicate a shipment 
 
+**Entry only:** §§14.7/15.11/16.9 record duplicate controls, not execution. The copied/cleared fields, source linkage, POD warning and numbering below require a designated test.
+
+
 "Duplicate shipment" (SHP-070) opens the form pre-filled from an existing truckload shipment and saves a brand-new shipment. 
 
 - Copied: customer and contact, equipment and services, stops (company, address, contact, hours, instructions, Share BOL, notes), items, cost and price lines (without the "Canceled" lines created by a cancel), and the Hide contacts setting. 
@@ -2958,10 +2488,6 @@ Editing a delivered shipment is allowed (for example to fix a reference or an am
 - The new shipment remembers its source. While the source has an unpaid balance and no proof of delivery, the new shipment's detail page shows the orange banner "Do not touch, waiting on POD". 
 
 - The usual form rules apply: the rep enters dates and can book or save for later. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 76 of 277 
 
 ## Part C. Shipment detail page 
 
@@ -2988,14 +2514,9 @@ On wide screens the page has two columns (left about two thirds, right one third
 |Banner"POD is<br>required"|An orange-outlined card with a pill"Upload POD",for Owners and Members when the load is<br>delivered,the customer requires POD,the invoice is not paid,and no POD is uploaded(sections<br>4.4, 4.5).|
 
 
-
 ##### SHP-055 Status stepper 
 
 Under the header is a row of segments, one per stage. Past stages have a dark bar and a grey time stamp under the label; the present stage is highlighted; future stages are plain. Hovering a past stage shows the exact date and time, an extra line and the user who did it. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 77 of 277 
 
 |Segment|Shown when|Label now **→**<br>label once done|Time stamp from|Hover extras|
 |---|---|---|---|---|
@@ -3005,7 +2526,6 @@ Page 77 of 277
 |Dispatch|Owners and Members;LTL<br>with a carrier quote|Dispatch →<br>Scheduled|When the pickup<br>request completed|"Pickup"number; "Manually<br>dispatched"or"Auto dispatched"|
 |Pick up|Always|Pick up → In<br>transit|Pickup time|"PRO"number|
 |Deliver|Always|Deliver →<br>Delivered|Delivery time|—|
-
 
 
 - Booked and needs a carrier: Booked (done), Cover (present), Pick up, Deliver. Scheduled: Booked, Scheduled, Pick up (present), Deliver. In transit: Booked, Scheduled, In transit, Deliver (present). Delivered: all done, the last "Delivered" with a green bar. An LTL load from a quote shows five segments starting with Quoted. 
@@ -3029,17 +2549,11 @@ A white card on the right of the carrier card. Clicking its header opens the cus
 |Credit badge|Always shown when the customer has a credit state(section4.7).|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 78 of 277 
-
 |Element|Rules|
 |---|---|
 |"+invoice<br>reference"|Owners and Members.Opens the"Invoice-only reference"window(SHP-057).Once references exist,<br>the link is replaced by a list of"kind value"rows with a pencil on hover;carriers and customers see the<br>list read-only.|
 |"Confirmation"|Outlined pill that opens the customer's rate confirmation document(section6).Only when that<br>document exists.|
 |"Invoice" / "+<br>Create invoice"|Outlined pill,when the account has accounting turned on.Hidden for a truckload shipment still Booked<br>or Requested. "+Create invoice" (blue)creates the customer invoice and opens it;otherwise"Invoice"<br>opens the invoice page(section4.5).Icon:orange chat icon when the invoice is in dispute,green<br>check when the balance is zero,orange triangle when the invoice is still a draft and the shipment is<br>delivered;gray otherwise.Its accessible name shows the invoice state("View draft invoice", "Record<br>payment", "Invoice paid in full").|
-
 
 
 Booking a shipment creates a draft customer invoice with the BOL number as its reference number, and copies the customer's reps onto the shipment (SHP-074). 
@@ -3057,7 +2571,6 @@ A window with a receipt icon, the title "Invoice-only reference" and the text "T
 |"Save"|Full-width blue button|On failure: "Unable to update reference number".Not<br>allowed on a voided invoice.|
 
 
-
 These print on the customer invoice only (section 4.5); they are not sent to the carrier. 
 
 ##### SHP-058 Carrier side of the page 
@@ -3070,11 +2583,6 @@ Next to the customer card is the carrier area:
 |no carrier|when allowed, "Target $800.00",and an orange"Cover"button.The whole card opens the cover<br>screen(section4.3).|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 79 of 277 
-
 |Shipment state|What shows|
 |---|---|
 |Scheduled,In<br>transit,Delivered<br>(truckload)|The carrier card:a status dot(red"Don't use",grey"Candidate";none when approved),carrier<br>name,equipment(prefix"Partial"when partial),contact name with call and email icons and copy<br>buttons,then the"Rate con"and"Bill"pills.Clicking opens the carrier detail window with a"Remove<br>carrier"button(section4.3).|
@@ -3082,7 +2590,6 @@ Page 79 of 277
 |Canceled before a<br>carrier was<br>selected|A grey card"Canceled before a carrier was selected"|
 |Canceled after a<br>carrier was<br>assigned|The usual carrier card,plus(LTL)the orange card"Contact the carrier to cancel the pickup!" (section<br>4.6)|
 |Dropped carrier<br>with TONU|The active carrier card,plus a half-width card for the replaced carrier with the line"TONU Carrier"<br>and a"Bill"or"Pay bill"pill|
-
 
 
 Rate confirmation, signing, bill, drop carrier, TONU, driver and tracking pill are in sections 4.3, 4.4 and 4.5. 
@@ -3101,10 +2608,6 @@ Under the carrier row, each non-freight vendor (Towing, Lumper, Insurance, Wareh
 
 - The charges of a non-freight vendor come from its lines in Cost & Price and become the vendor's bill amount (section 4.5). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 80 of 277 
-
 ##### SHP-060 Cost & Price strip (Owners and Members) 
 
 Under the cards is a white strip that is one big button (accessible name "Expand itemized view") with three figures: Target cost (left, bold), Profit (center), Price (right). The label is "Target cost" while Booked, and "Cost" once Scheduled or later or LTL. Negative profit shows with a leading minus. Hovering Profit shows a box with Margin and Cost + percentages. Customers and carriers do not see this strip; customers see a readonly card "Price" (SHP-076). 
@@ -3119,7 +2622,7 @@ Clicking the strip expands it in place into the card "Cost & Price" (a chevron c
 
 - A blue button "Save cost & price" appears when the lines differ from the saved ones. Saving changes only the cost and price lines. 
 
-- A checkbox "Send updated Rate con" (default off, tooltip lists the carrier contacts) shows when every freight vendor has a rate confirmation, the lines changed and some rate confirmation was already signed. If ticked, the changed rate confirmation is sent to the carrier in the same save. 
+- A checkbox "Send updated Rate con" (default unverified in this separate inline editor; assigned full editors were checked, tooltip may list contacts) shows when every freight vendor has a rate confirmation, the lines changed and some rate confirmation was already signed. If ticked, the changed rate confirmation is sent to the carrier in the same save.
 
 - After saving, a pop-up message "Saved Cost & Price" with an "undo" action restores the previous lines. On failure: "Failed to save cost & price". 
 
@@ -3137,10 +2640,6 @@ The "Locations" heading is followed by the distance ("1,730 mi"), the transit da
 
 The heading reads "N items to be shipped" ("1 item to be shipped"), or "Items to be shipped" when the lines have no quantities (vehicles). One card per item shows the title ("4 totes", the description when there is no packaging), a "Stackable" tag, the description in bold, size "48L × 49W × 39H", contents "— 2 drums", and on the right the weight "3,620 lb" and, for LTL, "class 70" and the NMFC. A hazmat item adds a red row with "UN #", "Hazmat class" and "Packing group". An item can be linked from a stop card (the card then gets a blue border). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 81 of 277 
-
 The right-aligned totals row shows, in order and only when set: "Refrigerated" (temperature range such as 34° - 38°F), "Value", the package count ("Pallets 22"), "Volume" ("106.2 cf"), "Density" ("34.1 pcf"), "Length" ("44' L", or inches for vehicles such as 232" L x 82" W x 79" H) with the "Linear Feet Visualizer" button, and "Weight" ("40,000 lb"). A hazmat shipment adds "Hazmat contact", "Contract #" and "Emergency phone". 
 
 Footnotes under the totals: 
@@ -3156,12 +2655,14 @@ Footnotes under the totals:
 |Sort&segregate quoted price is a minimum.Final<br>charge based on shipment and work performed.|Any stop has the sort&segregate service|
 
 
-
 ##### SHP-064 Map 
 
 A map card at the top of the right column draws the route line between the origin (a hollow circle) and the destination (a pin). With live tracking, a green dot marks the latest position. A button expands the map to full width (hidden on narrow screens) and collapses it again. A chip in the top-left corner shows the newest tracking alert for tracked loads (Owners and Members): On-time, At pickup, At stop, Left stop, Behind, Off route, Possible Detention, Low battery, Tracking stopped, Temp too low, Temp too high, Reefer unit off, Temperature alert, Possible fraud, Location off, Phone off, Unable to make it, Past appointment. 
 
 ##### SHP-065 Notes 
+
+**Entry only:** §§15.11/16.8 leave save timing, audience, edit/delete and notifications open. Blur-to-save, formatting, author/Owner rights, undo and stale-form exemptions below remain proposals.
+
 
 Under the map is a dashed box with the placeholder "+ note". 
 
@@ -3172,10 +2673,6 @@ Under the map is a dashed box with the placeholder "+ note".
 - Hovering a note shows a dark toolbar with "Edit note" (pencil) and "Delete note" (trash). Only the author and Owners can edit or delete. Edit opens the box pre-filled; leaving the box saves. Delete shows "Note deleted" with "undo". 
 
 - Notes are internal: customers and carriers do not see them. With no notes, only the dashed box shows. Notes do not make the shipment form "stale" (SHP-051). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 82 of 277 
 
 ##### SHP-066 Timeline 
 
@@ -3203,14 +2700,9 @@ A row "Timeline" with a chevron, closed by default, under the notes (Owners and 
 |LTL quote|Quote request created|
 
 
-
 ##### SHP-067 Event detail 
 
 Clicking a timeline row opens a wide, read-only window. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 83 of 277 
 
 - Title: the label with the entity word as a link ("Shipment booked"). Meta line: date and time on the left, "by {actor}" on the right. 
 
@@ -3219,10 +2711,6 @@ Page 83 of 277
 - Footer: for "Rate confirmation confirmed" a button "Rate confirmation" downloads the signed rate confirmation. 
 
 - The timeline cannot be edited, and the signer's IP address is not shown to users. Reps and commission events are hidden from Members. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 84 of 277 
 
 ## Part D. Actions menu and lifecycle 
 
@@ -3240,7 +2728,6 @@ A white dropdown at the right of the header. Rows have an icon and a label, in t
 |Uncancel<br>shipment|Shipment is canceled|Opens"Uncancel shipment"<br>(SHP-073)|
 
 
-
 ##### SHP-070 Duplicate shipment 
 
 Opens the form described in SHP-053. Available for truckload and Auto Transport shipments in any status, except that a Requested shipment is edited, not duplicated. 
@@ -3256,11 +2743,6 @@ Moves a Booked, Scheduled, In transit, Delivered or Canceled shipment to another
 |Credit card|Credit usage of the<br>target customer|—|Always shown with the customer's credit state.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 85 of 277 
-
 A warning block says: "The shipment's assigned reps and pricing will not be updated based on the target customer's settings." The blue button "Change" confirms. On failure the banner "Error changing customer" shows. The page refreshes on success and the timeline shows "Customer updated". 
 
 Rules: 
@@ -3269,7 +2751,7 @@ Rules:
 
 - The draft customer invoice moves to the new customer. If the invoice was already sent, the change is refused with "The invoice was already sent". 
 
-- A Member cannot change the customer when "Enforce credit limits" is on and the customer has a credit limit (off at go-live; PAY-022). 
+- A Member cannot change the customer when "Enforce credit limits" is on and the customer has a credit limit (proposed Off at launch, approval pending; PAY-022).
 
 - Two people changing the same shipment at once are handled one after the other; the second sees the stale message (SHP-051). 
 
@@ -3297,10 +2779,6 @@ What happens:
 
 - A canceled shipment cannot be edited, but notes, documents, the customer invoice and bills can still be worked. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 86 of 277 
-
 ##### SHP-073 Uncancel shipment 
 
 A window with a red warning icon, "Are you sure you want to uncancel this shipment?", and buttons "No, go back" and "Uncancel shipment" (red). 
@@ -3316,6 +2794,9 @@ A window with a red warning icon, "Are you sure you want to uncancel this shipme
 ###### SHP-074 
 
 ##### Reps on a shipment 
+
+**Evidence limit:** §15.5/Deep2 E-125 expose Paid/User/Commission/Payout headers and a mark-paid checkbox in a sampled broker session. No payout changed or full role comparison occurred. Owner-only amounts, Member blank cells, read-only Paid, ranges/formulas and primary-rep copying below are unverified. Customer Manage reps separately says new shipments only (§12.5).
+
 
 The Reps button opens a window "Reps on BOL 1000123" (about 600 pixels wide). 
 
@@ -3335,6 +2816,9 @@ The Reps button opens a window "Reps on BOL 1000123" (about 600 pixels wide).
 
 ##### SHP-075 Status lifecycle 
 
+**Labels versus transitions:** §§10/16.9 explicitly do not establish a tested state machine. The six labels are observed; all transition triggers, held-confirmation timing, drop/uncancel effect, Active-until-paid policy and portal status translation below remain proposed/unverified.
+
+
 |Status|Meaning|Enters from|What moves it|
 |---|---|---|---|
 |Requested|Saved for later by a rep,or a customer's request from<br>the portal;not booked|New|"Save for later",or a customer's<br>request|
@@ -3342,17 +2826,11 @@ The Reps button opens a window "Reps on BOL 1000123" (about 600 pixels wide).
 |Scheduled|A truckload is covered,even when the rate<br>confirmation is held for carrier approval(LTL:the<br>carrier accepted the pickup request,or staff<br>completed it by hand with"Done")|Booked|Cover the load with a carrier<br>(section4.3);LTL auto-dispatch<br>or manual dispatch(section4.6)|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 87 of 277 
-
 |Status|Meaning|Enters from|What moves it|
 |---|---|---|---|
 |In transit|The first stop is picked up|Scheduled|Pickup confirmed by the rep<br>(section4.4)|
 |Delivered|The last stop is delivered|In transit|Delivery confirmed by the rep<br>(section4.4)|
 |Canceled|The load will not move|Booked,<br>Scheduled or In<br>transit|"Cancel shipment" (SHP-072)|
-
 
 
 - A carrier signing the rate confirmation does not change the status: the load becomes Scheduled when covered, even if the rate confirmation is held for carrier approval. A missing signature leaves the load Scheduled with a blue hourglass. 
@@ -3381,14 +2859,11 @@ Page 87 of 277
 |Contacts|—|Hidden when the shipment has<br>"Hide contacts from carrier"on|
 
 
-
 The customer portal and secure links are in section 4.11 (LNK-001 to LNK-003 for link rules). 
 
-10-4 TMS — Functional Specification · v0.1 
+### Who can do what
 
-Page 88 of 277 
-
-### Who can do what 
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -3405,12 +2880,23 @@ Page 88 of 277
 |Export|Yes|Yes|Own loads|No|
 
 
+## 4.3 Carrier Cover and Rate Confirmation
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§12.6, 15.6–7, 16.5/9, 17.2, 19.2 and Deep2 E-138–140 / Deep3 E-148 establish a cover workspace, candidate/history indicators, staged carrier selection, checked Track/Request packet, packet-versus-send labels, and existing Confirmed/PDF/Share views. They do not prove any Cover, Save lead, Drop, Share, signature or amendment submission.
 
-Page 89 of 277 
+| Requirements reviewed | Supported observation | Proposed / unverified detail |
+| --- | --- | --- |
+| COV-001–004 | Uncovered booked example opens coverage; equipment/target/history and controls visible | All role/status access, drawer dismissal guarantees, history weighting/source and universal radius/direction rules |
+| COV-005–008, COV-018 | Candidate list, Covered/Quoted examples, Add a carrier search; 17/19 dated leads | Automatic lead generation, 25-lead cap, matching/sort priority, FMCSA backend supplier, deduplication/save/delete and no-paging contract |
+| COV-009–015, COV-019–020 | Contact/note/equipment/charge/tracking/packet fields; Save for later and Cover & request packet; selecting one carrier changes to Cover & send rate con | Actual requiredness/length limits, line mapping, defaults by policy, tracked-load creation, draft persistence and saved-state side effects |
+| COV-016–017, COV-021–024 | Candidate warning/disabled send; packet help says rate con follows receipt/approval; settings describe automatic packet for unapproved carrier | Exact approval/rejection policy, Owner override, transaction boundary, Scheduled timing, auto-created contacts/bills/documents, hold release, recipients/retries/errors |
+| COV-025–031 | Remove carrier entry observed; no drop executed | TONU amount/records, zeroing, bill/card creation/voiding, replacement, tracking stop, signed-link revocation and accounting behavior |
+| RCF-001–006, RCF-010 | Existing broker confirmation header/Confirmed, Share/list/+add share, itemized/PDF/Regenerate; existing two-page TL PDF | Full state/icon priority, sends/removal/contact creation, access/lifetimes, regeneration/cache/background effects and line editing |
+| RCF-007–009, RCF-014–021, RCF-024–025 | Signature/confirmation marks and historical events only; checked resend controls in sampled shipment editors | Save/undo, signature snapshots, invalidation field list, concurrent/stale signing, state machine, signed-copy email and all external views |
+| RCF-011–013, RCF-022–023 | Carrier agreement link/configuration, terms structure and email override help (§19.2) | Secure carrier page/validation/signing/access enforcement, fixed 42-day expiry, legal terms carryover, duplicate suppression and precise term snapshots |
 
-## 4.3 Carrier Cover and Rate Confirmation 
+**UI-described terms timing:** Main §19.2 says changes apply to future shipments; previously covered loads must drop the carrier before new terms apply. This is help text, not a tested amendment procedure or authorization to drop a carrier. Legal/commercial text and accessorial amounts require client approval.
+
 
 In short: A rep opens a booked truckload, picks a carrier from leads built from 10-4's own lane history (or adds any carrier by MC or DOT number), enters the cost and the dispatcher's contact, and presses the Cover button. The load moves to "Scheduled" and, for an approved carrier, the carrier is e-mailed a rate confirmation (for a new carrier it is held until an Owner approves the carrier). The carrier opens a secure page, enters driver and truck details, types a signature and confirms, with no login. This part also covers changes after signing, removing a carrier and recording a TONU (truck ordered not used) charge. Reps and Owners use the broker screens; carriers use only the secure rate confirmation page. 
 
@@ -3440,11 +2926,6 @@ The drawer is a dialog on a grey background, labelled "Cover load".
 |"Target cost"|Grey label with the sum of the load's carrier cost lines,for example"Target cost $800.00".The amount<br>turns red with a warning icon when the margin is negative.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 90 of 277 
-
 ##### COV-004 Lane history bar 
 
 A blue-outlined bar under the title row summarizes what 10-4 has paid on this lane before. Only 10-4's own covered truckloads are used; no outside rate data is shown in the first version. 
@@ -3464,7 +2945,6 @@ A blue-outlined bar under the title row summarizes what 10-4 has paid on this la
 |No past loads on this lane|"This is a new lane for you"|
 |The history could not be loaded|"Can't fetch lane data" (red)|
 |Past loads found|The"History"amount|
-
 
 
 ### Carrier leads 
@@ -3491,10 +2971,6 @@ The first rule that differs decides. There are no filters and no paging.
 
 4. Leads added by hand first. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 91 of 277 
-
 5. Stronger lane history first: covered forward, quoted forward, covered in reverse, quoted in reverse, none. More runs first. 
 
 6. Carrier name A to Z. 
@@ -3512,7 +2988,6 @@ Each lead is a white card; clicking it opens the cover form for that lead.
 |"Previously<br>dropped"|Red text with a small icon;<br>card faded until hovered|When this carrier was already dropped from this load(COV-025).|
 |Lane icon|A truck icon|Covered forward,quoted forward,covered in reverse or quoted in<br>reverse.Reverse icons are at half strength.|
 |Cost pill|Blue pill with the cost,for<br>example"$800.00"|With no cost,a dashed grey pill"Add cost".|
-
 
 
 There is no safety-rating badge; a "conditional" rating appears only as a warning in the compliance box (COV016). 
@@ -3537,10 +3012,6 @@ Clicking "Add a carrier" (or "+ Add a carrier") replaces the list with the cover
 
 - A back link "Carriers" (arrow left) returns to the lead list when the form was opened from the list. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 92 of 277 
-
 ##### COV-018 Remove a lead 
 
 A saved lead's form shows a trash button (accessible name "Remove lead"). It deletes the lead and returns to the list; the lead can be added again by MC or DOT number. The load and its history are unchanged. 
@@ -3563,11 +3034,6 @@ Two columns: carrier and contact on the left, cost on the right.
 |"Accessorials:<br>"|Grey info row|||When the shipment has services.|
 |Compliance<br>and lane box|Read-only text|||Shown when the carrier is not approved,<br>when lane history exists,or when the<br>safety rating is"conditional".Shows the<br>approval reason and the lane lines<br>"Covered{n}x in this lane({time ago})",<br>"Covered{n}x in the reverse lane",<br>"Quoted{n}x in this lane"and"Quoted<br>{n}x in the reverse lane".A"Covered"line<br>is a button that opens the lane history for<br>this carrier(forward or reverse).|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 93 of 277 
 
 A typed contact that does not yet exist for the carrier is created as a carrier contact when the load is covered. 
 
@@ -3609,10 +3075,6 @@ A coloured bar under the cost editor shows the margin the entered cost leaves. I
 
 - With no cost entered the bubble is hidden and the bar is grey. The meter is hidden when the target cost is $0. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 94 of 277 
-
 ##### COV-014 Tracking switch 
 
 A bordered row "Track with Trucker Tools" with a switch, on by default, shown only when a tracking service is connected (section 7). On: tracking starts automatically after the carrier signs (section 4.4). Off: the carrier is not tracked automatically. 
@@ -3628,7 +3090,6 @@ Shown only for a candidate (not yet approved) carrier: a cream card with a docum
 |returned|packet"||
 |Packet returned,not|"Need to||
 |approved|approve"||
-
 
 
 The switch "Request packet" defaults to the account setting "Request carrier packets" (Settings > Carriers > Terms & Conditions, section 4.10). It is off and disabled when a packet is already requested or returned. 
@@ -3648,7 +3109,6 @@ Every carrier has one status on the account; it decides whether the rate confirm
 |compliance box:||
 
 
-
 - "Not in-service". 
 
 - "Not authorized". 
@@ -3662,10 +3122,6 @@ Every carrier has one status on the account; it decides whether the rate confirm
 - "Don't use this carrier" (the account marked it so). 
 
 - "Manually approved" and "Manually added as candidate" (status set by hand). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 95 of 277 
 
 - "Haven't worked with this carrier before" (new on the account: candidate). 
 
@@ -3699,22 +3155,17 @@ A blue button at the bottom of the form.
 |Rejected carrier with Owner override on|"Cover&send rate con"|
 
 
-
 - Greyed out until the carrier has a DOT number, a contact name and e-mail, the form is valid, and every charge row has a description and amount. Disabled while a rejected carrier has no override. 
 
 - Error banners: "Error saving carrier lead" and "Error covering" followed by the reason. 
 
 - Covering-step messages: "Carrier already selected" (another carrier was covered meanwhile), "Shipment is not waiting for a carrier", "Shipment is canceled", "Not allowed" (not a truckload). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 96 of 277 
-
 ### What happens when you cover 
 
 ##### COV-021 Cover is one step 
 
-Pressing Cover saves the lead and covers in a single operation: everything happens or nothing does. 
+The draft proposes one Cover action. Its transaction boundary, partial-failure behavior and provider acknowledgments are unverified. In particular, coverage success and email failure must be treated separately rather than promising that every internal and external effect succeeds or rolls back together (see proposed COV-022).
 
 1. The carrier is added to the account if new. 
 
@@ -3756,10 +3207,6 @@ The secure link follows LNK-001 to LNK-003. The share is recorded as a sharing r
 
 - If the carrier is blocked again before sending, sending is refused with "Carrier not authorized" or "Rate con will be sent when you approve this carrier". 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 97 of 277 
-
 ##### COV-024 Cover messages summary 
 
 |Message|When|
@@ -3773,7 +3220,6 @@ Page 97 of 277
 |"Shipment is not waiting for a carrier"|Load is not"Booked"|
 |"Contact needs an email"|Sending a rate confirmation to a contact without an e-mail|
 |"Rate con already sent"|Sending a rate confirmation twice|
-
 
 
 ### Removing or replacing a carrier, and TONU 
@@ -3805,11 +3251,6 @@ A window with a red warning icon, the title "Drop carrier" and "Are you sure you
 |"Charge customer?"|Money,placeholder<br>"$0.00"|No|Price charged to the customer for the TONU.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 98 of 277 
-
 - The two fields show only when the load is not in transit, delivered or a draft. 
 
 - Buttons: "No, go back" (grey outlined) and "Drop carrier" (red, spinner while working). 
@@ -3840,7 +3281,7 @@ If the cost or the price (or both) is above $0, the drop also records the TONU.
 
 - After the drop, the TONU amounts are read-only on the Cost & Price block. 
 
-- The standard TONU amount of $150 comes from 10-4's Terms & Fees text (RCF-023); the rep decides the actual amount. 
+- A $150 standard TONU and its applicability are not established as approved clone policy by the main guide; the terms/accessorial schedule and actual amount require operations/legal approval (main §19.2).
 
 ##### COV-030 Effects of a drop 
 
@@ -3857,10 +3298,6 @@ If the cost or the price (or both) is above $0, the drop also records the TONU.
 ##### COV-031 Covering a replacement 
 
 The rep covers the new carrier as above; the rate confirmation, bill and tracking are created fresh. A load can be dropped and re-covered several times. Each TONU drop adds a "TONU Carrier" card and its bill; the TONU 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 99 of 277 
 
 bill and the delivering carrier's bill go through carrier billing separately (section 4.5). The customer gets one invoice including any TONU price. 
 
@@ -3887,7 +3324,6 @@ A status card shows one text (first match wins).
 |Never sent|"Rate Con not shared"|Grey,closed eye|
 
 
-
 ##### RCF-004 Share button 
 
 A green "Share" button, disabled while the rate confirmation is held. It opens the share window (RCF-005). 
@@ -3900,18 +3336,12 @@ A green "Share" button, disabled while the rate confirmation is held. It opens t
 ||needed,an orange outlined"Resend"button.Link"+add share".|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 100 of 277 
-
 |View|Content|
 |---|---|
 |Choose a<br>contact,first<br>send|Title"Select contact to share with" (one choice).Search box"search or type in new email".The carrier's<br>contacts as"Name(email)"with the small text"Carrier contact".A typed valid e-mail offers"+add"<br>(creates a carrier contact).Note: "After RateCon is initially sent,you will be able to share with additional<br>contacts."Blue"Share"button,disabled with no choice.|
 |Choose<br>contacts,later|Title"Select contacts to share with" (several choices).Same list.|
 |sends||
 |Stop sharing|Title"Stop sharing this document with?"Text: "Access to this document will be removed but they may<br>have already received previous versions of this document."Buttons"No,cancel"and red"Yes,remove".|
-
 
 
 - The first send is the real send of the rate confirmation; later shares e-mail extra contacts. Re-sending to the same contact is "Resend". Sending again to the same contact reuses that contact's link and renews its 42 days (LNK-001). 
@@ -3922,7 +3352,7 @@ Messages: "Error sharing", "Failed to remove share", "Contact needs an email".
 
 ##### RCF-010 Document viewer and Regenerate 
 
-The page shows the rate confirmation PDF as page images; clicking a page zooms it. The footer shows the file name "Carrier-Rate-Con-.pdf", a download button and a refresh button (accessible name "Regenerate document") that rebuilds the PDF from current data. The PDF is also rebuilt in the background after edits; a page view never changes data (contents: section 6). A missing file shows "Not available" with the regenerate button. If the preview cannot be shown: "Preview not available" with "Try again", or "Click to download" when the file can be downloaded. 
+The page shows the rate confirmation PDF as page images; clicking a page zooms it. The footer shows the file name "Carrier-Rate-Con-.pdf", a download button and a refresh button (accessible name "Regenerate document") that rebuilds the PDF from current data. The PDF is also rebuilt in the background after edits; whether viewing generates/refreshes a document is unverified; navigation can automatically write metadata/integration events (main Deep1–3; contents: section6). A missing file shows "Not available" with the regenerate button. If the preview cannot be shown: "Preview not available" with "Try again", or "Click to download" when the file can be downloaded.
 
 ###### RCF-006 
 
@@ -3940,15 +3370,11 @@ Account users see a collapsed strip: "Target cost $X", "Profit $Y", "Price $Z". 
 
 Saving updates the load's line items. Messages: "Saved Cost & Price" with an "undo" action that restores the previous lines, and "Failed to save cost & price". The PDF changes after the rate confirmation is re-sent or regenerated. Saving also checks the signed rate confirmation (RCF-018). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 101 of 277 
-
 ##### RCF-008 "Send updated Rate con" switch 
 
 A switch "Send updated Rate con" appears when the rate confirmation is confirmed, there are unsaved changes, the load is a truckload, the contact has an e-mail and the carrier is not held. Hovering shows "Rate con" and "To carrier contact(s)" with names and e-mails. 
 
-- Off by default: a routine edit never e-mails the carrier unless the rep turns it on. When on, saving also resends the rate confirmation. 
+- A universal Off default or no-email guarantee is not established. Main §16.5–6 and Deep2 E-140 show Rate Con checked in sampled assigned shipment editors; appointment dialogs also showed it checked. This separate rate-con editor variant and actual sends require validation. Proposed behavior when selected: save and send the updated document.
 
 The same switch appears in the shipment's Cost & Price editor and the shipment edit form. 
 
@@ -3988,10 +3414,6 @@ White page, no menu. Top to bottom:
 
 7. Items card: " items to be shipped" with total weight, then one row per handling unit: quantity and package type, description, dimensions "LxWxH", weight, a "Stackable" tag, commodity, hazmat details (UN number, 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 102 of 277 
-
 hazmat class, packing group), LTL class and NMFC. Then a hazmat contact block ("Hazmat contact", "Contract #", "Emergency #"), the total dimensions line and the accessorial list. 
 
 8. "Questions?" block: the rep who covered the load (photo, name), broker name and address, a phone button and an "Email" button. Phone and reply-to e-mail come from Settings > Carriers > Rate cons, otherwise the rep's own. 
@@ -4012,16 +3434,11 @@ Two columns on a wide screen (stacked on a phone, form first).
 |"Confirm<br>shipment"|Blue button||Loading state while saving.|
 
 
-
 Right column: the charge summary. Charges are listed as "description ... $amount" when there is more than the single "Freight" charge. The total is large and bold, with a line above it when there are several charges. 
 
 No QuickPay option and no legal line under the form in the first version. 
 
 A failed save shows a red box "Error accepting load" with the reason; field errors show under their fields. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 103 of 277 
 
 ##### RCF-014 What confirming does 
 
@@ -4067,10 +3484,6 @@ A signed rate confirmation is invalidated only when something the carrier accept
 
 - Any charge, or the total. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 104 of 277 
-
 - Any stop's date, time window, appointment or address, and adding or removing a stop. 
 
 - The equipment. 
@@ -4115,16 +3528,10 @@ Shown to the carrier when the rate confirmation was re-sent after a change.
 |Old version|Changed and not re-<br>sent,or replaced|A document-missing icon, "Oops,this is an old version", "You previously<br>accepted BOL#,but there have been changes.Please see your email for links to<br>the latest version."and"Download previous confirmation"|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 105 of 277 
-
 |State|When|What the carrier sees|
 |---|---|---|
 |No longer<br>available|Carrier dropped or<br>load canceled|An orange panel"Shipment no longer available."and"Download canceled<br>confirmation"when a signed copy exists|
 |Held|Carrier not approved<br>yet|No rate confirmation is received until approval(COV-023)|
-
 
 
 ##### RCF-021 Follow-up e-mail with the signed copy 
@@ -4155,10 +3562,6 @@ A public page (no login) showing 10-4's carrier terms and conditions. The link i
 
 - On the PDF the terms print on page 2 in two columns (DOC-010); on the carrier page they show in two columns on a wide screen. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 106 of 277 
-
 ##### RCF-024 Carrier never signs 
 
 The load stays "Scheduled" with an hourglass. The rep resends from the Share window, or phones the carrier. There is no control to record a phone confirmation in the first version. 
@@ -4174,8 +3577,9 @@ The load stays "Scheduled" with an hourglass. The rep resends from the Share win
 |Canceled|The carrier was dropped,or the load canceled|
 
 
+### Who can do what
 
-### Who can do what 
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Carrier|
 |---|---|---|---|
@@ -4191,14 +3595,25 @@ The load stays "Scheduled" with an hourglass. The rep resends from the Share win
 |Open the public carrier agreement page|Anyone with<br>the link|Anyone with the link|Anyone with<br>the link|
 
 
-
 Customers never see the Cover card or any rate confirmation page. 
 
-10-4 TMS — Functional Specification · v0.1 
+## 4.4 Tracking, Pickup and Delivery
 
-Page 107 of 277 
+**Evidence review — partial:** Main §§15.9, 16.7–10, 18.2 and Deep2 E-124/140–142 establish stop/driver controls, tracking-update/ETA/appointment dialogs, explicit timezone labels, existing events and queue examples. No In/Out/Picked up/Delivered/Save/Cancel appt/tracking switch was submitted. No live Trucker Tools contract, callback or payload was captured.
 
-## 4.4 Tracking, Pickup and Delivery 
+| Requirements reviewed | Source-supported portion | Proposed / unverified detail |
+| --- | --- | --- |
+| TRK-001–005 | Stop identity, hours, appointments, references, Hidden from carrier and tracking labels; Reschedule opens editor | Exact display priority/style/copy timing, audiences and stop-order enforcement |
+| TRK-010–018 | Appointment time/ID; checked Send updated Rate con in sampled assigned dialogs; ETA date/time/zone/Notes; free Tracking update fields | Any-status/canceled access, requiredness/50-char limits, all completion dialogs, one-minute tolerance/earliest date, transitions, dual-event partial save and timezone fallback |
+| TRK-019–026 | Historical events, free-update form; optional PRO in one TL form, absent in sampled LTL form | Source precedence, edit/delete/undo, automatic read-only policy, 1,000-char cap, reversal/state recalculation, stale/order restrictions and full error text |
+| TRK-030–043 | Queue/status examples, driver name/phone/Tractor/Trailer dialog; Tracking completed and Off route coexist on In transit example | Exact lateness/alert algorithms, phone restrictions, save/start/update behavior and pickup-number persistence |
+| TRK-050–062 | Trucker Tools label/preference; checked cover switch; map attribution | Connected-account readiness, signature/start/stop triggers, three retries, payload allowlist, ELD/app states, deduplication, provider callbacks and live-position release scope |
+| TRK-070–074 | Populated Scheduled pickup and In transit delivery queues | Full date/timezone/sort/counter membership, automatic refresh, bulk absence and exported contents |
+| TRK-080–086 | POD upload entry and input hints; TL/LTL customer checkboxes; main §17/Deep3 E-145–146 | Server file/size/count rules, universal defaults, exact banner/approval/send gates, email merging/attachment semantics |
+| TRK-090–096 | Inline PRO and separate external ArcBest Track link; existing LTL events, sampled tracking form | Enter/blur save, universal URL/reference mapping, carrier-feed transitions, portal views and text-delivery sender |
+
+**Source caution:** A tracking label is not the shipment state. “Tracking completed” was observed while the shipment was In transit (main §15.9). Stop zones in ETA forms were America/Los Angeles and America/Detroit; a separate tracking default showed the prior client date. The source explicitly leaves timezone/default policy open (OQ-25).
+
 
 In short: This part of the system covers everything that happens to a load after a carrier is assigned: the stops on the shipment page, recording check-ins, confirming "Picked up" and "Delivered", live tracking of the truck through Trucker Tools, and the proof of delivery (POD). It also includes the two work queues, "Confirm pickups" and "Confirm deliveries". Brokers (Owner and Member) use it every day. Customers see the result on their shipment page. 
 
@@ -4218,7 +3633,6 @@ The "Locations" section sits on the shipment page (section 4.2). It shows one ca
 |PRO and Track(LTL loads only)|See TRK-090and TRK-091||
 
 
-
 ##### TRK-002 Stop card: left side 
 
 |Element|Rules|
@@ -4230,11 +3644,6 @@ The "Locations" section sits on the shipment page (section 4.2). It shows one ca
 |Contact|Contact name in bold with phone number.Hidden from carrier users when the shipment says"Hidden<br>from carrier".|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 108 of 277 
-
 |Element|Rules|
 |---|---|
 |Phone button|Click to copy the phone number.Tooltip"Click to copy phone".A short confirmation appears for1.5<br>seconds.|
@@ -4245,7 +3654,6 @@ Page 108 of 277
 |"PICK UP"and<br>"DELIVER"rows|Only on loads with more than two stops. "PICK UP"lists the items picked up at this stop, "DELIVER"<br>the items dropped there.Clicking an item scrolls to its card in the items list(SHP-063).|
 |NOTE box|Yellow box labeled"NOTE"with the stop's instructions.Turns transparent once the stop is completed.|
 |PRIVATE NOTE|Label"PRIVATE NOTE"and the private note.Broker users only.|
-
 
 
 ##### TRK-003 Stop card: right side (dates and times) 
@@ -4262,11 +3670,6 @@ Page 108 of 277
 |References|Right-aligned rows such as"PO12345", "Pickup...", "Order...".Kind in grey,value in black.Hidden from<br>carrier users until they accept the rate confirmation.|
 |"PICKUP"<br>number|On the pickup stop,when a pickup number exists: "PICKUP"in small grey capitals.Broker users see it<br>once the load is picked up;other users always.|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 109 of 277 
 
 ##### TRK-004 Stop card appearance 
 
@@ -4292,10 +3695,9 @@ Broker users can set an appointment on any stop, in any shipment status, includi
 |---|---|---|---|---|
 |Appointment<br>time|Time picker,label<br>"Appointment time"|Yes|The saved<br>appointment<br>time|Hours and minutes.|
 |Appointment#<br>or ID|Text,label<br>"Appointment#or ID",<br>example text"12345"|No|The saved<br>number|Up to50characters.|
-|Send updated<br>Rate con|Check box|-|Off|Only when a signed rate confirmation exists<br>with a carrier contact and the carrier is<br>approved.Hovering lists the carrier contacts<br>who would be e-mailed.|
+|Send updated<br>Rate con|Check box|-|Checked in sampled assigned appointment dialogs|Proposed condition: signed rate confirmation exists<br>with a carrier contact and the carrier is<br>approved.Hovering lists the carrier contacts<br>who would be e-mailed.|
 |Cancel appt|Red outlined button|-|-|Only when an appointment exists.Removes it.<br>"Appointment removed";on failure"Failed to<br>remove appointment".|
 |Save|Blue button, "Saving..."<br>while working|-|-|"Appointment saved";on failure"Failed to<br>save appointment".|
-
 
 
 ##### TRK-011 Appointments and the rate confirmation 
@@ -4303,10 +3705,6 @@ Broker users can set an appointment on any stop, in any shipment status, includi
 The appointment is a term of the signed rate confirmation. 
 
 - If the carrier has already signed, saving a new or changed appointment returns the rate confirmation to "draft" so the carrier must confirm again (section 4.3). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 110 of 277 
 
 The carrier is e-mailed the updated rate confirmation only when "Send updated Rate con" is on. 
 
@@ -4328,7 +3726,6 @@ LTL loads show no ETA, In or Out.
 |Dwell text(grey)|The truck has arrived|Time on site.Counts up every minute while on site;<br>shows the total after completion.|
 
 
-
 ##### TRK-013 The tracking window 
 
 All events use one window; the title depends on the mode. 
@@ -4343,11 +3740,6 @@ All events use one window; the title depends on the mode.
 |Free update|"Tracking update"|"Save"|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 111 of 277 
-
 |Field|Input/options|Required|Default|Rules and messages|
 |---|---|---|---|---|
 |Time(labeled<br>"ETA"in ETA<br>mode),with the<br>time-zone name in<br>grey|Time picker|Yes|Now,or the<br>stop's open<br>time,or the<br>saved event<br>time|For Picked up,Delivered and Arrived<br>the time cannot be in the future: "Time<br>is in the future()".One-minute<br>tolerance.|
@@ -4358,7 +3750,6 @@ Page 111 of 277
 |PRO#|Text,example text<br>"optional"|No|Empty|Only when the shipment has no PRO<br>number and the mode is not ETA.Up to<br>50characters.|
 |Picked up early?|Yellow warning<br>box|-|-|For a pickup earlier than planned:<br>"Picked up early?"and"This pickup<br>was scheduled for."Does not block<br>saving.|
 |Delete|Red outlined<br>button|-|-|Only when editing an event you<br>created.|
-
 
 
 ##### TRK-014 Picked up 
@@ -4374,10 +3765,6 @@ The blue Picked up button shows on a pickup stop when it is the next expected ev
 - The load leaves the "Confirm pickups" queue and the badge count drops. 
 
 - Planned dates on the stop and load do not change; the actual time is stored and shown instead. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 112 of 277 
 
 ##### TRK-015 Delivered 
 
@@ -4401,7 +3788,7 @@ The button reads Complete and records both the delivery and the pickup. If the s
 
 ##### TRK-017 Time zones 
 
-Times are shown in the stop's time zone; Central time if the stop has none. 
+Sample ETA forms explicitly show America/Los Angeles and America/Detroit; displayed tracking/list/document times differ across contexts. The timezone source, fallback, daylight-saving rules and planned-versus-actual interpretation are unverified (main §§15.2, 16.7; Deep2 E-124/142; OQ-25). No Central fallback is established.
 
 ##### TRK-018 What the planned dates do 
 
@@ -4423,14 +3810,9 @@ Under every stop except the first, a log shows events oldest first, joined by a 
 |line|green dot.|
 
 
-
 Deleted events are not shown. 
 
 - The system's automatic ETA is hidden when a person has entered an ETA for the same stop. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 113 of 277 
 
 - Once the load is delivered, the log shows only the pickup and delivery events plus a dashed button "N more updates ›"; click to see all, then it reads "N fewer updates". While in transit, all events show. 
 
@@ -4458,7 +3840,6 @@ If the removed event was the only pickup, the load goes back from "In transit" t
 |Browser blocks the request(for example an ad<br>blocker)|"Failed to save the event.If you have an ad blocker,disable it and try<br>again."|
 
 
-
 ##### TRK-023 Which event sets a stop's time 
 
 For each stop and event type, an event entered by a person wins over an automatic one; among several, the newest wins. 
@@ -4472,17 +3853,11 @@ For each stop and event type, an event entered by a person wins over an automati
 |Last stop completed(delivered)|Delivered|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 114 of 277 
-
 ###### Condition 
 
 Status moves only for loads that are "Scheduled", "In transit" or "Delivered"; events never move a "Booked", "Requested" or "Canceled" load. On a "Booked" load only ETA, In and free tracking updates are allowed. (All statuses: SHP-075.) 
 
 Shipment status 
-
 
 
 ##### TRK-025 Order rules and other blocking messages 
@@ -4495,7 +3870,6 @@ Shipment status
 |Any event on a canceled load|"Shipment is canceled"|
 |Any event on a load that is not booked yet|"Shipment is not booked"|
 |Event not found|"Tracking event not found"|
-
 
 
 ##### TRK-026 Tracking after the load is edited or canceled 
@@ -4524,10 +3898,6 @@ red route icon: out of route
 
 orange circular arrow: behind schedule 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 115 of 277 
-
 green clock: on time or ahead of schedule 
 
 Other alert texts in the dialog: "At Pickup", "Cannot Determine", "Location Off", "Location Hidden", "Phone Off", "GPS Off", "No Phone", "Past Appointment Time" and "Possible Detention". 
@@ -4551,7 +3921,6 @@ A grey strip with a steering-wheel icon sits above the stops of each carrier on 
 |Right side|The tracking status pill(TRK-055)|
 
 
-
 The whole strip is a button (screen-reader label "Update driver information for "), highlights on hover, and opens the "Driver & tracking" window. Customers and carriers do not see it. 
 
 ##### TRK-041 "Driver & tracking" window 
@@ -4564,11 +3933,6 @@ The whole strip is a button (screen-reader label "Update driver information for 
 |Trailer#|Text|No|Current<br>value||
 |Save|Blue button|-|-|Driver name and phone are required;tractor and trailer are optional<br>(as on the carrier's form,RCF-013).Failure: "Error updating driver<br>details".The window closes on success.|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 116 of 277 
 
 The carrier enters the same details when signing the rate confirmation (section 4.3). Brokers can correct them here any time while the load is "Scheduled" or "In transit" and not canceled. 
 
@@ -4614,10 +3978,6 @@ Tracking stops when:
 
 A stop request wins over a start that has not completed. Un-canceling a load does not restart tracking. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 117 of 277 
-
 ##### TRK-053 Driver phone rules 
 
 The phone must be a complete 10-digit US number. A start or update with an invalid phone is refused before anything is sent, and the reason is shown on the load. Stopping tracking is never blocked by a phone rule. 
@@ -4642,8 +4002,7 @@ The pill sits at the right of the driver strip: text on the left, the Trucker To
 |"ELD error"|The ELD could not be read.Use manual updates,or ask the driver to use the app.|
 |"Tracking disabled" (grey)|The driver turned location off,or tracking is not running.|
 |"Tracking cancelled"|Stopped by a broker,a cancel or a carrier change.|
-|"Tracking completed"|Delivered;tracking ended normally.|
-
+|"Tracking completed"|Observed even on an In transit shipment (§15.9); does not prove delivery. Exact provider meaning unverified.|
 
 
 Before the carrier has signed, the pill always reads "Awaiting rate con", whatever Trucker Tools reports. 
@@ -4657,10 +4016,6 @@ Clicking the pill opens a dialog titled "Trucker Tools tracking".
 - A large status line shows an icon and the pill text, and on its right a link button "Trucker Tools" that opens the load on the Trucker Tools website in a new tab. 
 
 - Under it an information box (blue information, orange warning, red error) shows a short title and help text for the state. Examples: "Tracking stopped" with "Restart tracking by toggling it back on"; "Ask driver to start tracking"; "Driver disabled location services" with "Please have driver enable location services and 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 118 of 277 
 
 set to "Always" for Trucker Tools App"; "ELD active" with "Load is being tracked via ELD/telematics. (not via mobile app)". An error from Trucker Tools shows in a red box with its message. 
 
@@ -4711,10 +4066,6 @@ These lists of loads needing a broker's action are reached from the sidebar (sec
 - Contents: all "Scheduled" loads whose pickup date is before today (the start of the user's local day). Sorted by pickup date, oldest first; the sort can be changed. 
 
 - Rows are as in the shipments list, with a light-blue status dot, the pickup column at full strength, the delivery column dimmed, and the carrier name and cost at the right. A blue hourglass before the carrier 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 119 of 277 
 
 name means the rate confirmation is not signed yet. A red tracking-alert icon under the BOL number means a tracking problem. 
 
@@ -4770,11 +4121,7 @@ A POD is the signed bill of lading. On the last stop of a delivered load, broker
 
 - View POD with a small document icon (tooltip "POD uploaded ") when a POD exists. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 120 of 277 
-
-A POD can be a PDF or an image (JPEG, PNG, BMP, AVIF, GIF, TIFF, WEBP, HEIC), up to 25 MB. The same upload is available from the Documents page, the carrier bill page and the customer invoice page (section 6 Documents). Several PODs can be added. A user with permission can remove a POD from the Documents page. 
+The sampled POD input accepts PDF, JPEG, BMP, AVIF, GIF, PNG, TIFF, WebP, HEIC and HEIF, with multiple=false and HTML required=false (Deep3 E-147). These are browser input hints, not server acceptance/size rules. The former 25 MB limit has no source proof and is removed. The same upload is available from the Documents page, the carrier bill page and the customer invoice page (section 6 Documents). Several PODs can be added. A user with permission can remove a POD from the Documents page.
 
 ###### TRK-081 
 
@@ -4784,7 +4131,7 @@ A white banner with an orange outline and a pulsing orange warning triangle show
 
 ##### TRK-082 POD requirement per customer 
 
-On each customer (section 4.7, Accounting) two switches decide whether a POD is required: "TL POD required" for truckload and "LTL POD required" for LTL. Both are off by default. 
+On each customer (section 4.7, Accounting) two switches decide whether a POD is required: "TL POD required" for truckload and "LTL POD required" for LTL. The inspected customer had LTL unchecked and TL checked (main §12.4; Deep4 E-167). These are per-customer observations, not universal defaults; both-off for newly created customers is unverified.
 
 ##### TRK-083 What a required POD blocks 
 
@@ -4793,6 +4140,9 @@ On each customer (section 4.7, Accounting) two switches decide whether a POD is 
 - Before pickup, the invoice page shows a grey box "Invoice can't be sent until the shipment has been picked up." and Send is disabled. 
 
 ##### TRK-084 POD on the invoice e-mail 
+
+**Unverified output:** Main §§12.4/17.5 say the Combine PDFs checkbox exists but actual files, ordering and recipients were not tested. The separate-attachment behavior below is a proposal, not verified output; neither merging nor separate delivery is established.
+
 
 When the customer setting "Combine PDFs (bill and POD)" is on, the POD file(s) are attached to the invoice e- mail next to the invoice PDF, not merged (CUS-015, DOC-012, EML-030). 
 
@@ -4815,10 +4165,6 @@ A missing POD does not block approving the carrier bill for payment; the bill ca
 ##### TRK-090 PRO number (LTL) 
 
 On an LTL load the Locations header shows "PRO" with a grey "+ add number". Broker users click it, type the number and press Enter or click away to save; a spinner shows while saving and a red message on failure. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 121 of 277 
 
 Customers see the PRO number but cannot edit it; it is hidden when empty. It can also be entered in the tracking window. 
 
@@ -4856,18 +4202,15 @@ Customers never see the driver strip, tracking pill, Trucker Tools link, private
 
 The text message to the driver comes from Trucker Tools, not the system (section 5). 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
 |See stop cards and times|Yes|Yes|Yes(without<br>private data)|Only on the rate<br>confirmation page|
 |Add or change appointments,ETA,In,Out,Picked<br>up,Delivered,updates|Yes|Yes|No|No|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 122 of 277 
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -4878,12 +4221,27 @@ Page 122 of 277
 |Work the queues|Yes|Yes|No|No|
 
 
+## 4.5 Billing and payments
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §17, Deep3 E-145–160 and main §§12.4–6/19.4 establish accounting screens, fields and existing sample states, not successful submissions or reconciliation. Payment methods are record-entry labels, not payment integrations or proof of funds movement. All permission matrices remain proposals.
 
-Page 123 of 277 
+| Requirements reviewed | Supported evidence | Proposed / unverified detail |
+| --- | --- | --- |
+| BIL-001–009 | Twelve accounting tabs, separate payable/receivable sides, filters, record-payment entry, mixed Due/Need to approve/Paid/Canceled and empty queues (§17.3/Deep3) | Exact tab eligibility/order/count/sort/refresh/paging, default/fallback routes, bulk send and role restrictions. Invoices to Factor exists. |
+| BIL-010–017, BIL-033–034 | Bill/POD files and edit toggle; number, payment address/contact, amount, date/terms/due date; sample Dec2→Jan1 is 30 days (§17.4/Deep3 E-156) | Requiredness, 0–120 bounds, all address/factoring/contact dialogs, date coupling/precedence and save/history effects |
+| BIL-018–023, BIL-028–030, BIL-035–037 | Expected bill, balance, In dispute and Approve to pay controls; separate vendor Push bills preference (§§12.7/17.4) | Variance/button algorithm, billed-versus-expected balance basis, approval/POD gates, undo, rights, one-bill cardinality, TONU, late/repeated bill numbers and sync side effects |
+| BIL-024–027, PAY-007–013 | Provider payment form (ACH preselected); invoice payment form (method blank); existing paid bill/Open payment/Delete payment with check/imported and zero balance (E-150/157/160) | Date/amount/memo limits, allocation, overpay/reversal, effects on app/external balances, idempotency and history. Deletion control does not prove safe reversal. |
+| BIL-031–032, INV-021, PAY-024–025 | Oct26 QuickBooks connected/mapped versus Oct23 disconnected; historical pushed events (§17.6) | Every sync trigger/direction/name match/payload/retry/deduplication/payment mapping and reconciliation; connected is not passed integration testing |
+| INV-001–011 | Invoice page, file/viewer/regenerate/remove/send/dispute/payment controls, balance 4900; existing queue states (§17.5/Deep3) | Automatic booking-time creation, numbering/line copying, cancel/recreate, PDF refresh/watermark, view-side effects, bulk 50 cap and transactional sends |
+| INV-012–020, INV-023–025 | Send entry, customer billing/terms/POD/Combine PDFs preferences, statement entry (§§12.4/17.5) | Full send/share dialogs, recipients/attachments, POD/pickup gates, date/message bounds, post-send edits, customer changes, token expiry and accounting effects |
+| INV-022, PAY-001–006 | Distinct global Customer/Amount/Payment date/Reference/Method form, Select all invoices/Due date and No unpaid invoices found; Apply disabled (E-153–154) | Draft/sent inclusion, all-invoice coverage/order, allocation order, advances/credits, partial/excess payment, duplicate protection, requiredness and result states |
+| PAY-014–023, PAY-026–027 | Customer aging summaries, invoice/payment tabs, statement/CSV/send/payment controls; credit-limit dialog and dispute switches (§§12.4–5/17) | Aging/balance/dispute formulas, CSV schemas, statement filters/cache/output, actual sends, financial rights, policy and enforcement |
+| PAY-028–031 | The main source does not establish this separate Late invoices board's workflow | Entire board/ranking/filter/sort/export/permissions are proposed additions pending evidence and scope approval |
 
-## 4.5 Billing and payments 
+**Allocation discrepancy retained:** Deep3 E-153–154 reports no unpaid invoices after selecting a displayed customer name matching an invoice with balance 4900. Identity, payer and draft/sent/ledger inclusion were not resolved (OQ-38). Do not infer payment or implement “all draft and sent invoices” from this observation.
+
+**Payment requiredness:** Invoice-level visible amount/method inputs carry required attributes; the global form initially does not, except Customer. Both are HTML observations, not a backend validation contract (OQ-39).
+
 
 In short: This part of the system is where 10-4's back office pays carriers and gets paid by customers. It has one work area, "Bills & Invoices", with a tab for each job (upload a carrier bill, approve it, pay it, send a customer invoice, chase a missing POD, follow up on late or disputed invoices). A separate "Late invoices" board ranks all customers by their late balance. From there staff open a carrier bill page (money owed to a carrier) or a customer invoice page (money owed by a customer), record payments, and keep QuickBooks in step. Office staff (Owners and Members) use it; customers and carriers never see these screens. 
 
@@ -4917,10 +4275,6 @@ Any unknown address or tab name opens the "Open" tab; it never shows an error pa
 
 Three groups: the first has "All" and "Open"; the second is for bills (carrier side); the third for invoices (customer side). A tab lists only matching loads; search words and filter chips stay when the user changes tab, but the sort goes back to the tab's default. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 124 of 277 
-
 |Group|Tab(short<br>label)|Full name(screen<br>readers,page title)|Which loads are listed|
 |---|---|---|---|
 |Both|"All"|"Bills&Invoices"|Every load that is Scheduled,In transit,Delivered or Canceled.<br>Nothing is highlighted:both columns are bright.|
@@ -4931,13 +4285,13 @@ Page 124 of 277
 |Bills|"Overdue"|"Overdue Bills"|Unpaid bills that have a bill number and a due date before today,<br>approved or not.The count is shown in orange.The tab is hidden<br>when its count is0.|
 |Invoices|"POD"|"Upload missing<br>POD"|Delivered loads whose customer requires a POD,where no POD is<br>on file and the invoice has not been sent.|
 |Invoices|"Send"|"Invoices to Send"|Loads that have been picked up(In transit or Delivered)with an<br>invoice not yet sent,and where the POD rule is met(the customer<br>does not require a POD,or a POD is on file).|
-|Invoices|"Outstanding"|"Outstanding<br>Invoices"|Invoices that were sent and are not fully paid.|
+|Invoices|"Factor"|"Invoices to Factor"|Observed empty factoring queue; eligibility and workflow unverified.|
+|Invoices|"Outstanding"|"Outstanding<br>Invoices"|Invoices that were sent and are not fully paid (proposed eligibility).|
 |Invoices|"Disputed"|"Disputed Invoices"|Loads whose invoice is marked"In dispute".|
 |Invoices|"Overdue"|"Overdue Invoices"|Sent,unpaid invoices whose due date is before today.The count is<br>shown in orange.The tab is hidden when its count is0.|
 
 
-
-There is no "Invoices to Factor" tab, because 10-4 does not factor its own invoices (see section 1.7). 
+The observed workspace has an “Invoices to Factor” tab, which settled to “No bills or invoices yet” (main §17.3; Deep3 E-152). Accounting settings separately say Not factoring. This does not establish that 10-4 never factors outside the app or approve omission from the clone.
 
 On a bill tab the invoice column is dimmed; on an invoice tab the bill column is dimmed. Hovering or focusing a dimmed card makes it bright. 
 
@@ -4949,10 +4303,6 @@ Canceled loads appear only in "All" and where a bill or invoice is still unpaid.
 
 The system will always show a number on each tab that has a count: "Upload", "Approve", "Pay", "Overdue" (bills), "POD", "Send", "Outstanding", "Overdue" (invoices). "All", "Open" and "Disputed" show no number; neither does a count of 0. Counts update without a page reload when anything changes the lists (bill saved, invoice sent, payment recorded, dispute marked) and follow the active search and filters. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 125 of 277 
-
 ##### BIL-004 Rows of the work area 
 
 |Part|Content|
@@ -4961,7 +4311,6 @@ Page 125 of 277
 |Bill|One card per carrier or vendor bill on the load.A load with a replaced carrier shows two stacked bill cards.A|
 |column|load with no carrier yet shows a gray empty block.Each card links to the carrier bill page(BIL-010).|
 |Invoice<br>column|One card for the load's customer invoice,linking to the customer invoice page(INV-006).|
-
 
 
 ##### BIL-005 Bill card 
@@ -4982,14 +4331,9 @@ The card shows a message (sometimes a second line) on the left, and the carrier 
 |10|Anything else|Dashed<br>gray|The load status in capitals-and-<br>lowercase|
 
 
-
 - Due text: "Due yesterday", "Due today", "Due tomorrow", "Due in N days", "Due N days ago" (counted by calendar date). 
 
 - A POD on file but not tied to a carrier counts for the current carrier. For a replaced carrier, the POD must belong to that carrier. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 126 of 277 
 
 Hovering a card shows a blue ring. 
 
@@ -5002,7 +4346,6 @@ The system will show the same filter box as the shipment list (section 4.2): sea
 |"Pickup date/old to new"|Default.The oldest pickups are on top,so the oldest unpaid work comes first.|
 |"Pickup date/new to old"||
 |"Created date/new to old"||
-
 
 
 ##### BIL-007 Loading more rows and empty state 
@@ -5028,10 +4371,6 @@ While the work area is open, the system will refresh the list and counts automat
 Purpose: for one carrier (or other vendor) on one load: upload the bill, record its number, amount, dates, remit-to address and accounting contact, compare it with the expected cost, approve it for payment, record payments, mark a dispute, upload the POD, and see the QuickBooks sync state. 
 
 Reached from: a bill card in the table; the "Carrier bill" tab on the invoice page; the carrier bill tile on the shipment's documents page; the bill link on the shipment page. The close button (X) returns to the page the user came from, otherwise to the shipment. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 127 of 277 
 
 Look: a full-screen dark document view with the close button and a search button at the top. A left column holds the documents; a right column (fixed while scrolling) holds the numbers and actions. 
 
@@ -5065,11 +4404,6 @@ The system will open the "Edit bill" page for users who may edit bills (BIL-035)
 |2|"Mail<br>payment to"|A button showing the<br>address,or the placeholder<br>"Add payment address";<br>opens the address window<br>(BIL-013)|Yes|The bill's saved<br>address,else the<br>carrier's saved payment<br>address|"Payment address is<br>required"|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 128 of 277 
-
 |#|Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|---|
 |3|"Carrier<br>accounting<br>contact"|A button showing name,e-<br>mail and phone,or the<br>placeholder"Add payment<br>contact";opens the contact<br>window(BIL-014)|Yes|The bill's saved contact,<br>else the carrier's saved<br>payment contact,else<br>the carrier contact from<br>the load|"Payment contact is<br>required"|
@@ -5079,7 +4413,6 @@ Page 128 of 277
 |7|"Due date"|Date;cannot be before the<br>bill date|Yes|Bill date or base date<br>plus the carrier's<br>payment terms|"Due date is required"; "Due<br>date can not be before the<br>bill date"|
 |8|(banner)|Orange"Due in day(s)" (N<br>counted from today;can be<br>negative)|—|Computed|Information only|
 |9|Button|"Save bill" (blue,full width,<br>disabled while saving)|—|—|A failed save shows a red<br>box"Error updating bill"|
-
 
 
 Saving returns the user to the bill page. The bill can be saved again as often as needed; every change is kept in the load's history with who and when. 
@@ -5097,17 +4430,11 @@ Saving is refused for a bill that is canceled or dropped ("This bill can not be 
 |"Street"|Text|Yes||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 129 of 277 
-
 |Field|Input/options|Required|Rules|
 |---|---|---|---|
 |"Line2"|Text|No||
 |City,state,ZIP|For USA,CAN and MEX:one place field that<br>fills city,state and ZIP.For other countries:<br>separate"City",state/province and"Postal<br>Code".|Yes unless a<br>factor is<br>chosen||
 |Button|"Save address"|||
-
 
 
 Carriers often ask to be paid through a factoring company; the bill is then paid to the factor's address (factoring company list: section 4.8). 
@@ -5144,10 +4471,6 @@ The right column starts with a pencil button (opens BIL-012, only for users who 
 
 - When paid: a green banner "PAID in full on " (the date of the last payment). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 130 of 277 
-
 ###### BIL-017 
 
 ##### Documents for users who cannot upload bills 
@@ -5180,7 +4503,6 @@ The system will show a green full-width approve button in the right column when 
 |Already approved|A green check and"Approved",and a small gray outlined button"Undo"|
 
 
-
 - Approving needs a bill number; otherwise: "This bill can not be approved." 
 
 - Approving moves the bill from the "Approve" tab to the "Pay" tab and starts the QuickBooks sync (BIL031). 
@@ -5189,15 +4511,7 @@ The system will show a green full-width approve button in the right column when 
 
 ##### Amount used for payment 
 
-Payments, the balance and "Paid" follow the expected cost (the sum of the carrier's cost lines on the load). 
-
-QuickBooks receives the carrier's billed amount ("Bill amount"); the variance banner compares the two. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 131 of 277 
-
-- To pay the billed amount, the user first changes the cost lines so the two match, or pays less or more on purpose using the "short pay" or "overpay" labels. 
+The source distinguishes expected cost, entered bill amount and displayed balance but does not establish which amount drives settlement, approval or the external ledger (main §17.4/6). The former claim that app payments follow expected cost while QuickBooks always receives billed amount is unverified and must not govern implementation. Accounting must approve the amount basis, variance handling, short/overpay behavior and reconciliation, then validate against a disposable bill and external ledger. Do not change cost lines merely to force a financial state without that policy.
 
 ##### BIL-022 Undo approval 
 
@@ -5215,10 +4529,9 @@ The right column shows a white outlined button "+ Record payment" when the bill 
 |---|---|---|---|---|
 |"Payment date" (hint on<br>the right: "Due by<Day,<br>Mon d>"when a due date<br>exists)|Date|Yes|Today|Not before the bill date;not<br>more than90days in the future|
 |"Amount"|Money|Yes|The bill's<br>balance|Cannot be more than the<br>balance: "Amount can not be<br>more than the balance of $X".<br>Cursor starts here.|
-|"Method"|ACH,Apple Pay,Credit card,<br>Cash,Cash App,Check,<br>Comchek,Google Pay,PayPal,T-<br>Chek,Venmo,Wire,Zelle|Yes|None|A method must be chosen;the<br>system never assumes one|
+|"Method"|ACH,Apple Pay,Credit card,<br>Cash,Cash App,Check,<br>Comchek,Google Pay,PayPal,T-<br>Chek,Venmo,Wire,Zelle|Backend requiredness unverified|ACH in sampled provider form|Invoice method was blank; do not apply one universal default (Deep3 E-150/157).|
 |"Memo"|Text,up to500characters|No|Empty||
 |Button|"Save payment" (green,full<br>width)|||Failure shows the red box<br>"Error updating bill"|
-
 
 
 A payment always applies to the bill being viewed, even when the same carrier has two bills on the load. A payment that brings the balance to $0 marks the bill paid (BIL-025). 
@@ -5230,10 +4543,6 @@ A repeated click or a retry never records the payment twice.
 ##### Payments, balance and "Paid" 
 
 The right column lists each payment as "Payment " (with its memo) and the amount, with a trash button. Under the list, "Balance $X" shows while the bill is not paid. The bill is Paid only when at least one payment is recorded and the balance is $0 or less. A canceled load with a $0 bill is never shown as Paid. Clicking a payment row opens the payment window (PAY-010). The "+ Record payment" button and the balance row disappear when the bill is paid. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 132 of 277 
 
 ##### BIL-026 Remove a carrier payment 
 
@@ -5273,10 +4582,6 @@ The system will send a bill to QuickBooks as follows.
 
 - Payments recorded in the system, charge changes and "Undo" send nothing new. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 133 of 277 
-
 - QuickBooks matches the carrier (vendor) by name. The account setting "Remit-to company name to vendor display name" controls whether the remit-to company name is used as the vendor name. A vendor whose "Push bills" switch is off is not sent. 
 
 - When QuickBooks reports a payment for a bill the system sent, the system marks the bill paid ("PAID in full on "; PAY-024, section 7). 
@@ -5293,7 +4598,6 @@ A small QuickBooks icon appears on the bill page when the account has a QuickBoo
 |Error|Red|"Trouble syncing" / "We tried syncing",the error message from QuickBooks,and a<br>collapsible"Technical details"block|
 |Disconnected|Orange|"QuickBooks disconnected" / "Go to account settings and try to fix your connection with<br>QuickBooks." (link to Settings>Accounting)|
 |Success|Green|"Successfully synced" / "We synced this with QuickBooks"|
-
 
 
 - Only in the Error state the window shows a "Retry sync" link, available to users who may approve bills. A retry makes a new attempt and the icon changes when it finishes. With nothing to retry: "Nothing to retry.". A double click never makes two attempts. 
@@ -5316,11 +4620,6 @@ Settings screens: section 4.10.
 |"Sync carrier bills",service for invoices,switch"Sync customer invoices")|QuickBooks(BIL-031,INV-021)|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 134 of 277 
-
 |Setting|Used for|
 |---|---|
 |"Vendor payment terms"|Default bill due date(BIL-033)|
@@ -5331,7 +4630,6 @@ Page 134 of 277
 |Company option(set up with Stackup,ROL-021):only Owners approve,pay<br>and record payments|Who can approve,pay and record<br>payments(BIL-035)|
 |Customer settings: "Days to pay", "POD req'd" (TL/LTL), "Combine PDFs<br>(bill and POD)"|Invoice due date,POD blocking,POD<br>attachments(INV-020,INV-015,INV-013)|
 |Carrier/vendor:payment terms, "Push bills"|Bill due date,QuickBooks sync|
-
 
 
 ##### BIL-035 Who can edit, approve and pay 
@@ -5346,7 +4644,6 @@ Page 134 of 277
 |Edit accounting instructions|Yes|No(read-only)|
 
 
-
 When an action is not allowed the button is hidden or the system answers "Forbidden". The system enforces this on every action, not only by hiding buttons. Customers and carriers cannot open these pages. 
 
 ##### BIL-036 Extra or late carrier bill after approval or payment 
@@ -5357,15 +4654,14 @@ A carrier (for example an LTL carrier adding an extra charge after delivery) can
 
 - If already approved and nothing is paid, staff press "Undo" and approve again. The same QuickBooks bill is updated (BIL-031). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 135 of 277 
-
 - If already paid, a higher expected cost brings back an open balance, and staff record the extra payment with "+ Record payment". The bill is "Paid" again when the balance is $0. 
 
 - Every change is saved in the load's history with the user and the time. 
 
 ##### BIL-037 Repeated carrier bill number 
+
+**Unverified duplicate policy:** Main §17.7 explicitly lists duplicate bill numbers as an unexecuted test. The acceptance-without-warning claim below is only a proposed rule and requires accounting approval; neither permissive nor rejecting behavior was observed.
+
 
 The system will accept the "Bill/invoice number" as typed (BIL-012). It does not stop or warn when the same number is used again for the same carrier on another load. 
 
@@ -5396,12 +4692,7 @@ The card sits on the right of the row. Left: a message, the invoice number, and,
 |7|Anything else(for example a draft on a load still in transit)|Dashed<br>gray|"View draft invoice"|
 
 
-
 Clicking the card opens the customer invoice page (INV-006). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 136 of 277 
 
 ### Bulk "Send invoices" 
 
@@ -5416,7 +4707,6 @@ The system will open a large dark window titled "Send invoices" from the "Send" 
 |Due lines|"Due<Day,Mon d,yyyy>"and"days to pay".N follows INV-020;the due date is today plus N days.|
 |Customer|Customer name(link to the customer)and the customer's billing e-mail|
 |Preview|A thumbnail of the invoice PDF,its page count and its file name("Invoice--from-.pdf")|
-
 
 
 The footer button "Send selected invoices" is disabled when no card is checked. 
@@ -5445,10 +4735,6 @@ Purpose: view, regenerate or cancel the invoice PDF, send or resend it by e-mail
 
 Reached from: an invoice card in the table; the "Invoice" tab on the bill page; the "Invoice" button on the shipment page; the "Customer Invoice" tile on the documents page; invoice cards on the customer's Invoices list; result rows after a bulk send. The close button (X) returns to the page the user came from, otherwise to the shipment. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 137 of 277 
-
 ##### INV-006 Invoice page layout 
 
 A full-screen dark document view with two columns, like the bill page. 
@@ -5469,7 +4755,7 @@ The system will create a draft customer invoice automatically when a load is boo
 
 ##### Invoice number, lines and amount 
 
-- The invoice number is the load's BOL number (or the customer's own BOL number if entered). Staff can add extra reference numbers. 
+- The source shows invoice numbers and separate extra-reference controls; initial numbering, editable overrides and synchronization with BOL/custom BOL are unverified. Confirm the invoice-number contract before implementation.
 
 - The lines are the load's priced lines from Cost & Price (all carriers, including cancellation or TONU lines the user entered), in the same order. A line without a price is not on the invoice. 
 
@@ -5484,10 +4770,6 @@ The system will show the generated invoice in a viewer with the file name "Invoi
 - A draft PDF has a gray "DRAFT" watermark and the line "Due by: Date will be finalized when invoice is sent". 
 
 - A sent PDF has no watermark, shows "Invoice date" and "Due by ", and, per stop, the date and "Picked up" / "Delivered". Full layout: section 6. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 138 of 277 
 
 - "Regenerate document" rebuilds the PDF from the current lines and dates. The PDF is rebuilt only when the user presses it, when the invoice is sent, or when a change makes it out of date; never just because someone looks at the page. 
 
@@ -5517,11 +4799,6 @@ The big button is "Send invoice" (green, large) when the invoice is a draft and 
 |"Message"|Multi-line text,up to2000characters|No|Empty|Included in the e-mail|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 139 of 277 
-
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
 |Buttons|"Save&close"(gray outline; "Saving..."):|||A failure shows a red box|
@@ -5529,12 +4806,14 @@ Page 139 of 277
 ||"Send invoice"(green; "Sending..."):<br>saves and sends.||||
 
 
-
 A yellow or gray notice shows, and "Send invoice" is disabled, while sending is blocked (INV-014, INV015). 
 
 No factoring switch (10-4 does not factor its own invoices). 
 
 ##### INV-013 What sending does 
+
+**Unverified send contract:** Generation timing, To/Cc/envelope behavior, one-email-per-recipient, Combine PDFs output (merged versus separate), POD/BOL inclusion, history and QuickBooks timing all require a controlled send test. Main §12.4/17.5 explicitly leaves output/recipients open. The numbered list below is a proposal, not a verified transaction.
+
 
 When the user sends an invoice, the system will, as one action: 
 
@@ -5565,14 +4844,9 @@ The window shows a notice and disables "Send invoice" when:
 |The invoice is canceled|"This invoice can not be sent."|
 
 
-
 ##### INV-015 POD requirement 
 
 Each customer can require a POD before invoicing, separately for TL and LTL (customer settings, section 4.7, "POD req'd"). When it applies and no POD is on file, the invoice card says "Upload POD", the load appears on the "POD" tab and not on "Send", and the "Send invoice" window is blocked (INV-014). Uploading a POD from 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 140 of 277 
 
 the invoice page, bill page, documents page or the window's "Upload POD" button removes the block (upload steps: section 4.4). A POD can be removed with the confirmation "Are you sure you want to remove this POD?". 
 
@@ -5600,6 +4874,9 @@ Staff can send the invoice's secure link to additional customer contacts. Views:
 
 ##### INV-019 Editing an invoice after it was sent 
 
+**Unresolved customer-change contract:** The original draft conflicted: SHP-071 blocked any sent invoice, while this item blocked only invoices with payments. Main §16.9/17.5 establishes neither. Sent/unpaid versus partly/fully paid customer transfer, external accounting and document correction must be decided and tested; neither draft rule is a verified override of the other.
+
+
 Staff can change the lines (Cost & Price block), the extra references, the invoice date, the due date and "Days to pay" after sending. The system will update the same invoice: lines and total change, the PDF is rebuilt, and the customer's secure link shows the latest PDF. It does not create a second invoice. To tell the customer, staff press "Resend". Payments are kept. Changing the load's customer is refused while the invoice has payments ("Remove the payments first."). 
 
 There is no separate "void and re-issue" step in the first version (INV-025). 
@@ -5615,10 +4892,6 @@ There is no separate "void and re-issue" step in the first version (INV-025).
 3. The account's "Customer terms" (section 4.10). 
 
 4. 30 days. The due date is the invoice date plus "Days to pay". The bulk send window uses today as the invoice date. Range 0 to 120 days. Changing terms never changes invoices already sent. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 141 of 277 
 
 ##### INV-021 QuickBooks sync of an invoice 
 
@@ -5656,10 +4929,6 @@ Two paths:
 
 One payment is described once here and used from several places. Customer payments are received and applied to invoices; carrier payments are made and applied to bills. A payment can be removed, and the invoice or bill returns to its earlier state. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 142 of 277 
-
 ##### PAY-001 "+ Record customer payment" window (several invoices) 
 
 The system will open a large window titled "Record payment" from: the header of the Bills & Invoices table, the "Record payment" button on a customer's Invoices tab and Payments tab, and the Invoices page. Opened from a customer's page, the customer is already chosen and fixed. Only users who may record payments (BIL-035) can open it. 
@@ -5671,7 +4940,6 @@ The system will open a large window titled "Record payment" from: the header of 
 |"Payment<br>date"|Date|Yes|Today|Not more than90days in<br>the future|
 |"Reference<br>no."|Text,placeholder"invoice number",up to<br>100characters|No|Empty|For the customer's check<br>or transfer number|
 |"Payment<br>method"|ACH,Apple Pay,Credit card,Cash,Cash<br>App,Check,Comchek,Google Pay,<br>PayPal,T-Chek,Venmo,Wire,Zelle|Yes|None|A method must be<br>chosen;the system never<br>assumes one|
-
 
 
 Before a customer is chosen the lower panel shows "Select customer to see list of open invoices." 
@@ -5701,10 +4969,6 @@ The system will apply the amount to the ticked invoices in the order they were t
 - An invoice paid in full becomes "Paid"; a partly paid one stays open with a smaller balance. 
 
 - The window shows a "Credit" line (for example "Credit +$50.00") when part of the amount is not allocated. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 143 of 277 
 
 Each payment is recorded once: a double press or a network retry never records it twice. 
 
@@ -5744,16 +5008,10 @@ A smaller window (400 px) titled "Record payment" for the invoice being viewed.
 |"Memo"|Text,up to500<br>characters|No|Empty||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 144 of 277 
-
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
 |Button|"Save payment"|||A failure shows a red box|
 |||||"Error saving payment"|
-
 
 
 Recorded exactly like a payment from the large window with this one invoice ticked. 
@@ -5793,11 +5051,6 @@ On a customer's page (section 4.7) the "Payments" tab lists every payment receiv
 |"Date"|"Mon d"|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 145 of 277 
-
 |Column|Content|
 |---|---|
 |"Amount"|Money|
@@ -5805,7 +5058,6 @@ Page 145 of 277
 |"Reference"|Reference number or memo|
 |"#of shipments"|How many loads it was applied to|
 |"Credit"|"+$X Credit"when money is left over|
-
 
 
 A button "Record payment" (outlined, plus icon) opens PAY-001 for this customer; it works even when no invoices are open (so an advance payment can be kept as credit). Clicking a row opens the payment window (PAY-010). 
@@ -5833,12 +5085,7 @@ A bar above the list is split into five parts, each as wide as its share of the 
 |"61+late"|Due61or more days ago(darkest red)|
 
 
-
 Each segment shows its amount (bold) and label. A $0 segment is faded. Hovering for half a second shows "N invoice(s)". Days late count from the due date to today by calendar date. The bar is shown even when all amounts are $0. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 146 of 277 
 
 ##### PAY-016 Invoice cards on the Invoices page 
 
@@ -5850,7 +5097,6 @@ One card per invoice, in this order: 61+ late, 31–60 late, 16–30 late, 1–1
 |Middle(wide<br>screens)|Customer name(hidden on the customer's own tab);carrier name(s),the first plus"+N"|
 |Right|An icon(partial-payment icon when some was paid); "Invoice"and the invoice date("Mon d,yyyy");the<br>balance in bold; "Due<Mon d,yyyy>"with a word: "Open" (gray), "Late" (orange,red,dark red or darkest<br>by how late),or"Draft" (gray).Hovering the due date shows a relative text("in3days", "2months ago").|
 |Edge|A red bar on the right edge when the invoice is in dispute|
-
 
 
 Clicking a card opens the invoice page (INV-006). 
@@ -5866,10 +5112,6 @@ A bar under the list shows three totals: "Not Invoiced" (tooltip "N shipment(s)"
 Disabled when the list is empty. Downloads "-open-invoices.csv", one row per listed invoice, with these columns: 
 
 Column Customer Customer Invoice Number PO Number (the first PO reference on the origin or destination) BOL Origin City, Origin State, Origin Postal Code Destination City, Destination State, Destination Postal Code Carrier Name Customer Invoice Total Customer Invoice Balance Due Customer Invoice Due Date (yyyy-mm-dd) 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 147 of 277 
 
 ###### Column 
 
@@ -5895,6 +5137,9 @@ On the customer's page (section 4.7) the "Invoices" tab shows the same aging bar
 
 ##### PAY-022 Customer credit figures 
 
+**UI-described rule differs from the original arithmetic:** Main §19.3 says Enforce credit limits blocks bookings when open invoice balances plus active shipments exceed the limit. It does not establish that draft invoice balances are equivalent to active shipment valuation. Equality, disputes, unbilled work, partial payments, credits, concurrency and override rights remain open. Disabled was a dated setting observation, not an approved go-live value (SC-08; OQ-23).
+
+
 The system will calculate these figures per customer from its invoices. They appear in the footer of the Invoices page and in the credit window on the customer page (section 4.7). 
 
 |Figure|How it is calculated|
@@ -5907,11 +5152,6 @@ The system will calculate these figures per customer from its invoices. They app
 |"Late"|The sum of the four late buckets|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 148 of 277 
-
 |Figure|How it is calculated|
 |---|---|
 |"Unpaid"|"Not invoiced"plus"Open"|
@@ -5919,14 +5159,16 @@ Page 148 of 277
 |Credit from payments|Payments with money left unapplied(PAY-003)|
 
 
-
-The credit limit and credit note are edited on the customer page (section 4.7). The figures are always shown. They stop a booking only when an Owner turns on the setting "Enforce credit limits" (section 4.10, SET-020). That setting is off at go-live, so at first the figures are for information. 
+The credit limit and credit note are edited on the customer page (section 4.7). The figures are always shown. They stop a booking only when an Owner turns on the setting "Enforce credit limits" (section 4.10, SET-020). That setting is proposed Off at launch, approval pending, so at first the figures are for information.
 
 ##### PAY-023 Money display rules 
 
 Amounts are shown in US dollars with cents on cards and totals. Dates on cards and statements use "Mon d, yyyy". Sums are exact to the cent; a row total always equals the sum of its parts. 
 
 ##### PAY-024 Paid status from QuickBooks 
+
+**No reconciled payment test:** Main §17.6/Deep3 E-160 records configuration and one check/imported payment, without establishing its source. Automatic paid mapping, method ACH, timing and duplicate suppression below remain proposed; a method must not be invented from a provider label.
+
 
 When QuickBooks reports a payment for an invoice or a bill the system sent, the system will mark the matching invoice or bill paid ("PAID in full on "), as if the payment had been recorded by hand. 
 
@@ -5953,10 +5195,6 @@ Invoices and carrier bills can each be marked "In dispute" with a switch ("In di
 - Any office user may mark or clear a dispute; it is saved in the load's history ("Invoice disputed", "Invoice undisputed"). 
 
 - A paid or open invoice can be disputed; a canceled one cannot. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 149 of 277 
 
 ##### PAY-027 Who can do what in payments 
 
@@ -5988,16 +5226,11 @@ One card per customer, in the chosen order (PAY-030). Clicking a card opens that
 |Total|The customer's total late balance in whole dollars,with a small invoice icon colored by the worst bucket<br>that has an amount(61+late darkest,then31-60, 16-30, 1-15)|
 
 
-
 ##### PAY-030 Sort and rep filter 
 
 - Sort (icon, tooltip "Sort"): "Total late balance" (default, largest first), "61+ days late", "31-60 days late", "16-30 days late", "1-15 days late" (each largest first), "Customer name" (A to Z) and, when the account has more than one rep, "Primary rep". 
 
 - Rep filter: a selector "All reps" with the avatar of the chosen rep or team. It lists each rep or team that is the primary rep of a customer with a late balance, alphabetical, and is shown only when there is more than one. Choosing a rep shows only that rep's customers, and the total changes with it. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 150 of 277 
 
 The chosen sort and rep stay while the user is signed in on this browser. There is no search and no paging. 
 
@@ -6005,7 +5238,9 @@ The chosen sort and rep stay while the user is signed in on this browser. There 
 
 The download icon (tooltip "Download") saves "customers-aging.csv" with one row per customer shown, in the current order and filter. Columns: "Customer", "Rep", "Days Late 1-15", "Days Late 16-30", "Days Late 3160", "Days Late 61+" and "Late Total". Disabled when no customer is listed. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Area|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -6021,16 +5256,28 @@ The download icon (tooltip "Download") saves "customers-aging.csv" with one row 
 |See accounting settings(section4.10)|Edit|Read-only|No|No|
 
 
+## 4.6 LTL quoting
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §14/15.5a, Deep1 E-115–123 and settings §§12.5/19.3 establish fields, catalogs, unsaved calculations, existing results/errors, sharing controls and existing shipment navigation. No fresh Get quotes, Save price/manual quote, Share, Copy link, booking, dispatch or account-authorization action was tested.
 
-Page 151 of 277 
+| Requirements reviewed | Source-supported portion | Proposed / unverified detail |
+| --- | --- | --- |
+| LTL-001–009 | Blank form, equipment branch, date/location/service controls, duplicate/customer shortcut entry | Submission/no-customer contract, no-account gate, duplicate field copying, 31-day/holiday policy, trade-show autofill and address inheritance |
+| LTL-010–012, LTL-019–020 | 27 packaging choices, 18 classes, in/cm/lb/kg controls, second item, length estimate, 70 equipment branches; dated math | Universal conversion, dimension/stop limits, density-estimation algorithm, 96-inch packing/stacking policy, volume threshold and TL manual/portal rules |
+| LTL-021–030, LTL-039–042 | Existing offer/service/tier views, inline stacked offers, sort controls, booked/past-date banners, six historical carrier errors | Live fan-out/finality/one-minute duration, exact grouping/tie rules, duplicate suppression, Book enforcement and complete state/banner/error catalog |
+| LTL-031–038 | Cost/price/profit/margin arithmetic, settings fields and differing input locks | Clamp/precedence, 25% universal default, save-on-blur, 4-decimal universal precision, price maximum, Owner exemption and guardrails |
+| LTL-050–058 | Unsaved LTL manual fields, cost100/price125→profit25/margin20%/Cost+25%, discard/reopen reset; carrier-specific cost details | Full TL manual schema/required carrier, field/count/expiry limits, saved visibility, manual booking exclusion, replacement/deletion/repricing and persistence |
+| LTL-060–071 | Sharing audience/Not sent, Stop sharing/Add contact/Email quotes/view-only Copy link; duplicate/+Ref entries | Recipients, sent output, expiry/revocation, copy-to-share effect, access, saves, request state machine and cancel/restore effects |
+| LTL-072–084 | Existing booked-request→shipment navigation, Auto dispatched label, independent TL coverage entries | Whole new-booking form contract, lane/service locks, creation/dispatch payload/state/retries/cancel and draft/finish-booking effects |
+| LTL-090–096 | Quote history rows, Customer/Rep/search/unmatched state and booked link | 16-row paging, complete search/sort/storage/glyph/queue rules, portal access and dashboard counts |
+| LTL-100–117 | 17 carrier cards/display count12/Test quote entry; Global/LTL carrier margin fields and mode-specific Hide carrier names help (§§18/19) | Activation legend/timing, account/credential/edit/add flows, write-only guarantees, blanket exceptions, test isolation, autosave/undo and role rights |
 
-## 4.6 LTL quoting 
+**Separate credit systems:** Insufficient XN credit is a historical network-offer message, distinct from customer credit settings. Its semantics/override remain open (OQ-23). Neither is a settled clone launch policy.
+
 
 In short: Staff enter a lane and freight on the "Get quotes" form and the system asks each of 10-4's own LTL carrier accounts for a rate. The results page shows every rate, lets staff set the customer price, share the quotes with the customer and book one. Booking creates the shipment and sends the pickup request to the carrier automatically. Owners connect and manage the carrier accounts on the "Carrier integrations" screen. Customers can run the same quotes themselves in the customer portal (see section 4.11). 
 
-Where the rates come from. Every LTL rate comes from a direct connection to each of 10-4's own LTL carrier accounts, with 10-4's own account numbers and negotiated pricing. There is no rate network in between (no Quote Factory Xtended Network, no project44). The carriers are: XPO, Saia, ArcBest / ABF, Old Dominion, AAA Cooper, Averitt, Roadrunner, Peninsula, TForce, A. Duie Pyle, Magnum, Southeastern, Go2, Pitt Ohio and Warp. An Owner can add others later (LTL-110). Which carriers are live on day one, and what each still needs from 10-4, is in section 7 (INT-018 to INT-022). A carrier not connected yet can be quoted by hand with a manual quote (LTL-052). Carriers 10-4 reached in Quote Factory only through the Xtended Network (for example Estes, R+L, Central Transport, Dayton, Dohrn, Forward Air and FedEx Freight) give no rates until 10-4 opens its own account with them. Decision for 10-4 (see the Summary, section 9): INT-022. 
+**Rate sources and carrier inventory — corrected:** Current-app results include both carrier and Xtended Network offers; the backend network supplier and routing are unverified (main §14.7/Deep1). The proposed clone may use approved direct accounts, but no direct-only launch design, project44 exclusion or carrier entitlement has been approved (SC-02/07). Main §18.3 and E-93 record **17 cards** with a separate displayed count **12**: A. Duie Pyle, AAA Cooper, ArcBest/ABF, Averitt, Go2, Magnum, Old Dominion, Pitt Ohio, Roadrunner, Saia, Southeastern, TForce, XPO, FedEx Freight, Double D, Sunset Pacific and Warp. Peninsula is not in that observed inventory. Cards/counts are not proof that every operation is live or that every offer uses a direct account. Do not classify FedEx Freight or any other carrier as network-only without account-specific evidence. The access guide retains October9 Enabled/Activating/Disabled claims as historical, not current readiness. See main §18 and section 7 below for capability-specific validation.
 
 ### 4.6.1 The "Get quotes" form 
 
@@ -6057,10 +5304,6 @@ Layout, top to bottom. Page title "Get quotes". A yellow banner if no carrier ac
 ##### LTL-001 Create a quote request 
 
 The system will let staff create an LTL quote request from this form. "Get quotes" saves the request, starts the carrier rating and opens the results page; the button reads "Getting quotes..." while saving. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 152 of 277 
 
 - A request can be made with or without a customer. Without one, the account default margin is used and a customer must be chosen before booking (LTL-073). 
 
@@ -6094,12 +5337,7 @@ The form can open with the customer and contact chosen (the customer's "+ quote"
 |Customer<br>contact|Search box,placeholder"select contact".<br>Appears only after a customer is chosen.|No|Empty|The contact receives the<br>quote e-mail when the<br>quotes are shared(LTL-<br>061).|
 
 
-
 The row is hidden on the carrier-account "Test quote" form (LTL-114). Staff can also use the shell buttons "Open add new customer form" and "Create new vendor". 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 153 of 277 
 
 #### 4.6.1.2 Equipment row 
 
@@ -6108,7 +5346,6 @@ Page 153 of 277
 |Equipment|Search box,placeholder"select equipment".<br>Grouped list. "LTL"is the first group.The other<br>groups are truckload equipment(see LTL-020).|Yes|LTL|Choosing any non-LTL entry<br>switches the form to<br>truckload mode(LTL-020).|
 |Protect from<br>freezing|Switch,grey text on the right.Tooltip: "Availability is<br>subject to carrier restrictions.Please check with the<br>carrier to verify that they're currently providing this<br>service."|No|Off|Adds the"protect from<br>freezing"service to the<br>whole request.|
 |+add vendor|Text button.Opens the"Add vendor"window(LTL-<br>006).|No||Staff only.Not shown to<br>customers.|
-
 
 
 ##### LTL-006 Add vendor 
@@ -6125,7 +5362,6 @@ The "+ add vendor" button opens a window "Vendor type" with a multi-select list:
 ||9"when filled.|||carriers"on Good Friday,the day after Thanksgiving<br>and Christmas Eve.|
 
 
-
 ##### LTL-007 Pickup date rules 
 
 The date rules above apply on the form and again when the request is saved. "Today" is the system date. The holiday note does not stop the request; it also shows as a banner on the results page (LTL-028). 
@@ -6133,10 +5369,6 @@ The date rules above apply on the form and again when the request is saved. "Tod
 #### 4.6.1.4 Stops 
 
 An LTL request has exactly two stops: origin and destination. Each stop is a small card with an icon (circle for pickup, pin for delivery) and a collapse arrow. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 154 of 277 
 
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
@@ -6148,8 +5380,10 @@ Page 154 of 277
 |Clear|Trash icon in the location box.|||Clears the stop.|
 
 
-
 ##### LTL-008 Trade show hint 
+
+**Unverified classification:** Neither the displayed hint/autofill nor universal class125/NMFC154630 is established by the main source. This item is a proposal requiring commodity-specific validation; main §14.5a must not be interpreted as a blanket classification rule.
+
 
 When a stop's location type is "Convention/trade show" a grey strip reads "Trade show shipments are usually freight class 125." with a "Why?" tooltip. Freight class 125 and NMFC 154630 are filled for the items. 
 
@@ -6161,10 +5395,6 @@ The location box also searches the customer's address book (section 4.7). The ad
 
 One grey card per item, numbered, with a pallet icon. At the right of the item list: "+ add item". A trash button removes an item (only when there is more than one). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 155 of 277 
-
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
 |Past-<br>products<br>search|Search box,placeholder<br>"search for past things<br>they've shipped...".Shown<br>only if the customer has<br>shipped before.|No|Empty|Choosing a product fills packaging,dimensions,<br>weight,freight class and NMFC and moves the<br>cursor to Quantity.|
@@ -6172,24 +5402,19 @@ Page 155 of 277
 |Quantity|Whole number,minimum1.|Yes|Empty||
 |Dimensions|Three numbers"L", "W", "H"<br>and a unit button(in/cm).|Yes|in|"Max length is327inches". "Max width is100<br>inches". "Max height is103inches" (the limits are<br>converted for cm).A live note beside the label<br>shows volume and density,for example"213.3cf<br>16.55pcf".|
 |Total weight|Whole number and a unit<br>button(lb/kg).The weight is<br>for the whole line,not per<br>piece.|Yes|Empty<br>/lb||
-|Freight<br>class|List: 50, 55, 60, 65, 70, 77.5,<br>85, 92.5, 100, 110, 125, 150,<br>175, 200, 250, 300, 400, 500.<br>An info icon explains the<br>class.|Yes|Empty|A chip"Est: "appears while the class is empty.<br>Clicking it fills the class.Tooltip: "Freight class<br>estimate is based on dimensions and weight you<br>have entered.It may be different from the actual<br>class,which could result in higher carrier charges.<br>Click to use estimate."The estimate comes from<br>the density of one unit(13density bands).If the<br>class is empty when"Get quotes"is pressed the<br>message"Choose a freight class"shows.|
+|Freight<br>class|List: 50, 55, 60, 65, 70, 77.5,<br>85, 92.5, 100, 110, 125, 150,<br>175, 200, 250, 300, 400, 500.<br>An info icon explains the<br>class.|Yes|Empty|A chip"Est: "appears while the class is empty.<br>Clicking it fills the class.Tooltip: "Freight class<br>estimate is based on dimensions and weight you<br>have entered.It may be different from the actual<br>class,which could result in higher carrier charges.<br>Click to use estimate."The estimator algorithm is not established. The industry13-band density reference has commodity-specific applicability (main §14.5a).If the<br>class is empty when"Get quotes"is pressed the<br>message"Choose a freight class"shows.|
 |NMFC|Text,placeholder"optional".|No|Empty||
 |Stackable|Checkbox.|No|Off||
 |Hazmat|Checkbox.|No|Off|Only sets the hazmat flag on the request.A red<br>hazmat marker then shows on the lane card and in<br>quote history.|
 
 
-
 ##### LTL-010 Totals strip 
 
-When volume or weight is entered, a line at the right of the items shows the live totals: the package count with its name (for example "Pallets 4"), "Volume", "Density" and "Weight". Mixed weight units are converted. 
+When volume or weight is entered, a line at the right of the items shows the live totals: the package count with its name (for example "Pallets 4"), "Volume", "Density" and "Weight". Mixed-unit conversion is unverified. Deep1 E-117 retained numeric values when switching in→cm and lb→kg, with physical/display discrepancies. Do not promise physical conversion or adopt the discrepancy as approved behavior (OQ-02).
 
 ##### LTL-011 Add and remove items 
 
 "+ add item" adds a new empty item. The trash button on an item removes it, unless it is the only item. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 156 of 277 
 
 #### 4.6.1.6 Total length 
 
@@ -6200,10 +5425,9 @@ Page 156 of 277
 |Helper text|Orange volume icon: "Enter total length for<br>volume quotes"|||Shows when the freight is large<br>enough to qualify for a volume<br>quote(about four pallets or<br>more).|
 
 
-
 ##### LTL-012 Linear-foot estimate 
 
-The system will estimate the trailer length from the items: a 96-inch wide trailer, as many items across as fit, rounded up to whole feet; Stackable is not used. The estimate never replaces what the user types. 
+The source verifies particular layouts: two 48×40×48-inch pallets occupy an estimated 4 ft; ten such pallets on a saved example show 20 ft (main §§14.6/15.10). The entered length is separate and is not filled automatically in the scratch partial example. Trailer width, rotation, stacking, gaps, oversize handling, mixed sizes and rounding are unverified. The former universal 96-inch/whole-foot/no-stacking algorithm is removed pending OQ-02.
 
 #### 4.6.1.7 Get quotes button and footer 
 
@@ -6222,10 +5446,6 @@ Choosing any equipment other than LTL switches the form to truckload (TL) mode. 
 - Stops: origin, destination and "+ add location" for extra stops (3 to 10 stops in total, extra stops can be deleted). There is no stop services dropdown. 
 
 - Services: "Tarps" (flatbed group only), "Tanker endorsement", "Team service". The "Partial" switch shows for Dry Van, Flatbed and Refrigerated. Temperature low / high (°F) shows for refrigerated equipment. "Other name..." shows for the "Other" group. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 157 of 277 
 
 - Total length is required when "Partial" is on or the equipment is not Driveaway or Tanker. Width and height show for Flatbed, Power Only, Auto Transport and Other. A note "Total length needed for partial quote" shows when a partial quote lacks the length. 
 
@@ -6263,11 +5483,7 @@ Top to bottom:
 
 ##### LTL-022 Quotes arrive live 
 
-Rates appear as each carrier answers, without reloading. Until a carrier answers its row shows "—" and a spinner. The run normally finishes in about one minute, and then the list is final for that request. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 158 of 277 
+Rates appear as each carrier answers, without reloading. Until a carrier answers its row shows "—" and a spinner. No fresh rating run was submitted; the source does not establish a one-minute completion or finality guarantee. Historical offers and partial failures do not prove live response timing.
 
 ##### LTL-023 Quote row 
 
@@ -6283,12 +5499,14 @@ Page 158 of 277
 |Cost,Margin,<br>Profit(staff)|Three boxes at the right:cost(always read-only,grey),margin in% (up to4decimals)and profit in dollars.|
 
 
-
 ##### LTL-024 Groups and stacks 
 
 Quotes are grouped by the button chosen in the controls row: "Carrier" (default), "Delivery" (grouped by estimated delivery date, with the date as a heading; "Delivery date unknown" for rates without one) or "Price" (one flat list, no stacks). Inside a group the quotes are ordered by delivery date and then by price, with removed (hidden or expired) quotes last. Groups are ordered by the price of their first row. The first row of a group shows full size and the others are stacked behind it until the arrow is clicked. If the 10-4 option "hide carrier names from customers" is on, the default grouping is "Delivery". 
 
 ##### LTL-025 Book button states 
+
+**Entry-point discrepancy:** Main §14.10/Deep1 records disabled past-date row Book, but an offer-detail Book without a disabled marker. No Book was pressed. The source does not prove uniform enforcement, permission to bypass row locks or the complete list below (OQ-22).
+
 
 A real "Book" button shows only on a complete quote that is not hidden or expired; otherwise an inert button of the same shape shows. The button is disabled when: 
 
@@ -6296,15 +5514,11 @@ the pickup date has passed; or the customer has a booking hold (banner LTL-028);
 
 - the quote has expired, or expires before the pickup date; or 
 
-- the customer does not have enough credit, only when "Enforce credit limits" is on (off at go-live; PAY022, SET-020): tooltip "Insufficient credit to book this quote"; or 
+- the customer does not have enough credit, only when "Enforce credit limits" is on (proposed Off at launch, approval pending; PAY022, SET-020): tooltip "Insufficient credit to book this quote"; or
 
 - the user is not an Owner and the quote margin is below the lowest allowed margin (tooltip "Margin is low on this quote.") or its profit is above the highest allowed profit (tooltip "Profit is high on this quote."); or the quote is a manual LTL quote (LTL-053); or 
 
 - the request was canceled. The reason shows in an orange tooltip left of the button. The same checks run again at booking (LTL-075). Staff can still book a hidden quote by opening it directly (LTL-055). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 159 of 277 
 
 ##### LTL-026 Tier tabs 
 
@@ -6338,17 +5552,11 @@ When the account option "Reveal carrier names" hides carriers, customers see the
 |Old quotes|Orange banner"These are old quotes" / "Changes were made during or after booking."and the<br>orange button"See latest quotes".The rows are read-only.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 160 of 277 
-
 |Situation|What the page shows|
 |---|---|
 |Booked|Green banner"Shipment booked from these quotes", "booked on"and the green button"View<br>Shipment".The booked row has a green outline;rows are read-only(no margin header,no eye,no<br>margin or price boxes).|
 |Booking left<br>unfinished|Orange banner"Booking left unfinished", "started on"and the orange button"Finish booking"<br>(opens the draft shipment).|
 |Canceled|A row"Canceled"with a red x, "made this request"for a customer request and"canceled",and<br>the outlined button"Restore".|
-
 
 
 ##### LTL-029 Service notes in the footer 
@@ -6383,11 +5591,7 @@ The margin of a new request is taken at creation and kept on the request: the ac
 
 4. The customer together with one carrier account (set in the customer's own settings window, "LTL carriers" tab). Carrier account rows only add limits; they do not change the margin. The customer setting "LTL 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 161 of 277 
-
-Volume boost" (CUS-024) shows an effective margin figure but does not change quote prices in the first version. Owners set these in the account margin window (section 4.10) and the customer settings window (section 4.7). 
+Volume boost" (CUS-024) and Volume multiplier appear in settings; their units, formula, pricing effect and inheritance are unverified (main §§12.5/19.3; OQ-17). No no-effect implementation is approved. Owners set these in the account margin window (section 4.10) and the customer settings window (section 4.7).
 
 ##### LTL-033 Margin for all quotes 
 
@@ -6421,10 +5625,6 @@ A request made in the portal uses the customer's own margin, kept on the request
 
 A price must be between $0.01 and $1,000,000. A margin edit that would push any price past the limit is refused and nothing changes. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 162 of 277 
-
 #### 4.6.2.2 Hiding and duplicates 
 
 ##### LTL-039 Hide and show quotes 
@@ -6449,15 +5649,14 @@ The red-triangle button at the bottom, "N carriers didn't return results" (staff
 
 ##### LTL-055 Quote detail window 
 
-Clicking a rate row (staff, not booked) opens a two-pane window. Left pane: the carrier card (name, MC number, city and state), estimated delivery date, quote reference and "Blanket ()" or the account label or "Customer-specific rate", billing terms (for example "Third Party Prepaid"), carrier phone link and saved carrier notes, and the "Visible to customer" toggle (hides or shows the quote at once). Right pane: Cost (readonly), Margin %, Profit $ and Price (editable), the buttons "Book" and "Save", and the customer's credit status and the quote limits. "Save" saves the edited margin (if edited last) or price without booking; "Book" starts booking (4.6.3). From the carrier card on a booked shipment the window opens read-only (no "Save" or "Book") with a link "View quote results". 
+**Observed variants:** Main §15.5a records a shipment-linked XPO dialog with disabled Margin/Profit/Price and View quote results, no Save/Book. Deep1 E-118 records editable-looking fields in an existing booked-request ArcBest offer while row fields were disabled. No save authority or universal reason for locks was established; the blanket staff/not-booked and read-only rules below are proposed.
 
-##### LTL-056 Charge breakdown 
 
-The window lists the carrier's charge lines (for example gross freight charge, discount, fuel surcharge, accessorial charges) with amounts that add up to the carrier cost. 
+Clicking a rate row (staff, not booked) opens a two-pane window. Left pane: the carrier card (name, MC number, city and state), estimated delivery date, quote reference and "Blanket ()" or the account label or "Customer-specific rate", billing terms (for example "Third Party Prepaid"), carrier phone link and saved carrier notes, and the "Visible to customer" toggle (hides or shows the quote at once). Right pane: Cost (readonly), Margin %, Profit $ and Price (editable), the buttons "Book" and "Save", and the customer's credit status and the quote limits. "Save" saves the edited margin (if edited last) or price without booking; "Book" starts booking (4.6.3). From the carrier card on a booked shipment the window opens read-only (no "Save" or "Book") with a link "View quote results".
 
-10-4 TMS — Functional Specification · v0.1 
+##### LTL-056 Charge breakdown
 
-Page 163 of 277 
+Breakdown is provider/state-specific (main §15.5a; E-111–112). Live XPO: Item Charge 1206.28 + Fuel Surcharge 360.08 − Discount 571.78 = cost 994.58; price 1198.29 gives profit 203.71. The user-supplied AAA Cooper screenshot shows 114.84 + 62.82 = 177.66, without a displayed discount; it was not independently opened. Deep1 E-118 found no disclosure after clicking Cost in a sampled ArcBest dialog. Do not require identical charge rows/disclosure for every carrier.
 
 #### 4.6.2.5 Manual quotes 
 
@@ -6482,18 +5681,16 @@ The dashed button "+ Add manual quote" opens the manual quote window for a reque
 |Buttons: "Save"and,<br>when editing,a trash<br>button"Delete quote".<br>Only manual quotes can<br>be deleted.|||||
 
 
-
 ##### LTL-052 Manual quote for an LTL request 
 
 On an LTL request the manual quote form is the shorter "house quote" form. It has no Carrier, Via, Quote number, Quote type, Service type or Note. Fields: Transit days (default 3) with Delivery date, Equipment (optional), Tanker endorsement, the lane bar (see LTL-054), the lines (Description, Target cost, Price; both required), the boxes Margin %, Cost+ % and Profit $ (they set the Freight line's price; the total target minus 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 164 of 277 
-
 the other lines), "Exp:" and the button "Save quote". A house quote is not shown to the customer and the customer e-mail does not list it. The header margin does not reprice a house quote. 
 
 ##### LTL-053 Booking a manual LTL quote 
+
+**Unverified scope/gate:** Main §14.9/Deep1 tests only unsaved manual entry and reset, not a saved manual offer or booking. The direct-LTL coming-soon gate in Deep2 is a different entry point and does not establish this manual-quote rule. Defer/enable decisions require SC-02/OQ-31.
+
 
 A manual LTL quote cannot be booked in the first version: its "Book" button stays disabled with a tooltip saying so (booking a house quote is under "Planned for later", section 1.7). Manual truckload quotes can be booked (LTL-084). 
 
@@ -6522,10 +5719,6 @@ The green button "Sharing" opens the window headed "Shared with" (before sharing
 ##### LTL-062 After sharing 
 
 The window header reads "Visible to this 1 contact", "Visible to these N contacts", "No contacts" or "Shared with ". It lists each customer contact with a check mark when shared: name, e-mail, and when the e-mail was last sent or opened, or the grey word "Not sent". E-mail-only recipients are listed too. A failed send shows the banner "Error sharing". The link "+ Add contact" (only when customer login is on) opens an inline form with First name, Last name, Email and the blue button "Create contact". The green outlined button "Email quotes" opens the composer (LTL-063). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 165 of 277 
 
 ##### LTL-063 Email these quotes 
 
@@ -6557,10 +5750,6 @@ A staff-made draft with no quotes and no running search opens the criteria edito
 
 A request is one of: draft (not shared), shared (waiting for the customer) and completed (a shipment was booked). A canceled request shows "Canceled". The history glyph (LTL-091) follows the shipment, not the status, so a booked request always shows the booked mark. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 166 of 277 
-
 ##### LTL-070 "+ Ref" 
 
 The "+ Ref" button turns into a text box "Ref" where the first stop's reference number (default kind "PO") can be typed; Enter or clicking away saves it. Emptying the box removes the reference. The reference shows in quote history and is carried to the shipment. Customers can set it too. 
@@ -6590,10 +5779,6 @@ The page is headed "Book shipment" with a back arrow (to the results), a "Custom
    - The location type rule applies: "Business without dock/forklift" adds the liftgate service, and adding a liftgate to "Business with dock/forklift" changes the type to "Business without dock/forklift". 
 
    - "Share BOL" is on for the pickup stop and off for the delivery stop. "Est. arrival date" shows the quote's estimated delivery date. The request's reference numbers are kept. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 167 of 277 
 
 - Items: from the request, with the LTL fields, "Total value" and the linear-feet field. 
 
@@ -6626,11 +5811,6 @@ Checked again at booking, with the submitted pickup date and price:
 |Another person booked it at the same moment|"This quote request is<br>booked."|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 168 of 277 
-
 Check Message If a check fails the form shows the red banner "Error booking shipment" with the message. The banner "Previous changes detected" with the button "Reload quote request" shows when the request changed in the background. 
 
 ##### LTL-076 The booked shipment 
@@ -6657,18 +5837,16 @@ The shipment keeps its own copy of the quote: the Freight line's cost is the car
 |Customer has a booking hold|Card"Booking disabled"and the book button is disabled.|
 
 
-
 #### 4.6.3.1 Pickup request to the carrier (auto-dispatch) 
 
 ##### LTL-080 Auto dispatch 
 
-The "Dispatching" card has the switch "Auto dispatch", on by default for 10-4. When on, booking sends a pickup request to the carrier's system automatically, with the same carrier account the quote came from. It holds the BOL number, pickup date, shipper and consignee (company, address, contact name, phone, hours), the items and the services; e-mail addresses are not sent. The status moves from "booked" to "scheduled" when the carrier confirms (SHP-075). 
+**Observed label, untested trigger:** Main §14.10/15.5a/Deep2 records Auto dispatched on existing shipments. It does not establish an On default, carrier request payload, email omission, timing, acknowledgment, exactly-once processing or Scheduled trigger. Customer-specific auto-dispatch was unchecked in one sample (§12.5). Validate local booking separately from provider acceptance.
 
-- The shipment's carrier card shows the blue strip "Auto dispatching..." with a spinner while the request is open, and the check row "Auto dispatched" when the carrier has confirmed, with the pickup number. If Auto dispatch is off, no request is sent and the carrier card shows the manual dispatch bar (LTL-081). 
 
-10-4 TMS — Functional Specification · v0.1 
+The "Dispatching" card has the switch "Auto dispatch", on by default for 10-4. When on, booking sends a pickup request to the carrier's system automatically, with the same carrier account the quote came from. It holds the BOL number, pickup date, shipper and consignee (company, address, contact name, phone, hours), the items and the services; e-mail addresses are not sent. The status moves from "booked" to "scheduled" when the carrier confirms (SHP-075).
 
-Page 169 of 277 
+- The shipment's carrier card shows the blue strip "Auto dispatching..." with a spinner while the request is open, and the check row "Auto dispatched" when the carrier has confirmed, with the pickup number. If Auto dispatch is off, no request is sent and the carrier card shows the manual dispatch bar (LTL-081).
 
 A pickup request is sent only once; if the answer is unclear, staff use the manual bar. 
 
@@ -6698,10 +5876,6 @@ Browse and search every quote request, newest first. Reached from "Quotes" in th
 
 The page "Quotes" lists quote requests newest first, 16 rows first and more as you scroll. Each row is a card that links to the results page of that request (row label "Visit quote results for "). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 170 of 277 
-
 |Cell|Content|
 |---|---|
 |Status|See LTL-091.|
@@ -6712,7 +5886,6 @@ Page 170 of 277
 |Weight|For example"2,050lb",with a red hazmat icon first when hazmat.|
 |Sub-line|For a customer request:when it was created.The BOL number in orange when a shipment exists but is not<br>booked;in plain text when booked.Otherwise the first reference,for example"PO12345".|
 |Mode|"LTL"or the equipment name.|
-
 
 
 Row borders: orange 1 px for requests that need action (a customer request waiting for quotes or with an unfinished booking); dashed grey on a grey background for expired and canceled requests; solid grey otherwise. 
@@ -6742,10 +5915,6 @@ A search box (placeholder "search for...", opens with the magnifier, after a sho
 ##### LTL-093 Empty states 
 
 "No quote requests." or `No quote requests for "<search>".` , and the button "Reset filters" when a search or filter is active. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 171 of 277 
 
 ##### LTL-094 Shipments to quote 
 
@@ -6781,10 +5950,6 @@ One square card per carrier: logo, name in grey, and coloured dots at the top le
 
 A carrier card is "Activated" if any account is on and activated; "Activating" if none is activated but one is activating; otherwise "Deactivated". An account's own state is "Activating" (saved, waiting to be switched on at the carrier), "Activated", "Error", or "Deactivated" when its On/Off switch is off. An activating account can take up to 24 hours. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 172 of 277 
-
 #### 4.6.6.2 One carrier 
 
 ##### LTL-102 Carrier page 
@@ -6812,11 +5977,6 @@ Below the accounts: the title "Notes" and the caption "Add notes and reminders o
 |Button|"Authorize" (carrier<br>connected by the system)<br>or"Save" (carrier not<br>connected).Disabled until<br>the form is changed and<br>valid.|||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 173 of 277 
-
 |Field|Input|Required|Rules&messages|
 |---|---|---|---|
 |Consent text under the button: "By clicking this||||
@@ -6826,7 +5986,6 @@ Page 173 of 277
 |but adding your account information will allow you to||||
 |add manual LTL quotes.").Errors show in red:||||
 |"Something went wrong".||||
-
 
 
 ##### LTL-106 Credentials are write-only 
@@ -6851,10 +6010,6 @@ Five stacked cards:
 
 4. Blanket: the switch "Use for all customers (Blanket)". Below, when on: "Show rates to all customers except those listed below:" (the word "except" in red italics); when off: "Only the customers listed below will see these rates:". The list shows each customer (link to the customer) with a trash button ("Remove exception"), and the link "+ add a customer" opens a customer picker. An account that is not blanket, or has customers listed, is a customer-specific account. Its rates show on the results page with the "Customer-specific rate" marker. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 174 of 277 
-
 ##### LTL-109 Which accounts rate a request 
 
 An account gives rates on a new request when it is On, "Activated", its carrier is connected, and: for a blanket account the request's customer is not in its exception list; for a non-blanket account the request's customer is in its list. A request with no customer uses blanket accounts only. The list of accounts is fixed when the request starts rating; switching an account off affects the next request only. 
@@ -6875,16 +6030,11 @@ The button "+ Add carrier" opens a window (stages below).
 |Messages:for a connected carrier the activation text of LTL-107;for a carrier<br>not connected yet"We're not integrated with yet,but they're on our<br>roadmap."and"You just moved them a little higher on the list,and we'll<br>notify you when they're ready.";for a requested carrier"Thanks for<br>requesting.We'll look into supporting this carrier,and notify you if they<br>become available to use."||
 
 
-
 #### 4.6.6.6 Test quote 
 
 ##### LTL-114 Test quote 
 
 The link "Test quote" opens "Run a test quote": the "Get quotes" form without the customer row, with the margin set to 0 and LTL only. It rates with the active accounts and opens "Test quote results" with the outlined button "Done testing" (back to the carrier list), the banner "Cost-only quotes" / "Don't share these with your customers", and the rows showing cost as price. A test quote cannot be shared, booked, edited into a normal quote or given manual quotes, and does not appear in quote history, counts or the dashboard. States: 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 175 of 277 
 
 "Loading quote request"; "Error loading quote request" / "The quote request you're looking for is missing." with the link "Start new quote request". 
 
@@ -6902,7 +6052,9 @@ In a customer's settings window (section 4.7) the tab "LTL carriers" shows the s
 
 In Settings > Customers the tile "Reveal carrier names" (switch "Hide Carrier Names": "Don't show the carrier logo and name when sharing LTL quotes. (will still show on BOL and shipment details)") sets LTL-027. The tile reads "Carrier names are visible" when off. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|
 |---|---|---|---|
@@ -6916,11 +6068,6 @@ In Settings > Customers the tile "Reveal carrier names" (switch "Hide Carrier Na
 |View the carrier accounts and notes|Yes|Yes(read only)|No|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 176 of 277 
-
 |Action|Owner|Member|Customer|
 |---|---|---|---|
 |Add or change carrier accounts,credentials,|Yes|No|No|
@@ -6931,12 +6078,24 @@ Page 176 of 277
 |carrier account||||
 
 
+## 4.7 Customers
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§12–13, 19.3–4 and Deep4 E-161–169 establish sampled lists, forms, histories and preferences. They expressly leave save timing, validation, defaults/inheritance and permissions open.
 
-Page 177 of 277 
+| Requirements reviewed | Supported portion | Proposed / unverified detail |
+| --- | --- | --- |
+| CUS-001–010 | List/count/columns/creation/filter/Rep/login/export entry, similar-name suggestion and unmatched/reset; §12.1–2/Deep4 | No-paging/sort/matching/storage rules, three-character threshold, creation/duplicate results, no-email guarantee and export contents. Ten selected customer-report columns are separately observed (§19.5). |
+| CUS-011–016 | Header/tabs, General fields, Accounting fields/Done, separate Google address search/Save address; §12.3–4/Deep4 | Autosave/undo/errors, normalization, role/credit restrictions, upload/logo mapping, tax/DUNS validation and default/output/POD gates |
+| CUS-017–018 | Contact list with positions/drag handles; create/edit/view/Cancel; name/title and Phone,email or URL; §12.3 | Primary designation, auto-type algorithm, first-three cap, reordering/restoration/login rights, requiredness/save/delete effects |
+| CUS-019–021 | Reps assigned/+add user or team/commissions layout and explicit new-shipments-only banner; §12.5 | Primary/order/commission formula/ranges/notes/role powers, save effects |
+| CUS-022–027 | Booking/login/automation switches and per-carrier margin fields; §12.5/19.3 | Pricing precedence/boost formula/no-effect rule, autosave, guards and role powers; sample auto-quoting/dispatch unchecked, not universally On |
+| CUS-028–031 | Credit limit reached summary/aging/terms/invoice/payment links; §12.4 | Enforcement, override/mailto workflow, credit-state algorithm, graph, all Owner edit fields and go-live value |
+| CUS-032–041, CUS-049/055 | Documents add-file, notes/Timeline/external-reference entry, six history tabs and statement/payment/export controls; §12.5 | Upload/visibility/retention, note saves, exact history schema, tab queries/paging, statement file placement and separate Late board |
+| CUS-042–048 | Address cards/search/Create template, location/contact/services/hours/private note; explicit template editor in shipment; §§13/16.3/Deep4 E-169 | Address-card edit destination, create/delete/undo, automatic creation, reference fields, inheritance/propagation and role enforcement |
+| CUS-050–054 | Customer-visibility help (§19.3) | Merge/archive/restore flows are not established; source lists them neither as verified operations nor approved release scope. No-op visibility claim corrected below. |
 
-## 4.7 Customers 
+**Customer examples are not defaults:** Main §12.4/Deep4 E-167 show TL POD checked, LTL unchecked and 30-day terms; Combine PDFs was checked in the earlier sample and unchecked in the November2 sample. Preserve dates/record context rather than choosing one as a universal default. Actual output remains untested.
+
 
 In short: This part of the system keeps every customer of 10-4 in one place: who they are, who owns the account (reps and commission), how they are billed, how much credit they have, what margin they get, who can log in, their saved pickup and delivery addresses, and their full history of quotes, shipments, invoices and payments. Owners and Members use it every day. Owners control the moneyrelated fields (credit, days to pay, margins below the account minimum, commissions, merge, archive). 
 
@@ -6965,14 +6124,9 @@ The page title is "Customers" followed by a gray count "(N of M)": N customers m
 |Rep|Avatar(colored circle with initials)of the primary rep,or of the team when the primary assignee is a team.|
 
 
-
 - "Booked" counts shipments that were booked and not canceled. Drafts do not count. 
 
 - There is no "Late" column in the first version (see section 1.7). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 178 of 277 
 
 ##### CUS-003 Sort the list 
 
@@ -6988,7 +6142,6 @@ Click a column heading to sort; click again to reverse. An arrow shows the activ
 |last(next to Quoted)|Date of last quote request|Newest first|
 |Credit|Credit limit(no credit counts as0)|Highest first|
 |Rep|Name of the primary rep or team|A to Z|
-
 
 
 The chosen sort is remembered while the user stays signed in on this browser. 
@@ -7019,10 +6172,6 @@ The download icon next to "Customer login" opens a small box with "Export these 
 
 - Available to every signed-in 10-4 user (not to customers). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 179 of 277 
-
 On failure the page shows "Something went wrong". 
 
 ##### CUS-007 Customer login link 
@@ -7037,7 +6186,6 @@ Opened from the title plus or the sidebar plus ("Open add new customer form"), o
 |---|---|---|---|
 |Customer|Text,label"Customer|Yes|3or more characters show the"Did you mean?"list(CUS-009).An|
 |name|name"||empty name creates nothing.|
-
 
 
 - Button "Add customer" (full width, blue) creates the customer with only a name and opens its page, where all other details are filled in. 
@@ -7061,7 +6209,6 @@ After 3 characters (short pause after typing) the window shows the heading "Did 
 |Search or filter finds<br>nothing|"No matches found"and a button"Reset filters".|
 
 
-
 ### Customer page 
 
 Where: a row in the list, a customer name anywhere in the system, or a result in "Find anything". 
@@ -7069,10 +6216,6 @@ Where: a row in the list, a customer name anywhere in the system, or a result in
 ##### CUS-011 Page layout 
 
 Top to bottom: 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 180 of 277 
 
 1. Breadcrumb bar: "Customers" (link back to the list), then the customer name. On the right: the "Documents" button, the "Reps" button (avatars of the assigned reps, star on the primary rep) and, for Owners only, a "..." menu with "Merge customer" and "Archive customer". 
 
@@ -7102,6 +6245,9 @@ Right: note box, notes, accounting instructions and the Timeline.
 
 ##### CUS-013 Edit customer details window 
 
+**Save boundary unknown:** Main §12.3/Deep4 E-166 exposes Done and Close; no field change or Done was submitted. Blur-to-save, immediate switches, undo, success/errors and role restrictions below are proposed. Done alone does not establish an autosave contract.
+
+
 Opened by the pencil next to the name or any "+" prompt in the header. Titled "General" (building icon), blue "Done" button at the bottom. There is no Save button: each text field saves when left (only if changed); switches and selects save at once. After each save a green message " saved" appears with an "undo" button. A failing field shows an error under it; any other failure shows a red message "Something went wrong!" that stays until closed. 
 
 |Field|Input/options|Required|Default|Rules&messages|
@@ -7112,16 +6258,10 @@ Opened by the pencil next to the name or any "+" prompt in the header. Titled "G
 |Phone|US phone field with<br>flag|No|Empty|US phone mask.A"Call"button next to it(title"Dial")<br>starts a call.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 181 of 277 
-
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
 |Website|Text,placeholder<br>"website"|No|Empty|A"Visit"button opens the site in a new tab and adds<br>"https://"if missing.|
 |About|Multi-line text,<br>placeholder"add<br>description"|No|Empty|Saved as"Description".|
-
 
 
 ##### CUS-014 Company logo 
@@ -7142,11 +6282,6 @@ The Accounting card on the Overview (heading "Accounting") shows: the legal name
 |Tax ID|Type select(EIN,TIN,RFC)and a<br>text field,placeholder"Tax ID"|No|Type follows the<br>billing country:<br>Canada TIN,<br>Mexico RFC,<br>otherwise EIN|Saved only when a type is set.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 182 of 277 
-
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
 |DUNS<br>number|Fixed prefix"DUNS"and a text field,<br>placeholder"000000000"|No|Empty|Must be9digits.Message: "Invalid<br>DUNS number.DUNS numbers are9<br>digits."|
@@ -7154,7 +6289,6 @@ Page 182 of 277
 |TL POD<br>required|Switch|No|Off|Same for Truckload.|
 |Combine<br>PDFs(bill<br>and POD)|Switch|No|Off|When on,the customer's POD file(s)<br>are attached to the invoice e-mail<br>next to the invoice PDF,as separate<br>files.When off,only the invoice PDF<br>is attached.Nothing is merged into<br>one PDF,and the bill of lading is not<br>attached(DOC-012).|
 |Days to<br>pay|Whole number0to120|No|The account's<br>customer<br>payment terms<br>(30days at first)|Owner can edit;Members see the<br>number only.Saved on leave.|
-
 
 
 Billing details (address, e-mails, phone, tax ID, DUNS, legal name) are editable by Owners always, and by Members unless the account enforces credit limits. 
@@ -7175,17 +6309,20 @@ Heading "Contacts", the first 3 contacts (name in bold capitals, then the title,
 
 A wide window with two panes. Left: the contact list (name and title or e-mail, selected one darker) and an outlined blue button "+ contact" at the bottom. Right: the selected contact. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 183 of 277 
-
 - View: name and title, a star with the tooltip "Primary contact" on the first contact, a trash button (tooltip "Delete contact", confirmation "Are you sure you want to delete this contact?") and a pencil (tooltip "Edit contact"). Below: phone, e-mail and web rows, whose icons start a call ("Start call"), open the site ("View site") or copy ("Click to copy "). Then the "External references" card (when the account has reference types) and a dashed "+ note" box for notes about this contact. 
 
-- Order and primary contact: the first contact is the primary contact (the first contact added becomes primary). The list shows a position number before each name. Users drag a contact to a new position or use "Move up" and "Move down"; position 1 becomes primary. 
+- Main §12.3 observes numbered draggable contacts but expressly does not establish primary-contact designation or recipient effects. Move controls, ordering persistence and first-contact defaults require validation (OQ-19).
 
 - Deleted contacts are hidden from the list and can be restored. 
 
-- No customer login on a contact: login is controlled per customer (CUS-026), not per contact. | Field (create / edit form) | Input / options | Required | Default | Rules & messages | |---|---|---|---|---| | First name | Text | Yes | Empty | | | Last name | Text | No | Empty | | | Title | Text | No | Empty | Examples: "SHIPPING COORDINATOR", "ACCOUNTING". | | Details | A growing list; each row is one box "Phone, email or URL". The system recognises the type: contains @ = e-mail, contains :// or a web address = web, looks like a number = phone. | No | One empty row; a new empty row appears when the last is filled | Phone rows have a type: mobile, office, home, fax (default mobile). A trash button removes a row. | 
+- Customer login is a customer setting; contact eligibility and per-contact access are unverified. Main §12.3/Deep4 E-168 establish the following form, without server validation:
+
+| Field | Observed input | Validation / effect |
+| --- | --- | --- |
+| First name / Last name | Text | Requiredness unverified |
+| Title | Text | A business title, not an app role |
+| Contact Details | Phone, email or URL; existing entries can expose type/subtype/copy/remove | Automatic detection, extra-row creation, defaults and validation unverified |
+| Create contact / Update contact | Separate create/edit actions | Not submitted |
 
 - Buttons: "Cancel" and "Create" (new) or "Update" (edit). 
 
@@ -7221,10 +6358,6 @@ Owners set a commission for each rep or team on the customer: a select with "%" 
 
 - Saved when the field is left or the select changes. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 184 of 277 
-
 Members see the values read only. The commission feeds the Commissions report (section 4.9). 
 
 ##### CUS-021 Commission notes 
@@ -7258,7 +6391,6 @@ Opened by the "Booking & quoting" card (or "Open settings" in the Booking disabl
 ||gross margin, %|margin|profit|profit|
 
 
-
 - Default margins accept up to 99.99 percent. Inputs show one decimal; the Overview shows the exact stored value. Limits are shown in dollars. 
 
 - Success message " saved" with "undo". Labels: "TL Margin", "LTL Margin", "TL gross margin minimum", "TL gross profit minimum", "TL gross profit maximum", "LTL gross margin minimum", "LTL gross profit minimum", "LTL gross profit maximum". 
@@ -7267,13 +6399,12 @@ Opened by the "Booking & quoting" card (or "Open settings" in the Booking disabl
 
 - Members cannot enter a value below the account-wide minimum for margin or minimum profit; the system refuses it on every save, not only on screen. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 185 of 277 
-
 Quotes outside a customer's limits cannot be booked by Members (section 4.6). 
 
 ##### CUS-024 LTL Volume boost 
+
+**Unverified algorithm:** Main §§12.5/19.3 observe Volume multiplier/Volume boost but explicitly leave units, formula, pricing effects and inheritance open (OQ-17). The multiplier choices and no-price-effect rule below are proposals, not observed or approved behavior.
+
 
 Below the grid is an orange-tinted row "LTL Volume boost" with an orange badge showing the effective LTL margin (the customer's default LTL margin times the boost), a reset arrow and a select (placeholder "select volume boost"). Options: "Not boosted", "x1.25 Small boost", "x1.5 Medium boost", "x2 Max boost". Default "Not boosted". 
 
@@ -7301,12 +6432,7 @@ The card "Booking & quoting" shows a green or gray dot (booking on or off) and t
 |Auto-<br>dispatching<br>(LTL)|LTL shipments the customer books are sent to the carrier for pickup<br>automatically(section4.6).Indented.|On|Owner and<br>Members|
 
 
-
 When customer login, auto-quoting or auto-dispatching is off for the whole account (section 4.10), a warning icon appears next to that switch with "Customer login is disabled in account settings." (or 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 186 of 277 
 
 "Customer auto-quoting is disabled in account settings." or "Customer auto-dispatching is disabled in account settings.") and "You can still change this, but it won't have an effect until enabled by an owner of your account." 
 
@@ -7318,7 +6444,7 @@ When booking is off, the Active shipments column shows a red banner "Booking dis
 
 ##### CUS-028 Credit card 
 
-The figures (PAY-022) are always shown. They can stop a booking only when an Owner turns on "Enforce credit limits" (SET-020); it is off at go-live, so at first the card is information only. 
+The figures (PAY-022) are always shown. They can stop a booking only when an Owner turns on "Enforce credit limits" (SET-020); it is proposed Off at launch, approval pending, so at first the card is information only.
 
 |State|Card|
 |---|---|
@@ -7327,7 +6453,6 @@ The figures (PAY-022) are always shown. They can stop a booking only when an Own
 |Credit requested,<br>waiting|Blue pulsing"No credit"with"Waiting".|
 |Credit limit set|Card with a used-and-left bar and"<$>left"or"<$>over".|
 |Quote price above<br>remaining credit|Orange"Credit too low to book", "<$>left"and the bar.Only when"Enforce credit limits"is on<br>(a booking above the available credit is then refused;section4.6).|
-
 
 
 - When a credit note exists it is shown under the card with the tooltip "Note from credit department". Owners see "+ credit note" when there is none. 
@@ -7344,13 +6469,9 @@ The figures (PAY-022) are always shown. They can stop a booking only when an Own
 
 - Members see the credit note read-only and a button "Request credit" once credit-request addresses are set (SET-025), which opens an e-mail to the credit-request addresses set in the account settings, subject 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 187 of 277 
-
 "More credit for ", body: "What new credit limit are you requesting? / What's the nature of their business? / What do they ship? / What's driving this request?" 
 
-With "Enforce credit limits" off (go-live), booking is never blocked by credit. 
+With enforcement Off (proposed launch choice, unapproved), booking is never blocked by credit.
 
 ##### CUS-030 Credit limit (Owner) 
 
@@ -7380,10 +6501,6 @@ A collapsed row "Timeline" (arrow). Opening it shows the customer's history, new
 
 When the account has external reference types (Settings, section 4.10), the Overview shows an "External references" card with rows " " (long values cut off), or the prompt "+ Add external reference". Clicking it opens a window with an information note, rows with a type select and a value box, a remove button on each row, and "+ reference". Rows save when the field is left. A type already used on this customer cannot be 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 188 of 277 
-
 chosen twice. A value shows as a link when the type has a web link template. The card is hidden when the account has no reference types. Members cannot add or change reference types, only values. Also available on contacts (CUS-018) and address templates (CUS-047). 
 
 #### Shipments, quotes, invoices and payments 
@@ -7408,10 +6525,6 @@ Shows the customer's invoices with an aging bar and the statement; the content i
 
 The customer's received payments, newest first; columns and the "Record payment" button are in PAY-012 ("Date", "Amount", "Method", "Reference", "# of shipments", "Credit"). Date shows as "MMM d". A payment with an unused balance shows a green "Credit" pill with "+$ amount". Clicking a payment opens the payment details (PAY-010). More payments load on scroll. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 189 of 277 
-
 ##### CUS-041 Invoice alert 
 
 The Invoices tab shows a red icon when the customer has overdue invoices. 
@@ -7426,15 +6539,15 @@ Near the title, the Customers page shows a "Late invoices" link with the number 
 
 The customer's saved pickup and delivery locations ("address templates"). A search box (placeholder "find address...") and a round plus button sit at the top. Below, a scrolling list of cards sorted by company name A to Z; typing (short pause) filters the list; more cards load on scroll. Empty: "No address book entries". 
 
-- Templates normally appear by themselves when a shipment is booked with a new address. Users can also add them here. 
+- Automatic template creation at booking is unverified. The draft previously contradicted SHP-032, which claimed booking never creates templates. Main §§13.5/16.3 establish neither; verify new-address booking and explicit template creation separately.
 
 - The same templates fill the company field when building a quote or shipment for this customer (sections 4.2 and 4.6). 
 
-- Editing a template does not change shipments that already used it. 
+- Template propagation to existing/future shipments and issued documents is unverified (main §§13.5/16.3; OQ-18). The observed shipment/template closing hours can differ; that is not proof of an update policy.
 
 ##### CUS-043 Address card 
 
-Left: company name in bold with a small tag for "pickup" and/or "delivery" (set automatically), then street and "City, ST ZIP". Right: the location contact name (or a department word such as "SHIPPING"), the hours "8:00am — 5:00pm" and, with special instructions, "Note: ". Clicking a card opens the Edit template window. 
+Left: company name in bold with a small tag for "pickup" and/or "delivery" (set automatically), then street and "City, ST ZIP". Right: the location contact name (or a department word such as "SHIPPING"), the hours "8:00am — 5:00pm" and, with special instructions, "Note: ". Clicking one populated address card did not establish an edit/detail destination in the source (main §13.1). An explicit Edit location template control inside shipment editing did open a template editor (§16.3). These are distinct entry points.
 
 ##### CUS-044 Create and Edit template window 
 
@@ -7445,11 +6558,6 @@ A wide window with the form on the left and a light-blue "Private note" column o
 |Company name|Text|Yes|Empty||
 |Location type|Select.Options:Airport,Business with<br>dock/forklift,Business without dock/forklift,Camp,<br>Church building,Construction site,Container<br>freight station,Convention/trade show,Country<br>club,Fair/amusement park,Farm,Government site,<br>Grocery warehouse,Hospital,Hotel,Limited<br>access,Military installation,Mine site,Native<br>American reservation,Nursing home,Pier,Prison,<br>Residential,School,Self-storage,Utility site|Yes|Business<br>with<br>dock/forklift|Shown left of the<br>"LTL Services"<br>menu.|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 190 of 277 
 
 |Field|Input/options|Required|Default|Rules&messages|
 |---|---|---|---|---|
@@ -7467,14 +6575,9 @@ Page 190 of 277
 |Private note|Multi-line,placeholder"private note for your<br>team",label"visible by your team only"|No|Empty|Never shown to the<br>customer or the<br>carrier.|
 
 
-
 Buttons: "Create" or "Save" (blue pill, bottom right). On Edit: a trash icon at the bottom left asking "Are you sure you want to delete this template?". 
 
 - After delete, "Location template deleted" appears with an "undo" button that brings it back. If saving fails, the error shows above the footer buttons. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 191 of 277 
 
 ##### CUS-045 Create template 
 
@@ -7514,10 +6617,6 @@ The menu "..." > "Merge customer" opens "Merge customers" with the text "Transfe
 
 The menu "..." > "Archive customer" opens "Archive customer" with the subtitle "Hide from customer lists", and a warning "Continue at your own risk": "Archiving will remove this customer from your Customers list. Likewise, you will not be able to select them for future quotes or shipments." "Customer will not be deleted" "You will still be able to access this customer's detail through your shipment history." Buttons "Cancel" and "Archive". Afterwards the system returns to the Customers list. The menu item is hidden on an archived customer. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 192 of 277 
-
 ##### CUS-052 Restore customer (Owner) 
 
 An archived customer's page shows the banner "This customer has been archived" and, for Owners, "Restore customer", which puts the customer back in the Customers list. 
@@ -7526,13 +6625,15 @@ An archived customer's page shows the banner "This customer has been archived" a
 
 ##### CUS-053 Everyone on the team sees every customer 
 
-In the first version every Owner and Member sees every customer, including those assigned to other reps. The Owner setting "Customer visibility" (section 4.10) can be switched on and is saved, but it is not enforced; restricting a customer to its assigned reps is planned for later. 
+Proposed access policy requires SC-03 approval; the source does not prove every role can see every customer under every visibility configuration. Main §19.3 describes a disabled checkbox in the sampled Member session: help says enabled restricts viewing/running quotes to customer reps, while disabled gives users all customer records. Actual API/list/search/export enforcement, team inheritance and launch scope are unverified. A no-op implementation is not supported or approved.
 
 ##### CUS-054 Owner-only actions are enforced 
 
 The system enforces every Owner-only action in this section every time, not only by hiding buttons. A Member who tries one gets a "not allowed" answer. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|
 |---|---|---|---|
@@ -7550,12 +6651,23 @@ The system enforces every Owner-only action in this section every time, not only
 |Merge,archive,restore|Yes|No|No|
 
 
+## 4.8 Carriers and vendors
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§12.1/6–8, 18.2–3, Deep2 E-138 and Deep4 E-170–172 support carrier/vendor identity and entry points. Displayed FMCSA Authorized, BI/PD, Unrated, Approved and fleet counts are app labels, not independent live verification.
 
-Page 193 of 277 
+| Requirements reviewed | Supported portion | Proposed / unverified detail |
+| --- | --- | --- |
+| CAR-001–008 | Carriers/Vendors/All, search/Added/Requires1099 filters, creation chooser and carrier/vendor captions | Ten-row paging, all matching/sort/storage rules, identical rights, color/status precedence and Approve & review workflow |
+| CAR-009–011 | Initial Carrier MC or DOT # input; no identifier submitted (§12.6/Deep4 E-170) | Lookup by name, 16-result limit, actual FMCSA supplier/import/data schema, add/deduplication, nightly/24-hour refresh/cache/outage policy |
+| CAR-012–018 | Existing profile identity, Overview/Shipments/Payments, Approved/packet/authority/insurance/fleet indicators; Deep4 E-172 | Full government-data popup, eligibility precedence, intrastate exceptions, minimum insurance/override and approval powers/effects |
+| CAR-019–024 | Packet not requested/Send request and Documents add-file; contact entry | Request recipient/wizard/expiry/completion, insurance fields/limits, automatic approval/release, document-only filters and contact behavior parity |
+| CAR-025–032, CAR-035 | Terms displayed 30 days from Vendor bill, tax/external-reference/contacts/Timeline, carrier shipments/payments and related bill paths | Remit-to hierarchy, terms editor/0–120 limits, entity/1099 algorithm, Push bills autosave/rights, complete tabs/history/query/cardinality |
+| CAR-036–039 | Monitoring-link preferences and factoring/remittance concepts (§18) | Link construction/data return, complete factor directory/schema/seed policy and every automatic vetting/payee approval rule |
+| VND-001–002, VND-005–008 | Nine single-choice creation types; Select type gate; name/Add vendor; existing details/type checkbox/Change types and Update; §12.7/Deep4 E-171 | Creation validation/persistence, complete profile absence claims and type changes' effect |
+| VND-003–004, VND-009–016 | Shipment's separate type chooser; vendor Billing/address/email, terms/tax/accounting entry; checked Push bills in sample | Five-match duplicate behavior, actual vendor assignment, save-on-blur, contacts parity, missing tabs/documents features and backend rights |
 
-## 4.8 Carriers and vendors 
+Main §12.7 notes that the sampled vendor Shipments click did not visibly leave Overview and Payments was not inspected. Do not describe the full vendor history workflow as verified. A carrier or warehouse business record is not an API integration.
+
 
 In short: This part of the system keeps 10-4's list of freight carriers and of other vendors (towing, crane, warehouse and so on). For a carrier it shows the government (FMCSA) identity and safety data, tells you whether the carrier may be used (Approved, Candidate or Don't use), holds the carrier's insurance packet, contacts, payment terms and tax details, and lists the loads and payments for that carrier. Owners decide who is approved. Members can look up, add and edit most things. 
 
@@ -7589,11 +6701,6 @@ Records are white cards, 10 at a time as you scroll. The list keeps the scroll p
 |side|requested,or a green document icon and"Packet completed"when the carrier returned the packet.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 194 of 277 
-
 ##### CAR-003 Vendor card 
 
 |Part|What it shows|
@@ -7603,7 +6710,6 @@ Page 194 of 277
 ||icon.|
 |Name|The vendor name in bold.|
 |Details|The vendor type(for example"Towing")and,when a billing address exists, ", ".|
-
 
 
 ##### CAR-004 All tab 
@@ -7623,7 +6729,6 @@ Clicking the filter box (tooltip "View carrier filters") opens a window:
 |Required|||require a1099.|
 
 
-
 Active filters appear as chips in the filter box: "Created this month" (or "Created M/d-M/d") and "Requires 1099"; the x removes one. 
 
 The footer button reads "See N carriers / vendor" (singular for 1) or "See N carriers / vendors" and closes the window. 
@@ -7640,11 +6745,6 @@ Filters and search stay in the page address and are remembered while navigating.
 |Problem|"Something went wrong."and a blue button"Try again".|
 |loading||
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 195 of 277 
 
 ##### CAR-007 Approve & review carriers 
 
@@ -7670,7 +6770,6 @@ Opened by either plus button. A small window with two dashed tiles; hovering tur
 |Vendor|"Providers such as crane,insurance,warehouse,etc."|The vendor type step(VND-001)|
 
 
-
 ##### CAR-009 Carrier lookup 
 
 A small window with one field labelled "Carrier MC or DOT #". 
@@ -7687,10 +6786,6 @@ On the profile of a carrier not yet on 10-4's list, the right side shows a dashe
 
 - "Add carrier" saves the carrier with the status "Candidate" ("Haven't worked with this carrier before"). If the carrier is already on the list (for example another user just added it), the existing record opens. Nothing is duplicated. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 196 of 277 
-
 - If saving fails: "Error adding carrier". 
 
 - The left cards (status, FMCSA) stay visible with the government data. 
@@ -7699,13 +6794,7 @@ Only the Overview is shown until the carrier is added; the Shipments and Payment
 
 ##### CAR-011 Government (FMCSA) data 
 
-The system keeps a searchable copy of the government's FMCSA carrier data (census, authority, safety rating and insurance on file); carriers are found by name, MC number or USDOT number. 
-
-- Refreshed regularly (every night for carriers with open loads or packets, and when a carrier is opened and its data is older than 24 hours). The profile shows "Updated ". 
-
-- When the government source cannot be reached, the profile shows the last known data with its date. Covering a load is blocked only when the last known data says the carrier is not allowed (CAR-014). 
-
-- Data per carrier: USDOT number, MC numbers, freight forwarder (FF) numbers, Mexican (MX) numbers, SCAC code, legal name, doing-business-as name, friendly name, tax ID, physical, mailing and billing addresses, phone, e-mail, website; authority (carrier, broker, freight forwarder; authorized or not; in service or out of service; interstate or intrastate); safety rating with date; insurance on file (BI/PD, bond, cargo); trucks and drivers; inspections and crashes. 
+The source establishes app-displayed carrier identifiers/authority/safety/insurance/fleet information, not its supplier or internal storage. Main §12.6 and OQ-20 explicitly leave lookup source/import/refresh unresolved. The former claims of a mirrored government dataset, nightly refresh, 24-hour refresh-on-open, cache fallback and complete tax/contact/insurance/inspection schema are removed as unsupported facts. Define the selected licensed/public-data capability, freshness, fields and outage/approval policy during integration review (main §18.2), without assuming that a visible status is a live authority check.
 
 ### Carrier profile 
 
@@ -7731,10 +6820,6 @@ In order: Status card, Packet card, FMCSA card, monitoring links (CAR-036), Cont
 
 The status card shows "Approved", "Candidate" or "Don't use", with a colored dot and a reason on hover. The first matching rule wins: 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 197 of 277 
-
 |#|Condition|Status|Reason shown|Can an Owner<br>change it?|
 |---|---|---|---|---|
 |1|No FMCSA record found|Candidate|"Unknown carrier"|No|
@@ -7745,7 +6830,6 @@ Page 197 of 277
 |6|The carrier is not yet on10-4's<br>list|Candidate|"Add carrier to your<br>account first"|No|
 |7|The carrier packet has expired<br>(CAR-020)|Keeps the status that was set|"Insurance expired"|To"Don't use"<br>or"Candidate"<br>only|
 |8|Otherwise:the status an<br>Owner set|"Don't use"shows"Don't use this<br>carrier"; "Approved"shows"Manually<br>approved"; "Candidate"shows<br>"Haven't worked with this carrier<br>before"||Any of the three|
-
 
 
 A new carrier starts as "Candidate". 
@@ -7766,10 +6850,6 @@ Every status change is recorded in the timeline with the user.
 
 At the top of the right area, when shipments are waiting for approval: an orange-bordered line "This rate con will be sent when this carrier is approved" (plural when several). When the packet expired: "Looks like this carrier's insurance expired on ". 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 198 of 277 
-
 ##### CAR-017 FMCSA card 
 
 A card with a clickable header: a green check and "FMCSA Authorized" (in service and authorized) or a red mark and "FMCSA Not authorized". Below: 
@@ -7781,7 +6861,6 @@ A card with a clickable header: a green check and "FMCSA Authorized" (in service
 |Trucks|Number of power units,or"-"|
 |Drivers|Number of drivers,or"-"|
 |Clicking the card opens the FMCSA window<br>(CAR-018).||
-
 
 
 ##### CAR-018 FMCSA window 
@@ -7809,16 +6888,10 @@ Shows the carrier packet (insurance and documents the carrier gives 10-4). The w
 |Completed|Carrier returned the packet|Green document icon, "Carrier docs"and"Exp. ",then rows"Gen<br>Commercial", "Auto", "Cargo"with the insurance amounts in whole<br>dollars(or"-").|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 199 of 277 
-
 |State|When|Card shows|
 |---|---|---|
 |Expired|Completed packet whose|Orange document icon,the same rows,an orange footer"Insurance|
 ||earliest expiry date has passed|expired!"and a link"Update".|
-
 
 
 ##### CAR-020 Packet expiry 
@@ -7835,7 +6908,6 @@ Opened from the packet card. Header: carrier name and the SCAC / USDOT / MC row,
 |Automobile Liability|Dollars,hint"combined single limit"|Yes|$0|Whole dollars, 0or more|
 |Motor Truck Cargo|Dollars|Yes|$0|Whole dollars, 0or more|
 |Earliest expiration date|Date|Yes|Empty|Not before today|
-
 
 
 - Button "Save" (blue, full width). A saved packet is marked completed. A failure shows "Saving insurance information" followed by the reason. 
@@ -7855,10 +6927,6 @@ Opened by "Send request", "Resend" or "Request new packet". A small window title
 - When the carrier finishes, the packet card shows "Carrier docs", the files appear under "Documents", and the page updates without reloading. 
 
 - The same request can be made from the cover screen when covering a load with a Candidate carrier (section 4.3). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 200 of 277 
 
 ##### CAR-023 Contacts card 
 
@@ -7888,7 +6956,6 @@ Shows "Payment terms" and " days from <Vendor bill | Pickup | Delivery>". The de
 |Pay within|Whole number of days,then"days"|Account default|0to120|
 
 
-
 Footer note: "Default terms are <Vendor bill / Pickup / Delivery> + days". 
 
 - Button "Save". Error: "Failed to save payment terms." 
@@ -7899,18 +6966,16 @@ Footer note: "Default terms are <Vendor bill / Pickup / Delivery> + days".
 
 ##### Tax & entity 
 
-Shows "Tax & entity", the tax ID with its type from the government record (for example "EIN"), the legal entity type and a pill "Needs 1099" when 1099 is required, or a blue link "+ Add legal entity type". Clickable for Owners only (tooltip "Edit tax related info"); opens a window: 
+**Tax policy unverified:** The source establishes a tax/legal-entity entry and Requires1099 filter, not the complete entity-to-1099 default algorithm below. These are draft app choices requiring accounting review; they must not be read as tax advice or legal eligibility rules.
 
-10-4 TMS — Functional Specification · v0.1 
 
-Page 201 of 277 
+Shows "Tax & entity", the tax ID with its type from the government record (for example "EIN"), the legal entity type and a pill "Needs 1099" when 1099 is required, or a blue link "+ Add legal entity type". Clickable for Owners only (tooltip "Edit tax related info"); opens a window:
 
 |Field|Input/options|Default|Rules|
 |---|---|---|---|
 |Business<br>ID|Read-only with a lock icon, " "|From the<br>government<br>record|Shown when known|
 |Legal<br>entity type|Select: "Unknown", "Corporation", "LLC as<br>corporation", "LLC as partnership", "LLC as sole<br>proprietorship", "Partnership", "Sole proprietorship"|Unknown||
 |Requires<br>1099|Switch|Set from the<br>type|Corporation and LLC as<br>corporation=off;the other four<br>=on.Can then be changed.|
-
 
 
 Button "Update". Error: "Failed to save vendor info." 
@@ -7941,10 +7006,6 @@ A left list of all shipments the carrier covered, newest pickup first. Rows look
 
 Payments 10-4 made to the carrier, newest first. Columns: "Date", "Amount", "Method", "Reference", "# of shipments", "Credit" (PAY-012, PAY-013). Date shows as "MMM d" and adds the year when not the current 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 202 of 277 
-
 year. Method shows the payment method and, on a second line, the memo if any. "# of shipments" shows "-" for none. A green "Credit" pill with "+$ amount" marks an unused balance. A payment opens its details (PAY010). There is no "Record payment" button here; carrier payments are recorded on the carrier bill (BIL-024). Empty: "No payments found". 
 
 ##### CAR-035 Opening a carrier from a shipment 
@@ -7962,7 +7023,6 @@ Three small gray icons under the FMCSA card open the carrier in an outside servi
 |Highway|"View on<br>Highway"|The carrier's Highway search result,looked<br>up by the USDOT number|
 |These are links only;no data comes back.The ClassIT+|||
 |link is on shipment lines(section4.2).|||
-
 
 
 ### Factoring company directory 
@@ -7983,10 +7043,6 @@ Some carriers are paid through a factoring company. The system keeps a directory
 
 Users type in the "Factoring with" select to search by name. The list is the same for the whole account. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 203 of 277 
-
 ##### CAR-039 Carrier vetting rules 
 
 What the system checks before a carrier can be used, and what it leaves to 10-4's staff: 
@@ -7998,7 +7054,6 @@ What the system checks before a carrier can be used, and what it leaves to 10-4'
 |Who may approve|Only an Owner can change a carrier to"Approved"or back(CAR-015);a Member cannot.A blocked<br>("Don't use")carrier can be used only when an Owner turns on"Override coverage status" (section<br>4.3).|
 |Identity and<br>double brokering|No automatic check for a carrier that re-brokers a load or for a changed identity.Staff compare the<br>packet and the FMCSA data.|
 |Payee or remit-to<br>change|A new payment address or factoring company is saved without a second approval.|
-
 
 
 ### Adding a vendor 
@@ -8015,7 +7070,6 @@ After choosing "Vendor" in the add window, a card labelled "Vendor type" shows n
 |Vendor name|Text,label"Vendor name"|Yes|Typing shows the"Did you mean?"list(VND-003).|
 
 
-
 Button "Add vendor" (blue, full width) saves the vendor and opens its profile. On failure: "Failed to create vendor". 
 
 Names are kept as typed. Sorting and search ignore case. 
@@ -8025,10 +7079,6 @@ Names are kept as typed. Sorting and search ignore case.
 ##### Did you mean? for vendors 
 
 While typing, up to 5 existing vendors of the same type with similar names are listed under "Did you mean?", with the typed text highlighted. Clicking one opens that vendor and closes the window. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 204 of 277 
 
 ##### VND-004 Vendor from a shipment 
 
@@ -8065,11 +7115,6 @@ Three columns on wide screens (blocks, Active shipments, notes), two on narrower
 |There is no"External references"or<br>"Support"block on vendors.|||
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 205 of 277 
-
 ##### VND-007 Edit vendor details window 
 
 Opened by the header pencil. Saves with "Update". Error: "Failed to save vendor info." 
@@ -8082,12 +7127,14 @@ Opened by the header pencil. Saves with "Update". Error: "Failed to save vendor 
 |Website|Text|No||
 
 
-
 ##### VND-008 Vendor type window 
 
 Title "Vendor type". Checkbox cards for the nine types (CAR-003 icons; blue border and check when selected), the current types preselected. A vendor can have several types. Button "Change types". Error: "Failed to update vendor types". A vendor with no types shows "+ add vendor type". 
 
 ##### VND-009 Billing window 
+
+**Save boundary unknown:** Main §12.7 did not establish a Done/Save action or autosave boundary in the vendor billing preview. The immediate persistence/undo rules below are proposed, not verified.
+
 
 Title "Billing" (payment icon). Saves as you go; no Save button. After each save: "Billing info saved" with "undo". Error: "Failed to save billing info." 
 
@@ -8097,7 +7144,6 @@ Title "Billing" (payment icon). Saves as you go; no Save button. After each save
 |address|opens the address window(company,street lines,city,<br>state,zip,country USA/Canada/Mexico)||closes with a change.|
 |Billing|Several e-mails as chips,placeholder"+billing email";|No|Each added or removed e-mail|
 |email|suggests the vendor's contacts'e-mails||saves at once;a typed address is<br>added when you leave the box.|
-
 
 
 The vendor's payment contact (name, e-mail, phone) is read on bills and payments but changed from the contacts card. 
@@ -8113,10 +7159,6 @@ Same as CAR-027 with the select labelled "Business Entity" and without the "Busi
 ##### VND-012 Accounting Integration Settings 
 
 Same as CAR-029. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 206 of 277 
 
 ##### VND-013 Vendor Shipments tab 
 
@@ -8134,7 +7176,9 @@ Same as CUS-018 for the vendor.
 
 Vendors have no documents screen in the first version. Files for a vendor are attached to the shipment. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer/Carrier|
 |---|---|---|---|
@@ -8149,12 +7193,23 @@ Vendors have no documents screen in the first version. Files for a vendor are at
 |The system enforces every Owner-only action every time,not<br>only by hiding buttons.A Member who changes status,payment<br>terms or entity type gets a"not allowed"answer.||||
 
 
+## 4.9 Reports, Lanes and Commissions
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §19.5/E-102–104 records nine reporting destinations (Lanes plus eight saved export definitions), selected columns, filters and limited lane arithmetic. Report names are account configuration, not a standard product catalog. No report was edited/downloaded or reconciled.
 
-Page 207 of 277 
+| Requirements reviewed | Established observation | Proposed / unverified detail |
+| --- | --- | --- |
+| RPT-001–006 | Reporting hub/saved definitions, Filters/Columns/Download, preview counts; disabled Name this report | Universal starter reports, all layout/icon rules, creator/Owner/team access, locks and not-found behavior |
+| RPT-007–013 | Label/reorder/remove controls visible, without changes | Every rename/save/clone/delete/share flow, name uniqueness/100-char bounds, 100-entry sharing cap, autosave/race policy and base-report locks |
+| RPT-014–018 | Shipment/Customer/Carrier filter dictionaries and sampled saved choices; carrier uses Filter singular | Exact match/search/date/sort/persistence semantics, 24/10-row caps and full paging/CSV relation |
+| RPT-019–023, RPT-029 | Column catalogs/selected lists, names can differ (Carrier vs Carrier Name; Last Shipment Date vs Last Booked Date) | Counts/catalog labels now observed in V-03–05/C.1–3; hard limits, field-search/keyboard rules, editing/uniqueness/clear behavior remain unverified |
+| RPT-024–027, RPT-030 | Download control and a matching count | Actual CSV encoding/format/row grain/ordering/full count, formula protection, 10,000 cap, filenames, errors and live-refresh policy |
+| RPT-028 | LTL Report/Shipments/copies select 14 fields; LTL Report - QF and Monthly Margin select 48 each | Titles do not define filters; no clone day-one recreation or permission promise |
+| LAN-001–012 | Lanes map/table, Pickup this week, observed filters, Origin/Destination/Shipments/Profit/Profit per; sampled ratio | Full grouping/direction/map/focus/sorting/state algorithms, exclusions, zero-cost profit basis, 20,000 cap, external-role access and export |
+| COM-001–006 | Shipment/customer Reps/commission controls exist (§§12.5/15.5) | Separate Commissions report/page/schema/CSV/limits/date defaults/Owner-only rules are not established by the source; all remain proposals |
 
-## 4.9 Reports, Lanes and Commissions 
+**Observed arithmetic only:** One lane row has 2 shipments, profit800, profit per400; sampled total25/2195/87.80. This supports division for those examples, not the underlying accounting source, vendor-cost inclusion or settlement basis. Indexed handling-unit columns do not prove a maximum of three items.
+
 
 - In short: The "Reporting" area is where 10-4 staff pull data out of the system. It has three parts. Saved data exports (shipment, customer and carrier reports) let you filter rows, choose and order columns, preview the result and download a CSV file. Lanes shows where 10-4 hauls freight on a map and in a table, with profit per lane. The Commissions report (Owner only) downloads the commissions earned in a date range. Owners and Members use the first two; customers and carriers cannot open any of this. 
 
@@ -8190,12 +7245,7 @@ Under "Data exports" the system lists every saved report the user may see (RPT-0
 |Commissions|download arrow|
 
 
-
 The lock is only a hint: a locked report still opens and can be used, filtered and downloaded. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 208 of 277 
 
 ##### RPT-004 Which reports a user sees 
 
@@ -8247,16 +7297,10 @@ The change bar appears as soon as the name, filters or columns differ from what 
 |new||are changes|Same disabled rule as Save.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 209 of 277 
-
 |Button|Style|When it shows|What it does|
 |---|---|---|---|
 |Revert|grey,outlined,with a|always,when there|Puts name,filters and columns back to the last saved|
 ||refresh icon|are changes|version.Nothing is saved.|
-
 
 
 - Filter changes on a base report also show the change bar ("Save as new" or "Revert"). On a base report "Save" is available only when the columns changed, and saves the columns only (never the filters). 
@@ -8269,7 +7313,6 @@ A red banner shows the error text and clears as soon as the user changes the nam
 |You are not allowed to edit this report definition You can|A user without edit rights tries to save,delete or share.|
 |duplicate it instead.||
 |another column has this name|Two selected columns have the same header(shown in<br>red next to the column).|
-
 
 
 ##### RPT-009 Duplicate 
@@ -8294,11 +7337,6 @@ Every account has three base reports that cannot be renamed, deleted or shared:
 |Customers|Name,Website,Phone,Description,Primary Contact,Primary Contact Email,Primary Contact Phone,<br>Shipments,Last Shipment Date(the"Last Booked Date"column),Last Note Date|
 |Carriers|Name,USDOT Number,MC Number,Phone,HQ City,HQ State,Compliance Status,Primary Contact,Primary<br>Contact Email,Primary Contact Phone|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 210 of 277 
 
 - An Owner can change the columns of a base report and save them; everyone else can change them on screen and use "Save as new". 
 
@@ -8342,10 +7380,6 @@ Rules:
 
 - If two people change the same sharing list at the same moment, the last change wins. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 211 of 277 
-
 #### Shipment report: Filters tab 
 
 ##### RPT-014 Shipment report filters 
@@ -8369,7 +7403,6 @@ The same filters as the Shipments list filter window. The status filter offers a
 |Covered by|picker"select a team or user"||
 
 
-
 Active filters show as chips with an x to clear them. 
 
 The filter window's footer button "See N shipments" is not shown inside a report; the preview shows the result. 
@@ -8381,10 +7414,6 @@ A scrolling list of matching shipments in the Shipments list row layout, newest 
 Empty state: "No shipments" with a dashed link "+ shipment" that opens the new shipment form. 
 
 The number in "Download shipments" is the total number of matching shipments. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 212 of 277 
 
 #### Customer report 
 
@@ -8412,7 +7441,6 @@ The tab is "Filter" (singular). Filters:
 |Required||
 
 
-
 - The preview shows carrier cards like the Carriers list (status dot, name, "USDOT n MC-n City, ST zip"), 10 at a time, loading more on scroll. 
 
 - The report covers carriers in the Carriers list, not other (non-carrier) vendors. 
@@ -8431,10 +7459,6 @@ A saved report keeps date presets as presets: one saved with "This month" always
 
 - The left side lists all columns the report type offers, under category headings (full lists in Appendix C). Headings are bold and open and close by click or keyboard. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 213 of 277 
-
 - Shipment report: all categories open except "Handling Units", which starts closed. Customer and carrier reports: all open. 
 
 - The input "find field..." (with an x to clear) filters the list as the user types, by case-insensitive text match on the column name. While searching, every category is open and a category with no match is hidden. 
@@ -8445,7 +7469,7 @@ Page 213 of 277
 
 - Clicking a catalogue column adds it at the end of the selected list (once only). Clicking a selected column removes it; each selected row also has a trash icon ("Remove column "). 
 
-- A report needs at least 1 column and can hold up to 189 (shipment), 68 (customer) or 31 (carrier). 
+- Observed catalog sizes are189/68/31 (V-03–05; Appendix C). Minimum/maximum selected-column counts remain unverified; catalog membership does not prove a hard selection limit.
 
 - A live count " columns" shows at the top right of the selected list. 
 
@@ -8481,10 +7505,6 @@ The blue button "Download shipments" (or customers / carriers) downloads one CSV
 
 - Any Owner or Member who can open the report can download it. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 214 of 277 
-
 ##### RPT-025 CSV file format 
 
 First row: column headers. One row per shipment, customer or carrier. 
@@ -8511,28 +7531,24 @@ One download holds at most 10,000 rows. When more match, the builder shows a gre
 |Download failed|The file could not be created or saved(red,with a"close"button).|
 
 
-
 ##### RPT-028 Starter reports for 10-4's existing Quote Factory reports 
 
-10-4's Quote Factory shipment reports "LTL Report", "LTL Report - QF" and "Monthly Margin" are the shipment builder with saved filters and a column list: 
+Main §19.5 records these dated saved definitions:
 
-- "LTL Report": the 14 columns of the base Shipments report. 
+- **LTL Report:** 14 selected fields, with no status/equipment checked in the sampled view; its name did not restrict it to LTL.
+- **LTL Report - QF:** LTL plus Requested/Booked/Scheduled/In transit/Delivered, Canceled unselected; exactly 48 selected fields documented. A one-customer filter was not established.
+- **Monthly Margin:** Deliver this month (October1–31 in the sample), no selected status restriction, exactly 48 documented fields. This is an export definition, not a verified delivered/paid accounting aggregate.
+- **Shipments, Shipments copy, Shipments copy 2:** the sampled 14 selected fields and no checked equipment/status; no hidden equality or universal starting schema is inferred.
 
-- "LTL Report - QF": LTL equipment only, status Requested, Booked, Scheduled, In transit and Delivered, one customer, about 48 columns. 
-
-- "Monthly Margin": delivery date "This month", about 48 columns including the Accounting columns. 10-4 can create the same reports on day one with "Duplicate" or "Save as new". 
+Appendix C reproduces the source selected lists and the separately verified current catalogs (V-03–05). Recreating/saving them in the clone requires approved scope and report rights.
 
 ##### RPT-029 More columns 
 
-Appendix C lists every available column: 189 for shipments, 68 for customers and 31 for carriers. A column not in Appendix C can be requested and added later without changing the screens. 
+Main §19.5 records selected lists; targeted read-only app checks V-03–05 now establish the current189/68/31 catalogs reproduced in Appendix C. Additional configuration/role/version changes and actual exported values require review; catalog counts are not hard selection limits.
 
 ##### RPT-030 Other users' changes 
 
 A report list or sharing change made by another user shows after a page reload; it does not update live. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 215 of 277 
 
 ### Lanes 
 
@@ -8570,7 +7586,7 @@ Draft shipments are never counted.
 
 - In the table each direction is its own row (A to B with its count and profit; B to A with its count and profit). 
 
-- Profit of a shipment is its price minus its cost on the quote (0 when no quote). Profit per shipment is profit divided by the shipment count. 
+- Profit per equals profit divided by shipment count in the sampled nonzero rows. The underlying cost/price source, added vendor charges and treatment of loads without quotes are unverified; the former zero-profit-without-quote rule had no supporting evidence (main §19.5).
 
 ##### LAN-005 Map 
 
@@ -8579,10 +7595,6 @@ A map of the continental United States sits above the table on a grey card.
 - Dots mark each city. Bigger dots mean more shipments (inbound plus outbound); there is a maximum and a minimum dot size so every dot stays visible. 
 
 - Dot colour shows direction: a city that only ships out is light (white-grey), a city that only receives is solid blue, a mix shows both colours in proportion. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 216 of 277 
 
 - Lines join the two cities of each lane. Arrows show direction: toward the destination for outbound shipments, the other way for inbound. 
 
@@ -8609,7 +7621,6 @@ A sticky header strip and one white card row per lane direction.
 |Profit per|profit divided by the number of shipments|staff users|
 
 
-
 Money is dollars with cents and thousands separators, negatives with a minus sign ($1,800.00, -$50.00). On narrow screens the number cells stack at the right of each row. 
 
 ##### LAN-008 Sorting the lane table 
@@ -8623,10 +7634,6 @@ The last row (grey background, bold) shows "Totals" in the Destination cell, tot
 ##### LAN-010 Empty state 
 
 With no matching lanes the table shows "No matching lane data" and a blue button "Reset filters", which restores "Pickup this week" and clears the focus. The map shows its default view. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 217 of 277 
 
 ##### LAN-011 Loading and errors 
 
@@ -8661,14 +7668,9 @@ A centred white panel with these fields from top to bottom.
 |Download|blue full-width button|||Spinner and disabled while the<br>file is created.|
 
 
-
 ##### COM-003 Meaning of "Shipment date of" 
 
 Only shipments with the chosen date inside the range (first and last day included) are included. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 218 of 277 
 
 |Choice|Date used|
 |---|---|
@@ -8677,7 +7679,6 @@ Page 218 of 277
 |Delivered|the date the last stop was delivered|
 |Invoiced|the date the customer invoice was sent|
 |Paid|the date the customer invoice was paid in full|
-
 
 
 Draft and canceled shipments are never included. 
@@ -8714,17 +7715,11 @@ Draft and canceled shipments are never included.
 |Commission|the percent or flat amount set for the rep|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 219 of 277 
-
 |Column|Meaning|
 |---|---|
 |Payout|the dollars the rep earns on this shipment|
 |Paid|Yes or No|
 |Paid Date|date the commission was marked paid(empty if not paid)|
-
 
 
 Money uses 2 decimals without a currency sign. 
@@ -8742,8 +7737,9 @@ File name: "commissions-report .csv".
 |Too many shipments for one report;narrow the date range|More than10,000shipments match.|
 
 
+### Who can do what
 
-### Who can do what 
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -8757,12 +7753,26 @@ File name: "commissions-report .csv".
 |Commissions report|Yes|No|No|No|
 
 
+## 4.10 Settings, Users, Account, Profile and Signin
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§17.6, 18–19 and E-99–108 establish selected Member settings views, not Owner administration, authentication transactions or enforcement. All precise bounds, messages, save/autosave rules and role grants below are proposals unless supported in the following table.
 
-Page 220 of 277 
+| Requirements reviewed | Supported evidence | Proposed / unverified detail |
+| --- | --- | --- |
+| SET-001–005 | Settings hierarchy, carrier/customer/accounting/external-reference/notification entry points (§19.1–3) | Import tile, full catalog/description/layout/version/close behavior, universal read-only settings and save contract |
+| SET-006–011 | Checked disabled packet/terms options, Public link/Request change, Terms & Fees; shipment-value unchecked disabled; email/phone override help and Save; future-shipments/drop instruction (§19.2) | Agreement loaded by Stackup/no editor, legal adoption, term version/snapshot, editor formatting/50,000 cap and actual sends |
+| SET-012–015 | Trucker Tools named; Compliance None selected; monitoring/ClassIT+ Not showing links; DAT Authorization failed in cover (§18/Deep2 E-138) | Connected health/MacroPoint exclusion, exclusive active tracker, compliance supplier/secondary logic, Stackup setup contract, DAT connected/Truckstop not connected and no-op cards |
+| SET-016–022 | Global and per-carrier defaults/min margin/min profit/max profit, Volume boost; mode-specific carrier hiding; login/credit/visibility help (§19.3) | Autosave/precedence/boost/math/limits, global automation values, accepted overrides/permissions, no-op visibility/notification implementation and launch credit value |
+| SET-023–030 | Oct26 mapped QuickBooks; customer/vendor30-day examples; Not factoring; Not providing QuickPay, disabled3days/2.5% (§17.6) | All connect/revoke/sync effects, Cc caps/delivery, term precedence, factor/QuickPay enablement, saved-for-later/no-effect claims and finance rights |
+| SET-031–035 | Empty definitions; Add form with Name/Code, five checked entity types/URI fields, uniqueness checked and Save (§19.1) | Role denial, code normalization/immutability, bounds/escaping/placeholders, uniqueness scope, deletion/backfill and which entities can enter values |
+| SET-036–037 | Notifications says No sources configured (§19.1) | Per-user save behavior and staff Settings/Data export page/schema/access are unverified; no sources does not mean all email/SMS is off |
+| USR-001–011 | Owners/Members groups; sampled Member card and disabled unchecked Owner checkbox (§19.1) | Invite/resend14-day expiry, role/removal/last-Owner/self rules, complete card controls, counts and unknown-link behavior |
+| USR-012–020 | Teams No teams quite yet! in Member session | Owner creation/team edit/member/manager/commission rights and all constraints/errors |
+| ACT-001–008 | Company summary/no edit controls in sampled Member view; Profile name/email/phone/photo/Save/Change password/Log out (§19.1) | Owner form, branding mapping, 5MB formats, requiredness/lengths/phone policy and save effects |
+| ACT-009–025 | Change password and Log out entry points only | Full login/invite/signup/reset/email-change screens, passwords/session revocation/rate limits, token durations (14days/24hours/60minutes) and exact errors |
 
-## 4.10 Settings, Users, Account, Profile and Signin 
+A field being disabled in one Member sample does not prove every Member setting is read-only; the Member external-reference Add form was actually inspected. Alternate-role/API denial tests remain required (SC-03/05).
+
 
 In short: what an Owner sets up once and a Member reads: Settings pages (carriers, customers, accounting, external references, notifications), users and teams, the company profile, each person's profile, and the sign-in, invite and password-reset pages. Customers and carriers never see Settings. 
 
@@ -8787,12 +7797,7 @@ Reached from "Settings" in the left navigation; staff only. A grid of tiles (fou
 ||Factory(Owners only)|shipments over from Quote Factory"|section8|Members|
 
 
-
 Tiles 1 to 9 are the same for Owners and Members. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 221 of 277 
 
 ##### SET-002 Shared page frame 
 
@@ -8828,11 +7833,6 @@ Settings > Carriers shows a grid of tiles. For 10-4 the tiles are:
 |Carrier411|"Carrier monitoring"|"Show links to Carrier411"or"Not<br>showing links";green dot when on,white<br>dot when off|Link window(SET-014)|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 222 of 277 
-
 |Tile|Description(exact)|Status shown|Opens|
 |---|---|---|---|
 |CarrierOK|"Carrier monitoring"|"Show links to CarrierOK"or"Not<br>showing links";green dot when on,white<br>dot when off|Link window|
@@ -8840,7 +7840,6 @@ Page 222 of 277
 |ClassIT+|"Freight classification"|"Show links to ClassIT+"or"Not showing<br>links";green dot when on,white dot when<br>off|Link window|
 |Load boards|"Connect to load boards"||Load boards page(SET-|
 |(Owners only)|||015)|
-
 
 
 ##### SET-006 Carrier terms & conditions page 
@@ -8854,7 +7853,6 @@ Title "Carrier terms & conditions". A blue link "Public link" at the right opens
 |Require carriers|"Use terms&conditions"|On|When on,the carrier must tick agreement|
 |to agree to|||to the terms when signing the rate|
 |terms|||confirmation(section4.3)|
-
 
 
 A preview card shows the agreement text (dimmed to 30% when "Use terms & conditions" is off). Members see the cards read-only. 
@@ -8873,10 +7871,6 @@ Title "Carrier rate con". Three blocks:
 
 3. A row "Show shipment value on rate con" with a switch, default off. When on, the total value of the shipment prints on the carrier rate confirmation (section 6). If the switch cannot be saved, a red message reads "Error updating setting". 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 223 of 277 
-
 A closing info note: "Changes applied to future shipments only. Previously-covered shipments must drop carrier before new terms are applied." 
 
 ###### SET-009 
@@ -8889,7 +7883,6 @@ A window titled "Rate con email settings". Text: "When blank, will default conta
 |---|---|---|---|---|
 |Email address|E-mail|No|Blank|Valid e-mail;saved in lower case. "Enter a valid email address"|
 |Phone|US phone|No|Blank|Complete US phone number. "Enter a valid phone number"|
-
 
 
 "Save" stores both. Error panel: "Error saving settings". Closing without saving discards changes. 
@@ -8918,10 +7911,6 @@ Title "Tracking integrations". Two rows: MacroPoint and Trucker Tools. MacroPoin
 
 Title "Compliance integrations". Rows: MyCarrierPortal (the carrier portal of MyCarrierPackets) and RMIS by Truckstop. Each row shows "Connected", "Setting up" or "Not connected" (plus " as secondary" and " / disabled" when relevant). A connected tool has a switch "Enable {name}" and the text "Pulls carrier data from 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 224 of 277 
-
 {name} and monitors compliance status." A secondary source shows the box "Supporting mode" — "Will only return carrier data not affect compliance status." A tool that is not connected shows "Connect to {name}", the same Stackup setup text and a "Sign up now" link. For 10-4 none is connected; onboarding uses the built-in carrier packet (MyCarrierPackets is used by 10-4 on its own). 
 
 ##### SET-014 Carrier monitoring link windows 
@@ -8934,7 +7923,7 @@ Small window with the logo and a switch "Show links to {name}" (Carrier411, Carr
 
 Owners see the "Load boards" tile ("Connect to load boards") on Carriers settings. It opens "Settings / Carriers / Load boards" with two cards, "Post to DAT" and "Post to Truckstop". 
 
-- Each card shows a status dot and a status line: "Connected" with the button "Change", or "Not connected" with the button "Connect". For 10-4, DAT shows "Connected" and Truckstop shows "Not connected". 
+- Each card shows a status dot and a status line: "Connected" with the button "Change", or "Not connected" with the button "Connect". These settings statuses are unverified. Deep2 E-138 instead records an existing app-reported DAT Authorization failed in the cover workspace; it does not prove current licensed connectivity or identify the cause/age. Truckstop connectivity remains unverified.
 
 - Posting from the system is not in the first version (10-4 posts by hand). Pressing a card or its button shows "{name} is not available yet." and changes nothing. 
 
@@ -8954,19 +7943,13 @@ Settings > Customers shows tiles, each with icon, title, description, a bottom s
 |Credit limits|"Limit individual customers to<br>certain thresholds of credits"|"Disabled"or"Limits enforced"|Green when<br>enforced|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 225 of 277 
-
 |Tile|Description(exact)|Status strip|Dot|
 |---|---|---|---|
 |Customer|"Limit users and teams|"Disabled"or"Limits enforced" (the choice is|Red lock when|
-|visibility|access to customer records"|saved;it has no effect in the first version,see<br>SET-021)|limited|
+|visibility|access to customer records"|shown in the UI; actual enforcement unverified, see<br>SET-021)|limited|
 
 
-
-The "Credit limits" tile is shown for 10-4; the "Enforce credit limits" switch inside it is off at go-live (SET-020). 
+The "Credit limits" tile is shown for 10-4; the "Enforce credit limits" switch inside it is proposed Off at launch, approval pending (SET-020).
 
 ##### SET-017 "Margins and limits" window 
 
@@ -8981,7 +7964,6 @@ Globaltab. Column headings (hover tips in brackets): "Default" ("Start here"), "
 |LTL Volume<br>boost(orange<br>row)|One pick list"select volume boost"|"x0Not boosted", "x1.25<br>Small boost", "x1.5Medium<br>boost", "x2Max boost"|When a boost and an LTL<br>default are set,the resulting<br>margin is shown in orange|
 
 
-
 A grey note reads "These amounts can be overridden with customer-specific settings." and, in bold, "Owners aren't limited by these amounts." 
 
 LTLcarriers tab. One row per activated LTL carrier account: logo or initials, carrier name, account label or number, the same Default, Min %, Min $, Max $ boxes, and an orange "x{boost}%" when the carrier supports volume quotes. A value set here sets that carrier's limits (LTL-032). With none connected: "No LTL carriers connected." 
@@ -8989,10 +7971,6 @@ LTLcarriers tab. One row per activated LTL carrier account: logo or initials, ca
 Saving. Each box saves when the user leaves it. A green message "{label} saved" appears with an "undo" link. Labels: "TL Margin", "LTL Margin", "TL gross margin minimum", "TL gross profit minimum", "TL gross profit maximum", "LTL gross margin minimum", "LTL gross profit minimum", "LTL gross profit maximum", "LTL Volume boost". Clearing a box, or typing the value that is already inherited, removes that override. A failure shows a lasting red message ("An error occurred while saving." or the reason). Default margins can never be empty ("Default margin is required"). Dollar amounts may not exceed 1,000,000 ("Must be 1,000,000 or less"). 
 
 Price. Margin: the customer's margin, else the account default. Limits have four levels (LTL-032). Quote price = cost / (1 − margin), never less than cost plus the minimum profit (SHP-077, SHP-078). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 226 of 277 
 
 ##### SET-018 "Hide carrier names" window 
 
@@ -9002,7 +7980,7 @@ Title "Hide carrier names". Text: "By default, customers will be able to see the
 
 2. "Hide TL carrier names" — "Don't show the carrier name, USDOT, or MC numbers on the BOL." 
 
-"Done" closes. Both are off for 10-4. 
+"Done" is a visible close action. In the October26 sample Hide LTL carrier names was unchecked/disabled and Hide TL carrier names checked/disabled (main §19.3). These are mode-specific observations, not both Off or a verified universal default.
 
 ##### SET-019 "Customer login" window 
 
@@ -9012,25 +7990,21 @@ Title "Customer login". Master switch "Customer login" ("Contacts (with an email
 
 - "LTL auto-dispatching" — "Customer-booked LTL shipments will be automatically dispatched." 
 
-"Done" closes. Each customer can override these (section 4.7); when the company switch is off the customer page warns: "Customer login is disabled in account settings." / "You can still change this, but it won't have an effect until enabled by an owner of your account." All three are on for 10-4. 
+"Done" closes. Customer/global precedence requires testing (section 4.7); when the company switch is off the customer page warns: "Customer login is disabled in account settings." / "You can still change this, but it won't have an effect until enabled by an owner of your account." All three are on for 10-4.
 
 ##### SET-020 "Credit limits" window 
 
-Title "Credit limits". Switch "Enforce credit limits" (Members see "Enabled" or "Disabled") with the text "Block booking of new shipments when the balance of all open invoices and active shipments exceeds the customer's credit limit." and "Credit limits are set within each customer account." Below, dimmed until enforcement is on: switch "Notify on credit increase" — "Email all reps for customer when credit limit is increased." "Done" closes. The switch is saved; the e-mail itself is planned for later (section 1.7). Enforcement is off at go-live: credit figures are always shown, but no booking is blocked and no credit refusal message appears. When on, booking above the available credit is blocked (rule: PAY-022; messages: CUS-028, CUS029, LTL-025, LTL-075, POR-035). The automatic 31-day booking hold is planned for later. 
+Title "Credit limits". Switch "Enforce credit limits" (Members see "Enabled" or "Disabled") with the text "Block booking of new shipments when the balance of all open invoices and active shipments exceeds the customer's credit limit." and "Credit limits are set within each customer account." Below, dimmed until enforcement is on: switch "Notify on credit increase" — "Email all reps for customer when credit limit is increased." "Done" closes. The switch is saved; the e-mail itself is planned for later (section 1.7). Enforcement is proposed Off at launch, approval pending: credit figures are always shown, but no booking is blocked and no credit refusal message appears. When on, booking above the available credit is blocked (rule: PAY-022; messages: CUS-028, CUS029, LTL-025, LTL-075, POR-035). The automatic 31-day booking hold is planned for later.
 
 ##### SET-021 "Limit customer visibility" window 
 
-Lock icon and title "Limit customer visibility". Text: "When enabled, we limit who can access customer records. Only customer reps can view and run quotes for that customer." and "When disabled, users have access to all customer records." Footer row "Limit customer visibility" with a switch. Close by clicking outside. In the first version the choice is saved but not applied: every staff user sees every customer (ROL-019). 
+Lock icon and title "Limit customer visibility". Text: "When enabled, we limit who can access customer records. Only customer reps can view and run quotes for that customer." and "When disabled, users have access to all customer records." Footer row "Limit customer visibility" with a switch. Close by clicking outside. The sampled checkbox was disabled; help describes restriction to customer reps when enabled and all records when disabled. Actual enforcement/storage/team inheritance are unverified. Do not implement a no-op switch without explicit scope approval (main §19.3; ROL-019).
 
 ##### SET-022 Customer settings effect on other screens 
 
 Hidden carrier names apply to customer-facing quotes, documents and the portal (4.6, 4.11, 6). Customer login settings decide who may use the portal (4.11). 
 
 Credit limits block "Book" only when "Enforce credit limits" is on (PAY-022). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 227 of 277 
 
 ### 4.10.4 Accounting settings 
 
@@ -9049,7 +8023,6 @@ Tiles with a status strip and dot (green on, orange needs attention, white off):
 |QuickPay|"Carriers request a quicker<br>payment,you get a<br>discount."|"Not providing QuickPay"or"QuickPay<br>within"bold"{n}days" "({fee}%)"|QuickPay window|
 
 
-
 If accounting is off for the company, the page shows the heading "Simplify your accounting tasks.", the text "We've worked hard to build tools that make accounting easy. Tailored to the needs of freight brokers, these features take the pain out of invoicing and billing.", "Contact support to enable accounting.", and three panels "Shipper invoices", "Factoring" and "Carrier bills". Accounting is on for 10-4. 
 
 ##### SET-024 QuickBooks window 
@@ -9058,13 +8031,9 @@ Not connected: QuickBooks logo, "First, let's connect to QuickBooks", "When prom
 
 Bills: a picker "Expense account:" (placeholder "Select expense account for bills..." or "Currently: {name}", each option shows the full account name and its type), a clear button, and a switch "Sync bills" ("Sync carrier bills"), usable once an account is chosen. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 228 of 277 
-
 - Invoices: a picker "Service:" (placeholder "Select service item for invoices..."), a clear button, and a switch "Sync invoices" ("Sync customer invoices"), usable once a service is chosen. 
 
-Clearing a choice also switches off its sync. If the account list cannot load, a red bar says so. What is pushed and when: INT-025 to INT-035. 
+Clearing a choice also switches off its sync. If the account list cannot load, a red bar says so. What is pushed and when: section 7 accounting review (sync behavior unverified).
 
 ##### SET-025 Cc invoices window 
 
@@ -9085,7 +8054,6 @@ Title "When entering a vendor bill..." Label "Set Bill date to" (Bill date in bo
 |"Delivery/date"|The delivery date|Delivery(green)|
 
 
-
 Then "Pay within" and a number box "days" (0 to 120, default 30). "Done" closes. Defaults on carrier bills (4.5); a carrier can have its own terms (4.8). 
 
 ##### SET-028 Factoring window 
@@ -9095,10 +8063,6 @@ Title "Factoring" with a master switch ("Enable factoring"/"Disable factoring").
 ##### SET-029 QuickPay window 
 
 Header "QuickPay" and a master switch "Allow Quickpay". Dimmed until on: "Pay within" a number of days and "For a discount of" a percent (0 to 100, up to 2 decimals). QuickPay can only be switched on once both are filled ("Enter the QuickPay days and discount first"). "Done" closes. QuickPay is off for 10-4 (3 days and 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 229 of 277 
 
 2.5% are stored for later). The setting is saved, but carriers cannot request quicker payment yet (planned for later). 
 
@@ -9128,17 +8092,11 @@ A red panel "Failed to save external attribute definition" shows the reasons.
 |Code|Text<br>(monospace)|Yes|Made<br>from the<br>name<br>(lower<br>case,<br>spaces<br>become<br>dashes)|Letters,numbers,dots,dashes,underscores("Use lowercase<br>letters,numbers,dots,dashes or underscores").Permanent<br>once saved(shown with a lock)|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 230 of 277 
-
 |Field|Input|Required|Default|Rules|
 |---|---|---|---|---|
 |Entity<br>types|One switch per<br>type:<br>"Customers",<br>"Vendors/<br>Carriers",<br>"Contacts",<br>"Addressbook<br>Entries",<br>"Shipments"|At least<br>the types<br>you want|All on|Turn off the types that do not exist in the outside system|
 |URI<br>Template|URL box under<br>each switched-<br>on type|No|Empty|Must start with https://or http://and contain{value} (for<br>example<br>`https://crm.example.test/customers/{value}` ).<br>"Enter a URL that contains{value}"|
 |Ensure<br>unique<br>values|Switch||On|On:one outside ID can be linked to one record only.Off:<br>duplicates allowed("Enforce uniqueness"/"Allow duplicates"<br>is shown when editing).Cannot be changed later<br>("Uniqueness cannot be changed")|
-
 
 
 "Save" stores the definition. 
@@ -9160,10 +8118,6 @@ Users enter values on customers and carriers/vendors (4.7, 4.8): 1 to 200 charac
 ##### SET-035 External references for shipments 
 
 Definitions for Contacts, Addressbook Entries and Shipments can be created, but values can only be entered on customers and carriers/vendors. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 231 of 277 
 
 ### 4.10.6 Notifications 
 
@@ -9199,16 +8153,11 @@ Breadcrumb "Settings / Users", heading "Users". Owners see a box "Invite by emai
 |email|in lower case||Already a user: "Already on the account".Any other problem: "Something went<br>wrong"|
 
 
-
 "Invite" (Owners only) creates a pending invite with role Member, sends the invite e-mail (section 5, Invite), shows the person in "Invited" and empties the box. One waiting invite per e-mail. 
 
 ##### USR-003 Invited rows 
 
 Under "Invited" each row shows the e-mail and the date invited. Clicking opens the invite card (USR-007). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 232 of 277 
 
 ##### USR-004 Counts 
 
@@ -9244,7 +8193,7 @@ Invites expire after 14 days; expired ones stay listed so an Owner can resend or
 
 ##### USR-009 Users page for Members 
 
-Members see the lists and can open cards, but have no invite box, no role switch, no trash and no resend. 
+The sampled Member opened their card and saw a disabled unchecked Owner checkbox. A universal absence of the role control is incorrect; invite/remove/resend rights and other-user variants remain unverified (main §19.1).
 
 ##### USR-010 Unknown links 
 
@@ -9253,10 +8202,6 @@ A link to a user or invite that does not exist returns to the Users list; a vali
 ##### USR-011 Last Owner and self rules 
 
 The company must keep at least one Owner; nobody can change or remove themselves (ROL-015, ROL-016). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 233 of 277 
 
 ### 4.10.9 Teams 
 
@@ -9287,10 +8232,6 @@ On a user's card and on your own profile, "+ add to team" opens a window "Add to
 ##### USR-018 Manager 
 
 A person's quick card on a team page has a footer row with the team name and an Owners-only "Manager" switch (orange background when on). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 234 of 277 
 
 ##### USR-019 Delete team 
 
@@ -9324,16 +8265,11 @@ Breadcrumb "Settings / Company". A centered card with header "Company informatio
 |Billing contact,Billing email,<br>Billing phone,Billing address|Same as above|Yes|Same as the<br>payment block|Same rules|
 
 
-
 The blue "Update" button is disabled until something changed and every required field is valid. On success: "Changes saved" with an "undo" link that restores the previous values. On failure: the first field error, or "Something went wrong!". 
 
 ##### ACT-003 "Customers send payment to" and "Carriers send bills to" 
 
 Two blocks: "Customers send payment to" (printed on invoices) and "Carriers send bills to" (printed on rate confirmations). A small switch "Same" beside the second heading, on at the start when the blocks are 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 235 of 277 
 
 identical, copies the payment fields into the dimmed billing fields (and keeps copying changes). 
 
@@ -9366,16 +8302,11 @@ Reached from the navigation user block or the "Your profile" tile. Breadcrumb "S
 |Phone|US phone with<br>flag|Yes|Your phone|Complete US phone;an extension is allowed("(555) 010-<br>0101 ×8")|
 
 
-
 "Save" is disabled until something changed. Success: "Profile updated". Failure: a red line under Phone and the message "Profile update failed". 
 
 ##### ACT-008 Photo and teams 
 
 Click the round photo to upload one (PNG, JPEG, WEBP or GIF, up to 5 MB); a "remove" button with a trash icon shows when set ("Failed to remove photo" on failure). The team block lists your teams; "+ add to team" and the team trash follow USR-017 (Owners only). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 236 of 277 
 
 ##### ACT-009 Change password 
 
@@ -9387,7 +8318,6 @@ The outlined button "Change password" opens a grey box with:
 |password||
 |New|Required.A show/hide eye button.The rule box(red)appears after a failed attempt: "Please ensure|
 |password|password contains a lowercase letter,upper case letter,a number,a special character,and is at least8<br>characters in length."|
-
 
 
 Buttons: "Change password" (blue, disabled while empty or saving) and "Cancel". Success: "Password changed"; the box closes and your other devices are signed out. Failure: "Password change failed". Customers do not have this button (they have no password). 
@@ -9410,10 +8340,6 @@ Dark full-screen page, white card: heading "Log in", fields "Email" and "Passwor
 
 Dark page with a user icon, heading "Logged out", "You've been logged out." and an outlined button "Log back in" (to "Log in", then back to the previous page). Logout failure: "Error logging out" with "Try again". Also shown when a session ends. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 237 of 277 
-
 ##### ACT-014 Invite page, new person 
 
 Company logo, "{inviter name} invites you to join the team at {company}.", a white card with the sign-up form (ACT-016) and "Already have an account? Log in". 
@@ -9435,7 +8361,6 @@ Card with photo or initials, name, e-mail and two buttons: "Continue" (sign in a
 |Password|Password|Yes|"Please ensure password contains a lowercase letter,upper case letter,a<br>number,a special character,and is at least8characters in length."|
 
 
-
 Button "Save" is disabled until the form is valid. Other errors: "Something went wrong". After "Save" the person is signed in and sent to the join page. 
 
 ##### ACT-017 "That email sounds familiar" 
@@ -9449,10 +8374,6 @@ A dark page with an icon and "Oops, this invite isn't working." and "Try contact
 ##### ACT-019 Join page 
 
 A white card with the person's photo, an arrow and the company logo, the heading "Join {company}" and the sentence "I accept the invitation to join {company}." Buttons: "Decline" (back to the home page, nothing changes) and "Agree & join". The person must be signed in with the invited e-mail ("This invite was sent to a different email address."). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 238 of 277 
 
 ##### ACT-020 After joining 
 
@@ -9478,7 +8399,9 @@ Opened from the e-mail link (valid 60 minutes, once). Heading "Change Your Passw
 
 Subject "Reset your password". Text: "We received a request to reset the password for {e-mail}." with a "Reset your password" link; footer "The link expires in 60 minutes. If you did not ask for this, ignore this email; your password does not change." (Section 5.) 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 - Owner: edits all Settings pages, Users, Teams, Company, Import and the Load boards tile; own profile. Member: reads Settings pages, Users, Teams and Company; edits own profile, photo and password; can use the Data page. 
 
@@ -9488,15 +8411,27 @@ Subject "Reset your password". Text: "We received a request to reset the passwor
 
 - Role rules: ROL-002, ROL-003, ROL-025. 
 
-10-4 TMS — Functional Specification · v0.1 
+## 4.11 Customer portal and secure links
 
-Page 239 of 277 
+**Evidence review — proposed external experience, not verified:** Main §§1, 14.10, 17.7, 18.2 and 19.3–4 explicitly say separate customer/carrier/driver sessions and recipient-access tests were unavailable. Broker-side customer-login settings, sharing controls, an existing recipient list and signed document-download URLs do not prove a portal workflow or authorize use of a private recipient link.
 
-## 4.11 Customer portal and secure links 
+| Requirements reviewed | Available evidence | Unverified requirements retained for review |
+| --- | --- | --- |
+| POR-001–013 | Customer login/global automation help and copy-link controls (§§12.5/19.3) | Eligibility, contact/multi-customer identity, instant revocation, branding/navigation, magic-link mechanism/15-minute/one-use life, enumeration/error handling and API isolation |
+| POR-020–036 | Broker LTL form/results and customer automation settings | Every customer form/result/booking/terms screen, customer authority, timing, state/credit/dispatch/terms-version effects |
+| POR-040–054, POR-060–062/070 | Broker shipment/document/invoice/history and carrier-hiding help | Customer list/export/price/contact/driver/map/document access, statement/download/credit/request/profile flows, queues and live isolation |
+| LNK-001–003, LNK-027–030 | Broker sharing/recipient states; signed object URLs (§17.7/Deep3) | Per-recipient app-link scheme, 42-day lifetime/renewal, revocation/denial/rate-limits, all security enforcement and password-reset60-minute policy |
+| LNK-004–009 | Broker quote Sharing and view-only text “can't book quotes” (§14.10/Deep1) | Copied-link format, who can access/book, copy-to-share writes, token handling, criteria/booking/signed-in transition and latest-version policy |
+| LNK-010–016 | Share BOL checkbox, contact-email label, BOL/labels/POD entry points | Actual sends/recipients, no-login shipment/document rendering, generation permissions and fields/audience |
+| LNK-020–022 | Broker invoice/send/share entries | Recipient invoice content/access and post-edit revision policy |
+| LNK-023–026 | Rate-con/packet/terms entries and existing confirmation marks | Carrier secure page/wizard, uploads/signature/insurance validation, acceptance, expiry and notification effects |
+
+**Cross-section conflicts remain decisions, not facts:** POR-043's document list differs from DOC-008's customer-confirmation access claim; TRK-095 implies a route map on shared tracking while LNK-011 excludes it; INV-019/LNK-007 imply latest invoice content while LNK-022 hides the old copy pending resend. Portal and recipient-link audiences may differ, but the source has not proved that distinction. Resolve each allowlist/revision policy with test recipients before implementation.
+
 
 In short: Customers of 10-4 can sign in to a portal with their e-mail address, run LTL quotes, book, follow their shipments, download their documents and see their invoices. They see prices only, never 10-4's cost or margin. People who do not sign in (a shipper contact, a carrier, a customer's accountspayable clerk) use secure links from e-mails that open one quote, one shipment, one invoice, one rate confirmation or one carrier packet. Staff control who gets access and what is shared. 
 
-Note on the customer screens. The customer screens in this section follow the agreed design. They will be confirmed against 10-4's test customer login (see the Summary, section 9). 
+The customer screens below are draft design proposals. No agreed portal design, separate test customer session or client sign-off is recorded in the main source (SC-02/03/05). The missing companion Summary is not approval evidence.
 
 ### 4.11.1 The customer portal 
 
@@ -9524,17 +8459,11 @@ A person can use the portal only when all of these are true:
 |Customer settings,<br>"Booking and quoting"|"Customer login", "Enable<br>booking",auto-quoting,auto-<br>dispatching|The same switches for one customer. "Enable booking"off is a<br>booking hold(POR-035).|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 240 of 277 
-
 |Where|Switch|What it controls|
 |---|---|---|
 |Settings>Customers|"Hide Carrier Names"|Whether customers see carrier names(POR-060). 10-4|
 |> "Reveal carrier<br>names"||currently shows carrier names.|
-|Settings>Customers<br>> "Credit limits"|"Enforce credit limits" (Owner)|Whether booking stops when credit is used up(POR-035;rule<br>in PAY-022and SET-020).Off at go-live:credit figures are<br>kept,but no booking is stopped for credit.|
-
+|Settings>Customers<br>> "Credit limits"|"Enforce credit limits" (Owner)|Whether booking stops when credit is used up(POR-035;rule<br>in PAY-022and SET-020).Launch value pending approval; the dated source shows Disabled. Credit figures are<br>kept,but no booking is stopped for credit.|
 
 
 ##### POR-003 The login link 
@@ -9570,10 +8499,6 @@ A used, expired or damaged link shows the card "This login link is invalid or ha
 ##### "We don't recognize that email address." 
 
 When the e-mail is no longer a portal contact, the screen shows 10-4's logo and name, the heading "We don't recognize that email address.", the line " wasn't found" and two cards: "Need an account? Call us to set up a 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 241 of 277 
 
 new account." with a "Call" button (10-4's phone) and "Wrong email? Try logging in again with a different email address." with a "Log out" button. 
 
@@ -9611,10 +8536,6 @@ The customer uses the same "Get quotes" form as staff (section 4.6) with these d
 
 - The footer notes are always shown: "Pickup dates not guaranteed. Transit times and delivery dates are estimated." and, with sort & segregate, "Sort & segregate quoted price is a minimum. Final charge based on shipment and work performed." 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 242 of 277 
-
 The yellow "no active carriers" banner is for 10-4 and never shows. 
 
 - "Get quotes" with an empty freight class shows "Choose a freight class"; the "Est: " chip helps. Requests can start from an earlier request (duplicate) and from a shipment. 
@@ -9648,11 +8569,6 @@ The page shows "Quotes for " with the contact's name, the "+ Ref" editor, the ".
 |No credit(only when"Enforce credit<br>limits"is on,and no quote fits)|"No credit" / "Contact your broker to set up a line of credit before booking."|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 243 of 277 
-
 |Situation|Message|
 |---|---|
 |Credit used up(only when"Enforce credit|"Insufficient credit" / "These quotes can't be booked because your credit limit|
@@ -9660,7 +8576,6 @@ Page 243 of 277
 |Quote too expensive for available credit<br>(only when"Enforce credit limits"is on)|Under the button: "Insufficient credit to book this quote"|
 |Nothing found|"Your criteria didn't return any quotes."with"Edit criteria"|
 |Booked|"Shipment booked from these quotes"with"View Shipment"|
-
 
 
 ##### POR-024 What customers can change on their request 
@@ -9699,10 +8614,6 @@ Clicking the price opens the book page, the booking form of section 4.6 with the
 
 - The button reads "Book for $X". 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 244 of 277 
-
 ##### POR-031 Customer Terms & Conditions 
 
 A card with the link "Customer Terms & Conditions" and the box "I have read & agree" appears on the book page. The box is required: if empty, the page shows "Please agree to the terms". The link opens 10-4's document (a web address in a new tab, or a window with the terms text). If 10-4 has not set a document yet, the label is plain text. The date and version of the terms agreed are saved on the shipment. 
@@ -9731,7 +8642,7 @@ The shipment page opens (POR-041). The results page shows the booked quote and "
 
 - A customer with "Enable booking" off cannot book; the book buttons are disabled and the bar "Booking disabled" / "Contact rep for more info" shows. 
 
-- Only when the Owner setting "Enforce credit limits" is on (off at go-live; PAY-022), a quote whose price is above the customer's available credit cannot be booked. With it off, credit never stops a booking. Customers never see credit amounts, only the messages in POR-023. 
+- Only when the Owner setting "Enforce credit limits" is on (proposed Off at launch, approval pending; PAY-022), a quote whose price is above the customer's available credit cannot be booked. With it off, credit never stops a booking. Customers never see credit amounts, only the messages in POR-023.
 
 ##### POR-036 Auto-dispatch for customer bookings 
 
@@ -9742,10 +8653,6 @@ Shipments, tracking, documents
 ##### POR-040 Shipments list 
 
 "Shipments" lists the customer's own shipments in a flat list with the filters Status, Pickup date, Delivery date, a search box and (only for a customer with several companies) Customer. Rows show BOL number, status, 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 245 of 277 
 
 dates, lane, customer, carrier (hidden when carriers are hidden) and price; no cost or profit columns. Search finds shipments by BOL, customer, contact, stop and reference text, not by carrier, driver, pickup number or internal notes. Empty: "No active shipments" with "Switch to all shipments". The "Export" button downloads a CSV with BOL #, Status, Pickup date, Delivery date, Origin, Destination, Reference numbers, Price and, when carriers are shown, Carrier name. 
 
@@ -9782,17 +8689,11 @@ There is no separate tracking page. The shipment page shows, for each stop, the 
 |Customer statement|"Download statement"on"Invoices".|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 246 of 277 
-
 ###### Document 
 
 Carrier rate confirmations, carrier bills and other uploaded documents are never available. Opening a page never creates a document; BOL and labels are created only when the customer clicks the button (or at booking). 
 
 How the customer gets it 
-
 
 
 #### Invoices, data, profile 
@@ -9817,10 +8718,6 @@ A customer sees only the credit messages in POR-023; other credit details stay w
 
 The "+" next to "Shipments" opens a small menu: "Quote" (opens the LTL form) and "Shipment". "Shipment" opens a request form: the customer is fixed, the equipment list is the truckload list (Dry Van by default) with "Partial", "Tanker endorsement" and "Team service", the stops (2 to 10), the items (description, quantity, packaging, weight, size, hazmat, commodity), "Total value", and the note "Pickup, transit and delivery dates are estimated." No vendors, cost, carrier or reps. The button is "Save shipment". The request is saved as a requested shipment and lands in 10-4's "Finish booking" queue where staff price and book it (section 4.2). The customer sees it in "Shipments" with the status "Requested". Changing a request is done by calling the rep (the "Questions?" block). 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 247 of 277 
-
 ##### POR-054 Profile 
 
 The profile page shows the avatar (the customer can upload a picture), the badge "Customer", First name, Last name, Email (read-only), Phone, "Save" and "Log out". No "Change password" (customers have no password) and no team block. 
@@ -9839,7 +8736,6 @@ The profile page shows the avatar (the customer can upload a picture), the badge
 |The shipment shows who booked it(the customer<br>contact)and that it came from the customer.||
 
 
-
 #### What is hidden from customers 
 
 ##### POR-060 Carrier names 
@@ -9856,10 +8752,6 @@ Cost, margin, profit, markup; the carrier account used; vendors; carrier contact
 
 Customer pages update on their own, for the customer's own items only. The results page shows new quotes as they arrive; the shipment page shows new status, tracking times and documents (BOL and labels buttons change from a spinner to the file when ready); the invoices page shows new invoices. Secure-link pages: LNK-005, LNK-011, LNK-027. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 248 of 277 
-
 ### 4.11.2 Secure links 
 
 What a secure link is. An address in an e-mail that opens exactly one page without signing in, through a private part that cannot be guessed and is saved with the e-mail so staff see when it was sent and opened. It cannot reach any other page. All secure pages show 10-4's logo and name at the top and, where it fits, a "Questions?" block with the rep's name, company, address and the buttons "Call" and "Email". Pages are marked so search engines do not list them. 
@@ -9871,6 +8763,9 @@ The system will create one link per e-mail address. Sending again to the same ad
 ###### LNK-002 
 
 ##### Expiry 
+
+**No verified duration:** The 42-day application-link and 15-minute sign-in values below are proposals. Main §17.7/Deep3 OQ-40 leaves expiry/access open. S3 signed object URLs and application recipient-share links are distinct mechanisms; neither establishes the other’s lifetime.
+
 
 A secure link works for 42 days from the day it was last sent (each new send gives a fresh 42 days). After that, or if staff remove the share, or 10-4's account is disabled, the page shows the plain blue panel (LNK003). The portal login link is different: 15 minutes, once (POR-007). The carrier rate confirmation link follows these rules too (LNK-023). 
 
@@ -9896,10 +8791,6 @@ The page title is "Quote Request #" (or "Quote Request"). It shows:
 
 - The yellow banner "These are old quotes." / "Changes were made during or after booking." with "See latest quotes" when the request was changed after booking (one banner only). The link follows the request 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 249 of 277 
-
 to its latest version. 
 
 The read-only lane card (no pencil). 
@@ -9922,7 +8813,7 @@ The "Questions?" block; its e-mail button opens a mail with the subject "Re: Quo
 
 ##### View-only link 
 
-The "Copy link" link opens the same quote page without the private part. Anyone with it sees the quotes but there is no "Book" button, only the price; no credit chip, no link to a shipment and no "See latest quotes". It works only while the request is shared and not canceled. View-only sharing is switched on when the link is copied and off when staff stop sharing. 
+The broker UI offers a view-only Copy link labeled “can't book quotes.” Its URL/token structure was not copied or tested; the former “without the private part” assertion is unsupported. Anyone with it sees the quotes but there is no "Book" button, only the price; no credit chip, no link to a shipment and no "See latest quotes". It works only while the request is shared and not canceled. View-only sharing is switched on when the link is copied and off when staff stop sharing.
 
 ##### LNK-007 Booking from the e-mailed link 
 
@@ -9937,10 +8828,6 @@ Clicking "Book" opens "Book Quote Request #": the portal booking form (POR-030) 
 ##### LNK-009 After booking from a link 
 
 The short pop-up message "Shipment booked" shows and the customer is taken to the shipment page (LNK011), which opens with the same link. If the request already has a shipment, the book page opens the shipment page directly. A missing request or quote shows "Error loading quote request" / "The quote request you're looking for is missing." with "Quote again". Booking checks, terms rule and hold rules are those of POR-032. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 250 of 277 
 
 #### Shipment page (BOL share) 
 
@@ -9982,10 +8869,6 @@ The page title is "Shipment BOL #". It shows:
 
 After delivery, "View POD" opens a viewer with the proof-of-delivery documents. The recipient cannot remove or upload documents. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 251 of 277 
-
 ##### LNK-015 Link from a quote link 
 
 A booked quote link also opens the shipment page (LNK-009). 
@@ -10018,10 +8901,6 @@ The rate confirmation e-mail to a carrier contains a link to the rate confirmati
 
 When 10-4 asks a carrier for its latest packet (carrier page, section 4.8; also when covering with "Cover & request packet"), the carrier gets an e-mail with a link to a short guided page "<10-4 name> wants your latest carrier packet". The link is tied to that carrier and to the one packet request. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 252 of 277 
-
 ##### LNK-025 Packet steps 
 
 |Step|What the carrier sees and does|
@@ -10033,7 +8912,6 @@ Page 252 of 277
 |Thank you|"Thanks for sending us your carrier packet" / "We'll review your packet and get back to<br>you."with"Back home".|
 |Help|"This is not me"shows"Did we get something wrong?" / "Give us a call and we'll get<br>things fixed."and a call button with10-4's phone,and"Back home".|
 |A completed packet can be<br>sent again.Any load error<br>shows"Error loading Carrier<br>Packet".Staff review is in<br>section4.8.||
-
 
 
 ##### LNK-026 Carrier terms link 
@@ -10054,10 +8932,6 @@ The page shows only an explicit allow-list of fields for its purpose. A field ad
 
 - Secure pages record who did it as "the link recipient" (not a staff member), so the shipment timeline reads clearly. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 253 of 277 
-
 Too many requests from one address in a minute show a "too many requests" answer. 
 
 ##### LNK-028 Turning links off 
@@ -10071,7 +8945,6 @@ Too many requests from one address in a minute show a "too many requests" answer
 |Wait42days|The link expires.|
 
 
-
 ##### LNK-029 Resend 
 
 Staff can send a link again: the circular "resend BOL" icon, the BOL page's "Send" / "Resend", "Email quotes" in the sharing window, the invoice share window, and the resend control on the rate confirmation. 
@@ -10080,7 +8953,9 @@ Staff can send a link again: the circular "resend BOL" icon, the BOL page's "Sen
 
 The link in the password-reset e-mail is a secure link of a different kind: it works for 60 minutes and once, and stops working if the password or the login e-mail changed in the meantime. See section 4.10. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier/recipient|
 |---|---|---|---|---|
@@ -10094,22 +8969,24 @@ The link in the password-reset e-mail is a secure link of a different kind: it w
 |Sign a rate confirmation|No|No|No|Yes,carrier with the link|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 254 of 277 
-
 |Action|Owner|Member|Customer|Carrier/recipient|
 |---|---|---|---|---|
 |Send a carrier packet|No|No|No|Yes,carrier with the link|
 
 
+## 4.12 Notifications and Live Updates
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial:** Main §§19.1/6 and Deep1–3 record No sources configured, UI loading/settled changes, WebSocket frames and automatic metadata requests. These do not establish the claimed business-event subscriptions, broadcast audience, callback ordering, permissions or refresh timing.
 
-Page 255 of 277 
+| Requirements reviewed | Supported portion | Proposed / unverified portion |
+| --- | --- | --- |
+| NTF-001–002 | Dated broker queue labels/counts and navigation | Full eligibility, zero hiding/equality and midnight/reconnect refresh contract |
+| NTF-010–018 | Sent/received WebSocket events, document loading, Recently visited metadata | Company-private isolation, session revocation, 1–15sec backoff, every event-to-page refresh, stale-form protection, 2/3sec polling and five-per-kind cap |
+| NTF-020, NTF-030–032 | Not sent/recipient/time sharing display; copy feedback observed in bill inspection | Complete delivery/open/failure meaning, toast timings/catalog, undo, and universal confirmation-before-send promise |
+| NTF-040–042 | Notification window says Choose in-app notification alerts to receive / No sources configured | Per-user persistence, all-source absence, no email settings and complete inbox/announcement scope |
 
-## 4.12 Notifications and Live Updates 
+No sources configured concerns that sampled in-app settings window; it does not prove all email/SMS alerts are off. OQ-28 leaves quotesFilter scope/audit behavior unresolved. Existing events and request HTTP success must not be promoted to a tested live-update protocol.
+
 
 In short: The system keeps every open screen up to date without reloading. When one user changes a shipment, a quote, a document or a payment, everyone else looking at it sees the change within seconds. In-app alerts are simple: count badges on the sidebar queues, short pop-up messages after an action, status marks on shared items, and one small notification settings window. E-mails are covered in section 5. 
 
@@ -10129,7 +9006,6 @@ Broker users see an orange count badge on each work queue in the left sidebar. A
 |Confirm deliveries("Confirm delivery"when the<br>count is1)|In-transit loads with a delivery date before<br>now|Section4.4|
 
 
-
 The block of queues shows when at least one queue has a count above 0. The "Confirm deliveries" row shows whenever its own count is above 0. 
 
 Screen readers hear, for example, "Cover 53 outstanding tasks". 
@@ -10141,10 +9017,6 @@ Customers (portal users) and carriers never see these badges.
 ##### NTF-002 When the counts refresh 
 
 Counts are re-checked when any shipment, quote or carrier changes (by anyone), when the connection is restored, and when the user moves to another page. The clock does not change counts: a load whose pickup date passes at midnight enters "Confirm pickups" at the next refresh. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 256 of 277 
 
 ### Live updates 
 
@@ -10172,14 +9044,9 @@ When a change is saved, every other open screen showing that item is refreshed w
 |Terms changed|Terms pages|
 
 
-
 ##### NTF-012 Shipment timeline 
 
 The timeline on the shipment page gets the new line as soon as it happens (section 4.2). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 257 of 277 
 
 ##### NTF-013 Open forms are never overwritten 
 
@@ -10220,18 +9087,12 @@ Wherever a document is shared by e-mail (BOL, rate confirmation, invoice, quote,
 |"Unopened" (grey)|Sent;the recipient has not opened the link.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 258 of 277 
-
 |Mark|Meaning|
 |---|---|
 |"Opened" (green|Opened.Hovering shows when.|
 |check)||
 |"Failed to send" (red)|The e-mail could not be delivered.Hovering lists the reason(for example dropped,deferred,<br>bounced,blocked).|
 |Pending|Still being sent.|
-
 
 
 ### Messages 
@@ -10253,7 +9114,6 @@ After most actions a short plain-text message appears for a few seconds in the l
 |E-mail could not be<br>queued|"E-mail could not be queued."|
 
 
-
 ##### NTF-031 Undo 
 
 Some messages carry an Undo link (deleting a tracking event, deleting a note, and similar). Undo restores the item. 
@@ -10261,10 +9121,6 @@ Some messages carry an Undo link (deleting a tracking event, deleting a note, an
 ##### NTF-032 Confirmations before risky actions 
 
 Actions that send an e-mail to someone outside the company or revoke access ask first, for example "Stop sharing these quotes?" with "The customer will no longer see these quotes." and the buttons Not now and Stop sharing. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 259 of 277 
 
 ### Notification settings 
 
@@ -10282,7 +9138,9 @@ The window shows a grey box with "No sources configured", because no in-app aler
 
 There is no bell icon, notification inbox or unread count in the first version. Alerts that need action show as queue badges (NTF-001), warnings on the shipment page (section 4.4) and the dashboard (section 4.1). 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -10293,12 +9151,21 @@ There is no bell icon, notification inbox or unread count in the first version. 
 |See share status marks|Yes|Yes|No|No|
 
 
+## 5. E-mails
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — proposed send catalogue:** Main §§12.4–6, 14.10, 16.5, 17 and 19.2 establish mail-related controls/help, not delivered email. No message, invite, verification/reset, packet request, invoice or statement was sent during source inspection or this validation.
 
-Page 260 of 277 
+| Requirements reviewed | Source-supported portion | Proposed / unverified contract |
+| --- | --- | --- |
+| EML-001–006 | Broker share/recipient states; rate-con reply-to/phone fallback help (§19.2) | One mail per recipient, envelope sender/Cc/reply-to, token scheme/expiry, attachment generation/merge, delivery/open states, three retries/30sec backoff, failure atomicity and duplicate suppression |
+| EML-010–011 | Per-stop Share BOL/contact-email and resend/update entry | Actual To list, defaults/inheritance, subject/body, attachments/links, deduplication and cancellation/resend behavior |
+| EML-020–026 | Cover/send/packet branches, existing Confirmed and Share, terms/email override help | Sent PDF/body/subject, hold release, signed-copy conditional send, amendment triggers, no dropped-carrier mail, tracking SMS ownership and mailbox handling |
+| EML-030–033 | Invoice/statement/quote-send entries and preferences; Not sent differs from visibility | Recipient/body/subject, billing-address save, attachments versus merged PDF, POD gate, statement content/caching, copy-link sharing and actual delivery |
+| EML-050 | Packet-request entry/help | Full request email/wizard/recipient1–10 range/renewal |
+| EML-060–063 | User/login settings and profile entry points | Invite/verification/reset/customer-login email templates, 14day/24hour/60minute/15minute lifetimes, enumeration and session handling |
 
-## 5. E-mails 
+Quoted subjects/bodies and incomplete phrases below are draft copy, not captured messages. Supply explicit broker/BOL/party/link/date placeholders and approve the complete templates before implementation; do not ship phrases such as “on behalf of.” or filenames with blank identifiers. No-send assertions in the final list are also unverified. A button's label does not prove whether the app or an external provider sends a message.
+
 
 In short: Every e-mail the system sends: trigger, recipient, content, attachments, resending and failure handling. The three day-to-day messages are the BOL and labels to the shipper, the rate confirmation to the carrier, and the invoice to the customer. This section is the home for e-mail contents; other sections point here (EML IDs). 
 
@@ -10334,10 +9201,6 @@ Each send has a status visible where the item is shared: Pending (being sent), S
 
 - A message is never sent twice by accident: a retry sends only if the earlier try did not go out. 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 261 of 277 
-
 ##### EML-005 Attachments and links 
 
 BOL, rate confirmation, invoice and statement e-mails carry the PDF as an attachment and a link to the secure page. Documents are produced when the e-mail is sent. PODs are attached to the invoice e-mail as separate files per the customer setting "Combine PDFs (bill and POD)" (CUS-015, DOC-012). Nothing is merged into one PDF, and the BOL is not attached to the invoice e-mail. 
@@ -10365,16 +9228,11 @@ Subjects and texts below are the wording the system will use; 10-4 can supply di
 |13|Customer portal sign-in link|Customer contact|Customer asks to sign in|Often<br>(customers)|
 
 
-
 ### BOL and labels 
 
 ##### EML-010 BOL and labels to the stop contacts 
 
 When a load is booked from the booking form, one e-mail goes to each e-mail address on each stop where "Share BOL" is on (stop 1 is on by default; the address book remembers each contact's choice). Duplicate 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 262 of 277 
 
 addresses get one e-mail. If no stop has such an address, nothing is sent. Reply-to is the user who booked. 
 
@@ -10385,7 +9243,6 @@ addresses get one e-mail. If no stop has such an address, nothing is sent. Reply
 |Attachments|The BOL PDF and the labels PDF.|
 |Links|Secure shipment page(BOL,POD)and secure labels page(labels in half-letter and4×6).|
 |Customer rate confirmation|Not attached(staff send it separately,section6).|
-
 
 
 ##### EML-011 Sending the BOL again 
@@ -10416,11 +9273,6 @@ Trigger: the carrier is assigned with "Cover & send rate con" (an approved carri
 |Reply-to|The rate confirmation reply-to in Settings,else the user who covered the load.|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 263 of 277 
-
 ##### EML-021 Held rate confirmations 
 
 While a carrier needs approval, the rate confirmation is held and not sent. When an Owner approves the carrier, it is sent. For a blocked ("Don't use") carrier, only an Owner can turn on "Override coverage status"; the rate confirmation then goes out at once. A Member cannot override. Until then the message is "Rate con will be sent when you approve this carrier". With "Cover & request packet" the packet request goes first (EML050). Plain "Cover" (new carrier, packet request off) sends no e-mail. 
@@ -10440,10 +9292,9 @@ Trigger: the carrier signs and a carrier agreement applies and was agreed to (se
 |Reply-to|As in EML-020.|
 
 
-
 ##### EML-023 Updated rate confirmation 
 
-Trigger: after a change to price, terms, dates, appointment or pickup number on a signed load, with "Send updated Rate con" on. The switch is off by default and, when shown, a hover list tells who will be e-mailed. Same format as EML-020; the link page lists what changed and has a Confirm changes button. The rate confirmation returns to "draft" until the carrier confirms. 
+Trigger: after a change to price, terms, dates, appointment or pickup number on a signed load, with "Send updated Rate con" on. A universal Off default is contradicted by checked Rate Con controls in sampled assigned shipment and appointment editors (main §16.5/7; Deep2 E-140/142). This separate context, exact recipients and actual sending remain unverified. Same format as EML-020; the link page lists what changed and has a Confirm changes button. The rate confirmation returns to "draft" until the carrier confirms.
 
 ###### EML-024 
 
@@ -10458,10 +9309,6 @@ The text message with the Trucker Tools app link goes to the driver from Trucker
 ##### EML-026 Carrier paperwork mailbox 
 
 The default rate confirmation terms ask carriers to send BOL, invoice, rate agreement and POD to 10-4's accounting mailbox. The system does not read that mailbox. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 264 of 277 
 
 ### Customer e-mails 
 
@@ -10478,7 +9325,6 @@ Trigger: Send invoice on the invoice page, or the bulk Send invoices window (sec
 |Attachments|The invoice PDF;the POD as separate file(s)per"Combine PDFs(bill and POD)" (DOC-012).The BOL is not<br>attached;nothing is merged.|
 |Link|Secure invoice page with the invoice and POD.|
 |Reply-to|The user who sent it.|
-
 
 
 One send per address; pressing Send twice or a network retry does not send a second e-mail. Resending is a deliberate action ("Resend"). 
@@ -10502,12 +9348,7 @@ Trigger: Send statement on the customer's Invoices tab, with the line "Send an e
 |After sending|The card shows"Last sent by".|
 
 
-
 A customer with no open invoices, or an archived customer, gets no statement (the user sees an error). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 265 of 277 
 
 ##### EML-033 Quote share 
 
@@ -10522,7 +9363,6 @@ Trigger: Send email in the quote Sharing window (section 4.6).
 |Preview|A Preview shows the e-mail before sending.|
 |Link|Secure quotes page,with prices,where the customer can book.|
 |Stop|Stop sharing(confirmation"Stop sharing these quotes?")ends access.Sharing again sends a new e-mail.|
-
 
 
 A Copy link option shares the quotes page without an e-mail; copying the link turns on view-only sharing of the quotes. 
@@ -10543,16 +9383,11 @@ Trigger: Request carrier packet, Cover & request packet, or automatically when c
 |Resend|Allowed,also after the packet is completed.|
 
 
-
 ### Users and sign-in 
 
 ##### EML-060 User invite 
 
 Trigger: an Owner invites a person in Settings, Users. The invite link exists only in this e-mail. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 266 of 277 
 
 |Item|Content|
 |---|---|
@@ -10562,7 +9397,6 @@ Page 266 of 277
 |Expiry|14days.|
 |Resend|Resend renews the14days and sends again;the button then shows"Sent"and the message"Invite resent!".|
 |Reply-to|The inviter.|
-
 
 
 ##### EML-061 E-mail address verification 
@@ -10578,7 +9412,6 @@ Trigger: a user changes their login e-mail on their profile. The new address is 
 |Reply-to|None.|
 
 
-
 ##### EML-062 Password reset 
 
 Trigger: Forgot password? on the sign-in page. 
@@ -10591,14 +9424,9 @@ Trigger: Forgot password? on the sign-in page.
 |After<br>reset|All other sessions are signed out.The link stops working if the login e-mail or the password changes<br>meanwhile.|
 
 
-
 ##### EML-063 Customer portal sign-in link 
 
 Trigger: a customer contact asks to sign in on the company's customer login page (sign-in link rules: POR005). 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 267 of 277 
 
 |Item|Content|
 |---|---|
@@ -10607,7 +9435,6 @@ Page 267 of 277
 |Body|"Use the link below to log in to."A Log in link. "This link expires in15minutes and works<br>once.If you didn't ask for it,you can ignore this email."|
 |If the contact is unknown|"We don't recognize that email address."|
 |at click time||
-
 
 
 ### E-mails that are not sent by the system 
@@ -10620,7 +9447,9 @@ Page 267 of 277
 
 - Support requests and QuickBooks's own payment links. 
 
-### Who can do what 
+### Who can do what
+
+**Proposed permission summary:** read with ROL-025 and main §19.4. Visible controls do not establish backend grants/denials; untested role claims remain unverified.
 
 |Action|Owner|Member|Customer|Carrier|
 |---|---|---|---|---|
@@ -10631,12 +9460,22 @@ Page 267 of 277
 |Open e-mail links|n/a|n/a|Yes|Yes|
 
 
+## 6. Documents
 
-10-4 TMS — Functional Specification · v0.1 
+**Evidence review — partial existing files, not tested generation:** Main §17.2/E-83–92 visually inspects specific existing LTL BOL/labels and TL rate/customer confirmations. Deep3 E-145–160 refreshes wrappers/upload/payment entries but explicitly does not reverify every PDF body. No generation/upload/removal/resend/signature/revision was submitted.
 
-Page 268 of 277 
+| Requirements reviewed | Supported portion | Proposed / unverified detail |
+| --- | --- | --- |
+| DOC-001–002 | Existing PDF/file categories, thumbnails/download/Regenerate and signed object links | Universal page/paper/fonts/logos/5MB formats, barcode absence, all generation/refresh triggers/latency/version/cache/audit guarantees |
+| DOC-003–005 | Existing straight BOL, stop/contact/instruction/billing/Acct/quote fields, freight table with NMFC/Class, signature spaces; wrapper | Full exact legal text/layout, one-page/all-stop rules, generated filenames, privacy/send/gate/default policies |
+| DOC-006–007 | Labels include provider/service/FROM/TO/order-BOL/weight/routing/pieces; sampled Half-letter/4x6 choices and five PDF entries | One-label-per-piece, 100 cap, four-letter destination algorithm, identical labels, paper layout/grid/retention; TL preview failure is observed |
+| DOC-008–010 | Customer confirmation trip/equipment/weight; existing two-page carrier confirmation with4200 agreed amount, terms/payment/signature areas | Universal legal text/snapshot/signature/version/price/privacy, exact logos/field mapping and automatic send/generation |
+| DOC-011–012 | Invoice PDF/regenerate/remove/send/POD and balance controls | Full draft/sent template/numbering/totals/date/watermark, remove=cancellation policy, recipients/attachments/merge and refresh effects |
+| DOC-013–014 | Statement/download/send controls and “email with attached statement PDF” help | Actual statement columns/filters/order/aging/date/bank/privacy/cache/filename, email and permissions |
+| DOC-015 | Source Documents index/party groups, files/POD/bill/Misc slots and download/regenerate entries | Full original item was truncated; supported continuation supplied below without inventing missing screens/requirements |
 
-## 6. Documents 
+**No universal document template inferred:** Customer-facing output, carrier output and broker wrappers must be validated separately. Existing signature marks do not establish the signing supplier, acceptance integrity or an enforceable signed snapshot. Client must approve legal/commercial text and templates (SC-09).
+
 
 In short: The system builds six printable PDF documents: the Bill of Lading (BOL), shipping labels, the customer rate confirmation, the carrier rate confirmation, the customer invoice and the customer statement. It keeps them current as the load changes and e-mails them (contents of the e-mails: section 5). Each shipment has a Documents page where reps see every document, upload proofs of delivery (POD), carrier bills and other files, and download anything. Reps and Owners use these screens; customers and carriers receive documents by e-mail or secure link. This section is the home for PDF layouts (DOC IDs). 
 
@@ -10671,11 +9510,6 @@ BOL, labels, customer rate confirmation, carrier rate confirmation, customer inv
 |Covering a truckload|The carrier rate confirmation is created when it is sent(section4.3).|
 
 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 269 of 277 
-
 |Trigger|What happens|
 |---|---|
 |The carrier signs,or the rate confirmation is re-|The carrier rate confirmation is refreshed.A separate copy of the signed|
@@ -10683,7 +9517,6 @@ Page 269 of 277
 |Sending an invoice,recording a payment,<br>editing invoice charges|The customer invoice PDF is refreshed.|
 |Sending a statement|The statement is built at that moment.|
 |Pressing"Regenerate document"in a viewer|The document is rebuilt at once from current data.|
-
 
 
 - Opening the Documents page or a viewer never creates or changes a document. A missing document shows "Not available" with the "Regenerate document" button. 
@@ -10708,13 +9541,8 @@ Title "STRAIGHT BILL OF LADING – NON NEGOTIABLE". One page, top to bottom:
 |Equipment<br>line|The equipment(for example"Dry Van"); "LTL"for less-than-truckload.When the setting Settings><br>Customers, "Hide TL carrier names"is off, "Carrier: "follows. 10-4's current setting hides it.|
 |"PICKUP"and<br>"DELIVERY"<br>columns|Each with date(for example"Fri,Oct2"),time window("8:00AM— 4:30PM"),company(bold),street,<br>city,state,postal code. "PICKUP"is the first stop, "DELIVERY"the last;on loads with more than two stops<br>only these two are printed.A chip"Residential pickup"or"Residential delivery"appears for a residence.|
 |Billing box|Heading"BILL TO",for example"BILL THIRD PARTY PREPAID TO".Then the billing company with the<br>billing e-mail,and the billing address.|
-|Items table|Columns"Units", "Pkg type", "HM", "Description(said to contain)", "Dims", "Weight".One row per handling<br>unit(quantity,package type, "X"in HM when hazardous,description,dimensions,weight of the whole<br>line),then a bold totals row with total units and total weight.|
+|Items table|Observed LTL columns "Units", "Pkg type", "HM", "Description (said to contain)", "Dims", "NMFC", "Class", "Weight" (main §17.2).One row per handling<br>unit(quantity,package type, "X"in HM when hazardous,description,dimensions,weight of the whole<br>line),then a bold totals row with total units and total weight.|
 
-
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 270 of 277 
 
 |Block|Contents|
 |---|---|
@@ -10726,8 +9554,7 @@ Page 270 of 277
 |Footer|As in DOC-001.|
 
 
-
-Freight class, NMFC and per-piece weights are not printed. 
+The inspected LTL BOL includes NMFC and Class columns; its sample has Class60 and an empty NMFC cell (main §17.2; E-88). Account and quote references also appear. Their presence does not establish every TL template or per-piece-weight rule; the former blanket omission was incorrect.
 
 ##### DOC-004 BOL viewer 
 
@@ -10745,16 +9572,11 @@ Who gets the BOL e-mail and what it says: EML-010 and EML-011. It attaches "BOL-
 
 A share banner above the BOL page (account users only): 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 271 of 277 
-
 |Situation|Text|Button|
 |---|---|---|
 |BOL sent and still current|"Sent"with a green check|green outlined"Resend"|
 |BOL changed since the last send|"Send updated BOL"with an orange warning|orange outlined"Send"|
 |Never sent|"Send BOL"|"Send"|
-
 
 
 The banner is hidden when there are no recipients, the load is canceled, the load has been picked up, or no carrier is assigned. 
@@ -10769,7 +9591,7 @@ Messages: "BOL shared", "Failed to send BOL", "Failed to regenerate document".
 
 ##### DOC-006 Label contents 
 
-One label per piece. The number of pieces is the load's total handling units (at least 1, at most 100). Each label shows: 
+The inspected labels show piece/weight/routing information, but the source does not establish one label per handling unit, a 1–100 cap or how contained pieces relate to handling units. Five PDF entries were seen on one LTL example. The layout below remains proposed beyond the fields observed in main §17.2:
 
 |Block|Contents|
 |---|---|
@@ -10779,12 +9601,14 @@ One label per piece. The number of pieces is the load's total handling units (at
 |Right<br>column|"BOL"in bold. "TOTAL lb".A very large destination code:the first four letters of the delivery city in capitals(for<br>example"Royse City"prints"ROYS").A black box with the number of pieces and the caption"PIECES"<br>("PIECE"when there is one).|
 
 
-
 All labels of a load show the same total number of pieces (no "1 of 4" counter). No footer and no barcode. 
 
 ###### DOC-007 
 
 ##### Label sizes and the Labels page 
+
+**Observed failure variant:** Deep3 E-159 opened the TL Labels entry and reached Preview not available / Try again, despite no captured HTTP failure. LTL size choices remain dated evidence; this does not prove successful rendering for every equipment/state or support a universal download/layout guarantee.
+
 
 Two sizes: "Half-letter" (default) and "4×6". 
 
@@ -10797,10 +9621,6 @@ Two sizes: "Half-letter" (default) and "4×6".
 - A preview grid shows up to 6 sheets (2 columns for half-letter, 3 for 4×6); the download always contains all pages. 
 
 - The footer shows "Labels-.pdf", a download button and "Regenerate document". 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 272 of 277 
 
 - Changing the size never creates a label by itself. If none exists for that size, the page shows "Not available" and the regenerate button creates it. The chosen size is not remembered. 
 
@@ -10822,7 +9642,6 @@ Title "Rate Confirmation". One page for the customer.
 |Footer|As in DOC-001.|
 
 
-
 It never shows cost, profit or margin. 
 
 - It is on the Documents page under the tile "Customer Confirmation" and in the viewer titled "Customer confirmation", file name "Customer-Rate-Confirmation-.pdf", with its own "Regenerate document" button. It is created for the customer's reference. Reps download it from the viewer and send it as needed; the customer can also see it through the secure shipment page or the customer portal (section 4.11). The system does not e-mail it automatically. 
@@ -10835,10 +9654,6 @@ Titled "Load & Rate Confirmation". Two pages, one PDF per carrier assignment, se
 
 ##### Page 1 
 
-10-4 TMS — Functional Specification · v0.1 
-
-Page 273 of 277 
-
 |Block|Contents|
 |---|---|
 |Header|"Load&Rate Confirmation", "BOL",the broker logo on the right.|
@@ -10846,7 +9661,6 @@ Page 273 of 277
 |Load grid(right<br>of the card)|"EQUIPMENT"with equipment and length("7'L");weight in lb and distance in mi; "DRIVER NAME"and<br>"DRIVER PHONE"; "TRACTOR"and"TRAILER".Driver,tractor and trailer are blank until the carrier signs<br>or a rep enters them.|
 |Broker contact<br>(right)|Broker name, "MC-",the rep who covered the load,with phone and e-mail from Settings>Carriers><br>Rate cons(otherwise the rep's own).|
 |"Trip details"|The stop cards as on the customer rate confirmation.|
-
 
 
 ##### Page 2 
@@ -10858,7 +9672,6 @@ Page 273 of 277
 |Acceptance<br>and signature<br>card|"The undersigned hereby acknowledges as correct and accepts the referenced shipment on behalf of.It<br>is agreed that the charges indicated above include all costs and fees in connection with the shipment as<br>described.You also agree to the Carrier Terms&Conditions at.Invoicing by the carrier and payment by<br>the broker constitutes acceptance of this agreement.By signing,this creates a contract carriage<br>shipment."With no carrier agreement,the"at"part is left out.On the right:the broker's billing address<br>and logo.|
 |Signature row|"SIGNATURE" (the carrier's typed name in handwriting font)and"DATE" (the date the carrier signed,<br>"M/D/YYYY"). "BROKER" (the covering rep's name in handwriting font)and"DATE" (the date the rate<br>confirmation was sent).|
 |Footer|As in DOC-001.|
-
 
 
 - Until the carrier signs, the carrier signature and date are blank. After a change to a signed rate 
@@ -10876,10 +9689,6 @@ Page 273 of 277
 ##### DOC-010 Terms & Fees text 
 
 Terms & Fees is the account's "Rate con terms" setting (Settings > Carriers > Rate cons, section 4.10), carried over unchanged from 10-4's current text; its content, saving at cover and the "Exclusive use only" / "Partial 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 274 of 277 
 
 use" bullet rule are in RCF-023. It prints on page 2 in two columns in small type and in two columns on the carrier's confirmation page (section 4.3). Changing it is a setting change by an Owner. 
 
@@ -10902,18 +9711,13 @@ Title "INVOICE". One page, in two looks: a draft and a sent invoice.
 |Footer|As in DOC-001.|
 
 
-
 - Draft look: a large grey slanted "DRAFT" stamp in a frame across the upper page until the invoice is sent. A sent invoice has no stamp. 
 
 Charge rows follow the invoice charges, which follow the load's price lines (section 4.5). File name: "Invoice--from-.pdf". 
 
 - The Documents page shows the tile "Customer Invoice" under the customer only when the invoice exists and is not canceled, and the load is a truckload that is Scheduled, In transit, Delivered or Canceled, or is less-than-truckload. 
 
-- The invoice page shows the PDF with "Regenerate document" and "Remove document" (cancels an unsent invoice). Viewing never creates the invoice. 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 275 of 277 
+- The invoice page shows PDF, Regenerate document and Remove document. Whether removal cancels a draft or sent invoice and how payments/ledger links constrain it are unverified; do not infer cancellation policy from the control label (main §17.5).
 
 ##### DOC-012 Who receives the invoice 
 
@@ -10935,7 +9739,6 @@ A statement lists a customer's unpaid invoices.
 |Invoice table|Columns"Invoice#", "BOL", "Invoice date", "Due date", "Origin", "Destination", "Amount", "Balance",<br>"Aging".|
 
 
-
 - "Aging" reads "Open", "Late 15", "Late 30", "Late 60" or "Late 61+". Rows with an open dispute are marked " (disputed)". 
 
 - Money as "$1,500.00"; dates as "MM/DD/YYYY". 
@@ -10953,10 +9756,6 @@ A statement lists a customer's unpaid invoices.
 - The button "Download statement" (footer of a customer's invoice list) builds the statement at once and downloads it. If the unpaid invoices have not changed since the last statement, the same file is reused; a new invoice or payment makes a new statement and replaces the old one. A statement is never reused just because it is recent. 
 
 - The customer's Invoices tab has a "Statement" card with "Send billing contact an email with attached statement PDF." and a blue "Send statement" button. It shows only when the customer has open invoices. Without a billing e-mail the card says "Add a billing email address to send a statement email." 
-
-10-4 TMS — Functional Specification · v0.1 
-
-Page 276 of 277 
 
 - "Send statement" opens a small window "Email statement": "Send an email with statement to ", buttons 
 
@@ -10982,9 +9781,235 @@ A dark full-screen page over the application. Browser tab title "Documents BOL "
 
 - Sections top to bottom: the customer section, one section per carrier on the load, "Misc". Nothing is paged or filtered. 
 
-- Each document is a tile: a first-page thumbnail (8.5 × 11 proportion), a caption and a download icon in the caption (accessible name "Download 
+- Existing generated files appear as thumbnails/captions with available preview/download entries. Main §17.2 and Deep3 E-145 show BOL, Labels, Customer Confirmation, Customer Invoice, provider Rate Confirmation, POD, carrier bill and provider/shipment Misc entries. Generated thumbnails can load after upload slots; the first loading view is not proof a file is missing.
+- POD opens Upload POD / Drag POD here / Close modal. The sampled input is single-file, accepts the ten MIME types listed in TRK-080, and does not establish server type/size/scanning or whether selection starts an upload (Deep3 E-147).
+- Generic additional-provider/Misc upload entries can use the accessible label Add unknown to shipment. A complete type selector/catalog was not established. Do not silently map “unknown” to a verified type.
+- Existing downloads reference signed S3 objects; do not retain query credentials. The app-side `/utils/filestack/token/uploader` path establishes a Filestack reference, not a tested upload or required clone storage supplier (E-145/147/158).
+- Opening, generation, sending, removal, revision retention, access and external effects require separate tests (OQ-15/40/41). The original cut-off remainder was unavailable and has not been invented.
 
-10-4 TMS — Functional Specification · v0.1 
+## 7. Integrations — reconstructed from the main source
 
-Page 277 of 277 
+The original section was missing. This replacement is an evidence/capability inventory from main §18, §17.6, §19 and Deep1–3; it does not recover the original missing INT definitions or approve a supplier. The [third-party access guide](../thrid_party/10-4-tms-api-access-guide.md) contains dated provider-owned references; no integration is marked Ready there. Current eligibility, version, retirement dates, pricing and credentials need confirmation before implementation.
 
+| Capability | Source-supported evidence | Decision / validation needed |
+| --- | --- | --- |
+| Direct LTL rating | 17 observed carrier cards, displayed count12, existing direct/network offers and partial historical failures | Select each launch carrier/account/rate source; independently validate lane, class, services, negotiated rating, transit/expiry, partial failure and quote IDs. Card status is not live entitlement. |
+| Pickup/tender and cancellation | Auto dispatched and historical pickup-request events on existing shipments | Distinguish local booking, carrier acceptance and pickup scheduling; confirm payload/references/PRO, retries after ambiguous outcomes, amendments/cancellation and external acknowledgments. |
+| LTL tracking/documents | Carrier Track links and existing events/files | Capability per carrier, reference mapping, freshness, source timestamps, poll/webhook policy and actual POD/BOL retrieval. Automatic retrieval is not proved. |
+| Truckload tracking | Trucker Tools named in settings and checked coverage preference | Account/contract, driver consent, phone/ELD support, actual start/stop triggers, payload minimization, callbacks, event precedence/replay and duplicate prevention. No three-retry/one-system-only guarantee is established. |
+| Accounting | Oct23 disconnected; Oct26 Syncing Bills & Invoices and company/account/service mappings | Client-owned Intuit app/company authorization; identity/external IDs, amounts, trigger/direction, tax/terms/revisions, sync failures, payment allocation and reconciliation. Quote Factory's authorization does not provision the clone. |
+| Carrier identity/authority/insurance | App labels/MC/USDOT/fleet/packet controls | Select authorized data supplier and freshness/check policy; source does not prove a government mirror, API supplier or refresh schedule. Agree approval/override/insurance requirements. |
+| Carrier onboarding | Packet-request branch/help; Compliance None selected | Select built-in/manual/provider approach; identify packet supplier, approver, documents/tax access, recipient, signatures/expiry and safe test process. Separate MyCarrierPackets use is a dated guide claim, not a verified current integration. |
+| Monitoring/classification links | Carrier411/CarrierOK/Highway/ClassIT+ preferences say Not showing links | Links versus data integration, client licensing/eligibility and data-use rights. This status does not prove external non-use. NMFC/class suggestion is not licensed commodity lookup. |
+| Maps/addresses/routing | Mapbox/OpenStreetMap attribution; billing form labels Google address search | Select rendering, suggestions/geocoding and truck routing/mileage separately, with countries/vehicle constraints/timezones/overrides. A map token does not supply live tracking. |
+| Load boards/lane intelligence | Pathfinder/Loadboards/Post/Show cost; app-reported DAT Authorization failed | Determine source/products, account licenses, lead/lane methodology and posting/search/update/remove rules. Neither working DAT connectivity nor manual-only launch scope is proved. |
+| Mail/SMS/live notifications | Broker send/share/settings entries and browser WebSocket frames | Sender/provider, approved templates/recipients, delivery/bounces, retries/idempotency, access/isolation and recovery; private server-provider behavior unobserved. |
+| PDF/upload/storage/signatures | Existing PDF/signature marks; signed S3 downloads; first-party Filestack uploader-token path | Choose clone resources; validate generation/upload/scanning/type/size/count, access/link expiry, revisions/retention, signature evidence and backup/restore. No token values retained or upload performed. |
+| Payment/factoring/QuickPay | Record-entry forms and13 method labels; Not factoring/Not providing QuickPay settings | Decide recording versus funds movement. If processing is selected, obtain separate provider/account contract and settlement/reversal tests. Method labels do not prove processors. |
+| Support/training | Help Scout Search/Ask Us and external TalentLMS | Client chooses retention/replacement/exclusion, licensing/content/recipient/access policy. No support message was sent. |
+
+**Carrier-specific corrections retained from main §18.3:** ArcBest must not reuse Averitt onboarding; Double D employment forms are unrelated; AAA Cooper's public token guidance does not prove client access; Sunset Pacific publishes API material despite an older disabled/manual app claim; FedEx Freight has a dedicated developer-center reference; Warp public surfaces use different contracts; Old Dominion retirement/onboarding information is dated research; Carrier411 legacy custom-system/new-customer restrictions require current written eligibility confirmation. None supplies a tested private contract for the clone.
+
+**Readiness evidence for each selected capability:** approved provider/product/version/owner and agreement; test/production access/scopes; permitted payload and returned IDs; safe retry/duplicate/ambiguous-outcome policy; provider acknowledgment; app/provider/accounting reconciliation; required notification/document evidence; reviewer/date and unresolved defects. Secrets belong in secure provisioning, not this file. An unavailable provider requires an explicit fallback decision, not a silent feature removal.
+
+## 8. Data migration from Quote Factory — proposed scope and validation
+
+The original section was missing. Main §19.7/20.10, Scope SC-10 and the Documentation Plan leave migration requirements and operating targets open. No supported extraction API, import screen, credentials transfer, successful import or cutover is established. These are decisions and acceptance work, not claims about Quote Factory internals.
+
+| Decision / stage | Required evidence before accepting the migration |
+| --- | --- |
+| Inventory and scope | Approve customers/contacts/addresses, carriers/vendors/contacts/payment details, quotes/offers, open and historical shipments/stops/freight, assignments, documents/PODs/bills/invoices/payments/credits, reps/commissions, notes/events, share/send/acceptance history, settings/references and users. Record volume/date range/retention and explicit inclusion or approved deferral per category. Nothing is automatically excluded. |
+| Extraction rights and source | Establish authorized supported export/API/manual source and document-download permissions; field completeness and original IDs; private data/security terms. Browser endpoint patterns do not establish a supported migration API. |
+| Field and identity mapping | Map BOL/custom BOL/internal IDs/PRO/quote/pickup separately; customer/provider/payment identities and external accounting IDs; statuses, dates/zones, units, currency, tax, contacts, references and document versions. Agree duplicate/missing-data handling. |
+| Financial reconciliation | Reconcile invoice/bill totals, sent/draft/approved states, amounts paid/open/unapplied, disputes, factoring, credit and remit-to. Validate against the authorized ledger; avoid double-entry or duplicate QuickBooks transactions. A visible paid label alone is insufficient. |
+| Dry run | Use designated disposable environment with external sends/bookings/accounting effects controlled. Compare category counts, sample relationships, documents/versions, totals/balances, date/unit conversions, visibility and history; record defects. |
+| Repeat import and exceptions | Agree idempotency, updates versus new records, partial failures/restart, conflicts, audit and error review. Do not assume later changes are automatically scheduled or Owner-triggered only. |
+| Cutover and rollback | Approve freeze/delta/ownership, backups and tested restoration, reconciliation thresholds, old-system retention/access and rollback criteria; obtain named operational/accounting approval. |
+| Operating targets | Decide security/access, retention/deletion, backups/restore objectives, concurrency/volumes, export sizes and performance/support targets. UI discovery does not prove these properties. |
+
+All decisions require named owners/dates under SC-10 and related SC-03/05/07/08/09/12. Existing secure links, credentials and old provider authorizations must not be assumed transferable. No migration action has been executed during this document validation.
+
+## Appendix B. Statuses and option lists — evidence-qualified reference
+
+The original appendix was missing. This reference consolidates the catalogs actually established in the main source; it is not a tested state machine or universal backend enum. Proposed option lists remaining in the body keep their unverified status.
+
+### B.1 Shipment statuses
+
+Observed UI labels: Requested, Booked, Scheduled, In transit, Delivered, Canceled (main §§10/15/Deep2). Entry/exit conditions, signing/dispatch timing, restoration, invoice-paid Active inclusion and customer-facing translation remain unverified; see SHP-075.
+
+### B.2 Quotes and quote requests
+
+Requested/Quoted links, booked/expired indicators and past-date/booked banners are observed (main §14/Deep1; V-02). Internal Draft/Shared/Completed/Canceled transitions and all automatic expiry rules are unverified. A booked request's banner is not the shipment's current lifecycle stage.
+
+### B.3 Carrier assignment and rate confirmation
+
+Observed: Needs a carrier, Cover & request packet, Cover & send rate con, Confirmed, Share and existing recipient/time entries. Approved/Packet not requested can coexist with an existing confirmed rate con. The proposed Draft/Waiting/Confirmed/Old version/Canceled state machine, signatures and approval release remain untested (§§12.6/15.6–7/17; Deep2/3).
+
+### B.4 Tracking
+
+Observed examples include Tracking completed and Off route on an In transit shipment; manual Tracking update, ETA, appointment and Driver & tracking controls exist (§§15.9/16). No complete Trucker Tools status/alert enum or automatic transition contract is verified. Preserve source/time and distinguish facility hours, appointment, ETA and actual event.
+
+### B.5 Carrier bills
+
+Observed row/control examples include Due, Need to approve, Paid, Canceled, Expected bill, Approve to pay, In dispute, Record payment and Delete payment (§17/Deep3). Exact precedence/eligibility/amount basis/approval/reversal and sync remain open.
+
+### B.6 Customer invoices
+
+Observed: invoice/PDF/amount/balance, Send invoice, In dispute, payment and POD controls; accounting queue names below. Draft/sent/paid meanings, required-POD gate, aging/dispute formula and send/ledger effects need validation.
+
+### B.7 Payment methods
+
+Observed13 labels: ACH, Apple Pay, Credit card, Cash, Cash App, Check, Comchek, Google Pay, PayPal, T-Chek, Venmo, Wire, Zelle (main §17.4/Deep3). Provider payment sampled ACH; invoice/global method initially blank. These are record labels, not13 verified payment integrations.
+
+### B.8 Carriers and vendors
+
+Carrier app indicators include Approved, Candidate/Don't use warnings, Packet not requested, FMCSA Authorized, Unrated and BI/PD. They do not independently verify current authority/insurance or dispatch suitability. Vendor types: Chassis, Crane, Customs broker, Insurance, Lumper, Steamship line, Towing, Transloader, Warehouse. Creation uses one type; existing type editor offers multiple checkboxes (§12/Deep4).
+
+### B.9 LTL carrier accounts
+
+Observed17 cards and displayed12 in October26 source; detailed textual activation legend/24-hour activation and blanket/exceptions workflow remain unverified. Preserve October9 Enabled/Activating/Disabled as historical claims only (§18.3/access guide).
+
+### B.10 Equipment
+
+The exact70 observed labels are reproduced under SHP-027 from `DEEP-02-R003/CATALOG`;13 reading groups do not prove backend grouping. Common hints are not maximum capacities. Direct LTL entry is gated with a quote handoff; Other becomes free text; see Deep1/2 and OQ-31/32.
+
+### B.11 Stops and freight
+
+- Location types26: Airport; Business with dock/forklift; Business without dock/forklift; Camp; Church building; Construction site; Container freight station; Convention/trade show; Country club; Fair/amusement park; Farm; Government site; Grocery warehouse; Hospital; Hotel; Limited access; Military installation; Mine site; Native American reservation; Nursing home; Pier; Prison; Residential; School; Self-storage; Utility site.
+- Packaging27: Pallet (48x40); Pallet (48x48); Pallet (60x48); Pallet; Bag; Bale; Box; Bundle; Carpet; Carton; Case; Coil; Crate; Cylinder; Drum; Gallon; Keg; Pail; Piece; Pipe; Rack; Reel; Roll; Sack; Skid; Tote; Tube.
+- Contains22: Bags; Bales; Boxes; Bundles; Carpets; Cartons; Cases; Coils; Crates; Cylinders; Drums; Gallons; Kegs; Pails; Pieces; Pipes; Racks; Reels; Rolls; Sacks; Totes; Tubes. This is not outer packaging or a handling-unit count.
+- Freight class18:50,55,60,65,70,77.5,85,92.5,100,110,125,150,175,200,250,300,400,500. The dropdown is not the conditional13-band NMFTA reference or proof of the app estimator. Main §14.5a supplies the density-reference applicability/boundaries.
+- in/cm and lb/kg controls exist. Deep1 observes unit-switch number retention/display discrepancies; conversion behavior needs review. Packing group I/II/III and the hazmat-class UI catalog are established for the direct Dry Van branch (SHP-040/Deep2 E-143), not as a regulatory classification or universal LTL form contract.
+
+### B.12 Services
+
+LTL quote pickup: Liftgate pickup, Inside pickup, Single shipment, Sort & segregate. Delivery: Appointment required, Liftgate delivery, Inside delivery, Notify before delivery, Sort & segregate (main §14.4/Deep1). Template grouping differs in the newer Deep4 E-169 observation, which places Appointment required among pickup choices; preserve the dated context and resolve grouping before implementation. TL flags vary across equipment branches: Partial/Tanker endorsement/Team service; Tarps on sampled Flatbed; refrigerated range fields. Selecting a service does not prove delivery/qualification or carrier support.
+
+### B.13 Carrier charge types
+
+Freight and add-line/calculator controls are observed. The body's147-entry charge list is a proposed catalog whose full membership/limits/provider mapping were not established by the main source. Do not treat that count or every label as a verified enum.
+
+### B.14 Reference number types
+
+PO, Pickup, Ref and Order examples are observed; additional typed reference controls exist (§16.3). The body's41-type complete catalog, defaulting, lengths and persistence remain unverified. BOL, PRO, quote/account identifiers and invoice/stop references are distinct.
+
+### B.15 Documents
+
+Observed categories/entries: BOL, Labels, Customer Confirmation, Customer Invoice, provider Rate Confirmation, POD, carrier bill and provider/shipment Misc/additional files (§17/Deep3). A generic Add unknown upload label does not establish an exhaustive type list. Server acceptance, size/count/retention and role/recipient access remain open.
+
+### B.16 Roles
+
+Owners and Members groups observed; Member rechecked November2 (V-01). Exhaustive roles, all permissions, customer/carrier/driver sessions and team-manager powers remain unverified. Use the evidence matrix in main §19.4; the ROL-025 matrix is a proposal.
+
+### B.17 Queues and accounting tabs
+
+Observed operational navigation: Cover, Confirm pickups, Confirm deliveries; Quote/Dispatch dashboard shortcuts and a documented empty Dispatch page. Finish booking/Quote workflows require additional validation. Accounting has12 tabs: All, Open, Bills to Upload, Bills to Approve, Bills to Pay, Overdue Bills, Upload missing POD, Invoices to Send, Invoices to Factor, Outstanding Invoices, Overdue Invoices, Disputed Invoices (§17.3/Deep3 E-151–152). Counts/eligibility/pagination/refresh are not established by names.
+
+## Appendix C. Report column catalogs and observed saved selections
+
+The original appendix was absent. Main §19.5 documented selected lists but did not establish every available field. A targeted read-only check on November2 filled that gap (V-03–05): Reporting → Shipments/Customers/Carriers → Columns; expand Handling units in the shipment catalog. Labels were counted from the rendered catalog buttons, excluding unnamed expand controls and the selected-column pane. No columns/labels/filters were added, removed, edited, saved or downloaded.
+
+These are observed UI field catalogs, not verified export schemas, meanings or hard selected-column limits. Extra entity/reference configurations or another role/version may differ. “Origin Open Close” and “Destination Open Close” reproduce literal labels; their semantics are not inferred. Indexed fields1–5 do not establish a shipment maximum of five handling units. A field name mentioning merge, paid, compliance or factoring does not prove that operation works.
+
+### C.1 Shipment report — 189 distinct catalog fields
+
+| UI category | Count | Exact field labels in observed order |
+| --- | --- | --- |
+|Base|8|Shipment ID; BOL; Status; Mode; Transit Days; Distance In Miles; UOM; URL|
+|Customer|3|Customer; Customer Contact; Primary Rep|
+|Carrier|25|Carrier Name; Carrier Legal Name; Carrier DBA Name; Carrier Account Number; USDOT; MC Number; SCAC; Equipment; Partial Allowed; Partial; Carrier Source; Carrier Quote Number; Service Level; Volume Quote; PRO Number; Dispatch BOL Number; POD Uploaded; Carrier Contact; Carrier Contact Phone; Carrier Contact Email; Driver; Driver Phone; Tractor Number; Trailer Number; External Tracking URL|
+|Remit-to Contact|3|Remit-to Contact; Remit-to Contact Email; Remit-to Contact Phone|
+|Remit-to Address|6|Remit-to Company; Remit-to Street; Remit-to Street 2; Remit-to City; Remit-to State; Remit-to Postal Code|
+|Accounting|42|Cost; Price; Profit; Margin; Customer Invoice Sent; Customer Invoice Sent By; Customer Invoice Sent Date; Customer Invoice Number; Customer Invoice Total; Customer Invoice Price; Customer Invoice Date; Customer Invoice Due Date; Customer Invoice Balance Due; Customer Paid in Full; Customer Invoice in Dispute; Carrier Bill Added; Carrier Bill Approved; Carrier Bill Approved Date; Carrier Bill Number; Carrier Bill Total; Carrier Bill Cost; Carrier Bill Date; Carrier Bill Due Date; Carrier Quick Pay Requested; Carrier Bill Balance Due; Carrier Bill Paid in Full; Customer Paid in Full or Factored; To Be Factored; Factoring Fee; Price After Factoring; Profit After Factoring; Sent to Factor; Booked Cost; Booked Price; Booked Profit; Booked Margin; Cost Per Mile; Price Per Mile; Customer Invoice Pushed to Accounting; Customer Invoice Pushed to Accounting Date; Carrier Bill Pushed to Accounting; Carrier Bill Pushed to Accounting Date|
+|Locations|29|Origin Company; Origin Street; Origin Street 2; Origin City; Origin State; Origin Postal Code; Origin Country; Origin Open Time; Origin Open Close; Origin Contact; Origin Phone; Origin Email; Origin Location Type; Origin Instructions; Destination Company; Destination Street; Destination Street 2; Destination City; Destination State; Destination Postal Code; Destination Country; Destination Open Time; Destination Open Close; Destination Contact; Destination Phone; Destination Email; Destination Location Type; Destination Instructions; Stopoffs Count|
+|Location references|2|Origin Reference Number; Destination Reference Number|
+|Handling units|40|Description 1; Commodity 1; Freight Class 1; NMFC 1; Length 1; Width 1; Height 1; Weight 1; Description 2; Commodity 2; Freight Class 2; NMFC 2; Length 2; Width 2; Height 2; Weight 2; Description 3; Commodity 3; Freight Class 3; NMFC 3; Length 3; Width 3; Height 3; Weight 3; Description 4; Commodity 4; Freight Class 4; NMFC 4; Length 4; Width 4; Height 4; Weight 4; Description 5; Commodity 5; Freight Class 5; NMFC 5; Length 5; Width 5; Height 5; Weight 5|
+|Handling unit totals|8|Line Items Count; Total Units; Total Weight; Total Length; Total Density; Total Value; Cost Per Lb; Price Per Lb|
+|Hazmat|4|Hazmat; Hazmat Emergency Response Phone; Hazmat Contact; Hazmat Contact Number|
+|Who & When|10|Pickup Date; Original Pickup Date; Actual Pickup Date; Delivery Date; Original Delivery Date; Actual Delivery Date; Booked Date; Booked By; Covered Date; Covered By|
+|Accessorials|9|Origin Appointment Required; Origin Liftgate; Origin Inside; Destination Appointment Required; Destination Liftgate; Destination Inside; Notify Before Delivery; Sort & Segregate; Protect from Freezing|
+
+### C.2 Customer report — 68 distinct catalog fields
+
+The group labels below are reading aids; field order and spelling follow the UI.
+
+| Reading group | Count | Exact field labels in observed order |
+| --- | --- | --- |
+|Identity|9|Customer ID; Vendor Number; Name; Legal Name; Phone; Website; Description; Last Note; Added Date|
+|Reps|5|Primary Rep; Primary Rep Email; Primary Rep Phone; Assigned Users; Assigned Teams|
+|Primary contact|4|Primary Contact; Primary Contact Title; Primary Contact Email; Primary Contact Phone|
+|Preferences and pricing|13|Auto Quoting; Auto Dispatching; Payment Terms; Merge Invoice Attachments; Login Enabled; Truckload Require POD; LTL Require POD; Truckload Gross Margin; Truckload Min Margin; Truckload Min Profit; LTL Gross Margin; LTL Min Margin; LTL Min Profit|
+|Credit and aging|15|Credit Limit; Available Credit; Credit Used; Balance Current; Balance Overdue; Balance 1-15 Days Late; Balance 16-30 Days Late; Balance 31-60 Days Late; Balance 61+ Days Late; Balance Total; Balance Not Invoiced; Unpaid Shipment Count; Oldest Open Invoice Date; Oldest Open Invoice Sent Date; Oldest Open Invoice Due Date|
+|Activity|6|Shipments; Quotes; Contacts; Last Note Date; Last Booked Date; Last Quote Date|
+|Billing|8|Billing Company; Billing Street; Billing Street 2; Billing City; Billing State; Billing Postal Code; Billing Country; Billing Email|
+|Tax labels|3|EIN; TIN; RFC|
+|Factoring|5|Factoring; Factor Status; Factor Credit Limit; Factor Credit Used; Factor Available Credit|
+
+### C.3 Carrier report — 31 distinct catalog fields
+
+Reading groups are editorial; preserve the observed field labels.
+
+| Reading group | Count | Exact field labels in observed order |
+| --- | --- | --- |
+|Identity and status|14|Vendor ID; Name; Legal Name; DBA Name; USDOT Number; MC Number; Phone; HQ City; HQ State; Compliance Status; Tax ID; Legal Entity; Requires 1099; Added Date|
+|Primary contact|3|Primary Contact; Primary Contact Email; Primary Contact Phone|
+|Remit-to contact|3|Remit-to Contact; Remit-to Contact Email; Remit-to Contact Phone|
+|Mailing|5|Mailing Company; Mailing Street; Mailing City; Mailing State; Mailing Postal Code|
+|Remit-to address|6|Remit-to Company; Remit-to Street; Remit-to Street 2; Remit-to City; Remit-to State; Remit-to Postal Code|
+
+### C.4 Selected saved-report definitions from main §19.5
+
+These preserve the dated source selections, not universal defaults. A displayed header can differ from its catalog field. No export file was validated.
+
+**Common 14 selected shipment columns, in order:** Equipment; Carrier (field Carrier Name); USDOT; MC Number; Cost; Price; Profit; Margin; Pickup Date; Delivery Date; Origin Postal Code; Destination Postal Code; Total Weight; Mode.
+
+**Monthly Margin 48 selected columns, in order:** BOL; Status; Customer; Primary Rep; Mode; Equipment; Partial; Carrier (Carrier Name); USDOT; MC Number; Carrier Source; Carrier Quote Number; Service Level; Transit Days; PRO Number; Cost; Price; Profit; Margin; Booked Date; Booked By; Covered Date; Covered By; Pickup Date; Delivery Date; Origin Company; Origin Street; Origin Street 2; Origin City; Origin State; Origin Postal Code; Origin Country; Origin Reference Number; Destination Company; Destination Street; Destination Street 2; Destination City; Destination State; Destination Postal Code; Destination Country; Stopoffs Count; Destination Reference Number; Distance In Miles; Total Units; Total Weight; Hazmat; URL; Shipment ID.
+
+**LTL Report - QF 48 selected columns, in order:** BOL; Mode; Status; Distance In Miles; Carrier Name; USDOT; Equipment; Cost; Total Units; Total Weight; Total Length; Origin Appointment Required; Origin Liftgate; Origin Inside; Destination Appointment Required; Destination Liftgate; Destination Inside; Notify Before Delivery; Sort & Segregate; Protect from Freezing; Freight Class 1; NMFC 1; Length 1; Width 1; Height 1; Weight 1; Description 2; Freight Class 2; NMFC 2; Length 2; Width 2; Height 2; Weight 2; Description 3; Freight Class 3; NMFC 3; Length 3; Width 3; Height 3; Weight 3; Origin City; Origin State; Origin Postal Code; Origin Location Type; Destination City; Destination State; Destination Postal Code; Destination Location Type. The absence of Description 1 in this saved selection is an observation, not an instruction to omit it from the clone. Indexed fields do not prove a maximum of three handling units.
+
+**Customer selected10:** Name; Website; Phone; Description; Primary Contact; Primary Contact Email; Primary Contact Phone; Shipments; Last Booked Date displayed as Last Shipment Date; Last Note Date.
+
+**Carrier selected10:** Name; USDOT Number; MC Number; Phone; HQ City; HQ State; Compliance Status; Primary Contact; Primary Contact Email; Primary Contact Phone.
+
+Column presence/counts are now observed; download row grain, precision, complete data, business meaning, permissions, CSV safety/encoding, limits and reconciliation remain unverified (RPT-024–026; main §19.5).
+
+## Validation record and remaining acceptance work
+
+### Additional app evidence — November 2, 2026
+
+These narrow observations supplement source gaps with the user's authorized read-only app access. They do not override the main source or establish hidden rules. Session displayed app version `8aeb1b27`. Evidence is recorded here because only this file may change; no new source/network/screenshot files were written.
+
+| ID | Path | Observation | Limit |
+| --- | --- | --- | --- |
+| V-01 | Existing session → Profile | Member; name/email/phone inputs, disabled Save, Change password and Log out | No edits, password/logout, alternate-role or server-denial tests. Current role rechecked; does not prove all Member rights. |
+| V-02 | Existing Dashboard | Mapbox/OpenStreetMap, Re-center map; Requested/Quoted links; Requested/Booked/Scheduled/In transit; Quote0/Dispatch0/Cover44; sidebar Cover44/Pickups15/Deliveries8; map Late picking up15/Delivering23; Training and Support | Counts are a dated snapshot. Map Delivering23 is not sidebar Confirm deliveries8; do not equate every badge. No dot/cap/refresh/permission/provider tests. |
+| V-03 | Reporting → Shipments → Columns → expand Handling units |189 distinct available labels,14 selected; exact catalog in C.1 | No selection/order/name/filter/save/download. Catalog count does not prove a189-column maximum or CSV content. |
+| V-04 | Reporting → Customers → Columns |68 distinct available labels; exact catalog in C.2 | No definition change/download; source selected10 retained. |
+| V-05 | Reporting → Carriers → Columns |31 distinct available labels; exact catalog in C.3 | No definition change/download; source selected10 retained. |
+
+The browser was returned to its original Dashboard. This check used normal view navigation only; the main source documents that view navigation may automatically update recent-history metadata. No record booking/edit/coverage/cancel, upload/generation/send/share, payment/approval, setting/permission change or operational provider test was submitted.
+
+### Decisions still needed to turn this into an approved build contract
+
+| Review area | Required answer / evidence | Main-source tracking |
+| --- | --- | --- |
+| Product/release | Approve each included/deferred/excluded feature, allowed visual/workflow deviations, priorities and acceptance criteria | SC-01/02/11 |
+| Business intake/approval | Who requests, approves price, tenders/books and confirms service in each LTL/TL path? Customer Confirmation is a document, not proven customer approval | SC-06; OQ-03/10; [root questions.md](../../questions.md) also asks this and supplies no answer |
+| Access | Role/action/scope/financial-contact-document allowlists; administrator and test customer/carrier/driver sessions; API denial tests | SC-03/05; main §19.4 |
+| Pricing/measurements | Precedence/boost/limits/override, rounding/negative values, dimensions/units/layout and commodity/NMFC responsibility | SC-08; OQ-01/02/17/29/32/37 |
+| Operations/communications | Status/coverage/packet/cancel/TONU rules, timezone/actual/planned timestamps, notes/template propagation, recipient/default/update/signature contracts | SC-06/09; OQ-07–15/18–20/25–28/30/34/36 |
+| Finance | Expected-versus-billed settlement, disputes/POD/approval/send gates, terms, invoice correction, allocation/credits/reversals and ledger mapping | SC-08/12; OQ-38/39/42 |
+| Integrations/files | Provider selection/access/version/license, acknowledgments, duplicate/retry/ambiguous failures, document output/access/expiry/upload/retention | SC-07/09/12; OQ-23/35/40/41 |
+| Migration/operations | Inclusion/inventory/source rights, financial/history/document reconciliation, cutover/rollback, retention/backups/performance | SC-10; section8 |
+| Acceptance/sign-off | Designated test environment/disposable IDs/effect suppression, named reviewers, W-01–07 and X-01–09 expected-versus-actual evidence | SC-04/05; main §20 |
+
+**Verification boundary:** This review validates what the available sources can support and corrects unsupported certainty. It does not claim848 requirements have passed functional testing. Each section's evidence table and inline corrections must be read with its retained proposals; no release scope or hidden behavior has been silently approved. Source validation can be complete while business/role/provider/operational acceptance remains pending. Claims of “100% verified application behavior” would be unsupported by the available evidence.
+
+### Final document checks
+
+- All848 original requirement IDs retained and unique; SHP-039 is now a proper heading. All references to defined requirement families resolve; missing legacy INT/MIG references were replaced with the actual integration/migration review sections, without inventing their old definitions.
+- All local source links and contents anchors checked; Markdown table widths and fenced blocks checked. The original cut-off DOC-015 now ends with source-supported content.
+- Equipment70, location26, packaging27, Contains22 and freight-class18 catalogs compared with the stored main-folder captures. Report catalogs189/68/31 match the live rendered UI labels in exact order, checked independently after transcription; count does not prove hard limits or export correctness.
+- Only this Markdown file changed in the worktree. No commit or push, source-folder edit, operational app submission, report save/download or external message was performed.
+
+These checks validate this document and its evidence traceability; they are not application functional tests or business sign-off.
