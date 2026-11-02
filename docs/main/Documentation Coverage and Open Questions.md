@@ -379,3 +379,7 @@ OQ-25 also covers the new tracking-form Oct31 default versus Timeline Nov1 dates
 | ID | Open question | Owner / evidence |
 | --- | --- | --- |
 | OQ-42 | What does Delete payment reverse in the app and external ledger, who may use it, and how do imported payment records get matched to bills? Resolve the observed undefined reference label separately. | Accounting/admin/integration lead; E-160; no deletion or sync executed. |
+
+**Deep4 in progress, November2:** E-161–164 adds current customer list/create/filter/reset evidence and two screenshots. HTML optional/enabled blank creation is only a frontend observation; duplicate/empty/server validation, login, permissions and persistence stay open under D-01. Other reusable-record branches are pending before phase delivery.
+
+**Deep4 continuation:** E-166–171 adds identity, billing, blank contact, saved-location template/services and carrier-versus-nine-vendor-type creation entry points. No identifiers, names or final creates/saves submitted; lookup supplier, validation, inheritance, approval and access remain unverified. Existing carrier/vendor profiles and remaining customer subflows still pending in the refresh.

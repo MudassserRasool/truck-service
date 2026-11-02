@@ -208,6 +208,36 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-159 | Nov1 / Deep3 resumed | R003 observed TL Labels route | Header-only/pending reads later settle to Preview not available / Try again; safe screenshot. | No HTTP400+ / failed request observed, no retry/regeneration; cause/format/equipment support unverified; fresh baseline excludes paused interval. | Operations/integration lead |
 | E-160 | Nov1 / Deep3 resumed | R003 All → Paid bill → Open payment |8 rendered Paid bill links; applied-to-one-bill table, check/imported, balance0, Delete payment/Done/Close. | No delete/reversal; import/sync source unknown; toggle label undefined observed without inventing data; private financial image omitted. | Accounting/integration lead |
 
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-161 | Nov2 / Deep4 | R001 Customers list |138of138, customer/contact/booked/quoted/credit/rep and login/create/filter entries. | Dated visible list, no full dataset/export/login or exact role proof. | Sales/admin lead |
+| E-162 | Nov2 / Deep4 | R001 blank customer modal | Name searchbox, HTML optional/unbounded hints, Add enabled; safe blank screenshot. | No name/create; first private-background image rejected; server validation unknown. | Sales/admin lead |
+| E-163 | Nov2 / Deep4 | R001 customer filters/unmatched search | Search/Rep, See0, No matches found/Reset; safe empty screenshot. | No rep selection or full search/paging/permission contract. | Sales/admin lead |
+| E-164 | Nov2 / Deep4 | R001 customer Reset |138of138 restored after fictional search; no customer created. | Visible UI only; persistence/default scope unknown. | Sales/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-165 | Nov2 / Deep4 | R001 first visible customer detail | Overview/Shipments/Quotes/Addresses/Invoices/Payments, Documents/Reps and identity shortcuts. | One existing record; no edits, subflows/role/save checks yet; private image omitted. | Sales/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-166 | Nov2 / Deep4 | R002 General identity modal | Name/vendor number/phone/website/About; disabled US country selector, Done/Close. | No edits/Done; field HTML in JSON, backend/role validation unknown. | Sales/admin lead |
+| E-167 | Nov2 / Deep4 | R002 Accounting modal | Address/legal name/email/phone, EIN/DUNS; LTL POD off/TL POD on/Combine PDFs off,30days. | Existing customer values, no global-default/enforcement/save proof. | Accounting lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-168 | Nov2 / Deep4 | R002 Add new contact | Loading then first/last/title/contact details/type unknown/Create form; HTML constraints in JSON. | No input/create; matching/type/primary/permissions unknown. | Sales/admin lead |
+| E-169 | Nov2 / Deep4 | R002 Addresses / Create template / LTL Services | Empty book, template fields/default dock8AM–5PM, BOL-email/private-team-note labels,9 unchecked service choices. | No selection/save; inheritance/charges/audience enforcement unknown; underlying identity screenshot not retained. | Operations/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-170 | Nov2 / Deep4 | R002 Create new vendor / Carrier | Chooser definition and MC/DOT textbox, constraint metadata. | No identifier/lookup/create; provider/approval unknown. | Carrier operations lead |
+| E-171 | Nov2 / Deep4 | R002 Vendor / Crane |9 types; disabled Select type becomes next name/Add vendor stage after Crane selection. | No name/add; other-type conditionals/backend/duplicate rules unknown. | Operations/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-172 | Nov2 / Deep4 | R003 documented carrier | Header-only loading then approval/packet/authority/safety/insurance/fleet and linked tabs. | No request/approval changes; app indicators not external verification; private image omitted. | Carrier operations lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -234,6 +264,6 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-160. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-172. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.

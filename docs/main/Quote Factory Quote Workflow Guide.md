@@ -477,6 +477,36 @@ Use existing records you are authorized to view. Record the labels you see, not 
 
 **Validation rule for all tables in this chapter:** A visible field, placeholder, check state or disabled button establishes its UI state only. Required fields, accepted formats, uniqueness, error text, save timing, permissions and downstream effects remain unverified unless stated otherwise. No Create, Add customer, Add vendor, Update, Done, Save address, Change types, Send request or financial action was submitted during inspection. Dialogs were closed without editing saved data. A selected type in an unsaved creation wizard was abandoned before Add vendor.
 
+<a id="deep-reusable-records"></a>
+**Deep Phase4 — Reusable records refresh (in progress, November2; E-161–164)**
+
+Phase3 remote SHA `4aab51007a01a72b7ab1bcca0f81fa9427f626f5` was verified before creating `codex/docs-deep-04-reusable-records`. This section supplements the earlier customer/carrier/vendor/address-book chapter. Current capture: `DEEP-04-R001` in the [network evidence](network/quote-factory-network.json); exact role and backend permissions remain unverified.
+
+Open [Customers](https://app.quotefactory.com/broker/customers). The settled example shows138of138 records with customer/contact, booked/quoted, credit and rep columns. Customer login/copy and export-icon entries are visible; neither was used. These are dated visible counts, without a full dataset, credit, export or login-access audit.
+
+| Action | Fresh observed result | Unverified behavior |
+| --- | --- | --- |
+| Add a new customer | Modal: Customer name searchbox and Add customer. Blank field HTML required=false, min/max length−1; Add action HTML enabled. | Empty/duplicate/name validation and creation side effects. Button availability does not prove submission eligibility. No name entered or customer created. |
+| View shipment filters (customer page) | Search plus Rep selector, placeholder select a team or user; See138 customers. | This generic accessible label opens customer filters here. Rep matching/permissions/persistence unknown. |
+| Fictional unmatched search → See0 customers | Settled0of138, No matches found, Reset filters. | Debounce/count timing is observed; no actual customer identity searched or modified. |
+| Close blank modal / Reset filters | Close leaves form without creation; Reset restores138of138 heading. | Visible state only; account/user persistence and default scope unverified. |
+
+![Customer unmatched-search state](screenshots/deep-04-customer-empty-2026-11-02.jpg)
+
+![Blank customer-create dialog, empty background](screenshots/deep-04-customer-blank-create-2026-11-02.jpg)
+
+**Customer detail entry, E-165:** Opening the first visible customer exposes Overview, Shipments, Quotes, Addresses, Invoices and Payments tabs; Documents/Reps and vendor-number/website/phone/description shortcuts. These branches are entry-point evidence only; their detailed forms, permissions and saves remain pending in this refresh.
+
+**Customer identity/accounting, E-166–167 / R002:** Edit customer details opens General with name, vendor number, phone, website and About; phone country selector is disabled US in this example. Done and Close are separate controls. Edit customer billing opens Accounting: billing address, legal name, email/phone, Tax ID (EIN), disabled DUNS type, LTL/TL POD required, Combine PDFs and payment terms. Existing values are LTL POD unchecked, TL POD checked, Combine PDFs unchecked and30days. No fields or Done were used; these are customer-specific observations with backend validation, inheritance and document enforcement unverified.
+
+**Contacts and saved locations, E-168–169 / R002:** Add new contact first shows Loading contacts, then New contact: First name, Last name, Title and Contact Details (Phone, email or URL), initial type unknown, Create contact. No input or creation; type detection and duplicate rules remain unknown. Addresses on this customer settles to No address book entries, with find address search and an unnamed plus button. Plus opens **Create template** with company, location type, address/address2/city-state-zip, contact name/phone, contact email explicitly labeled send BOL email to, instructions, hours and Private note. Defaults are Business with dock/forklift and8AM–5PM; US phone-country selector is disabled. Private note says visible by your team only, without permission testing. LTL Services exposes unchecked pickup Liftgate/Inside/Single shipment/Sort & segregate/Appointment required and delivery Liftgate/Inside/Notify before delivery/Sort & segregate. These are template preferences, with shipment inheritance and charges unverified. Close modal was used; Create was not used.
+
+**Carrier versus vendor entry, E-170–171 / R002:** Main Menu → Create new vendor first asks What do you want to add? **Carrier** says Freight carrier with MC or DOT number and opens a Carrier MC or DOT # textbox. No identifier was submitted, so lookup supplier, import, matching and approval remain unknown. **Vendor** says Providers such as crane, insurance, warehouse, etc. It offers nine types: Chassis, Crane, Customs broker, Insurance, Lumper, Steamship line, Towing, Transloader, Warehouse. Select type is initially disabled. Choosing Crane then Select type opens Vendor name and Add vendor. No name or Add vendor was used; other type-specific forms and persistence remain untested. Closing either modal returns without deliberate creation. This directly distinguishes the app's provider categories; it does not establish a universal backend schema or eligibility rule.
+
+**Carrier profile replay, E-172 / R003:** The documented Pathak Express profile first renders its header/tabs, then settles to Approved, Packet not requested with Send request, FMCSA Authorized, Unrated, BI/PD and fleet counts, plus Documents/contacts/Timeline and Overview/Shipments/Payments tabs. None of the approval/request controls was used. These are app indicators; current authority, insurance, capacity, packet delivery and provider connectivity have not been independently verified.
+
+The first modal screenshot was rejected because private populated rows remained visible behind it. The retained modal image uses the unmatched list background. Next: customer detail/contact/billing branches, carrier versus other-vendor identity/onboarding, saved locations and remaining read-only record workflows before Phase4 audit/commit/push.
+
 **12.1 Find the right business record**
 
 | Goal | Open / click | Visible information and actions | Important distinction |
