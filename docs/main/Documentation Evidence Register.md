@@ -238,6 +238,17 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | --- | --- | --- | --- | --- | --- |
 | E-172 | Nov2 / Deep4 | R003 documented carrier | Header-only loading then approval/packet/authority/safety/insurance/fleet and linked tabs. | No request/approval changes; app indicators not external verification; private image omitted. | Carrier operations lead |
 
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-173 | Nov3 / Deep4 | R004 carrier contact replay | Add/Edit/Delete/copy; firstName/email/tel required, lastName/title optional; Cancel/Update. | No field/update/delete/copy; R003 interrupted and fresh replay separated, no paused capture or primary/permission proof. | Carrier operations/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-174 | Nov3 / Deep4 | R004 vendor identity | Overview/Shipments/Payments and name/phone/general-email/website editor, Update/Close. | No edit/update; input HTML optional, country companion disabled; backend unknown. | Operations/accounting lead |
+| E-175 | Nov3 / Deep4 | R004 vendor type editor | 9 checkboxes/Warehouse checked/Change types. | No checkbox/change; differs from creation radio stage. | Operations/accounting lead |
+| E-176 | Nov3 / Deep4 | R004 vendor billing | Address/edit-address and email, no explicit save exposed. | No entry; autosave/blur/nested address unknown. | Operations/accounting lead |
+| E-177 | Nov3 / Deep4 | R004 vendor accounting preference | Push bills to Quickbooks Online checked. | No change; preference does not prove connectivity/sync. | Operations/accounting lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -264,6 +275,6 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-172. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-177. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.
