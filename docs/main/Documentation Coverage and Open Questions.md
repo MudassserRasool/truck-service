@@ -385,3 +385,26 @@ OQ-25 also covers the new tracking-form Oct31 default versus Timeline Nov1 dates
 **Deep4 continuation:** E-166–171 adds identity, billing, blank contact, saved-location template/services and carrier-versus-nine-vendor-type creation entry points. No identifiers, names or final creates/saves submitted; lookup supplier, validation, inheritance, approval and access remain unverified. Existing carrier/vendor profiles and remaining customer subflows still pending in the refresh.
 
 **November3 replay:** E-173–177 adds fresh carrier contact Cancel/Update constraints and existing vendor identity, multi-type, billing and accounting-preference dialogs. R003 contact end is administrative/partial; fresh R004 is separate. No mutations; vendor autosave/address nesting, classification enforcement, contact permissions and external sync stay unknown.
+
+**Deep4 completion audit checkpoint, November3:** The existing earlier chapters remain dated evidence, and the new refresh is not complete. The next browser pass must resolve the following accessible coverage before Git delivery; D-01 mutation/role gates remain separate.
+
+| Area | Fresh evidence | Remaining read-only work | Submission boundary |
+| --- | --- | --- | --- |
+| Customer list/identity/contact | E-161–168 | Populated contact/primary controls only if needed to distinguish customer from carrier | No create/update/delete/primary change |
+| Customer booking/credit | Earlier §12 evidence only | Reopen Booking & quoting and credit dialog; inventory defaults/disabled controls | No credit request, permission/default change or Done |
+| Customer related work | Tab entry E-165; earlier §12 contents | Shipments/Quotes/Invoices/Payments settled states and action labels | No payment, Send statement or export of private data |
+| Customer Documents/Reps | Earlier §12 evidence only | Dialog actions, file hints and rep inheritance message | No file selection, assignment or commission change |
+| Address book | E-169 empty/create-template | Nested billing-address form, existing saved-template edit/remove entry if accessible | No template creation/edit/removal |
+| Carrier profile/contacts | E-172–173 | Shipments/Payments/Documents settled views and exposed corrections | No packet request, approval, file or contact mutation |
+| General vendor | E-174–177 | Shipments/Payments/Documents where present; nested billing address | No classification/update/sync changes |
+| Network/artifacts | R001–004 | Reconcile evidence IDs, links, screenshots, capture limits and supplier references | No endpoint replay or credential retrieval |
+
+Capture metadata currently records R001167 requests/loss reported/3 outstanding; R00214/no reported loss/0; R00380/loss/1; R00476/loss/2. R003 is interrupted and its recovery end administrative. These are capture-window counts, not complete traffic totals; all target/body scopes remain partial. They do not prove any provider operation or saved mutation.
+
+**Deep4 safe-discovery closure, November3:** E-161–195/R001–007 supplements the dated §12–13 inventory. Credit/config/customer related tabs/Documents/Reps, carrier contacts/history/payments/files and vendor identity/types/billing/linked work/nested address have current evidence. Existing saved-template editing and populated customer financial/statement variants keep their earlier dated evidence. Two safe images cover blank creation and empty search; populated images are omitted for privacy. No operational/alternate-role/test-environment gate is closed by this delivery.
+
+| Issue | Evidence | Follow-up owner |
+| --- | --- | --- |
+| Early carrier-tab navigation reaches undefined route/GET400 and blank panel; identity-ready replay works | E-188–191 | Product/integration lead: reproduce in test, define loading guard/error handling; no internal cause/fix claimed. |
+| Customer/vendor/role inheritance, validation, defaults and saves | E-161–195 plus dated §12–13 | Operations/admin/accounting: designated environment and alternate roles unavailable under D-01. |
+| Supplier lookup/geocoding/packet/accounting effects | E-170/172/177/187/195 | Integration lead: contracts/runtime validation, no endpoint replay or secret collection. |

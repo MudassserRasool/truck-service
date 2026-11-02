@@ -249,6 +249,42 @@ The [Coverage Register](Documentation%20Coverage%20and%20Open%20Questions.md) us
 | E-176 | Nov3 / Deep4 | R004 vendor billing | Address/edit-address and email, no explicit save exposed. | No entry; autosave/blur/nested address unknown. | Operations/accounting lead |
 | E-177 | Nov3 / Deep4 | R004 vendor accounting preference | Push bills to Quickbooks Online checked. | No change; preference does not prove connectivity/sync. | Operations/accounting lead |
 
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-178 | Nov3 / Deep4 | R005 Booking & quoting / Customer-specific | Booking checked/disabled; login off; automatic LTL quote/dispatch on; Done/Close. | No change; configuration not eligibility/access/provider-success proof. | Pricing/admin lead |
+| E-179 | Nov3 / Deep4 | R005 LTL carriers tab | Multiplier/default, margin/profit controls, per-carrier rows/account-reference context and input metadata. | No values/Done; pricing precedence/enforcement/persistence unknown; account values omitted. | Pricing/integration lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-180 | Nov3 / Deep4 | R006 Credit | Zero limit/remaining/aging groups,30days,invoice/payment links. | No editor/credit request; formula/holds/role rules unknown. | Operations/admin lead |
+| E-181 | Nov3 / Deep4 | R006 Reps | New-shipments-only message and User/Commissions/drag. | No assignment/drag/commission changes. | Operations/admin lead |
+| E-182 | Nov3 / Deep4 | R006 Documents | Customer add document/+add file dialog. | No file action; type/size/access/upload behavior unknown. | Operations/admin lead |
+| E-183 | Nov3 / Deep4 | R006 Shipments | No shipments and +shipment link. | One customer; no creation/full inclusion proof. | Operations/admin lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-184 | Nov3 / Deep4 | R006 Quotes | Initial blank then No quotes/+quote. | No creation; one empty customer. | Operations/accounting lead |
+| E-185 | Nov3 / Deep4 | R006 Invoices | No invoices,0 summaries,Download CSV. | No export/send/payment; populated actions earlier evidence. | Operations/accounting lead |
+| E-186 | Nov3 / Deep4 | R006 Payments | Date/amount/method/reference/shipment-count/credit,empty/Record payment. | No payment; visibility/role/inclusion unknown. | Operations/accounting lead |
+| E-187 | Nov3 / Deep4 | R006 Nested billing address | Google search/company/country USA/street/line2/city-state-zip/Save address. | No query/input/save; provider traffic and key requirement unproven. | Operations/accounting lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-188 | Nov3 / Deep4 | R007 early carrier Shipments | Tab selected during header skeleton; blank/zero named links at bounded read. | Settled history not established; no empty/populated claim. | Product/operations lead |
+| E-189 | Nov3 / Deep4 | R007 carrier Payments | Browser route contains undefined; provider/undefined GET400 after initial provider GET200; blank panel. | Cause/timing/binding unverified, no payment action/replay. | Product/integration lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-190 | Nov3 / Deep4 | R007 identity-ready carrier Shipments | Valid route; initial No shipments later populates existing In transit row. | Initial emptiness transient; timing hypothesis not internal cause/fix proof. | Product/operations lead |
+| E-191 | Nov3 / Deep4 | R007 valid Payments | Table schema and No payments found. | One carrier; no payment/full-dataset proof. | Accounting lead |
+| E-192 | Nov3 / Deep4 | R007 Documents | Carrier add document/+add file. | No file action; type/size/audience unknown. | Carrier operations lead |
+
+| ID | Inspected | Path/action | Observation | Limits | Proposed reviewer |
+| --- | --- | --- | --- | --- | --- |
+| E-193 | Nov3 / Deep4 | R007 Vendor Shipments | Identity-ready No shipments. | One sample; no work created. | Operations/accounting lead |
+| E-194 | Nov3 / Deep4 | R007 Vendor Payments/Documents entry | Payment schema/No payments; no Documents button exposed. | No payment/global-role-support inference. | Operations/accounting lead |
+| E-195 | Nov3 / Deep4 | R007 Vendor nested billing address | Google search/company/country/street/line2/city-state-zip/Save address. | No input/search/save/provider traffic proof. | Operations/accounting lead |
+
 **4\. Known conflicts and evidence limits**
 
 | ID | Evidence | Issue | Required follow-up |
@@ -275,6 +311,6 @@ These sources establish industry meanings, not Quote Factory implementation or a
 | E-34 | Oct 23 / T2 | [FedEx — shipping vocabulary](https://www.fedex.com/en-us/shipping/glossary.html). Reference for basic shipping terminology used in Phase 1. | Do not import carrier-specific product thresholds into universal app rules. | Operations lead |
 | E-50 | Oct 23 / T3 | [FMCSA — operating authority](https://www.fmcsa.dot.gov/faq/what-operating-authority-mc-number-and-who-needs-it); [SAFER identifier help](https://safer.fmcsa.dot.gov/saferhelp.aspx). Supports distinguishing USDOT identification from MC operating-authority terminology. | No particular carrier's current authority, registration, insurance or eligibility independently verified. | Carrier operations lead |
 
-**Adding the next entry:** Continue IDs after E-177. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
+**Adding the next entry:** Continue IDs after E-195. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.
