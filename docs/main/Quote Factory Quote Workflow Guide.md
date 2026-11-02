@@ -2098,6 +2098,20 @@ Cached-body retrieval for three already-observed document/count/list GETs return
 
 **Purpose:** Understand which feature needs which external capability, which values/providers are visible in Quote Factory, and what access the clone would still need. The detailed carrier/provider instructions are maintained in the existing [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md), revised October 26, 2026. Evidence E-93–98. No account was created, agreement accepted, paid product purchased, credential retrieved or operational API called.
 
+<a id="deep-supplier-reconciliation"></a>
+**Deep6 — Supplier reconciliation, November3 (E-219–221):** [Carrier integrations](https://app.quotefactory.com/broker/carrier-integrations) settled to17 named carrier cards plus Test quote; no card, credential or test action was used. The consolidated [network evidence](network/quote-factory-network.json) now contains `supplierHostInventory`, derived from captured requests through DEEP-06-R001. Full hostname/count/run table and official access references are in the [third-party guide, Deep6 reconciliation](../thrid_party/10-4-tms-api-access-guide.md#deep6-supplier-reconciliation--november3-2026). Counts measure captured records, not unique/billable calls; parent/child/body capture remains partial.
+
+| Evidence layer | Supported finding | Interpretation boundary |
+| --- | --- | --- |
+| Direct browser requests | Quote Factory app/API; Mapbox assets/events; Google Maps/Places JavaScript assets; Filestack CDN transformations; S3 assets; CloudFront; Help Scout Beacon; Google Fonts; UI Avatars | Successful resources do not establish every feature's provider, backend architecture or operational integration health. |
+| Document references | Generated S3 document links and document-S3 URLs nested inside Filestack preview paths | Nested source URLs are references, not automatically direct browser calls to that hostname. Signed query values are omitted. |
+| UI configuration | Trucker Tools Connected, QuickBooks Syncing, MyCarrierPortal Setting up and RMIS choice; carrier integration cards | Not a completed tracking/accounting/onboarding/carrier operation. `MyCarrierPortal` must not be silently renamed to older `MyCarrierPackets`. |
+| App-reported failures | DAT authorization failure and named historical carrier errors | Provider reference with failure evidence; not fresh direct provider traffic or clone entitlement. |
+| Public capability research | Mapbox browser/server token distinction; Google autocomplete; Filestack transformations; S3 temporary links; Beacon help/contact | Provider documentation establishes available capability, not the reference app's implementation or client account approval. Links and inspection date are in the third-party guide. |
+| Still unknown | Mail/SMS delivery, PDF creation, signatures, route/mileage supplier, pricing aggregator, payments, backend stores/jobs/hosting/observability | Require client architecture/configuration and independent operation receipts. Absence from partial browser traffic is not absence from the system. |
+
+**What to obtain for the clone:** For each approved capability, identify provider/product/operation and owner; test/production environments; current contract/API version; auth/scopes and secure secret reference; input/output/events; rate limits/costs/data rights; retry/idempotency/cancellation and reconciliation evidence. Follow §18.4 and the detailed guide's onboarding worksheet. Do not reuse the reference app's keys or infer17 carrier accounts are all required. No supplier is marked Ready. Deep6 safe discovery/reconciliation is delivered; client procurement and operational acceptance remain open. Deep7 audits the full eight-category requirement set.
+
 **18.1 Four questions before requesting a key**
 
 1. **What feature?** Rating, tender/pickup, tracking, BOL/document retrieval, map rendering, route/mileage, address search, onboarding, accounting, messages or actual payment processing are separate capabilities.

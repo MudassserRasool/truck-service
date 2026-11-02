@@ -120,3 +120,43 @@ E-119 / DEEP-01-R004: the existing quote's historical failure dialog reports a M
 **Deep4 network reconciliation, November3:** R001–004 records first-party customer/credit/config/contact/template/provider/account-provider/custom-vendor/external-attribute/note/event reads and an automatic account-settings PUT. Provider-integrations/integrations configuration reads also occur, but successful first-party200 responses do not verify any downstream supplier call, carrier eligibility, packet delivery or QuickBooks synchronization. No new external supplier is identified from these paths alone. Main Deep4 now maps the observed API families; original per-run loss/outstanding/body limitations remain.
 
 **Deep4 address dialog, E-187:** Nested customer billing address explicitly labels Google address search. No search was entered, so this is a UI-named provider reference, not verified direct Google geocoding traffic or proof of which clone key/API is needed. Keep this separate from the observed Mapbox shipment-map assets.
+
+### Deep6 supplier reconciliation — November3, 2026
+
+Phase5 remote `a03f83e4f423fa6d19f411c74b0db4eb986d0648` matched local HEAD before creating `codex/docs-deep-06-integrations`. E-219/R001 freshly confirms17 carrier cards and Test quote entry. No credential editor or test quote was activated. E-220 is a reproducible snapshot of the consolidated JSON `requests` array through that run; counts below are **captured records**, not unique requests, billable usage or completeness evidence.
+
+| Direct browser hostname | Captured records | Runs |
+| --- | --- | --- |
+| `api.mapbox.com` | 91 | 5 |
+| `api.quotefactory.com` | 1936 | 30 |
+| `app.quotefactory.com` | 534 | 34 |
+| `beacon-v2.helpscout.net` | 192 | 19 |
+| `cdn.filestackcontent.com` | 66 | 22 |
+| `d3hb14vkzrxvla.cloudfront.net` | 64 | 19 |
+| `events.mapbox.com` | 16 | 5 |
+| `fonts.googleapis.com` | 32 | 19 |
+| `fonts.gstatic.com` | 41 | 21 |
+| `maps.googleapis.com` | 16 | 2 |
+| `maps.gstatic.com` | 4 | 2 |
+| `quotefactory-assets.s3.amazonaws.com` | 58 | 7 |
+| `quotefactory-assets.s3.us-east-1.amazonaws.com` | 16 | 13 |
+| `ui-avatars.com` | 58 | 25 |
+
+**Interpret the inventory by capability:**
+
+| Evidence | What it supports | What it does not establish / clone decision |
+| --- | --- | --- |
+| `api.quotefactory.com`, `app.quotefactory.com` | First-party browser application/API. | Not a public API contract, database architecture or downstream carrier endpoint. Clone needs its own approved API contracts. |
+| `api.mapbox.com`, `events.mapbox.com` | Map assets/session resources and event traffic; observed paths include styles/fonts/map sessions. | No proven truck-routing provider or driver tracking. Choose map/routing independently. |
+| `maps.googleapis.com`, `maps.gstatic.com` | Maps JavaScript and Places library assets actually loaded, beyond the Google-address-search UI reference. | Loading `places.js` does not prove an autocomplete prediction, geocode result, validation call or billing entitlement. |
+| `cdn.filestackcontent.com` | Successful CDN requests include document-to-JPG transformation paths, not only an app-side uploader-token reference. | Upload success, storage ownership, malware scan, policy and signing behavior untested. Opaque handles/keys are not repeated here. |
+| S3 asset hosts | Browser asset delivery. Nested document-S3 references also occur inside Filestack URLs and generated download links. | Nested `quotefactory-documents.s3.us-east-2.amazonaws.com` references are not counted as direct-host calls. No inferred bucket policy, link lifetime, backup or retention. |
+| `d3hb14vkzrxvla.cloudfront.net` | CDN asset traffic. | Distribution hostname alone does not identify app origin, owner or every hosted function. |
+| `beacon-v2.helpscout.net` | Direct Beacon resources plus the observed Help Scout UI. | No support message delivery, mailbox contract or retention test. |
+| Google font hosts and `ui-avatars.com` | Font and avatar resource traffic. | These are presentation dependencies, not freight services. Decide whether to retain or self-host/replace; review transmitted display data separately. |
+
+**Configuration and historical references are a separate evidence layer:** Trucker Tools Connected (E-208), QuickBooks Syncing Bills & Invoices (E-212), MyCarrierPortal Setting up/RMIS option (E-209), DAT Authorization failed (E-138), carrier offers/errors (E-119) and TalentLMS link do not become direct supplier requests merely because named in UI. Carrier411/CarrierOK/Highway/ClassIT+ link preferences also are not API-health tests. Preserve the exact `MyCarrierPortal` UI name; do not silently equate it with the older `MyCarrierPackets` reference. Sentry references in earlier artifacts likewise do not appear as a direct host in this bounded requests inventory; telemetry delivery/active environment remains unproven.
+
+**Official implementation references checked November3 (E-221):** [Mapbox tokens](https://docs.mapbox.com/help/dive-deeper/access-tokens/) distinguishes browser/public and server/secret tokens and URL restrictions. [Google Places autocomplete](https://developers.google.com/maps/documentation/javascript/place-autocomplete-overview) documents typeahead via the Maps JavaScript Places library; this is provider capability, not a tested app query. [Filestack processing](https://www.filestack.com/docs/transformations/overview/) documents URL-based transformation tasks. [AWS presigned URLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html) describes time-limited object access; no app-specific duration is inferred. [Help Scout Beacon](https://developer.helpscout.com/beacon-2/) documents embedded knowledge-base/contact capability. An attempted legacy Filestack security-policy URL was inaccessible through the research tool; no security-policy claim is based on it.
+
+**Remaining unknown suppliers:** transactional email/SMS, PDF creation engine, signatures, route/mileage calculations, pricing/network aggregation, payment execution, database/hosting origins, queues/jobs and server-side observability. No direct host in a partial browser capture can close those gaps. Obtain architecture/configuration evidence and provider-owned operation receipts from the client; do not obtain or copy the reference app's credentials. For clone procurement, use §4's worksheet per selected capability, including separate sandbox/production ownership, auth/scopes, data permissions, quotas, callbacks, idempotency and reconciliation. None is Ready solely from this discovery.
