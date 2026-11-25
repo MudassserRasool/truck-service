@@ -2638,3 +2638,11 @@ The broker sidebar and chapters include customer and provider administration, ac
 3. With an existing row, the next discovery step would be to open it and inventory customer-visible status, stops, tracking and documents. No existing row was available here. Customer shipment detail, tracking milestones, BOL/POD access and row-level actions could not be verified. The broker examples in §§15–17 describe those surfaces from the broker perspective.
 
 **Customer and broker comparison.** The customer session exposed Active/All, shipment filters and a new-shipment shortcut. The broker guide also records coverage queues, carrier assignment, shipment financials and operational editing on populated broker records. Customer detail visibility and permissions for those features remain open. No shipment creation, edit, booking, dispatch, cancellation, tracking request or document upload was performed.
+
+### 24.4 View invoices, lane data and profile
+
+**Invoices.** Open **Invoices**. The sample displayed **No invoices**, a **Not Invoiced** indicator, an enabled **Download statement** button and a disabled **Download CSV** button. The statement action produced a PDF download event. The contents were not inspected. No invoice row was available, so invoice charges, balances, individual PDFs, shipment links, payment and dispute controls remain unverified. Use §17 for the broker-side invoicing workflow.
+
+**Data.** Open **Data** to reach **Lanes**. The visible table labels were Origin, Destination and Shipments, with an empty **No matching lane data** state. **View shipment filters** exposed search, status, equipment, booked/pickup/delivery dates, and carrier. Apply via **See shipments**. A fictional search produced a visible chip. **Reset filters** left the search chip visible in this session, including after navigating away and returning. The reset behavior warrants a populated-data check. An unlabeled toolbar control was present. Its function and any export format were unverified. No lane rows were available to verify grouping, sorting or totals.
+
+**Profile.** Open the account link at the bottom of the sidebar. The form showed First name, Last name, Email and Phone with a country indicator. **Save** was disabled on the untouched form. Save behavior and permission to change any individual field remain unverified.
