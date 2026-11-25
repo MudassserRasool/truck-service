@@ -33,6 +33,7 @@ Originally prepared October 9, 2026 | Deep discovery refreshed through November3
 21. [Questions still awaiting verification](#open-questions)
 22. [Phase progress and what to do next](#phase-progress)
 23. [Sources and supporting records](#sources)
+24. [Customer workspace](#customer-workspace)
 
 <a id="reading-guide"></a>
 **1\. How to use this guide**
@@ -52,7 +53,7 @@ Originally prepared October 9, 2026 | Deep discovery refreshed through November3
 | Learning example | Fictional companies, amounts or scenarios used to explain a relationship. |
 | Unverified | A rule, role, integration or side effect still requires inspection or a business answer. |
 
-The inspected session displays the Stackup Solutions profile in the 10-4 Global broker app. Its Member role was verified October 26 in Users/Profile (E-99); submitted-action permissions remain untested. Customer/carrier/driver portal behavior has not been inspected through separate logins. Examples and counts can change; a specific record URL may stop working. Use the general module link and click path as a fallback.
+The inspected session displays the Stackup Solutions profile in the 10-4 Global broker app. Its Member role was verified October 26 in Users/Profile (E-99); submitted-action permissions remain untested. The broker chapters describe the original broker session. Section 24 records a separate customer session. Carrier and driver portals remain unverified. Examples and counts can change; a specific record URL may stop working. Use the general module link and click path as a fallback.
 
 **Scope is still pending:** The client has not selected the first-release feature set, named reviewers or designated a mutation-test environment. Learning documentation can proceed while those decisions are collected. No booking, record update, cancellation, document send or payment was performed for this phase. DOCX/PDF exports have not been regenerated.
 
@@ -2598,3 +2599,22 @@ These are tracked questions, not reasons to invent a behavior or silently exclud
 - [Evidence Register](Documentation%20Evidence%20Register.md) — observation/source history.
 - [10-4 TMS API Access Guide](../thrid_party/10-4-tms-api-access-guide.md) — revised Phase 7 provider/dependency requirements, access sources and readiness gaps.
 
+<a id="customer-workspace"></a>
+## 24. Customer workspace
+
+### 24.1 Navigation and account scope
+
+Verified November 25, 2026 in the signed-in 10-4 Global customer workspace. The sidebar and enabled controls establish what this session exposed. Several customer pages share the broker URL prefix.
+
+| Sidebar entry | Page | Customer actions and boundaries |
+| --- | --- | --- |
+| Quote | `/broker/quote` | Open **Get quotes**. The customer is prefilled and the selector is disabled. The signed-in contact is prefilled. |
+| Quotes | `/broker/quote-history` | Search quote history, open existing quote results, or use the plus icon to start a new quote. Existing entries show the lane, date, freight weight, equipment and a result indicator. |
+| Shipments | `/broker/shipments` | Switch between **Active** and **All** and open shipment filters. The sidebar also presents a **Create new shipment** shortcut. Its label establishes a visible entry point only. |
+| Invoices | `/broker/invoices` | Open the invoice list. **Download statement** is visible. **Download CSV** was disabled in the initial view. |
+| Data | `/broker/lanes` | Open **Lanes**. The page offers shipment filters, Origin/Destination/Shipments controls and Reset filters. |
+| Profile | `/profile` | The account link opens the profile entry point. |
+
+The broker sidebar and chapters include customer and provider administration, accounting and settings. Those modules were absent from the customer sidebar in this session. The disabled customer selector establishes the behavior of the quote form for this account. Broader role permissions and tenant isolation require separate evidence.
+
+**Quote versus shipment.** Get quotes is the visible quote action. Create new shipment is a separate shipment action. The broker settings chapter records an account-dependent LTL auto-dispatch control. Its effective state and trigger for this customer session could not be confirmed from the customer workspace, so quote submission stayed blocked. Use existing quotes to study results. Shipment discovery uses existing records and view controls.
