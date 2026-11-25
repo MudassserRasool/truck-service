@@ -2,7 +2,7 @@
 
 **What was inspected, what it establishes, and what remains uncertain**
 
-Prepared October 23, 2026 | All live observations below use the visible 10-4 Global broker session displaying the Stackup Solutions profile. Member role verified October 26 (E-99); submitted-action and alternate-role permissions remain unverified.
+Prepared October 23, 2026 | The broker observations below use the visible 10-4 Global broker session displaying the Stackup Solutions profile. Member role verified October 26 (E-99); submitted-action and alternate-role permissions remain unverified.
 
 **1\. How to read this register**
 
@@ -366,3 +366,17 @@ These sources establish industry meanings, not Quote Factory implementation or a
 **Adding the next entry:** Continue IDs after E-222. Retain earlier dated evidence rather than overwriting it when live state changes. For future screenshots, add a local relative link and capture date; for unavailable behavior, record the failed entry point and blocker without inferring a result.
 
 **Deep2 local artifact audit, November1:** E-124–144 references resolve; all98 phase screenshots are linked in the main guide and readable by local OCR, with0 email-pattern flags (blank placeholder allowlist only). All Markdown local links resolve. Synthetic recorder/query/redaction tests and consolidated JSON identity/relationship/path checks pass. URL email-like matches are Mapbox sprite@2x.json/png assets, not contact addresses. No coordinate-pair paths or JWT-like strings were detected in the JSON scan. These bounded scans are not exhaustive privacy/visual or application acceptance tests. Original DEEP-00-R001/S01 lacks an end boundary and is explicitly marked interrupted without an invented completion time; R008 recovery also remains partial.
+
+<a id="customer-session-evidence"></a>
+## Customer session evidence
+
+November 25, 2026. Signed-in 10-4 Global customer workspace. The screenshot crops omit account details. API paths use `:id` to stand in for record identifiers. The capture was limited to observed responses on the browser tab and selected field names. It omits query values, headers and bodies. Request purposes are inferred from the UI action and path.
+
+| ID | Area and observed result | Network evidence or limit |
+| --- | --- | --- |
+| CE-01 | Navigation showed Quote, Quotes, Shipments, Invoices and Data. Quote customer selection was locked. [Navigation crop](screenshots/customer-navigation-2026-11-25.jpg). | Sidebar availability describes this session. The app shares broker-prefixed routes. |
+| CE-02 | LTL draft exercised date, two cities, services, pallet dimensions and freight class. Dry Van displayed a different form. | Form left unsubmitted. Account-level auto-dispatch behavior remains unknown. |
+| CE-03 | Two existing LTL results were opened. The Guaranteed filter changed the visible offers. Book was visible and left untouched. | `GET /quote-requests` and `GET /quote-requests/:id` both returned 200. `PUT /users/settings/account` also returned 200 during navigation. Its payload and server effect were not inspected. |
+| CE-04 | Customer Active and All shipments were empty. A fictional search produced a query-specific empty state. Clearing the search restored the empty list. | `GET /shipments/` returned 200. Observed query keys included `activeOnly`, `limit`, `sort` and `sortBy`. No shipment action was submitted. |
+| CE-05 | The invoice list was empty, and Download statement produced a PDF download event. [Invoice empty-state crop](screenshots/customer-invoices-empty-2026-11-25.jpg). | `POST /customers/:id/statement` and `GET /customers/:id/document` returned 200. PDF contents were not inspected. |
+| CE-06 | Lanes displayed an empty state. A fictional search chip persisted after Reset filters. The personal profile showed identity/contact fields and disabled Save on the untouched form. | `GET /shipments/lanes/` returned 200. The sampled lane request contained `pickupDate`, `search` and `sort` keys. |

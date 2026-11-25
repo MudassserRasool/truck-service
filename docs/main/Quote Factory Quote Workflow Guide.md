@@ -2646,3 +2646,30 @@ The broker sidebar and chapters include customer and provider administration, ac
 **Data.** Open **Data** to reach **Lanes**. The visible table labels were Origin, Destination and Shipments, with an empty **No matching lane data** state. **View shipment filters** exposed search, status, equipment, booked/pickup/delivery dates, and carrier. Apply via **See shipments**. A fictional search produced a visible chip. **Reset filters** left the search chip visible in this session, including after navigating away and returning. The reset behavior warrants a populated-data check. An unlabeled toolbar control was present. Its function and any export format were unverified. No lane rows were available to verify grouping, sorting or totals.
 
 **Profile.** Open the account link at the bottom of the sidebar. The form showed First name, Last name, Email and Phone with a country indicator. **Save** was disabled on the untouched form. Save behavior and permission to change any individual field remain unverified.
+
+### 24.5 Customer versus broker
+
+| Workflow | Customer workspace observed November 25 | Broker workspace documented earlier |
+| --- | --- | --- |
+| Quote creation | Locked customer, prefilled contact, editable freight inputs. | Customer/contact selection and broker quote form, §14. |
+| Quote results | Customer price, service, estimated transit, Book, and disabled Hide quote on sampled cards. | Offer cost, sell-price and margin detail, manual offers and visibility controls, §14. |
+| Shipments | Active/All, search and filters, and a new-shipment shortcut. No populated rows in the account. | Existing shipment details, coverage queues, cost, assignment, editing, scheduling and tracking, §§15–16. |
+| Documents and money | Statement PDF download, invoice entry point and invoice CSV control. Individual invoice and shipment document access require populated records. | BOL, POD, invoice, carrier bill, payment recording and accounting screens, §17. |
+| Data and setup | Lanes table and filters, plus personal profile. | Lanes and other reports, customer/provider records, users, teams and company settings, §§12 and 19. |
+
+These differences describe sampled screens. Server enforcement, other customer accounts and alternate roles require separate verification.
+
+### 24.6 Evidence and coverage
+
+Cropped browser captures omit contact details and record identifiers. [Navigation crop](screenshots/customer-navigation-2026-11-25.jpg) · [Invoice empty state](screenshots/customer-invoices-empty-2026-11-25.jpg).
+
+| Module | Tested or viewed | Open follow-up |
+| --- | --- | --- |
+| Quote | Fictional LTL draft, date and city selection, pallet defaults, service menus and Dry Van comparison. | Confirm quote-only behavior for the account before submission. Then verify validation, rate response and history persistence. |
+| Quotes | Opened two existing LTL results, applied the Guaranteed filter and inspected the action menu. | Other quote states, detailed offer breakdown and permissions across accounts. |
+| Shipments | Active and All empty states, filter controls, applied search and restoration. | Existing active and delivered records for stops, tracking, documents and customer-visible actions. |
+| Invoices | Empty invoice list, statement PDF download and disabled CSV. | Existing invoices for detail, balances, shipment links, individual PDF and visible payment/dispute controls. |
+| Data | Lanes filters, empty state and retained search after Reset filters. | Populated lane results, export behavior, filter reset scope and aggregate definitions. |
+| Profile | Read visible profile fields and initial Save state. | Field-level permissions and saved changes. |
+
+**Passive network evidence.** Quote Factory browser traffic was inspected during ordinary navigation and statement download. The API returned HTTP 200 for quote history and detail, shipment lists, lanes, and the statement/document requests. Opening a quote also coincided with an automatic account-settings PUT. Request paths, statuses and selected query field names are recorded in [customer evidence](Documentation%20Evidence%20Register.md#customer-session-evidence). These observations establish browser requests and visible results. They leave server authorization, provider behavior and shipment mutations unverified. See [customer open questions](Documentation%20Coverage%20and%20Open%20Questions.md#customer-workspace-open-questions) for the required fixtures and account evidence.

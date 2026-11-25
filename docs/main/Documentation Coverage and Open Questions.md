@@ -420,3 +420,17 @@ Capture metadata currently records R001167 requests/loss reported/3 outstanding;
 **Deep6 delivery, November3:** Phase5 pushed/verified `a03f83e4f423fa6d19f411c74b0db4eb986d0648` before `codex/docs-deep-06-integrations`. E-219–221/R001 reconcile live17-card catalog, direct-host inventory in consolidated JSON, nested document references, UI configuration, historical failures and official public capabilities. Main/API guides separate each evidence layer and unknown server services. No operational/provider test or credential change. After artifact audit/push/remote verification, Deep7 audits all eight requested categories and residual gaps; no 100% acceptance claim.
 
 **Deep7 final discovery audit, November3 / E-222:** Main §20 now maps all eight requested categories to evidence and unresolved limits. All89 inventory items remain87P/2B;198 screenshots linked. Consolidated JSON coverage and endpoint workflow/evidence/payload references refreshed through Deep6. No full workflow/role/operational acceptance is promoted to passed. Synthetic tooling tests and artifact references are checked separately. Remaining handoff is SC-01–12/D-01 and designated-environment W/X cases; older DOCX/PDF exports are not current. Phase6 remote `2982e156f51f07b33d6ed37d4cdb6c11ed1ff6c3` verified before fresh `codex/docs-deep-07-coverage-audit`. Final phase delivery follows audit/commit/push/remote verification.
+
+<a id="customer-workspace-open-questions"></a>
+## Customer workspace open questions
+
+See [main guide §24](Quote%20Factory%20Quote%20Workflow%20Guide.md#customer-workspace) and [CE-01–06](Documentation%20Evidence%20Register.md#customer-session-evidence). These gaps describe the November 25 customer account.
+
+| ID | Open question | Evidence needed |
+| --- | --- | --- |
+| CW-01 | Can Get quotes generate rates and a history entry without creating, booking or dispatching a shipment? Which fields are enforced? | Current account's effective workflow configuration or a controlled customer fixture that guarantees quote-only behavior, followed by UI validation and one representative quote. |
+| CW-02 | Which offer details and other quote states are available to a customer? | Existing quote examples in more states and a verified details view. Keep shipment actions out of the discovery. |
+| CW-03 | Which tracking milestones, stops, BOL/POD and actions appear on existing shipments? | Populated active and delivered shipments accessible from the customer workspace. Inspect existing rows in view-only mode. |
+| CW-04 | Which charges, balances, invoice PDFs, shipment links and payment/dispute controls appear? | At least one accessible existing invoice. Inspect without making payments or opening a dispute. |
+| CW-05 | Which measures, groupings and exports does customer Data expose? Should Reset filters clear search? | Populated lane data and a reversible filter/export check. |
+| CW-06 | Which profile fields can be saved, and how do customer permissions vary? | A disposable profile or approved reversible update, and separate verified sessions for any additional roles or accounts. |
