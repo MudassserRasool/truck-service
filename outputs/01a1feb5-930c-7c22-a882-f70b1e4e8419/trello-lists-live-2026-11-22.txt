@@ -1,0 +1,456 @@
+- text: "Skip to:"
+- list:
+  - link "Board":
+    - /url: "#trello-board-root"
+  - link "Board switcher":
+    - /url: "#island-nav"
+- navigation "Primary":
+  - button "Switch to…":
+    - img "Switch to…"
+  - link "Back to home":
+    - /url: /
+  - textbox "Search"
+  - button "Create board or Workspace": Create
+  - button "Feedback"
+  - button "7 Notifications"
+  - button:
+    - generic: "7"
+  - button "Open information menu"
+  - button "Mudasser Rasool (mudasserrasool)"
+- slider "Resize panels using the left and right arrow keys"
+- slider "Resize panels using the left and right arrow keys"
+- textbox "Board name":
+  - heading "Tms" [level=1]
+- button "Views"
+- button "Mudasser Rasool (mudasserrasool)"
+- button "This member is an admin of this board.":
+  - generic "This member is an admin of this board."
+- button "Power-Ups":
+  - img "Power-Ups"
+- button "Automation"
+- button "Filter cards":
+  - img "Filter cards"
+- button "Star or unstar board":
+  - img "Star or unstar board"
+- button "Workspace visible"
+- button "Share board Share":
+  - img "Share board"
+  - generic: Share
+- button "Show menu"
+- list:
+  - heading "QA unverified list(dev can ignore those ones for now)" [level=2]:
+    - button "QA unverified list(dev can ignore those ones for now)":
+      - generic: QA unverified list(dev can ignore those ones for now)
+  - textbox "QA unverified list(dev can ignore those ones for now)"
+  - generic: "37"
+  - button "More actions on QA unverified list(dev can ignore those ones for now)"
+  - list:
+    - 'link "ACC-10: Close bill edit stays on bill summary on staging (prod partly matches)"':
+      - /url: /c/qNrYK2wg/91-acc-10-close-bill-edit-stays-on-bill-summary-on-staging-prod-partly-matches
+    - 'button "Mark this card complete (ACC-10: Close bill edit stays on bill summary on staging (prod partly matches))"'
+    - img "This card has a description."
+    - 'link "ACC-11: Staging shows QuickBooks sync control on carrier bill and invoice"':
+      - /url: /c/2qdw0l95/92-acc-11-staging-shows-quickbooks-sync-control-on-carrier-bill-and-invoice
+    - 'button "Mark this card complete (ACC-11: Staging shows QuickBooks sync control on carrier bill and invoice)"'
+    - img "This card has a description."
+    - 'link "CAR-04: Staging disables rate-con email and phone settings for a Member"':
+      - /url: /c/zZgNRMoQ/93-car-04-staging-disables-rate-con-email-and-phone-settings-for-a-member
+    - 'button "Mark this card complete (CAR-04: Staging disables rate-con email and phone settings for a Member)"'
+    - img "This card has a description."
+    - 'link "QTE-18: Staging common-dimensions hint shows only length (Flatbed)"':
+      - /url: /c/scieBGo5/94-qte-18-staging-common-dimensions-hint-shows-only-length-flatbed
+    - 'button "Mark this card complete (QTE-18: Staging common-dimensions hint shows only length (Flatbed))"'
+    - img "This card has a description."
+    - 'link "INT-01: Staging shows extra carrier integration Peninsula Truck Lines"':
+      - /url: /c/qMVmf0ar/95-int-01-staging-shows-extra-carrier-integration-peninsula-truck-lines
+    - 'button "Mark this card complete (INT-01: Staging shows extra carrier integration Peninsula Truck Lines)"'
+    - img "This card has a description."
+    - 'link "INT-02 - Carrier settings: Tracking integration differs (staging None, production Trucker Tools)"':
+      - /url: /c/cPNNhuea/96-int-02-carrier-settings-tracking-integration-differs-staging-none-production-trucker-tools
+    - 'button "Mark this card complete (INT-02 - Carrier settings: Tracking integration differs (staging None, production Trucker Tools))"'
+    - img "This card has a description."
+    - 'link "SHP-36 - Shipments: Auto Transport cover dialog missing Loadboards controls on staging"':
+      - /url: /c/DBsCxdDE/97-shp-36-shipments-auto-transport-cover-dialog-missing-loadboards-controls-on-staging
+    - 'link "SHP-37 - Shipments: Staging carrier coverage form missing Track with Trucker Tools option"':
+      - /url: /c/8lQQI0HI/98-shp-37-shipments-staging-carrier-coverage-form-missing-track-with-trucker-tools-option
+    - 'link "ACC-14 - Accounting: Staging QuickBooks dialog has extra Exclude factored and Remit-to options"':
+      - /url: /c/wvIGc3G3/99-acc-14-accounting-staging-quickbooks-dialog-has-extra-exclude-factored-and-remit-to-options
+    - 'button "Mark this card complete (ACC-14 - Accounting: Staging QuickBooks dialog has extra Exclude factored and Remit-to options)"'
+    - img "This card has a description."
+    - 'link "SHP-38 - Documents: BOL preview on staging shows a Send BOL bar that production lacks"':
+      - /url: /c/hZVxkrYx/100-shp-38-documents-bol-preview-on-staging-shows-a-send-bol-bar-that-production-lacks
+    - 'button "Mark this card complete (SHP-38 - Documents: BOL preview on staging shows a Send BOL bar that production lacks)"'
+    - img "This card has a description."
+    - 'link "DOC-03 - Documents: Staging carrier rate con omits pickup note and 5:30 AM appointment" [active]':
+      - /url: /c/16PBfyz2/101-doc-03-documents-staging-carrier-rate-con-omits-pickup-note-and-530-am-appointment
+    - 'button "Mark this card complete (DOC-03 - Documents: Staging carrier rate con omits pickup note and 5:30 AM appointment)"'
+    - img "This card has a description."
+    - 'button "Edit card DOC-03 - Documents: Staging carrier rate con omits pickup note and 5:30 AM appointment"':
+      - img "Edit card"
+    - 'link "ACC-15 - Bills: Staging Mail payment to is a button, not an editable field"':
+      - /url: /c/3x2hAj0o/102-acc-15-bills-staging-mail-payment-to-is-a-button-not-an-editable-field
+    - 'button "Mark this card complete (ACC-15 - Bills: Staging Mail payment to is a button, not an editable field)"'
+    - img "This card has a description."
+    - 'link "ACC-16 - Accounting: Vendor bill date basis options are disabled for Members on staging"':
+      - /url: /c/fCxYPQRO/103-acc-16-accounting-vendor-bill-date-basis-options-are-disabled-for-members-on-staging
+    - 'button "Mark this card complete (ACC-16 - Accounting: Vendor bill date basis options are disabled for Members on staging)"'
+    - img "This card has a description."
+    - 'link "DOC-04 - Documents: Staging label preview shows 1 page; production shows 5"':
+      - /url: /c/P2wmNrfC/104-doc-04-documents-staging-label-preview-shows-1-page-production-shows-5
+    - 'link "ACC-17 - Accounting: Staging Cc invoices email field and Add button disabled for Members"':
+      - /url: /c/4ZQc1Apu/105-acc-17-accounting-staging-cc-invoices-email-field-and-add-button-disabled-for-members
+    - 'link "ACC-19 - Bills & Invoices: Staging due dates are abbreviated vs production"':
+      - /url: /c/dZfFuPff/106-acc-19-bills-invoices-staging-due-dates-are-abbreviated-vs-production
+    - 'link "ACC-20 - Invoices: Staging share history omits recipient"':
+      - /url: /c/HlX8X8ls/107-acc-20-invoices-staging-share-history-omits-recipient
+    - 'link "SHP-39 - Shipments: Timeline labels POD upload as generic Document uploaded on staging"':
+      - /url: /c/I63oMKCG/108-shp-39-shipments-timeline-labels-pod-upload-as-generic-document-uploaded-on-staging
+    - 'link "SHP-40 - Shipments: Commission-paid toggle disabled for Members on staging"':
+      - /url: /c/1AapHPnw/109-shp-40-shipments-commission-paid-toggle-disabled-for-members-on-staging
+    - 'link "CUS-12 - Customers: LTL Volume boost selector disabled for Members on staging"':
+      - /url: /c/CJOMQQSI/110-cus-12-customers-ltl-volume-boost-selector-disabled-for-members-on-staging
+    - 'link "SHP-41 - Shipments: Staging Book shipment marks line-item Cost and Price required"':
+      - /url: /c/MbBCFtLC/111-shp-41-shipments-staging-book-shipment-marks-line-item-cost-and-price-required
+    - 'link "SHP-42 - Shipments: Combined density rounds to 9.37 pcf instead of 9.38"':
+      - /url: /c/BR0FkxYA/112-shp-42-shipments-combined-density-rounds-to-937-pcf-instead-of-938
+    - 'link "SHP-43 - Shipments: Staging Reorder Locations missing Remove location action"':
+      - /url: /c/C1faKW1M/113-shp-43-shipments-staging-reorder-locations-missing-remove-location-action
+    - 'link "ACC-21 - Accounting: Staging queue tabs use shortened visible labels"':
+      - /url: /c/gaEkgrFV/114-acc-21-accounting-staging-queue-tabs-use-shortened-visible-labels
+    - 'link "ACC-18 - Bills: Staging shows per-document QuickBooks sync; production does not"':
+      - /url: /c/4yID01v5/115-acc-18-bills-staging-shows-per-document-quickbooks-sync-production-does-not
+    - 'link "ACC-23 - Bills: Staging bill editor does not mark bill number, amount, or dates as required"':
+      - /url: /c/qdDbD9NE/116-acc-23-bills-staging-bill-editor-does-not-mark-bill-number-amount-or-dates-as-required
+    - 'link "ACC-24 - Bills: Staging bill upload accepts multiple files and different file types"':
+      - /url: /c/S7yc7hZE/117-acc-24-bills-staging-bill-upload-accepts-multiple-files-and-different-file-types
+    - 'link "DOC-05 - Documents: Staging BOL omits delivery service and instruction"':
+      - /url: /c/hVPxE7ek/118-doc-05-documents-staging-bol-omits-delivery-service-and-instruction
+    - 'link "DOC-06 - Documents: Staging customer confirmation omits pickup and delivery contacts"':
+      - /url: /c/wnzJZXEV/119-doc-06-documents-staging-customer-confirmation-omits-pickup-and-delivery-contacts
+    - 'link "DOC-07 - Documents: Staging customer invoice omits shipment PRO number"':
+      - /url: /c/Ci7sCjHE/120-doc-07-documents-staging-customer-invoice-omits-shipment-pro-number
+    - 'link "DOC-08 - Documents: Staging BOL omits pickup instruction \"6-10 STRAPS REQUIRED\""':
+      - /url: /c/MxkuWwFw/121-doc-08-documents-staging-bol-omits-pickup-instruction-6-10-straps-required
+    - 'link "SHP-44 - Shipments: Staging delivery contact phone number clipped in shipment editor"':
+      - /url: /c/yGP8rgXr/122-shp-44-shipments-staging-delivery-contact-phone-number-clipped-in-shipment-editor
+    - 'link "QTE-19 - Quotes: Canceled quote request still shows \"requested\" in staging quote history"':
+      - /url: /c/tqxy4n7n/123-qte-19-quotes-canceled-quote-request-still-shows-requested-in-staging-quote-history
+    - 'link "SHP-45 - Shipments: Duplicate shipment loses city/ZIP selections and blocks saving in staging"':
+      - /url: /c/jxnviGHX/124-shp-45-shipments-duplicate-shipment-loses-city-zip-selections-and-blocks-saving-in-staging
+    - 'link "SHP-46 - Shipments: Pickup correction button label differs from Quote Factory"':
+      - /url: /c/GIEYSTgD/125-shp-46-shipments-pickup-correction-button-label-differs-from-quote-factory
+    - 'link "ACC-25 - Accounting: QuickBooks Disconnect control disabled for Members on staging"':
+      - /url: /c/CmOOuMEX/126-acc-25-accounting-quickbooks-disconnect-control-disabled-for-members-on-staging
+    - 'link "SHP-49 - Shipments: Staging lets users edit delivery appointment after delivery"':
+      - /url: /c/QvMwabpY/127-shp-49-shipments-staging-lets-users-edit-delivery-appointment-after-delivery
+  - button "Add a card in QA unverified list(dev can ignore those ones for now)": Add a card
+  - button "Create from template…"
+  - heading "Issues" [level=2]:
+    - button "Issues":
+      - generic: Issues
+  - textbox "Issues"
+  - generic: "1"
+  - button "More actions on Issues"
+  - list:
+    - link "image.png":
+      - /url: /c/yYoSMpka/42-imagepng
+    - button "Mark this card complete (image.png)"
+    - img "This card has a description."
+    - img "1 comment":
+      - generic: "1"
+    - img "1 attachment":
+      - generic: "1"
+  - button "Add a card in Issues": Add a card
+  - button "Create from template…"
+  - heading "Discussion" [level=2]:
+    - button "Discussion":
+      - generic: Discussion
+  - textbox "Discussion"
+  - generic: "5"
+  - button "More actions on Discussion"
+  - list:
+    - link "Throught the app please use numeric input field where our input values are type of number":
+      - /url: /c/dXsl1Yic/70-throught-the-app-please-use-numeric-input-field-where-our-input-values-are-type-of-number
+    - button "Mark this card complete (Throught the app please use numeric input field where our input values are type of number)"
+    - img "1 comment":
+      - generic: "1"
+    - link "Difference between the two":
+      - /url: /c/d0m4DB6e/74-difference-between-the-two
+    - button "Mark this card complete (Difference between the two)"
+    - img "This card has a description."
+    - img "1 comment":
+      - generic: "1"
+    - img "1 attachment":
+      - generic: "1"
+    - link "App logout very frequentlly please increase the time, i have tested on broker side":
+      - /url: /c/64ZvsJUD/73-app-logout-very-frequentlly-please-increase-the-time-i-have-tested-on-broker-side
+    - button "Mark this card complete (App logout very frequentlly please increase the time, i have tested on broker side)"
+    - img "1 comment":
+      - generic: "1"
+    - link "image.png":
+      - /url: /c/cBIZ3DSK/45-imagepng
+    - button "Mark this card complete (image.png)"
+    - img "This card has a description."
+    - img "1 comment":
+      - generic: "1"
+    - img "1 attachment":
+      - generic: "1"
+    - 'link "QTE-16: Quote history search misses BOL 1047912 on production"':
+      - /url: /c/TREWPKqk/86-qte-16-quote-history-search-misses-bol-1047912-on-production
+    - 'button "Mark this card complete (QTE-16: Quote history search misses BOL 1047912 on production)"'
+    - img "This card has a description."
+    - img "2 attachments":
+      - generic: "2"
+  - button "Add a card in Discussion": Add a card
+  - button "Create from template…"
+  - heading "In progress" [level=2]:
+    - button "In progress":
+      - generic: In progress
+  - textbox "In progress"
+  - generic: "0"
+  - button "More actions on In progress"
+  - list
+  - button "Add a card in In progress": Add a card
+  - button "Create from template…"
+  - heading "Reopend/Notfixed" [level=2]:
+    - button "Reopend/Notfixed":
+      - generic: Reopend/Notfixed
+  - textbox "Reopend/Notfixed"
+  - generic: "0"
+  - button "More actions on Reopend/Notfixed"
+  - list
+  - button "Add a card in Reopend/Notfixed": Add a card
+  - button "Create from template…"
+  - heading "Fixed on staging – QA verify" [level=2]:
+    - button "Fixed on staging – QA verify":
+      - generic: Fixed on staging – QA verify
+  - generic: "26"
+  - button "More actions on Fixed on staging – QA verify"
+  - list:
+    - 'link "ACC-07: Share invoice dialog omits existing recipient"':
+      - /url: /c/7hCb1bTg/81-acc-07-share-invoice-dialog-omits-existing-recipient
+    - link "Please add proper file upload option drag and drop and loading while uploading file":
+      - /url: /c/IsKz053u/41-please-add-proper-file-upload-option-drag-and-drop-and-loading-while-uploading-file
+    - link "In customer side while creating Quotes i am unable to select any option other then LTL":
+      - /url: /c/GL0XXsOG/43-in-customer-side-while-creating-quotes-i-am-unable-to-select-any-option-other-then-ltl
+    - 'link "SHP-34: Close document returns to shipment details on staging"':
+      - /url: /c/TPMCAsSm/90-shp-34-close-document-returns-to-shipment-details-on-staging
+    - 'link "SHP-32 + SHP-33: Uploaded provider PDFs and document actions on staging"':
+      - /url: /c/fQYEKgnp/88-shp-32-shp-33-uploaded-provider-pdfs-and-document-actions-on-staging
+    - 'link "SHP-31: Customer confirmation omits delivery appointment number"':
+      - /url: /c/99TpT52B/83-shp-31-customer-confirmation-omits-delivery-appointment-number
+    - 'link "SHP-29: BOL prepaid-to block overlaps pickup address"':
+      - /url: /c/8Hh7FBWS/82-shp-29-bol-prepaid-to-block-overlaps-pickup-address
+    - 'link "SHP-28: Staging BOL omits stop contacts"':
+      - /url: /c/5Fdq6ek3/79-shp-28-staging-bol-omits-stop-contacts
+    - 'link "SHP-27: Customer invoice freight rows overlap on staging"':
+      - /url: /c/EvRdVJHr/78-shp-27-customer-invoice-freight-rows-overlap-on-staging
+    - 'link "SHP-26: Customer invoice missing PO 1245 on staging"':
+      - /url: /c/srLkOFNm/77-shp-26-customer-invoice-missing-po-1245-on-staging
+    - 'link "SHP-25: Rate con missing Return Shipments clause on staging"':
+      - /url: /c/Grm0dG09/76-shp-25-rate-con-missing-return-shipments-clause-on-staging
+    - link "image.png":
+      - /url: /c/suKY9jlD/69-imagepng
+    - link "EDT-01 · The editor add control does not mention a carrier.":
+      - /url: /c/CnCTrZ8l/22-edt-01-the-editor-add-control-does-not-mention-a-carrier
+    - 'link "RPT-02: Staging shipment report preview omits equipment type"':
+      - /url: /c/htFK1Fea/89-rpt-02-staging-shipment-report-preview-omits-equipment-type
+    - 'link "SHP-24: Driver phone country selector is editable on staging"':
+      - /url: /c/PdoIuUkG/75-shp-24-driver-phone-country-selector-is-editable-on-staging
+    - 'link "ACC-06: Carrier accounting contact phone has no USA selector"':
+      - /url: /c/TDpWa1oz/80-acc-06-carrier-accounting-contact-phone-has-no-usa-selector
+    - link "do not give option of edit quotes in broker or owner side follow the production system, edit option is for customer only.":
+      - /url: /c/GZleecj9/68-do-not-give-option-of-edit-quotes-in-broker-or-owner-side-follow-the-production-system-edit-option-is-for-customer-only
+    - link "Template delete option does not exists their":
+      - /url: /c/PdYS2saL/72-template-delete-option-does-not-exists-their
+    - link "Cursor goes out when the ruler is opened in Quets":
+      - /url: /c/K3Oqg6zv/71-cursor-goes-out-when-the-ruler-is-opened-in-quets
+    - 'link "QTE-17: Staging offer details omit carrier MC, location and phone"':
+      - /url: /c/FbBbqwqo/87-qte-17-staging-offer-details-omit-carrier-mc-location-and-phone
+    - 'link "QTE-14: Staging strikes through booked quote''s pickup date"':
+      - /url: /c/PFfoyaCw/84-qte-14-staging-strikes-through-booked-quotes-pickup-date
+    - link "Screenshot 2026-11-16 at 7.38.51 PM.png":
+      - /url: /c/nXxYzs6q/46-screenshot-2026-11-16-at-73851-pmpng
+    - link "Screenshot 2026-11-16 at 5.52.33 PM.png":
+      - /url: /c/AW1yL5cJ/40-screenshot-2026-11-16-at-55233-pmpng
+    - link "Volume booster dropdown is not working":
+      - /url: /c/sFnIuxfm/39-volume-booster-dropdown-is-not-working
+    - link "In carriers on hover each card it display the black box":
+      - /url: /c/N7kvdin4/37-in-carriers-on-hover-each-card-it-display-the-black-box
+    - link "Please make the ui of those cards resposive becuse as data grows its size disturbed and can cause the map unbale to view properlly.":
+      - /url: /c/NiUWdZ6I/36-please-make-the-ui-of-those-cards-resposive-becuse-as-data-grows-its-size-disturbed-and-can-cause-the-map-unbale-to-view-properl
+  - button "Add a card in Fixed on staging – QA verify": Add a card
+  - button "Create from template…"
+  - heading "Resloved" [level=2]:
+    - button "Resloved":
+      - generic: Resloved
+  - generic: "17"
+  - button "More actions on Resloved"
+  - list:
+    - link "QTE-02 · Dry Van freight line is a plain description":
+      - /url: /c/UXtlRFiK/13-qte-02-dry-van-freight-line-is-a-plain-description
+    - link "Otp not recived for customer login":
+      - /url: /c/sWc3ZweP/38-otp-not-recived-for-customer-login
+    - link "SHP-09 · Cancel shipment confirm does not cancel the draft.":
+      - /url: /c/Ff5U4cao/35-shp-09-cancel-shipment-confirm-does-not-cancel-the-draft
+    - link "CUS-03 · The identity phone has no country selector.":
+      - /url: /c/qvOLQ105/34-cus-03-the-identity-phone-has-no-country-selector
+    - link "CUS-03 · Done closes the identity and billing forms without saving.":
+      - /url: /c/HcK05vcZ/33-cus-03-done-closes-the-identity-and-billing-forms-without-saving
+    - link "VEN-03 · The vendor type list leaves out Carrier.":
+      - /url: /c/tDRG9mIb/32-ven-03-the-vendor-type-list-leaves-out-carrier
+    - link "SHP-03 · Choosing LTL locks the whole form and still leaves Save for later.":
+      - /url: /c/lXAnSz42/31-shp-03-choosing-ltl-locks-the-whole-form-and-still-leaves-save-for-later
+    - link "SET-12 · The settings description still names Quote Factory.":
+      - /url: /c/kihZBk49/29-set-12-the-settings-description-still-names-quote-factory
+    - link "ACC-01 · All is the first queue tab, before Open.":
+      - /url: /c/Uyv1id1u/27-acc-01-all-is-the-first-queue-tab-before-open
+    - link "SHP-09 · The driver phone field has no country selector.":
+      - /url: /c/RnKDDMJU/23-shp-09-the-driver-phone-field-has-no-country-selector
+    - link "QTE-07 · Dry Van form has no Linear Feet Visualizer":
+      - /url: /c/oZcXyY4F/8-qte-07-dry-van-form-has-no-linear-feet-visualizer
+    - link "RPT-01 · The Lanes map credits Google.":
+      - /url: /c/Ofk89jL4/30-rpt-01-the-lanes-map-credits-google
+    - link "QTE-03 · Quote form service labels drop \"pickup\" / \"delivery\"":
+      - /url: /c/IkQueFXr/7-qte-03-quote-form-service-labels-drop-pickup-delivery
+    - link "CUS-09 · LTL service labels drop \"pickup\" / \"delivery\" (address template)":
+      - /url: /c/1fyGxwfN/6-cus-09-ltl-service-labels-drop-pickup-delivery-address-template
+    - link "QTE-02 · Equipment list puts Drayage among the Intermodal choices":
+      - /url: /c/Y16RfeWL/5-qte-02-equipment-list-puts-drayage-among-the-intermodal-choices
+    - link "CUS-09 · Address template saves with required fields empty":
+      - /url: /c/96Y1OiE1/3-cus-09-address-template-saves-with-required-fields-empty
+    - link "CUS-04 · New contact form has no Cancel":
+      - /url: /c/4XRKdsnx/2-cus-04-new-contact-form-has-no-cancel
+  - button "Add a card in Resloved": Add a card
+  - button "Create from template…"
+  - heading "Pending or Hold" [level=2]:
+    - button "Pending or Hold":
+      - generic: Pending or Hold
+  - generic: "8"
+  - button "More actions on Pending or Hold"
+  - list:
+    - link "SYS-08 · Training does not open (TalentLMS)":
+      - /url: /c/PHvSr5w8/16-sys-08-training-does-not-open-talentlms
+    - link "SYS-09 · Support does not open":
+      - /url: /c/BciuPNGC/17-sys-09-support-does-not-open
+    - link "SYS-01 · Different map (Google) and an extra status chip":
+      - /url: /c/Ys5jHP1n/18-sys-01-different-map-google-and-an-extra-status-chip
+    - link "RPT-01 · Extra report (Commissions)":
+      - /url: /c/HmUnb08o/19-rpt-01-extra-report-commissions
+    - link "SET-04 · Carrier settings adds a Load boards card.":
+      - /url: /c/12SoWXck/28-set-04-carrier-settings-adds-a-load-boards-card
+    - link "SHP-04 · Cover load is missing Loadboards, Show cost, and Post.":
+      - /url: /c/yPHrzwdE/20-shp-04-cover-load-is-missing-loadboards-show-cost-and-post
+    - link "SHP-13 · Shipment menu has no \"Simulate location updates\"":
+      - /url: /c/YBUywkBK/15-shp-13-shipment-menu-has-no-simulate-location-updates
+    - link "SHP-11 · Shipment map does not credit Mapbox / OpenStreetMap":
+      - /url: /c/RmHSsGYU/14-shp-11-shipment-map-does-not-credit-mapbox-openstreetmap
+  - button "Add a card in Pending or Hold": Add a card
+  - button "Create from template…"
+  - heading "Not an issue" [level=2]:
+    - button "Not an issue":
+      - generic: Not an issue
+  - generic: "11"
+  - button "More actions on Not an issue"
+  - list:
+    - link "CUS-09 · Template phone field has no country selector":
+      - /url: /c/a6WTVLZW/4-cus-09-template-phone-field-has-no-country-selector
+    - 'link "QTE-15: Staging doesn''t mark blank Packaging / Freight class invalid"':
+      - /url: /c/G7xcGsLh/85-qte-15-staging-doesnt-mark-blank-packaging-freight-class-invalid
+    - link "In customer side in url use customer instead of broker":
+      - /url: /c/3hID6jmc/44-in-customer-side-in-url-use-customer-instead-of-broker
+    - link "SYS-05 · Extra Quote queue in the sidebar":
+      - /url: /c/PjjpN1qf/9-sys-05-extra-quote-queue-in-the-sidebar
+    - link "SET-01 · \"Import from Quote Factory\" on the settings page":
+      - /url: /c/km3gTFX9/10-set-01-import-from-quote-factory-on-the-settings-page
+    - link "SHP-04 · Add a carrier is missing Track with Trucker Tools.":
+      - /url: /c/CNcGKsew/21-shp-04-add-a-carrier-is-missing-track-with-trucker-tools
+    - link "CUS-03 · Customer \"...\" menu has Merge / Archive":
+      - /url: /c/EruLBOx9/11-cus-03-customer-menu-has-merge-archive
+    - link "CAR-03 · Carrier/vendor open editors for payment terms and tax":
+      - /url: /c/OGh7ERDX/12-car-03-carrier-vendor-open-editors-for-payment-terms-and-tax
+    - link "DOC-01 · The customer confirmation adds a Download PDF button.":
+      - /url: /c/m3GgIQsa/24-doc-01-the-customer-confirmation-adds-a-download-pdf-button
+    - link "ACC-02 · The carrier bill adds Edit bill and Accounting instructions.":
+      - /url: /c/9W6uQ1xk/26-acc-02-the-carrier-bill-adds-edit-bill-and-accounting-instructions
+    - link "ACC-03 · The invoice adds a Download invoice button.":
+      - /url: /c/KyBnj0RF/25-acc-03-the-invoice-adds-a-download-invoice-button
+  - button "Add a card in Not an issue": Add a card
+  - button "Create from template…"
+  - heading "Integrations ✅ Working (production + staging, or staging not needed)" [level=2]:
+    - button "Integrations ✅ Working (production + staging, or staging not needed)":
+      - generic: Integrations ✅ Working (production + staging, or staging not needed)
+  - generic: "12"
+  - button "More actions on Integrations ✅ Working (production + staging, or staging not needed)"
+  - list:
+    - link "Southeastern (SEFL)":
+      - /url: /c/NSt5zZKk/62-southeastern-sefl
+    - link "TForce Freight":
+      - /url: /c/71VksPCf/60-tforce-freight
+    - link "Roadrunner":
+      - /url: /c/jatgMF8b/56-roadrunner
+    - link "ArcBest (ABF)":
+      - /url: /c/N6bHNbnE/54-arcbest-abf
+    - link "XPO":
+      - /url: /c/YxSCSIZy/53-xpo
+    - link "Warp":
+      - /url: /c/1EWURNYO/66-warp
+    - link "AAA Cooper":
+      - /url: /c/gvhRpOd5/47-aaa-cooper
+    - link "Peninsula Truck Lines":
+      - /url: /c/t79aoPMr/48-peninsula-truck-lines
+    - link "QuickBooks Online":
+      - /url: /c/IvXOW4X0/49-quickbooks-online
+    - link "Google Maps":
+      - /url: /c/HSG8LHc8/50-google-maps
+    - link "FMCSA (government carrier data)":
+      - /url: /c/3YZDbwiH/51-fmcsa-government-carrier-data
+    - link "ClassIT+ (NMFTA)":
+      - /url: /c/BQqU4dIu/52-classit-nmfta
+  - button "Add a card in Integrations ✅ Working (production + staging, or staging not needed)": Add a card
+  - button "Create from template…"
+  - heading "Integrations ⚠️ Live keys work, no staging / QA" [level=2]:
+    - button "Integrations ⚠️ Live keys work, no staging / QA":
+      - generic: Integrations ⚠️ Live keys work, no staging / QA
+  - generic: "5"
+  - button "More actions on Integrations ⚠️ Live keys work, no staging / QA"
+  - list:
+    - link "Averitt":
+      - /url: /c/nPMiT4st/61-averitt
+    - link "Old Dominion (ODFL)":
+      - /url: /c/dYzHStpK/55-old-dominion-odfl
+    - link "A. Duie Pyle":
+      - /url: /c/N2CgZbgW/57-a-duie-pyle
+    - link "Saia":
+      - /url: /c/eFO8Uc0m/58-saia
+    - link "Trucker Tools":
+      - /url: /c/Yt96xRvU/59-trucker-tools
+  - button "Add a card in Integrations ⚠️ Live keys work, no staging / QA": Add a card
+  - button "Create from template…"
+  - heading "Integrations ⛔ Blocked (not integrated yet)" [level=2]:
+    - button "Integrations ⛔ Blocked (not integrated yet)":
+      - generic: Integrations ⛔ Blocked (not integrated yet)
+  - generic: "4"
+  - button "More actions on Integrations ⛔ Blocked (not integrated yet)"
+  - list:
+    - link "Go2 Logistics":
+      - /url: /c/48Y7MX8m/63-go2-logistics
+    - link "Magnum":
+      - /url: /c/iza7diHv/64-magnum
+    - link "Pitt Ohio":
+      - /url: /c/2dtIhHka/65-pitt-ohio
+    - link "MyCarrierPackets":
+      - /url: /c/AbuPDEfH/67-mycarrierpackets
+  - button "Add a card in Integrations ⛔ Blocked (not integrated yet)": Add a card
+  - button "Create from template…"
+  - button "Add another list": Add another list
+- navigation:
+  - checkbox "Inbox":
+    - generic: Inbox
+  - checkbox "Planner":
+    - generic: Planner
+  - checkbox "Board" [checked] [disabled]:
+    - generic: Board
+  - separator
+  - checkbox "Switch boards":
+    - generic: Switch boards

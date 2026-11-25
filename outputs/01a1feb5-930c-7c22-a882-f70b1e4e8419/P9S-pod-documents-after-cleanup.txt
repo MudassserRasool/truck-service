@@ -1,0 +1,124 @@
+- alert
+- navigation "Main":
+  - link "10-4 Global":
+    - /url: /broker/dashboard
+    - img "10-4 Global"
+  - link "Quote":
+    - /url: /broker/quote
+    - text: Quote
+  - button "Find …":
+    - generic: Find …
+  - separator
+  - list "Queues":
+    - link "Quote 4 outstanding tasks":
+      - /url: /broker/quote-history/finish
+      - generic: Quote
+      - generic: "4"
+      - generic: 4 outstanding tasks
+  - separator
+  - list:
+    - link "View customers":
+      - /url: /broker/customers
+    - generic: Customers
+    - button "Open add new customer form":
+    - link:
+      - /url: /broker/quote-history
+    - generic: Quotes
+    - link "Create new quote":
+      - /url: /broker/quote
+    - link:
+      - /url: /broker/shipments
+    - generic: Shipments
+    - link "Create new shipment":
+      - /url: /broker/shipment/new
+    - link:
+      - /url: /broker/vendors/carriers
+    - generic: Carriers
+    - button "Create new vendor":
+    - link:
+      - /url: /broker/accounting/shipments/bills-invoices
+    - generic: Bills & Invoices
+  - separator
+  - list:
+    - link:
+      - /url: /broker/reports
+    - generic: Reporting
+    - link:
+      - /url: /broker/training
+    - generic: Training
+  - link "Settings":
+    - /url: /broker/settings
+    - text: Settings
+  - link "Contact support":
+    - /url: /broker/support
+    - text: Support
+  - separator
+  - link "Bilal Broker":
+    - /url: /profile
+    - generic: BB
+    - generic: Bilal Broker
+- main:
+  - link "Close document":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59
+  - link "back":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59
+    - generic: back
+  - heading "Documents" [level=1]
+  - generic: Shipment 1046693
+  - heading "BUCHANAN COMPANY, INC" [level=2]
+  - link "document thumbnail":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/bol?from=%2Fbroker%2Fshipment%2Fd200f096-cf84-58d7-8f54-b8ad623bca59%2Fdocuments
+    - img "document thumbnail"
+  - generic: BOL
+  - link "Download BOL":
+    - /url: /api/storage/objects?token=[REDACTED]
+    - generic: Download BOL
+  - link "document thumbnail":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/labels?from=%2Fbroker%2Fshipment%2Fd200f096-cf84-58d7-8f54-b8ad623bca59%2Fdocuments
+    - img "document thumbnail"
+  - generic: Labels
+  - link "Download Labels":
+    - /url: /api/storage/objects?token=[REDACTED]
+    - generic: Download Labels
+  - link "document thumbnail":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/documents/customer-rate-confirmation
+    - img "document thumbnail"
+  - generic: Customer Confirmation
+  - link "Download Customer Confirmation":
+    - /url: /api/storage/objects?token=[REDACTED]
+    - generic: Download Customer Confirmation
+  - link "document thumbnail":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/invoice?from=%2Fbroker%2Fshipment%2Fd200f096-cf84-58d7-8f54-b8ad623bca59%2Fdocuments
+    - img "document thumbnail"
+  - generic: Customer Invoice
+  - link "Download Customer Invoice":
+    - /url: /api/storage/objects?token=[REDACTED]
+    - generic: Download Customer Invoice
+  - heading "Pathak Express" [level=2]
+  - link "document thumbnail":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/provider-ratecon/00f188d9-8c96-571c-9ff1-661752803925?from=%2Fbroker%2Fshipment%2Fd200f096-cf84-58d7-8f54-b8ad623bca59%2Fdocuments
+    - img "document thumbnail"
+  - text: Rate Confirmation
+  - generic: for Pathak Express
+  - link "Download Rate Confirmation for Pathak Express":
+    - /url: /api/storage/objects?token=[REDACTED]
+    - generic: Download Rate Confirmation for Pathak Express
+  - link "Add pod to shipment":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/documents/pod/upload/00f188d9-8c96-571c-9ff1-661752803925
+    - generic: Add pod to shipment
+  - text: POD
+  - generic: pod to shipment
+  - link "Add bill to shipment":
+    - /url: /broker/shipment/d200f096-cf84-58d7-8f54-b8ad623bca59/bill/00f188d9-8c96-571c-9ff1-661752803925/edit
+    - generic: Add bill to shipment
+  - generic: Carrier bill
+  - button "Add document for Pathak Express":
+    - generic: Add document for Pathak Express
+  - text: + add
+  - generic: document for Pathak Express
+  - heading "Misc" [level=2]
+  - button "Add document to shipment":
+    - generic: Add document to shipment
+  - text: + add
+  - generic: document to shipment
+- status

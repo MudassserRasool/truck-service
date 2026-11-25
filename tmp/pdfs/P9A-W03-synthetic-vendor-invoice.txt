@@ -1,0 +1,7 @@
+QA TEST ONLY - NOT A REAL INVOICE
+Vendor: P9A Fictional Warehouse 20261121
+BOL: P9A-W03-20261121
+Invoice No: P9A-W03-TEST-001
+Storage service charge: $200.00
+Amount due: $200.00
+No funds are due or payable.
